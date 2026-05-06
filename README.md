@@ -34,6 +34,8 @@ Every shipped target still gets a generated preview card in `showcase/assets/gen
 
 ![Bizarre terminal color configs](showcase/assets/generated/terminal-colors.png)
 
+![Bizarre backlog terminal ports](showcase/assets/generated/terminal-backlog.png)
+
 ![Bizarre VS Code themes](showcase/assets/generated/vscode-themes.png)
 
 ![Bizarre editor theme configs](showcase/assets/generated/editor-themes.png)
@@ -148,6 +150,37 @@ cp terminals/zellij/bizarre.kdl ~/.config/zellij/themes/
 # Windows Terminal
 # paste terminals/windows-terminal/schemes.json schemes into settings.json
 
+# Foot
+mkdir -p ~/.config/foot/themes
+cp terminals/foot/*.ini ~/.config/foot/themes/
+
+# Konsole
+mkdir -p ~/.local/share/konsole
+cp terminals/konsole/*.colorscheme ~/.local/share/konsole/
+
+# Rio
+mkdir -p ~/.config/rio/themes
+cp terminals/rio/*.toml ~/.config/rio/themes/
+
+# Hyper
+# merge one terminals/hyper/bizarre-*.js config object into ~/.hyper.js
+
+# Terminator
+# merge one terminals/terminator/bizarre-*.config profile into ~/.config/terminator/config
+
+# Tilix
+# import one terminals/tilix/bizarre-*.dconf with dconf load
+
+# XFCE Terminal
+mkdir -p ~/.local/share/xfce4/terminal/colorschemes
+cp terminals/xfce-terminal/*.theme ~/.local/share/xfce4/terminal/colorschemes/
+
+# GNOME Terminal
+bash terminals/gnome-terminal/bizarre.sh bizarre-void
+
+# Black Box
+# import or adapt terminals/black-box/*.json through Black Box palette settings
+
 # Shell banners
 echo "source $PWD/shells/banner/bizarre.bash" >> ~/.bashrc
 echo "source $PWD/shells/banner/bizarre.zsh" >> ~/.zshrc
@@ -225,7 +258,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | Family | Targets |
 |---|---|
 | Editors | VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16, Emacs, Helix, Lapce, Kate, Notepad++, Nova, Cursor, Visual Studio, Xcode, Android Studio |
-| Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij |
+| Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij, Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box |
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
 | Tools | AeroSpace, ForkLift, Jujutsu |

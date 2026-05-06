@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const TOML = require('@iarna/toml');
+const INI = require('ini');
 const YAML = require('yaml');
 const palette = require('../palette.js');
 
@@ -53,6 +54,7 @@ for (const file of [
   ...files('editors/nova', (file) => file.endsWith('.json')).map(rel),
   ...files('editors/sublime', (file) => file.endsWith('.sublime-color-scheme')).map(rel),
   'editors/zed/themes/bizarre.json',
+  ...files('terminals/black-box', (file) => file.endsWith('.json')).map(rel),
   'terminals/windows-terminal/schemes.json',
   'tools/forklift/Bizarre.json',
 ]) {
@@ -68,6 +70,7 @@ for (const file of [
   'prompt/starship.toml',
   ...files('editors/helix', (file) => file.endsWith('.toml')).map(rel),
   ...files('editors/lapce', (file) => file.endsWith('.toml')).map(rel),
+  ...files('terminals/rio', (file) => file.endsWith('.toml')).map(rel),
   'tools/aerospace/aerospace.toml',
   'tools/jujutsu/config.toml',
   ...files('tools/atuin', (file) => file.endsWith('.toml')).map(rel),
@@ -98,6 +101,21 @@ for (const file of [
 }
 
 for (const file of [
+  ...files('terminals/foot', (file) => file.endsWith('.ini')).map(rel),
+  ...files('terminals/konsole', (file) => file.endsWith('.colorscheme')).map(rel),
+  ...files('terminals/terminator', (file) => file.endsWith('.config')).map(rel),
+  ...files('terminals/tilix', (file) => file.endsWith('.dconf')).map(rel),
+  ...files('terminals/xfce-terminal', (file) => file.endsWith('.theme')).map(rel),
+]) {
+  try {
+    INI.parse(fs.readFileSync(path.join(root, file), 'utf8'));
+    console.log(`ini ${file}`);
+  } catch (error) {
+    fail(`ini ${file}`, error);
+  }
+}
+
+for (const file of [
   ...files('terminals/iterm2', (file) => file.endsWith('.itermcolors')).map(rel),
   ...files('editors/xcode', (file) => file.endsWith('.xccolortheme')).map(rel),
   ...files('tools/bat', (file) => file.endsWith('.tmTheme')).map(rel),
@@ -120,6 +138,7 @@ for (const file of files('editors/emacs', (file) => file.endsWith('.el')).map(re
 
 run('bash', ['-n', 'shells/banner/bizarre.bash'], 'bash banner');
 run('zsh', ['-n', 'shells/banner/bizarre.zsh'], 'zsh banner');
+run('bash', ['-n', 'terminals/gnome-terminal/bizarre.sh'], 'bash gnome terminal');
 run('bash', ['-n', 'tools/fzf/bizarre.sh'], 'bash fzf');
 run('bash', ['-n', 'tools/eza/bizarre.sh'], 'bash eza');
 run('fish', ['-n', 'shells/banner/bizarre.fish'], 'fish banner', true);
@@ -150,6 +169,10 @@ for (const file of files('tools/dircolors', (file) => file.endsWith('.dircolors'
 
 for (const file of files('tools/ranger', (file) => file.endsWith('.py')).map(rel)) {
   run('python3', ['-m', 'py_compile', file], `python ${file}`);
+}
+
+for (const file of files('terminals/hyper', (file) => file.endsWith('.js')).map(rel)) {
+  run('node', ['--check', file], `node ${file}`);
 }
 
 run('nvim', ['--headless', '-u', 'NONE', '-c', "lua assert(loadfile('terminals/wezterm/bizarre.lua'))", '-c', 'qa'], 'lua wezterm', true);

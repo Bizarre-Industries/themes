@@ -1,0 +1,28 @@
+module.exports = {
+  config: {
+    fontFamily: "Monaspace Neon, Menlo, monospace",
+    foregroundColor: "#1F1F1F",
+    backgroundColor: "#F9F8F2",
+    borderColor: "#D8D4C7",
+    cursorColor: "#5F8A0F",
+    selectionColor: "#DCEFA8",
+    colors: {
+      black: "#1A1A1A",
+      red: "#C13039",
+      green: "#3F7A1F",
+      yellow: "#9F4A0E",
+      blue: "#1F4FB0",
+      magenta: "#7E2A9A",
+      cyan: "#0F6E6E",
+      white: "#545454",
+      lightBlack: "#7A7568",
+      lightRed: "#E04050",
+      lightGreen: "#5F8A0F",
+      lightYellow: "#C28225",
+      lightBlue: "#3D78C7",
+      lightMagenta: "#A55EAF",
+      lightCyan: "#4FA3A3",
+      lightWhite: "#0E0E0E",
+    },
+  },
+};

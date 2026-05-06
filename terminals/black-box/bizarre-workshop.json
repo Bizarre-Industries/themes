@@ -1,0 +1,28 @@
+{
+  "name": "Bizarre Workshop",
+  "comment": "Bizarre Industries terminal palette for Black Box.",
+  "foregroundColor": "#E4E2DA",
+  "backgroundColor": "#1A1815",
+  "cursorBackgroundColor": "#C6FF24",
+  "cursorForegroundColor": "#0E0E0E",
+  "highlightBackgroundColor": "#3A3618",
+  "highlightForegroundColor": "#F9F8F2",
+  "palette": [
+    "#1A1815",
+    "#F0525B",
+    "#3FB950",
+    "#E8A33D",
+    "#5B9FFF",
+    "#D88AE0",
+    "#7AD9D9",
+    "#E4E4E4",
+    "#3D3D3D",
+    "#FF6F77",
+    "#C6FF24",
+    "#FFB85C",
+    "#7BB3FF",
+    "#E8A8EE",
+    "#9DEAEA",
+    "#FFFFFF"
+  ]
+}
