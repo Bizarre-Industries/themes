@@ -1,24 +1,18 @@
-# Bizarre Void — base16 / tinted-theming compatible
-# CATCH THE STARS.
-system: "base16"
-name: "Bizarre Void"
+scheme: "Bizarre Void"
 author: "Bizarre Industries"
-variant: "dark"
-description: "Bizarre Industries — dark register."
-palette:
-  base00: "0E0E0E"  # default bg
-  base01: "1A1A1A"  # lighter bg
-  base02: "2B2B2B"  # selection bg
-  base03: "7A7A7A"  # comment / muted
-  base04: "B8B8B8"  # dark fg / status
-  base05: "E4E4E4"  # default fg
-  base06: "F9F8F2"  # light fg
-  base07: "FFFFFF"  # lightest fg
-  base08: "F0525B"  # red / variables
-  base09: "E8A33D"  # orange / numbers
-  base0A: "E8FF8A"  # yellow / classes
-  base0B: "B8B8B8"  # green / strings (de-emphasized)
-  base0C: "7AD9D9"  # cyan / regex
-  base0D: "C6FF24"  # lime / functions (the hero)
-  base0E: "D88AE0"  # magenta / keywords/constants
-  base0F: "5B9FFF"  # blue / types
+base00: "0E0E0E"
+base01: "1A1A1A"
+base02: "2B2B2B"
+base03: "545454"
+base04: "7A7A7A"
+base05: "E4E4E4"
+base06: "9C9C9C"
+base07: "FFFFFF"
+base08: "FF6F77"
+base09: "7BB3FF"
+base0A: "FFB85C"
+base0B: "C6FF24"
+base0C: "FF9E3D"
+base0D: "7BB3FF"
+base0E: "9DD0FF"
+base0F: "FFB07A"

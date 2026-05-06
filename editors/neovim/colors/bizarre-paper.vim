@@ -1,3 +1,2 @@
-" bizarre-paper — Bizarre Industries
-" CATCH THE STARS.
+" bizarre-paper - Bizarre Industries
 lua require('bizarre').load('bizarre-paper')

@@ -1,6 +1,6 @@
 # Bizarre Industries — JetBrains IDEs
 
-`BZR / JETBRAINS / V0.1`
+`BZR / JetBrains / V0.1`
 
 Works in IntelliJ IDEA, PyCharm, WebStorm, GoLand, Rider, RubyMine, RustRover, etc.
 

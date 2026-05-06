@@ -1,29 +1,23 @@
-# Bizarre Workshop — Ghostty
-# CATCH THE STARS.
-#
-# Drop in ~/.config/ghostty/themes/bizarre-workshop, then in config:
-#   theme = bizarre-workshop
-
+# Bizarre Workshop - Ghostty
+font-family = Monaspace Neon
 background = 1A1815
 foreground = E4E2DA
-cursor-color = B5E81F
-cursor-text = 1A1815
-selection-background = 33302B
+cursor-color = C6FF24
+selection-background = 3A3618
 selection-foreground = F9F8F2
-
-palette = 0=#252320
-palette = 1=#E8525B
-palette = 2=#9BC73C
-palette = 3=#D89538
-palette = 4=#6EA8E8
-palette = 5=#C68DD0
-palette = 6=#7BC9C9
-palette = 7=#E4E2DA
-palette = 8=#3D3A33
-palette = 9=#F26B73
-palette = 10=#B5E81F
-palette = 11=#E8B048
-palette = 12=#7BB5E8
-palette = 13=#D8A0DE
-palette = 14=#9BD5D5
-palette = 15=#F4F2EA
+palette = 0=#1A1815
+palette = 1=#F0525B
+palette = 2=#3FB950
+palette = 3=#E8A33D
+palette = 4=#5B9FFF
+palette = 5=#D88AE0
+palette = 6=#7AD9D9
+palette = 7=#E4E4E4
+palette = 8=#3D3D3D
+palette = 9=#FF6F77
+palette = 10=#C6FF24
+palette = 11=#FFB85C
+palette = 12=#7BB3FF
+palette = 13=#E8A8EE
+palette = 14=#9DEAEA
+palette = 15=#FFFFFF
