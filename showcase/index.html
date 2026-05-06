@@ -250,6 +250,15 @@ const APP_TARGETS = [
   { name: 'Spotify', file: 'apps/spotify/spicetify/color.ini', variant: 'workshop', key: 'adapter', value: 'Spicetify' },
   { name: 'qutebrowser', file: 'apps/qutebrowser/bizarre-void.py', variant: 'paper', key: 'format', value: 'python' },
 ];
+const WEB_TARGETS = [
+  { name: 'Firefox', file: 'web/firefox/bizarre-void/manifest.json', variant: 'void', key: 'format', value: 'manifest' },
+  { name: 'Chrome', file: 'web/chrome/bizarre-void/manifest.json', variant: 'void-hicontrast', key: 'format', value: 'manifest' },
+  { name: 'Arc', file: 'web/arc/boosts/bizarre-workshop.css', variant: 'workshop', key: 'format', value: 'Boost CSS' },
+  { name: 'Vivaldi', file: 'web/vivaldi/bizarre-paper/theme.json', variant: 'paper', key: 'format', value: 'theme json' },
+  { name: 'Userstyles', file: 'web/userstyles/bizarre-bone.user.css', variant: 'bone', key: 'adapter', value: 'Stylus' },
+  { name: 'Startpages', file: 'web/startpages/bizarre-void.html', variant: 'void', key: 'format', value: 'html' },
+  { name: 'Docs sites', file: 'web/documentation-sites/bizarre-void.css', variant: 'void-hicontrast', key: 'format', value: 'css' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = {
   "bizarre": [
@@ -557,9 +566,16 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="browser-web">
+        <div className="section-head"><span className="section-num">§ 12 / WEB</span><h2 className="section-title">Browser and web ports.</h2><span className="section-sub">firefox · chrome · arc · vivaldi · userstyles · startpages · documentation sites</span></div>
+        <div className="config-grid cli-grid">
+          {WEB_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
+        </div>
+      </section>
+
       {shown.map((v, idx) => (
         <section key={v.id} className={`section ${v.mode === 'light' ? 'light-section' : ''}`}>
-          <div className="section-head"><span className="section-num">§ {String(idx + 10).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
+          <div className="section-head"><span className="section-num">§ {String(idx + 13).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
           <div className="pair"><BzrEditor sample={sample} variant={v} limeRole={limeRole} /><BzrStarshipTerminal variant={v} /></div>
         </section>
       ))}

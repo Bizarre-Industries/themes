@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Bizarre Bone for Firefox",
+  "version": "0.2.0",
+  "theme": {
+    "colors": {
+      "frame": "#EDE9DD",
+      "frame_inactive": "#F5F2EA",
+      "toolbar": "#F5F2EA",
+      "toolbar_text": "#2B2B2B",
+      "tab_text": "#2B2B2B",
+      "tab_background_text": "#4A4A4A",
+      "bookmark_text": "#4A4A4A",
+      "icons": "#4A4A4A",
+      "icons_attention": "#5F8A0F",
+      "toolbar_field": "#EDE9DD",
+      "toolbar_field_text": "#2B2B2B",
+      "toolbar_field_border": "#DDD8CB",
+      "button_background_active": "#D4E89F",
+      "button_background_hover": "#DDD8CB",
+      "popup": "#EDE9DD",
+      "popup_text": "#2B2B2B",
+      "popup_border": "#DDD8CB",
+      "popup_highlight": "#5F8A0F",
+      "popup_highlight_text": "#F9F8F2",
+      "ntp_background": "#F5F2EA",
+      "ntp_card_background": "#EDE9DD",
+      "ntp_text": "#2B2B2B",
+      "sidebar": "#EDE9DD",
+      "sidebar_text": "#2B2B2B",
+      "sidebar_highlight": "#5F8A0F",
+      "sidebar_highlight_text": "#F9F8F2"
+    },
+    "properties": {
+      "color_scheme": "light",
+      "content_color_scheme": "light"
+    }
+  }
+}

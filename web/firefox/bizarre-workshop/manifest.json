@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Bizarre Workshop for Firefox",
+  "version": "0.2.0",
+  "theme": {
+    "colors": {
+      "frame": "#23211C",
+      "frame_inactive": "#1A1815",
+      "toolbar": "#1A1815",
+      "toolbar_text": "#E4E2DA",
+      "tab_text": "#E4E2DA",
+      "tab_background_text": "#9C9A91",
+      "bookmark_text": "#9C9A91",
+      "icons": "#9C9A91",
+      "icons_attention": "#C6FF24",
+      "toolbar_field": "#23211C",
+      "toolbar_field_text": "#E4E2DA",
+      "toolbar_field_border": "#3D3A33",
+      "button_background_active": "#3A3618",
+      "button_background_hover": "#2D2A23",
+      "popup": "#23211C",
+      "popup_text": "#E4E2DA",
+      "popup_border": "#3D3A33",
+      "popup_highlight": "#C6FF24",
+      "popup_highlight_text": "#0E0E0E",
+      "ntp_background": "#1A1815",
+      "ntp_card_background": "#23211C",
+      "ntp_text": "#E4E2DA",
+      "sidebar": "#23211C",
+      "sidebar_text": "#E4E2DA",
+      "sidebar_highlight": "#C6FF24",
+      "sidebar_highlight_text": "#0E0E0E"
+    },
+    "properties": {
+      "color_scheme": "dark",
+      "content_color_scheme": "dark"
+    }
+  }
+}

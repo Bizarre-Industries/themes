@@ -1,0 +1,150 @@
+{
+  "manifest_version": 3,
+  "name": "Bizarre Void for Chrome",
+  "version": "0.2.0",
+  "theme": {
+    "colors": {
+      "frame": [
+        26,
+        26,
+        26
+      ],
+      "frame_inactive": [
+        14,
+        14,
+        14
+      ],
+      "toolbar": [
+        14,
+        14,
+        14
+      ],
+      "toolbar_text": [
+        228,
+        228,
+        228
+      ],
+      "tab_text": [
+        228,
+        228,
+        228
+      ],
+      "tab_background_text": [
+        156,
+        156,
+        156
+      ],
+      "bookmark_text": [
+        156,
+        156,
+        156
+      ],
+      "icons": [
+        156,
+        156,
+        156
+      ],
+      "icons_attention": [
+        198,
+        255,
+        36
+      ],
+      "toolbar_field": [
+        26,
+        26,
+        26
+      ],
+      "toolbar_field_text": [
+        228,
+        228,
+        228
+      ],
+      "toolbar_field_border": [
+        61,
+        61,
+        61
+      ],
+      "button_background_active": [
+        43,
+        58,
+        14
+      ],
+      "button_background_hover": [
+        43,
+        43,
+        43
+      ],
+      "popup": [
+        26,
+        26,
+        26
+      ],
+      "popup_text": [
+        228,
+        228,
+        228
+      ],
+      "popup_border": [
+        61,
+        61,
+        61
+      ],
+      "popup_highlight": [
+        198,
+        255,
+        36
+      ],
+      "popup_highlight_text": [
+        14,
+        14,
+        14
+      ],
+      "ntp_background": [
+        14,
+        14,
+        14
+      ],
+      "ntp_card_background": [
+        26,
+        26,
+        26
+      ],
+      "ntp_text": [
+        228,
+        228,
+        228
+      ],
+      "sidebar": [
+        26,
+        26,
+        26
+      ],
+      "sidebar_text": [
+        228,
+        228,
+        228
+      ],
+      "sidebar_highlight": [
+        198,
+        255,
+        36
+      ],
+      "sidebar_highlight_text": [
+        14,
+        14,
+        14
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.25,
+        0.65,
+        0.55
+      ]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom",
+      "ntp_background_repeat": "no-repeat"
+    }
+  }
+}

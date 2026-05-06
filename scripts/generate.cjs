@@ -3480,6 +3480,296 @@ c.colors.downloads.start.fg = '${a.blue}'
 c.colors.downloads.stop.fg = '${a.green}'`;
 }
 
+function browserJsonTheme(v, browser) {
+  const colors = {
+    frame: v.bg2,
+    frame_inactive: v.bg,
+    toolbar: v.bg,
+    toolbar_text: v.fg,
+    tab_text: v.fg,
+    tab_background_text: v.fgDim,
+    bookmark_text: v.fgDim,
+    icons: v.fgDim,
+    icons_attention: v.accent,
+    toolbar_field: v.bg2,
+    toolbar_field_text: v.fg,
+    toolbar_field_border: v.border,
+    button_background_active: v.sel,
+    button_background_hover: v.bg3,
+    popup: v.bg2,
+    popup_text: v.fg,
+    popup_border: v.border,
+    popup_highlight: v.accent,
+    popup_highlight_text: fgFor(v.accent),
+    ntp_background: v.bg,
+    ntp_card_background: v.bg2,
+    ntp_text: v.fg,
+    sidebar: v.bg2,
+    sidebar_text: v.fg,
+    sidebar_highlight: v.accent,
+    sidebar_highlight_text: fgFor(v.accent),
+  };
+  const convert = (value) => browser === 'chrome' ? rgb(value) : value;
+  return Object.fromEntries(Object.entries(colors).map(([key, value]) => [key, convert(value)]));
+}
+
+function firefoxManifest(v) {
+  return JSON.stringify({
+    manifest_version: 2,
+    name: `${v.label} for Firefox`,
+    version: '0.2.0',
+    theme: {
+      colors: browserJsonTheme(v, 'firefox'),
+      properties: {
+        color_scheme: v.mode,
+        content_color_scheme: v.mode,
+      },
+    },
+  }, null, 2);
+}
+
+function chromeManifest(v) {
+  return JSON.stringify({
+    manifest_version: 3,
+    name: `${v.label} for Chrome`,
+    version: '0.2.0',
+    theme: {
+      colors: browserJsonTheme(v, 'chrome'),
+      tints: {
+        buttons: [0.25, 0.65, 0.55],
+      },
+      properties: {
+        ntp_background_alignment: 'bottom',
+        ntp_background_repeat: 'no-repeat',
+      },
+    },
+  }, null, 2);
+}
+
+function vivaldiTheme(v) {
+  return JSON.stringify({
+    name: v.label,
+    version: 1,
+    settings: {
+      accentFromPage: false,
+      accentOnWindow: true,
+      borderRadius: 6,
+      colorAccentBg: v.accent,
+      colorBg: v.bg,
+      colorFg: v.fg,
+      colorHighlightBg: v.accent,
+      colorWindowBg: v.bg2,
+      contrast: 0,
+      dimBlurred: true,
+      preferSystemAccent: false,
+      transparencyTabBar: false,
+    },
+  }, null, 2);
+}
+
+function arcBoostCss(v) {
+  return `/* ${v.label} Arc Boost CSS */
+${cssVars(v)}
+html,
+body {
+  background: var(--bizarre-bg) !important;
+  color: var(--bizarre-fg) !important;
+  font-family: "${palette.fonts.prose_family}", system-ui, sans-serif !important;
+}
+a,
+button,
+[role="button"] {
+  color: var(--bizarre-accent) !important;
+}
+input,
+textarea,
+select {
+  background: var(--bizarre-bg-2) !important;
+  color: var(--bizarre-fg) !important;
+  border-color: var(--bizarre-border) !important;
+}
+::selection {
+  background: var(--bizarre-selection) !important;
+}`;
+}
+
+function userstyleCss(v) {
+  return `/* ==UserStyle==
+@name ${v.label}
+@namespace bizarre-industries
+@version 0.2.0
+@description Bizarre Industries palette variables for Stylus-compatible userstyle managers.
+==/UserStyle== */
+@-moz-document regexp("https?://.*") {
+${cssVars(v, '  :root')}
+  html,
+  body {
+    background: var(--bizarre-bg) !important;
+    color: var(--bizarre-fg) !important;
+  }
+  a {
+    color: var(--bizarre-info) !important;
+  }
+  code,
+  pre {
+    background: var(--bizarre-bg-2) !important;
+    color: var(--bizarre-string) !important;
+  }
+  ::selection {
+    background: var(--bizarre-selection) !important;
+  }
+}`;
+}
+
+function startpageHtml(v) {
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${v.label} Startpage</title>
+<style>
+${cssVars(v)}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+  font: 16px/1.5 "${palette.fonts.prose_family}", system-ui, sans-serif;
+}
+main {
+  width: min(920px, calc(100vw - 40px));
+}
+h1 {
+  margin: 0 0 20px;
+  color: var(--bizarre-accent);
+  font: 700 clamp(48px, 12vw, 128px)/0.9 "${palette.fonts.display_family}", system-ui, sans-serif;
+  letter-spacing: 0;
+}
+.panel {
+  border: 1px solid var(--bizarre-border);
+  background: var(--bizarre-bg-2);
+  padding: 24px;
+}
+form {
+  display: flex;
+  gap: 12px;
+}
+input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--bizarre-border);
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+  padding: 14px 16px;
+  font: inherit;
+}
+button {
+  border: 0;
+  background: var(--bizarre-accent);
+  color: ${fgFor(v.accent)};
+  padding: 14px 18px;
+  font: 700 13px/1 "${palette.fonts.label_family}", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+.links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+a {
+  color: var(--bizarre-info);
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>BZR<span>.</span></h1>
+  <div class="panel">
+    <form action="https://duckduckgo.com/" method="get">
+      <input name="q" aria-label="Search" autofocus />
+      <button type="submit">Search</button>
+    </form>
+    <div class="links">
+      <a href="https://github.com/">GitHub</a>
+      <a href="https://developer.mozilla.org/">MDN</a>
+      <a href="https://news.ycombinator.com/">Hacker News</a>
+      <a href="https://lobste.rs/">Lobsters</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>`;
+}
+
+function documentationCss(v) {
+  return `/* ${v.label} documentation site CSS */
+${cssVars(v)}
+:root,
+body {
+  color-scheme: ${v.mode};
+}
+body,
+.md-typeset,
+.theme-doc-markdown,
+.rst-content {
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+}
+a,
+.md-typeset a,
+.theme-doc-markdown a,
+.rst-content a {
+  color: var(--bizarre-info);
+}
+code,
+pre,
+.highlight,
+.md-typeset code,
+.theme-code-block,
+.rst-content code {
+  background: var(--bizarre-bg-2);
+  color: var(--bizarre-string);
+}
+blockquote,
+table,
+.admonition,
+.theme-admonition,
+.rst-content .admonition {
+  border-color: var(--bizarre-border);
+}
+::selection {
+  background: var(--bizarre-selection);
+}`;
+}
+
+function webReadme() {
+  return `# Bizarre Browser And Web Ports
+
+Firefox and Chrome directories contain native extension theme manifests. Vivaldi contains export ZIP contents as JSON; compress the JSON file with any required background asset if importing as a ZIP. Arc Boosts are CSS snippets for Arc's Boost editor. Userstyles require a Stylus-compatible manager. Startpages are static HTML files.
+
+Copy or import files through the browser's normal theme or extension workflow. Do not replace unrelated profile files wholesale.
+`;
+}
+
+function generateBrowserWeb() {
+  for (const v of variants) {
+    out(`web/firefox/${titleSlug(v.id)}/manifest.json`, firefoxManifest(v));
+    out(`web/chrome/${titleSlug(v.id)}/manifest.json`, chromeManifest(v));
+    out(`web/vivaldi/${titleSlug(v.id)}/theme.json`, vivaldiTheme(v));
+    out(`web/arc/boosts/${titleSlug(v.id)}.css`, arcBoostCss(v));
+    out(`web/userstyles/${titleSlug(v.id)}.user.css`, userstyleCss(v));
+    out(`web/startpages/${titleSlug(v.id)}.html`, startpageHtml(v));
+    out(`web/documentation-sites/${titleSlug(v.id)}.css`, documentationCss(v));
+  }
+  out('web/README.md', webReadme());
+}
+
 function generateDesktopApps() {
   for (const v of variants) {
     out(`apps/raycast/${titleSlug(v.id)}.json`, raycastTheme(v));
@@ -4170,6 +4460,15 @@ const APP_TARGETS = [
   { name: 'Spotify', file: 'apps/spotify/spicetify/color.ini', variant: 'workshop', key: 'adapter', value: 'Spicetify' },
   { name: 'qutebrowser', file: 'apps/qutebrowser/bizarre-void.py', variant: 'paper', key: 'format', value: 'python' },
 ];
+const WEB_TARGETS = [
+  { name: 'Firefox', file: 'web/firefox/bizarre-void/manifest.json', variant: 'void', key: 'format', value: 'manifest' },
+  { name: 'Chrome', file: 'web/chrome/bizarre-void/manifest.json', variant: 'void-hicontrast', key: 'format', value: 'manifest' },
+  { name: 'Arc', file: 'web/arc/boosts/bizarre-workshop.css', variant: 'workshop', key: 'format', value: 'Boost CSS' },
+  { name: 'Vivaldi', file: 'web/vivaldi/bizarre-paper/theme.json', variant: 'paper', key: 'format', value: 'theme json' },
+  { name: 'Userstyles', file: 'web/userstyles/bizarre-bone.user.css', variant: 'bone', key: 'adapter', value: 'Stylus' },
+  { name: 'Startpages', file: 'web/startpages/bizarre-void.html', variant: 'void', key: 'format', value: 'html' },
+  { name: 'Docs sites', file: 'web/documentation-sites/bizarre-void.css', variant: 'void-hicontrast', key: 'format', value: 'css' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = ${JSON.stringify(shellWordmark, null, 2)};
 
@@ -4460,9 +4759,16 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="browser-web">
+        <div className="section-head"><span className="section-num">§ 12 / WEB</span><h2 className="section-title">Browser and web ports.</h2><span className="section-sub">firefox · chrome · arc · vivaldi · userstyles · startpages · documentation sites</span></div>
+        <div className="config-grid cli-grid">
+          {WEB_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
+        </div>
+      </section>
+
       {shown.map((v, idx) => (
         <section key={v.id} className={\`section \${v.mode === 'light' ? 'light-section' : ''}\`}>
-          <div className="section-head"><span className="section-num">§ {String(idx + 10).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
+          <div className="section-head"><span className="section-num">§ {String(idx + 13).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
           <div className="pair"><BzrEditor sample={sample} variant={v} limeRole={limeRole} /><BzrStarshipTerminal variant={v} /></div>
         </section>
       ))}
@@ -4672,6 +4978,8 @@ Every shipped target still gets a generated preview card in \`showcase/assets/ge
 ![Bizarre CLI and TUI tool ports](showcase/assets/generated/cli-tui.png)
 
 ![Bizarre desktop app adapters](showcase/assets/generated/desktop-apps.png)
+
+![Bizarre browser and web ports](showcase/assets/generated/browser-web.png)
 
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
@@ -4903,6 +5211,27 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 
 # qutebrowser
 # source one apps/qutebrowser/bizarre-*.py from qutebrowser config.py
+
+# Firefox
+# load web/firefox/bizarre-void/manifest.json as a temporary extension or package it for signing
+
+# Chrome
+# load web/chrome/bizarre-void as an unpacked extension theme
+
+# Arc
+# paste one web/arc/boosts/bizarre-*.css file into Arc Boost code
+
+# Vivaldi
+# compress one web/vivaldi/bizarre-*/theme.json as theme ZIP contents, then import it
+
+# Userstyles
+# import one web/userstyles/bizarre-*.user.css into a Stylus-compatible manager
+
+# Startpages
+# point your browser homepage to one web/startpages/bizarre-*.html file
+
+# Documentation sites
+# merge one web/documentation-sites/bizarre-*.css file into your docs site CSS
 \`\`\`
 
 ## Current Coverage
@@ -4914,6 +5243,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
 | Desktop apps | Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser |
+| Browser and web | Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants
@@ -4938,10 +5268,10 @@ function portsDoc() {
     ['Shells and prompts', 'Bash, Zsh, Fish, PowerShell, Starship'],
     ['CLI/TUI', 'bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid'],
     ['Desktop apps', 'Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser'],
+    ['Browser and web', 'Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites'],
     ['Desktop and tools', 'AeroSpace, ForkLift, Jujutsu'],
   ];
   const backlog = [
-    ['Browser and web', 'Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites'],
     ['Design and devtools', 'Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub readme assets'],
     ['Docs and content', 'MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js'],
     ['OS and window managers', 'Hyprland, Sway, i3, Waybar, Polybar, SketchyBar, yabai, rofi, wofi'],
@@ -4995,6 +5325,7 @@ function generateAll() {
   generateTerminals();
   generateTools();
   generateDesktopApps();
+  generateBrowserWeb();
   generateShowcase();
   generateDocs();
 }

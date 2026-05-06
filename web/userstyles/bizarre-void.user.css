@@ -1,0 +1,41 @@
+/* ==UserStyle==
+@name Bizarre Void
+@namespace bizarre-industries
+@version 0.2.0
+@description Bizarre Industries palette variables for Stylus-compatible userstyle managers.
+==/UserStyle== */
+@-moz-document regexp("https?://.*") {
+  :root {
+  --bizarre-bg: #0E0E0E;
+  --bizarre-bg-2: #1A1A1A;
+  --bizarre-bg-3: #2B2B2B;
+  --bizarre-fg: #E4E4E4;
+  --bizarre-dim: #9C9C9C;
+  --bizarre-border: #3D3D3D;
+  --bizarre-accent: #C6FF24;
+  --bizarre-selection: #2B3A0E;
+  --bizarre-error: #FF6F77;
+  --bizarre-warn: #FFB85C;
+  --bizarre-ok: #5BD06B;
+  --bizarre-info: #7BB3FF;
+  --bizarre-string: #E8A33D;
+  --bizarre-function: #C6FF24;
+  --bizarre-keyword: #FF8FCF;
+}
+  html,
+  body {
+    background: var(--bizarre-bg) !important;
+    color: var(--bizarre-fg) !important;
+  }
+  a {
+    color: var(--bizarre-info) !important;
+  }
+  code,
+  pre {
+    background: var(--bizarre-bg-2) !important;
+    color: var(--bizarre-string) !important;
+  }
+  ::selection {
+    background: var(--bizarre-selection) !important;
+  }
+}

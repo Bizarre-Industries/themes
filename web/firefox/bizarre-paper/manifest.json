@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Bizarre Paper for Firefox",
+  "version": "0.2.0",
+  "theme": {
+    "colors": {
+      "frame": "#F2F0EA",
+      "frame_inactive": "#F9F8F2",
+      "toolbar": "#F9F8F2",
+      "toolbar_text": "#1F1F1F",
+      "tab_text": "#1F1F1F",
+      "tab_background_text": "#3D3D3D",
+      "bookmark_text": "#3D3D3D",
+      "icons": "#3D3D3D",
+      "icons_attention": "#5F8A0F",
+      "toolbar_field": "#F2F0EA",
+      "toolbar_field_text": "#1F1F1F",
+      "toolbar_field_border": "#D8D4C7",
+      "button_background_active": "#DCEFA8",
+      "button_background_hover": "#E6E3DA",
+      "popup": "#F2F0EA",
+      "popup_text": "#1F1F1F",
+      "popup_border": "#D8D4C7",
+      "popup_highlight": "#5F8A0F",
+      "popup_highlight_text": "#F9F8F2",
+      "ntp_background": "#F9F8F2",
+      "ntp_card_background": "#F2F0EA",
+      "ntp_text": "#1F1F1F",
+      "sidebar": "#F2F0EA",
+      "sidebar_text": "#1F1F1F",
+      "sidebar_highlight": "#5F8A0F",
+      "sidebar_highlight_text": "#F9F8F2"
+    },
+    "properties": {
+      "color_scheme": "light",
+      "content_color_scheme": "light"
+    }
+  }
+}

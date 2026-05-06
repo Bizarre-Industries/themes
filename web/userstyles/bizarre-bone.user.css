@@ -1,0 +1,41 @@
+/* ==UserStyle==
+@name Bizarre Bone
+@namespace bizarre-industries
+@version 0.2.0
+@description Bizarre Industries palette variables for Stylus-compatible userstyle managers.
+==/UserStyle== */
+@-moz-document regexp("https?://.*") {
+  :root {
+  --bizarre-bg: #F5F2EA;
+  --bizarre-bg-2: #EDE9DD;
+  --bizarre-bg-3: #DDD8CB;
+  --bizarre-fg: #2B2B2B;
+  --bizarre-dim: #4A4A4A;
+  --bizarre-border: #DDD8CB;
+  --bizarre-accent: #5F8A0F;
+  --bizarre-selection: #D4E89F;
+  --bizarre-error: #B8276F;
+  --bizarre-warn: #9F4A0E;
+  --bizarre-ok: #3F7A1F;
+  --bizarre-info: #1F4FB0;
+  --bizarre-string: #9F4A0E;
+  --bizarre-function: #5F8A0F;
+  --bizarre-keyword: #B8276F;
+}
+  html,
+  body {
+    background: var(--bizarre-bg) !important;
+    color: var(--bizarre-fg) !important;
+  }
+  a {
+    color: var(--bizarre-info) !important;
+  }
+  code,
+  pre {
+    background: var(--bizarre-bg-2) !important;
+    color: var(--bizarre-string) !important;
+  }
+  ::selection {
+    background: var(--bizarre-selection) !important;
+  }
+}

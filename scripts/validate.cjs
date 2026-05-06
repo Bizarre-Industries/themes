@@ -57,6 +57,9 @@ for (const file of [
   'editors/zed/themes/bizarre.json',
   ...files('apps/alfred', (file) => file.endsWith('.alfredappearance')).map(rel),
   ...files('apps/raycast', (file) => file.endsWith('.json')).map(rel),
+  ...files('web/chrome', (file) => file.endsWith('.json')).map(rel),
+  ...files('web/firefox', (file) => file.endsWith('.json')).map(rel),
+  ...files('web/vivaldi', (file) => file.endsWith('.json')).map(rel),
   ...files('terminals/black-box', (file) => file.endsWith('.json')).map(rel),
   'terminals/windows-terminal/schemes.json',
   'tools/forklift/Bizarre.json',
@@ -124,6 +127,9 @@ for (const file of [
   ...files('apps/logseq', (file) => file.endsWith('.css')).map(rel),
   ...files('apps/obsidian', (file) => file.endsWith('.css')).map(rel),
   ...files('apps/spotify', (file) => file.endsWith('.css')).map(rel),
+  ...files('web/arc', (file) => file.endsWith('.css')).map(rel),
+  ...files('web/documentation-sites', (file) => file.endsWith('.css')).map(rel),
+  ...files('web/userstyles', (file) => file.endsWith('.css')).map(rel),
 ]) {
   try {
     postcss.parse(fs.readFileSync(path.join(root, file), 'utf8'), { from: file });
@@ -131,6 +137,31 @@ for (const file of [
   } catch (error) {
     fail(`css ${file}`, error);
   }
+}
+
+for (const file of files('web/startpages', (file) => file.endsWith('.html')).map(rel)) {
+  const text = fs.readFileSync(path.join(root, file), 'utf8');
+  const required = ['<!doctype html>', '<html lang="en">', '<meta charset="utf-8"', '<form action="https://duckduckgo.com/"'];
+  const missing = required.filter((item) => !text.toLowerCase().includes(item.toLowerCase()));
+  if (missing.length) fail(`html static ${file}`, `missing ${missing.join(', ')}`);
+  else console.log(`html static ${file}`);
+  run('xmllint', ['--html', '--noout', file], `html parse ${file}`);
+}
+
+for (const file of files('web/chrome', (file) => file.endsWith('manifest.json')).map(rel)) {
+  const data = JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
+  const colors = data.theme && data.theme.colors ? data.theme.colors : {};
+  const bad = Object.entries(colors).filter(([, value]) => !Array.isArray(value) || value.length !== 3 || value.some((part) => !Number.isInteger(part)));
+  if (data.manifest_version !== 3 || bad.length) fail(`chrome theme ${file}`, 'expected manifest v3 with RGB color arrays');
+  else console.log(`chrome theme ${file}`);
+}
+
+for (const file of files('web/firefox', (file) => file.endsWith('manifest.json')).map(rel)) {
+  const data = JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
+  const colors = data.theme && data.theme.colors ? data.theme.colors : {};
+  const bad = Object.entries(colors).filter(([, value]) => typeof value !== 'string' || !/^#[0-9A-Fa-f]{6}$/u.test(value));
+  if (data.manifest_version !== 2 || bad.length) fail(`firefox theme ${file}`, 'expected manifest v2 with hex color strings');
+  else console.log(`firefox theme ${file}`);
 }
 
 for (const file of [
