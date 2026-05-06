@@ -49,6 +49,8 @@ function run(command, args, label, optional = false) {
 for (const file of [
   'editors/vscode/package.json',
   ...files('editors/vscode/themes', (file) => file.endsWith('.json')).map(rel),
+  ...files('editors/kate', (file) => file.endsWith('.theme')).map(rel),
+  ...files('editors/nova', (file) => file.endsWith('.json')).map(rel),
   ...files('editors/sublime', (file) => file.endsWith('.sublime-color-scheme')).map(rel),
   'editors/zed/themes/bizarre.json',
   'terminals/windows-terminal/schemes.json',
@@ -64,6 +66,8 @@ for (const file of [
 
 for (const file of [
   'prompt/starship.toml',
+  ...files('editors/helix', (file) => file.endsWith('.toml')).map(rel),
+  ...files('editors/lapce', (file) => file.endsWith('.toml')).map(rel),
   'tools/aerospace/aerospace.toml',
   'tools/jujutsu/config.toml',
   ...files('tools/atuin', (file) => file.endsWith('.toml')).map(rel),
@@ -95,14 +99,23 @@ for (const file of [
 
 for (const file of [
   ...files('terminals/iterm2', (file) => file.endsWith('.itermcolors')).map(rel),
+  ...files('editors/xcode', (file) => file.endsWith('.xccolortheme')).map(rel),
   ...files('tools/bat', (file) => file.endsWith('.tmTheme')).map(rel),
   ...files('tools/yazi', (file) => file.endsWith('.xml')).map(rel),
 ]) {
   run('plutil', ['-lint', file], `plist ${file}`);
 }
 
-for (const file of files('editors/jetbrains', (file) => file.endsWith('.icls')).map(rel)) {
+for (const file of [
+  ...files('editors/jetbrains', (file) => file.endsWith('.icls')).map(rel),
+  ...files('editors/notepad-plus-plus', (file) => file.endsWith('.xml')).map(rel),
+  ...files('editors/visual-studio', (file) => file.endsWith('.vstheme')).map(rel),
+]) {
   run('xmllint', ['--noout', file], `xml ${file}`);
+}
+
+for (const file of files('editors/emacs', (file) => file.endsWith('.el')).map(rel)) {
+  run('emacs', ['-Q', '--batch', '-l', file, '--eval', '(message "theme loaded")'], `emacs ${file}`, true);
 }
 
 run('bash', ['-n', 'shells/banner/bizarre.bash'], 'bash banner');

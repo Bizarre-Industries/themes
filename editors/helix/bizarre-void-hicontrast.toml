@@ -1,0 +1,92 @@
+# Bizarre Void Hi-Contrast for Helix
+"ui.background" = { bg = "bg" }
+"ui.text" = "fg"
+"ui.text.focus" = "accent"
+"ui.cursor" = { fg = "cursor_text", bg = "cursor" }
+"ui.cursor.primary" = { fg = "cursor_text", bg = "cursor" }
+"ui.selection" = { bg = "selection" }
+"ui.cursorline.primary" = { bg = "line" }
+"ui.linenr" = "ghost"
+"ui.linenr.selected" = "accent"
+"ui.statusline" = { fg = "fg", bg = "bg2" }
+"ui.statusline.inactive" = { fg = "ghost", bg = "bg2" }
+"ui.statusline.normal" = { fg = "cursor_text", bg = "accent" }
+"ui.statusline.insert" = { fg = "cursor_text", bg = "info" }
+"ui.statusline.select" = { fg = "cursor_text", bg = "hint" }
+"ui.popup" = { fg = "fg", bg = "bg2" }
+"ui.window" = "border"
+"ui.help" = { fg = "fg", bg = "bg2" }
+"ui.menu" = { fg = "fg", bg = "bg2" }
+"ui.menu.selected" = { fg = "cursor_text", bg = "accent" }
+"diagnostic.error" = { underline = { color = "error", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warn", style = "curl" } }
+"diagnostic.info" = { underline = { color = "info", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "hint", style = "curl" } }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "doc_comment", modifiers = ["italic"] }
+"string" = "string"
+"constant.character.escape" = { fg = "escape", modifiers = ["bold"] }
+"constant.numeric" = "number"
+"constant.builtin.boolean" = { fg = "bool", modifiers = ["bold"] }
+"constant" = { fg = "constant", modifiers = ["bold"] }
+"keyword" = { fg = "keyword_control", modifiers = ["bold"] }
+"keyword.storage" = "keyword_decl"
+"keyword.directive" = "pre"
+"operator" = "operator"
+"punctuation" = "punct"
+"function" = { fg = "function", modifiers = ["bold"] }
+"function.method" = "method"
+"variable" = "variable"
+"variable.parameter" = { fg = "param", modifiers = ["italic"] }
+"variable.builtin" = { fg = "self", modifiers = ["italic"] }
+"attribute" = { fg = "attribute", modifiers = ["italic"] }
+"type" = "type"
+"type.builtin" = { fg = "primitive", modifiers = ["italic"] }
+"namespace" = "namespace"
+"tag" = "tag"
+"markup.heading" = { fg = "function", modifiers = ["bold"] }
+"markup.link.url" = { fg = "info", modifiers = ["underlined"] }
+"diff.plus" = "ok"
+"diff.minus" = "error"
+"diff.delta" = "warn"
+
+[palette]
+bg = "#000000"
+bg2 = "#0E0E0E"
+bg3 = "#1F1F1F"
+fg = "#F9F8F2"
+dim = "#B8B8B8"
+ghost = "#545454"
+border = "#545454"
+accent = "#C6FF24"
+cursor = "#C6FF24"
+cursor_text = "#0E0E0E"
+selection = "#3A4D0E"
+line = "#0E0E0E"
+comment = "#6F6F6F"
+doc_comment = "#9AB585"
+string = "#E8A33D"
+escape = "#FFE08A"
+number = "#7BB3FF"
+bool = "#5B9FFF"
+constant = "#9DD0FF"
+keyword_control = "#FF8FCF"
+keyword_decl = "#D88AE0"
+pre = "#B989E5"
+operator = "#9DEAEA"
+punct = "#7A7A7A"
+function = "#C6FF24"
+method = "#A8E658"
+variable = "#E4E4E4"
+param = "#FFB07A"
+self = "#FF8FCF"
+attribute = "#C6FF24"
+type = "#7AD9D9"
+primitive = "#7AD9D9"
+namespace = "#9DEAEA"
+tag = "#FF8FCF"
+error = "#FF6F77"
+warn = "#FFB85C"
+ok = "#5BD06B"
+info = "#7BB3FF"
+hint = "#D88AE0"

@@ -770,6 +770,429 @@ function generateVimNeovim() {
   out('editors/neovim/lua/bizarre/terminal.lua', neovimTerminal());
 }
 
+function emacsTheme(v) {
+  const s = v.syntax;
+  const name = titleSlug(v.id);
+  const face = (group, attrs) => `   \`(${group} ((,class (${attrs.join(' ')}))))`;
+  return `;;; ${name}-theme.el --- ${v.label} theme
+
+(deftheme ${name} "${v.label} for Emacs.")
+
+(let ((class '((class color) (min-colors 89)))
+      (bg "${v.bg}")
+      (bg2 "${v.bg2}")
+      (bg3 "${v.bg3}")
+      (fg "${v.fg}")
+      (dim "${v.fgDim}")
+      (ghost "${v.fgGhost}")
+      (accent "${v.accent}")
+      (cursor "${v.cursor}")
+      (sel "${v.sel}")
+      (line "${v.line}"))
+  (custom-theme-set-faces
+   '${name}
+${[
+  face('default', [':background bg', ':foreground fg']),
+  face('cursor', [':background cursor']),
+  face('region', [':background sel']),
+  face('fringe', [':background bg', ':foreground ghost']),
+  face('highlight', [':background bg2']),
+  face('hl-line', [':background line']),
+  face('minibuffer-prompt', [':foreground accent', ':weight bold']),
+  face('mode-line', [':background bg2', ':foreground fg', `:box (:line-width 1 :color "${v.border}")`]),
+  face('mode-line-inactive', [':background bg2', ':foreground ghost', `:box (:line-width 1 :color "${v.border}")`]),
+  face('font-lock-comment-face', [`:foreground "${s.comment}"`, ':slant italic']),
+  face('font-lock-doc-face', [`:foreground "${s.docComment}"`, ':slant italic']),
+  face('font-lock-string-face', [`:foreground "${s.string}"`]),
+  face('font-lock-keyword-face', [`:foreground "${s.kwCtrl}"`, ':weight bold']),
+  face('font-lock-builtin-face', [`:foreground "${s.builtin}"`]),
+  face('font-lock-function-name-face', [`:foreground "${s.fn}"`, ':weight bold']),
+  face('font-lock-variable-name-face', [`:foreground "${s.variable}"`]),
+  face('font-lock-type-face', [`:foreground "${s.type}"`]),
+  face('font-lock-constant-face', [`:foreground "${s.constant}"`]),
+  face('font-lock-warning-face', [`:foreground "${s.warn}"`, ':weight bold']),
+  face('link', [`:foreground "${s.info}"`, ':underline t']),
+  face('error', [`:foreground "${s.error}"`, ':weight bold']),
+  face('warning', [`:foreground "${s.warn}"`]),
+  face('success', [`:foreground "${s.ok}"`]),
+  face('line-number', [':foreground ghost', ':background bg']),
+  face('line-number-current-line', [':foreground accent', ':background bg', ':weight bold']),
+  face('show-paren-match', [':foreground accent', ':weight bold', ':underline t']),
+  face('isearch', [':background accent', `:foreground "${fgFor(v.accent)}"`]),
+].join('\n')}))
+
+(custom-theme-set-variables
+ '${name}
+ '(ansi-color-names-vector ["${v.ansi.black}" "${v.ansi.red}" "${v.ansi.green}" "${v.ansi.yellow}" "${v.ansi.blue}" "${v.ansi.magenta}" "${v.ansi.cyan}" "${v.ansi.white}"]))
+
+(provide-theme '${name})
+;;; ${name}-theme.el ends here`;
+}
+
+function helixTheme(v) {
+  const s = v.syntax;
+  const style = (fg, bg, modifiers = []) => {
+    const body = [`fg = "${fg}"`];
+    if (bg) body.push(`bg = "${bg}"`);
+    if (modifiers.length) body.push(`modifiers = [${modifiers.map((m) => `"${m}"`).join(', ')}]`);
+    return `{ ${body.join(', ')} }`;
+  };
+  return `# ${v.label} for Helix
+"ui.background" = { bg = "bg" }
+"ui.text" = "fg"
+"ui.text.focus" = "accent"
+"ui.cursor" = { fg = "cursor_text", bg = "cursor" }
+"ui.cursor.primary" = { fg = "cursor_text", bg = "cursor" }
+"ui.selection" = { bg = "selection" }
+"ui.cursorline.primary" = { bg = "line" }
+"ui.linenr" = "ghost"
+"ui.linenr.selected" = "accent"
+"ui.statusline" = { fg = "fg", bg = "bg2" }
+"ui.statusline.inactive" = { fg = "ghost", bg = "bg2" }
+"ui.statusline.normal" = { fg = "cursor_text", bg = "accent" }
+"ui.statusline.insert" = { fg = "cursor_text", bg = "info" }
+"ui.statusline.select" = { fg = "cursor_text", bg = "hint" }
+"ui.popup" = { fg = "fg", bg = "bg2" }
+"ui.window" = "border"
+"ui.help" = { fg = "fg", bg = "bg2" }
+"ui.menu" = { fg = "fg", bg = "bg2" }
+"ui.menu.selected" = { fg = "cursor_text", bg = "accent" }
+"diagnostic.error" = { underline = { color = "error", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warn", style = "curl" } }
+"diagnostic.info" = { underline = { color = "info", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "hint", style = "curl" } }
+"comment" = ${style('comment', null, ['italic'])}
+"comment.block.documentation" = ${style('doc_comment', null, ['italic'])}
+"string" = "string"
+"constant.character.escape" = ${style('escape', null, ['bold'])}
+"constant.numeric" = "number"
+"constant.builtin.boolean" = ${style('bool', null, ['bold'])}
+"constant" = ${style('constant', null, ['bold'])}
+"keyword" = ${style('keyword_control', null, ['bold'])}
+"keyword.storage" = "keyword_decl"
+"keyword.directive" = "pre"
+"operator" = "operator"
+"punctuation" = "punct"
+"function" = ${style('function', null, ['bold'])}
+"function.method" = "method"
+"variable" = "variable"
+"variable.parameter" = ${style('param', null, ['italic'])}
+"variable.builtin" = ${style('self', null, ['italic'])}
+"attribute" = ${style('attribute', null, ['italic'])}
+"type" = "type"
+"type.builtin" = ${style('primitive', null, ['italic'])}
+"namespace" = "namespace"
+"tag" = "tag"
+"markup.heading" = ${style('function', null, ['bold'])}
+"markup.link.url" = ${style('info', null, ['underlined'])}
+"diff.plus" = "ok"
+"diff.minus" = "error"
+"diff.delta" = "warn"
+
+[palette]
+bg = "${v.bg}"
+bg2 = "${v.bg2}"
+bg3 = "${v.bg3}"
+fg = "${v.fg}"
+dim = "${v.fgDim}"
+ghost = "${v.fgGhost}"
+border = "${v.border}"
+accent = "${v.accent}"
+cursor = "${v.cursor}"
+cursor_text = "${fgFor(v.cursor)}"
+selection = "${v.sel}"
+line = "${v.line}"
+comment = "${s.comment}"
+doc_comment = "${s.docComment}"
+string = "${s.string}"
+escape = "${s.esc}"
+number = "${s.num}"
+bool = "${s.bool}"
+constant = "${s.constant}"
+keyword_control = "${s.kwCtrl}"
+keyword_decl = "${s.kwDecl}"
+pre = "${s.pre}"
+operator = "${s.op}"
+punct = "${s.punct}"
+function = "${s.fn}"
+method = "${s.method}"
+variable = "${s.variable}"
+param = "${s.param}"
+self = "${s.self}"
+attribute = "${s.attr}"
+type = "${s.type}"
+primitive = "${s.tprim}"
+namespace = "${s.ns}"
+tag = "${s.tag}"
+error = "${s.error}"
+warn = "${s.warn}"
+ok = "${s.ok}"
+info = "${s.info}"
+hint = "${s.hint}"`;
+}
+
+function lapceTheme(v) {
+  const s = v.syntax;
+  const entries = {
+    name: v.label,
+    'color-theme.base': v.mode,
+    'lapce.active_tab': v.bg,
+    'lapce.inactive_tab': v.bg2,
+    'lapce.border': v.border,
+    'panel.background': v.bg2,
+    'editor.background': v.bg,
+    'editor.foreground': v.fg,
+    'editor.dim': v.fgFaint,
+    'editor.focus': v.accent,
+    'editor.caret': v.cursor,
+    'editor.selection': v.sel,
+    'editor.current_line': v.line,
+    'syntax.comment': s.comment,
+    'syntax.keyword': s.kwCtrl,
+    'syntax.string': s.string,
+    'syntax.number': s.num,
+    'syntax.type': s.type,
+    'syntax.function': s.fn,
+    'syntax.property': s.prop,
+    'syntax.attribute': s.attr,
+    'syntax.tag': s.tag,
+    'syntax.error': s.error,
+    'terminal.background': v.bg,
+    'terminal.foreground': v.fg,
+  };
+  return Object.entries(entries).map(([key, value]) => `${JSON.stringify(key)} = ${JSON.stringify(value)}`).join('\n');
+}
+
+function kateTheme(v) {
+  const s = v.syntax;
+  return JSON.stringify({
+    metadata: { name: v.label, revision: 1 },
+    'editor-colors': {
+      'BackgroundColor': v.bg,
+      'TextSelection': v.sel,
+      'CurrentLine': v.line,
+      'IconBorder': v.bg2,
+      'LineNumbers': v.fgGhost,
+      'CurrentLineNumber': v.accent,
+      'Separator': v.border,
+      'MarkBookmark': s.info,
+      'MarkBreakpointActive': s.error,
+      'MarkBreakpointReached': s.warn,
+      'MarkWarning': s.warn,
+      'MarkError': s.error,
+      'TemplateBackground': v.bg2,
+    },
+    'text-styles': {
+      'Normal': { 'text-color': v.fg, 'background-color': v.bg },
+      'Keyword': { 'text-color': s.kwCtrl, bold: true },
+      'Function': { 'text-color': s.fn, bold: true },
+      'Variable': { 'text-color': s.variable },
+      'ControlFlow': { 'text-color': s.kwCtrl, bold: true },
+      'Operator': { 'text-color': s.op },
+      'BuiltIn': { 'text-color': s.builtin },
+      'Extension': { 'text-color': s.pre },
+      'Preprocessor': { 'text-color': s.pre },
+      'Attribute': { 'text-color': s.attr, italic: true },
+      'Char': { 'text-color': s.string },
+      'SpecialChar': { 'text-color': s.esc, bold: true },
+      'String': { 'text-color': s.string },
+      'VerbatimString': { 'text-color': s.tmpl },
+      'SpecialString': { 'text-color': s.rgx, italic: true },
+      'Import': { 'text-color': s.ns },
+      'DataType': { 'text-color': s.type },
+      'DecVal': { 'text-color': s.num },
+      'BaseN': { 'text-color': s.num },
+      'Float': { 'text-color': s.num },
+      'Constant': { 'text-color': s.constant, bold: true },
+      'Comment': { 'text-color': s.comment, italic: true },
+      'Documentation': { 'text-color': s.docComment, italic: true },
+      'Annotation': { 'text-color': s.decorator, italic: true },
+      'CommentVariable': { 'text-color': s.docComment },
+      'RegionMarker': { 'text-color': v.accent, 'background-color': v.bg2 },
+      'Information': { 'text-color': s.info },
+      'Warning': { 'text-color': s.warn },
+      'Alert': { 'text-color': s.error, bold: true },
+      'Others': { 'text-color': s.plain },
+    },
+  }, null, 2);
+}
+
+function notepadTheme(v) {
+  const s = v.syntax;
+  const widget = (name, fg, bg = v.bg, fontStyle = '0') => `    <WidgetStyle name="${name}" fgColor="${noHash(fg)}" bgColor="${noHash(bg)}" fontStyle="${fontStyle}" />`;
+  const words = (name, fg, fontStyle = '0') => `    <WordsStyle name="${name}" fgColor="${noHash(fg)}" bgColor="${noHash(v.bg)}" fontStyle="${fontStyle}" />`;
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<NotepadPlus>
+  <GUIConfigs>
+${[
+  widget('Global override', v.fg),
+  widget('Default Style', v.fg),
+  widget('Indent guideline style', v.bg3),
+  widget('Brace highlight style', v.accent, v.bg, '1'),
+  widget('Bad brace color', s.error),
+  widget('Current line background colour', v.fg, v.line),
+  widget('Selected text colour', fgFor(v.sel), v.sel),
+  widget('Caret colour', v.cursor),
+  widget('Line number margin', v.fgGhost, v.bg),
+  widget('Fold margin', v.fgGhost, v.bg2),
+].join('\n')}
+  </GUIConfigs>
+  <LexerStyles>
+    <LexerType name="bizarre" desc="${v.label}" ext="">
+${[
+  words('DEFAULT', v.fg),
+  words('COMMENT', s.comment, '2'),
+  words('COMMENT DOC', s.docComment, '2'),
+  words('NUMBER', s.num),
+  words('KEYWORD1', s.kwCtrl, '1'),
+  words('KEYWORD2', s.kwDecl, '1'),
+  words('STRING', s.string),
+  words('CHARACTER', s.string),
+  words('OPERATOR', s.op),
+  words('FUNCTION', s.fn, '1'),
+  words('TYPE', s.type),
+  words('PREPROCESSOR', s.pre),
+  words('ERROR', s.error, '1'),
+].join('\n')}
+    </LexerType>
+  </LexerStyles>
+</NotepadPlus>`;
+}
+
+function novaTheme(v) {
+  const s = v.syntax;
+  return JSON.stringify({
+    name: v.label,
+    appearance: v.mode,
+    author: 'Bizarre Industries',
+    colors: {
+      editorBackground: v.bg,
+      editorForeground: v.fg,
+      editorLineHighlight: v.line,
+      editorSelection: v.sel,
+      editorInvisibles: v.bg3,
+      cursor: v.cursor,
+      sidebarBackground: v.bg2,
+      sidebarForeground: v.fgDim,
+      statusBarBackground: v.bg2,
+      statusBarForeground: v.fgDim,
+      border: v.border,
+      accent: v.accent,
+      comment: s.comment,
+      docComment: s.docComment,
+      keyword: s.kwCtrl,
+      declaration: s.kwDecl,
+      string: s.string,
+      number: s.num,
+      type: s.type,
+      function: s.fn,
+      property: s.prop,
+      variable: s.variable,
+      invalid: s.error,
+      warning: s.warn,
+    },
+  }, null, 2);
+}
+
+function visualStudioTheme(v) {
+  const s = v.syntax;
+  const color = (name, fg, bg = '') => `      <Color Name="${name}">
+        ${fg ? `<Foreground Type="CT_RAW" Source="${fg}" />` : ''}
+        ${bg ? `<Background Type="CT_RAW" Source="${bg}" />` : ''}
+      </Color>`;
+  return `<?xml version="1.0" encoding="utf-8"?>
+<Themes>
+  <Theme Name="${xmlEscape(v.label)}" GUID="{7c4712f1-4f20-4d46-${noHash(v.accent).slice(0, 4)}-${noHash(v.bg).padEnd(12, '0').slice(0, 12)}}">
+    <Category Name="Environment" GUID="{624ed9c3-bdfd-41fa-96c3-7c824ea32e3d}">
+${[
+  color('EnvironmentBackground', '', v.bg),
+  color('EnvironmentForeground', v.fg),
+  color('ToolWindowBackground', '', v.bg2),
+  color('ToolWindowText', v.fgDim),
+  color('CommandBarMenuBackground', '', v.bg2),
+  color('CommandBarTextActive', v.fg),
+  color('PanelBorder', v.border),
+  color('Accent', v.accent),
+].join('\n')}
+    </Category>
+    <Category Name="Text Editor" GUID="{75a05685-00a8-4ded-bae5-e7a50bfa929a}">
+${[
+  color('Plain Text', v.fg, v.bg),
+  color('Selected Text', fgFor(v.sel), v.sel),
+  color('Current Line', '', v.line),
+  color('Comment', s.comment),
+  color('String', s.string),
+  color('Number', s.num),
+  color('Keyword', s.kwCtrl),
+  color('Operator', s.op),
+  color('Identifier', s.variable),
+  color('User Types', s.type),
+  color('Method', s.fn),
+  color('Error', s.error),
+  color('Warning', s.warn),
+].join('\n')}
+    </Category>
+  </Theme>
+</Themes>`;
+}
+
+function xcodeTheme(v) {
+  const s = v.syntax;
+  const pairs = {
+    DVTSourceTextBackground: v.bg,
+    DVTSourceTextCurrentLineHighlightColor: v.line,
+    DVTSourceTextInsertionPointColor: v.cursor,
+    DVTSourceTextSelectionColor: v.sel,
+    DVTSourceTextSyntaxColorsPlainText: v.fg,
+    DVTSourceTextSyntaxColorsComment: s.comment,
+    DVTSourceTextSyntaxColorsDocumentationComment: s.docComment,
+    DVTSourceTextSyntaxColorsString: s.string,
+    DVTSourceTextSyntaxColorsNumber: s.num,
+    DVTSourceTextSyntaxColorsKeyword: s.kwCtrl,
+    DVTSourceTextSyntaxColorsPreprocessor: s.pre,
+    DVTSourceTextSyntaxColorsType: s.type,
+    DVTSourceTextSyntaxColorsCharacter: s.string,
+    DVTSourceTextSyntaxColorsAttribute: s.attr,
+    DVTSourceTextSyntaxColorsOtherClassNames: s.type,
+    DVTSourceTextSyntaxColorsOtherFunctionAndMethodNames: s.fn,
+    DVTSourceTextSyntaxColorsOtherConstant: s.constant,
+    DVTSourceTextSyntaxColorsOtherDeclaration: s.kwDecl,
+    DVTSourceTextSyntaxColorsProjectClassNames: s.type,
+    DVTSourceTextSyntaxColorsProjectFunctionAndMethodNames: s.method,
+    DVTSourceTextSyntaxColorsProjectConstant: s.constant,
+    DVTSourceTextSyntaxColorsProjectPreprocessor: s.pre,
+    DVTSourceTextSyntaxColorsURL: s.info,
+  };
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+${Object.entries(pairs).map(([key, value]) => `${plistString(key, value)}`).join('\n')}
+</dict>
+</plist>`;
+}
+
+function generateEditorBacklog() {
+  for (const v of variants) {
+    out(`editors/emacs/${titleSlug(v.id)}-theme.el`, emacsTheme(v));
+    out(`editors/helix/${titleSlug(v.id)}.toml`, helixTheme(v));
+    out(`editors/lapce/${titleSlug(v.id)}.toml`, lapceTheme(v));
+    out(`editors/kate/${titleSlug(v.id)}.theme`, kateTheme(v));
+    out(`editors/notepad-plus-plus/${titleSlug(v.id)}.xml`, notepadTheme(v));
+    out(`editors/nova/${titleSlug(v.id)}.json`, novaTheme(v));
+    out(`editors/visual-studio/${titleSlug(v.id)}.vstheme`, visualStudioTheme(v));
+    out(`editors/xcode/${titleSlug(v.id)}.xccolortheme`, xcodeTheme(v));
+  }
+  out('editors/cursor/README.md', `# Cursor
+
+Cursor reads VS Code-compatible themes. Install the generated VS Code extension from \`editors/vscode\` or copy the JSON files from \`editors/vscode/themes\` into a local Cursor extension.
+`);
+  out('editors/android-studio/README.md', `# Android Studio
+
+Android Studio reads JetBrains IDE color schemes. Copy the generated \`editors/jetbrains/*.icls\` files into the Android Studio colors directory and select a Bizarre scheme from preferences.
+`);
+}
+
 function neovimInit() {
   const variantLines = variants.map((v) => `  ['${titleSlug(v.id)}']${' '.repeat(Math.max(1, 22 - titleSlug(v.id).length))}= require('bizarre.palettes.${v.id}'),`).join('\n');
   return `-- Bizarre Industries - Neovim colorscheme
@@ -3219,6 +3642,18 @@ const EDITOR_TARGETS = [
   { shot: 'editor-neovim', name: 'Neovim', file: 'editors/neovim/colors/bizarre-bone.vim', variant: 'bone', lang: 'Lua' },
   { shot: 'editor-base16', name: 'Base16', file: 'editors/neovim-base16/bizarre-void.yaml', variant: 'void', lang: 'YAML' },
 ];
+const EDITOR_BACKLOG_TARGETS = [
+  { shot: 'editor-emacs', name: 'Emacs', file: 'editors/emacs/bizarre-void-theme.el', variant: 'void', lang: 'Elisp' },
+  { shot: 'editor-helix', name: 'Helix', file: 'editors/helix/bizarre-void.toml', variant: 'void-hicontrast', lang: 'TOML' },
+  { shot: 'editor-lapce', name: 'Lapce', file: 'editors/lapce/bizarre-workshop.toml', variant: 'workshop', lang: 'TOML' },
+  { shot: 'editor-kate', name: 'Kate', file: 'editors/kate/bizarre-paper.theme', variant: 'paper', lang: 'JSON' },
+  { shot: 'editor-notepad-plus-plus', name: 'Notepad++', file: 'editors/notepad-plus-plus/bizarre-bone.xml', variant: 'bone', lang: 'XML' },
+  { shot: 'editor-nova', name: 'Nova', file: 'editors/nova/bizarre-void.json', variant: 'void', lang: 'JSON' },
+  { shot: 'editor-visual-studio', name: 'Visual Studio', file: 'editors/visual-studio/bizarre-void.vstheme', variant: 'void-hicontrast', lang: 'XML' },
+  { shot: 'editor-xcode', name: 'Xcode', file: 'editors/xcode/bizarre-workshop.xccolortheme', variant: 'workshop', lang: 'plist' },
+  { shot: 'editor-cursor', name: 'Cursor', file: 'editors/cursor/README.md', variant: 'paper', lang: 'VS Code reuse' },
+  { shot: 'editor-android-studio', name: 'Android Studio', file: 'editors/android-studio/README.md', variant: 'bone', lang: 'JetBrains reuse' },
+];
 const SHELL_TARGETS = [
   { shot: 'shell-bash', name: 'Bash', file: 'shells/banner/bizarre.bash', variant: 'void', cmd: 'source shells/banner/bizarre.bash' },
   { shot: 'shell-zsh', name: 'Zsh', file: 'shells/banner/bizarre.zsh', variant: 'void-hicontrast', cmd: 'source shells/banner/bizarre.zsh' },
@@ -3495,6 +3930,13 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="editor-backlog">
+        <div className="section-head"><span className="section-num">§ 07.B / EDITORS</span><h2 className="section-title">Backlog editor ports.</h2><span className="section-sub">emacs · helix · lapce · kate · notepad++ · nova · cursor · visual studio · xcode · android studio</span></div>
+        <div className="config-grid editor-grid">
+          {EDITOR_BACKLOG_TARGETS.map((target) => <EditorConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
       <section className="section" data-shot="shells">
         <div className="section-head"><span className="section-num">§ 08 / SHELLS</span><h2 className="section-title">Shell banners and prompt.</h2><span className="section-sub">bash · zsh · fish · powershell · starship</span></div>
         <div className="config-grid shell-grid">
@@ -3717,6 +4159,8 @@ Every shipped target still gets a generated preview card in \`showcase/assets/ge
 
 ![Bizarre editor theme configs](showcase/assets/generated/editor-themes.png)
 
+![Bizarre backlog editor ports](showcase/assets/generated/editor-backlog.png)
+
 ![Bizarre shell banners and prompt](showcase/assets/generated/shells.png)
 
 ![Bizarre desktop and workflow tools](showcase/assets/generated/tools.png)
@@ -3773,6 +4217,41 @@ cp editors/zed/themes/bizarre.json ~/.config/zed/themes/
 # Sublime Text
 mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages/User"
 cp editors/sublime/*.sublime-color-scheme "$HOME/Library/Application Support/Sublime Text/Packages/User/"
+
+# Emacs
+mkdir -p ~/.emacs.d/themes
+cp editors/emacs/*-theme.el ~/.emacs.d/themes/
+
+# Helix
+mkdir -p ~/.config/helix/themes
+cp editors/helix/*.toml ~/.config/helix/themes/
+
+# Lapce
+mkdir -p ~/.local/share/lapce-stable/themes
+cp editors/lapce/*.toml ~/.local/share/lapce-stable/themes/
+
+# Kate
+mkdir -p ~/.local/share/org.kde.syntax-highlighting/themes
+cp editors/kate/*.theme ~/.local/share/org.kde.syntax-highlighting/themes/
+
+# Notepad++
+# copy editors/notepad-plus-plus/*.xml into the Notepad++ themes directory
+
+# Nova
+# import or copy editors/nova/*.json into Nova's extension/theme workspace
+
+# Cursor
+# use the VS Code extension in editors/vscode; see editors/cursor/README.md
+
+# Visual Studio
+# import editors/visual-studio/*.vstheme through Visual Studio theme tooling
+
+# Xcode
+mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+cp editors/xcode/*.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+
+# Android Studio
+# use the JetBrains schemes in editors/jetbrains; see editors/android-studio/README.md
 
 # tmux
 echo 'source-file ~/dotfiles/bizarre/terminals/tmux/bizarre.tmux.conf' >> ~/.tmux.conf
@@ -3866,7 +4345,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 
 | Family | Targets |
 |---|---|
-| Editors | VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16 |
+| Editors | VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16, Emacs, Helix, Lapce, Kate, Notepad++, Nova, Cursor, Visual Studio, Xcode, Android Studio |
 | Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij |
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
@@ -3889,14 +4368,13 @@ Signal Lime is reserved for functions, cursors, focus rings, and active command 
 
 function portsDoc() {
   const shipped = [
-    ['Editors', 'VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16'],
+    ['Editors', 'VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16, Emacs, Helix, Lapce, Kate, Notepad++, Nova, Cursor, Visual Studio, Xcode, Android Studio'],
     ['Terminals', 'Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij'],
     ['Shells and prompts', 'Bash, Zsh, Fish, PowerShell, Starship'],
     ['CLI/TUI', 'bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid'],
     ['Desktop and tools', 'AeroSpace, ForkLift, Jujutsu'],
   ];
   const backlog = [
-    ['Editors', 'Emacs, Helix, Lapce, Kate, Notepad++, Nova, Cursor, Visual Studio, Xcode, Android Studio'],
     ['Terminals', 'Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box'],
     ['Desktop apps', 'Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser'],
     ['Browser and web', 'Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites'],
@@ -3949,6 +4427,7 @@ function generateAll() {
   generateVimNeovim();
   generateBase16();
   generateJetBrains();
+  generateEditorBacklog();
   generateTerminals();
   generateTools();
   generateShowcase();

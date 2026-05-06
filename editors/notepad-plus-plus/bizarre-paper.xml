@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NotepadPlus>
+  <GUIConfigs>
+    <WidgetStyle name="Global override" fgColor="1F1F1F" bgColor="F9F8F2" fontStyle="0" />
+    <WidgetStyle name="Default Style" fgColor="1F1F1F" bgColor="F9F8F2" fontStyle="0" />
+    <WidgetStyle name="Indent guideline style" fgColor="E6E3DA" bgColor="F9F8F2" fontStyle="0" />
+    <WidgetStyle name="Brace highlight style" fgColor="5F8A0F" bgColor="F9F8F2" fontStyle="1" />
+    <WidgetStyle name="Bad brace color" fgColor="B8276F" bgColor="F9F8F2" fontStyle="0" />
+    <WidgetStyle name="Current line background colour" fgColor="1F1F1F" bgColor="F2F0EA" fontStyle="0" />
+    <WidgetStyle name="Selected text colour" fgColor="0E0E0E" bgColor="DCEFA8" fontStyle="0" />
+    <WidgetStyle name="Caret colour" fgColor="5F8A0F" bgColor="F9F8F2" fontStyle="0" />
+    <WidgetStyle name="Line number margin" fgColor="A8A395" bgColor="F9F8F2" fontStyle="0" />
+    <WidgetStyle name="Fold margin" fgColor="A8A395" bgColor="F2F0EA" fontStyle="0" />
+  </GUIConfigs>
+  <LexerStyles>
+    <LexerType name="bizarre" desc="Bizarre Paper" ext="">
+    <WordsStyle name="DEFAULT" fgColor="1F1F1F" bgColor="F9F8F2" fontStyle="0" />
+    <WordsStyle name="COMMENT" fgColor="9A9482" bgColor="F9F8F2" fontStyle="2" />
+    <WordsStyle name="COMMENT DOC" fgColor="5C7A2A" bgColor="F9F8F2" fontStyle="2" />
+    <WordsStyle name="NUMBER" fgColor="1F4FB0" bgColor="F9F8F2" fontStyle="0" />
+    <WordsStyle name="KEYWORD1" fgColor="B8276F" bgColor="F9F8F2" fontStyle="1" />
+    <WordsStyle name="KEYWORD2" fgColor="7E2A9A" bgColor="F9F8F2" fontStyle="1" />
+    <WordsStyle name="STRING" fgColor="9F4A0E" bgColor="F9F8F2" fontStyle="0" />
+    <WordsStyle name="CHARACTER" fgColor="9F4A0E" bgColor="F9F8F2" fontStyle="0" />
+    <WordsStyle name="OPERATOR" fgColor="0F6E6E" bgColor="F9F8F2" fontStyle="0" />
+    <WordsStyle name="FUNCTION" fgColor="5F8A0F" bgColor="F9F8F2" fontStyle="1" />
+    <WordsStyle name="TYPE" fgColor="0F6E6E" bgColor="F9F8F2" fontStyle="0" />
+    <WordsStyle name="PREPROCESSOR" fgColor="603F94" bgColor="F9F8F2" fontStyle="0" />
+    <WordsStyle name="ERROR" fgColor="B8276F" bgColor="F9F8F2" fontStyle="1" />
+    </LexerType>
+  </LexerStyles>
+</NotepadPlus>

@@ -1,0 +1,31 @@
+{
+  "name": "Bizarre Void",
+  "appearance": "dark",
+  "author": "Bizarre Industries",
+  "colors": {
+    "editorBackground": "#0E0E0E",
+    "editorForeground": "#E4E4E4",
+    "editorLineHighlight": "#1A1A1A",
+    "editorSelection": "#2B3A0E",
+    "editorInvisibles": "#2B2B2B",
+    "cursor": "#C6FF24",
+    "sidebarBackground": "#1A1A1A",
+    "sidebarForeground": "#9C9C9C",
+    "statusBarBackground": "#1A1A1A",
+    "statusBarForeground": "#9C9C9C",
+    "border": "#3D3D3D",
+    "accent": "#C6FF24",
+    "comment": "#6F6F6F",
+    "docComment": "#9AB585",
+    "keyword": "#FF8FCF",
+    "declaration": "#D88AE0",
+    "string": "#E8A33D",
+    "number": "#7BB3FF",
+    "type": "#7AD9D9",
+    "function": "#C6FF24",
+    "property": "#C6E58B",
+    "variable": "#E4E4E4",
+    "invalid": "#FF6F77",
+    "warning": "#FFB85C"
+  }
+}

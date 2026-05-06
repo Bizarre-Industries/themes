@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DVTSourceTextBackground</key><string>#F9F8F2</string>
+	<key>DVTSourceTextCurrentLineHighlightColor</key><string>#F2F0EA</string>
+	<key>DVTSourceTextInsertionPointColor</key><string>#5F8A0F</string>
+	<key>DVTSourceTextSelectionColor</key><string>#DCEFA8</string>
+	<key>DVTSourceTextSyntaxColorsPlainText</key><string>#1F1F1F</string>
+	<key>DVTSourceTextSyntaxColorsComment</key><string>#9A9482</string>
+	<key>DVTSourceTextSyntaxColorsDocumentationComment</key><string>#5C7A2A</string>
+	<key>DVTSourceTextSyntaxColorsString</key><string>#9F4A0E</string>
+	<key>DVTSourceTextSyntaxColorsNumber</key><string>#1F4FB0</string>
+	<key>DVTSourceTextSyntaxColorsKeyword</key><string>#B8276F</string>
+	<key>DVTSourceTextSyntaxColorsPreprocessor</key><string>#603F94</string>
+	<key>DVTSourceTextSyntaxColorsType</key><string>#0F6E6E</string>
+	<key>DVTSourceTextSyntaxColorsCharacter</key><string>#9F4A0E</string>
+	<key>DVTSourceTextSyntaxColorsAttribute</key><string>#5F8A0F</string>
+	<key>DVTSourceTextSyntaxColorsOtherClassNames</key><string>#0F6E6E</string>
+	<key>DVTSourceTextSyntaxColorsOtherFunctionAndMethodNames</key><string>#5F8A0F</string>
+	<key>DVTSourceTextSyntaxColorsOtherConstant</key><string>#2F5DC2</string>
+	<key>DVTSourceTextSyntaxColorsOtherDeclaration</key><string>#7E2A9A</string>
+	<key>DVTSourceTextSyntaxColorsProjectClassNames</key><string>#0F6E6E</string>
+	<key>DVTSourceTextSyntaxColorsProjectFunctionAndMethodNames</key><string>#4A7409</string>
+	<key>DVTSourceTextSyntaxColorsProjectConstant</key><string>#2F5DC2</string>
+	<key>DVTSourceTextSyntaxColorsProjectPreprocessor</key><string>#603F94</string>
+	<key>DVTSourceTextSyntaxColorsURL</key><string>#1F4FB0</string>
+</dict>
+</plist>

@@ -1,0 +1,31 @@
+{
+  "name": "Bizarre Bone",
+  "appearance": "light",
+  "author": "Bizarre Industries",
+  "colors": {
+    "editorBackground": "#F5F2EA",
+    "editorForeground": "#2B2B2B",
+    "editorLineHighlight": "#EDE9DD",
+    "editorSelection": "#D4E89F",
+    "editorInvisibles": "#DDD8CB",
+    "cursor": "#5F8A0F",
+    "sidebarBackground": "#EDE9DD",
+    "sidebarForeground": "#4A4A4A",
+    "statusBarBackground": "#EDE9DD",
+    "statusBarForeground": "#4A4A4A",
+    "border": "#DDD8CB",
+    "accent": "#5F8A0F",
+    "comment": "#9A9482",
+    "docComment": "#5C7A2A",
+    "keyword": "#B8276F",
+    "declaration": "#7E2A9A",
+    "string": "#9F4A0E",
+    "number": "#1F4FB0",
+    "type": "#0F6E6E",
+    "function": "#5F8A0F",
+    "property": "#5C7A2A",
+    "variable": "#1A1A1A",
+    "invalid": "#B8276F",
+    "warning": "#9F4A0E"
+  }
+}

@@ -31,6 +31,7 @@ async function screenshot(locator, file) {
     ['[data-shot="terminal-colors"]', 'terminal-colors.png'],
     ['[data-shot="vscode-themes"]', 'vscode-themes.png'],
     ['[data-shot="editor-themes"]', 'editor-themes.png'],
+    ['[data-shot="editor-backlog"]', 'editor-backlog.png'],
     ['[data-shot="shells"]', 'shells.png'],
     ['[data-shot="tools"]', 'tools.png'],
     ['[data-shot="cli-tui"]', 'cli-tui.png'],

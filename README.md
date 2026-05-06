@@ -38,6 +38,8 @@ Every shipped target still gets a generated preview card in `showcase/assets/gen
 
 ![Bizarre editor theme configs](showcase/assets/generated/editor-themes.png)
 
+![Bizarre backlog editor ports](showcase/assets/generated/editor-backlog.png)
+
 ![Bizarre shell banners and prompt](showcase/assets/generated/shells.png)
 
 ![Bizarre desktop and workflow tools](showcase/assets/generated/tools.png)
@@ -94,6 +96,41 @@ cp editors/zed/themes/bizarre.json ~/.config/zed/themes/
 # Sublime Text
 mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages/User"
 cp editors/sublime/*.sublime-color-scheme "$HOME/Library/Application Support/Sublime Text/Packages/User/"
+
+# Emacs
+mkdir -p ~/.emacs.d/themes
+cp editors/emacs/*-theme.el ~/.emacs.d/themes/
+
+# Helix
+mkdir -p ~/.config/helix/themes
+cp editors/helix/*.toml ~/.config/helix/themes/
+
+# Lapce
+mkdir -p ~/.local/share/lapce-stable/themes
+cp editors/lapce/*.toml ~/.local/share/lapce-stable/themes/
+
+# Kate
+mkdir -p ~/.local/share/org.kde.syntax-highlighting/themes
+cp editors/kate/*.theme ~/.local/share/org.kde.syntax-highlighting/themes/
+
+# Notepad++
+# copy editors/notepad-plus-plus/*.xml into the Notepad++ themes directory
+
+# Nova
+# import or copy editors/nova/*.json into Nova's extension/theme workspace
+
+# Cursor
+# use the VS Code extension in editors/vscode; see editors/cursor/README.md
+
+# Visual Studio
+# import editors/visual-studio/*.vstheme through Visual Studio theme tooling
+
+# Xcode
+mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+cp editors/xcode/*.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+
+# Android Studio
+# use the JetBrains schemes in editors/jetbrains; see editors/android-studio/README.md
 
 # tmux
 echo 'source-file ~/dotfiles/bizarre/terminals/tmux/bizarre.tmux.conf' >> ~/.tmux.conf
@@ -187,7 +224,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 
 | Family | Targets |
 |---|---|
-| Editors | VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16 |
+| Editors | VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16, Emacs, Helix, Lapce, Kate, Notepad++, Nova, Cursor, Visual Studio, Xcode, Android Studio |
 | Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij |
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |

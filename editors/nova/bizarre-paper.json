@@ -1,0 +1,31 @@
+{
+  "name": "Bizarre Paper",
+  "appearance": "light",
+  "author": "Bizarre Industries",
+  "colors": {
+    "editorBackground": "#F9F8F2",
+    "editorForeground": "#1F1F1F",
+    "editorLineHighlight": "#F2F0EA",
+    "editorSelection": "#DCEFA8",
+    "editorInvisibles": "#E6E3DA",
+    "cursor": "#5F8A0F",
+    "sidebarBackground": "#F2F0EA",
+    "sidebarForeground": "#3D3D3D",
+    "statusBarBackground": "#F2F0EA",
+    "statusBarForeground": "#3D3D3D",
+    "border": "#D8D4C7",
+    "accent": "#5F8A0F",
+    "comment": "#9A9482",
+    "docComment": "#5C7A2A",
+    "keyword": "#B8276F",
+    "declaration": "#7E2A9A",
+    "string": "#9F4A0E",
+    "number": "#1F4FB0",
+    "type": "#0F6E6E",
+    "function": "#5F8A0F",
+    "property": "#5C7A2A",
+    "variable": "#1A1A1A",
+    "invalid": "#B8276F",
+    "warning": "#9F4A0E"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Bizarre Void Hi-Contrast",
+  "appearance": "dark",
+  "author": "Bizarre Industries",
+  "colors": {
+    "editorBackground": "#000000",
+    "editorForeground": "#F9F8F2",
+    "editorLineHighlight": "#0E0E0E",
+    "editorSelection": "#3A4D0E",
+    "editorInvisibles": "#1F1F1F",
+    "cursor": "#C6FF24",
+    "sidebarBackground": "#0E0E0E",
+    "sidebarForeground": "#B8B8B8",
+    "statusBarBackground": "#0E0E0E",
+    "statusBarForeground": "#B8B8B8",
+    "border": "#545454",
+    "accent": "#C6FF24",
+    "comment": "#6F6F6F",
+    "docComment": "#9AB585",
+    "keyword": "#FF8FCF",
+    "declaration": "#D88AE0",
+    "string": "#E8A33D",
+    "number": "#7BB3FF",
+    "type": "#7AD9D9",
+    "function": "#C6FF24",
+    "property": "#C6E58B",
+    "variable": "#E4E4E4",
+    "invalid": "#FF6F77",
+    "warning": "#FFB85C"
+  }
+}
