@@ -1,7 +1,7 @@
-.claude/
 .remember/
 .vscode/
 .idea/
+node_modules/
 .DS_Store
 *.log
 *.tmp
@@ -29,6 +29,8 @@
 *.jpg
 *.jpeg
 *.png
+!showcase/assets/generated/
+!showcase/assets/generated/*.png
 *.gif
 *.bmp
 *.svg
