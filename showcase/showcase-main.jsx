@@ -98,6 +98,23 @@ const WEB_TARGETS = [
   { name: 'Startpages', file: 'web/startpages/bizarre-void.html', variant: 'void', key: 'format', value: 'html' },
   { name: 'Docs sites', file: 'web/documentation-sites/bizarre-void.css', variant: 'void-hicontrast', key: 'format', value: 'css' },
 ];
+const DESIGN_DOCS_TARGETS = [
+  { name: 'Figma', file: 'design/figma/bizarre.tokens.json', variant: 'void', key: 'format', value: 'tokens' },
+  { name: 'Sketch', file: 'design/sketch/bizarre.sketchpalette', variant: 'void-hicontrast', key: 'format', value: 'palette' },
+  { name: 'Insomnia', file: 'devtools/insomnia/bizarre.js', variant: 'workshop', key: 'format', value: 'js' },
+  { name: 'Postman', file: 'devtools/postman/bizarre-paper.css', variant: 'paper', key: 'adapter', value: 'userstyle' },
+  { name: 'HTTPie', file: 'devtools/httpie/bizarre.py', variant: 'bone', key: 'format', value: 'pygments' },
+  { name: 'TablePlus', file: 'devtools/tableplus/bizarre-void.json', variant: 'void', key: 'format', value: 'json' },
+  { name: 'DBeaver', file: 'devtools/dbeaver/bizarre-void.epf', variant: 'void-hicontrast', key: 'format', value: 'epf' },
+  { name: 'GitHub assets', file: 'devtools/github-readme-assets/bizarre-badge.svg', variant: 'workshop', key: 'format', value: 'svg' },
+  { name: 'MkDocs', file: 'docs-sites/mkdocs/bizarre-void.css', variant: 'paper', key: 'format', value: 'css' },
+  { name: 'Docusaurus', file: 'docs-sites/docusaurus/bizarre-void.css', variant: 'bone', key: 'format', value: 'css' },
+  { name: 'Sphinx', file: 'docs-sites/sphinx/bizarre/theme.toml', variant: 'void', key: 'format', value: 'theme.toml' },
+  { name: 'LaTeX', file: 'docs-sites/latex/bizarre.sty', variant: 'void-hicontrast', key: 'format', value: 'sty' },
+  { name: 'Typst', file: 'docs-sites/typst/bizarre.typ', variant: 'workshop', key: 'format', value: 'typ' },
+  { name: 'Beamer', file: 'docs-sites/beamer/beamerthemebizarre.sty', variant: 'paper', key: 'format', value: 'sty' },
+  { name: 'reveal.js', file: 'docs-sites/reveal.js/bizarre-void.css', variant: 'bone', key: 'format', value: 'css' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = {
   "bizarre": [
@@ -412,9 +429,16 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="design-devtools-docs">
+        <div className="section-head"><span className="section-num">§ 13 / DESIGN + DOCS</span><h2 className="section-title">Design, devtool, and docs ports.</h2><span className="section-sub">figma · sketch · insomnia · postman · httpie · tableplus · dbeaver · docs frameworks</span></div>
+        <div className="config-grid cli-grid">
+          {DESIGN_DOCS_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
+        </div>
+      </section>
+
       {shown.map((v, idx) => (
         <section key={v.id} className={`section ${v.mode === 'light' ? 'light-section' : ''}`}>
-          <div className="section-head"><span className="section-num">§ {String(idx + 13).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
+          <div className="section-head"><span className="section-num">§ {String(idx + 14).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
           <div className="pair"><BzrEditor sample={sample} variant={v} limeRole={limeRole} /><BzrStarshipTerminal variant={v} /></div>
         </section>
       ))}

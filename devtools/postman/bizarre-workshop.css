@@ -1,0 +1,41 @@
+/* Bizarre Workshop Postman userstyle adapter */
+:root {
+  --bizarre-bg: #1A1815;
+  --bizarre-bg-2: #23211C;
+  --bizarre-bg-3: #2D2A23;
+  --bizarre-fg: #E4E2DA;
+  --bizarre-dim: #9C9A91;
+  --bizarre-border: #3D3A33;
+  --bizarre-accent: #C6FF24;
+  --bizarre-selection: #3A3618;
+  --bizarre-error: #FF6F77;
+  --bizarre-warn: #FFB85C;
+  --bizarre-ok: #5BD06B;
+  --bizarre-info: #7BB3FF;
+  --bizarre-string: #E8A33D;
+  --bizarre-function: #C6FF24;
+  --bizarre-keyword: #FF8FCF;
+}
+body,
+[class*="app-root"],
+[class*="workspace"] {
+  background: var(--bizarre-bg) !important;
+  color: var(--bizarre-fg) !important;
+}
+button,
+[role="button"],
+a {
+  color: var(--bizarre-accent) !important;
+}
+input,
+textarea,
+[contenteditable="true"] {
+  background: var(--bizarre-bg-2) !important;
+  color: var(--bizarre-fg) !important;
+  border-color: var(--bizarre-border) !important;
+}
+pre,
+code {
+  background: var(--bizarre-bg-2) !important;
+  color: var(--bizarre-string) !important;
+}

@@ -1,0 +1,12 @@
+# Bizarre Workshop for DBeaver and Eclipse-based editors
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_THEME=bizarre-workshop
+/instance/org.eclipse.ui.editors/foregroundColor=E4E2DA
+/instance/org.eclipse.ui.editors/backgroundColor=1A1815
+/instance/org.eclipse.ui.editors/currentLineColor=23211C
+/instance/org.eclipse.ui.editors/printMarginColor=3D3A33
+/instance/org.eclipse.ui.editors/selectionBackground=3A3618
+/instance/org.eclipse.ui.editors/selectionForeground=E4E2DA
+/instance/org.jkiss.dbeaver.ui.editors.sql/keywordColor=FF8FCF
+/instance/org.jkiss.dbeaver.ui.editors.sql/stringColor=E8A33D
+/instance/org.jkiss.dbeaver.ui.editors.sql/numberColor=7BB3FF
+/instance/org.jkiss.dbeaver.ui.editors.sql/commentColor=6F6F6F

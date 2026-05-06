@@ -1,0 +1,52 @@
+/* Bizarre Void for reveal.js */
+:root {
+  --bizarre-bg: #0E0E0E;
+  --bizarre-bg-2: #1A1A1A;
+  --bizarre-bg-3: #2B2B2B;
+  --bizarre-fg: #E4E4E4;
+  --bizarre-dim: #9C9C9C;
+  --bizarre-border: #3D3D3D;
+  --bizarre-accent: #C6FF24;
+  --bizarre-selection: #2B3A0E;
+  --bizarre-error: #FF6F77;
+  --bizarre-warn: #FFB85C;
+  --bizarre-ok: #5BD06B;
+  --bizarre-info: #7BB3FF;
+  --bizarre-string: #E8A33D;
+  --bizarre-function: #C6FF24;
+  --bizarre-keyword: #FF8FCF;
+}
+:root {
+  color-scheme: dark;
+}
+body,
+.md-main,
+.theme-doc-markdown,
+.wy-nav-content,
+.reveal {
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+}
+a,
+.md-typeset a,
+.theme-doc-markdown a,
+.wy-menu-vertical a,
+.reveal a {
+  color: var(--bizarre-info);
+}
+pre,
+code,
+.highlight,
+.prism-code {
+  background: var(--bizarre-bg-2);
+  color: var(--bizarre-string);
+}
+blockquote,
+table,
+.admonition,
+.theme-admonition {
+  border-color: var(--bizarre-border);
+}
+::selection {
+  background: var(--bizarre-selection);
+}

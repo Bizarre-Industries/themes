@@ -1,0 +1,1230 @@
+{
+  "name": "Bizarre Industries",
+  "version": "0.2.0",
+  "fonts": {
+    "display": "'Monaspace Xenon', 'Monaspace Neon', 'Menlo', monospace",
+    "mono": "'Monaspace Neon', 'Menlo', 'SFMono-Regular', monospace",
+    "prose": "'Monaspace Argon', 'Monaspace Neon', ui-monospace, monospace",
+    "label": "'Monaspace Krypton', 'Monaspace Neon', monospace",
+    "hand": "'Monaspace Radon', 'Monaspace Neon', monospace",
+    "display_family": "Monaspace Xenon",
+    "mono_family": "Monaspace Neon",
+    "prose_family": "Monaspace Argon",
+    "label_family": "Monaspace Krypton",
+    "hand_family": "Monaspace Radon"
+  },
+  "brand": {
+    "signalLime": {
+      "value": "#C6FF24",
+      "type": "color"
+    },
+    "limeGlow": {
+      "value": "#E8FF8A",
+      "type": "color"
+    },
+    "limeInk": {
+      "value": "#5F8A0F",
+      "type": "color"
+    },
+    "acidLime": {
+      "value": "#A8FF00",
+      "type": "color"
+    },
+    "voidGray": {
+      "value": "#545454",
+      "type": "color"
+    }
+  },
+  "variants": {
+    "void": {
+      "label": "Bizarre Void",
+      "mode": "dark",
+      "colors": {
+        "background": {
+          "value": "#0E0E0E",
+          "type": "color"
+        },
+        "backgroundAlt": {
+          "value": "#1A1A1A",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "foregroundDim": {
+          "value": "#9C9C9C",
+          "type": "color"
+        },
+        "border": {
+          "value": "#3D3D3D",
+          "type": "color"
+        },
+        "accent": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "selection": {
+          "value": "#2B3A0E",
+          "type": "color"
+        }
+      },
+      "syntax": {
+        "plain": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "punct": {
+          "value": "#7A7A7A",
+          "type": "color"
+        },
+        "op": {
+          "value": "#9DEAEA",
+          "type": "color"
+        },
+        "kwCtrl": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "kwDecl": {
+          "value": "#D88AE0",
+          "type": "color"
+        },
+        "kwMod": {
+          "value": "#B989E5",
+          "type": "color"
+        },
+        "string": {
+          "value": "#E8A33D",
+          "type": "color"
+        },
+        "tmpl": {
+          "value": "#FFC36B",
+          "type": "color"
+        },
+        "esc": {
+          "value": "#FFE08A",
+          "type": "color"
+        },
+        "rgx": {
+          "value": "#FF9E3D",
+          "type": "color"
+        },
+        "num": {
+          "value": "#7BB3FF",
+          "type": "color"
+        },
+        "bool": {
+          "value": "#5B9FFF",
+          "type": "color"
+        },
+        "constant": {
+          "value": "#9DD0FF",
+          "type": "color"
+        },
+        "type": {
+          "value": "#7AD9D9",
+          "type": "color"
+        },
+        "tprim": {
+          "value": "#7AD9D9",
+          "type": "color"
+        },
+        "fn": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "method": {
+          "value": "#A8E658",
+          "type": "color"
+        },
+        "prop": {
+          "value": "#C6E58B",
+          "type": "color"
+        },
+        "param": {
+          "value": "#FFB07A",
+          "type": "color"
+        },
+        "variable": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "self": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "builtin": {
+          "value": "#E8A33D",
+          "type": "color"
+        },
+        "ns": {
+          "value": "#9DEAEA",
+          "type": "color"
+        },
+        "decorator": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "pre": {
+          "value": "#B989E5",
+          "type": "color"
+        },
+        "comment": {
+          "value": "#6F6F6F",
+          "type": "color"
+        },
+        "docComment": {
+          "value": "#9AB585",
+          "type": "color"
+        },
+        "tag": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "attr": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "error": {
+          "value": "#FF6F77",
+          "type": "color"
+        },
+        "warn": {
+          "value": "#FFB85C",
+          "type": "color"
+        },
+        "ok": {
+          "value": "#5BD06B",
+          "type": "color"
+        },
+        "info": {
+          "value": "#7BB3FF",
+          "type": "color"
+        },
+        "hint": {
+          "value": "#D88AE0",
+          "type": "color"
+        }
+      },
+      "ansi": {
+        "black": {
+          "value": "#1A1A1A",
+          "type": "color"
+        },
+        "red": {
+          "value": "#F0525B",
+          "type": "color"
+        },
+        "green": {
+          "value": "#3FB950",
+          "type": "color"
+        },
+        "yellow": {
+          "value": "#E8A33D",
+          "type": "color"
+        },
+        "blue": {
+          "value": "#5B9FFF",
+          "type": "color"
+        },
+        "magenta": {
+          "value": "#D88AE0",
+          "type": "color"
+        },
+        "cyan": {
+          "value": "#7AD9D9",
+          "type": "color"
+        },
+        "white": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "brBlack": {
+          "value": "#3D3D3D",
+          "type": "color"
+        },
+        "brRed": {
+          "value": "#FF6F77",
+          "type": "color"
+        },
+        "brGreen": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "brYellow": {
+          "value": "#FFB85C",
+          "type": "color"
+        },
+        "brBlue": {
+          "value": "#7BB3FF",
+          "type": "color"
+        },
+        "brMagenta": {
+          "value": "#E8A8EE",
+          "type": "color"
+        },
+        "brCyan": {
+          "value": "#9DEAEA",
+          "type": "color"
+        },
+        "brWhite": {
+          "value": "#FFFFFF",
+          "type": "color"
+        }
+      }
+    },
+    "void-hicontrast": {
+      "label": "Bizarre Void Hi-Contrast",
+      "mode": "dark",
+      "colors": {
+        "background": {
+          "value": "#000000",
+          "type": "color"
+        },
+        "backgroundAlt": {
+          "value": "#0E0E0E",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "#F9F8F2",
+          "type": "color"
+        },
+        "foregroundDim": {
+          "value": "#B8B8B8",
+          "type": "color"
+        },
+        "border": {
+          "value": "#545454",
+          "type": "color"
+        },
+        "accent": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "selection": {
+          "value": "#3A4D0E",
+          "type": "color"
+        }
+      },
+      "syntax": {
+        "plain": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "punct": {
+          "value": "#7A7A7A",
+          "type": "color"
+        },
+        "op": {
+          "value": "#9DEAEA",
+          "type": "color"
+        },
+        "kwCtrl": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "kwDecl": {
+          "value": "#D88AE0",
+          "type": "color"
+        },
+        "kwMod": {
+          "value": "#B989E5",
+          "type": "color"
+        },
+        "string": {
+          "value": "#E8A33D",
+          "type": "color"
+        },
+        "tmpl": {
+          "value": "#FFC36B",
+          "type": "color"
+        },
+        "esc": {
+          "value": "#FFE08A",
+          "type": "color"
+        },
+        "rgx": {
+          "value": "#FF9E3D",
+          "type": "color"
+        },
+        "num": {
+          "value": "#7BB3FF",
+          "type": "color"
+        },
+        "bool": {
+          "value": "#5B9FFF",
+          "type": "color"
+        },
+        "constant": {
+          "value": "#9DD0FF",
+          "type": "color"
+        },
+        "type": {
+          "value": "#7AD9D9",
+          "type": "color"
+        },
+        "tprim": {
+          "value": "#7AD9D9",
+          "type": "color"
+        },
+        "fn": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "method": {
+          "value": "#A8E658",
+          "type": "color"
+        },
+        "prop": {
+          "value": "#C6E58B",
+          "type": "color"
+        },
+        "param": {
+          "value": "#FFB07A",
+          "type": "color"
+        },
+        "variable": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "self": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "builtin": {
+          "value": "#E8A33D",
+          "type": "color"
+        },
+        "ns": {
+          "value": "#9DEAEA",
+          "type": "color"
+        },
+        "decorator": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "pre": {
+          "value": "#B989E5",
+          "type": "color"
+        },
+        "comment": {
+          "value": "#6F6F6F",
+          "type": "color"
+        },
+        "docComment": {
+          "value": "#9AB585",
+          "type": "color"
+        },
+        "tag": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "attr": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "error": {
+          "value": "#FF6F77",
+          "type": "color"
+        },
+        "warn": {
+          "value": "#FFB85C",
+          "type": "color"
+        },
+        "ok": {
+          "value": "#5BD06B",
+          "type": "color"
+        },
+        "info": {
+          "value": "#7BB3FF",
+          "type": "color"
+        },
+        "hint": {
+          "value": "#D88AE0",
+          "type": "color"
+        }
+      },
+      "ansi": {
+        "black": {
+          "value": "#000000",
+          "type": "color"
+        },
+        "red": {
+          "value": "#F0525B",
+          "type": "color"
+        },
+        "green": {
+          "value": "#3FB950",
+          "type": "color"
+        },
+        "yellow": {
+          "value": "#E8A33D",
+          "type": "color"
+        },
+        "blue": {
+          "value": "#5B9FFF",
+          "type": "color"
+        },
+        "magenta": {
+          "value": "#D88AE0",
+          "type": "color"
+        },
+        "cyan": {
+          "value": "#7AD9D9",
+          "type": "color"
+        },
+        "white": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "brBlack": {
+          "value": "#3D3D3D",
+          "type": "color"
+        },
+        "brRed": {
+          "value": "#FF6F77",
+          "type": "color"
+        },
+        "brGreen": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "brYellow": {
+          "value": "#FFB85C",
+          "type": "color"
+        },
+        "brBlue": {
+          "value": "#7BB3FF",
+          "type": "color"
+        },
+        "brMagenta": {
+          "value": "#E8A8EE",
+          "type": "color"
+        },
+        "brCyan": {
+          "value": "#9DEAEA",
+          "type": "color"
+        },
+        "brWhite": {
+          "value": "#FFFFFF",
+          "type": "color"
+        }
+      }
+    },
+    "workshop": {
+      "label": "Bizarre Workshop",
+      "mode": "dark",
+      "colors": {
+        "background": {
+          "value": "#1A1815",
+          "type": "color"
+        },
+        "backgroundAlt": {
+          "value": "#23211C",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "#E4E2DA",
+          "type": "color"
+        },
+        "foregroundDim": {
+          "value": "#9C9A91",
+          "type": "color"
+        },
+        "border": {
+          "value": "#3D3A33",
+          "type": "color"
+        },
+        "accent": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "selection": {
+          "value": "#3A3618",
+          "type": "color"
+        }
+      },
+      "syntax": {
+        "plain": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "punct": {
+          "value": "#7A7A7A",
+          "type": "color"
+        },
+        "op": {
+          "value": "#9DEAEA",
+          "type": "color"
+        },
+        "kwCtrl": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "kwDecl": {
+          "value": "#D88AE0",
+          "type": "color"
+        },
+        "kwMod": {
+          "value": "#B989E5",
+          "type": "color"
+        },
+        "string": {
+          "value": "#E8A33D",
+          "type": "color"
+        },
+        "tmpl": {
+          "value": "#FFC36B",
+          "type": "color"
+        },
+        "esc": {
+          "value": "#FFE08A",
+          "type": "color"
+        },
+        "rgx": {
+          "value": "#FF9E3D",
+          "type": "color"
+        },
+        "num": {
+          "value": "#7BB3FF",
+          "type": "color"
+        },
+        "bool": {
+          "value": "#5B9FFF",
+          "type": "color"
+        },
+        "constant": {
+          "value": "#9DD0FF",
+          "type": "color"
+        },
+        "type": {
+          "value": "#7AD9D9",
+          "type": "color"
+        },
+        "tprim": {
+          "value": "#7AD9D9",
+          "type": "color"
+        },
+        "fn": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "method": {
+          "value": "#A8E658",
+          "type": "color"
+        },
+        "prop": {
+          "value": "#C6E58B",
+          "type": "color"
+        },
+        "param": {
+          "value": "#FFB07A",
+          "type": "color"
+        },
+        "variable": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "self": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "builtin": {
+          "value": "#E8A33D",
+          "type": "color"
+        },
+        "ns": {
+          "value": "#9DEAEA",
+          "type": "color"
+        },
+        "decorator": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "pre": {
+          "value": "#B989E5",
+          "type": "color"
+        },
+        "comment": {
+          "value": "#6F6F6F",
+          "type": "color"
+        },
+        "docComment": {
+          "value": "#9AB585",
+          "type": "color"
+        },
+        "tag": {
+          "value": "#FF8FCF",
+          "type": "color"
+        },
+        "attr": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "error": {
+          "value": "#FF6F77",
+          "type": "color"
+        },
+        "warn": {
+          "value": "#FFB85C",
+          "type": "color"
+        },
+        "ok": {
+          "value": "#5BD06B",
+          "type": "color"
+        },
+        "info": {
+          "value": "#7BB3FF",
+          "type": "color"
+        },
+        "hint": {
+          "value": "#D88AE0",
+          "type": "color"
+        }
+      },
+      "ansi": {
+        "black": {
+          "value": "#1A1815",
+          "type": "color"
+        },
+        "red": {
+          "value": "#F0525B",
+          "type": "color"
+        },
+        "green": {
+          "value": "#3FB950",
+          "type": "color"
+        },
+        "yellow": {
+          "value": "#E8A33D",
+          "type": "color"
+        },
+        "blue": {
+          "value": "#5B9FFF",
+          "type": "color"
+        },
+        "magenta": {
+          "value": "#D88AE0",
+          "type": "color"
+        },
+        "cyan": {
+          "value": "#7AD9D9",
+          "type": "color"
+        },
+        "white": {
+          "value": "#E4E4E4",
+          "type": "color"
+        },
+        "brBlack": {
+          "value": "#3D3D3D",
+          "type": "color"
+        },
+        "brRed": {
+          "value": "#FF6F77",
+          "type": "color"
+        },
+        "brGreen": {
+          "value": "#C6FF24",
+          "type": "color"
+        },
+        "brYellow": {
+          "value": "#FFB85C",
+          "type": "color"
+        },
+        "brBlue": {
+          "value": "#7BB3FF",
+          "type": "color"
+        },
+        "brMagenta": {
+          "value": "#E8A8EE",
+          "type": "color"
+        },
+        "brCyan": {
+          "value": "#9DEAEA",
+          "type": "color"
+        },
+        "brWhite": {
+          "value": "#FFFFFF",
+          "type": "color"
+        }
+      }
+    },
+    "paper": {
+      "label": "Bizarre Paper",
+      "mode": "light",
+      "colors": {
+        "background": {
+          "value": "#F9F8F2",
+          "type": "color"
+        },
+        "backgroundAlt": {
+          "value": "#F2F0EA",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "#1F1F1F",
+          "type": "color"
+        },
+        "foregroundDim": {
+          "value": "#3D3D3D",
+          "type": "color"
+        },
+        "border": {
+          "value": "#D8D4C7",
+          "type": "color"
+        },
+        "accent": {
+          "value": "#5F8A0F",
+          "type": "color"
+        },
+        "selection": {
+          "value": "#DCEFA8",
+          "type": "color"
+        }
+      },
+      "syntax": {
+        "plain": {
+          "value": "#1A1A1A",
+          "type": "color"
+        },
+        "punct": {
+          "value": "#8A8576",
+          "type": "color"
+        },
+        "op": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "kwCtrl": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "kwDecl": {
+          "value": "#7E2A9A",
+          "type": "color"
+        },
+        "kwMod": {
+          "value": "#603F94",
+          "type": "color"
+        },
+        "string": {
+          "value": "#9F4A0E",
+          "type": "color"
+        },
+        "tmpl": {
+          "value": "#B85A1A",
+          "type": "color"
+        },
+        "esc": {
+          "value": "#7A6308",
+          "type": "color"
+        },
+        "rgx": {
+          "value": "#A85C1B",
+          "type": "color"
+        },
+        "num": {
+          "value": "#1F4FB0",
+          "type": "color"
+        },
+        "bool": {
+          "value": "#1B4099",
+          "type": "color"
+        },
+        "constant": {
+          "value": "#2F5DC2",
+          "type": "color"
+        },
+        "type": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "tprim": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "fn": {
+          "value": "#5F8A0F",
+          "type": "color"
+        },
+        "method": {
+          "value": "#4A7409",
+          "type": "color"
+        },
+        "prop": {
+          "value": "#5C7A2A",
+          "type": "color"
+        },
+        "param": {
+          "value": "#A0480E",
+          "type": "color"
+        },
+        "variable": {
+          "value": "#1A1A1A",
+          "type": "color"
+        },
+        "self": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "builtin": {
+          "value": "#9F4A0E",
+          "type": "color"
+        },
+        "ns": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "decorator": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "pre": {
+          "value": "#603F94",
+          "type": "color"
+        },
+        "comment": {
+          "value": "#9A9482",
+          "type": "color"
+        },
+        "docComment": {
+          "value": "#5C7A2A",
+          "type": "color"
+        },
+        "tag": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "attr": {
+          "value": "#5F8A0F",
+          "type": "color"
+        },
+        "error": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "warn": {
+          "value": "#9F4A0E",
+          "type": "color"
+        },
+        "ok": {
+          "value": "#3F7A1F",
+          "type": "color"
+        },
+        "info": {
+          "value": "#1F4FB0",
+          "type": "color"
+        },
+        "hint": {
+          "value": "#7E2A9A",
+          "type": "color"
+        }
+      },
+      "ansi": {
+        "black": {
+          "value": "#1A1A1A",
+          "type": "color"
+        },
+        "red": {
+          "value": "#C13039",
+          "type": "color"
+        },
+        "green": {
+          "value": "#3F7A1F",
+          "type": "color"
+        },
+        "yellow": {
+          "value": "#9F4A0E",
+          "type": "color"
+        },
+        "blue": {
+          "value": "#1F4FB0",
+          "type": "color"
+        },
+        "magenta": {
+          "value": "#7E2A9A",
+          "type": "color"
+        },
+        "cyan": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "white": {
+          "value": "#545454",
+          "type": "color"
+        },
+        "brBlack": {
+          "value": "#7A7568",
+          "type": "color"
+        },
+        "brRed": {
+          "value": "#E04050",
+          "type": "color"
+        },
+        "brGreen": {
+          "value": "#5F8A0F",
+          "type": "color"
+        },
+        "brYellow": {
+          "value": "#C28225",
+          "type": "color"
+        },
+        "brBlue": {
+          "value": "#3D78C7",
+          "type": "color"
+        },
+        "brMagenta": {
+          "value": "#A55EAF",
+          "type": "color"
+        },
+        "brCyan": {
+          "value": "#4FA3A3",
+          "type": "color"
+        },
+        "brWhite": {
+          "value": "#0E0E0E",
+          "type": "color"
+        }
+      }
+    },
+    "bone": {
+      "label": "Bizarre Bone",
+      "mode": "light",
+      "colors": {
+        "background": {
+          "value": "#F5F2EA",
+          "type": "color"
+        },
+        "backgroundAlt": {
+          "value": "#EDE9DD",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "#2B2B2B",
+          "type": "color"
+        },
+        "foregroundDim": {
+          "value": "#4A4A4A",
+          "type": "color"
+        },
+        "border": {
+          "value": "#DDD8CB",
+          "type": "color"
+        },
+        "accent": {
+          "value": "#5F8A0F",
+          "type": "color"
+        },
+        "selection": {
+          "value": "#D4E89F",
+          "type": "color"
+        }
+      },
+      "syntax": {
+        "plain": {
+          "value": "#1A1A1A",
+          "type": "color"
+        },
+        "punct": {
+          "value": "#8A8576",
+          "type": "color"
+        },
+        "op": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "kwCtrl": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "kwDecl": {
+          "value": "#7E2A9A",
+          "type": "color"
+        },
+        "kwMod": {
+          "value": "#603F94",
+          "type": "color"
+        },
+        "string": {
+          "value": "#9F4A0E",
+          "type": "color"
+        },
+        "tmpl": {
+          "value": "#B85A1A",
+          "type": "color"
+        },
+        "esc": {
+          "value": "#7A6308",
+          "type": "color"
+        },
+        "rgx": {
+          "value": "#A85C1B",
+          "type": "color"
+        },
+        "num": {
+          "value": "#1F4FB0",
+          "type": "color"
+        },
+        "bool": {
+          "value": "#1B4099",
+          "type": "color"
+        },
+        "constant": {
+          "value": "#2F5DC2",
+          "type": "color"
+        },
+        "type": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "tprim": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "fn": {
+          "value": "#5F8A0F",
+          "type": "color"
+        },
+        "method": {
+          "value": "#4A7409",
+          "type": "color"
+        },
+        "prop": {
+          "value": "#5C7A2A",
+          "type": "color"
+        },
+        "param": {
+          "value": "#A0480E",
+          "type": "color"
+        },
+        "variable": {
+          "value": "#1A1A1A",
+          "type": "color"
+        },
+        "self": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "builtin": {
+          "value": "#9F4A0E",
+          "type": "color"
+        },
+        "ns": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "decorator": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "pre": {
+          "value": "#603F94",
+          "type": "color"
+        },
+        "comment": {
+          "value": "#9A9482",
+          "type": "color"
+        },
+        "docComment": {
+          "value": "#5C7A2A",
+          "type": "color"
+        },
+        "tag": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "attr": {
+          "value": "#5F8A0F",
+          "type": "color"
+        },
+        "error": {
+          "value": "#B8276F",
+          "type": "color"
+        },
+        "warn": {
+          "value": "#9F4A0E",
+          "type": "color"
+        },
+        "ok": {
+          "value": "#3F7A1F",
+          "type": "color"
+        },
+        "info": {
+          "value": "#1F4FB0",
+          "type": "color"
+        },
+        "hint": {
+          "value": "#7E2A9A",
+          "type": "color"
+        }
+      },
+      "ansi": {
+        "black": {
+          "value": "#2B2B2B",
+          "type": "color"
+        },
+        "red": {
+          "value": "#C13039",
+          "type": "color"
+        },
+        "green": {
+          "value": "#3F7A1F",
+          "type": "color"
+        },
+        "yellow": {
+          "value": "#9F4A0E",
+          "type": "color"
+        },
+        "blue": {
+          "value": "#1F4FB0",
+          "type": "color"
+        },
+        "magenta": {
+          "value": "#7E2A9A",
+          "type": "color"
+        },
+        "cyan": {
+          "value": "#0F6E6E",
+          "type": "color"
+        },
+        "white": {
+          "value": "#545454",
+          "type": "color"
+        },
+        "brBlack": {
+          "value": "#7A7568",
+          "type": "color"
+        },
+        "brRed": {
+          "value": "#E04050",
+          "type": "color"
+        },
+        "brGreen": {
+          "value": "#5F8A0F",
+          "type": "color"
+        },
+        "brYellow": {
+          "value": "#C28225",
+          "type": "color"
+        },
+        "brBlue": {
+          "value": "#3D78C7",
+          "type": "color"
+        },
+        "brMagenta": {
+          "value": "#A55EAF",
+          "type": "color"
+        },
+        "brCyan": {
+          "value": "#4FA3A3",
+          "type": "color"
+        },
+        "brWhite": {
+          "value": "#0E0E0E",
+          "type": "color"
+        }
+      }
+    }
+  }
+}

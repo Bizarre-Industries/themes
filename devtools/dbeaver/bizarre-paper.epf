@@ -1,0 +1,12 @@
+# Bizarre Paper for DBeaver and Eclipse-based editors
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_THEME=bizarre-paper
+/instance/org.eclipse.ui.editors/foregroundColor=1F1F1F
+/instance/org.eclipse.ui.editors/backgroundColor=F9F8F2
+/instance/org.eclipse.ui.editors/currentLineColor=F2F0EA
+/instance/org.eclipse.ui.editors/printMarginColor=D8D4C7
+/instance/org.eclipse.ui.editors/selectionBackground=DCEFA8
+/instance/org.eclipse.ui.editors/selectionForeground=1F1F1F
+/instance/org.jkiss.dbeaver.ui.editors.sql/keywordColor=B8276F
+/instance/org.jkiss.dbeaver.ui.editors.sql/stringColor=9F4A0E
+/instance/org.jkiss.dbeaver.ui.editors.sql/numberColor=1F4FB0
+/instance/org.jkiss.dbeaver.ui.editors.sql/commentColor=9A9482
