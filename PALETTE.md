@@ -1,161 +1,105 @@
-# BIZARRE INDUSTRIES — Theme Palette Spec
+# BIZARRE INDUSTRIES - Theme Palette Spec
 
-Canonical color assignments. Every editor/terminal theme in this repo derives from this table.
+Canonical color assignments. Every generated editor, terminal, shell, prompt, and tool config derives from [palette.js](palette.js).
 
-`BZR / THEMES / V0.1 / APR 2026`
+`BZR / THEMES / V0.2 / MAY 2026`
 
----
-
-## Brand anchors
+## Brand Anchors
 
 | Token | Hex | Role |
-|---|---|---|
-| `lime` | `#C6FF24` | Signal Lime — hero accent on dark |
-| `lime-glow` | `#E8FF8A` | Lime Glow — secondary accent, hover |
-| `lime-ink` | `#5E7A00` | Acid Lime — accent on light (WCAG AA) |
-| `void` | `#0E0E0E` | Deep Void — primary dark bg |
-| `void-2` | `#1A1A1A` | Midnight — elevated dark |
-| `void-3` | `#2B2B2B` | Smoke — card / panel dark |
-| `void-4` | `#3D3D3D` | Iron — border on dark |
-| `gray` / `ash-700` | `#545454` | Void Gray — structural |
-| `ash-500` | `#7A7A7A` | mid neutral |
-| `ash-300` | `#B8B8B8` | high neutral |
-| `ash-100` | `#E4E4E4` | near-white neutral |
-| `paper` | `#F9F8F2` | warm off-white, primary light bg |
-| `bone` | `#F5F2EA` | warm neutral surface |
-| `snow` | `#FFFFFF` | pure white |
+|---|---:|---|
+| Signal Lime | `#C6FF24` | hero accent on dark |
+| Lime Glow | `#E8FF8A` | secondary accent and hover |
+| Lime Ink | `#5F8A0F` | readable accent on light |
+| Acid Lime | `#A8FF00` | optional saturated punch |
+| Void Gray | `#545454` | structural neutral |
 
-## Semantic / accent (extending the brand minimally for syntax legibility)
+## Variants
 
-| Token | Hex | Role |
-|---|---|---|
-| `success` | `#3FB950` | success / added / git-add |
-| `warn` | `#E8A33D` | warn / modified / numbers |
-| `danger` | `#F0525B` | danger / removed / errors |
-| `info` | `#5B9FFF` | info / paths / namespaces |
-| `cyan` | `#7AD9D9` | regex, escape sequences |
-| `magenta` | `#D88AE0` | constants, decorators |
-| `lime-ink-2` | `#9BC73C` | mid-lime for darker surfaces (functions on light themes) |
+| Variant | Mode | Background | Foreground | Border | Accent |
+|---|---|---:|---:|---:|---:|
+| Bizarre Void | dark | `#0E0E0E` | `#E4E4E4` | `#3D3D3D` | `#C6FF24` |
+| Bizarre Void Hi-Contrast | dark | `#000000` | `#F9F8F2` | `#545454` | `#C6FF24` |
+| Bizarre Workshop | dark | `#1A1815` | `#E4E2DA` | `#3D3A33` | `#C6FF24` |
+| Bizarre Paper | light | `#F9F8F2` | `#1F1F1F` | `#D8D4C7` | `#5F8A0F` |
+| Bizarre Bone | light | `#F5F2EA` | `#2B2B2B` | `#DDD8CB` | `#5F8A0F` |
 
-These are tuned to feel adjacent to the void/ash neutrals — slightly desaturated, never candy.
+## Syntax Roles
 
----
+| Role | Dark | Light |
+|---|---:|---:|
+| plain | `#E4E4E4` | `#1A1A1A` |
+| punctuation | `#7A7A7A` | `#8A8576` |
+| operator | `#9DEAEA` | `#0F6E6E` |
+| control | `#FF8FCF` | `#B8276F` |
+| declaration | `#D88AE0` | `#7E2A9A` |
+| modifier | `#B989E5` | `#603F94` |
+| string | `#E8A33D` | `#9F4A0E` |
+| template | `#FFC36B` | `#B85A1A` |
+| escape | `#FFE08A` | `#7A6308` |
+| regex | `#FF9E3D` | `#A85C1B` |
+| number | `#7BB3FF` | `#1F4FB0` |
+| bool/null | `#5B9FFF` | `#1B4099` |
+| constant | `#9DD0FF` | `#2F5DC2` |
+| type | `#7AD9D9` | `#0F6E6E` |
+| primitive | `#7AD9D9` | `#0F6E6E` |
+| function | `#C6FF24` | `#5F8A0F` |
+| method | `#A8E658` | `#4A7409` |
+| property | `#C6E58B` | `#5C7A2A` |
+| parameter | `#FFB07A` | `#A0480E` |
+| variable | `#E4E4E4` | `#1A1A1A` |
+| self/this | `#FF8FCF` | `#B8276F` |
+| builtin | `#E8A33D` | `#9F4A0E` |
+| namespace | `#9DEAEA` | `#0F6E6E` |
+| decorator | `#FF8FCF` | `#B8276F` |
+| preprocessor | `#B989E5` | `#603F94` |
+| comment | `#6F6F6F` | `#9A9482` |
+| doc-comment | `#9AB585` | `#5C7A2A` |
+| jsx tag | `#FF8FCF` | `#B8276F` |
+| jsx attr | `#C6FF24` | `#5F8A0F` |
 
-## Lime role
+## ANSI 16
 
-**Lime is reserved for the hero of code: function names + diagnostic markers.**
+### Dark
 
-Reasoning: keywords are too dense (would saturate the page); strings are too frequent (would dilute the brand); comments would invert hierarchy. Function definitions and call-sites are sparse, structural, and what you scan for. Lime there feels like a header light hitting the right thing.
-
-Diagnostics (errors, cursor, breakpoints) also use lime/danger/warn — the only other place lime appears.
-
-## Syntax roles → color
-
-| Role | Dark (Void) | Light (Paper) |
-|---|---|---|
-| Background | `#0E0E0E` | `#F9F8F2` |
-| Foreground (default text) | `#E4E4E4` | `#1F1F1F` |
-| Comment | `#7A7A7A` *italic* | `#7A7A7A` *italic* |
-| Keyword (`if`, `return`, `class`, `def`) | `#E8FF8A` | `#5E7A00` |
-| Storage type modifier (`const`, `let`, `static`) | `#E8FF8A` *italic* | `#5E7A00` *italic* |
-| String | `#B8B8B8` | `#545454` |
-| String escape / regex | `#7AD9D9` | `#3F8C8C` |
-| Number / boolean / null | `#E8A33D` | `#A06C1A` |
-| **Function name (def + call)** | `#C6FF24` **lime hero** | `#5E7A00` |
-| Type / class name | `#5B9FFF` | `#2C5FA0` |
-| Constant / decorator | `#D88AE0` | `#8C4A95` |
-| Variable / property / parameter | `#E4E4E4` | `#1F1F1F` |
-| Operator / punctuation | `#7A7A7A` | `#7A7A7A` |
-| Tag (HTML/JSX) | `#5B9FFF` | `#2C5FA0` |
-| Attribute | `#E8A33D` | `#A06C1A` |
-| Markup heading | `#C6FF24` | `#5E7A00` |
-| Markup link | `#5B9FFF` | `#2C5FA0` |
-| Diff added | `#3FB950` | `#2A8439` |
-| Diff removed | `#F0525B` | `#C13039` |
-| Error / invalid | `#F0525B` | `#C13039` |
-| Warning | `#E8A33D` | `#A06C1A` |
-| Cursor | `#C6FF24` | `#5E7A00` |
-| Selection bg | `#2B2B2B` | `#E4E4E4` |
-| Find match bg | `rgba(198,255,36,0.20)` | `rgba(94,122,0,0.18)` |
-| Line highlight | `#1A1A1A` | `#F5F2EA` |
-| Indent guide | `#2B2B2B` | `#E4E4E4` |
-| Bracket match | `#C6FF24` underline | `#5E7A00` underline |
-
-## Bracket pair colorization (subtle, brand neutrals)
-
-Cycles through 6 muted tones, no rainbow:
-
-1. `#E4E4E4` (paper)
-2. `#7A7A7A` (ash-500)
-3. `#5B9FFF` (info)
-4. `#E8A33D` (warn)
-5. `#D88AE0` (magenta)
-6. `#7AD9D9` (cyan)
-
-Light mode darkens each by ~30%.
-
----
-
-## ANSI 16-color palette (terminal)
-
-Conventional ANSI semantics preserved (green is green, red is red) — but every color is tuned to Bizarre's neutral register so it sits next to lime without clashing.
-
-### Dark variants (Void, Hi-Contrast, Workshop)
-
-| ANSI | Name | Hex |
-|---|---|---|
+| Slot | Name | Hex |
+|---:|---|---:|
 | 0 | black | `#1A1A1A` |
 | 1 | red | `#F0525B` |
-| 2 | green | `#9BC73C` |
+| 2 | green | `#3FB950` |
 | 3 | yellow | `#E8A33D` |
 | 4 | blue | `#5B9FFF` |
 | 5 | magenta | `#D88AE0` |
 | 6 | cyan | `#7AD9D9` |
 | 7 | white | `#E4E4E4` |
 | 8 | bright black | `#3D3D3D` |
-| 9 | bright red | `#FF6B73` |
-| 10 | **bright green** (lime hero) | `#C6FF24` |
-| 11 | bright yellow | `#FFC25A` |
-| 12 | bright blue | `#7FB7FF` |
+| 9 | bright red | `#FF6F77` |
+| 10 | bright green | `#C6FF24` |
+| 11 | bright yellow | `#FFB85C` |
+| 12 | bright blue | `#7BB3FF` |
 | 13 | bright magenta | `#E8A8EE` |
-| 14 | bright cyan | `#9DE5E5` |
-| 15 | bright white | `#F9F8F2` |
+| 14 | bright cyan | `#9DEAEA` |
+| 15 | bright white | `#FFFFFF` |
 
-ANSI 10 (bright_green) is Signal Lime. Conventional `ls` colors stay green; `tput setaf 10` lights up the brand.
+### Light
 
-### Light variants (Paper, Bone)
-
-Same hue assignments, ink-shifted:
-
-| ANSI | Name | Hex |
-|---|---|---|
-| 0 | black | `#1F1F1F` |
+| Slot | Name | Hex |
+|---:|---|---:|
+| 0 | black | `#1A1A1A` |
 | 1 | red | `#C13039` |
-| 2 | green | `#5E7A00` |
-| 3 | yellow | `#A06C1A` |
-| 4 | blue | `#2C5FA0` |
-| 5 | magenta | `#8C4A95` |
-| 6 | cyan | `#3F8C8C` |
+| 2 | green | `#3F7A1F` |
+| 3 | yellow | `#9F4A0E` |
+| 4 | blue | `#1F4FB0` |
+| 5 | magenta | `#7E2A9A` |
+| 6 | cyan | `#0F6E6E` |
 | 7 | white | `#545454` |
-| 8 | bright black | `#7A7A7A` |
+| 8 | bright black | `#7A7568` |
 | 9 | bright red | `#E04050` |
-| 10 | bright green | `#5E7A00` |
+| 10 | bright green | `#5F8A0F` |
 | 11 | bright yellow | `#C28225` |
 | 12 | bright blue | `#3D78C7` |
 | 13 | bright magenta | `#A55EAF` |
 | 14 | bright cyan | `#4FA3A3` |
 | 15 | bright white | `#0E0E0E` |
-
----
-
-## Variant deltas
-
-| Variant | Background | Foreground | Border | Accent |
-|---|---|---|---|---|
-| **Bizarre Void** (default dark) | `#0E0E0E` | `#E4E4E4` | `#3D3D3D` | `#C6FF24` |
-| **Bizarre Void Hi-Contrast** | `#000000` | `#F9F8F2` | `#545454` | `#C6FF24` (more usage) |
-| **Bizarre Workshop** (warm dark) | `#1A1815` | `#E4E2DA` | `#3D3A33` | `#C6FF24` (slightly muted) |
-| **Bizarre Paper** (default light) | `#F9F8F2` | `#1F1F1F` | `#E4E4E4` | `#5E7A00` |
-| **Bizarre Bone** (warm light) | `#F5F2EA` | `#2B2B2B` | `#D8D4C8` | `#5E7A00` (softer) |
 
 CATCH THE STARS.

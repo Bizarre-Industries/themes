@@ -1,24 +1,18 @@
-# Bizarre Workshop — base16 / tinted-theming compatible
-# CATCH THE STARS.
-system: "base16"
-name: "Bizarre Workshop"
+scheme: "Bizarre Workshop"
 author: "Bizarre Industries"
-variant: "dark"
-description: "Bizarre Industries — dark register."
-palette:
-  base00: "1A1815"  # default bg
-  base01: "252320"  # lighter bg
-  base02: "33302B"  # selection bg
-  base03: "7A786F"  # comment / muted
-  base04: "B8B6AE"  # dark fg / status
-  base05: "E4E2DA"  # default fg
-  base06: "F4F2EA"  # light fg
-  base07: "F9F8F2"  # lightest fg
-  base08: "E8525B"  # red / variables
-  base09: "D89538"  # orange / numbers
-  base0A: "D4EE7A"  # yellow / classes
-  base0B: "B8B6AE"  # green / strings (de-emphasized)
-  base0C: "7BC9C9"  # cyan / regex
-  base0D: "B5E81F"  # lime / functions (the hero)
-  base0E: "C68DD0"  # magenta / keywords/constants
-  base0F: "6EA8E8"  # blue / types
+base00: "1A1815"
+base01: "23211C"
+base02: "2D2A23"
+base03: "545040"
+base04: "7A7568"
+base05: "E4E2DA"
+base06: "9C9A91"
+base07: "FFFFFF"
+base08: "FF6F77"
+base09: "7BB3FF"
+base0A: "FFB85C"
+base0B: "C6FF24"
+base0C: "FF9E3D"
+base0D: "7BB3FF"
+base0E: "9DD0FF"
+base0F: "FFB07A"

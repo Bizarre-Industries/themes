@@ -1,3 +1,2 @@
-" bizarre-void-hicontrast — Bizarre Industries
-" CATCH THE STARS.
+" bizarre-void-hicontrast - Bizarre Industries
 lua require('bizarre').load('bizarre-void-hicontrast')

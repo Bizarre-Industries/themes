@@ -1,52 +1,35 @@
-# Bizarre Paper — Alacritty
-# CATCH THE STARS.
-#
-# Drop in ~/.config/alacritty/themes/bizarre-paper.toml then in alacritty.toml:
-#   [general]
-#   import = ["~/.config/alacritty/themes/bizarre-paper.toml"]
-
+# Bizarre Paper - Alacritty
 [colors.primary]
 background = "#F9F8F2"
 foreground = "#1F1F1F"
-dim_foreground = "#545454"
-bright_foreground = "#0E0E0E"
 
 [colors.cursor]
-text  = "#F9F8F2"
-cursor = "#5E7A00"
-
-[colors.vi_mode_cursor]
-text  = "#F9F8F2"
-cursor = "#5E7A00"
+text = "#F9F8F2"
+cursor = "#5F8A0F"
 
 [colors.selection]
-text       = "#0E0E0E"
-background = "#E4E4E4"
+text = "#0E0E0E"
+background = "#DCEFA8"
 
 [colors.normal]
-black   = "#1F1F1F"
-red     = "#C13039"
-green   = "#5E7A00"
-yellow  = "#A06C1A"
-blue    = "#2C5FA0"
-magenta = "#8C4A95"
-cyan    = "#3F8C8C"
-white   = "#545454"
+black = "#1A1A1A"
+red = "#C13039"
+green = "#3F7A1F"
+yellow = "#9F4A0E"
+blue = "#1F4FB0"
+magenta = "#7E2A9A"
+cyan = "#0F6E6E"
+white = "#545454"
 
 [colors.bright]
-black   = "#7A7A7A"
-red     = "#E04050"
-green   = "#5E7A00"
-yellow  = "#C28225"
-blue    = "#3D78C7"
+black = "#7A7568"
+red = "#E04050"
+green = "#5F8A0F"
+yellow = "#C28225"
+blue = "#3D78C7"
 magenta = "#A55EAF"
-cyan    = "#4FA3A3"
-white   = "#0E0E0E"
+cyan = "#4FA3A3"
+white = "#0E0E0E"
 
-[[colors.indexed_colors]]
-index = 16
-color = "#A06C1A"
-
-[[colors.indexed_colors]]
-index = 17
-color = "#C13039"
+[font]
+normal = { family = "Monaspace Neon" }

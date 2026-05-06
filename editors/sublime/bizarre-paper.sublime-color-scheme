@@ -2,172 +2,193 @@
   "name": "Bizarre Paper",
   "author": "Bizarre Industries",
   "variables": {
-    "bg": "#F9F8F2",
-    "bg2": "#F5F2EA",
-    "bg3": "#E4E4E4",
-    "border": "#D8D4C8",
-    "fg": "#1F1F1F",
-    "fg2": "#545454",
-    "fg3": "#7A7A7A",
-    "fg4": "#B8B8B8",
-    "accent": "#5E7A00",
-    "accent2": "#9BC73C",
-    "keyword": "#5E7A00",
-    "string": "#545454",
-    "number": "#A06C1A",
-    "func": "#5E7A00",
-    "type": "#2C5FA0",
-    "constant": "#8C4A95",
-    "regex": "#3F8C8C",
-    "comment": "#7A7A7A",
-    "danger": "#C13039",
-    "warn": "#A06C1A",
-    "success": "#2A8439",
-    "info": "#2C5FA0"
+    "background": "#F9F8F2",
+    "foreground": "#1F1F1F",
+    "caret": "#5F8A0F",
+    "accent": "#5F8A0F",
+    "selection": "#DCEFA8",
+    "line": "#F2F0EA",
+    "border": "#D8D4C7"
   },
   "globals": {
-    "foreground": "var(fg)",
-    "background": "var(bg)",
-    "caret": "var(accent)",
-    "block_caret": "var(accent)",
-    "line_highlight": "#F5F2EA",
-    "misspelling": "var(danger)",
-    "selection": "#E4E4E4",
-    "selection_border": "#E4E4E4",
-    "inactive_selection": "#F5F2EA",
-    "shadow": "#00000000",
-    "gutter": "var(bg)",
-    "gutter_foreground": "var(fg4)",
-    "stack_guide": "var(bg3)",
-    "active_guide": "var(accent)",
-    "guide": "var(bg3)",
-    "find_highlight": "#5E7A00",
-    "find_highlight_foreground": "#F9F8F2",
-    "brackets_options": "underline",
-    "brackets_foreground": "#5E7A00",
-    "bracket_contents_options": "underline",
-    "bracket_contents_foreground": "#9BC73C",
-    "tags_options": "underline",
-    "tags_foreground": "#2C5FA0"
+    "background": "var(background)",
+    "foreground": "var(foreground)",
+    "caret": "var(caret)",
+    "selection": "var(selection)",
+    "line_highlight": "var(line)",
+    "gutter": "var(background)",
+    "gutter_foreground": "#A8A395",
+    "invisibles": "#E6E3DA",
+    "accent": "var(accent)"
   },
   "rules": [
     {
       "name": "Comment",
-      "scope": "comment, punctuation.definition.comment",
-      "foreground": "var(comment)",
+      "scope": "comment",
+      "foreground": "#9A9482",
+      "font_style": "italic"
+    },
+    {
+      "name": "Doc Comment",
+      "scope": "comment.block.documentation",
+      "foreground": "#5C7A2A",
       "font_style": "italic"
     },
     {
       "name": "String",
-      "scope": "string, string.quoted",
-      "foreground": "var(string)"
+      "scope": "string",
+      "foreground": "#9F4A0E"
     },
     {
-      "name": "String escape",
-      "scope": "constant.character.escape, string.regexp",
-      "foreground": "var(regex)"
+      "name": "Template",
+      "scope": "string.template",
+      "foreground": "#B85A1A"
     },
     {
-      "name": "Number / Boolean / Null",
-      "scope": "constant.numeric, constant.language",
-      "foreground": "var(number)"
+      "name": "Escape",
+      "scope": "constant.character.escape",
+      "foreground": "#7A6308",
+      "font_style": "bold"
     },
     {
-      "name": "Variable",
-      "scope": "variable, variable.parameter",
-      "foreground": "var(fg)"
-    },
-    {
-      "name": "Variable language (this/self)",
-      "scope": "variable.language",
-      "foreground": "var(constant)",
+      "name": "Regex",
+      "scope": "string.regexp",
+      "foreground": "#A85C1B",
       "font_style": "italic"
     },
     {
-      "name": "Keyword",
-      "scope": "keyword, keyword.control, storage",
-      "foreground": "var(keyword)"
+      "name": "Number",
+      "scope": "constant.numeric",
+      "foreground": "#1F4FB0"
     },
     {
-      "name": "Storage modifier",
-      "scope": "storage.modifier, storage.type.function",
-      "foreground": "var(keyword)",
-      "font_style": "italic"
-    },
-    {
-      "name": "Function",
-      "scope": "entity.name.function, support.function, meta.function-call",
-      "foreground": "var(func)"
-    },
-    {
-      "name": "Type / Class",
-      "scope": "entity.name.type, entity.name.class, support.type, support.class",
-      "foreground": "var(type)"
+      "name": "Bool",
+      "scope": "constant.language.boolean, constant.language.null",
+      "foreground": "#1B4099",
+      "font_style": "bold"
     },
     {
       "name": "Constant",
-      "scope": "constant, support.constant",
-      "foreground": "var(constant)"
+      "scope": "constant, variable.other.constant, entity.name.constant",
+      "foreground": "#2F5DC2",
+      "font_style": "bold"
     },
     {
-      "name": "Decorator",
-      "scope": "meta.decorator, entity.name.function.decorator",
-      "foreground": "var(constant)",
+      "name": "Keyword control",
+      "scope": "keyword.control",
+      "foreground": "#B8276F"
+    },
+    {
+      "name": "Keyword decl",
+      "scope": "storage.type, keyword.declaration",
+      "foreground": "#7E2A9A"
+    },
+    {
+      "name": "Modifier",
+      "scope": "storage.modifier",
+      "foreground": "#603F94",
       "font_style": "italic"
     },
     {
       "name": "Operator",
-      "scope": "keyword.operator, punctuation",
-      "foreground": "var(fg3)"
+      "scope": "keyword.operator",
+      "foreground": "#0F6E6E"
+    },
+    {
+      "name": "Punctuation",
+      "scope": "punctuation",
+      "foreground": "#8A8576"
+    },
+    {
+      "name": "Function",
+      "scope": "entity.name.function, support.function",
+      "foreground": "#5F8A0F"
+    },
+    {
+      "name": "Method",
+      "scope": "meta.function-call entity.name.function, entity.name.function.member, variable.function",
+      "foreground": "#4A7409"
+    },
+    {
+      "name": "Type",
+      "scope": "entity.name.type, entity.name.class, support.type, support.class",
+      "foreground": "#0F6E6E"
+    },
+    {
+      "name": "Primitive",
+      "scope": "storage.type.primitive, support.type.primitive",
+      "foreground": "#0F6E6E",
+      "font_style": "italic"
+    },
+    {
+      "name": "Property",
+      "scope": "variable.other.property, variable.other.object.property",
+      "foreground": "#5C7A2A"
+    },
+    {
+      "name": "Parameter",
+      "scope": "variable.parameter",
+      "foreground": "#A0480E",
+      "font_style": "italic"
+    },
+    {
+      "name": "Namespace",
+      "scope": "entity.name.namespace",
+      "foreground": "#0F6E6E"
+    },
+    {
+      "name": "Self/this",
+      "scope": "variable.language.this, variable.language.self",
+      "foreground": "#B8276F",
+      "font_style": "italic"
+    },
+    {
+      "name": "Decorator",
+      "scope": "meta.decorator, punctuation.decorator",
+      "foreground": "#B8276F",
+      "font_style": "italic"
+    },
+    {
+      "name": "Preprocessor",
+      "scope": "meta.preprocessor, keyword.other.preprocessor",
+      "foreground": "#603F94"
     },
     {
       "name": "Tag",
-      "scope": "entity.name.tag",
-      "foreground": "var(type)"
+      "scope": "entity.name.tag, meta.tag",
+      "foreground": "#B8276F"
     },
     {
-      "name": "Tag attribute",
+      "name": "Attribute",
       "scope": "entity.other.attribute-name",
-      "foreground": "var(number)",
-      "font_style": "italic"
+      "foreground": "#5F8A0F"
     },
     {
       "name": "Markup heading",
       "scope": "markup.heading",
-      "foreground": "var(func)",
+      "foreground": "#5F8A0F",
       "font_style": "bold"
     },
     {
-      "name": "Markup link",
-      "scope": "markup.underline.link",
-      "foreground": "var(info)",
-      "font_style": "underline"
-    },
-    {
-      "name": "Markup bold",
-      "scope": "markup.bold",
-      "font_style": "bold"
-    },
-    {
-      "name": "Markup italic",
-      "scope": "markup.italic",
-      "font_style": "italic"
-    },
-    {
-      "name": "Diff added",
+      "name": "Inserted",
       "scope": "markup.inserted",
-      "foreground": "var(success)"
+      "foreground": "#3F7A1F"
     },
     {
-      "name": "Diff removed",
+      "name": "Deleted",
       "scope": "markup.deleted",
-      "foreground": "var(danger)"
+      "foreground": "#B8276F"
+    },
+    {
+      "name": "Changed",
+      "scope": "markup.changed",
+      "foreground": "#9F4A0E"
     },
     {
       "name": "Invalid",
       "scope": "invalid",
-      "foreground": "var(danger)",
-      "font_style": "underline"
+      "foreground": "#B8276F",
+      "font_style": "bold"
     }
   ]
 }

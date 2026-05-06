@@ -1,7 +1,7 @@
-# Bizarre Industries — Jujutsu (jj) colors
+# Bizarre Industries - Jujutsu colors
 # CATCH THE STARS.
 #
-# Drop into ~/.config/jj/config.toml (or merge with existing).
+# Drop into ~/.config/jj/config.toml or merge with an existing config.
 # Tested with jj v0.16+.
 
 [ui]
@@ -13,10 +13,9 @@ default-command = "log"
 [ui.movement]
 edit = false
 
-# ── Color rules — semantic, not stylistic.
-# Lime is reserved for: the working-copy marker, "@", and the current branch.
+# Color rules, semantic rather than decorative.
+# Lime is reserved for the working-copy marker, @, and the current branch.
 [colors]
-# revsets / log
 "working_copy"             = { fg = "#0E0E0E", bg = "#C6FF24", bold = true }
 "working_copy change_id"   = { fg = "#0E0E0E", bg = "#C6FF24", bold = true }
 "working_copy commit_id"   = { fg = "#0E0E0E", bg = "#C6FF24" }
@@ -25,23 +24,23 @@ edit = false
 "working_copy timestamp"   = "#7A7A7A"
 "working_copy bookmarks"   = { fg = "#C6FF24", bold = true }
 
-"change_id"     = "#D88AE0"
-"commit_id"     = "#7AD9D9"
-"author"        = "#5B9FFF"
+"change_id"     = "#9DD0FF"
+"commit_id"     = "#FF9E3D"
+"author"        = "#7BB3FF"
 "timestamp"     = "#7A7A7A"
 "description"   = "#E4E4E4"
 "bookmarks"     = "#FFB85C"
 "tags"          = "#E8A33D"
 "git_refs"      = "#FF8FCF"
 "divergent"     = { fg = "#FF6F77", bold = true }
-"conflict"      = { fg = "#FF6F77", bg = "#2B0E0E", bold = true }
+"conflict"      = { fg = "#FF6F77", bg = "#2B2B2B", bold = true }
 "empty"         = "#7A7A7A"
 
 # diff
 "diff added"           = "#5BD06B"
 "diff added token"     = { fg = "#0E0E0E", bg = "#5BD06B", bold = true }
 "diff removed"         = "#FF6F77"
-"diff removed token"   = { fg = "#FFFFFF", bg = "#9F2A2F", bold = true }
+"diff removed token"   = { fg = "#0E0E0E", bg = "#FF6F77", bold = true }
 "diff modified"        = "#FFB85C"
 "diff context"         = "#9C9C9C"
 "diff file_header"     = { fg = "#C6FF24", bold = true }
@@ -54,13 +53,13 @@ edit = false
 "normal"        = "#E4E4E4"
 
 # operation log
-"operation id"          = "#7AD9D9"
-"operation user"        = "#5B9FFF"
+"operation id"          = "#FF9E3D"
+"operation user"        = "#7BB3FF"
 "operation time"        = "#7A7A7A"
 "operation current"     = { fg = "#0E0E0E", bg = "#C6FF24", bold = true }
 
-# ── Custom log template — Bizarre style.
-# Use:  jj log -T bizarre
+# Custom log template.
+# Use: jj log -T bizarre
 [templates]
 bizarre = '''
 if(root,
@@ -87,7 +86,7 @@ if(root,
 )
 '''
 
-# ── Aliases that match the brand voice
+# Aliases that match the brand voice.
 [aliases]
 ship   = ["git", "push"]
 catch  = ["new"]
