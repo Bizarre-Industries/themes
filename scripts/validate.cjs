@@ -57,6 +57,9 @@ for (const file of [
   'editors/zed/themes/bizarre.json',
   ...files('apps/alfred', (file) => file.endsWith('.alfredappearance')).map(rel),
   ...files('apps/raycast', (file) => file.endsWith('.json')).map(rel),
+  ...files('design/figma', (file) => file.endsWith('.json')).map(rel),
+  ...files('design/sketch', (file) => file.endsWith('.sketchpalette')).map(rel),
+  ...files('devtools/tableplus', (file) => file.endsWith('.json')).map(rel),
   ...files('web/chrome', (file) => file.endsWith('.json')).map(rel),
   ...files('web/firefox', (file) => file.endsWith('.json')).map(rel),
   ...files('web/vivaldi', (file) => file.endsWith('.json')).map(rel),
@@ -77,6 +80,7 @@ for (const file of [
   ...files('editors/helix', (file) => file.endsWith('.toml')).map(rel),
   ...files('editors/lapce', (file) => file.endsWith('.toml')).map(rel),
   ...files('terminals/rio', (file) => file.endsWith('.toml')).map(rel),
+  ...files('docs-sites/sphinx', (file) => file.endsWith('.toml')).map(rel),
   'tools/aerospace/aerospace.toml',
   'tools/jujutsu/config.toml',
   ...files('tools/atuin', (file) => file.endsWith('.toml')).map(rel),
@@ -127,6 +131,12 @@ for (const file of [
   ...files('apps/logseq', (file) => file.endsWith('.css')).map(rel),
   ...files('apps/obsidian', (file) => file.endsWith('.css')).map(rel),
   ...files('apps/spotify', (file) => file.endsWith('.css')).map(rel),
+  ...files('devtools/github-readme-assets', (file) => file.endsWith('.css')).map(rel),
+  ...files('devtools/postman', (file) => file.endsWith('.css')).map(rel),
+  ...files('docs-sites/docusaurus', (file) => file.endsWith('.css')).map(rel),
+  ...files('docs-sites/mkdocs', (file) => file.endsWith('.css')).map(rel),
+  ...files('docs-sites/reveal.js', (file) => file.endsWith('.css')).map(rel),
+  ...files('docs-sites/sphinx', (file) => file.endsWith('.css')).map(rel),
   ...files('web/arc', (file) => file.endsWith('.css')).map(rel),
   ...files('web/documentation-sites', (file) => file.endsWith('.css')).map(rel),
   ...files('web/userstyles', (file) => file.endsWith('.css')).map(rel),
@@ -177,6 +187,7 @@ for (const file of [
   ...files('editors/jetbrains', (file) => file.endsWith('.icls')).map(rel),
   ...files('editors/notepad-plus-plus', (file) => file.endsWith('.xml')).map(rel),
   ...files('editors/visual-studio', (file) => file.endsWith('.vstheme')).map(rel),
+  ...files('devtools/github-readme-assets', (file) => file.endsWith('.svg')).map(rel),
 ]) {
   run('xmllint', ['--noout', file], `xml ${file}`);
 }
@@ -220,6 +231,10 @@ for (const file of files('tools/ranger', (file) => file.endsWith('.py')).map(rel
   run('python3', ['-m', 'py_compile', file], `python ${file}`);
 }
 
+for (const file of files('devtools/httpie', (file) => file.endsWith('.py')).map(rel)) {
+  run('python3', ['-m', 'py_compile', file], `python ${file}`);
+}
+
 for (const file of files('apps/qutebrowser', (file) => file.endsWith('.py')).map(rel)) {
   run('python3', ['-m', 'py_compile', file], `python ${file}`);
 }
@@ -240,6 +255,26 @@ for (const file of files('apps/slack', (file) => file.endsWith('.txt')).map(rel)
 
 for (const file of files('terminals/hyper', (file) => file.endsWith('.js')).map(rel)) {
   run('node', ['--check', file], `node ${file}`);
+}
+
+for (const file of files('devtools/insomnia', (file) => file.endsWith('.js')).map(rel)) {
+  run('node', ['--check', file], `node ${file}`);
+}
+
+for (const file of files('devtools/dbeaver', (file) => file.endsWith('.epf')).map(rel)) {
+  const text = fs.readFileSync(path.join(root, file), 'utf8');
+  const bad = text.split('\n').filter((line) => line.trim() && !line.startsWith('#') && !/^\/instance\/[^=]+=[A-Za-z0-9#_.:/ -]+$/u.test(line.trim()));
+  if (bad.length) fail(`dbeaver ${file}`, `invalid lines: ${bad.join(', ')}`);
+  else console.log(`dbeaver ${file}`);
+}
+
+for (const file of files('docs-sites', (file) => file.endsWith('.sty') || file.endsWith('.typ')).map(rel)) {
+  const text = fs.readFileSync(path.join(root, file), 'utf8');
+  const ok = file.endsWith('.sty')
+    ? /\\ProvidesPackage\{[^}]+\}/u.test(text) && /\\definecolor\{[^}]+\}\{HTML\}\{[0-9A-Fa-f]{6}\}/u.test(text)
+    : /#let bizarre-bg = rgb\("#[0-9A-Fa-f]{6}"\)/u.test(text);
+  if (!ok || /TODO|FIXME/u.test(text)) fail(`docs syntax ${file}`, 'missing required color declarations');
+  else console.log(`docs syntax ${file}`);
 }
 
 run('nvim', ['--headless', '-u', 'NONE', '-c', "lua assert(loadfile('terminals/wezterm/bizarre.lua'))", '-c', 'qa'], 'lua wezterm', true);

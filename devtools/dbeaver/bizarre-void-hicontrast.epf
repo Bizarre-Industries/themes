@@ -1,0 +1,12 @@
+# Bizarre Void Hi-Contrast for DBeaver and Eclipse-based editors
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_THEME=bizarre-void-hicontrast
+/instance/org.eclipse.ui.editors/foregroundColor=F9F8F2
+/instance/org.eclipse.ui.editors/backgroundColor=000000
+/instance/org.eclipse.ui.editors/currentLineColor=0E0E0E
+/instance/org.eclipse.ui.editors/printMarginColor=545454
+/instance/org.eclipse.ui.editors/selectionBackground=3A4D0E
+/instance/org.eclipse.ui.editors/selectionForeground=F9F8F2
+/instance/org.jkiss.dbeaver.ui.editors.sql/keywordColor=FF8FCF
+/instance/org.jkiss.dbeaver.ui.editors.sql/stringColor=E8A33D
+/instance/org.jkiss.dbeaver.ui.editors.sql/numberColor=7BB3FF
+/instance/org.jkiss.dbeaver.ui.editors.sql/commentColor=6F6F6F

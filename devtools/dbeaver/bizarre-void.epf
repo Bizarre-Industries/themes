@@ -1,0 +1,12 @@
+# Bizarre Void for DBeaver and Eclipse-based editors
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_THEME=bizarre-void
+/instance/org.eclipse.ui.editors/foregroundColor=E4E4E4
+/instance/org.eclipse.ui.editors/backgroundColor=0E0E0E
+/instance/org.eclipse.ui.editors/currentLineColor=1A1A1A
+/instance/org.eclipse.ui.editors/printMarginColor=3D3D3D
+/instance/org.eclipse.ui.editors/selectionBackground=2B3A0E
+/instance/org.eclipse.ui.editors/selectionForeground=E4E4E4
+/instance/org.jkiss.dbeaver.ui.editors.sql/keywordColor=FF8FCF
+/instance/org.jkiss.dbeaver.ui.editors.sql/stringColor=E8A33D
+/instance/org.jkiss.dbeaver.ui.editors.sql/numberColor=7BB3FF
+/instance/org.jkiss.dbeaver.ui.editors.sql/commentColor=6F6F6F

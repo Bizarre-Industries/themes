@@ -52,6 +52,8 @@ Every shipped target still gets a generated preview card in `showcase/assets/gen
 
 ![Bizarre browser and web ports](showcase/assets/generated/browser-web.png)
 
+![Bizarre design devtool and docs ports](showcase/assets/generated/design-devtools-docs.png)
+
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
 ## Install Examples
@@ -303,6 +305,42 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 
 # Documentation sites
 # merge one web/documentation-sites/bizarre-*.css file into your docs site CSS
+
+# Figma
+# import design/figma/bizarre.tokens.json into your token workflow
+
+# Sketch
+# import design/sketch/bizarre.sketchpalette with Sketch Palettes-compatible tooling
+
+# Insomnia
+# load devtools/insomnia/bizarre.js through Insomnia theme plugin workflow
+
+# Postman
+# userstyle adapter: merge one devtools/postman/bizarre-*.css file through a userstyle manager
+
+# HTTPie
+# use devtools/httpie/bizarre.py as a Pygments style module
+
+# TablePlus
+# import or adapt one devtools/tableplus/bizarre-*.json file through TablePlus theme tooling
+
+# DBeaver
+# import one devtools/dbeaver/bizarre-*.epf preference file into a compatible workspace
+
+# GitHub README assets
+# reference devtools/github-readme-assets/bizarre-badge.svg from README media
+
+# MkDocs
+# add one docs-sites/mkdocs/bizarre-*.css file to extra_css in mkdocs.yml
+
+# Docusaurus
+# import one docs-sites/docusaurus/bizarre-*.css file from custom.css
+
+# Sphinx
+# copy docs-sites/sphinx/bizarre into your Sphinx theme path
+
+# LaTeX, Typst, Beamer, reveal.js
+# merge files from docs-sites/latex, docs-sites/typst, docs-sites/beamer, and docs-sites/reveal.js
 ```
 
 ## Current Coverage
@@ -315,6 +353,8 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
 | Desktop apps | Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser |
 | Browser and web | Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites |
+| Design and devtools | Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub README assets |
+| Docs and content | MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants

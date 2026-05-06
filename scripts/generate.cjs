@@ -3770,6 +3770,346 @@ function generateBrowserWeb() {
   out('web/README.md', webReadme());
 }
 
+function designTokenExport() {
+  const data = {
+    name: 'Bizarre Industries',
+    version: '0.2.0',
+    fonts: palette.fonts,
+    brand: Object.fromEntries(Object.entries(palette.brand).map(([key, value]) => [key, { value, type: 'color' }])),
+    variants: Object.fromEntries(variants.map((v) => [v.id, {
+      label: v.label,
+      mode: v.mode,
+      colors: {
+        background: { value: v.bg, type: 'color' },
+        backgroundAlt: { value: v.bg2, type: 'color' },
+        foreground: { value: v.fg, type: 'color' },
+        foregroundDim: { value: v.fgDim, type: 'color' },
+        border: { value: v.border, type: 'color' },
+        accent: { value: v.accent, type: 'color' },
+        selection: { value: v.sel, type: 'color' },
+      },
+      syntax: Object.fromEntries(Object.entries(v.syntax).map(([key, value]) => [key, { value, type: 'color' }])),
+      ansi: Object.fromEntries(Object.entries(v.ansi).map(([key, value]) => [key, { value, type: 'color' }])),
+    }])),
+  };
+  return JSON.stringify(data, null, 2);
+}
+
+function sketchPalette() {
+  const seen = new Set();
+  const colors = [];
+  const pushColor = (name, hex) => {
+    if (seen.has(hex)) return;
+    seen.add(hex);
+    const [red, green, blue] = rgb(hex).map((n) => Number((n / 255).toFixed(4)));
+    colors.push({ name, red, green, blue, alpha: 1 });
+  };
+  for (const [key, value] of Object.entries(palette.brand)) pushColor(`brand/${key}`, value);
+  for (const v of variants) {
+    for (const [key, value] of Object.entries({
+      bg: v.bg,
+      bg2: v.bg2,
+      bg3: v.bg3,
+      fg: v.fg,
+      accent: v.accent,
+      border: v.border,
+      selection: v.sel,
+    })) pushColor(`${v.id}/${key}`, value);
+  }
+  return JSON.stringify({ compatibleVersion: '2.0', pluginVersion: '1.4', colors }, null, 2);
+}
+
+function insomniaTheme() {
+  return `const themes = ${JSON.stringify(variants.map((v) => ({
+    name: titleSlug(v.id),
+    displayName: v.label,
+    theme: {
+      background: { default: v.bg, success: v.syntax.ok, notice: v.syntax.info, warning: v.syntax.warn, danger: v.syntax.error, surprise: v.syntax.hint, info: v.syntax.info },
+      foreground: { default: v.fg, success: v.syntax.ok, notice: v.syntax.info, warning: v.syntax.warn, danger: v.syntax.error, surprise: v.syntax.hint, info: v.syntax.info },
+      highlight: { default: v.accent, xxs: v.bg2, xs: v.bg3, sm: v.sel, md: v.sel, lg: v.accent },
+      styles: { dialog: { background: { default: v.bg2 } }, sidebar: { background: { default: v.bg2 } }, pane: { background: { default: v.bg } } },
+    },
+  })), null, 2)};
+
+module.exports.themes = themes;`;
+}
+
+function postmanCss(v) {
+  return `/* ${v.label} Postman userstyle adapter */
+${cssVars(v)}
+body,
+[class*="app-root"],
+[class*="workspace"] {
+  background: var(--bizarre-bg) !important;
+  color: var(--bizarre-fg) !important;
+}
+button,
+[role="button"],
+a {
+  color: var(--bizarre-accent) !important;
+}
+input,
+textarea,
+[contenteditable="true"] {
+  background: var(--bizarre-bg-2) !important;
+  color: var(--bizarre-fg) !important;
+  border-color: var(--bizarre-border) !important;
+}
+pre,
+code {
+  background: var(--bizarre-bg-2) !important;
+  color: var(--bizarre-string) !important;
+}`;
+}
+
+function httpieStyle() {
+  const v = variants[0];
+  const s = v.syntax;
+  return `from pygments.style import Style
+from pygments.token import Comment, Error, Generic, Keyword, Literal, Name, Number, Operator, Punctuation, String, Text
+
+
+class BizarreStyle(Style):
+    background_color = "${v.bg}"
+    highlight_color = "${v.sel}"
+    default_style = "${v.fg}"
+    styles = {
+        Text: "${v.fg}",
+        Error: "bold ${s.error}",
+        Comment: "italic ${s.comment}",
+        Keyword: "${s.kwCtrl}",
+        Keyword.Declaration: "${s.kwDecl}",
+        Operator: "${s.op}",
+        Punctuation: "${s.punct}",
+        Name: "${s.variable}",
+        Name.Function: "${s.fn}",
+        Name.Class: "${s.type}",
+        Name.Decorator: "italic ${s.decorator}",
+        Name.Builtin: "${s.builtin}",
+        Literal: "${s.string}",
+        String: "${s.string}",
+        Number: "${s.num}",
+        Generic.Heading: "bold ${v.accent}",
+        Generic.Inserted: "${s.ok}",
+        Generic.Deleted: "${s.error}",
+        Generic.Emph: "italic",
+        Generic.Strong: "bold",
+    }
+`;
+}
+
+function tablePlusTheme(v) {
+  return JSON.stringify({
+    name: v.label,
+    type: v.mode,
+    editor: {
+      background: v.bg,
+      foreground: v.fg,
+      selection: v.sel,
+      caret: v.cursor,
+      lineHighlight: v.line,
+    },
+    table: {
+      headerBackground: v.bg2,
+      headerForeground: v.fg,
+      rowBackground: v.bg,
+      alternateRowBackground: v.bg2,
+      grid: v.border,
+      selectedRowBackground: v.sel,
+    },
+    syntax: v.syntax,
+  }, null, 2);
+}
+
+function dbeaverPrefs(v) {
+  return `# ${v.label} for DBeaver and Eclipse-based editors
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_THEME=${titleSlug(v.id)}
+/instance/org.eclipse.ui.editors/foregroundColor=${noHash(v.fg)}
+/instance/org.eclipse.ui.editors/backgroundColor=${noHash(v.bg)}
+/instance/org.eclipse.ui.editors/currentLineColor=${noHash(v.line)}
+/instance/org.eclipse.ui.editors/printMarginColor=${noHash(v.border)}
+/instance/org.eclipse.ui.editors/selectionBackground=${noHash(v.sel)}
+/instance/org.eclipse.ui.editors/selectionForeground=${noHash(v.fg)}
+/instance/org.jkiss.dbeaver.ui.editors.sql/keywordColor=${noHash(v.syntax.kwCtrl)}
+/instance/org.jkiss.dbeaver.ui.editors.sql/stringColor=${noHash(v.syntax.string)}
+/instance/org.jkiss.dbeaver.ui.editors.sql/numberColor=${noHash(v.syntax.num)}
+/instance/org.jkiss.dbeaver.ui.editors.sql/commentColor=${noHash(v.syntax.comment)}`;
+}
+
+function githubReadmeSvg() {
+  const v = variants[0];
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-labelledby="title desc">
+  <title id="title">Bizarre Industries theme badge</title>
+  <desc id="desc">Palette badge using the Bizarre Industries theme colors.</desc>
+  <rect width="960" height="320" fill="${v.bg}"/>
+  <rect x="32" y="32" width="896" height="256" fill="${v.bg2}" stroke="${v.border}" stroke-width="2"/>
+  <text x="64" y="126" fill="${v.accent}" font-family="${palette.fonts.display_family}, monospace" font-size="72" font-weight="700">BIZARRE</text>
+  <text x="66" y="182" fill="${v.fg}" font-family="${palette.fonts.label_family}, monospace" font-size="28" font-weight="600">CATCH THE STARS.</text>
+  <g transform="translate(64 222)">
+    ${[v.bg, v.bg2, v.bg3, v.fg, v.accent, v.syntax.info, v.syntax.string, v.syntax.warn].map((hex, index) => `<rect x="${index * 56}" y="0" width="40" height="40" fill="${hex}"/>`).join('\n    ')}
+  </g>
+</svg>`;
+}
+
+function githubReadmeCss(v) {
+  return `/* ${v.label} GitHub README asset helper */
+${cssVars(v, '.bizarre-readme')}
+.bizarre-readme {
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+  border: 1px solid var(--bizarre-border);
+  padding: 24px;
+}
+.bizarre-readme a {
+  color: var(--bizarre-info);
+}
+.bizarre-readme code {
+  background: var(--bizarre-bg-2);
+  color: var(--bizarre-string);
+}`;
+}
+
+function docsCss(v, family) {
+  return `/* ${v.label} for ${family} */
+${cssVars(v)}
+:root {
+  color-scheme: ${v.mode};
+}
+body,
+.md-main,
+.theme-doc-markdown,
+.wy-nav-content,
+.reveal {
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+}
+a,
+.md-typeset a,
+.theme-doc-markdown a,
+.wy-menu-vertical a,
+.reveal a {
+  color: var(--bizarre-info);
+}
+pre,
+code,
+.highlight,
+.prism-code {
+  background: var(--bizarre-bg-2);
+  color: var(--bizarre-string);
+}
+blockquote,
+table,
+.admonition,
+.theme-admonition {
+  border-color: var(--bizarre-border);
+}
+::selection {
+  background: var(--bizarre-selection);
+}`;
+}
+
+function sphinxThemeToml() {
+  return `[theme]
+inherit = "basic"
+stylesheets = ["bizarre.css"]
+pygments_style = { default = "default", dark = "monokai" }
+
+[options]
+accent = "${variants[0].accent}"
+background = "${variants[0].bg}"
+foreground = "${variants[0].fg}"`;
+}
+
+function latexStyle() {
+  const v = variants[0];
+  return `\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{bizarre}[2026/05/07 Bizarre Industries colors]
+\\RequirePackage{xcolor}
+\\definecolor{bizarrebg}{HTML}{${noHash(v.bg)}}
+\\definecolor{bizarrefg}{HTML}{${noHash(v.fg)}}
+\\definecolor{bizarreaccent}{HTML}{${noHash(v.accent)}}
+\\definecolor{bizarrestring}{HTML}{${noHash(v.syntax.string)}}
+\\definecolor{bizarrekeyword}{HTML}{${noHash(v.syntax.kwCtrl)}}
+\\definecolor{bizarrecomment}{HTML}{${noHash(v.syntax.comment)}}
+\\pagecolor{bizarrebg}
+\\color{bizarrefg}`;
+}
+
+function beamerStyle() {
+  const v = variants[0];
+  return `\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{beamerthemebizarre}[2026/05/07 Bizarre Industries beamer theme]
+\\RequirePackage{xcolor}
+\\definecolor{bizarrebg}{HTML}{${noHash(v.bg)}}
+\\definecolor{bizarrefg}{HTML}{${noHash(v.fg)}}
+\\definecolor{bizarreaccent}{HTML}{${noHash(v.accent)}}
+\\setbeamercolor{normal text}{fg=bizarrefg,bg=bizarrebg}
+\\setbeamercolor{structure}{fg=bizarreaccent}
+\\setbeamercolor{frametitle}{fg=bizarreaccent,bg=bizarrebg}
+\\setbeamercolor{block title}{fg=bizarrebg,bg=bizarreaccent}
+\\setbeamercolor{block body}{fg=bizarrefg,bg=bizarrebg}`;
+}
+
+function typstStyle() {
+  const v = variants[0];
+  return `#let bizarre-bg = rgb("${v.bg}")
+#let bizarre-fg = rgb("${v.fg}")
+#let bizarre-accent = rgb("${v.accent}")
+#let bizarre-border = rgb("${v.border}")
+#let bizarre-heading(body) = text(fill: bizarre-accent, weight: "bold", body)
+#let bizarre-page(body) = page(fill: bizarre-bg)[
+  #set text(fill: bizarre-fg, font: "${palette.fonts.prose_family}")
+  #body
+]
+#let bizarre-rule = line(length: 100%, stroke: 1pt + bizarre-border)`;
+}
+
+function designReadme() {
+  return `# Bizarre Design Exports
+
+Figma uses generated design token JSON. Sketch uses a Sketch Palette JSON file. Both derive from palette.js and include every Bizarre variant.
+`;
+}
+
+function devtoolsReadme() {
+  return `# Bizarre Devtool Ports
+
+Insomnia, HTTPie, TablePlus, and DBeaver use portable theme or preference files. Postman is provided as a userstyle adapter because this pass found no stable first-party portable theme import. GitHub README assets are reusable CSS and SVG files.
+`;
+}
+
+function docsSitesReadme() {
+  return `# Bizarre Docs And Content Ports
+
+MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, and reveal.js snippets are generated from palette.js. Merge CSS or package files into existing docs projects instead of replacing project config wholesale.
+`;
+}
+
+function generateDesignDevtoolsDocs() {
+  out('design/figma/bizarre.tokens.json', designTokenExport());
+  out('design/sketch/bizarre.sketchpalette', sketchPalette());
+  out('design/README.md', designReadme());
+  out('devtools/insomnia/bizarre.js', insomniaTheme());
+  out('devtools/httpie/bizarre.py', httpieStyle());
+  out('devtools/github-readme-assets/bizarre-badge.svg', githubReadmeSvg());
+  for (const v of variants) {
+    out(`devtools/postman/${titleSlug(v.id)}.css`, postmanCss(v));
+    out(`devtools/tableplus/${titleSlug(v.id)}.json`, tablePlusTheme(v));
+    out(`devtools/dbeaver/${titleSlug(v.id)}.epf`, dbeaverPrefs(v));
+    out(`devtools/github-readme-assets/${titleSlug(v.id)}.css`, githubReadmeCss(v));
+    out(`docs-sites/mkdocs/${titleSlug(v.id)}.css`, docsCss(v, 'MkDocs'));
+    out(`docs-sites/docusaurus/${titleSlug(v.id)}.css`, docsCss(v, 'Docusaurus'));
+    out(`docs-sites/reveal.js/${titleSlug(v.id)}.css`, docsCss(v, 'reveal.js'));
+  }
+  out('docs-sites/sphinx/bizarre/theme.toml', sphinxThemeToml());
+  out('docs-sites/sphinx/bizarre/static/bizarre.css', docsCss(variants[0], 'Sphinx'));
+  out('docs-sites/latex/bizarre.sty', latexStyle());
+  out('docs-sites/typst/bizarre.typ', typstStyle());
+  out('docs-sites/beamer/beamerthemebizarre.sty', beamerStyle());
+  out('devtools/README.md', devtoolsReadme());
+  out('docs-sites/README.md', docsSitesReadme());
+}
+
 function generateDesktopApps() {
   for (const v of variants) {
     out(`apps/raycast/${titleSlug(v.id)}.json`, raycastTheme(v));
@@ -4469,6 +4809,23 @@ const WEB_TARGETS = [
   { name: 'Startpages', file: 'web/startpages/bizarre-void.html', variant: 'void', key: 'format', value: 'html' },
   { name: 'Docs sites', file: 'web/documentation-sites/bizarre-void.css', variant: 'void-hicontrast', key: 'format', value: 'css' },
 ];
+const DESIGN_DOCS_TARGETS = [
+  { name: 'Figma', file: 'design/figma/bizarre.tokens.json', variant: 'void', key: 'format', value: 'tokens' },
+  { name: 'Sketch', file: 'design/sketch/bizarre.sketchpalette', variant: 'void-hicontrast', key: 'format', value: 'palette' },
+  { name: 'Insomnia', file: 'devtools/insomnia/bizarre.js', variant: 'workshop', key: 'format', value: 'js' },
+  { name: 'Postman', file: 'devtools/postman/bizarre-paper.css', variant: 'paper', key: 'adapter', value: 'userstyle' },
+  { name: 'HTTPie', file: 'devtools/httpie/bizarre.py', variant: 'bone', key: 'format', value: 'pygments' },
+  { name: 'TablePlus', file: 'devtools/tableplus/bizarre-void.json', variant: 'void', key: 'format', value: 'json' },
+  { name: 'DBeaver', file: 'devtools/dbeaver/bizarre-void.epf', variant: 'void-hicontrast', key: 'format', value: 'epf' },
+  { name: 'GitHub assets', file: 'devtools/github-readme-assets/bizarre-badge.svg', variant: 'workshop', key: 'format', value: 'svg' },
+  { name: 'MkDocs', file: 'docs-sites/mkdocs/bizarre-void.css', variant: 'paper', key: 'format', value: 'css' },
+  { name: 'Docusaurus', file: 'docs-sites/docusaurus/bizarre-void.css', variant: 'bone', key: 'format', value: 'css' },
+  { name: 'Sphinx', file: 'docs-sites/sphinx/bizarre/theme.toml', variant: 'void', key: 'format', value: 'theme.toml' },
+  { name: 'LaTeX', file: 'docs-sites/latex/bizarre.sty', variant: 'void-hicontrast', key: 'format', value: 'sty' },
+  { name: 'Typst', file: 'docs-sites/typst/bizarre.typ', variant: 'workshop', key: 'format', value: 'typ' },
+  { name: 'Beamer', file: 'docs-sites/beamer/beamerthemebizarre.sty', variant: 'paper', key: 'format', value: 'sty' },
+  { name: 'reveal.js', file: 'docs-sites/reveal.js/bizarre-void.css', variant: 'bone', key: 'format', value: 'css' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = ${JSON.stringify(shellWordmark, null, 2)};
 
@@ -4766,9 +5123,16 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="design-devtools-docs">
+        <div className="section-head"><span className="section-num">§ 13 / DESIGN + DOCS</span><h2 className="section-title">Design, devtool, and docs ports.</h2><span className="section-sub">figma · sketch · insomnia · postman · httpie · tableplus · dbeaver · docs frameworks</span></div>
+        <div className="config-grid cli-grid">
+          {DESIGN_DOCS_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
+        </div>
+      </section>
+
       {shown.map((v, idx) => (
         <section key={v.id} className={\`section \${v.mode === 'light' ? 'light-section' : ''}\`}>
-          <div className="section-head"><span className="section-num">§ {String(idx + 13).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
+          <div className="section-head"><span className="section-num">§ {String(idx + 14).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
           <div className="pair"><BzrEditor sample={sample} variant={v} limeRole={limeRole} /><BzrStarshipTerminal variant={v} /></div>
         </section>
       ))}
@@ -4980,6 +5344,8 @@ Every shipped target still gets a generated preview card in \`showcase/assets/ge
 ![Bizarre desktop app adapters](showcase/assets/generated/desktop-apps.png)
 
 ![Bizarre browser and web ports](showcase/assets/generated/browser-web.png)
+
+![Bizarre design devtool and docs ports](showcase/assets/generated/design-devtools-docs.png)
 
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
@@ -5232,6 +5598,42 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 
 # Documentation sites
 # merge one web/documentation-sites/bizarre-*.css file into your docs site CSS
+
+# Figma
+# import design/figma/bizarre.tokens.json into your token workflow
+
+# Sketch
+# import design/sketch/bizarre.sketchpalette with Sketch Palettes-compatible tooling
+
+# Insomnia
+# load devtools/insomnia/bizarre.js through Insomnia theme plugin workflow
+
+# Postman
+# userstyle adapter: merge one devtools/postman/bizarre-*.css file through a userstyle manager
+
+# HTTPie
+# use devtools/httpie/bizarre.py as a Pygments style module
+
+# TablePlus
+# import or adapt one devtools/tableplus/bizarre-*.json file through TablePlus theme tooling
+
+# DBeaver
+# import one devtools/dbeaver/bizarre-*.epf preference file into a compatible workspace
+
+# GitHub README assets
+# reference devtools/github-readme-assets/bizarre-badge.svg from README media
+
+# MkDocs
+# add one docs-sites/mkdocs/bizarre-*.css file to extra_css in mkdocs.yml
+
+# Docusaurus
+# import one docs-sites/docusaurus/bizarre-*.css file from custom.css
+
+# Sphinx
+# copy docs-sites/sphinx/bizarre into your Sphinx theme path
+
+# LaTeX, Typst, Beamer, reveal.js
+# merge files from docs-sites/latex, docs-sites/typst, docs-sites/beamer, and docs-sites/reveal.js
 \`\`\`
 
 ## Current Coverage
@@ -5244,6 +5646,8 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
 | Desktop apps | Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser |
 | Browser and web | Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites |
+| Design and devtools | Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub README assets |
+| Docs and content | MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants
@@ -5269,11 +5673,11 @@ function portsDoc() {
     ['CLI/TUI', 'bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid'],
     ['Desktop apps', 'Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser'],
     ['Browser and web', 'Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites'],
+    ['Design and devtools', 'Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub README assets'],
+    ['Docs and content', 'MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js'],
     ['Desktop and tools', 'AeroSpace, ForkLift, Jujutsu'],
   ];
   const backlog = [
-    ['Design and devtools', 'Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub readme assets'],
-    ['Docs and content', 'MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js'],
     ['OS and window managers', 'Hyprland, Sway, i3, Waybar, Polybar, SketchyBar, yabai, rofi, wofi'],
   ];
   return `# Bizarre Theme Ports
@@ -5326,6 +5730,7 @@ function generateAll() {
   generateTools();
   generateDesktopApps();
   generateBrowserWeb();
+  generateDesignDevtoolsDocs();
   generateShowcase();
   generateDocs();
 }

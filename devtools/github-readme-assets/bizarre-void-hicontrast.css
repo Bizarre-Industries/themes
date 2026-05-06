@@ -1,0 +1,31 @@
+/* Bizarre Void Hi-Contrast GitHub README asset helper */
+.bizarre-readme {
+  --bizarre-bg: #000000;
+  --bizarre-bg-2: #0E0E0E;
+  --bizarre-bg-3: #1F1F1F;
+  --bizarre-fg: #F9F8F2;
+  --bizarre-dim: #B8B8B8;
+  --bizarre-border: #545454;
+  --bizarre-accent: #C6FF24;
+  --bizarre-selection: #3A4D0E;
+  --bizarre-error: #FF6F77;
+  --bizarre-warn: #FFB85C;
+  --bizarre-ok: #5BD06B;
+  --bizarre-info: #7BB3FF;
+  --bizarre-string: #E8A33D;
+  --bizarre-function: #C6FF24;
+  --bizarre-keyword: #FF8FCF;
+}
+.bizarre-readme {
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+  border: 1px solid var(--bizarre-border);
+  padding: 24px;
+}
+.bizarre-readme a {
+  color: var(--bizarre-info);
+}
+.bizarre-readme code {
+  background: var(--bizarre-bg-2);
+  color: var(--bizarre-string);
+}

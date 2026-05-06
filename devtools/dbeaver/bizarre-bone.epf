@@ -1,0 +1,12 @@
+# Bizarre Bone for DBeaver and Eclipse-based editors
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_THEME=bizarre-bone
+/instance/org.eclipse.ui.editors/foregroundColor=2B2B2B
+/instance/org.eclipse.ui.editors/backgroundColor=F5F2EA
+/instance/org.eclipse.ui.editors/currentLineColor=EDE9DD
+/instance/org.eclipse.ui.editors/printMarginColor=DDD8CB
+/instance/org.eclipse.ui.editors/selectionBackground=D4E89F
+/instance/org.eclipse.ui.editors/selectionForeground=2B2B2B
+/instance/org.jkiss.dbeaver.ui.editors.sql/keywordColor=B8276F
+/instance/org.jkiss.dbeaver.ui.editors.sql/stringColor=9F4A0E
+/instance/org.jkiss.dbeaver.ui.editors.sql/numberColor=1F4FB0
+/instance/org.jkiss.dbeaver.ui.editors.sql/commentColor=9A9482
