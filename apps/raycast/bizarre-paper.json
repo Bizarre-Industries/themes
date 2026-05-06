@@ -1,0 +1,19 @@
+{
+  "name": "Bizarre Paper",
+  "appearance": "light",
+  "colors": {
+    "background": "#F9F8F2",
+    "backgroundSecondary": "#F2F0EA",
+    "text": "#1F1F1F",
+    "textSecondary": "#3D3D3D",
+    "border": "#D8D4C7",
+    "selection": "#DCEFA8",
+    "accent": "#5F8A0F",
+    "red": "#B8276F",
+    "orange": "#9F4A0E",
+    "yellow": "#9F4A0E",
+    "green": "#3F7A1F",
+    "blue": "#1F4FB0",
+    "purple": "#7E2A9A"
+  }
+}

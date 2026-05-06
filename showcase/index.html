@@ -239,6 +239,17 @@ const CLI_TARGETS = [
   { name: 'ranger', file: 'tools/ranger/colorschemes/bizarre_void.py', variant: 'void-hicontrast', key: 'files', value: 'python' },
   { name: 'vivid', file: 'tools/vivid/themes/bizarre-void.yml', variant: 'workshop', key: 'ls', value: 'yaml' },
 ];
+const APP_TARGETS = [
+  { name: 'Raycast', file: 'apps/raycast/bizarre-void.json', variant: 'void', key: 'format', value: 'json' },
+  { name: 'Alfred', file: 'apps/alfred/bizarre-void.alfredappearance', variant: 'void-hicontrast', key: 'format', value: 'appearance' },
+  { name: 'Obsidian', file: 'apps/obsidian/bizarre-workshop.css', variant: 'workshop', key: 'format', value: 'css' },
+  { name: 'Logseq', file: 'apps/logseq/bizarre-paper.css', variant: 'paper', key: 'format', value: 'css' },
+  { name: 'Slack', file: 'apps/slack/bizarre-sidebar-themes.txt', variant: 'bone', key: 'format', value: 'sidebar' },
+  { name: 'Discord', file: 'apps/discord/betterdiscord/bizarre-void.theme.css', variant: 'void', key: 'adapter', value: 'BetterDiscord' },
+  { name: 'Telegram', file: 'apps/telegram/bizarre-void.tdesktop-theme', variant: 'void-hicontrast', key: 'format', value: 'tdesktop' },
+  { name: 'Spotify', file: 'apps/spotify/spicetify/color.ini', variant: 'workshop', key: 'adapter', value: 'Spicetify' },
+  { name: 'qutebrowser', file: 'apps/qutebrowser/bizarre-void.py', variant: 'paper', key: 'format', value: 'python' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = {
   "bizarre": [
@@ -536,6 +547,13 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         <div className="section-head"><span className="section-num">§ 10 / CLI + TUI</span><h2 className="section-title">Planned CLI ports now ship.</h2><span className="section-sub">bat · btop · delta · dircolors · fzf · lazygit · yazi · eza · atuin · bottom · k9s · ranger · vivid</span></div>
         <div className="config-grid cli-grid">
           {CLI_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="desktop-apps">
+        <div className="section-head"><span className="section-num">§ 11 / APPS</span><h2 className="section-title">Desktop app adapters.</h2><span className="section-sub">raycast · alfred · obsidian · logseq · slack · discord · telegram · spotify · qutebrowser</span></div>
+        <div className="config-grid cli-grid">
+          {APP_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
         </div>
       </section>
 

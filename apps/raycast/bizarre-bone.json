@@ -1,0 +1,19 @@
+{
+  "name": "Bizarre Bone",
+  "appearance": "light",
+  "colors": {
+    "background": "#F5F2EA",
+    "backgroundSecondary": "#EDE9DD",
+    "text": "#2B2B2B",
+    "textSecondary": "#4A4A4A",
+    "border": "#DDD8CB",
+    "selection": "#D4E89F",
+    "accent": "#5F8A0F",
+    "red": "#B8276F",
+    "orange": "#9F4A0E",
+    "yellow": "#9F4A0E",
+    "green": "#3F7A1F",
+    "blue": "#1F4FB0",
+    "purple": "#7E2A9A"
+  }
+}

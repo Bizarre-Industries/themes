@@ -16,13 +16,13 @@ Sources:
 | Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij, Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box |
 | Shells and prompts | Bash, Zsh, Fish, PowerShell, Starship |
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
+| Desktop apps | Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser |
 | Desktop and tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Planned Backlog
 
 | Family | Candidate ports |
 |---|---|
-| Desktop apps | Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser |
 | Browser and web | Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites |
 | Design and devtools | Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub readme assets |
 | Docs and content | MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js |

@@ -1,0 +1,37 @@
+/**
+ * @name Bizarre Paper
+ * @description Bizarre Industries adapter theme for BetterDiscord.
+ * @version 0.2.0
+ * @author Bizarre Industries
+ */
+:root {
+  --bizarre-bg: #F9F8F2;
+  --bizarre-bg-2: #F2F0EA;
+  --bizarre-bg-3: #E6E3DA;
+  --bizarre-fg: #1F1F1F;
+  --bizarre-dim: #3D3D3D;
+  --bizarre-border: #D8D4C7;
+  --bizarre-accent: #5F8A0F;
+  --bizarre-selection: #DCEFA8;
+  --bizarre-error: #B8276F;
+  --bizarre-warn: #9F4A0E;
+  --bizarre-ok: #3F7A1F;
+  --bizarre-info: #1F4FB0;
+  --bizarre-string: #9F4A0E;
+  --bizarre-function: #5F8A0F;
+  --bizarre-keyword: #B8276F;
+}
+.theme-dark,
+.theme-light {
+  --background-primary: var(--bizarre-bg);
+  --background-secondary: var(--bizarre-bg-2);
+  --background-tertiary: var(--bizarre-bg-3);
+  --text-normal: var(--bizarre-fg);
+  --text-muted: var(--bizarre-dim);
+  --background-modifier-selected: var(--bizarre-selection);
+  --interactive-active: var(--bizarre-accent);
+  --brand-experiment: var(--bizarre-accent);
+  --status-danger: var(--bizarre-error);
+  --status-warning: var(--bizarre-warn);
+  --status-positive: var(--bizarre-ok);
+}

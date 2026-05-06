@@ -1,0 +1,25 @@
+{
+  "name": "Bizarre Paper",
+  "credit": "Bizarre Industries",
+  "result": {
+    "text": "#1F1F1F",
+    "subtext": "#3D3D3D",
+    "background": "#F9F8F2"
+  },
+  "selected": {
+    "text": "#F9F8F2",
+    "subtext": "#F9F8F2",
+    "background": "#5F8A0F"
+  },
+  "window": {
+    "background": "#F9F8F2",
+    "border": "#D8D4C7"
+  },
+  "search": {
+    "text": "#1F1F1F",
+    "background": "#F2F0EA"
+  },
+  "scrollbar": {
+    "color": "#5F8A0F"
+  }
+}

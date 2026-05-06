@@ -1,0 +1,25 @@
+{
+  "name": "Bizarre Workshop",
+  "credit": "Bizarre Industries",
+  "result": {
+    "text": "#E4E2DA",
+    "subtext": "#9C9A91",
+    "background": "#1A1815"
+  },
+  "selected": {
+    "text": "#0E0E0E",
+    "subtext": "#0E0E0E",
+    "background": "#C6FF24"
+  },
+  "window": {
+    "background": "#1A1815",
+    "border": "#3D3A33"
+  },
+  "search": {
+    "text": "#E4E2DA",
+    "background": "#23211C"
+  },
+  "scrollbar": {
+    "color": "#C6FF24"
+  }
+}
