@@ -1,0 +1,18 @@
+{
+  "name": "Bizarre Paper",
+  "version": 1,
+  "settings": {
+    "accentFromPage": false,
+    "accentOnWindow": true,
+    "borderRadius": 6,
+    "colorAccentBg": "#5F8A0F",
+    "colorBg": "#F9F8F2",
+    "colorFg": "#1F1F1F",
+    "colorHighlightBg": "#5F8A0F",
+    "colorWindowBg": "#F2F0EA",
+    "contrast": 0,
+    "dimBlurred": true,
+    "preferSystemAccent": false,
+    "transparencyTabBar": false
+  }
+}

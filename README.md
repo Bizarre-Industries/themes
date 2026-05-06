@@ -50,6 +50,8 @@ Every shipped target still gets a generated preview card in `showcase/assets/gen
 
 ![Bizarre desktop app adapters](showcase/assets/generated/desktop-apps.png)
 
+![Bizarre browser and web ports](showcase/assets/generated/browser-web.png)
+
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
 ## Install Examples
@@ -280,6 +282,27 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 
 # qutebrowser
 # source one apps/qutebrowser/bizarre-*.py from qutebrowser config.py
+
+# Firefox
+# load web/firefox/bizarre-void/manifest.json as a temporary extension or package it for signing
+
+# Chrome
+# load web/chrome/bizarre-void as an unpacked extension theme
+
+# Arc
+# paste one web/arc/boosts/bizarre-*.css file into Arc Boost code
+
+# Vivaldi
+# compress one web/vivaldi/bizarre-*/theme.json as theme ZIP contents, then import it
+
+# Userstyles
+# import one web/userstyles/bizarre-*.user.css into a Stylus-compatible manager
+
+# Startpages
+# point your browser homepage to one web/startpages/bizarre-*.html file
+
+# Documentation sites
+# merge one web/documentation-sites/bizarre-*.css file into your docs site CSS
 ```
 
 ## Current Coverage
@@ -291,6 +314,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
 | Desktop apps | Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser |
+| Browser and web | Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants

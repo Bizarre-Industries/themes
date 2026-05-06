@@ -1,0 +1,150 @@
+{
+  "manifest_version": 3,
+  "name": "Bizarre Paper for Chrome",
+  "version": "0.2.0",
+  "theme": {
+    "colors": {
+      "frame": [
+        242,
+        240,
+        234
+      ],
+      "frame_inactive": [
+        249,
+        248,
+        242
+      ],
+      "toolbar": [
+        249,
+        248,
+        242
+      ],
+      "toolbar_text": [
+        31,
+        31,
+        31
+      ],
+      "tab_text": [
+        31,
+        31,
+        31
+      ],
+      "tab_background_text": [
+        61,
+        61,
+        61
+      ],
+      "bookmark_text": [
+        61,
+        61,
+        61
+      ],
+      "icons": [
+        61,
+        61,
+        61
+      ],
+      "icons_attention": [
+        95,
+        138,
+        15
+      ],
+      "toolbar_field": [
+        242,
+        240,
+        234
+      ],
+      "toolbar_field_text": [
+        31,
+        31,
+        31
+      ],
+      "toolbar_field_border": [
+        216,
+        212,
+        199
+      ],
+      "button_background_active": [
+        220,
+        239,
+        168
+      ],
+      "button_background_hover": [
+        230,
+        227,
+        218
+      ],
+      "popup": [
+        242,
+        240,
+        234
+      ],
+      "popup_text": [
+        31,
+        31,
+        31
+      ],
+      "popup_border": [
+        216,
+        212,
+        199
+      ],
+      "popup_highlight": [
+        95,
+        138,
+        15
+      ],
+      "popup_highlight_text": [
+        249,
+        248,
+        242
+      ],
+      "ntp_background": [
+        249,
+        248,
+        242
+      ],
+      "ntp_card_background": [
+        242,
+        240,
+        234
+      ],
+      "ntp_text": [
+        31,
+        31,
+        31
+      ],
+      "sidebar": [
+        242,
+        240,
+        234
+      ],
+      "sidebar_text": [
+        31,
+        31,
+        31
+      ],
+      "sidebar_highlight": [
+        95,
+        138,
+        15
+      ],
+      "sidebar_highlight_text": [
+        249,
+        248,
+        242
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.25,
+        0.65,
+        0.55
+      ]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom",
+      "ntp_background_repeat": "no-repeat"
+    }
+  }
+}

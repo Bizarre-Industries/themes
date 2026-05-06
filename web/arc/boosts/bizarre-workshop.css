@@ -1,0 +1,39 @@
+/* Bizarre Workshop Arc Boost CSS */
+:root {
+  --bizarre-bg: #1A1815;
+  --bizarre-bg-2: #23211C;
+  --bizarre-bg-3: #2D2A23;
+  --bizarre-fg: #E4E2DA;
+  --bizarre-dim: #9C9A91;
+  --bizarre-border: #3D3A33;
+  --bizarre-accent: #C6FF24;
+  --bizarre-selection: #3A3618;
+  --bizarre-error: #FF6F77;
+  --bizarre-warn: #FFB85C;
+  --bizarre-ok: #5BD06B;
+  --bizarre-info: #7BB3FF;
+  --bizarre-string: #E8A33D;
+  --bizarre-function: #C6FF24;
+  --bizarre-keyword: #FF8FCF;
+}
+html,
+body {
+  background: var(--bizarre-bg) !important;
+  color: var(--bizarre-fg) !important;
+  font-family: "Monaspace Argon", system-ui, sans-serif !important;
+}
+a,
+button,
+[role="button"] {
+  color: var(--bizarre-accent) !important;
+}
+input,
+textarea,
+select {
+  background: var(--bizarre-bg-2) !important;
+  color: var(--bizarre-fg) !important;
+  border-color: var(--bizarre-border) !important;
+}
+::selection {
+  background: var(--bizarre-selection) !important;
+}

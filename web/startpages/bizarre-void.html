@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bizarre Void Startpage</title>
+<style>
+:root {
+  --bizarre-bg: #0E0E0E;
+  --bizarre-bg-2: #1A1A1A;
+  --bizarre-bg-3: #2B2B2B;
+  --bizarre-fg: #E4E4E4;
+  --bizarre-dim: #9C9C9C;
+  --bizarre-border: #3D3D3D;
+  --bizarre-accent: #C6FF24;
+  --bizarre-selection: #2B3A0E;
+  --bizarre-error: #FF6F77;
+  --bizarre-warn: #FFB85C;
+  --bizarre-ok: #5BD06B;
+  --bizarre-info: #7BB3FF;
+  --bizarre-string: #E8A33D;
+  --bizarre-function: #C6FF24;
+  --bizarre-keyword: #FF8FCF;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+  font: 16px/1.5 "Monaspace Argon", system-ui, sans-serif;
+}
+main {
+  width: min(920px, calc(100vw - 40px));
+}
+h1 {
+  margin: 0 0 20px;
+  color: var(--bizarre-accent);
+  font: 700 clamp(48px, 12vw, 128px)/0.9 "Monaspace Xenon", system-ui, sans-serif;
+  letter-spacing: 0;
+}
+.panel {
+  border: 1px solid var(--bizarre-border);
+  background: var(--bizarre-bg-2);
+  padding: 24px;
+}
+form {
+  display: flex;
+  gap: 12px;
+}
+input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--bizarre-border);
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+  padding: 14px 16px;
+  font: inherit;
+}
+button {
+  border: 0;
+  background: var(--bizarre-accent);
+  color: #0E0E0E;
+  padding: 14px 18px;
+  font: 700 13px/1 "Monaspace Krypton", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+.links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+a {
+  color: var(--bizarre-info);
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>BZR<span>.</span></h1>
+  <div class="panel">
+    <form action="https://duckduckgo.com/" method="get">
+      <input name="q" aria-label="Search" autofocus />
+      <button type="submit">Search</button>
+    </form>
+    <div class="links">
+      <a href="https://github.com/">GitHub</a>
+      <a href="https://developer.mozilla.org/">MDN</a>
+      <a href="https://news.ycombinator.com/">Hacker News</a>
+      <a href="https://lobste.rs/">Lobsters</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>

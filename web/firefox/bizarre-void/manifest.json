@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Bizarre Void for Firefox",
+  "version": "0.2.0",
+  "theme": {
+    "colors": {
+      "frame": "#1A1A1A",
+      "frame_inactive": "#0E0E0E",
+      "toolbar": "#0E0E0E",
+      "toolbar_text": "#E4E4E4",
+      "tab_text": "#E4E4E4",
+      "tab_background_text": "#9C9C9C",
+      "bookmark_text": "#9C9C9C",
+      "icons": "#9C9C9C",
+      "icons_attention": "#C6FF24",
+      "toolbar_field": "#1A1A1A",
+      "toolbar_field_text": "#E4E4E4",
+      "toolbar_field_border": "#3D3D3D",
+      "button_background_active": "#2B3A0E",
+      "button_background_hover": "#2B2B2B",
+      "popup": "#1A1A1A",
+      "popup_text": "#E4E4E4",
+      "popup_border": "#3D3D3D",
+      "popup_highlight": "#C6FF24",
+      "popup_highlight_text": "#0E0E0E",
+      "ntp_background": "#0E0E0E",
+      "ntp_card_background": "#1A1A1A",
+      "ntp_text": "#E4E4E4",
+      "sidebar": "#1A1A1A",
+      "sidebar_text": "#E4E4E4",
+      "sidebar_highlight": "#C6FF24",
+      "sidebar_highlight_text": "#0E0E0E"
+    },
+    "properties": {
+      "color_scheme": "dark",
+      "content_color_scheme": "dark"
+    }
+  }
+}

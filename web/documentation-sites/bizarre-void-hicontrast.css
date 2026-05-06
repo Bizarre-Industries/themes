@@ -1,0 +1,54 @@
+/* Bizarre Void Hi-Contrast documentation site CSS */
+:root {
+  --bizarre-bg: #000000;
+  --bizarre-bg-2: #0E0E0E;
+  --bizarre-bg-3: #1F1F1F;
+  --bizarre-fg: #F9F8F2;
+  --bizarre-dim: #B8B8B8;
+  --bizarre-border: #545454;
+  --bizarre-accent: #C6FF24;
+  --bizarre-selection: #3A4D0E;
+  --bizarre-error: #FF6F77;
+  --bizarre-warn: #FFB85C;
+  --bizarre-ok: #5BD06B;
+  --bizarre-info: #7BB3FF;
+  --bizarre-string: #E8A33D;
+  --bizarre-function: #C6FF24;
+  --bizarre-keyword: #FF8FCF;
+}
+:root,
+body {
+  color-scheme: dark;
+}
+body,
+.md-typeset,
+.theme-doc-markdown,
+.rst-content {
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+}
+a,
+.md-typeset a,
+.theme-doc-markdown a,
+.rst-content a {
+  color: var(--bizarre-info);
+}
+code,
+pre,
+.highlight,
+.md-typeset code,
+.theme-code-block,
+.rst-content code {
+  background: var(--bizarre-bg-2);
+  color: var(--bizarre-string);
+}
+blockquote,
+table,
+.admonition,
+.theme-admonition,
+.rst-content .admonition {
+  border-color: var(--bizarre-border);
+}
+::selection {
+  background: var(--bizarre-selection);
+}

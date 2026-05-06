@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Bizarre Void Hi-Contrast for Firefox",
+  "version": "0.2.0",
+  "theme": {
+    "colors": {
+      "frame": "#0E0E0E",
+      "frame_inactive": "#000000",
+      "toolbar": "#000000",
+      "toolbar_text": "#F9F8F2",
+      "tab_text": "#F9F8F2",
+      "tab_background_text": "#B8B8B8",
+      "bookmark_text": "#B8B8B8",
+      "icons": "#B8B8B8",
+      "icons_attention": "#C6FF24",
+      "toolbar_field": "#0E0E0E",
+      "toolbar_field_text": "#F9F8F2",
+      "toolbar_field_border": "#545454",
+      "button_background_active": "#3A4D0E",
+      "button_background_hover": "#1F1F1F",
+      "popup": "#0E0E0E",
+      "popup_text": "#F9F8F2",
+      "popup_border": "#545454",
+      "popup_highlight": "#C6FF24",
+      "popup_highlight_text": "#0E0E0E",
+      "ntp_background": "#000000",
+      "ntp_card_background": "#0E0E0E",
+      "ntp_text": "#F9F8F2",
+      "sidebar": "#0E0E0E",
+      "sidebar_text": "#F9F8F2",
+      "sidebar_highlight": "#C6FF24",
+      "sidebar_highlight_text": "#0E0E0E"
+    },
+    "properties": {
+      "color_scheme": "dark",
+      "content_color_scheme": "dark"
+    }
+  }
+}
