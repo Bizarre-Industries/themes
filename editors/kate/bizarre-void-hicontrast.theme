@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "name": "Bizarre Void Hi-Contrast",
+    "revision": 1
+  },
+  "editor-colors": {
+    "BackgroundColor": "#000000",
+    "TextSelection": "#3A4D0E",
+    "CurrentLine": "#0E0E0E",
+    "IconBorder": "#0E0E0E",
+    "LineNumbers": "#545454",
+    "CurrentLineNumber": "#C6FF24",
+    "Separator": "#545454",
+    "MarkBookmark": "#7BB3FF",
+    "MarkBreakpointActive": "#FF6F77",
+    "MarkBreakpointReached": "#FFB85C",
+    "MarkWarning": "#FFB85C",
+    "MarkError": "#FF6F77",
+    "TemplateBackground": "#0E0E0E"
+  },
+  "text-styles": {
+    "Normal": {
+      "text-color": "#F9F8F2",
+      "background-color": "#000000"
+    },
+    "Keyword": {
+      "text-color": "#FF8FCF",
+      "bold": true
+    },
+    "Function": {
+      "text-color": "#C6FF24",
+      "bold": true
+    },
+    "Variable": {
+      "text-color": "#E4E4E4"
+    },
+    "ControlFlow": {
+      "text-color": "#FF8FCF",
+      "bold": true
+    },
+    "Operator": {
+      "text-color": "#9DEAEA"
+    },
+    "BuiltIn": {
+      "text-color": "#E8A33D"
+    },
+    "Extension": {
+      "text-color": "#B989E5"
+    },
+    "Preprocessor": {
+      "text-color": "#B989E5"
+    },
+    "Attribute": {
+      "text-color": "#C6FF24",
+      "italic": true
+    },
+    "Char": {
+      "text-color": "#E8A33D"
+    },
+    "SpecialChar": {
+      "text-color": "#FFE08A",
+      "bold": true
+    },
+    "String": {
+      "text-color": "#E8A33D"
+    },
+    "VerbatimString": {
+      "text-color": "#FFC36B"
+    },
+    "SpecialString": {
+      "text-color": "#FF9E3D",
+      "italic": true
+    },
+    "Import": {
+      "text-color": "#9DEAEA"
+    },
+    "DataType": {
+      "text-color": "#7AD9D9"
+    },
+    "DecVal": {
+      "text-color": "#7BB3FF"
+    },
+    "BaseN": {
+      "text-color": "#7BB3FF"
+    },
+    "Float": {
+      "text-color": "#7BB3FF"
+    },
+    "Constant": {
+      "text-color": "#9DD0FF",
+      "bold": true
+    },
+    "Comment": {
+      "text-color": "#6F6F6F",
+      "italic": true
+    },
+    "Documentation": {
+      "text-color": "#9AB585",
+      "italic": true
+    },
+    "Annotation": {
+      "text-color": "#FF8FCF",
+      "italic": true
+    },
+    "CommentVariable": {
+      "text-color": "#9AB585"
+    },
+    "RegionMarker": {
+      "text-color": "#C6FF24",
+      "background-color": "#0E0E0E"
+    },
+    "Information": {
+      "text-color": "#7BB3FF"
+    },
+    "Warning": {
+      "text-color": "#FFB85C"
+    },
+    "Alert": {
+      "text-color": "#FF6F77",
+      "bold": true
+    },
+    "Others": {
+      "text-color": "#E4E4E4"
+    }
+  }
+}

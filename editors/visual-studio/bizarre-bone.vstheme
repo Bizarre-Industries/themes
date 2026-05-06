@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Themes>
+  <Theme Name="Bizarre Bone" GUID="{7c4712f1-4f20-4d46-5F8A-F5F2EA000000}">
+    <Category Name="Environment" GUID="{624ed9c3-bdfd-41fa-96c3-7c824ea32e3d}">
+      <Color Name="EnvironmentBackground">
+        
+        <Background Type="CT_RAW" Source="#F5F2EA" />
+      </Color>
+      <Color Name="EnvironmentForeground">
+        <Foreground Type="CT_RAW" Source="#2B2B2B" />
+        
+      </Color>
+      <Color Name="ToolWindowBackground">
+        
+        <Background Type="CT_RAW" Source="#EDE9DD" />
+      </Color>
+      <Color Name="ToolWindowText">
+        <Foreground Type="CT_RAW" Source="#4A4A4A" />
+        
+      </Color>
+      <Color Name="CommandBarMenuBackground">
+        
+        <Background Type="CT_RAW" Source="#EDE9DD" />
+      </Color>
+      <Color Name="CommandBarTextActive">
+        <Foreground Type="CT_RAW" Source="#2B2B2B" />
+        
+      </Color>
+      <Color Name="PanelBorder">
+        <Foreground Type="CT_RAW" Source="#DDD8CB" />
+        
+      </Color>
+      <Color Name="Accent">
+        <Foreground Type="CT_RAW" Source="#5F8A0F" />
+        
+      </Color>
+    </Category>
+    <Category Name="Text Editor" GUID="{75a05685-00a8-4ded-bae5-e7a50bfa929a}">
+      <Color Name="Plain Text">
+        <Foreground Type="CT_RAW" Source="#2B2B2B" />
+        <Background Type="CT_RAW" Source="#F5F2EA" />
+      </Color>
+      <Color Name="Selected Text">
+        <Foreground Type="CT_RAW" Source="#0E0E0E" />
+        <Background Type="CT_RAW" Source="#D4E89F" />
+      </Color>
+      <Color Name="Current Line">
+        
+        <Background Type="CT_RAW" Source="#EDE9DD" />
+      </Color>
+      <Color Name="Comment">
+        <Foreground Type="CT_RAW" Source="#9A9482" />
+        
+      </Color>
+      <Color Name="String">
+        <Foreground Type="CT_RAW" Source="#9F4A0E" />
+        
+      </Color>
+      <Color Name="Number">
+        <Foreground Type="CT_RAW" Source="#1F4FB0" />
+        
+      </Color>
+      <Color Name="Keyword">
+        <Foreground Type="CT_RAW" Source="#B8276F" />
+        
+      </Color>
+      <Color Name="Operator">
+        <Foreground Type="CT_RAW" Source="#0F6E6E" />
+        
+      </Color>
+      <Color Name="Identifier">
+        <Foreground Type="CT_RAW" Source="#1A1A1A" />
+        
+      </Color>
+      <Color Name="User Types">
+        <Foreground Type="CT_RAW" Source="#0F6E6E" />
+        
+      </Color>
+      <Color Name="Method">
+        <Foreground Type="CT_RAW" Source="#5F8A0F" />
+        
+      </Color>
+      <Color Name="Error">
+        <Foreground Type="CT_RAW" Source="#B8276F" />
+        
+      </Color>
+      <Color Name="Warning">
+        <Foreground Type="CT_RAW" Source="#9F4A0E" />
+        
+      </Color>
+    </Category>
+  </Theme>
+</Themes>

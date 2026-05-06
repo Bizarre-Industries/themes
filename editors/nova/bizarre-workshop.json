@@ -1,0 +1,31 @@
+{
+  "name": "Bizarre Workshop",
+  "appearance": "dark",
+  "author": "Bizarre Industries",
+  "colors": {
+    "editorBackground": "#1A1815",
+    "editorForeground": "#E4E2DA",
+    "editorLineHighlight": "#23211C",
+    "editorSelection": "#3A3618",
+    "editorInvisibles": "#2D2A23",
+    "cursor": "#C6FF24",
+    "sidebarBackground": "#23211C",
+    "sidebarForeground": "#9C9A91",
+    "statusBarBackground": "#23211C",
+    "statusBarForeground": "#9C9A91",
+    "border": "#3D3A33",
+    "accent": "#C6FF24",
+    "comment": "#6F6F6F",
+    "docComment": "#9AB585",
+    "keyword": "#FF8FCF",
+    "declaration": "#D88AE0",
+    "string": "#E8A33D",
+    "number": "#7BB3FF",
+    "type": "#7AD9D9",
+    "function": "#C6FF24",
+    "property": "#C6E58B",
+    "variable": "#E4E4E4",
+    "invalid": "#FF6F77",
+    "warning": "#FFB85C"
+  }
+}

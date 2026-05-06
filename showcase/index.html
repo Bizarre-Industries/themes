@@ -188,6 +188,18 @@ const EDITOR_TARGETS = [
   { shot: 'editor-neovim', name: 'Neovim', file: 'editors/neovim/colors/bizarre-bone.vim', variant: 'bone', lang: 'Lua' },
   { shot: 'editor-base16', name: 'Base16', file: 'editors/neovim-base16/bizarre-void.yaml', variant: 'void', lang: 'YAML' },
 ];
+const EDITOR_BACKLOG_TARGETS = [
+  { shot: 'editor-emacs', name: 'Emacs', file: 'editors/emacs/bizarre-void-theme.el', variant: 'void', lang: 'Elisp' },
+  { shot: 'editor-helix', name: 'Helix', file: 'editors/helix/bizarre-void.toml', variant: 'void-hicontrast', lang: 'TOML' },
+  { shot: 'editor-lapce', name: 'Lapce', file: 'editors/lapce/bizarre-workshop.toml', variant: 'workshop', lang: 'TOML' },
+  { shot: 'editor-kate', name: 'Kate', file: 'editors/kate/bizarre-paper.theme', variant: 'paper', lang: 'JSON' },
+  { shot: 'editor-notepad-plus-plus', name: 'Notepad++', file: 'editors/notepad-plus-plus/bizarre-bone.xml', variant: 'bone', lang: 'XML' },
+  { shot: 'editor-nova', name: 'Nova', file: 'editors/nova/bizarre-void.json', variant: 'void', lang: 'JSON' },
+  { shot: 'editor-visual-studio', name: 'Visual Studio', file: 'editors/visual-studio/bizarre-void.vstheme', variant: 'void-hicontrast', lang: 'XML' },
+  { shot: 'editor-xcode', name: 'Xcode', file: 'editors/xcode/bizarre-workshop.xccolortheme', variant: 'workshop', lang: 'plist' },
+  { shot: 'editor-cursor', name: 'Cursor', file: 'editors/cursor/README.md', variant: 'paper', lang: 'VS Code reuse' },
+  { shot: 'editor-android-studio', name: 'Android Studio', file: 'editors/android-studio/README.md', variant: 'bone', lang: 'JetBrains reuse' },
+];
 const SHELL_TARGETS = [
   { shot: 'shell-bash', name: 'Bash', file: 'shells/banner/bizarre.bash', variant: 'void', cmd: 'source shells/banner/bizarre.bash' },
   { shot: 'shell-zsh', name: 'Zsh', file: 'shells/banner/bizarre.zsh', variant: 'void-hicontrast', cmd: 'source shells/banner/bizarre.zsh' },
@@ -478,6 +490,13 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         <div className="section-head"><span className="section-num">§ 07 / EDITORS</span><h2 className="section-title">Editor ports beyond VS Code.</h2><span className="section-sub">zed · jetbrains · sublime · vim · neovim · base16</span></div>
         <div className="config-grid editor-grid">
           {EDITOR_TARGETS.map((target) => <EditorConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="editor-backlog">
+        <div className="section-head"><span className="section-num">§ 07.B / EDITORS</span><h2 className="section-title">Backlog editor ports.</h2><span className="section-sub">emacs · helix · lapce · kate · notepad++ · nova · cursor · visual studio · xcode · android studio</span></div>
+        <div className="config-grid editor-grid">
+          {EDITOR_BACKLOG_TARGETS.map((target) => <EditorConfigCard key={target.shot} target={target} />)}
         </div>
       </section>
 
