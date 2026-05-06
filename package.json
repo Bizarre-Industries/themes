@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@iarna/toml": "^2.2.5",
-    "playwright": "^1.52.0"
+    "playwright": "^1.52.0",
+    "yaml": "^2.8.4"
   }
 }

@@ -1,0 +1,13 @@
+[theme]
+name = "bizarre-bone"
+
+[colors]
+AlertInfo = "#1F4FB0"
+AlertWarn = "#9F4A0E"
+AlertError = "#B8276F"
+Annotation = "#857F70"
+Base = "#2B2B2B"
+Guidance = "#1F4FB0"
+Important = "#5F8A0F"
+Title = "#5F8A0F"
+Muted = "#B0AA9A"

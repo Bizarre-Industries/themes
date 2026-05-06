@@ -40,6 +40,21 @@ const TOOL_TARGETS = [
   { shot: 'tool-jujutsu', name: 'Jujutsu', file: 'tools/jujutsu/config.toml', variant: 'workshop', key: 'change id', value: P.brand.signalLime },
   { shot: 'tool-starship', name: 'Starship', file: 'prompt/starship.toml', variant: 'bone', key: 'prompt block', value: P.brand.limeInk },
 ];
+const CLI_TARGETS = [
+  { name: 'bat', file: 'tools/bat/themes/bizarre-void.tmTheme', variant: 'void', key: 'syntax', value: 'TextMate' },
+  { name: 'btop', file: 'tools/btop/bizarre-void.theme', variant: 'void-hicontrast', key: 'graphs', value: 'theme[]' },
+  { name: 'delta', file: 'tools/delta/bizarre.gitconfig', variant: 'workshop', key: 'diff', value: 'feature' },
+  { name: 'dircolors', file: 'tools/dircolors/bizarre.dircolors', variant: 'paper', key: 'LS_COLORS', value: 'ansi256' },
+  { name: 'fzf', file: 'tools/fzf/bizarre.sh', variant: 'bone', key: 'picker', value: '24-bit' },
+  { name: 'lazygit', file: 'tools/lazygit/config.yml', variant: 'void', key: 'panes', value: 'yaml' },
+  { name: 'yazi', file: 'tools/yazi/flavors/bizarre-void.yazi/flavor.toml', variant: 'void-hicontrast', key: 'flavor', value: 'toml' },
+  { name: 'eza', file: 'tools/eza/bizarre.sh', variant: 'workshop', key: 'files', value: 'EZA_COLORS' },
+  { name: 'atuin', file: 'tools/atuin/themes/bizarre-void.toml', variant: 'paper', key: 'history', value: 'Meanings' },
+  { name: 'bottom', file: 'tools/bottom/bizarre-void.toml', variant: 'bone', key: 'monitor', value: 'styles' },
+  { name: 'k9s', file: 'tools/k9s/skins/bizarre-void.yaml', variant: 'void', key: 'cluster', value: 'skin' },
+  { name: 'ranger', file: 'tools/ranger/colorschemes/bizarre_void.py', variant: 'void-hicontrast', key: 'files', value: 'python' },
+  { name: 'vivid', file: 'tools/vivid/themes/bizarre-void.yml', variant: 'workshop', key: 'ls', value: 'yaml' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = {
   "bizarre": [
@@ -158,6 +173,21 @@ function ToolConfigCard({ target }) {
         <div><span className="key">status</span>: {v.syntax.ok} / {v.syntax.warn} / {v.syntax.error}</div>
       </div>
       <div className="tool-strip">{[v.bg, v.bg2, v.bg3, v.fg, v.accent].map((hex) => <span key={hex} style={{ background: hex }}></span>)}</div>
+    </div>
+  );
+}
+
+function CliConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card cli-card ' + (v.mode === 'light' ? 'light' : '')} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="tool-body">
+        <div><span className="key">{target.key}</span>: <span className="value">{target.value}</span></div>
+        <div><span className="key">accent</span>: <span className="value">{v.accent}</span></div>
+        <div><span className="key">surface</span>: {v.bg}</div>
+      </div>
+      <div className="tool-strip">{[v.bg, v.bg2, v.border, v.syntax.info, v.accent].map((hex) => <span key={hex} style={{ background: hex }}></span>)}</div>
     </div>
   );
 }
@@ -301,6 +331,13 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         <div className="section-head"><span className="section-num">§ 09 / TOOLS</span><h2 className="section-title">Desktop and workflow tools.</h2><span className="section-sub">aerospace · forklift · jujutsu · starship</span></div>
         <div className="config-grid tool-grid">
           {TOOL_TARGETS.map((target) => <ToolConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="cli-tui">
+        <div className="section-head"><span className="section-num">§ 10 / CLI + TUI</span><h2 className="section-title">Planned CLI ports now ship.</h2><span className="section-sub">bat · btop · delta · dircolors · fzf · lazygit · yazi · eza · atuin · bottom · k9s · ranger · vivid</span></div>
+        <div className="config-grid cli-grid">
+          {CLI_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
         </div>
       </section>
 

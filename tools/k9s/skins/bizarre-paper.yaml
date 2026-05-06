@@ -1,0 +1,51 @@
+# Bizarre Paper - K9s skin
+k9s:
+  body:
+    fgColor: "#1F1F1F"
+    bgColor: "#F9F8F2"
+    logoColor: "#5F8A0F"
+  info:
+    fgColor: "#1F1F1F"
+    sectionColor: "#5F8A0F"
+  frame:
+    border:
+      fgColor: "#D8D4C7"
+      focusColor: "#5F8A0F"
+    menu:
+      fgColor: "#3D3D3D"
+      keyColor: "#5F8A0F"
+      numKeyColor: "#1F4FB0"
+    crumbs:
+      fgColor: "#F9F8F2"
+      bgColor: "#5F8A0F"
+      activeColor: "#9FCC1F"
+    status:
+      newColor: "#3F7A1F"
+      modifyColor: "#9F4A0E"
+      addColor: "#3F7A1F"
+      errorColor: "#B8276F"
+      highlightColor: "#5F8A0F"
+      killColor: "#B8276F"
+      completedColor: "#7A7568"
+    title:
+      fgColor: "#5F8A0F"
+      bgColor: "#F9F8F2"
+      highlightColor: "#9FCC1F"
+      counterColor: "#1F4FB0"
+      filterColor: "#9F4A0E"
+  views:
+    table:
+      fgColor: "#1F1F1F"
+      bgColor: "#F9F8F2"
+      cursorColor: "#DCEFA8"
+      header:
+        fgColor: "#5F8A0F"
+        bgColor: "#F2F0EA"
+        sorterColor: "#9F4A0E"
+    yaml:
+      keyColor: "#1F4FB0"
+      colonColor: "#7A7568"
+      valueColor: "#1F1F1F"
+    logs:
+      fgColor: "#1F1F1F"
+      bgColor: "#F9F8F2"

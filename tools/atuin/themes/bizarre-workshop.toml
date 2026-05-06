@@ -1,0 +1,13 @@
+[theme]
+name = "bizarre-workshop"
+
+[colors]
+AlertInfo = "#7BB3FF"
+AlertWarn = "#FFB85C"
+AlertError = "#FF6F77"
+Annotation = "#7A7568"
+Base = "#E4E2DA"
+Guidance = "#7BB3FF"
+Important = "#C6FF24"
+Title = "#C6FF24"
+Muted = "#545040"
