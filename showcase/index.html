@@ -174,6 +174,17 @@ const TERMINAL_TARGETS = [
   { shot: 'terminal-tmux', name: 'tmux', file: 'terminals/tmux/bizarre.tmux.conf', variant: 'workshop', cmd: 'source-file bizarre.tmux.conf' },
   { shot: 'terminal-zellij', name: 'Zellij', file: 'terminals/zellij/bizarre.kdl', variant: 'paper', cmd: 'theme "bizarre-paper"' },
 ];
+const TERMINAL_BACKLOG_TARGETS = [
+  { shot: 'terminal-foot', name: 'Foot', file: 'terminals/foot/bizarre-void.ini', variant: 'void', cmd: 'include=bizarre-void.ini' },
+  { shot: 'terminal-konsole', name: 'Konsole', file: 'terminals/konsole/bizarre-void.colorscheme', variant: 'void-hicontrast', cmd: 'ColorScheme=Bizarre Void' },
+  { shot: 'terminal-rio', name: 'Rio', file: 'terminals/rio/bizarre-workshop.toml', variant: 'workshop', cmd: 'rio --config bizarre-workshop.toml' },
+  { shot: 'terminal-hyper', name: 'Hyper', file: 'terminals/hyper/bizarre-paper.js', variant: 'paper', cmd: 'module.exports.config' },
+  { shot: 'terminal-terminator', name: 'Terminator', file: 'terminals/terminator/bizarre-bone.config', variant: 'bone', cmd: 'profile bizarre-bone' },
+  { shot: 'terminal-tilix', name: 'Tilix', file: 'terminals/tilix/bizarre-void.dconf', variant: 'void', cmd: 'dconf load' },
+  { shot: 'terminal-xfce', name: 'XFCE Terminal', file: 'terminals/xfce-terminal/bizarre-void.theme', variant: 'void-hicontrast', cmd: 'ColorPalette' },
+  { shot: 'terminal-gnome', name: 'GNOME Terminal', file: 'terminals/gnome-terminal/bizarre.sh', variant: 'workshop', cmd: './bizarre.sh bizarre-workshop' },
+  { shot: 'terminal-black-box', name: 'Black Box', file: 'terminals/black-box/bizarre-paper.json', variant: 'paper', cmd: 'palette json' },
+];
 const VSCODE_TARGETS = VARIANTS.map((v) => ({
   shot: 'vscode-' + v.id,
   name: v.label,
@@ -476,6 +487,13 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         <div className="section-head"><span className="section-num">§ 05 / TERMINAL COLORS</span><h2 className="section-title">Every terminal config gets the palette.</h2><span className="section-sub">alacritty · kitty · ghostty · iterm2 · wezterm · windows terminal · tmux · zellij</span></div>
         <div className="config-grid">
           {TERMINAL_TARGETS.map((target) => <TerminalConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="terminal-backlog">
+        <div className="section-head"><span className="section-num">§ 05.B / TERMINALS</span><h2 className="section-title">Backlog terminal ports.</h2><span className="section-sub">foot · konsole · rio · hyper · terminator · tilix · xfce terminal · gnome terminal · black box</span></div>
+        <div className="config-grid">
+          {TERMINAL_BACKLOG_TARGETS.map((target) => <TerminalConfigCard key={target.shot} target={target} />)}
         </div>
       </section>
 

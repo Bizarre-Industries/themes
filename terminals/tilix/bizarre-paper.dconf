@@ -1,0 +1,12 @@
+[/]
+background-color='#F9F8F2'
+foreground-color='#1F1F1F'
+cursor-colors-set=true
+cursor-background-color='#5F8A0F'
+cursor-foreground-color='#F9F8F2'
+highlight-colors-set=true
+highlight-background-color='#DCEFA8'
+highlight-foreground-color='#0E0E0E'
+palette=["#1A1A1A","#C13039","#3F7A1F","#9F4A0E","#1F4FB0","#7E2A9A","#0F6E6E","#545454","#7A7568","#E04050","#5F8A0F","#C28225","#3D78C7","#A55EAF","#4FA3A3","#0E0E0E"]
+use-theme-colors=false
+visible-name='Bizarre Paper'

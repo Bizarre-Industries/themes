@@ -1914,6 +1914,234 @@ function windowsTerminal() {
   }, null, 2);
 }
 
+function iniBlock(section, entries) {
+  return `[${section}]
+${Object.entries(entries).map(([key, value]) => `${key}=${value}`).join('\n')}`;
+}
+
+function footConfig(v) {
+  const colors = colorList(v);
+  return `# ${v.label} for Foot
+font=${palette.fonts.mono_family}:size=13
+
+${iniBlock('colors', {
+  background: noHash(v.bg),
+  foreground: noHash(v.fg),
+  regular0: noHash(colors[0]),
+  regular1: noHash(colors[1]),
+  regular2: noHash(colors[2]),
+  regular3: noHash(colors[3]),
+  regular4: noHash(colors[4]),
+  regular5: noHash(colors[5]),
+  regular6: noHash(colors[6]),
+  regular7: noHash(colors[7]),
+  bright0: noHash(colors[8]),
+  bright1: noHash(colors[9]),
+  bright2: noHash(colors[10]),
+  bright3: noHash(colors[11]),
+  bright4: noHash(colors[12]),
+  bright5: noHash(colors[13]),
+  bright6: noHash(colors[14]),
+  bright7: noHash(colors[15]),
+  'selection-foreground': noHash(fgFor(v.sel)),
+  'selection-background': noHash(v.sel),
+  urls: noHash(v.syntax.info),
+})}`;
+}
+
+function konsoleScheme(v) {
+  const sections = [
+    iniBlock('General', { Description: v.label, Opacity: 1, Wallpaper: '' }),
+    iniBlock('Background', { Color: rgb(v.bg).join(',') }),
+    iniBlock('Foreground', { Color: rgb(v.fg).join(',') }),
+    iniBlock('Cursor', { Color: rgb(v.cursor).join(','), TextColor: rgb(fgFor(v.cursor)).join(',') }),
+  ];
+  for (let i = 0; i < 8; i += 1) sections.push(iniBlock(`Color${i}`, { Color: rgb(colorList(v)[i]).join(','), Transparency: false }));
+  for (let i = 0; i < 8; i += 1) sections.push(iniBlock(`Color${i}Intense`, { Color: rgb(colorList(v)[i + 8]).join(','), Transparency: false }));
+  return sections.join('\n\n');
+}
+
+function rioConfig(v) {
+  const a = v.ansi;
+  return `# ${v.label} for Rio
+[fonts]
+family = "${palette.fonts.mono_family}"
+size = 14
+
+[colors]
+background = "${v.bg}"
+foreground = "${v.fg}"
+cursor = "${v.cursor}"
+selection-background = "${v.sel}"
+selection-foreground = "${fgFor(v.sel)}"
+black = "${a.black}"
+red = "${a.red}"
+green = "${a.green}"
+yellow = "${a.yellow}"
+blue = "${a.blue}"
+magenta = "${a.magenta}"
+cyan = "${a.cyan}"
+white = "${a.white}"
+light-black = "${a.brBlack}"
+light-red = "${a.brRed}"
+light-green = "${a.brGreen}"
+light-yellow = "${a.brYellow}"
+light-blue = "${a.brBlue}"
+light-magenta = "${a.brMagenta}"
+light-cyan = "${a.brCyan}"
+light-white = "${a.brWhite}"`;
+}
+
+function hyperConfig(v) {
+  const a = colorList(v);
+  return `module.exports = {
+  config: {
+    fontFamily: ${q(`${palette.fonts.mono_family}, Menlo, monospace`)},
+    foregroundColor: ${q(v.fg)},
+    backgroundColor: ${q(v.bg)},
+    borderColor: ${q(v.border)},
+    cursorColor: ${q(v.cursor)},
+    selectionColor: ${q(v.sel)},
+    colors: {
+      black: ${q(a[0])},
+      red: ${q(a[1])},
+      green: ${q(a[2])},
+      yellow: ${q(a[3])},
+      blue: ${q(a[4])},
+      magenta: ${q(a[5])},
+      cyan: ${q(a[6])},
+      white: ${q(a[7])},
+      lightBlack: ${q(a[8])},
+      lightRed: ${q(a[9])},
+      lightGreen: ${q(a[10])},
+      lightYellow: ${q(a[11])},
+      lightBlue: ${q(a[12])},
+      lightMagenta: ${q(a[13])},
+      lightCyan: ${q(a[14])},
+      lightWhite: ${q(a[15])},
+    },
+  },
+};`;
+}
+
+function terminatorConfig(v) {
+  return `[global_config]
+  title_transmit_bg_color = "${noHash(v.accent)}"
+[profiles]
+  [[${titleSlug(v.id)}]]
+    background_color = "${v.bg}"
+    foreground_color = "${v.fg}"
+    cursor_color = "${v.cursor}"
+    palette = "${colorList(v).map(noHash).join(':')}"
+    font = "${palette.fonts.mono_family} 13"
+    use_system_font = False`;
+}
+
+function tilixDconf(v) {
+  return `[/]
+background-color='${v.bg}'
+foreground-color='${v.fg}'
+cursor-colors-set=true
+cursor-background-color='${v.cursor}'
+cursor-foreground-color='${fgFor(v.cursor)}'
+highlight-colors-set=true
+highlight-background-color='${v.sel}'
+highlight-foreground-color='${fgFor(v.sel)}'
+palette=${JSON.stringify(colorList(v))}
+use-theme-colors=false
+visible-name='${v.label}'`;
+}
+
+function xfceTheme(v) {
+  return iniBlock('Scheme', {
+    Name: v.label,
+    ColorForeground: v.fg,
+    ColorBackground: v.bg,
+    ColorCursor: v.cursor,
+    ColorSelection: v.sel,
+    ColorSelectionUseDefault: false,
+    ColorPalette: colorList(v).join(';'),
+  });
+}
+
+function gnomeTerminalScript() {
+  const profileLines = variants.map((v) => {
+    const slug = titleSlug(v.id);
+    return `  ${slug})
+    name="${v.label}"
+    bg="${v.bg}"
+    fg="${v.fg}"
+    cursor="${v.cursor}"
+    selection_bg="${v.sel}"
+    selection_fg="${fgFor(v.sel)}"
+    palette="${colorList(v).join(':')}"
+    ;;`;
+  }).join('\n');
+  return `#!/usr/bin/env bash
+set -euo pipefail
+
+variant="\${1:-bizarre-void}"
+
+case "$variant" in
+${profileLines}
+  *)
+    echo "unknown Bizarre variant: $variant" >&2
+    exit 2
+    ;;
+esac
+
+profile_id="$(uuidgen | tr '[:upper:]' '[:lower:]')"
+profile_path="org/gnome/terminal/legacy/profiles:/:$profile_id/"
+base="/org/gnome/terminal/legacy/profiles:/:$profile_id/"
+list="$(gsettings get org.gnome.Terminal.ProfilesList list | tr -d "[]',")"
+profiles="["
+for item in $list; do profiles="$profiles'$item', "; done
+profiles="$profiles'$profile_id']"
+
+gsettings set org.gnome.Terminal.ProfilesList list "$profiles"
+gsettings set org.gnome.Terminal.ProfilesList default "$profile_id"
+dconf write "$base"visible-name "'$name'"
+dconf write "$base"use-theme-colors "false"
+dconf write "$base"background-color "'$bg'"
+dconf write "$base"foreground-color "'$fg'"
+dconf write "$base"cursor-colors-set "true"
+dconf write "$base"cursor-background-color "'$cursor'"
+dconf write "$base"cursor-foreground-color "'$selection_fg'"
+dconf write "$base"highlight-colors-set "true"
+dconf write "$base"highlight-background-color "'$selection_bg'"
+dconf write "$base"highlight-foreground-color "'$selection_fg'"
+dconf write "$base"palette "['\${palette//:/', '}']"
+echo "installed $name as $profile_path"`;
+}
+
+function blackBoxTheme(v) {
+  return JSON.stringify({
+    name: v.label,
+    comment: 'Bizarre Industries terminal palette for Black Box.',
+    foregroundColor: v.fg,
+    backgroundColor: v.bg,
+    cursorBackgroundColor: v.cursor,
+    cursorForegroundColor: fgFor(v.cursor),
+    highlightBackgroundColor: v.sel,
+    highlightForegroundColor: fgFor(v.sel),
+    palette: colorList(v),
+  }, null, 2);
+}
+
+function generateTerminalBacklog() {
+  for (const v of variants) {
+    out(`terminals/foot/${titleSlug(v.id)}.ini`, footConfig(v));
+    out(`terminals/konsole/${titleSlug(v.id)}.colorscheme`, konsoleScheme(v));
+    out(`terminals/rio/${titleSlug(v.id)}.toml`, rioConfig(v));
+    out(`terminals/hyper/${titleSlug(v.id)}.js`, hyperConfig(v));
+    out(`terminals/terminator/${titleSlug(v.id)}.config`, terminatorConfig(v));
+    out(`terminals/tilix/${titleSlug(v.id)}.dconf`, tilixDconf(v));
+    out(`terminals/xfce-terminal/${titleSlug(v.id)}.theme`, xfceTheme(v));
+    out(`terminals/black-box/${titleSlug(v.id)}.json`, blackBoxTheme(v));
+  }
+  out('terminals/gnome-terminal/bizarre.sh', gnomeTerminalScript());
+}
+
 function weztermScheme(v) {
   return `  [${q(v.label)}] = {
     foreground = ${q(v.fg)},
@@ -1963,6 +2191,7 @@ ${variants.map((v) => `    "${titleSlug(v.id)}" {
     }`).join('\n')}
 }`);
   out('terminals/tmux/bizarre.tmux.conf', tmux(variants[0]));
+  generateTerminalBacklog();
 }
 
 function tmux(v) {
@@ -3628,6 +3857,17 @@ const TERMINAL_TARGETS = [
   { shot: 'terminal-tmux', name: 'tmux', file: 'terminals/tmux/bizarre.tmux.conf', variant: 'workshop', cmd: 'source-file bizarre.tmux.conf' },
   { shot: 'terminal-zellij', name: 'Zellij', file: 'terminals/zellij/bizarre.kdl', variant: 'paper', cmd: 'theme "bizarre-paper"' },
 ];
+const TERMINAL_BACKLOG_TARGETS = [
+  { shot: 'terminal-foot', name: 'Foot', file: 'terminals/foot/bizarre-void.ini', variant: 'void', cmd: 'include=bizarre-void.ini' },
+  { shot: 'terminal-konsole', name: 'Konsole', file: 'terminals/konsole/bizarre-void.colorscheme', variant: 'void-hicontrast', cmd: 'ColorScheme=Bizarre Void' },
+  { shot: 'terminal-rio', name: 'Rio', file: 'terminals/rio/bizarre-workshop.toml', variant: 'workshop', cmd: 'rio --config bizarre-workshop.toml' },
+  { shot: 'terminal-hyper', name: 'Hyper', file: 'terminals/hyper/bizarre-paper.js', variant: 'paper', cmd: 'module.exports.config' },
+  { shot: 'terminal-terminator', name: 'Terminator', file: 'terminals/terminator/bizarre-bone.config', variant: 'bone', cmd: 'profile bizarre-bone' },
+  { shot: 'terminal-tilix', name: 'Tilix', file: 'terminals/tilix/bizarre-void.dconf', variant: 'void', cmd: 'dconf load' },
+  { shot: 'terminal-xfce', name: 'XFCE Terminal', file: 'terminals/xfce-terminal/bizarre-void.theme', variant: 'void-hicontrast', cmd: 'ColorPalette' },
+  { shot: 'terminal-gnome', name: 'GNOME Terminal', file: 'terminals/gnome-terminal/bizarre.sh', variant: 'workshop', cmd: './bizarre.sh bizarre-workshop' },
+  { shot: 'terminal-black-box', name: 'Black Box', file: 'terminals/black-box/bizarre-paper.json', variant: 'paper', cmd: 'palette json' },
+];
 const VSCODE_TARGETS = VARIANTS.map((v) => ({
   shot: 'vscode-' + v.id,
   name: v.label,
@@ -3916,6 +4156,13 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="terminal-backlog">
+        <div className="section-head"><span className="section-num">§ 05.B / TERMINALS</span><h2 className="section-title">Backlog terminal ports.</h2><span className="section-sub">foot · konsole · rio · hyper · terminator · tilix · xfce terminal · gnome terminal · black box</span></div>
+        <div className="config-grid">
+          {TERMINAL_BACKLOG_TARGETS.map((target) => <TerminalConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
       <section className="section" data-shot="vscode-themes">
         <div className="section-head"><span className="section-num">§ 06 / VS CODE</span><h2 className="section-title">All VS Code variants.</h2><span className="section-sub">activity bar · editor · status bar</span></div>
         <div className="config-grid vscode-grid">
@@ -4155,6 +4402,8 @@ Every shipped target still gets a generated preview card in \`showcase/assets/ge
 
 ![Bizarre terminal color configs](showcase/assets/generated/terminal-colors.png)
 
+![Bizarre backlog terminal ports](showcase/assets/generated/terminal-backlog.png)
+
 ![Bizarre VS Code themes](showcase/assets/generated/vscode-themes.png)
 
 ![Bizarre editor theme configs](showcase/assets/generated/editor-themes.png)
@@ -4269,6 +4518,37 @@ cp terminals/zellij/bizarre.kdl ~/.config/zellij/themes/
 # Windows Terminal
 # paste terminals/windows-terminal/schemes.json schemes into settings.json
 
+# Foot
+mkdir -p ~/.config/foot/themes
+cp terminals/foot/*.ini ~/.config/foot/themes/
+
+# Konsole
+mkdir -p ~/.local/share/konsole
+cp terminals/konsole/*.colorscheme ~/.local/share/konsole/
+
+# Rio
+mkdir -p ~/.config/rio/themes
+cp terminals/rio/*.toml ~/.config/rio/themes/
+
+# Hyper
+# merge one terminals/hyper/bizarre-*.js config object into ~/.hyper.js
+
+# Terminator
+# merge one terminals/terminator/bizarre-*.config profile into ~/.config/terminator/config
+
+# Tilix
+# import one terminals/tilix/bizarre-*.dconf with dconf load
+
+# XFCE Terminal
+mkdir -p ~/.local/share/xfce4/terminal/colorschemes
+cp terminals/xfce-terminal/*.theme ~/.local/share/xfce4/terminal/colorschemes/
+
+# GNOME Terminal
+bash terminals/gnome-terminal/bizarre.sh bizarre-void
+
+# Black Box
+# import or adapt terminals/black-box/*.json through Black Box palette settings
+
 # Shell banners
 echo "source $PWD/shells/banner/bizarre.bash" >> ~/.bashrc
 echo "source $PWD/shells/banner/bizarre.zsh" >> ~/.zshrc
@@ -4346,7 +4626,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | Family | Targets |
 |---|---|
 | Editors | VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16, Emacs, Helix, Lapce, Kate, Notepad++, Nova, Cursor, Visual Studio, Xcode, Android Studio |
-| Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij |
+| Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij, Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box |
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
 | Tools | AeroSpace, ForkLift, Jujutsu |
@@ -4369,13 +4649,12 @@ Signal Lime is reserved for functions, cursors, focus rings, and active command 
 function portsDoc() {
   const shipped = [
     ['Editors', 'VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16, Emacs, Helix, Lapce, Kate, Notepad++, Nova, Cursor, Visual Studio, Xcode, Android Studio'],
-    ['Terminals', 'Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij'],
+    ['Terminals', 'Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij, Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box'],
     ['Shells and prompts', 'Bash, Zsh, Fish, PowerShell, Starship'],
     ['CLI/TUI', 'bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid'],
     ['Desktop and tools', 'AeroSpace, ForkLift, Jujutsu'],
   ];
   const backlog = [
-    ['Terminals', 'Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box'],
     ['Desktop apps', 'Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser'],
     ['Browser and web', 'Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites'],
     ['Design and devtools', 'Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub readme assets'],

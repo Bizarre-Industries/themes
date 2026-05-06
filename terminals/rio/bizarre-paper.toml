@@ -1,0 +1,27 @@
+# Bizarre Paper for Rio
+[fonts]
+family = "Monaspace Neon"
+size = 14
+
+[colors]
+background = "#F9F8F2"
+foreground = "#1F1F1F"
+cursor = "#5F8A0F"
+selection-background = "#DCEFA8"
+selection-foreground = "#0E0E0E"
+black = "#1A1A1A"
+red = "#C13039"
+green = "#3F7A1F"
+yellow = "#9F4A0E"
+blue = "#1F4FB0"
+magenta = "#7E2A9A"
+cyan = "#0F6E6E"
+white = "#545454"
+light-black = "#7A7568"
+light-red = "#E04050"
+light-green = "#5F8A0F"
+light-yellow = "#C28225"
+light-blue = "#3D78C7"
+light-magenta = "#A55EAF"
+light-cyan = "#4FA3A3"
+light-white = "#0E0E0E"
