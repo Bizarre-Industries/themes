@@ -6,7 +6,8 @@
   "scripts": {
     "generate": "node scripts/generate.cjs",
     "check:generated": "node scripts/check-generated.cjs",
-    "render:showcase": "node scripts/render-showcase.cjs",
+    "render:showcase": "node scripts/render-showcase.cjs && node scripts/render-local-captures.cjs",
+    "render:local": "node scripts/render-local-captures.cjs",
     "validate": "node scripts/validate.cjs",
     "test": "npm run check:generated && npm run validate"
   },

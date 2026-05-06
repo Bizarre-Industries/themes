@@ -2945,7 +2945,7 @@ A generated theming bundle for editors, terminals, shells, prompts, window manag
 
 ## Showcase
 
-Open [showcase/index.html](showcase/index.html) locally for the interactive preview. The README images below are rendered from that same showcase.
+Open [showcase/index.html](showcase/index.html) locally for the interactive preview. The README images below are rendered from that same showcase and from local app captures.
 
 ![Bizarre generated variants](showcase/assets/generated/variants.png)
 
@@ -2953,9 +2953,21 @@ Open [showcase/index.html](showcase/index.html) locally for the interactive prev
 
 ![Bizarre palette and ANSI](showcase/assets/generated/palette-ansi.png)
 
-## Config Screenshots
+## Applied Local Screenshots
 
-Every shipped target gets a generated preview card in \`showcase/assets/generated/\`. These family sheets are rendered from [showcase/index.html](showcase/index.html).
+These are real local captures using one installed target per category, with temporary profiles and generated configs applied directly.
+
+| Editor | Terminal |
+|---|---|
+| ![Bizarre Void applied in VS Code](showcase/assets/generated/local-vscode.png) | ![Bizarre Void applied in iTerm2](showcase/assets/generated/local-iterm2.png) |
+
+| Shell | Prompt / Tool |
+|---|---|
+| ![Bizarre Zsh banner applied in iTerm2](showcase/assets/generated/local-zsh-banner.png) | ![Bizarre Starship prompt applied in iTerm2](showcase/assets/generated/local-starship.png) |
+
+## Generated Coverage Cards
+
+Every shipped target still gets a generated preview card in \`showcase/assets/generated/\`. These family sheets are rendered from [showcase/index.html](showcase/index.html) and show coverage without installing every app.
 
 ![Bizarre terminal color configs](showcase/assets/generated/terminal-colors.png)
 
@@ -2968,46 +2980,6 @@ Every shipped target gets a generated preview card in \`showcase/assets/generate
 ![Bizarre desktop and workflow tools](showcase/assets/generated/tools.png)
 
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
-
-## Per-Target Screenshots
-
-### Terminals
-
-| Alacritty | Kitty | Ghostty | iTerm2 |
-|---|---|---|---|
-| ![Alacritty colors](showcase/assets/generated/terminal-colors-alacritty.png) | ![Kitty colors](showcase/assets/generated/terminal-colors-kitty.png) | ![Ghostty colors](showcase/assets/generated/terminal-colors-ghostty.png) | ![iTerm2 colors](showcase/assets/generated/terminal-colors-iterm2.png) |
-
-| WezTerm | Windows Terminal | tmux | Zellij |
-|---|---|---|---|
-| ![WezTerm colors](showcase/assets/generated/terminal-colors-wezterm.png) | ![Windows Terminal colors](showcase/assets/generated/terminal-colors-windows-terminal.png) | ![tmux colors](showcase/assets/generated/terminal-tmux.png) | ![Zellij colors](showcase/assets/generated/terminal-zellij.png) |
-
-### VS Code
-
-| Void | Void Hi-Contrast | Workshop | Paper | Bone |
-|---|---|---|---|---|
-| ![VS Code Void](showcase/assets/generated/vscode-void.png) | ![VS Code Void Hi-Contrast](showcase/assets/generated/vscode-void-hicontrast.png) | ![VS Code Workshop](showcase/assets/generated/vscode-workshop.png) | ![VS Code Paper](showcase/assets/generated/vscode-paper.png) | ![VS Code Bone](showcase/assets/generated/vscode-bone.png) |
-
-### Editors
-
-| Zed | JetBrains | Sublime Text |
-|---|---|---|
-| ![Zed theme](showcase/assets/generated/editor-zed.png) | ![JetBrains theme](showcase/assets/generated/editor-jetbrains.png) | ![Sublime Text theme](showcase/assets/generated/editor-sublime.png) |
-
-| Vim | Neovim | Base16 |
-|---|---|---|
-| ![Vim theme](showcase/assets/generated/editor-vim.png) | ![Neovim theme](showcase/assets/generated/editor-neovim.png) | ![Base16 theme](showcase/assets/generated/editor-base16.png) |
-
-### Shells And Prompt
-
-| Bash | Zsh | Fish | PowerShell | Starship |
-|---|---|---|---|---|
-| ![Bash banner](showcase/assets/generated/shell-bash.png) | ![Zsh banner](showcase/assets/generated/shell-zsh.png) | ![Fish banner](showcase/assets/generated/shell-fish.png) | ![PowerShell banner](showcase/assets/generated/shell-powershell.png) | ![Starship prompt](showcase/assets/generated/prompt-starship.png) |
-
-### Tools
-
-| AeroSpace | ForkLift | Jujutsu | Starship |
-|---|---|---|---|
-| ![AeroSpace config](showcase/assets/generated/tool-aerospace.png) | ![ForkLift config](showcase/assets/generated/tool-forklift.png) | ![Jujutsu config](showcase/assets/generated/tool-jujutsu.png) | ![Starship tool preview](showcase/assets/generated/tool-starship.png) |
 
 ## Install Examples
 
