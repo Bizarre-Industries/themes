@@ -1,0 +1,120 @@
+# Bizarre Industries — AeroSpace window manager config
+# CATCH THE STARS.
+#
+# Drop into ~/.config/aerospace/aerospace.toml
+# AeroSpace v0.14+
+
+# ── Startup
+after-login-command = []
+after-startup-command = [
+    'exec-and-forget borders active_color=0xffC6FF24 inactive_color=0xff3D3D3D width=2.0',
+]
+
+# Animations off — bench is honest, not bouncy.
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# ── Gaps — bench whitespace
+[gaps]
+inner.horizontal = 8
+inner.vertical   = 8
+outer.left       = 8
+outer.bottom     = 8
+outer.top        = 8
+outer.right      = 8
+
+# ── Workspaces, named after the brand vocabulary
+# 1 BENCH · 2 CODE · 3 ORBIT (browsers) · 4 SIGNAL (chat/comms)
+# 5 STARS (notes) · 6 BURN (terminals) · 7 SPARE
+[workspace-to-monitor-force-assignment]
+'1' = 'main'
+'2' = 'main'
+'3' = 'secondary'
+'4' = 'secondary'
+
+# ── Mode: main
+[mode.main.binding]
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+
+alt-tab = 'workspace-back-and-forth'
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+alt-f = 'fullscreen'
+alt-shift-f = 'layout floating tiling'
+
+# Resize mode — leaves the bench mode untouched
+alt-shift-semicolon = 'mode resize'
+
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+enter = 'mode main'
+esc = 'mode main'
+
+# ── App rules — keep tools in the right workspace.
+[[on-window-detected]]
+if.app-id = 'com.googlecode.iterm2'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace 3'
+
+# Floating windows — utilities & inspectors
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = 'layout floating'
+
+# JankyBorders companion — the lime ring around the focused window
+# brew install FelixKratz/formulae/borders
+# Install JankyBorders separately. Active border is Signal Lime; inactive is Void 4.

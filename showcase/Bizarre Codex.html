@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Bizarre Industries — Codex v0.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceNeon-Regular.woff2" rel="preload" as="font" type="font/woff2" crossorigin />
+<style>
+  @font-face{font-family:'Monaspace Neon';font-weight:400;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceNeon-Regular.woff2') format('woff2')}
+  @font-face{font-family:'Monaspace Neon';font-weight:500;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceNeon-Medium.woff2') format('woff2')}
+  @font-face{font-family:'Monaspace Neon';font-weight:600;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceNeon-SemiBold.woff2') format('woff2')}
+  @font-face{font-family:'Monaspace Neon';font-weight:700;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceNeon-Bold.woff2') format('woff2')}
+  @font-face{font-family:'Monaspace Neon';font-weight:400;font-style:italic;src:url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceNeon-Italic.woff2') format('woff2')}
+  @font-face{font-family:'Monaspace Xenon';font-weight:600;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@v1.101/fonts/webfonts/MonaspaceXenon-SemiBold.woff2') format('woff2')}
+</style>
+<link rel="stylesheet" href="showcase.css" />
+<link rel="stylesheet" href="syntax.css" />
+<style>
+  /* tweak defaults seed (read by host's persistence layer) */
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script>
+  window.BZR_TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "#C6FF24",
+    "accentGlow": "#E8FF8A",
+    "accentLight": "#5F8A0F",
+    "limeRole": "functions",
+    "sampleLang": "ts",
+    "activeVariant": "pairs",
+    "bannerLine": "The hands knew it before the plan did."
+  }/*EDITMODE-END*/;
+</script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="samples.js"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="showcase-panes.jsx"></script>
+<script type="text/babel" src="showcase-terminal.jsx"></script>
+<script type="text/babel" src="showcase-main.jsx"></script>
+
+<script type="text/babel">
+const BANNER_LINES = [
+  "The hands knew it before the plan did.",
+  "The dumb thing wants to exist. Help it.",
+  "Stay up. The good stuff happens after midnight.",
+  "Curiosity is the reason. Agency is native.",
+  "The bench is honest in a way almost nothing else is.",
+  "You're not late. You're early.",
+  "Reach further than reasonable.",
+  "What looks impossible is probably just unattended.",
+];
+
+// [accentDark, accentGlow, accentLight, label]
+const ACCENT_PRESETS = [
+  ['#C6FF24', '#E8FF8A', '#5F8A0F', 'Signal Lime'],
+  ['#A8FF00', '#D2FF6B', '#4A7409', 'Acid Lime'],
+  ['#9FCC1F', '#C6E36A', '#5C7A1A', 'Lime Ink'],
+  ['#E8FF8A', '#F4FFC1', '#7A8A2A', 'Lime Glow'],
+];
+
+function App() {
+  const [t, setT] = window.useTweaks(window.BZR_TWEAK_DEFAULTS);
+  // expose to BzrShowcase
+  window.__bzr_tweaks = t;
+
+  const TP = window.TweaksPanel;
+  const TR = window.TweakRadio;
+  const TS = window.TweakSelect;
+  const TC = window.TweakColor;
+  const Section = window.TweakSection;
+
+  return (
+    <>
+      <window.BzrShowcaseWithTweaks tweaks={t} />
+      <TP title="Tweaks">
+        <Section title="Accent">
+          <TC label="Lime" value={t.accent} options={ACCENT_PRESETS.map(([h]) => h)} onChange={v => {
+            const p = ACCENT_PRESETS.find(x => x[0] === v) || ACCENT_PRESETS[0];
+            setT({ accent: p[0], accentGlow: p[1], accentLight: p[2] });
+          }} />
+        </Section>
+        <Section title="Lime role">
+          <TS label="Accent maps to" value={t.limeRole} options={[
+            { value:'functions', label:'Functions' },
+            { value:'keywords',  label:'Keywords' },
+            { value:'strings',   label:'Strings' },
+            { value:'types',     label:'Types' },
+            { value:'comments',  label:'Comments' },
+          ]} onChange={v => setT('limeRole', v)} />
+        </Section>
+        <Section title="Code sample">
+          <TS label="Language" value={t.sampleLang} options={[
+            { value:'ts', label:'TypeScript' },
+            { value:'py', label:'Python' },
+            { value:'rs', label:'Rust' },
+            { value:'go', label:'Go' },
+            { value:'lua',label:'Lua' },
+            { value:'sh', label:'Shell / zsh' },
+            { value:'c',  label:'C' },
+          ]} onChange={v => setT('sampleLang', v)} />
+        </Section>
+        <Section title="Variant focus">
+          <TS label="Show" value={t.activeVariant} options={[
+            { value:'pairs',     label:'Dark + Light pairs' },
+            { value:'all',       label:'All variants' },
+            { value:'dark',      label:'Dark only' },
+            { value:'midnight',  label:'Midnight only' },
+            { value:'graphite',  label:'Graphite only' },
+            { value:'paper',     label:'Paper only' },
+            { value:'porcelain', label:'Porcelain only' },
+          ]} onChange={v => setT('activeVariant', v)} />
+        </Section>
+        <Section title="Banner manifesto">
+          <TS label="Quote" value={t.bannerLine} options={BANNER_LINES.map(l => ({ value: l, label: l.length > 36 ? l.slice(0,36)+'…' : l }))} onChange={v => setT('bannerLine', v)} />
+        </Section>
+      </TP>
+    </>
+  );
+}
+
+// thin wrapper: pass tweaks as props so re-renders propagate
+window.BzrShowcaseWithTweaks = function ({ tweaks }) {
+  // overwrite the live one BzrShowcase reads from, then re-render
+  window.BZR_TWEAK_DEFAULTS_LIVE = tweaks;
+  return <window.BzrShowcase key={JSON.stringify(tweaks)} tweaksProp={tweaks} />;
+};
+
+// patch BzrShowcase to read from prop if provided
+const _Original = window.BzrShowcase;
+window.BzrShowcase = function (props) {
+  if (props && props.tweaksProp) {
+    // monkey-patch useTweaks for this render to return props
+    const realUseTweaks = window.useTweaks;
+    window.useTweaks = () => [props.tweaksProp, () => {}];
+    try { return _Original(props); } finally { window.useTweaks = realUseTweaks; }
+  }
+  return _Original(props);
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

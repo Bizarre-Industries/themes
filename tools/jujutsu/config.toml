@@ -1,0 +1,95 @@
+# Bizarre Industries — Jujutsu (jj) colors
+# CATCH THE STARS.
+#
+# Drop into ~/.config/jj/config.toml (or merge with existing).
+# Tested with jj v0.16+.
+
+[ui]
+color = "always"
+pager = ":builtin"
+diff-editor = ":builtin"
+default-command = "log"
+
+[ui.movement]
+edit = false
+
+# ── Color rules — semantic, not stylistic.
+# Lime is reserved for: the working-copy marker, "@", and the current branch.
+[colors]
+# revsets / log
+"working_copy"             = { fg = "#0E0E0E", bg = "#C6FF24", bold = true }
+"working_copy change_id"   = { fg = "#0E0E0E", bg = "#C6FF24", bold = true }
+"working_copy commit_id"   = { fg = "#0E0E0E", bg = "#C6FF24" }
+"working_copy description" = "#E4E4E4"
+"working_copy author"      = "#9DEAEA"
+"working_copy timestamp"   = "#7A7A7A"
+"working_copy bookmarks"   = { fg = "#C6FF24", bold = true }
+
+"change_id"     = "#D88AE0"
+"commit_id"     = "#7AD9D9"
+"author"        = "#5B9FFF"
+"timestamp"     = "#7A7A7A"
+"description"   = "#E4E4E4"
+"bookmarks"     = "#FFB85C"
+"tags"          = "#E8A33D"
+"git_refs"      = "#FF8FCF"
+"divergent"     = { fg = "#FF6F77", bold = true }
+"conflict"      = { fg = "#FF6F77", bg = "#2B0E0E", bold = true }
+"empty"         = "#7A7A7A"
+
+# diff
+"diff added"           = "#5BD06B"
+"diff added token"     = { fg = "#0E0E0E", bg = "#5BD06B", bold = true }
+"diff removed"         = "#FF6F77"
+"diff removed token"   = { fg = "#FFFFFF", bg = "#9F2A2F", bold = true }
+"diff modified"        = "#FFB85C"
+"diff context"         = "#9C9C9C"
+"diff file_header"     = { fg = "#C6FF24", bold = true }
+"diff hunk_header"     = "#9DEAEA"
+
+# status / warnings
+"error"         = { fg = "#FF6F77", bold = true }
+"warning"       = "#FFB85C"
+"hint"          = "#D88AE0"
+"normal"        = "#E4E4E4"
+
+# operation log
+"operation id"          = "#7AD9D9"
+"operation user"        = "#5B9FFF"
+"operation time"        = "#7A7A7A"
+"operation current"     = { fg = "#0E0E0E", bg = "#C6FF24", bold = true }
+
+# ── Custom log template — Bizarre style.
+# Use:  jj log -T bizarre
+[templates]
+bizarre = '''
+if(root,
+  format_root_commit(self),
+  label(if(current_working_copy, "working_copy"),
+    concat(
+      if(current_working_copy, "✦ ", "  "),
+      format_short_change_id_with_hidden_and_divergent_info(self),
+      " ",
+      format_short_signature(author),
+      " ",
+      format_timestamp(committer.timestamp()),
+      if(bookmarks, " " ++ bookmarks.join(" ")),
+      if(tags, " " ++ tags.join(" ")),
+      if(working_copies, " " ++ working_copies),
+      if(conflict, label("conflict", " ⚠ conflict")),
+      if(empty, label("empty", " (empty)")),
+      "\n",
+      "  ",
+      if(empty, label("empty", description.first_line()), description.first_line()),
+      "\n",
+    )
+  )
+)
+'''
+
+# ── Aliases that match the brand voice
+[aliases]
+ship   = ["git", "push"]
+catch  = ["new"]
+stars  = ["log", "-T", "bizarre", "-r", "ancestors(@, 12)"]
+bench  = ["status"]

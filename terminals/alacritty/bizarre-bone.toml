@@ -1,0 +1,52 @@
+# Bizarre Bone — Alacritty
+# CATCH THE STARS.
+#
+# Drop in ~/.config/alacritty/themes/bizarre-bone.toml then in alacritty.toml:
+#   [general]
+#   import = ["~/.config/alacritty/themes/bizarre-bone.toml"]
+
+[colors.primary]
+background = "#F5F2EA"
+foreground = "#2B2B2B"
+dim_foreground = "#545454"
+bright_foreground = "#0E0E0E"
+
+[colors.cursor]
+text  = "#F5F2EA"
+cursor = "#6B8A0E"
+
+[colors.vi_mode_cursor]
+text  = "#F5F2EA"
+cursor = "#6B8A0E"
+
+[colors.selection]
+text       = "#0E0E0E"
+background = "#E0DCCE"
+
+[colors.normal]
+black   = "#2B2B2B"
+red     = "#C13039"
+green   = "#6B8A0E"
+yellow  = "#A87330"
+blue    = "#3068AA"
+magenta = "#9558A0"
+cyan    = "#4A9595"
+white   = "#545454"
+
+[colors.bright]
+black   = "#7A7A7A"
+red     = "#E04050"
+green   = "#6B8A0E"
+yellow  = "#C28225"
+blue    = "#3D78C7"
+magenta = "#A55EAF"
+cyan    = "#4FA3A3"
+white   = "#0E0E0E"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#A87330"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#C13039"

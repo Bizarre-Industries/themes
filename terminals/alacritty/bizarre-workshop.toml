@@ -1,0 +1,52 @@
+# Bizarre Workshop — Alacritty
+# CATCH THE STARS.
+#
+# Drop in ~/.config/alacritty/themes/bizarre-workshop.toml then in alacritty.toml:
+#   [general]
+#   import = ["~/.config/alacritty/themes/bizarre-workshop.toml"]
+
+[colors.primary]
+background = "#1A1815"
+foreground = "#E4E2DA"
+dim_foreground = "#E4E2DA"
+bright_foreground = "#F4F2EA"
+
+[colors.cursor]
+text  = "#1A1815"
+cursor = "#B5E81F"
+
+[colors.vi_mode_cursor]
+text  = "#1A1815"
+cursor = "#B5E81F"
+
+[colors.selection]
+text       = "#F9F8F2"
+background = "#33302B"
+
+[colors.normal]
+black   = "#252320"
+red     = "#E8525B"
+green   = "#9BC73C"
+yellow  = "#D89538"
+blue    = "#6EA8E8"
+magenta = "#C68DD0"
+cyan    = "#7BC9C9"
+white   = "#E4E2DA"
+
+[colors.bright]
+black   = "#3D3A33"
+red     = "#F26B73"
+green   = "#B5E81F"
+yellow  = "#E8B048"
+blue    = "#7BB5E8"
+magenta = "#D8A0DE"
+cyan    = "#9BD5D5"
+white   = "#F4F2EA"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#D89538"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#E8525B"

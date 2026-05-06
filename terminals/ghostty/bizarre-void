@@ -1,0 +1,22 @@
+# Bizarre — Bizarre · Void (Midnight) — Ghostty
+background = 0E0E0E
+foreground = E4E4E4
+cursor-color = C6FF24
+selection-background = C6FF24
+selection-foreground = 0E0E0E
+palette = 0=#0E0E0E
+palette = 1=#F0525B
+palette = 2=#3FB950
+palette = 3=#E8A33D
+palette = 4=#5B9FFF
+palette = 5=#D88AE0
+palette = 6=#7AD9D9
+palette = 7=#E4E4E4
+palette = 8=#3D3D3D
+palette = 9=#FF6F77
+palette = 10=#5BD06B
+palette = 11=#FFB85C
+palette = 12=#7BB3FF
+palette = 13=#E8A8EE
+palette = 14=#9DEAEA
+palette = 15=#FFFFFF

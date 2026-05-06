@@ -1,0 +1,173 @@
+{
+  "name": "Bizarre Workshop",
+  "author": "Bizarre Industries",
+  "variables": {
+    "bg": "#1A1815",
+    "bg2": "#252320",
+    "bg3": "#33302B",
+    "border": "#3D3A33",
+    "fg": "#E4E2DA",
+    "fg2": "#B8B6AE",
+    "fg3": "#7A786F",
+    "fg4": "#545249",
+    "accent": "#B5E81F",
+    "accent2": "#D4EE7A",
+    "keyword": "#D4EE7A",
+    "string": "#B8B6AE",
+    "number": "#E8A33D",
+    "func": "#B5E81F",
+    "type": "#6EA8E8",
+    "constant": "#C68DD0",
+    "regex": "#7BC9C9",
+    "comment": "#7A786F",
+    "danger": "#E8525B",
+    "warn": "#D89538",
+    "success": "#4CB058",
+    "info": "#6EA8E8"
+  },
+  "globals": {
+    "foreground": "var(fg)",
+    "background": "var(bg)",
+    "caret": "var(accent)",
+    "block_caret": "var(accent)",
+    "line_highlight": "#252320",
+    "misspelling": "var(danger)",
+    "selection": "#33302B",
+    "selection_border": "#33302B",
+    "inactive_selection": "#252320",
+    "shadow": "#00000000",
+    "gutter": "var(bg)",
+    "gutter_foreground": "var(fg4)",
+    "stack_guide": "var(bg3)",
+    "active_guide": "var(accent)",
+    "guide": "var(bg3)",
+    "find_highlight": "#B5E81F",
+    "find_highlight_foreground": "#1A1815",
+    "brackets_options": "underline",
+    "brackets_foreground": "#B5E81F",
+    "bracket_contents_options": "underline",
+    "bracket_contents_foreground": "#D4EE7A",
+    "tags_options": "underline",
+    "tags_foreground": "#6EA8E8"
+  },
+  "rules": [
+    {
+      "name": "Comment",
+      "scope": "comment, punctuation.definition.comment",
+      "foreground": "var(comment)",
+      "font_style": "italic"
+    },
+    {
+      "name": "String",
+      "scope": "string, string.quoted",
+      "foreground": "var(string)"
+    },
+    {
+      "name": "String escape",
+      "scope": "constant.character.escape, string.regexp",
+      "foreground": "var(regex)"
+    },
+    {
+      "name": "Number / Boolean / Null",
+      "scope": "constant.numeric, constant.language",
+      "foreground": "var(number)"
+    },
+    {
+      "name": "Variable",
+      "scope": "variable, variable.parameter",
+      "foreground": "var(fg)"
+    },
+    {
+      "name": "Variable language (this/self)",
+      "scope": "variable.language",
+      "foreground": "var(constant)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Keyword",
+      "scope": "keyword, keyword.control, storage",
+      "foreground": "var(keyword)"
+    },
+    {
+      "name": "Storage modifier",
+      "scope": "storage.modifier, storage.type.function",
+      "foreground": "var(keyword)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Function",
+      "scope": "entity.name.function, support.function, meta.function-call",
+      "foreground": "var(func)"
+    },
+    {
+      "name": "Type / Class",
+      "scope": "entity.name.type, entity.name.class, support.type, support.class",
+      "foreground": "var(type)"
+    },
+    {
+      "name": "Constant",
+      "scope": "constant, support.constant",
+      "foreground": "var(constant)"
+    },
+    {
+      "name": "Decorator",
+      "scope": "meta.decorator, entity.name.function.decorator",
+      "foreground": "var(constant)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Operator",
+      "scope": "keyword.operator, punctuation",
+      "foreground": "var(fg3)"
+    },
+    {
+      "name": "Tag",
+      "scope": "entity.name.tag",
+      "foreground": "var(type)"
+    },
+    {
+      "name": "Tag attribute",
+      "scope": "entity.other.attribute-name",
+      "foreground": "var(number)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Markup heading",
+      "scope": "markup.heading",
+      "foreground": "var(func)",
+      "font_style": "bold"
+    },
+    {
+      "name": "Markup link",
+      "scope": "markup.underline.link",
+      "foreground": "var(info)",
+      "font_style": "underline"
+    },
+    {
+      "name": "Markup bold",
+      "scope": "markup.bold",
+      "font_style": "bold"
+    },
+    {
+      "name": "Markup italic",
+      "scope": "markup.italic",
+      "font_style": "italic"
+    },
+    {
+      "name": "Diff added",
+      "scope": "markup.inserted",
+      "foreground": "var(success)"
+    },
+    {
+      "name": "Diff removed",
+      "scope": "markup.deleted",
+      "foreground": "var(danger)"
+    },
+    {
+      "name": "Invalid",
+      "scope": "invalid",
+      "foreground": "var(danger)",
+      "font_style": "underline"
+    }
+  ]
+}

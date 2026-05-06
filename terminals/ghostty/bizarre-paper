@@ -1,0 +1,29 @@
+# Bizarre Paper — Ghostty
+# CATCH THE STARS.
+#
+# Drop in ~/.config/ghostty/themes/bizarre-paper, then in config:
+#   theme = bizarre-paper
+
+background = F9F8F2
+foreground = 1F1F1F
+cursor-color = 5E7A00
+cursor-text = F9F8F2
+selection-background = E4E4E4
+selection-foreground = 0E0E0E
+
+palette = 0=#1F1F1F
+palette = 1=#C13039
+palette = 2=#5E7A00
+palette = 3=#A06C1A
+palette = 4=#2C5FA0
+palette = 5=#8C4A95
+palette = 6=#3F8C8C
+palette = 7=#545454
+palette = 8=#7A7A7A
+palette = 9=#E04050
+palette = 10=#5E7A00
+palette = 11=#C28225
+palette = 12=#3D78C7
+palette = 13=#A55EAF
+palette = 14=#4FA3A3
+palette = 15=#0E0E0E

@@ -1,0 +1,29 @@
+# Bizarre Void Hi-Contrast — Ghostty
+# CATCH THE STARS.
+#
+# Drop in ~/.config/ghostty/themes/bizarre-void-hicontrast, then in config:
+#   theme = bizarre-void-hicontrast
+
+background = 000000
+foreground = F9F8F2
+cursor-color = C6FF24
+cursor-text = 000000
+selection-background = 1F1F1F
+selection-foreground = FFFFFF
+
+palette = 0=#000000
+palette = 1=#F0525B
+palette = 2=#9BC73C
+palette = 3=#E8A33D
+palette = 4=#5B9FFF
+palette = 5=#D88AE0
+palette = 6=#7AD9D9
+palette = 7=#E4E4E4
+palette = 8=#545454
+palette = 9=#FF6B73
+palette = 10=#C6FF24
+palette = 11=#FFC25A
+palette = 12=#7FB7FF
+palette = 13=#E8A8EE
+palette = 14=#9DE5E5
+palette = 15=#FFFFFF

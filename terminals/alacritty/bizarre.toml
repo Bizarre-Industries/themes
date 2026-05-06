@@ -1,0 +1,59 @@
+# Bizarre — Alacritty terminal config (TOML)
+# CATCH THE STARS.
+# ~/.config/alacritty/bizarre.toml  →  general.import in alacritty.toml
+
+[colors.primary]
+background = "#0E0E0E"
+foreground = "#E4E4E4"
+dim_foreground    = "#9C9C9C"
+bright_foreground = "#FFFFFF"
+
+[colors.cursor]
+text   = "#0E0E0E"
+cursor = "#C6FF24"
+
+[colors.selection]
+text       = "#0E0E0E"
+background = "#C6FF24"
+
+[colors.normal]
+black   = "#0E0E0E"
+red     = "#F0525B"
+green   = "#3FB950"
+yellow  = "#E8A33D"
+blue    = "#5B9FFF"
+magenta = "#D88AE0"
+cyan    = "#7AD9D9"
+white   = "#E4E4E4"
+
+[colors.bright]
+black   = "#3D3D3D"
+red     = "#FF6F77"
+green   = "#5BD06B"
+yellow  = "#FFB85C"
+blue    = "#7BB3FF"
+magenta = "#E8A8EE"
+cyan    = "#9DEAEA"
+white   = "#FFFFFF"
+
+[colors.search.matches]
+foreground = "#0E0E0E"
+background = "#C6FF24"
+
+[colors.search.focused_match]
+foreground = "#0E0E0E"
+background = "#FFB85C"
+
+[colors.hints.start]
+foreground = "#0E0E0E"
+background = "#C6FF24"
+
+[colors.hints.end]
+foreground = "#FFFFFF"
+background = "#FF6F77"
+
+[font]
+normal = { family = "Monaspace Neon", style = "Regular" }
+bold   = { family = "Monaspace Neon", style = "Bold" }
+italic = { family = "Monaspace Neon", style = "Italic" }
+size   = 13.5

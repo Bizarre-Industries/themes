@@ -1,0 +1,24 @@
+# Bizarre Paper — base16 / tinted-theming compatible
+# CATCH THE STARS.
+system: "base16"
+name: "Bizarre Paper"
+author: "Bizarre Industries"
+variant: "light"
+description: "Bizarre Industries — light register."
+palette:
+  base00: "F9F8F2"  # default bg
+  base01: "F5F2EA"  # lighter bg
+  base02: "E4E4E4"  # selection bg
+  base03: "7A7A7A"  # comment / muted
+  base04: "545454"  # dark fg / status
+  base05: "1F1F1F"  # default fg
+  base06: "0E0E0E"  # light fg
+  base07: "000000"  # lightest fg
+  base08: "C13039"  # red / variables
+  base09: "A06C1A"  # orange / numbers
+  base0A: "5E7A00"  # yellow / classes
+  base0B: "545454"  # green / strings (de-emphasized)
+  base0C: "3F8C8C"  # cyan / regex
+  base0D: "5E7A00"  # lime / functions (the hero)
+  base0E: "8C4A95"  # magenta / keywords/constants
+  base0F: "2C5FA0"  # blue / types

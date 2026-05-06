@@ -1,0 +1,24 @@
+# Bizarre Bone — base16 / tinted-theming compatible
+# CATCH THE STARS.
+system: "base16"
+name: "Bizarre Bone"
+author: "Bizarre Industries"
+variant: "light"
+description: "Bizarre Industries — light register."
+palette:
+  base00: "F5F2EA"  # default bg
+  base01: "EFEBDF"  # lighter bg
+  base02: "E0DCCE"  # selection bg
+  base03: "7A7A7A"  # comment / muted
+  base04: "545454"  # dark fg / status
+  base05: "2B2B2B"  # default fg
+  base06: "0E0E0E"  # light fg
+  base07: "000000"  # lightest fg
+  base08: "C13039"  # red / variables
+  base09: "A87330"  # orange / numbers
+  base0A: "6B8A0E"  # yellow / classes
+  base0B: "545454"  # green / strings (de-emphasized)
+  base0C: "4A9595"  # cyan / regex
+  base0D: "6B8A0E"  # lime / functions (the hero)
+  base0E: "9558A0"  # magenta / keywords/constants
+  base0F: "3068AA"  # blue / types

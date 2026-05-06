@@ -1,0 +1,29 @@
+# Bizarre Workshop — Ghostty
+# CATCH THE STARS.
+#
+# Drop in ~/.config/ghostty/themes/bizarre-workshop, then in config:
+#   theme = bizarre-workshop
+
+background = 1A1815
+foreground = E4E2DA
+cursor-color = B5E81F
+cursor-text = 1A1815
+selection-background = 33302B
+selection-foreground = F9F8F2
+
+palette = 0=#252320
+palette = 1=#E8525B
+palette = 2=#9BC73C
+palette = 3=#D89538
+palette = 4=#6EA8E8
+palette = 5=#C68DD0
+palette = 6=#7BC9C9
+palette = 7=#E4E2DA
+palette = 8=#3D3A33
+palette = 9=#F26B73
+palette = 10=#B5E81F
+palette = 11=#E8B048
+palette = 12=#7BB5E8
+palette = 13=#D8A0DE
+palette = 14=#9BD5D5
+palette = 15=#F4F2EA
