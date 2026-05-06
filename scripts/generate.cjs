@@ -60,6 +60,24 @@ const syntaxRoles = [
 ];
 
 const variants = palette.variantOrder.map((id) => ({ id, ...palette.variants[id] }));
+const shellWordmark = {
+  bizarre: [
+    '██████╗ ██╗███████╗ █████╗ ██████╗ ██████╗ ███████╗',
+    '██╔══██╗██║╚══███╔╝██╔══██╗██╔══██╗██╔══██╗██╔════╝',
+    '██████╔╝██║  ███╔╝ ███████║██████╔╝██████╔╝█████╗  ',
+    '██╔══██╗██║ ███╔╝  ██╔══██║██╔══██╗██╔══██╗██╔══╝  ',
+    '██████╔╝██║███████╗██║  ██║██║  ██║██║  ██║███████╗',
+    '╚═════╝ ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝',
+  ],
+  industries: [
+    '██╗███╗   ██╗██████╗ ██╗   ██╗███████╗████████╗██████╗ ██╗███████╗███████╗',
+    '██║████╗  ██║██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝██╔════╝',
+    '██║██╔██╗ ██║██║  ██║██║   ██║███████╗   ██║   ██████╔╝██║█████╗  ███████╗',
+    '██║██║╚██╗██║██║  ██║██║   ██║╚════██║   ██║   ██╔══██╗██║██╔══╝  ╚════██║',
+    '██║██║ ╚████║██████╔╝╚██████╔╝███████║   ██║   ██║  ██║██║███████╗███████║',
+    '╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝',
+  ],
+};
 
 function out(file, content) {
   const full = path.join(root, file);
@@ -577,22 +595,31 @@ function sublimeScheme(v) {
       subRule('String', 'string', s.string),
       subRule('Template', 'string.template', s.tmpl),
       subRule('Escape', 'constant.character.escape', s.esc, 'bold'),
+      subRule('Regex', 'string.regexp', s.rgx, 'italic'),
       subRule('Number', 'constant.numeric', s.num),
-      subRule('Boolean', 'constant.language.boolean, constant.language.null', s.bool, 'bold'),
-      subRule('Constant', 'constant, variable.other.constant', s.constant),
-      subRule('Keyword Control', 'keyword.control', s.kwCtrl),
-      subRule('Keyword Declaration', 'storage.type, keyword.declaration', s.kwDecl),
+      subRule('Bool', 'constant.language.boolean, constant.language.null', s.bool, 'bold'),
+      subRule('Constant', 'constant, variable.other.constant, entity.name.constant', s.constant, 'bold'),
+      subRule('Keyword control', 'keyword.control', s.kwCtrl),
+      subRule('Keyword decl', 'storage.type, keyword.declaration', s.kwDecl),
       subRule('Modifier', 'storage.modifier', s.kwMod, 'italic'),
       subRule('Operator', 'keyword.operator', s.op),
+      subRule('Punctuation', 'punctuation', s.punct),
       subRule('Function', 'entity.name.function, support.function', s.fn),
-      subRule('Method', 'entity.name.function.member', s.method),
-      subRule('Type', 'entity.name.type, support.type', s.type),
-      subRule('Primitive Type', 'support.type.primitive', s.tprim, 'italic'),
-      subRule('Property', 'variable.other.property', s.prop),
+      subRule('Method', 'meta.function-call entity.name.function, entity.name.function.member, variable.function', s.method),
+      subRule('Type', 'entity.name.type, entity.name.class, support.type, support.class', s.type),
+      subRule('Primitive', 'storage.type.primitive, support.type.primitive', s.tprim, 'italic'),
+      subRule('Property', 'variable.other.property, variable.other.object.property', s.prop),
       subRule('Parameter', 'variable.parameter', s.param, 'italic'),
       subRule('Namespace', 'entity.name.namespace', s.ns),
-      subRule('Tag', 'entity.name.tag', s.tag),
+      subRule('Self/this', 'variable.language.this, variable.language.self', s.self, 'italic'),
+      subRule('Decorator', 'meta.decorator, punctuation.decorator', s.decorator, 'italic'),
+      subRule('Preprocessor', 'meta.preprocessor, keyword.other.preprocessor', s.pre),
+      subRule('Tag', 'entity.name.tag, meta.tag', s.tag),
       subRule('Attribute', 'entity.other.attribute-name', s.attr),
+      subRule('Markup heading', 'markup.heading', v.accent, 'bold'),
+      subRule('Inserted', 'markup.inserted', s.ok),
+      subRule('Deleted', 'markup.deleted', s.error),
+      subRule('Changed', 'markup.changed', s.warn),
       subRule('Invalid', 'invalid', s.error, 'bold'),
     ],
   };
@@ -642,38 +669,60 @@ function vimColors(v) {
     ['Visual', '', p.selBg, ''],
     ['Search', fgFor(p.accent), p.accent, ''],
     ['IncSearch', fgFor(p.accent2), p.accent2, 'bold'],
+    ['CurSearch', fgFor(p.accent2), p.accent2, 'bold'],
     ['MatchParen', p.accent, '', 'bold,underline'],
     ['Pmenu', p.fg, p.bg2, ''],
     ['PmenuSel', fgFor(p.accent), p.accent, 'bold'],
+    ['PmenuSbar', '', p.bg3, ''],
+    ['PmenuThumb', '', p.fg4, ''],
     ['StatusLine', p.fg, p.bg2, ''],
     ['StatusLineNC', p.fg3, p.bg2, ''],
+    ['TabLine', p.fg3, p.bg2, ''],
+    ['TabLineFill', '', p.bg2, ''],
     ['TabLineSel', fgFor(p.accent), p.accent, 'bold'],
     ['VertSplit', p.border, p.bg, ''],
     ['Folded', p.fg3, p.bg2, ''],
+    ['FoldColumn', p.fg4, p.bg, ''],
+    ['SpecialKey', p.bg3, '', ''],
+    ['NonText', p.bg3, '', ''],
+    ['Whitespace', p.bg3, '', ''],
+    ['EndOfBuffer', p.bg, p.bg, ''],
     ['Title', p.accent, '', 'bold'],
     ['Directory', p.info, '', 'bold'],
     ['ErrorMsg', p.error, '', 'bold'],
     ['WarningMsg', p.warn, '', ''],
     ['Question', p.accent, '', ''],
+    ['ModeMsg', p.fg, '', 'bold'],
+    ['MoreMsg', p.ok, '', ''],
+    ['WildMenu', fgFor(p.accent), p.accent, ''],
     ['Cursor', fgFor(p.accent), p.accent, ''],
+    ['lCursor', fgFor(p.accent), p.accent, ''],
     ['Comment', p.comment, '', 'italic'],
     ['Constant', p.constant, '', ''],
     ['String', p.string, '', ''],
+    ['Character', p.string, '', ''],
     ['Number', p.num, '', ''],
     ['Boolean', p.bool, '', ''],
+    ['Float', p.num, '', ''],
     ['Identifier', p.variable, '', ''],
     ['Function', p.fn, '', ''],
     ['Statement', p.kwCtrl, '', ''],
     ['Conditional', p.kwCtrl, '', ''],
     ['Repeat', p.kwCtrl, '', ''],
+    ['Label', p.kwCtrl, '', ''],
     ['Operator', p.op, '', ''],
     ['Keyword', p.kwDecl, '', ''],
     ['Exception', p.error, '', ''],
     ['PreProc', p.pre, '', ''],
     ['Include', p.kwMod, '', 'italic'],
+    ['Define', p.kwMod, '', 'italic'],
+    ['Macro', p.pre, '', 'italic'],
     ['Type', p.type, '', ''],
     ['StorageClass', p.kwMod, '', 'italic'],
+    ['Structure', p.type, '', ''],
+    ['Typedef', p.type, '', 'italic'],
     ['Special', p.rgx, '', ''],
+    ['SpecialChar', p.rgx, '', ''],
     ['Tag', p.tag, '', ''],
     ['Delimiter', p.punct, '', ''],
     ['Underlined', p.info, '', 'underline'],
@@ -716,6 +765,327 @@ function generateVimNeovim() {
     out(`editors/neovim/colors/${titleSlug(v.id)}.vim`, `" ${titleSlug(v.id)} - Bizarre Industries\nlua require('bizarre').load('${titleSlug(v.id)}')`);
     out(`editors/vim/colors/${titleSlug(v.id)}.vim`, vimColors(v));
   }
+  out('editors/neovim/lua/bizarre/init.lua', neovimInit());
+  out('editors/neovim/lua/bizarre/highlights.lua', neovimHighlights());
+  out('editors/neovim/lua/bizarre/terminal.lua', neovimTerminal());
+}
+
+function neovimInit() {
+  const variantLines = variants.map((v) => `  ['${titleSlug(v.id)}']${' '.repeat(Math.max(1, 22 - titleSlug(v.id).length))}= require('bizarre.palettes.${v.id}'),`).join('\n');
+  return `-- Bizarre Industries - Neovim colorscheme
+-- CATCH THE STARS.
+local M = {}
+
+M.variants = {
+${variantLines}
+}
+
+function M.load(name)
+  name = name or 'bizarre-void'
+  local p = M.variants[name]
+  if not p then
+    vim.notify('[bizarre] unknown variant: ' .. tostring(name), vim.log.levels.ERROR)
+    return
+  end
+  if vim.g.colors_name then vim.cmd('hi clear') end
+  if vim.fn.exists('syntax_on') then vim.cmd('syntax reset') end
+  vim.o.termguicolors = true
+  vim.o.background = p.mode
+  vim.g.colors_name = name
+  require('bizarre.highlights').apply(p)
+  require('bizarre.terminal').apply(p)
+end
+
+return M`;
+}
+
+function neovimTerminal() {
+  return `-- Bizarre Industries - terminal ANSI colors
+local M = {}
+
+function M.apply(p)
+  for i = 0, 15 do
+    vim.g['terminal_color_' .. i] = p.term[i]
+  end
+end
+
+return M`;
+}
+
+function neovimHighlights() {
+  return `-- Bizarre Industries - highlight groups
+local M = {}
+
+local function set(groups)
+  for group, spec in pairs(groups) do
+    vim.api.nvim_set_hl(0, group, spec)
+  end
+end
+
+function M.apply(p)
+  set({
+    Normal = { fg = p.fg, bg = p.bg },
+    NormalFloat = { fg = p.fg, bg = p.bg2 },
+    NormalNC = { fg = p.fg, bg = p.bg },
+    FloatBorder = { fg = p.border, bg = p.bg2 },
+    FloatTitle = { fg = p.accent, bg = p.bg2, bold = true },
+    SignColumn = { bg = p.bg },
+    LineNr = { fg = p.fg4 },
+    CursorLineNr = { fg = p.accent, bold = true },
+    CursorLine = { bg = p.lineHL },
+    CursorColumn = { bg = p.lineHL },
+    ColorColumn = { bg = p.bg2 },
+    Cursor = { fg = p.bg, bg = p.accent },
+    lCursor = { fg = p.bg, bg = p.accent },
+    TermCursor = { fg = p.bg, bg = p.accent },
+    Visual = { bg = p.selBg },
+    VisualNOS = { bg = p.selBg },
+    Search = { fg = p.bg, bg = p.accent },
+    IncSearch = { fg = p.bg, bg = p.accent2, bold = true },
+    CurSearch = { fg = p.bg, bg = p.accent2, bold = true },
+    Substitute = { fg = p.bg, bg = p.warn },
+    MatchParen = { fg = p.accent, bold = true, underline = true },
+    NonText = { fg = p.bg3 },
+    Whitespace = { fg = p.bg3 },
+    SpecialKey = { fg = p.bg3 },
+    Conceal = { fg = p.fg3 },
+    EndOfBuffer = { fg = p.bg },
+    Folded = { fg = p.fg3, bg = p.bg2 },
+    FoldColumn = { fg = p.fg4, bg = p.bg },
+    VertSplit = { fg = p.border, bg = p.bg },
+    WinSeparator = { fg = p.border, bg = p.bg },
+
+    Pmenu = { fg = p.fg, bg = p.bg2 },
+    PmenuSel = { fg = p.bg, bg = p.accent, bold = true },
+    PmenuSbar = { bg = p.bg3 },
+    PmenuThumb = { bg = p.fg4 },
+    PmenuKind = { fg = p.type, bg = p.bg2 },
+    PmenuKindSel = { fg = p.bg, bg = p.accent, bold = true },
+    PmenuExtra = { fg = p.fg3, bg = p.bg2 },
+    PmenuExtraSel = { fg = p.bg, bg = p.accent },
+    WildMenu = { fg = p.bg, bg = p.accent },
+    Question = { fg = p.accent },
+    MoreMsg = { fg = p.success },
+    ModeMsg = { fg = p.fg, bold = true },
+    ErrorMsg = { fg = p.danger, bold = true },
+    WarningMsg = { fg = p.warn },
+    Title = { fg = p.accent, bold = true },
+    Directory = { fg = p.type, bold = true },
+
+    StatusLine = { fg = p.fg, bg = p.bg2 },
+    StatusLineNC = { fg = p.fg3, bg = p.bg2 },
+    TabLine = { fg = p.fg3, bg = p.bg2 },
+    TabLineFill = { bg = p.bg2 },
+    TabLineSel = { fg = p.bg, bg = p.accent, bold = true },
+    WinBar = { fg = p.fg2, bg = p.bg },
+    WinBarNC = { fg = p.fg3, bg = p.bg },
+
+    DiffAdd = { fg = p.success, bg = p.bg },
+    DiffChange = { fg = p.warn, bg = p.bg },
+    DiffDelete = { fg = p.danger, bg = p.bg },
+    DiffText = { fg = p.fg, bg = p.bg2, bold = true },
+
+    SpellBad = { sp = p.danger, undercurl = true },
+    SpellCap = { sp = p.warn, undercurl = true },
+    SpellLocal = { sp = p.info, undercurl = true },
+    SpellRare = { sp = p.constant, undercurl = true },
+
+    Comment = { fg = p.comment, italic = true },
+    SpecialComment = { fg = p.fg3, italic = true },
+    Constant = { fg = p.constant },
+    String = { fg = p.string },
+    Character = { fg = p.string },
+    Number = { fg = p.number },
+    Boolean = { fg = p.number },
+    Float = { fg = p.number },
+    Identifier = { fg = p.fg },
+    Function = { fg = p.func },
+    Statement = { fg = p.keyword },
+    Conditional = { fg = p.keyword },
+    Repeat = { fg = p.keyword },
+    Label = { fg = p.keyword },
+    Operator = { fg = p.fg3 },
+    Keyword = { fg = p.keyword },
+    Exception = { fg = p.danger },
+    PreProc = { fg = p.constant },
+    Include = { fg = p.keyword, italic = true },
+    Define = { fg = p.keyword, italic = true },
+    Macro = { fg = p.constant, italic = true },
+    PreCondit = { fg = p.constant },
+    Type = { fg = p.type },
+    StorageClass = { fg = p.keyword, italic = true },
+    Structure = { fg = p.type },
+    Typedef = { fg = p.type, italic = true },
+    Special = { fg = p.regex },
+    SpecialChar = { fg = p.regex },
+    Tag = { fg = p.type },
+    Delimiter = { fg = p.fg3 },
+    Debug = { fg = p.warn },
+    Underlined = { fg = p.info, underline = true },
+    Ignore = { fg = p.fg4 },
+    Error = { fg = p.danger, bold = true },
+    Todo = { fg = p.bg, bg = p.accent, bold = true },
+
+    ['@variable'] = { fg = p.fg },
+    ['@variable.builtin'] = { fg = p.constant, italic = true },
+    ['@variable.parameter'] = { fg = p.fg },
+    ['@variable.member'] = { fg = p.fg },
+    ['@constant'] = { fg = p.constant },
+    ['@constant.builtin'] = { fg = p.constant },
+    ['@constant.macro'] = { fg = p.constant, italic = true },
+    ['@module'] = { fg = p.type },
+    ['@label'] = { fg = p.keyword },
+    ['@string'] = { fg = p.string },
+    ['@string.escape'] = { fg = p.regex },
+    ['@string.regexp'] = { fg = p.regex },
+    ['@string.special'] = { fg = p.regex },
+    ['@character'] = { fg = p.string },
+    ['@character.special'] = { fg = p.regex },
+    ['@number'] = { fg = p.number },
+    ['@boolean'] = { fg = p.number },
+    ['@float'] = { fg = p.number },
+    ['@function'] = { fg = p.func },
+    ['@function.builtin'] = { fg = p.func, italic = true },
+    ['@function.call'] = { fg = p.func },
+    ['@function.macro'] = { fg = p.constant, italic = true },
+    ['@function.method'] = { fg = p.func },
+    ['@function.method.call'] = { fg = p.func },
+    ['@constructor'] = { fg = p.type },
+    ['@operator'] = { fg = p.fg3 },
+    ['@keyword'] = { fg = p.keyword },
+    ['@keyword.function'] = { fg = p.keyword, italic = true },
+    ['@keyword.operator'] = { fg = p.keyword },
+    ['@keyword.return'] = { fg = p.keyword, italic = true },
+    ['@keyword.import'] = { fg = p.keyword, italic = true },
+    ['@keyword.exception'] = { fg = p.danger },
+    ['@keyword.conditional'] = { fg = p.keyword },
+    ['@keyword.repeat'] = { fg = p.keyword },
+    ['@keyword.coroutine'] = { fg = p.keyword, italic = true },
+    ['@type'] = { fg = p.type },
+    ['@type.builtin'] = { fg = p.type, italic = true },
+    ['@type.definition'] = { fg = p.type },
+    ['@attribute'] = { fg = p.constant, italic = true },
+    ['@property'] = { fg = p.fg },
+    ['@punctuation'] = { fg = p.fg3 },
+    ['@punctuation.delimiter'] = { fg = p.fg3 },
+    ['@punctuation.bracket'] = { fg = p.fg2 },
+    ['@punctuation.special'] = { fg = p.keyword },
+    ['@comment'] = { fg = p.comment, italic = true },
+    ['@comment.todo'] = { fg = p.bg, bg = p.accent, bold = true },
+    ['@comment.note'] = { fg = p.bg, bg = p.info, bold = true },
+    ['@comment.warning'] = { fg = p.bg, bg = p.warn, bold = true },
+    ['@comment.error'] = { fg = p.bg, bg = p.danger, bold = true },
+    ['@tag'] = { fg = p.type },
+    ['@tag.attribute'] = { fg = p.number, italic = true },
+    ['@tag.delimiter'] = { fg = p.fg3 },
+    ['@markup.heading'] = { fg = p.func, bold = true },
+    ['@markup.strong'] = { fg = p.fg, bold = true },
+    ['@markup.italic'] = { fg = p.fg, italic = true },
+    ['@markup.strikethrough'] = { fg = p.fg3, strikethrough = true },
+    ['@markup.underline'] = { fg = p.fg, underline = true },
+    ['@markup.quote'] = { fg = p.fg3, italic = true },
+    ['@markup.math'] = { fg = p.regex },
+    ['@markup.link'] = { fg = p.info, underline = true },
+    ['@markup.link.label'] = { fg = p.info },
+    ['@markup.link.url'] = { fg = p.info, underline = true },
+    ['@markup.raw'] = { fg = p.regex },
+    ['@markup.raw.block'] = { fg = p.regex, bg = p.bg2 },
+    ['@markup.list'] = { fg = p.keyword },
+    ['@markup.list.checked'] = { fg = p.success },
+    ['@markup.list.unchecked'] = { fg = p.fg3 },
+    ['@diff.plus'] = { fg = p.success },
+    ['@diff.minus'] = { fg = p.danger },
+    ['@diff.delta'] = { fg = p.warn },
+
+    ['@lsp.type.class'] = { fg = p.type },
+    ['@lsp.type.decorator'] = { fg = p.constant, italic = true },
+    ['@lsp.type.enum'] = { fg = p.type },
+    ['@lsp.type.enumMember'] = { fg = p.constant },
+    ['@lsp.type.function'] = { fg = p.func },
+    ['@lsp.type.interface'] = { fg = p.type },
+    ['@lsp.type.macro'] = { fg = p.constant, italic = true },
+    ['@lsp.type.method'] = { fg = p.func },
+    ['@lsp.type.namespace'] = { fg = p.type },
+    ['@lsp.type.parameter'] = { fg = p.fg },
+    ['@lsp.type.property'] = { fg = p.fg },
+    ['@lsp.type.struct'] = { fg = p.type },
+    ['@lsp.type.type'] = { fg = p.type },
+    ['@lsp.type.typeParameter'] = { fg = p.type, italic = true },
+    ['@lsp.type.variable'] = { fg = p.fg },
+    ['@lsp.mod.readonly'] = { fg = p.constant },
+    ['@lsp.mod.deprecated'] = { fg = p.fg3, strikethrough = true },
+
+    DiagnosticError = { fg = p.danger },
+    DiagnosticWarn = { fg = p.warn },
+    DiagnosticInfo = { fg = p.info },
+    DiagnosticHint = { fg = p.accent },
+    DiagnosticOk = { fg = p.success },
+    DiagnosticVirtualTextError = { fg = p.danger, bg = p.bg2 },
+    DiagnosticVirtualTextWarn = { fg = p.warn, bg = p.bg2 },
+    DiagnosticVirtualTextInfo = { fg = p.info, bg = p.bg2 },
+    DiagnosticVirtualTextHint = { fg = p.accent, bg = p.bg2 },
+    DiagnosticUnderlineError = { sp = p.danger, undercurl = true },
+    DiagnosticUnderlineWarn = { sp = p.warn, undercurl = true },
+    DiagnosticUnderlineInfo = { sp = p.info, undercurl = true },
+    DiagnosticUnderlineHint = { sp = p.accent, undercurl = true },
+
+    GitSignsAdd = { fg = p.success },
+    GitSignsChange = { fg = p.warn },
+    GitSignsDelete = { fg = p.danger },
+    GitSignsAddNr = { fg = p.success },
+    GitSignsChangeNr = { fg = p.warn },
+    GitSignsDeleteNr = { fg = p.danger },
+
+    TelescopeBorder = { fg = p.border, bg = p.bg2 },
+    TelescopePromptBorder = { fg = p.accent, bg = p.bg2 },
+    TelescopePromptTitle = { fg = p.bg, bg = p.accent, bold = true },
+    TelescopePreviewTitle = { fg = p.bg, bg = p.type, bold = true },
+    TelescopeResultsTitle = { fg = p.fg2, bg = p.bg2 },
+    TelescopeNormal = { fg = p.fg, bg = p.bg2 },
+    TelescopeMatching = { fg = p.accent, bold = true },
+    TelescopeSelection = { fg = p.fg, bg = p.bg3, bold = true },
+
+    NvimTreeNormal = { fg = p.fg2, bg = p.bg2 },
+    NvimTreeRootFolder = { fg = p.accent, bold = true },
+    NvimTreeFolderName = { fg = p.fg },
+    NvimTreeOpenedFolderName = { fg = p.fg, bold = true },
+    NvimTreeFolderIcon = { fg = p.warn },
+    NvimTreeIndentMarker = { fg = p.bg3 },
+    NvimTreeGitDirty = { fg = p.warn },
+    NvimTreeGitNew = { fg = p.success },
+    NvimTreeGitDeleted = { fg = p.danger },
+
+    CmpItemAbbrMatch = { fg = p.accent, bold = true },
+    CmpItemAbbrMatchFuzzy = { fg = p.accent2, bold = true },
+    CmpItemAbbrDeprecated = { fg = p.fg4, strikethrough = true },
+    CmpItemKindFunction = { fg = p.func },
+    CmpItemKindMethod = { fg = p.func },
+    CmpItemKindClass = { fg = p.type },
+    CmpItemKindInterface = { fg = p.type },
+    CmpItemKindKeyword = { fg = p.keyword },
+    CmpItemKindVariable = { fg = p.fg },
+    CmpItemKindConstant = { fg = p.constant },
+    CmpItemKindSnippet = { fg = p.regex },
+    CmpItemKindText = { fg = p.string },
+    CmpItemKindModule = { fg = p.type },
+    CmpItemKindFile = { fg = p.fg },
+    CmpItemKindFolder = { fg = p.warn },
+
+    IblIndent = { fg = p.bg3 },
+    IblScope = { fg = p.fg4 },
+
+    NotifyERRORBorder = { fg = p.danger },
+    NotifyWARNBorder = { fg = p.warn },
+    NotifyINFOBorder = { fg = p.info },
+    NotifyDEBUGBorder = { fg = p.fg3 },
+    NotifyTRACEBorder = { fg = p.constant },
+    NotifyERRORTitle = { fg = p.danger, bold = true },
+    NotifyWARNTitle = { fg = p.warn, bold = true },
+    NotifyINFOTitle = { fg = p.info, bold = true },
+  })
+end
+
+return M`;
 }
 
 function base16(v) {
@@ -746,31 +1116,142 @@ function generateBase16() {
 
 function jetbrains(v) {
   const s = v.syntax;
-  const attrs = [
-    ['DEFAULT_TEXT', s.plain],
-    ['LINE_COMMENT', s.comment, '2'],
-    ['BLOCK_COMMENT', s.comment, '2'],
-    ['DOC_COMMENT', s.docComment, '2'],
-    ['KEYWORD', s.kwCtrl],
-    ['STRING', s.string],
-    ['VALID_STRING_ESCAPE', s.esc, '1'],
-    ['NUMBER', s.num],
-    ['FUNCTION_DECLARATION', s.fn],
-    ['FUNCTION_CALL', s.fn],
-    ['CLASS_NAME', s.type],
-    ['INSTANCE_FIELD', s.prop],
-    ['PARAMETER', s.param, '2'],
-    ['CONSTANT', s.constant, '1'],
-    ['OPERATION_SIGN', s.op],
-    ['COMMA', s.punct],
-    ['DOT', s.punct],
-    ['BAD_CHARACTER', s.error, '1'],
-  ].map(([name, fg, effect]) => `    <option name="${name}">
+  const colorOptions = [
+    ['CARET_COLOR', v.cursor],
+    ['CARET_ROW_COLOR', v.line],
+    ['SELECTION_BACKGROUND', v.sel],
+    ['SELECTION_FOREGROUND', fgFor(v.sel)],
+    ['CONSOLE_BACKGROUND_KEY', v.bg],
+    ['GUTTER_BACKGROUND', v.bg],
+    ['INDENT_GUIDE', v.bg3],
+    ['SELECTED_INDENT_GUIDE', v.fgGhost],
+    ['LINE_NUMBERS_COLOR', v.fgGhost],
+    ['LINE_NUMBER_ON_CARET_ROW_COLOR', v.accent],
+    ['VISUAL_INDENT_GUIDE', v.bg3],
+    ['WHITESPACES', v.bg3],
+    ['ANNOTATIONS_COLOR', v.fgFaint],
+    ['NOTIFICATION_INFORMATION_BACKGROUND', v.bg2],
+    ['NOTIFICATION_WARNING_BACKGROUND', v.bg2],
+    ['NOTIFICATION_ERROR_BACKGROUND', v.bg2],
+    ['CONSOLE_BLACK_OUTPUT', v.ansi.black],
+    ['CONSOLE_RED_OUTPUT', v.ansi.red],
+    ['CONSOLE_GREEN_OUTPUT', v.ansi.green],
+    ['CONSOLE_YELLOW_OUTPUT', v.ansi.yellow],
+    ['CONSOLE_BLUE_OUTPUT', v.ansi.blue],
+    ['CONSOLE_MAGENTA_OUTPUT', v.ansi.magenta],
+    ['CONSOLE_CYAN_OUTPUT', v.ansi.cyan],
+    ['CONSOLE_GRAY_OUTPUT', v.ansi.white],
+    ['CONSOLE_DARKGRAY_OUTPUT', v.ansi.brBlack],
+    ['CONSOLE_RED_BRIGHT_OUTPUT', v.ansi.brRed],
+    ['CONSOLE_GREEN_BRIGHT_OUTPUT', v.ansi.brGreen],
+    ['CONSOLE_YELLOW_BRIGHT_OUTPUT', v.ansi.brYellow],
+    ['CONSOLE_BLUE_BRIGHT_OUTPUT', v.ansi.brBlue],
+    ['CONSOLE_MAGENTA_BRIGHT_OUTPUT', v.ansi.brMagenta],
+    ['CONSOLE_CYAN_BRIGHT_OUTPUT', v.ansi.brCyan],
+    ['CONSOLE_WHITE_OUTPUT', v.ansi.brWhite],
+  ].map(([name, hex]) => `    <option name="${name}" value="${noHash(hex)}" />`).join('\n');
+  const attr = (name, opts) => {
+    const lines = [];
+    if (opts.fg) lines.push(`        <option name="FOREGROUND" value="${noHash(opts.fg)}" />`);
+    if (opts.bg) lines.push(`        <option name="BACKGROUND" value="${noHash(opts.bg)}" />`);
+    if (opts.effectType) lines.push(`        <option name="EFFECT_TYPE" value="${opts.effectType}" />`);
+    if (opts.effectColor) lines.push(`        <option name="EFFECT_COLOR" value="${noHash(opts.effectColor)}" />`);
+    if (opts.font) lines.push(`        <option name="FONT_TYPE" value="${opts.font}" />`);
+    return `    <option name="${name}">
       <value>
-        <option name="FOREGROUND" value="${noHash(fg)}" />${effect ? `\n        <option name="FONT_TYPE" value="${effect}" />` : ''}
+${lines.join('\n')}
       </value>
-    </option>`).join('\n');
-  return `<scheme name="${xmlEscape(v.label)}" version="142" parent_scheme="Default">
+    </option>`;
+  };
+  const attrSpecs = [
+    ['TEXT', { fg: s.plain, bg: v.bg, font: '0' }],
+    ['DEFAULT_TEXT', { fg: s.plain, bg: v.bg, font: '0' }],
+    ['DEFAULT_KEYWORD', { fg: s.kwCtrl, font: '0' }],
+    ['KEYWORD', { fg: s.kwCtrl, font: '0' }],
+    ['DEFAULT_IDENTIFIER', { fg: s.variable, font: '0' }],
+    ['DEFAULT_CONSTANT', { fg: s.constant, font: '0' }],
+    ['CONSTANT', { fg: s.constant, font: '1' }],
+    ['DEFAULT_NUMBER', { fg: s.num, font: '0' }],
+    ['NUMBER', { fg: s.num, font: '0' }],
+    ['DEFAULT_STRING', { fg: s.string, font: '0' }],
+    ['STRING', { fg: s.string, font: '0' }],
+    ['DEFAULT_VALID_STRING_ESCAPE', { fg: s.esc, font: '0' }],
+    ['VALID_STRING_ESCAPE', { fg: s.esc, font: '1' }],
+    ['DEFAULT_INVALID_STRING_ESCAPE', { fg: s.error, font: '0' }],
+    ['DEFAULT_OPERATION_SIGN', { fg: s.op, font: '0' }],
+    ['OPERATION_SIGN', { fg: s.op, font: '0' }],
+    ['DEFAULT_PARENTHS', { fg: s.punct, font: '0' }],
+    ['DEFAULT_BRACKETS', { fg: s.punct, font: '0' }],
+    ['DEFAULT_BRACES', { fg: s.punct, font: '0' }],
+    ['DEFAULT_DOT', { fg: s.punct, font: '0' }],
+    ['DOT', { fg: s.punct, font: '0' }],
+    ['DEFAULT_SEMICOLON', { fg: s.punct, font: '0' }],
+    ['SEMICOLON', { fg: s.punct, font: '0' }],
+    ['DEFAULT_COMMA', { fg: s.punct, font: '0' }],
+    ['COMMA', { fg: s.punct, font: '0' }],
+    ['DEFAULT_CLASS_NAME', { fg: s.type, font: '0' }],
+    ['CLASS_NAME', { fg: s.type, font: '0' }],
+    ['DEFAULT_INTERFACE_NAME', { fg: s.type, font: '2' }],
+    ['DEFAULT_CLASS_REFERENCE', { fg: s.type, font: '0' }],
+    ['DEFAULT_FUNCTION_DECLARATION', { fg: s.fn, font: '1' }],
+    ['FUNCTION_DECLARATION', { fg: s.fn, font: '1' }],
+    ['DEFAULT_FUNCTION_CALL', { fg: s.fn, font: '0' }],
+    ['FUNCTION_CALL', { fg: s.fn, font: '0' }],
+    ['DEFAULT_INSTANCE_METHOD', { fg: s.method, font: '0' }],
+    ['INSTANCE_METHOD', { fg: s.method, font: '0' }],
+    ['DEFAULT_INSTANCE_FIELD', { fg: s.prop, font: '0' }],
+    ['INSTANCE_FIELD', { fg: s.prop, font: '0' }],
+    ['DEFAULT_STATIC_METHOD', { fg: s.method, font: '2' }],
+    ['DEFAULT_STATIC_FIELD', { fg: s.constant, font: '0' }],
+    ['DEFAULT_LOCAL_VARIABLE', { fg: s.variable, font: '0' }],
+    ['LOCAL_VARIABLE', { fg: s.variable, font: '0' }],
+    ['DEFAULT_PARAMETER', { fg: s.param, font: '0' }],
+    ['PARAMETER', { fg: s.param, font: '2' }],
+    ['DEFAULT_REASSIGNED_LOCAL_VARIABLE', { fg: s.variable, effectType: 'BOLD_DOTTED_LINE', effectColor: v.fgFaint, font: '0' }],
+    ['DEFAULT_REASSIGNED_PARAMETER', { fg: s.param, effectType: 'BOLD_DOTTED_LINE', effectColor: v.fgFaint, font: '0' }],
+    ['DEFAULT_GLOBAL_VARIABLE', { fg: s.constant, font: '2' }],
+    ['DEFAULT_LINE_COMMENT', { fg: s.comment, font: '2' }],
+    ['LINE_COMMENT', { fg: s.comment, font: '2' }],
+    ['DEFAULT_BLOCK_COMMENT', { fg: s.comment, font: '2' }],
+    ['BLOCK_COMMENT', { fg: s.comment, font: '2' }],
+    ['DEFAULT_DOC_COMMENT', { fg: s.docComment, font: '2' }],
+    ['DOC_COMMENT', { fg: s.docComment, font: '2' }],
+    ['DEFAULT_DOC_COMMENT_TAG', { fg: s.attr, font: '1' }],
+    ['DEFAULT_DOC_COMMENT_TAG_VALUE', { fg: s.param, font: '0' }],
+    ['DEFAULT_DOC_COMMENT_MARKUP', { fg: s.docComment, font: '2' }],
+    ['METADATA', { fg: s.decorator, font: '2' }],
+    ['DEFAULT_METADATA', { fg: s.decorator, font: '2' }],
+    ['DEFAULT_LABEL', { fg: s.kwMod, font: '2' }],
+    ['DEFAULT_PREDEFINED_SYMBOL', { fg: s.builtin, font: '0' }],
+    ['BAD_CHARACTER', { fg: fgFor(s.error), bg: s.error, font: '1' }],
+    ['TODO_DEFAULT_ATTRIBUTES', { fg: fgFor(v.accent), bg: v.accent, font: '1' }],
+    ['SEARCH_RESULT_ATTRIBUTES', { fg: fgFor(v.accentSoft), bg: v.accentSoft, font: '0' }],
+    ['WRITE_SEARCH_RESULT_ATTRIBUTES', { fg: fgFor(v.accent), bg: v.accent, font: '1' }],
+    ['TEXT_SEARCH_RESULT_ATTRIBUTES', { fg: fgFor(v.accentSoft), bg: v.accentSoft, font: '0' }],
+    ['IDENTIFIER_UNDER_CARET_ATTRIBUTES', { effectType: 'ROUNDED_BOX', effectColor: v.accent, font: '0' }],
+    ['WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES', { effectType: 'ROUNDED_BOX', effectColor: v.accent, font: '0' }],
+    ['FOLLOWED_HYPERLINK_ATTRIBUTES', { fg: s.info, effectType: 'LINE_UNDERSCORE', effectColor: s.info, font: '0' }],
+    ['HYPERLINK_ATTRIBUTES', { fg: s.info, effectType: 'LINE_UNDERSCORE', effectColor: s.info, font: '0' }],
+    ['XML_TAG_NAME', { fg: s.tag, font: '0' }],
+    ['XML_ATTRIBUTE_NAME', { fg: s.attr, font: '0' }],
+    ['XML_ATTRIBUTE_VALUE', { fg: s.string, font: '0' }],
+    ['HTML_TAG_NAME', { fg: s.tag, font: '0' }],
+    ['HTML_ATTRIBUTE_NAME', { fg: s.attr, font: '0' }],
+    ['HTML_ATTRIBUTE_VALUE', { fg: s.string, font: '0' }],
+    ['CONSOLE_RED_OUTPUT', { fg: s.error, font: '0' }],
+    ['CONSOLE_GREEN_OUTPUT', { fg: s.ok, font: '0' }],
+    ['CONSOLE_YELLOW_OUTPUT', { fg: s.warn, font: '0' }],
+    ['CONSOLE_BLUE_OUTPUT', { fg: s.info, font: '0' }],
+    ['CONSOLE_MAGENTA_OUTPUT', { fg: s.hint, font: '0' }],
+    ['CONSOLE_CYAN_OUTPUT', { fg: s.rgx, font: '0' }],
+    ['CONSOLE_GRAY_OUTPUT', { fg: v.fgDim, font: '0' }],
+    ['DIFF_INSERTED', { fg: s.ok, bg: v.bg2, font: '0' }],
+    ['DIFF_DELETED', { fg: s.error, bg: v.bg2, font: '0' }],
+    ['DIFF_MODIFIED', { fg: s.warn, bg: v.bg2, font: '0' }],
+    ['DEFAULT_TEMPLATE_LANGUAGE_COLOR', { bg: v.bg2, font: '0' }],
+  ];
+  const attrs = attrSpecs.map(([name, opts]) => attr(name, opts)).join('\n');
+  return `<scheme name="${xmlEscape(v.label)}" version="142" parent_scheme="${v.mode === 'dark' ? 'Darcula' : 'Default'}">
   <metaInfo>
     <property name="created">2026-05-07T00:00:00</property>
     <property name="ide">idea</property>
@@ -778,15 +1259,11 @@ function jetbrains(v) {
     <property name="modified">2026-05-07T00:00:00</property>
     <property name="originalScheme">${xmlEscape(v.label)}</property>
   </metaInfo>
+  <option name="LINE_SPACING" value="1.2" />
+  <option name="EDITOR_FONT_SIZE" value="14" />
+  <option name="EDITOR_FONT_NAME" value="${xmlEscape(palette.fonts.mono_family)}" />
   <colors>
-    <option name="CARET_COLOR" value="${noHash(v.cursor)}" />
-    <option name="CARET_ROW_COLOR" value="${noHash(v.line)}" />
-    <option name="CONSOLE_BACKGROUND_KEY" value="${noHash(v.bg)}" />
-    <option name="GUTTER_BACKGROUND" value="${noHash(v.bg)}" />
-    <option name="INDENT_GUIDE" value="${noHash(v.bg3)}" />
-    <option name="LINE_NUMBERS_COLOR" value="${noHash(v.fgGhost)}" />
-    <option name="SELECTED_TEXT_BACKGROUND_COLOR" value="${noHash(v.sel)}" />
-    <option name="SELECTION_BACKGROUND" value="${noHash(v.sel)}" />
+${colorOptions}
   </colors>
   <attributes>
 ${attrs}
@@ -966,19 +1443,50 @@ ${variants.map((v) => `    "${titleSlug(v.id)}" {
 }
 
 function tmux(v) {
-  return `# Bizarre Industries - tmux
-set -g status-style "bg=${v.bg2},fg=${v.fgDim}"
-set -g status-left "#[bg=${v.accent},fg=${fgFor(v.accent)},bold] bzr #[bg=${v.bg2},fg=${v.accent}] "
-set -g status-right "#[fg=${v.fgFaint}]#S #[fg=${v.accent}]CATCH THE STARS "
-set -g pane-border-style "fg=${v.border}"
-set -g pane-active-border-style "fg=${v.accent}"
-set -g message-style "bg=${v.accent},fg=${fgFor(v.accent)},bold"
-set -g mode-style "bg=${v.sel},fg=${v.fg}"`;
+  const stanza = (variant, commented = false) => {
+    const prefix = commented ? '# ' : '';
+    return `${prefix}# -- ${variant.label} --
+${prefix}set -g status-style "bg=${variant.bg},fg=${variant.fg}"
+${prefix}set -g status-left  "#[bg=${variant.accent},fg=${fgFor(variant.accent)},bold] BZR ✦ #S #[bg=${variant.bg},fg=${variant.accent}]"
+${prefix}set -g status-right "#[fg=${variant.border}]✦ #[fg=${variant.fg}]%H:%M #[fg=${variant.border}]✦ #[fg=${variant.fg}]%a %b %d "
+${prefix}set -g status-left-length 40
+${prefix}set -g status-right-length 60
+${prefix}set -g window-status-format         "#[fg=${variant.border}] #I:#W "
+${prefix}set -g window-status-current-format "#[bg=${variant.border},fg=${variant.accent},bold] #I:#W "
+${prefix}set -g window-status-separator ""
+${prefix}set -g pane-border-style        "fg=${variant.border}"
+${prefix}set -g pane-active-border-style "fg=${variant.accent}"
+${prefix}set -g message-style "bg=${variant.accent},fg=${fgFor(variant.accent)},bold"
+${prefix}set -g message-command-style "bg=${variant.border},fg=${variant.fg}"
+${prefix}set -g mode-style "bg=${variant.accent},fg=${fgFor(variant.accent)}"
+${prefix}set -g clock-mode-colour "${variant.accent}"
+${prefix}set -g copy-mode-match-style "bg=${variant.accent},fg=${fgFor(variant.accent)}"
+${prefix}set -g copy-mode-current-match-style "bg=${variant.syntax.warn},fg=${fgFor(variant.syntax.warn)}"`;
+  };
+  return `# Bizarre Industries - tmux statusline
+# CATCH THE STARS.
+#
+# Source from ~/.tmux.conf:
+#   source-file ~/dotfiles/bizarre/terminals/tmux/bizarre.tmux.conf
+#
+# Switch variant by changing @bizarre-variant below.
+
+set -g @bizarre-variant "${v.id}"
+
+${stanza(v)}
+
+${variants.filter((variant) => variant.id !== v.id).map((variant) => `# Uncomment to use ${variant.label}:
+${stanza(variant, true)}`).join('\n\n')}`;
 }
 
 function starship(v) {
   return `# Bizarre Industries - Starship prompt
 # CATCH THE STARS.
+#
+# Powerline-style:
+#   [bzr][~/path][branch?][status?] ✦
+#
+# Install: cp prompt/starship.toml ~/.config/starship.toml
 
 format = """
 [](${v.accent})\\
@@ -1087,6 +1595,7 @@ time_format = "%R"
 success_symbol = ""
 error_symbol = ""
 
+# Language / runtime modules.
 [python]
 symbol = "py "
 style = "fg:${v.syntax.info}"
@@ -1127,12 +1636,17 @@ format = "[$user]($style)"`;
 function aerospace(v) {
   return `# Bizarre Industries - AeroSpace window manager config
 # CATCH THE STARS.
+#
+# Drop into ~/.config/aerospace/aerospace.toml
+# AeroSpace v0.14+
 
+# Startup
 after-login-command = []
 after-startup-command = [
     'exec-and-forget borders active_color=0xff${noHash(v.accent)} inactive_color=0xff${noHash(v.border)} width=2.0',
 ]
 
+# Normalization keeps tiling predictable.
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 30
@@ -1140,29 +1654,35 @@ default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# Gaps, bench whitespace.
 [gaps]
 inner.horizontal = 8
-inner.vertical = 8
-outer.left = 8
-outer.bottom = 8
-outer.top = 8
-outer.right = 8
+inner.vertical   = 8
+outer.left       = 8
+outer.bottom     = 8
+outer.top        = 8
+outer.right      = 8
 
+# Workspaces, named after brand vocabulary.
+# 1 BENCH, 2 CODE, 3 ORBIT, 4 SIGNAL, 5 STARS, 6 BURN, 7 SPARE.
 [workspace-to-monitor-force-assignment]
 '1' = 'main'
 '2' = 'main'
 '3' = 'secondary'
 '4' = 'secondary'
 
+# Mode: main.
 [mode.main.binding]
 alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
+
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
+
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
@@ -1174,11 +1694,15 @@ alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
 alt-shift-4 = 'move-node-to-workspace 4'
+
 alt-tab = 'workspace-back-and-forth'
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
+
 alt-f = 'fullscreen'
 alt-shift-f = 'layout floating tiling'
+
+# Resize mode leaves main bindings untouched.
 alt-shift-semicolon = 'mode resize'
 
 [mode.resize.binding]
@@ -1189,6 +1713,7 @@ l = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
 
+# App rules keep tools in the right workspace.
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
 run = 'move-node-to-workspace 6'
@@ -1213,19 +1738,27 @@ run = 'move-node-to-workspace 3'
 if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace 3'
 
+# Floating windows, utilities and inspectors.
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
 run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.calculator'
-run = 'layout floating'`;
+run = 'layout floating'
+
+# JankyBorders companion.
+# brew install FelixKratz/formulae/borders
+# Install JankyBorders separately. Active border is Signal Lime; inactive is the variant border.`;
 }
 
 function jujutsu(v) {
   const s = v.syntax;
   return `# Bizarre Industries - Jujutsu colors
 # CATCH THE STARS.
+#
+# Drop into ~/.config/jj/config.toml or merge with an existing config.
+# Tested with jj v0.16+.
 
 [ui]
 color = "always"
@@ -1236,42 +1769,53 @@ default-command = "log"
 [ui.movement]
 edit = false
 
+# Color rules, semantic rather than decorative.
+# Lime is reserved for the working-copy marker, @, and the current branch.
 [colors]
-"working_copy" = { fg = "${fgFor(v.accent)}", bg = "${v.accent}", bold = true }
-"working_copy change_id" = { fg = "${fgFor(v.accent)}", bg = "${v.accent}", bold = true }
-"working_copy commit_id" = { fg = "${fgFor(v.accent)}", bg = "${v.accent}" }
+"working_copy"             = { fg = "${fgFor(v.accent)}", bg = "${v.accent}", bold = true }
+"working_copy change_id"   = { fg = "${fgFor(v.accent)}", bg = "${v.accent}", bold = true }
+"working_copy commit_id"   = { fg = "${fgFor(v.accent)}", bg = "${v.accent}" }
 "working_copy description" = "${v.fg}"
-"working_copy author" = "${s.ns}"
-"working_copy timestamp" = "${v.fgFaint}"
-"working_copy bookmarks" = { fg = "${v.accent}", bold = true }
-"change_id" = "${s.constant}"
-"commit_id" = "${s.rgx}"
-"author" = "${s.info}"
-"timestamp" = "${v.fgFaint}"
-"description" = "${v.fg}"
-"bookmarks" = "${s.warn}"
-"tags" = "${s.string}"
-"git_refs" = "${s.self}"
-"divergent" = { fg = "${s.error}", bold = true }
-"conflict" = { fg = "${s.error}", bg = "${v.bg3}", bold = true }
-"empty" = "${v.fgFaint}"
-"diff added" = "${s.ok}"
-"diff added token" = { fg = "${fgFor(s.ok)}", bg = "${s.ok}", bold = true }
-"diff removed" = "${s.error}"
-"diff removed token" = { fg = "${fgFor(s.error)}", bg = "${s.error}", bold = true }
-"diff modified" = "${s.warn}"
-"diff context" = "${v.fgDim}"
-"diff file_header" = { fg = "${v.accent}", bold = true }
-"diff hunk_header" = "${s.ns}"
-"error" = { fg = "${s.error}", bold = true }
-"warning" = "${s.warn}"
-"hint" = "${s.hint}"
-"normal" = "${v.fg}"
-"operation id" = "${s.rgx}"
-"operation user" = "${s.info}"
-"operation time" = "${v.fgFaint}"
-"operation current" = { fg = "${fgFor(v.accent)}", bg = "${v.accent}", bold = true }
+"working_copy author"      = "${s.ns}"
+"working_copy timestamp"   = "${v.fgFaint}"
+"working_copy bookmarks"   = { fg = "${v.accent}", bold = true }
 
+"change_id"     = "${s.constant}"
+"commit_id"     = "${s.rgx}"
+"author"        = "${s.info}"
+"timestamp"     = "${v.fgFaint}"
+"description"   = "${v.fg}"
+"bookmarks"     = "${s.warn}"
+"tags"          = "${s.string}"
+"git_refs"      = "${s.self}"
+"divergent"     = { fg = "${s.error}", bold = true }
+"conflict"      = { fg = "${s.error}", bg = "${v.bg3}", bold = true }
+"empty"         = "${v.fgFaint}"
+
+# diff
+"diff added"           = "${s.ok}"
+"diff added token"     = { fg = "${fgFor(s.ok)}", bg = "${s.ok}", bold = true }
+"diff removed"         = "${s.error}"
+"diff removed token"   = { fg = "${fgFor(s.error)}", bg = "${s.error}", bold = true }
+"diff modified"        = "${s.warn}"
+"diff context"         = "${v.fgDim}"
+"diff file_header"     = { fg = "${v.accent}", bold = true }
+"diff hunk_header"     = "${s.ns}"
+
+# status / warnings
+"error"         = { fg = "${s.error}", bold = true }
+"warning"       = "${s.warn}"
+"hint"          = "${s.hint}"
+"normal"        = "${v.fg}"
+
+# operation log
+"operation id"          = "${s.rgx}"
+"operation user"        = "${s.info}"
+"operation time"        = "${v.fgFaint}"
+"operation current"     = { fg = "${fgFor(v.accent)}", bg = "${v.accent}", bold = true }
+
+# Custom log template.
+# Use: jj log -T bizarre
 [templates]
 bizarre = '''
 if(root,
@@ -1287,7 +1831,7 @@ if(root,
       if(bookmarks, " " ++ bookmarks.join(" ")),
       if(tags, " " ++ tags.join(" ")),
       if(working_copies, " " ++ working_copies),
-      if(conflict, label("conflict", " ! conflict")),
+      if(conflict, label("conflict", " ⚠ conflict")),
       if(empty, label("empty", " (empty)")),
       "\\n",
       "  ",
@@ -1298,11 +1842,12 @@ if(root,
 )
 '''
 
+# Aliases that match the brand voice.
 [aliases]
-ship = ["git", "push"]
-catch = ["new"]
-stars = ["log", "-T", "bizarre", "-r", "ancestors(@, 12)"]
-bench = ["status"]`;
+ship   = ["git", "push"]
+catch  = ["new"]
+stars  = ["log", "-T", "bizarre", "-r", "ancestors(@, 12)"]
+bench  = ["status"]`;
 }
 
 function forklift(v) {
@@ -1383,19 +1928,27 @@ function generateShells(v) {
 }
 
 function bannerLines(varPrefix = '') {
-  return `${varPrefix}printf '%s%s ██████╗ ██╗███████╗ █████╗ ██████╗ ██████╗ ███████╗%s\\n' "$lime" "$b" "$r"
-${varPrefix}printf '%s%s ██╔══██╗██║╚══███╔╝██╔══██╗██╔══██╗██╔══██╗██╔════╝%s\\n' "$lime" "$b" "$r"
-${varPrefix}printf '%s%s ██████╔╝██║  ███╔╝ ███████║██████╔╝██████╔╝█████╗  %s\\n' "$lime" "$b" "$r"
-${varPrefix}printf '%s%s ██╔══██╗██║ ███╔╝  ██╔══██║██╔══██╗██╔══██╗██╔══╝  %s\\n' "$lime" "$b" "$r"
-${varPrefix}printf '%s%s ██████╔╝██║███████╗██║  ██║██║  ██║██║  ██║███████╗%s\\n' "$lime" "$b" "$r"
-${varPrefix}printf '%s%s ╚═════╝ ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝%s\\n' "$lime" "$b" "$r"
-${varPrefix}printf '\\n'
-${varPrefix}printf '%s ██╗███╗   ██╗██████╗ ██╗   ██╗███████╗████████╗██████╗ ██╗███████╗███████╗%s\\n' "$gray" "$r"
-${varPrefix}printf '%s ██║████╗  ██║██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝██╔════╝%s\\n' "$gray" "$r"
-${varPrefix}printf '%s ██║██╔██╗ ██║██║  ██║██║   ██║███████╗   ██║   ██████╔╝██║█████╗  ███████╗%s\\n' "$gray" "$r"
-${varPrefix}printf '%s ██║██║╚██╗██║██║  ██║██║   ██║╚════██║   ██║   ██╔══██╗██║██╔══╝  ╚════██║%s\\n' "$gray" "$r"
-${varPrefix}printf '%s ██║██║ ╚████║██████╔╝╚██████╔╝███████║   ██║   ██║  ██║██║███████╗███████║%s\\n' "$gray" "$r"
-${varPrefix}printf '%s ╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝%s\\n' "$gray" "$r"`;
+  return [
+    ...shellWordmark.bizarre.map((line) => `${varPrefix}printf '%s%s ${line}%s\\n' "$lime" "$b" "$r"`),
+    `${varPrefix}printf '\\n'`,
+    ...shellWordmark.industries.map((line) => `${varPrefix}printf '%s ${line}%s\\n' "$gray" "$r"`),
+  ].join('\n');
+}
+
+function fishBannerLines() {
+  return [
+    ...shellWordmark.bizarre.map((line) => `  printf '%s%s ${line}%s\\n' $lime $b $r`),
+    '  echo',
+    ...shellWordmark.industries.map((line) => `  printf '%s ${line}%s\\n' $gray $r`),
+  ].join('\n');
+}
+
+function psBannerLines() {
+  return [
+    ...shellWordmark.bizarre.map((line) => `  Write-Host "$lime$b ${line}$r"`),
+    '  Write-Host ""',
+    ...shellWordmark.industries.map((line) => `  Write-Host "$gray ${line}$r"`),
+  ].join('\n');
 }
 
 function shellBash(lime, glow, gray, fg) {
@@ -1493,19 +2046,7 @@ function bizarre_banner --argument-names manifesto
   set -l b (printf '\\e[1m')
   set -l r (printf '\\e[0m')
   echo
-  printf '%s%s ██████╗ ██╗███████╗ █████╗ ██████╗ ██████╗ ███████╗%s\\n' $lime $b $r
-  printf '%s%s ██╔══██╗██║╚══███╔╝██╔══██╗██╔══██╗██╔══██╗██╔════╝%s\\n' $lime $b $r
-  printf '%s%s ██████╔╝██║  ███╔╝ ███████║██████╔╝██████╔╝█████╗  %s\\n' $lime $b $r
-  printf '%s%s ██╔══██╗██║ ███╔╝  ██╔══██║██╔══██╗██╔══██╗██╔══╝  %s\\n' $lime $b $r
-  printf '%s%s ██████╔╝██║███████╗██║  ██║██║  ██║██║  ██║███████╗%s\\n' $lime $b $r
-  printf '%s%s ╚═════╝ ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝%s\\n' $lime $b $r
-  echo
-  printf '%s ██╗███╗   ██╗██████╗ ██╗   ██╗███████╗████████╗██████╗ ██╗███████╗███████╗%s\\n' $gray $r
-  printf '%s ██║████╗  ██║██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝██╔════╝%s\\n' $gray $r
-  printf '%s ██║██╔██╗ ██║██║  ██║██║   ██║███████╗   ██║   ██████╔╝██║█████╗  ███████╗%s\\n' $gray $r
-  printf '%s ██║██║╚██╗██║██║  ██║██║   ██║╚════██║   ██║   ██╔══██╗██║██╔══╝  ╚════██║%s\\n' $gray $r
-  printf '%s ██║██║ ╚████║██████╔╝╚██████╔╝███████║   ██║   ██║  ██║██║███████╗███████║%s\\n' $gray $r
-  printf '%s ╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝%s\\n' $gray $r
+${fishBannerLines()}
   echo
   set -l month_year (date +'%b %Y' | tr '[:lower:]' '[:upper:]')
   printf '  %s%sBZR / SHELL / V0.2 / %s%s   %s%s✦%s   %shost: %s%s\\n' $dim $gray $month_year $r $glow $b $r $gray (hostname -s) $r
@@ -1557,19 +2098,7 @@ function Bizarre-Banner {
   $b = "$e[1m"
   $r = "$e[0m"
   Write-Host ""
-  Write-Host "$lime$b ██████╗ ██╗███████╗ █████╗ ██████╗ ██████╗ ███████╗$r"
-  Write-Host "$lime$b ██╔══██╗██║╚══███╔╝██╔══██╗██╔══██╗██╔══██╗██╔════╝$r"
-  Write-Host "$lime$b ██████╔╝██║  ███╔╝ ███████║██████╔╝██████╔╝█████╗  $r"
-  Write-Host "$lime$b ██╔══██╗██║ ███╔╝  ██╔══██║██╔══██╗██╔══██╗██╔══╝  $r"
-  Write-Host "$lime$b ██████╔╝██║███████╗██║  ██║██║  ██║██║  ██║███████╗$r"
-  Write-Host "$lime$b ╚═════╝ ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝$r"
-  Write-Host ""
-  Write-Host "$gray ██╗███╗   ██╗██████╗ ██╗   ██╗███████╗████████╗██████╗ ██╗███████╗███████╗$r"
-  Write-Host "$gray ██║████╗  ██║██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝██╔════╝$r"
-  Write-Host "$gray ██║██╔██╗ ██║██║  ██║██║   ██║███████╗   ██║   ██████╔╝██║█████╗  ███████╗$r"
-  Write-Host "$gray ██║██║╚██╗██║██║  ██║██║   ██║╚════██║   ██║   ██╔══██╗██║██╔══╝  ╚════██║$r"
-  Write-Host "$gray ██║██║ ╚████║██████╔╝╚██████╔╝███████║   ██║   ██║  ██║██║███████╗███████║$r"
-  Write-Host "$gray ╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝$r"
+${psBannerLines()}
   $monthYear = (Get-Date).ToString('MMM yyyy').ToUpper()
   Write-Host ""
   Write-Host "  $dim${'$'}{gray}BZR / SHELL / V0.2 / $monthYear$r   $glow$b✦$r   ${'$'}{gray}host: $env:COMPUTERNAME$r"
@@ -1702,7 +2231,7 @@ body {
 .hero-meta dt { color: var(--void-6); margin-bottom: 5px; }
 .hero-meta dd { color: var(--fg); margin: 0; }
 .slogan-strip { margin-top: 56px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 16px 0; display: flex; justify-content: space-between; color: var(--void-6); font-size: 12px; }
-.section { padding: 88px 64px 0; }
+.section { padding: 88px 64px 24px; }
 .section-head { display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: end; border-bottom: 1px solid var(--hairline); padding-bottom: 16px; margin-bottom: 32px; }
 .section-num { color: var(--lime); font-size: 11px; }
 .section-title { font-family: var(--display); font-size: 30px; margin: 0; font-weight: 650; letter-spacing: 0; }
@@ -1754,12 +2283,65 @@ body {
 .term { font-family: var(--mono); font-size: 12.5px; line-height: 1.55; padding: 18px 20px; flex: 1; overflow: hidden; white-space: pre; }
 .term .blink { animation: blink 1.1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-.banner-pane { background: var(--void-2); border: 1px solid var(--hairline); border-radius: 6px; padding: 28px; font-family: var(--mono); line-height: 1.24; font-size: 13px; overflow: hidden; }
+.banner-pane { background: var(--void-2); border: 1px solid var(--hairline); border-radius: 6px; padding: 28px; font-family: var(--mono); line-height: 1.24; font-size: 13px; overflow: hidden; white-space: pre; font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
 .banner-pane .bzr { color: var(--lime); font-weight: 700; }
 .banner-pane .gray { color: var(--void-6); }
 .banner-pane .meta { color: var(--void-6); }
 .banner-pane .quote { color: var(--fg); font-weight: 700; }
 .banner-pane .slogan { color: var(--lime); font-weight: 700; }
+.config-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.config-grid.vscode-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.config-grid.editor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.config-grid.shell-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.config-grid.tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.config-card { border: 1px solid var(--hairline); border-radius: 6px; overflow: hidden; min-height: 218px; background: var(--bg); color: var(--fgc); display: flex; flex-direction: column; }
+.config-card.light { border-color: var(--hairline-light); }
+.config-title { padding: 14px 14px 10px; border-bottom: 1px solid var(--hairline); font-family: var(--label); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; min-width: 0; }
+.config-card.light .config-title { border-bottom-color: var(--hairline-light); }
+.config-title strong { display: block; color: var(--accent); font-family: var(--display); font-size: 17px; line-height: 1.1; font-weight: 650; letter-spacing: 0; text-transform: none; }
+.config-title code { display: block; margin-top: 8px; color: inherit; opacity: .62; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: var(--mono); font-size: 10px; letter-spacing: 0; text-transform: none; }
+.mini-ansi { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; padding: 14px; }
+.ansi-chip { height: 34px; border-radius: 3px; border: 1px solid rgba(0,0,0,.16); box-shadow: inset 0 0 0 1px rgba(255,255,255,.05); }
+.config-prompt { margin: auto 14px 14px; padding: 12px; border: 1px solid var(--hairline); border-radius: 4px; background: rgba(0,0,0,.16); font-size: 10.5px; line-height: 1.55; white-space: normal; overflow-wrap: anywhere; }
+.config-card.light .config-prompt { border-color: var(--hairline-light); background: rgba(0,0,0,.035); }
+.config-prompt .path { color: var(--info); }
+.config-prompt .cmd { color: var(--accent); font-weight: 700; }
+.vscode-window { margin: 12px; border: 1px solid var(--hairline); border-radius: 5px; overflow: hidden; display: flex; flex-direction: column; min-height: 244px; }
+.config-card.light .vscode-window { border-color: var(--hairline-light); }
+.vscode-bar { height: 26px; display: flex; align-items: center; gap: 6px; padding: 0 9px; font-family: var(--label); font-size: 9px; color: var(--dim); border-bottom: 1px solid var(--hairline); }
+.config-card.light .vscode-bar { border-bottom-color: var(--hairline-light); }
+.vscode-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dim); opacity: .55; }
+.vscode-dot.active { background: var(--accent); opacity: 1; }
+.vscode-body { display: grid; grid-template-columns: 28px 82px 1fr; flex: 1; min-height: 180px; }
+.vscode-activity { display: grid; grid-template-rows: repeat(5, 28px); justify-items: center; padding-top: 6px; border-right: 1px solid var(--hairline); }
+.config-card.light .vscode-activity { border-right-color: var(--hairline-light); }
+.vscode-icon { position: relative; width: 15px; height: 15px; opacity: .62; margin-top: 7px; color: var(--dim); }
+.vscode-icon.on { color: var(--accent); opacity: 1; }
+.vscode-icon.file { border: 1px solid currentColor; border-radius: 1px; }
+.vscode-icon.file::after { content: ""; position: absolute; right: -1px; top: -1px; width: 5px; height: 5px; border-left: 1px solid currentColor; border-bottom: 1px solid currentColor; background: var(--bg); }
+.vscode-icon.search { border: 2px solid currentColor; border-radius: 50%; width: 13px; height: 13px; }
+.vscode-icon.search::after { content: ""; position: absolute; right: -4px; bottom: -3px; width: 7px; height: 2px; background: currentColor; transform: rotate(45deg); transform-origin: left center; }
+.vscode-icon.branch::before { content: ""; position: absolute; left: 6px; top: 2px; width: 2px; height: 11px; background: currentColor; }
+.vscode-icon.branch::after { content: ""; position: absolute; left: 3px; top: 2px; width: 8px; height: 8px; border: 2px solid currentColor; border-left: 0; border-bottom: 0; border-radius: 0 6px 0 0; }
+.vscode-icon.gear { border: 2px solid currentColor; border-radius: 50%; }
+.vscode-icon.gear::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: currentColor; }
+.vscode-side { padding: 9px; border-right: 1px solid var(--hairline); font-size: 10px; color: var(--dim); line-height: 1.7; overflow: hidden; }
+.config-card.light .vscode-side { border-right-color: var(--hairline-light); }
+.vscode-side .active { color: var(--accent); font-weight: 700; }
+.vscode-editor { overflow: hidden; }
+.mini-code { font-family: var(--mono); font-size: 10.5px; line-height: 1.75; padding: 10px 12px; white-space: nowrap; }
+.mini-code div { overflow: hidden; text-overflow: ellipsis; }
+.vscode-status { height: 24px; display: flex; gap: 10px; align-items: center; justify-content: space-between; padding: 0 9px; font-family: var(--label); font-size: 9px; color: var(--dim); border-top: 1px solid var(--hairline); }
+.config-card.light .vscode-status { border-top-color: var(--hairline-light); }
+.shell-card { min-height: 260px; }
+.shell-body { padding: 14px; font-size: 11px; line-height: 1.32; white-space: pre; overflow: hidden; flex: 1; font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
+.shell-body .brand { color: var(--accent); font-weight: 700; }
+.shell-body .muted { color: var(--dim); }
+.shell-body .quote { color: var(--fgc); font-weight: 700; }
+.tool-body { padding: 14px; font-size: 11px; line-height: 1.7; overflow: hidden; flex: 1; }
+.tool-body .key { color: var(--info); }
+.tool-body .value { color: var(--accent); font-weight: 700; }
+.tool-strip { display: grid; grid-template-columns: repeat(5, 1fr); height: 32px; margin-top: auto; }
 .foot { display: flex; gap: 18px; align-items: center; padding: 80px 64px 0; color: var(--void-6); }
 .star-line { flex: 1; height: 1px; background: var(--hairline); }
 @media (max-width: 900px) {
@@ -1767,6 +2349,7 @@ body {
   .hero-grid, .pair, .lime-pair, .ansi-dual { grid-template-columns: 1fr; }
   .legend-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .variant-grid { grid-template-columns: 1fr; }
+  .config-grid, .config-grid.vscode-grid, .config-grid.editor-grid, .config-grid.shell-grid, .config-grid.tool-grid { grid-template-columns: 1fr; }
   .section-head { grid-template-columns: 1fr; }
 }`;
 }
@@ -1907,6 +2490,147 @@ function showcaseMain() {
 const P = window.BZR_PALETTE;
 const VARIANTS = P.variantOrder.map((id) => ({ id, ...P.variants[id] }));
 const SYNTAX_LEGEND = ${JSON.stringify(syntaxRoles.map(([role, , name, ex]) => [role, name, ex]))};
+const TERMINAL_TARGETS = [
+  { shot: 'terminal-alacritty', name: 'Alacritty', file: 'terminals/alacritty/bizarre-void.toml', variant: 'void', cmd: 'alacritty --config-file bizarre-void.toml' },
+  { shot: 'terminal-kitty', name: 'Kitty', file: 'terminals/kitty/bizarre-void.conf', variant: 'void-hicontrast', cmd: 'kitty +kitten themes Bizarre Void' },
+  { shot: 'terminal-ghostty', name: 'Ghostty', file: 'terminals/ghostty/bizarre-workshop', variant: 'workshop', cmd: 'theme = bizarre-workshop' },
+  { shot: 'terminal-iterm2', name: 'iTerm2', file: 'terminals/iterm2/bizarre-paper.itermcolors', variant: 'paper', cmd: 'open bizarre-paper.itermcolors' },
+  { shot: 'terminal-wezterm', name: 'WezTerm', file: 'terminals/wezterm/bizarre.lua', variant: 'bone', cmd: 'color_scheme = Bizarre Bone' },
+  { shot: 'terminal-windows-terminal', name: 'Windows Terminal', file: 'terminals/windows-terminal/schemes.json', variant: 'void', cmd: 'colorScheme: Bizarre Void' },
+  { shot: 'terminal-tmux', name: 'tmux', file: 'terminals/tmux/bizarre.tmux.conf', variant: 'workshop', cmd: 'source-file bizarre.tmux.conf' },
+  { shot: 'terminal-zellij', name: 'Zellij', file: 'terminals/zellij/bizarre.kdl', variant: 'paper', cmd: 'theme "bizarre-paper"' },
+];
+const VSCODE_TARGETS = VARIANTS.map((v) => ({
+  shot: 'vscode-' + v.id,
+  name: v.label,
+  file: 'editors/vscode/themes/bizarre-' + v.id + '-color-theme.json',
+  variant: v.id,
+}));
+const EDITOR_TARGETS = [
+  { shot: 'editor-zed', name: 'Zed', file: 'editors/zed/themes/bizarre.json', variant: 'void', lang: 'TS' },
+  { shot: 'editor-jetbrains', name: 'JetBrains', file: 'editors/jetbrains/bizarre-void.icls', variant: 'void-hicontrast', lang: 'Kotlin' },
+  { shot: 'editor-sublime', name: 'Sublime Text', file: 'editors/sublime/bizarre-workshop.sublime-color-scheme', variant: 'workshop', lang: 'Rust' },
+  { shot: 'editor-vim', name: 'Vim', file: 'editors/vim/colors/bizarre-paper.vim', variant: 'paper', lang: 'VimL' },
+  { shot: 'editor-neovim', name: 'Neovim', file: 'editors/neovim/colors/bizarre-bone.vim', variant: 'bone', lang: 'Lua' },
+  { shot: 'editor-base16', name: 'Base16', file: 'editors/neovim-base16/bizarre-void.yaml', variant: 'void', lang: 'YAML' },
+];
+const SHELL_TARGETS = [
+  { shot: 'shell-bash', name: 'Bash', file: 'shells/banner/bizarre.bash', variant: 'void', cmd: 'source shells/banner/bizarre.bash' },
+  { shot: 'shell-zsh', name: 'Zsh', file: 'shells/banner/bizarre.zsh', variant: 'void-hicontrast', cmd: 'source shells/banner/bizarre.zsh' },
+  { shot: 'shell-fish', name: 'Fish', file: 'shells/banner/bizarre.fish', variant: 'workshop', cmd: 'source shells/banner/bizarre.fish' },
+  { shot: 'shell-powershell', name: 'PowerShell', file: 'shells/banner/bizarre.ps1', variant: 'paper', cmd: '. ./shells/banner/bizarre.ps1' },
+  { shot: 'prompt-starship', name: 'Starship', file: 'prompt/starship.toml', variant: 'bone', cmd: 'starship init zsh' },
+];
+const TOOL_TARGETS = [
+  { shot: 'tool-aerospace', name: 'AeroSpace', file: 'tools/aerospace/aerospace.toml', variant: 'void', key: 'focused border', value: P.brand.signalLime },
+  { shot: 'tool-forklift', name: 'ForkLift', file: 'tools/forklift/Bizarre.json', variant: 'paper', key: 'selection', value: P.brand.limeInk },
+  { shot: 'tool-jujutsu', name: 'Jujutsu', file: 'tools/jujutsu/config.toml', variant: 'workshop', key: 'change id', value: P.brand.signalLime },
+  { shot: 'tool-starship', name: 'Starship', file: 'prompt/starship.toml', variant: 'bone', key: 'prompt block', value: P.brand.limeInk },
+];
+const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
+const WORDMARK = ${JSON.stringify(shellWordmark, null, 2)};
+
+function variantById(id) {
+  return { id, ...P.variants[id] };
+}
+
+function cardStyle(v) {
+  return { '--bg': v.bg, '--fgc': v.fg, '--dim': v.fgDim, '--accent': v.accent, '--info': v.syntax.info, background: v.bg, color: v.fg };
+}
+
+function TerminalConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="mini-ansi">{Object.entries(v.ansi).map(([name, hex]) => <span className="ansi-chip" key={name} title={name + ' ' + hex} style={{ background: hex }}></span>)}</div>
+      <div className="config-prompt"><span className="path">~/themes</span> <span className="cmd">✦</span> {target.cmd}<br/><span style={{ color: v.fgFaint }}>ansi 16 · accent {v.accent}</span></div>
+    </div>
+  );
+}
+
+function MiniVscodeCode({ variant }) {
+  const s = variant.syntax;
+  return (
+    <div className="mini-code">
+      <div><span style={{ color: s.kwDecl }}>export const</span> <span style={{ color: variant.accent }}>palette</span> <span style={{ color: s.op }}>=</span> <span style={{ color: s.punct }}>{'{'}</span></div>
+      <div>&nbsp;&nbsp;<span style={{ color: s.prop }}>accent</span><span style={{ color: s.punct }}>:</span> <span style={{ color: s.string }}>'{variant.accent}'</span><span style={{ color: s.punct }}>,</span></div>
+      <div>&nbsp;&nbsp;<span style={{ color: s.fn }}>renderTheme</span><span style={{ color: s.punct }}>(</span><span style={{ color: s.param }}>surface</span><span style={{ color: s.punct }}>)</span> <span style={{ color: s.punct }}>{'{'}</span></div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: s.kwCtrl }}>return</span> <span style={{ color: s.builtin }}>paint</span><span style={{ color: s.punct }}>(</span><span style={{ color: s.param }}>surface</span><span style={{ color: s.punct }}>)</span></div>
+      <div>&nbsp;&nbsp;<span style={{ color: s.punct }}>{'}'}</span></div>
+      <div><span style={{ color: s.punct }}>{'}'}</span><span style={{ color: s.punct }}>;</span></div>
+    </div>
+  );
+}
+
+function VscodeConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="vscode-window" style={{ background: v.bg }}>
+        <div className="vscode-bar"><span className="vscode-dot active"></span><span className="vscode-dot"></span><span className="vscode-dot"></span><span style={{ marginLeft: 'auto' }}>VS Code</span></div>
+        <div className="vscode-body">
+          <div className="vscode-activity"><span className="vscode-icon file on"></span><span className="vscode-icon search"></span><span className="vscode-icon branch"></span><span className="vscode-icon gear"></span></div>
+          <div className="vscode-side"><div className="active">themes</div><div>bizarre</div><div>palette.js</div><div>showcase</div></div>
+          <div className="vscode-editor"><MiniVscodeCode variant={v} /></div>
+        </div>
+        <div className="vscode-status"><span>{v.label}</span><span>{v.mode}</span></div>
+      </div>
+    </div>
+  );
+}
+
+function EditorConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="tool-body">
+        <div><span className="key">variant</span>: <span className="value">{v.label}</span></div>
+        <div><span className="key">language</span>: <span className="value">{target.lang}</span></div>
+        <div><span className="key">background</span>: {v.bg}</div>
+        <div><span className="key">foreground</span>: {v.fg}</div>
+        <div><span className="key">function</span>: <span className="value">{v.syntax.fn}</span></div>
+        <div><span className="key">string</span>: {v.syntax.string}</div>
+      </div>
+      <div className="tool-strip">{[v.bg2, v.bg3, v.syntax.kwCtrl, v.syntax.string, v.accent].map((hex) => <span key={hex} style={{ background: hex }}></span>)}</div>
+    </div>
+  );
+}
+
+function ShellConfigCard({ target }) {
+  const v = variantById(target.variant);
+  const isPrompt = target.name === 'Starship';
+  return (
+    <div className={'config-card shell-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="shell-body">
+        {MINI_WORDMARK.map((line) => <React.Fragment key={line}><span className="brand">{line}</span>{'\\n'}</React.Fragment>)}
+        <span className="muted">BZR / {isPrompt ? 'PROMPT' : 'SHELL'} / V0.2</span>{'\\n\\n'}
+        <span className="quote">{isPrompt ? '✦ ~/themes  main +5' : 'CATCH THE STARS.'}</span>{'\\n'}
+        <span className="muted">{target.cmd}</span>
+      </div>
+    </div>
+  );
+}
+
+function ToolConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="tool-body">
+        <div><span className="key">{target.key}</span>: <span className="value">{target.value}</span></div>
+        <div><span className="key">surface</span>: {v.bg}</div>
+        <div><span className="key">border</span>: {v.border}</div>
+        <div><span className="key">text</span>: {v.fg}</div>
+        <div><span className="key">status</span>: {v.syntax.ok} / {v.syntax.warn} / {v.syntax.error}</div>
+      </div>
+      <div className="tool-strip">{[v.bg, v.bg2, v.bg3, v.fg, v.accent].map((hex) => <span key={hex} style={{ background: hex }}></span>)}</div>
+    </div>
+  );
+}
 
 window.BzrShowcase = function Showcase({ tweaksProp }) {
   const t = tweaksProp || (window.useTweaks ? window.useTweaks(window.BZR_TWEAK_DEFAULTS)[0] : window.BZR_TWEAK_DEFAULTS);
@@ -1958,7 +2682,7 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         <div className="slogan-strip"><span>BZR / 002</span><span className="lime">CATCH THE STARS.</span><span>SCROLL</span></div>
       </header>
 
-      <section className="section">
+      <section className="section" data-shot="palette-ansi">
         <div className="section-head">
           <span className="section-num">§ 01 / PALETTE</span>
           <h2 className="section-title">Two limes. One brand.</h2>
@@ -2015,16 +2739,61 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="terminal-colors">
+        <div className="section-head"><span className="section-num">§ 05 / TERMINAL COLORS</span><h2 className="section-title">Every terminal config gets the palette.</h2><span className="section-sub">alacritty · kitty · ghostty · iterm2 · wezterm · windows terminal · tmux · zellij</span></div>
+        <div className="config-grid">
+          {TERMINAL_TARGETS.map((target) => <TerminalConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="vscode-themes">
+        <div className="section-head"><span className="section-num">§ 06 / VS CODE</span><h2 className="section-title">All VS Code variants.</h2><span className="section-sub">activity bar · editor · status bar</span></div>
+        <div className="config-grid vscode-grid">
+          {VSCODE_TARGETS.map((target) => <VscodeConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="editor-themes">
+        <div className="section-head"><span className="section-num">§ 07 / EDITORS</span><h2 className="section-title">Editor ports beyond VS Code.</h2><span className="section-sub">zed · jetbrains · sublime · vim · neovim · base16</span></div>
+        <div className="config-grid editor-grid">
+          {EDITOR_TARGETS.map((target) => <EditorConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="shells">
+        <div className="section-head"><span className="section-num">§ 08 / SHELLS</span><h2 className="section-title">Shell banners and prompt.</h2><span className="section-sub">bash · zsh · fish · powershell · starship</span></div>
+        <div className="config-grid shell-grid">
+          {SHELL_TARGETS.map((target) => <ShellConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="tools">
+        <div className="section-head"><span className="section-num">§ 09 / TOOLS</span><h2 className="section-title">Desktop and workflow tools.</h2><span className="section-sub">aerospace · forklift · jujutsu · starship</span></div>
+        <div className="config-grid tool-grid">
+          {TOOL_TARGETS.map((target) => <ToolConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
       {shown.map((v, idx) => (
         <section key={v.id} className={\`section \${v.mode === 'light' ? 'light-section' : ''}\`}>
-          <div className="section-head"><span className="section-num">§ {String(idx + 5).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
+          <div className="section-head"><span className="section-num">§ {String(idx + 10).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
           <div className="pair"><BzrEditor sample={sample} variant={v} limeRole={limeRole} /><BzrStarshipTerminal variant={v} /></div>
         </section>
       ))}
 
-      <section className="section">
-        <div className="section-head"><span className="section-num">§ 10 / SHELL BANNER</span><h2 className="section-title">First shell of the day.</h2><span className="section-sub">zsh · bash · fish · powershell</span></div>
-        <div className="banner-pane"><div className="bzr">{\` ██████╗ ██╗███████╗ █████╗ ██████╗ ██████╗ ███████╗\`}</div><div className="bzr">{\` ██████╔╝██║╚══███╔╝██╔══██╗██╔══██╗██╔══██╗██╔════╝\`}</div><div className="bzr">{\` ██████╔╝██║  ███╔╝ ███████║██████╔╝██████╔╝█████╗  \`}</div><div className="bzr">{\` ██████╔╝██║███████╗██║  ██║██║  ██║██║  ██║███████╗\`}</div><div>&nbsp;</div><div className="gray">{\` ██╗███╗   ██╗██████╗ ██╗   ██╗███████╗████████╗██████╗ ██╗███████╗███████╗\`}</div><div className="gray">{\` ██║████╗  ██║██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝██╔════╝\`}</div><div className="gray">{\` ██║██╔██╗ ██║██║  ██║██║   ██║███████╗   ██║   ██████╔╝██║█████╗  ███████╗\`}</div><div>&nbsp;</div><div className="meta">  BZR / SHELL / V0.2 / MAY 2026   <span className="star">✦</span>   host: bench</div><div>&nbsp;</div><div className="quote">  {t.bannerLine || 'The hands knew it before the plan did.'}</div><div>&nbsp;</div><div className="slogan">  CATCH THE STARS.</div></div>
+      <section className="section" data-shot="shell-banner">
+        <div className="section-head"><span className="section-num">§ 20 / SHELL BANNER</span><h2 className="section-title">First shell of the day.</h2><span className="section-sub">zsh · bash · fish · powershell</span></div>
+        <div className="banner-pane">
+          {WORDMARK.bizarre.map((line) => <div className="bzr" key={line}>{line}</div>)}
+          <div>&nbsp;</div>
+          {WORDMARK.industries.map((line) => <div className="gray" key={line}>{line}</div>)}
+          <div>&nbsp;</div>
+          <div className="meta">  BZR / SHELL / V0.2 / MAY 2026   <span className="star">✦</span>   host: bench</div>
+          <div>&nbsp;</div>
+          <div className="quote">  {t.bannerLine || 'The hands knew it before the plan did.'}</div>
+          <div>&nbsp;</div>
+          <div className="slogan">  CATCH THE STARS.</div>
+        </div>
       </section>
 
       <footer className="foot"><span>BZR / THEMES / V0.2</span><span className="star-line"></span><span className="lime">✦ CATCH THE STARS.</span></footer>
@@ -2182,11 +2951,72 @@ Open [showcase/index.html](showcase/index.html) locally for the interactive prev
 
 ![Bizarre syntax roles](showcase/assets/generated/syntax.png)
 
+![Bizarre palette and ANSI](showcase/assets/generated/palette-ansi.png)
+
+## Config Screenshots
+
+Every shipped target gets a generated preview card in \`showcase/assets/generated/\`. These family sheets are rendered from [showcase/index.html](showcase/index.html).
+
+![Bizarre terminal color configs](showcase/assets/generated/terminal-colors.png)
+
+![Bizarre VS Code themes](showcase/assets/generated/vscode-themes.png)
+
+![Bizarre editor theme configs](showcase/assets/generated/editor-themes.png)
+
+![Bizarre shell banners and prompt](showcase/assets/generated/shells.png)
+
+![Bizarre desktop and workflow tools](showcase/assets/generated/tools.png)
+
+![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
+
+## Per-Target Screenshots
+
+### Terminals
+
+| Alacritty | Kitty | Ghostty | iTerm2 |
+|---|---|---|---|
+| ![Alacritty colors](showcase/assets/generated/terminal-colors-alacritty.png) | ![Kitty colors](showcase/assets/generated/terminal-colors-kitty.png) | ![Ghostty colors](showcase/assets/generated/terminal-colors-ghostty.png) | ![iTerm2 colors](showcase/assets/generated/terminal-colors-iterm2.png) |
+
+| WezTerm | Windows Terminal | tmux | Zellij |
+|---|---|---|---|
+| ![WezTerm colors](showcase/assets/generated/terminal-colors-wezterm.png) | ![Windows Terminal colors](showcase/assets/generated/terminal-colors-windows-terminal.png) | ![tmux colors](showcase/assets/generated/terminal-tmux.png) | ![Zellij colors](showcase/assets/generated/terminal-zellij.png) |
+
+### VS Code
+
+| Void | Void Hi-Contrast | Workshop | Paper | Bone |
+|---|---|---|---|---|
+| ![VS Code Void](showcase/assets/generated/vscode-void.png) | ![VS Code Void Hi-Contrast](showcase/assets/generated/vscode-void-hicontrast.png) | ![VS Code Workshop](showcase/assets/generated/vscode-workshop.png) | ![VS Code Paper](showcase/assets/generated/vscode-paper.png) | ![VS Code Bone](showcase/assets/generated/vscode-bone.png) |
+
+### Editors
+
+| Zed | JetBrains | Sublime Text |
+|---|---|---|
+| ![Zed theme](showcase/assets/generated/editor-zed.png) | ![JetBrains theme](showcase/assets/generated/editor-jetbrains.png) | ![Sublime Text theme](showcase/assets/generated/editor-sublime.png) |
+
+| Vim | Neovim | Base16 |
+|---|---|---|
+| ![Vim theme](showcase/assets/generated/editor-vim.png) | ![Neovim theme](showcase/assets/generated/editor-neovim.png) | ![Base16 theme](showcase/assets/generated/editor-base16.png) |
+
+### Shells And Prompt
+
+| Bash | Zsh | Fish | PowerShell | Starship |
+|---|---|---|---|---|
+| ![Bash banner](showcase/assets/generated/shell-bash.png) | ![Zsh banner](showcase/assets/generated/shell-zsh.png) | ![Fish banner](showcase/assets/generated/shell-fish.png) | ![PowerShell banner](showcase/assets/generated/shell-powershell.png) | ![Starship prompt](showcase/assets/generated/prompt-starship.png) |
+
+### Tools
+
+| AeroSpace | ForkLift | Jujutsu | Starship |
+|---|---|---|---|
+| ![AeroSpace config](showcase/assets/generated/tool-aerospace.png) | ![ForkLift config](showcase/assets/generated/tool-forklift.png) | ![Jujutsu config](showcase/assets/generated/tool-jujutsu.png) | ![Starship tool preview](showcase/assets/generated/tool-starship.png) |
+
 ## Install Examples
 
 \`\`\`bash
 # Generate every config from palette.js
 npm run generate
+
+# Render README screenshots
+npm run render:showcase
 
 # Verify generated files are current
 npm test
@@ -2204,9 +3034,29 @@ cp terminals/alacritty/*.toml ~/.config/alacritty/themes/
 # Ghostty
 cp terminals/ghostty/bizarre-void ~/.config/ghostty/themes/
 
+# WezTerm
+mkdir -p ~/.config/wezterm
+cp terminals/wezterm/bizarre.lua ~/.config/wezterm/bizarre.lua
+# then in wezterm.lua: return require('bizarre')
+
 # Neovim
 ln -s "$PWD/editors/neovim" ~/.config/nvim/pack/bizarre/start/bizarre.nvim
 # then in init.lua: vim.cmd.colorscheme('bizarre-void')
+
+# Vim
+mkdir -p ~/.vim/colors
+cp editors/vim/colors/*.vim ~/.vim/colors/
+
+# Zed
+mkdir -p ~/.config/zed/themes
+cp editors/zed/themes/bizarre.json ~/.config/zed/themes/
+
+# JetBrains
+# import editors/jetbrains/bizarre-void.icls from Settings > Editor > Color Scheme
+
+# Sublime Text
+mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages/User"
+cp editors/sublime/*.sublime-color-scheme "$HOME/Library/Application Support/Sublime Text/Packages/User/"
 
 # tmux
 echo 'source-file ~/dotfiles/bizarre/terminals/tmux/bizarre.tmux.conf' >> ~/.tmux.conf
@@ -2223,6 +3073,23 @@ cp terminals/zellij/bizarre.kdl ~/.config/zellij/themes/
 
 # Windows Terminal
 # paste terminals/windows-terminal/schemes.json schemes into settings.json
+
+# Shell banners
+echo "source $PWD/shells/banner/bizarre.bash" >> ~/.bashrc
+echo "source $PWD/shells/banner/bizarre.zsh" >> ~/.zshrc
+echo "source $PWD/shells/banner/bizarre.fish" >> ~/.config/fish/config.fish
+# PowerShell: dot-source shells/banner/bizarre.ps1 from your profile
+
+# AeroSpace
+mkdir -p ~/.config/aerospace
+cp tools/aerospace/aerospace.toml ~/.config/aerospace/aerospace.toml
+
+# ForkLift
+# import tools/forklift/Bizarre.json through ForkLift theme preferences
+
+# Jujutsu
+mkdir -p ~/.config/jj
+cp tools/jujutsu/config.toml ~/.config/jj/config.toml
 \`\`\`
 
 ## Current Coverage

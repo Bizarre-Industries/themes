@@ -1,13 +1,13 @@
--- Bizarre Industries — Neovim colorscheme
+-- Bizarre Industries - Neovim colorscheme
 -- CATCH THE STARS.
 local M = {}
 
 M.variants = {
-  ['bizarre-void']             = require('bizarre.palettes.void'),
-  ['bizarre-void-hicontrast']  = require('bizarre.palettes.void-hicontrast'),
-  ['bizarre-workshop']         = require('bizarre.palettes.workshop'),
-  ['bizarre-paper']            = require('bizarre.palettes.paper'),
-  ['bizarre-bone']             = require('bizarre.palettes.bone'),
+  ['bizarre-void']          = require('bizarre.palettes.void'),
+  ['bizarre-void-hicontrast'] = require('bizarre.palettes.void-hicontrast'),
+  ['bizarre-workshop']      = require('bizarre.palettes.workshop'),
+  ['bizarre-paper']         = require('bizarre.palettes.paper'),
+  ['bizarre-bone']          = require('bizarre.palettes.bone'),
 }
 
 function M.load(name)

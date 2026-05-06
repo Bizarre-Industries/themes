@@ -44,7 +44,7 @@ body {
 .hero-meta dt { color: var(--void-6); margin-bottom: 5px; }
 .hero-meta dd { color: var(--fg); margin: 0; }
 .slogan-strip { margin-top: 56px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 16px 0; display: flex; justify-content: space-between; color: var(--void-6); font-size: 12px; }
-.section { padding: 88px 64px 0; }
+.section { padding: 88px 64px 24px; }
 .section-head { display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: end; border-bottom: 1px solid var(--hairline); padding-bottom: 16px; margin-bottom: 32px; }
 .section-num { color: var(--lime); font-size: 11px; }
 .section-title { font-family: var(--display); font-size: 30px; margin: 0; font-weight: 650; letter-spacing: 0; }
@@ -96,12 +96,65 @@ body {
 .term { font-family: var(--mono); font-size: 12.5px; line-height: 1.55; padding: 18px 20px; flex: 1; overflow: hidden; white-space: pre; }
 .term .blink { animation: blink 1.1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-.banner-pane { background: var(--void-2); border: 1px solid var(--hairline); border-radius: 6px; padding: 28px; font-family: var(--mono); line-height: 1.24; font-size: 13px; overflow: hidden; }
+.banner-pane { background: var(--void-2); border: 1px solid var(--hairline); border-radius: 6px; padding: 28px; font-family: var(--mono); line-height: 1.24; font-size: 13px; overflow: hidden; white-space: pre; font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
 .banner-pane .bzr { color: var(--lime); font-weight: 700; }
 .banner-pane .gray { color: var(--void-6); }
 .banner-pane .meta { color: var(--void-6); }
 .banner-pane .quote { color: var(--fg); font-weight: 700; }
 .banner-pane .slogan { color: var(--lime); font-weight: 700; }
+.config-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.config-grid.vscode-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.config-grid.editor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.config-grid.shell-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.config-grid.tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.config-card { border: 1px solid var(--hairline); border-radius: 6px; overflow: hidden; min-height: 218px; background: var(--bg); color: var(--fgc); display: flex; flex-direction: column; }
+.config-card.light { border-color: var(--hairline-light); }
+.config-title { padding: 14px 14px 10px; border-bottom: 1px solid var(--hairline); font-family: var(--label); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; min-width: 0; }
+.config-card.light .config-title { border-bottom-color: var(--hairline-light); }
+.config-title strong { display: block; color: var(--accent); font-family: var(--display); font-size: 17px; line-height: 1.1; font-weight: 650; letter-spacing: 0; text-transform: none; }
+.config-title code { display: block; margin-top: 8px; color: inherit; opacity: .62; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: var(--mono); font-size: 10px; letter-spacing: 0; text-transform: none; }
+.mini-ansi { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; padding: 14px; }
+.ansi-chip { height: 34px; border-radius: 3px; border: 1px solid rgba(0,0,0,.16); box-shadow: inset 0 0 0 1px rgba(255,255,255,.05); }
+.config-prompt { margin: auto 14px 14px; padding: 12px; border: 1px solid var(--hairline); border-radius: 4px; background: rgba(0,0,0,.16); font-size: 10.5px; line-height: 1.55; white-space: normal; overflow-wrap: anywhere; }
+.config-card.light .config-prompt { border-color: var(--hairline-light); background: rgba(0,0,0,.035); }
+.config-prompt .path { color: var(--info); }
+.config-prompt .cmd { color: var(--accent); font-weight: 700; }
+.vscode-window { margin: 12px; border: 1px solid var(--hairline); border-radius: 5px; overflow: hidden; display: flex; flex-direction: column; min-height: 244px; }
+.config-card.light .vscode-window { border-color: var(--hairline-light); }
+.vscode-bar { height: 26px; display: flex; align-items: center; gap: 6px; padding: 0 9px; font-family: var(--label); font-size: 9px; color: var(--dim); border-bottom: 1px solid var(--hairline); }
+.config-card.light .vscode-bar { border-bottom-color: var(--hairline-light); }
+.vscode-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dim); opacity: .55; }
+.vscode-dot.active { background: var(--accent); opacity: 1; }
+.vscode-body { display: grid; grid-template-columns: 28px 82px 1fr; flex: 1; min-height: 180px; }
+.vscode-activity { display: grid; grid-template-rows: repeat(5, 28px); justify-items: center; padding-top: 6px; border-right: 1px solid var(--hairline); }
+.config-card.light .vscode-activity { border-right-color: var(--hairline-light); }
+.vscode-icon { position: relative; width: 15px; height: 15px; opacity: .62; margin-top: 7px; color: var(--dim); }
+.vscode-icon.on { color: var(--accent); opacity: 1; }
+.vscode-icon.file { border: 1px solid currentColor; border-radius: 1px; }
+.vscode-icon.file::after { content: ""; position: absolute; right: -1px; top: -1px; width: 5px; height: 5px; border-left: 1px solid currentColor; border-bottom: 1px solid currentColor; background: var(--bg); }
+.vscode-icon.search { border: 2px solid currentColor; border-radius: 50%; width: 13px; height: 13px; }
+.vscode-icon.search::after { content: ""; position: absolute; right: -4px; bottom: -3px; width: 7px; height: 2px; background: currentColor; transform: rotate(45deg); transform-origin: left center; }
+.vscode-icon.branch::before { content: ""; position: absolute; left: 6px; top: 2px; width: 2px; height: 11px; background: currentColor; }
+.vscode-icon.branch::after { content: ""; position: absolute; left: 3px; top: 2px; width: 8px; height: 8px; border: 2px solid currentColor; border-left: 0; border-bottom: 0; border-radius: 0 6px 0 0; }
+.vscode-icon.gear { border: 2px solid currentColor; border-radius: 50%; }
+.vscode-icon.gear::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: currentColor; }
+.vscode-side { padding: 9px; border-right: 1px solid var(--hairline); font-size: 10px; color: var(--dim); line-height: 1.7; overflow: hidden; }
+.config-card.light .vscode-side { border-right-color: var(--hairline-light); }
+.vscode-side .active { color: var(--accent); font-weight: 700; }
+.vscode-editor { overflow: hidden; }
+.mini-code { font-family: var(--mono); font-size: 10.5px; line-height: 1.75; padding: 10px 12px; white-space: nowrap; }
+.mini-code div { overflow: hidden; text-overflow: ellipsis; }
+.vscode-status { height: 24px; display: flex; gap: 10px; align-items: center; justify-content: space-between; padding: 0 9px; font-family: var(--label); font-size: 9px; color: var(--dim); border-top: 1px solid var(--hairline); }
+.config-card.light .vscode-status { border-top-color: var(--hairline-light); }
+.shell-card { min-height: 260px; }
+.shell-body { padding: 14px; font-size: 11px; line-height: 1.32; white-space: pre; overflow: hidden; flex: 1; font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
+.shell-body .brand { color: var(--accent); font-weight: 700; }
+.shell-body .muted { color: var(--dim); }
+.shell-body .quote { color: var(--fgc); font-weight: 700; }
+.tool-body { padding: 14px; font-size: 11px; line-height: 1.7; overflow: hidden; flex: 1; }
+.tool-body .key { color: var(--info); }
+.tool-body .value { color: var(--accent); font-weight: 700; }
+.tool-strip { display: grid; grid-template-columns: repeat(5, 1fr); height: 32px; margin-top: auto; }
 .foot { display: flex; gap: 18px; align-items: center; padding: 80px 64px 0; color: var(--void-6); }
 .star-line { flex: 1; height: 1px; background: var(--hairline); }
 @media (max-width: 900px) {
@@ -109,5 +162,6 @@ body {
   .hero-grid, .pair, .lime-pair, .ansi-dual { grid-template-columns: 1fr; }
   .legend-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .variant-grid { grid-template-columns: 1fr; }
+  .config-grid, .config-grid.vscode-grid, .config-grid.editor-grid, .config-grid.shell-grid, .config-grid.tool-grid { grid-template-columns: 1fr; }
   .section-head { grid-template-columns: 1fr; }
 }

@@ -164,6 +164,164 @@ const { useState: _Sus, useMemo: _Smm, useEffect: _Sue } = React;
 const P = window.BZR_PALETTE;
 const VARIANTS = P.variantOrder.map((id) => ({ id, ...P.variants[id] }));
 const SYNTAX_LEGEND = [["pl","plain","text"],["p","punctuation","() , ;"],["op","operator","+ -> ?:"],["kw-ctrl","control","if/for/return"],["kw-decl","declaration","const/fn/class"],["kw-mod","modifier","pub/async/static"],["s","string","\"signal\""],["tmpl","template","`x=${v}`"],["esc","escape","${...} \\n"],["rgx","regex","/[a-z]+/"],["n","number","3.14"],["bool","bool/null","true/None"],["const","constant","MAX_INT"],["t","type","Vec3"],["tprim","primitive","u32"],["f","function","render()"],["method","method",".send()"],["prop","property",".opts"],["param","parameter","(x, y)"],["v","variable","value"],["this","self/this","self"],["b","builtin","print"],["ns","namespace","std::io"],["d","decorator","@cache"],["pre","preprocessor","#include"],["c","comment","// note"],["cdoc","doc-comment","/** */"],["tag","jsx tag","<div>"],["attr","jsx attr","className"]];
+const TERMINAL_TARGETS = [
+  { shot: 'terminal-alacritty', name: 'Alacritty', file: 'terminals/alacritty/bizarre-void.toml', variant: 'void', cmd: 'alacritty --config-file bizarre-void.toml' },
+  { shot: 'terminal-kitty', name: 'Kitty', file: 'terminals/kitty/bizarre-void.conf', variant: 'void-hicontrast', cmd: 'kitty +kitten themes Bizarre Void' },
+  { shot: 'terminal-ghostty', name: 'Ghostty', file: 'terminals/ghostty/bizarre-workshop', variant: 'workshop', cmd: 'theme = bizarre-workshop' },
+  { shot: 'terminal-iterm2', name: 'iTerm2', file: 'terminals/iterm2/bizarre-paper.itermcolors', variant: 'paper', cmd: 'open bizarre-paper.itermcolors' },
+  { shot: 'terminal-wezterm', name: 'WezTerm', file: 'terminals/wezterm/bizarre.lua', variant: 'bone', cmd: 'color_scheme = Bizarre Bone' },
+  { shot: 'terminal-windows-terminal', name: 'Windows Terminal', file: 'terminals/windows-terminal/schemes.json', variant: 'void', cmd: 'colorScheme: Bizarre Void' },
+  { shot: 'terminal-tmux', name: 'tmux', file: 'terminals/tmux/bizarre.tmux.conf', variant: 'workshop', cmd: 'source-file bizarre.tmux.conf' },
+  { shot: 'terminal-zellij', name: 'Zellij', file: 'terminals/zellij/bizarre.kdl', variant: 'paper', cmd: 'theme "bizarre-paper"' },
+];
+const VSCODE_TARGETS = VARIANTS.map((v) => ({
+  shot: 'vscode-' + v.id,
+  name: v.label,
+  file: 'editors/vscode/themes/bizarre-' + v.id + '-color-theme.json',
+  variant: v.id,
+}));
+const EDITOR_TARGETS = [
+  { shot: 'editor-zed', name: 'Zed', file: 'editors/zed/themes/bizarre.json', variant: 'void', lang: 'TS' },
+  { shot: 'editor-jetbrains', name: 'JetBrains', file: 'editors/jetbrains/bizarre-void.icls', variant: 'void-hicontrast', lang: 'Kotlin' },
+  { shot: 'editor-sublime', name: 'Sublime Text', file: 'editors/sublime/bizarre-workshop.sublime-color-scheme', variant: 'workshop', lang: 'Rust' },
+  { shot: 'editor-vim', name: 'Vim', file: 'editors/vim/colors/bizarre-paper.vim', variant: 'paper', lang: 'VimL' },
+  { shot: 'editor-neovim', name: 'Neovim', file: 'editors/neovim/colors/bizarre-bone.vim', variant: 'bone', lang: 'Lua' },
+  { shot: 'editor-base16', name: 'Base16', file: 'editors/neovim-base16/bizarre-void.yaml', variant: 'void', lang: 'YAML' },
+];
+const SHELL_TARGETS = [
+  { shot: 'shell-bash', name: 'Bash', file: 'shells/banner/bizarre.bash', variant: 'void', cmd: 'source shells/banner/bizarre.bash' },
+  { shot: 'shell-zsh', name: 'Zsh', file: 'shells/banner/bizarre.zsh', variant: 'void-hicontrast', cmd: 'source shells/banner/bizarre.zsh' },
+  { shot: 'shell-fish', name: 'Fish', file: 'shells/banner/bizarre.fish', variant: 'workshop', cmd: 'source shells/banner/bizarre.fish' },
+  { shot: 'shell-powershell', name: 'PowerShell', file: 'shells/banner/bizarre.ps1', variant: 'paper', cmd: '. ./shells/banner/bizarre.ps1' },
+  { shot: 'prompt-starship', name: 'Starship', file: 'prompt/starship.toml', variant: 'bone', cmd: 'starship init zsh' },
+];
+const TOOL_TARGETS = [
+  { shot: 'tool-aerospace', name: 'AeroSpace', file: 'tools/aerospace/aerospace.toml', variant: 'void', key: 'focused border', value: P.brand.signalLime },
+  { shot: 'tool-forklift', name: 'ForkLift', file: 'tools/forklift/Bizarre.json', variant: 'paper', key: 'selection', value: P.brand.limeInk },
+  { shot: 'tool-jujutsu', name: 'Jujutsu', file: 'tools/jujutsu/config.toml', variant: 'workshop', key: 'change id', value: P.brand.signalLime },
+  { shot: 'tool-starship', name: 'Starship', file: 'prompt/starship.toml', variant: 'bone', key: 'prompt block', value: P.brand.limeInk },
+];
+const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
+const WORDMARK = {
+  "bizarre": [
+    "██████╗ ██╗███████╗ █████╗ ██████╗ ██████╗ ███████╗",
+    "██╔══██╗██║╚══███╔╝██╔══██╗██╔══██╗██╔══██╗██╔════╝",
+    "██████╔╝██║  ███╔╝ ███████║██████╔╝██████╔╝█████╗  ",
+    "██╔══██╗██║ ███╔╝  ██╔══██║██╔══██╗██╔══██╗██╔══╝  ",
+    "██████╔╝██║███████╗██║  ██║██║  ██║██║  ██║███████╗",
+    "╚═════╝ ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝"
+  ],
+  "industries": [
+    "██╗███╗   ██╗██████╗ ██╗   ██╗███████╗████████╗██████╗ ██╗███████╗███████╗",
+    "██║████╗  ██║██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝██╔════╝",
+    "██║██╔██╗ ██║██║  ██║██║   ██║███████╗   ██║   ██████╔╝██║█████╗  ███████╗",
+    "██║██║╚██╗██║██║  ██║██║   ██║╚════██║   ██║   ██╔══██╗██║██╔══╝  ╚════██║",
+    "██║██║ ╚████║██████╔╝╚██████╔╝███████║   ██║   ██║  ██║██║███████╗███████║",
+    "╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝"
+  ]
+};
+
+function variantById(id) {
+  return { id, ...P.variants[id] };
+}
+
+function cardStyle(v) {
+  return { '--bg': v.bg, '--fgc': v.fg, '--dim': v.fgDim, '--accent': v.accent, '--info': v.syntax.info, background: v.bg, color: v.fg };
+}
+
+function TerminalConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="mini-ansi">{Object.entries(v.ansi).map(([name, hex]) => <span className="ansi-chip" key={name} title={name + ' ' + hex} style={{ background: hex }}></span>)}</div>
+      <div className="config-prompt"><span className="path">~/themes</span> <span className="cmd">✦</span> {target.cmd}<br/><span style={{ color: v.fgFaint }}>ansi 16 · accent {v.accent}</span></div>
+    </div>
+  );
+}
+
+function MiniVscodeCode({ variant }) {
+  const s = variant.syntax;
+  return (
+    <div className="mini-code">
+      <div><span style={{ color: s.kwDecl }}>export const</span> <span style={{ color: variant.accent }}>palette</span> <span style={{ color: s.op }}>=</span> <span style={{ color: s.punct }}>{'{'}</span></div>
+      <div>&nbsp;&nbsp;<span style={{ color: s.prop }}>accent</span><span style={{ color: s.punct }}>:</span> <span style={{ color: s.string }}>'{variant.accent}'</span><span style={{ color: s.punct }}>,</span></div>
+      <div>&nbsp;&nbsp;<span style={{ color: s.fn }}>renderTheme</span><span style={{ color: s.punct }}>(</span><span style={{ color: s.param }}>surface</span><span style={{ color: s.punct }}>)</span> <span style={{ color: s.punct }}>{'{'}</span></div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: s.kwCtrl }}>return</span> <span style={{ color: s.builtin }}>paint</span><span style={{ color: s.punct }}>(</span><span style={{ color: s.param }}>surface</span><span style={{ color: s.punct }}>)</span></div>
+      <div>&nbsp;&nbsp;<span style={{ color: s.punct }}>{'}'}</span></div>
+      <div><span style={{ color: s.punct }}>{'}'}</span><span style={{ color: s.punct }}>;</span></div>
+    </div>
+  );
+}
+
+function VscodeConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="vscode-window" style={{ background: v.bg }}>
+        <div className="vscode-bar"><span className="vscode-dot active"></span><span className="vscode-dot"></span><span className="vscode-dot"></span><span style={{ marginLeft: 'auto' }}>VS Code</span></div>
+        <div className="vscode-body">
+          <div className="vscode-activity"><span className="vscode-icon file on"></span><span className="vscode-icon search"></span><span className="vscode-icon branch"></span><span className="vscode-icon gear"></span></div>
+          <div className="vscode-side"><div className="active">themes</div><div>bizarre</div><div>palette.js</div><div>showcase</div></div>
+          <div className="vscode-editor"><MiniVscodeCode variant={v} /></div>
+        </div>
+        <div className="vscode-status"><span>{v.label}</span><span>{v.mode}</span></div>
+      </div>
+    </div>
+  );
+}
+
+function EditorConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="tool-body">
+        <div><span className="key">variant</span>: <span className="value">{v.label}</span></div>
+        <div><span className="key">language</span>: <span className="value">{target.lang}</span></div>
+        <div><span className="key">background</span>: {v.bg}</div>
+        <div><span className="key">foreground</span>: {v.fg}</div>
+        <div><span className="key">function</span>: <span className="value">{v.syntax.fn}</span></div>
+        <div><span className="key">string</span>: {v.syntax.string}</div>
+      </div>
+      <div className="tool-strip">{[v.bg2, v.bg3, v.syntax.kwCtrl, v.syntax.string, v.accent].map((hex) => <span key={hex} style={{ background: hex }}></span>)}</div>
+    </div>
+  );
+}
+
+function ShellConfigCard({ target }) {
+  const v = variantById(target.variant);
+  const isPrompt = target.name === 'Starship';
+  return (
+    <div className={'config-card shell-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="shell-body">
+        {MINI_WORDMARK.map((line) => <React.Fragment key={line}><span className="brand">{line}</span>{'\n'}</React.Fragment>)}
+        <span className="muted">BZR / {isPrompt ? 'PROMPT' : 'SHELL'} / V0.2</span>{'\n\n'}
+        <span className="quote">{isPrompt ? '✦ ~/themes  main +5' : 'CATCH THE STARS.'}</span>{'\n'}
+        <span className="muted">{target.cmd}</span>
+      </div>
+    </div>
+  );
+}
+
+function ToolConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card ' + (v.mode === 'light' ? 'light' : '')} data-config-shot={target.shot} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="tool-body">
+        <div><span className="key">{target.key}</span>: <span className="value">{target.value}</span></div>
+        <div><span className="key">surface</span>: {v.bg}</div>
+        <div><span className="key">border</span>: {v.border}</div>
+        <div><span className="key">text</span>: {v.fg}</div>
+        <div><span className="key">status</span>: {v.syntax.ok} / {v.syntax.warn} / {v.syntax.error}</div>
+      </div>
+      <div className="tool-strip">{[v.bg, v.bg2, v.bg3, v.fg, v.accent].map((hex) => <span key={hex} style={{ background: hex }}></span>)}</div>
+    </div>
+  );
+}
 
 window.BzrShowcase = function Showcase({ tweaksProp }) {
   const t = tweaksProp || (window.useTweaks ? window.useTweaks(window.BZR_TWEAK_DEFAULTS)[0] : window.BZR_TWEAK_DEFAULTS);
@@ -215,7 +373,7 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         <div className="slogan-strip"><span>BZR / 002</span><span className="lime">CATCH THE STARS.</span><span>SCROLL</span></div>
       </header>
 
-      <section className="section">
+      <section className="section" data-shot="palette-ansi">
         <div className="section-head">
           <span className="section-num">§ 01 / PALETTE</span>
           <h2 className="section-title">Two limes. One brand.</h2>
@@ -272,16 +430,61 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="terminal-colors">
+        <div className="section-head"><span className="section-num">§ 05 / TERMINAL COLORS</span><h2 className="section-title">Every terminal config gets the palette.</h2><span className="section-sub">alacritty · kitty · ghostty · iterm2 · wezterm · windows terminal · tmux · zellij</span></div>
+        <div className="config-grid">
+          {TERMINAL_TARGETS.map((target) => <TerminalConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="vscode-themes">
+        <div className="section-head"><span className="section-num">§ 06 / VS CODE</span><h2 className="section-title">All VS Code variants.</h2><span className="section-sub">activity bar · editor · status bar</span></div>
+        <div className="config-grid vscode-grid">
+          {VSCODE_TARGETS.map((target) => <VscodeConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="editor-themes">
+        <div className="section-head"><span className="section-num">§ 07 / EDITORS</span><h2 className="section-title">Editor ports beyond VS Code.</h2><span className="section-sub">zed · jetbrains · sublime · vim · neovim · base16</span></div>
+        <div className="config-grid editor-grid">
+          {EDITOR_TARGETS.map((target) => <EditorConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="shells">
+        <div className="section-head"><span className="section-num">§ 08 / SHELLS</span><h2 className="section-title">Shell banners and prompt.</h2><span className="section-sub">bash · zsh · fish · powershell · starship</span></div>
+        <div className="config-grid shell-grid">
+          {SHELL_TARGETS.map((target) => <ShellConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="tools">
+        <div className="section-head"><span className="section-num">§ 09 / TOOLS</span><h2 className="section-title">Desktop and workflow tools.</h2><span className="section-sub">aerospace · forklift · jujutsu · starship</span></div>
+        <div className="config-grid tool-grid">
+          {TOOL_TARGETS.map((target) => <ToolConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
       {shown.map((v, idx) => (
         <section key={v.id} className={`section ${v.mode === 'light' ? 'light-section' : ''}`}>
-          <div className="section-head"><span className="section-num">§ {String(idx + 5).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
+          <div className="section-head"><span className="section-num">§ {String(idx + 10).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
           <div className="pair"><BzrEditor sample={sample} variant={v} limeRole={limeRole} /><BzrStarshipTerminal variant={v} /></div>
         </section>
       ))}
 
-      <section className="section">
-        <div className="section-head"><span className="section-num">§ 10 / SHELL BANNER</span><h2 className="section-title">First shell of the day.</h2><span className="section-sub">zsh · bash · fish · powershell</span></div>
-        <div className="banner-pane"><div className="bzr">{` ██████╗ ██╗███████╗ █████╗ ██████╗ ██████╗ ███████╗`}</div><div className="bzr">{` ██████╔╝██║╚══███╔╝██╔══██╗██╔══██╗██╔══██╗██╔════╝`}</div><div className="bzr">{` ██████╔╝██║  ███╔╝ ███████║██████╔╝██████╔╝█████╗  `}</div><div className="bzr">{` ██████╔╝██║███████╗██║  ██║██║  ██║██║  ██║███████╗`}</div><div>&nbsp;</div><div className="gray">{` ██╗███╗   ██╗██████╗ ██╗   ██╗███████╗████████╗██████╗ ██╗███████╗███████╗`}</div><div className="gray">{` ██║████╗  ██║██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝██╔════╝`}</div><div className="gray">{` ██║██╔██╗ ██║██║  ██║██║   ██║███████╗   ██║   ██████╔╝██║█████╗  ███████╗`}</div><div>&nbsp;</div><div className="meta">  BZR / SHELL / V0.2 / MAY 2026   <span className="star">✦</span>   host: bench</div><div>&nbsp;</div><div className="quote">  {t.bannerLine || 'The hands knew it before the plan did.'}</div><div>&nbsp;</div><div className="slogan">  CATCH THE STARS.</div></div>
+      <section className="section" data-shot="shell-banner">
+        <div className="section-head"><span className="section-num">§ 20 / SHELL BANNER</span><h2 className="section-title">First shell of the day.</h2><span className="section-sub">zsh · bash · fish · powershell</span></div>
+        <div className="banner-pane">
+          {WORDMARK.bizarre.map((line) => <div className="bzr" key={line}>{line}</div>)}
+          <div>&nbsp;</div>
+          {WORDMARK.industries.map((line) => <div className="gray" key={line}>{line}</div>)}
+          <div>&nbsp;</div>
+          <div className="meta">  BZR / SHELL / V0.2 / MAY 2026   <span className="star">✦</span>   host: bench</div>
+          <div>&nbsp;</div>
+          <div className="quote">  {t.bannerLine || 'The hands knew it before the plan did.'}</div>
+          <div>&nbsp;</div>
+          <div className="slogan">  CATCH THE STARS.</div>
+        </div>
       </section>
 
       <footer className="foot"><span>BZR / THEMES / V0.2</span><span className="star-line"></span><span className="lime">✦ CATCH THE STARS.</span></footer>
