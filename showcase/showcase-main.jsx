@@ -115,6 +115,17 @@ const DESIGN_DOCS_TARGETS = [
   { name: 'Beamer', file: 'docs-sites/beamer/beamerthemebizarre.sty', variant: 'paper', key: 'format', value: 'sty' },
   { name: 'reveal.js', file: 'docs-sites/reveal.js/bizarre-void.css', variant: 'bone', key: 'format', value: 'css' },
 ];
+const WM_TARGETS = [
+  { name: 'Hyprland', file: 'wm/hyprland/bizarre-void.conf', variant: 'void', key: 'format', value: 'hyprlang' },
+  { name: 'Sway', file: 'wm/sway/bizarre-void.conf', variant: 'void-hicontrast', key: 'format', value: 'config' },
+  { name: 'i3', file: 'wm/i3/bizarre-workshop.conf', variant: 'workshop', key: 'format', value: 'config' },
+  { name: 'Waybar', file: 'wm/waybar/bizarre-paper.css', variant: 'paper', key: 'format', value: 'css' },
+  { name: 'Polybar', file: 'wm/polybar/bizarre-bone.ini', variant: 'bone', key: 'format', value: 'ini' },
+  { name: 'SketchyBar', file: 'wm/sketchybar/bizarre.sh', variant: 'void', key: 'format', value: 'shell' },
+  { name: 'yabai', file: 'wm/yabai/bizarre.sh', variant: 'void-hicontrast', key: 'format', value: 'shell' },
+  { name: 'rofi', file: 'wm/rofi/bizarre-workshop.rasi', variant: 'workshop', key: 'format', value: 'rasi' },
+  { name: 'wofi', file: 'wm/wofi/bizarre-paper.css', variant: 'paper', key: 'format', value: 'css' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = {
   "bizarre": [
@@ -436,9 +447,16 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="window-managers">
+        <div className="section-head"><span className="section-num">§ 14 / WINDOW MANAGERS</span><h2 className="section-title">OS and window manager ports.</h2><span className="section-sub">hyprland · sway · i3 · waybar · polybar · sketchybar · yabai · rofi · wofi</span></div>
+        <div className="config-grid cli-grid">
+          {WM_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
+        </div>
+      </section>
+
       {shown.map((v, idx) => (
         <section key={v.id} className={`section ${v.mode === 'light' ? 'light-section' : ''}`}>
-          <div className="section-head"><span className="section-num">§ {String(idx + 14).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
+          <div className="section-head"><span className="section-num">§ {String(idx + 15).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
           <div className="pair"><BzrEditor sample={sample} variant={v} limeRole={limeRole} /><BzrStarshipTerminal variant={v} /></div>
         </section>
       ))}

@@ -4110,6 +4110,211 @@ function generateDesignDevtoolsDocs() {
   out('docs-sites/README.md', docsSitesReadme());
 }
 
+function hyprColor(hex, alpha = 'ff') {
+  return `rgba(${noHash(hex)}${alpha})`;
+}
+
+function hyprlandConfig(v) {
+  return `# ${v.label} for Hyprland
+$bizarre_bg = rgb(${noHash(v.bg)})
+$bizarre_fg = rgb(${noHash(v.fg)})
+$bizarre_accent = rgb(${noHash(v.accent)})
+$bizarre_border = rgb(${noHash(v.border)})
+
+general {
+  col.active_border = ${hyprColor(v.accent)}
+  col.inactive_border = ${hyprColor(v.border, 'cc')}
+}
+
+decoration {
+  rounding = 6
+  shadow {
+    color = ${hyprColor(v.bg, 'dd')}
+    color_inactive = ${hyprColor(v.bg2, 'aa')}
+  }
+}
+
+group {
+  col.border_active = ${hyprColor(v.accent)}
+  col.border_inactive = ${hyprColor(v.border)}
+  groupbar {
+    col.active = ${hyprColor(v.accent)}
+    col.inactive = ${hyprColor(v.bg2)}
+    text_color = ${hyprColor(v.fg)}
+  }
+}`;
+}
+
+function swayI3Config(v, name) {
+  return `# ${v.label} for ${name}
+set $bizarre_bg ${v.bg}
+set $bizarre_bg2 ${v.bg2}
+set $bizarre_fg ${v.fg}
+set $bizarre_dim ${v.fgDim}
+set $bizarre_accent ${v.accent}
+set $bizarre_border ${v.border}
+client.focused          $bizarre_accent $bizarre_bg  $bizarre_fg  $bizarre_accent $bizarre_accent
+client.focused_inactive $bizarre_border $bizarre_bg2 $bizarre_dim $bizarre_border $bizarre_border
+client.unfocused        $bizarre_border $bizarre_bg2 $bizarre_dim $bizarre_border $bizarre_border
+client.urgent           ${v.syntax.error} $bizarre_bg ${v.syntax.error} ${v.syntax.error} ${v.syntax.error}
+client.placeholder      $bizarre_border $bizarre_bg2 $bizarre_dim $bizarre_border $bizarre_border
+bar {
+  colors {
+    background $bizarre_bg
+    statusline $bizarre_fg
+    separator $bizarre_border
+    focused_workspace $bizarre_accent $bizarre_accent ${fgFor(v.accent)}
+    active_workspace $bizarre_bg2 $bizarre_bg2 $bizarre_fg
+    inactive_workspace $bizarre_bg $bizarre_bg $bizarre_dim
+    urgent_workspace ${v.syntax.error} ${v.syntax.error} ${fgFor(v.syntax.error)}
+  }
+}`;
+}
+
+function waybarCss(v, app = 'Waybar') {
+  return `/* ${v.label} for ${app} */
+${cssVars(v)}
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "${palette.fonts.mono_family}", monospace;
+}
+window,
+#waybar,
+#window,
+#workspaces,
+#tray,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#custom-bizarre {
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+}
+#workspaces button,
+#custom-bizarre {
+  color: var(--bizarre-dim);
+  padding: 0 10px;
+}
+#workspaces button.focused,
+#workspaces button.active {
+  background: var(--bizarre-accent);
+  color: ${fgFor(v.accent)};
+}
+.warning {
+  color: var(--bizarre-warn);
+}
+.critical {
+  color: var(--bizarre-error);
+}`;
+}
+
+function polybarIni(v) {
+  return `[colors]
+background = ${v.bg}
+background-alt = ${v.bg2}
+foreground = ${v.fg}
+foreground-alt = ${v.fgDim}
+primary = ${v.accent}
+secondary = ${v.syntax.info}
+alert = ${v.syntax.error}
+warning = ${v.syntax.warn}
+success = ${v.syntax.ok}
+border = ${v.border}
+
+[bar/bizarre]
+background = \${colors.background}
+foreground = \${colors.foreground}
+border-color = \${colors.border}
+module-margin = 1
+font-0 = ${palette.fonts.mono_family}:style=Regular:size=11
+modules-left = workspaces
+modules-right = date`;
+}
+
+function rasiTheme(v) {
+  return `/* ${v.label} for Rofi */
+* {
+  background: ${v.bg};
+  background-alt: ${v.bg2};
+  foreground: ${v.fg};
+  muted: ${v.fgDim};
+  accent: ${v.accent};
+  urgent: ${v.syntax.error};
+  border-color: ${v.border};
+}
+window {
+  background-color: @background;
+  text-color: @foreground;
+  border: 1px;
+  border-color: @border-color;
+  padding: 16px;
+}
+mainbox {
+  background-color: @background;
+}
+inputbar,
+listview {
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+element {
+  text-color: @muted;
+}
+element selected {
+  background-color: @accent;
+  text-color: ${fgFor(v.accent)};
+}`;
+}
+
+function sketchybarShell(v) {
+  return `#!/usr/bin/env sh
+# ${v.label} for SketchyBar
+export BIZARRE_BG="${v.bg}"
+export BIZARRE_BG2="${v.bg2}"
+export BIZARRE_FG="${v.fg}"
+export BIZARRE_DIM="${v.fgDim}"
+export BIZARRE_ACCENT="${v.accent}"
+export BIZARRE_BORDER="${v.border}"
+
+sketchybar --bar color="$BIZARRE_BG" border_color="$BIZARRE_BORDER"
+sketchybar --default background.color="$BIZARRE_BG2" icon.color="$BIZARRE_FG" label.color="$BIZARRE_DIM"
+sketchybar --set front_app label.color="$BIZARRE_ACCENT"`;
+}
+
+function yabaiShell(v) {
+  return `#!/usr/bin/env sh
+# ${v.label} for yabai
+yabai -m config normal_window_border_color "${v.border}"
+yabai -m config active_window_border_color "${v.accent}"
+yabai -m config insert_feedback_color "${v.syntax.ok}"
+yabai -m config window_border_width 2
+yabai -m config window_border on`;
+}
+
+function wmReadme() {
+  return `# Bizarre OS And Window Manager Ports
+
+Hyprland, Sway, i3, Waybar, Polybar, rofi, and wofi ship named variant files. SketchyBar and yabai ship single default snippets for the Void variant. Merge snippets into existing window-manager configs instead of replacing full user files.
+`;
+}
+
+function generateWindowManagers() {
+  for (const v of variants) {
+    out(`wm/hyprland/${titleSlug(v.id)}.conf`, hyprlandConfig(v));
+    out(`wm/sway/${titleSlug(v.id)}.conf`, swayI3Config(v, 'Sway'));
+    out(`wm/i3/${titleSlug(v.id)}.conf`, swayI3Config(v, 'i3'));
+    out(`wm/waybar/${titleSlug(v.id)}.css`, waybarCss(v, 'Waybar'));
+    out(`wm/polybar/${titleSlug(v.id)}.ini`, polybarIni(v));
+    out(`wm/rofi/${titleSlug(v.id)}.rasi`, rasiTheme(v));
+    out(`wm/wofi/${titleSlug(v.id)}.css`, waybarCss(v, 'wofi'));
+  }
+  out('wm/sketchybar/bizarre.sh', sketchybarShell(variants[0]));
+  out('wm/yabai/bizarre.sh', yabaiShell(variants[0]));
+  out('wm/README.md', wmReadme());
+}
+
 function generateDesktopApps() {
   for (const v of variants) {
     out(`apps/raycast/${titleSlug(v.id)}.json`, raycastTheme(v));
@@ -4826,6 +5031,17 @@ const DESIGN_DOCS_TARGETS = [
   { name: 'Beamer', file: 'docs-sites/beamer/beamerthemebizarre.sty', variant: 'paper', key: 'format', value: 'sty' },
   { name: 'reveal.js', file: 'docs-sites/reveal.js/bizarre-void.css', variant: 'bone', key: 'format', value: 'css' },
 ];
+const WM_TARGETS = [
+  { name: 'Hyprland', file: 'wm/hyprland/bizarre-void.conf', variant: 'void', key: 'format', value: 'hyprlang' },
+  { name: 'Sway', file: 'wm/sway/bizarre-void.conf', variant: 'void-hicontrast', key: 'format', value: 'config' },
+  { name: 'i3', file: 'wm/i3/bizarre-workshop.conf', variant: 'workshop', key: 'format', value: 'config' },
+  { name: 'Waybar', file: 'wm/waybar/bizarre-paper.css', variant: 'paper', key: 'format', value: 'css' },
+  { name: 'Polybar', file: 'wm/polybar/bizarre-bone.ini', variant: 'bone', key: 'format', value: 'ini' },
+  { name: 'SketchyBar', file: 'wm/sketchybar/bizarre.sh', variant: 'void', key: 'format', value: 'shell' },
+  { name: 'yabai', file: 'wm/yabai/bizarre.sh', variant: 'void-hicontrast', key: 'format', value: 'shell' },
+  { name: 'rofi', file: 'wm/rofi/bizarre-workshop.rasi', variant: 'workshop', key: 'format', value: 'rasi' },
+  { name: 'wofi', file: 'wm/wofi/bizarre-paper.css', variant: 'paper', key: 'format', value: 'css' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = ${JSON.stringify(shellWordmark, null, 2)};
 
@@ -5130,9 +5346,16 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="window-managers">
+        <div className="section-head"><span className="section-num">§ 14 / WINDOW MANAGERS</span><h2 className="section-title">OS and window manager ports.</h2><span className="section-sub">hyprland · sway · i3 · waybar · polybar · sketchybar · yabai · rofi · wofi</span></div>
+        <div className="config-grid cli-grid">
+          {WM_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
+        </div>
+      </section>
+
       {shown.map((v, idx) => (
         <section key={v.id} className={\`section \${v.mode === 'light' ? 'light-section' : ''}\`}>
-          <div className="section-head"><span className="section-num">§ {String(idx + 14).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
+          <div className="section-head"><span className="section-num">§ {String(idx + 15).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
           <div className="pair"><BzrEditor sample={sample} variant={v} limeRole={limeRole} /><BzrStarshipTerminal variant={v} /></div>
         </section>
       ))}
@@ -5346,6 +5569,8 @@ Every shipped target still gets a generated preview card in \`showcase/assets/ge
 ![Bizarre browser and web ports](showcase/assets/generated/browser-web.png)
 
 ![Bizarre design devtool and docs ports](showcase/assets/generated/design-devtools-docs.png)
+
+![Bizarre OS and window manager ports](showcase/assets/generated/window-managers.png)
 
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
@@ -5634,6 +5859,33 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 
 # LaTeX, Typst, Beamer, reveal.js
 # merge files from docs-sites/latex, docs-sites/typst, docs-sites/beamer, and docs-sites/reveal.js
+
+# Hyprland
+# source one wm/hyprland/bizarre-*.conf file from hyprland.conf
+
+# Sway
+# include one wm/sway/bizarre-*.conf file from config
+
+# i3
+# include one wm/i3/bizarre-*.conf file from config
+
+# Waybar
+# import one wm/waybar/bizarre-*.css file from style.css
+
+# Polybar
+# include one wm/polybar/bizarre-*.ini file from config.ini
+
+# SketchyBar
+# source wm/sketchybar/bizarre.sh from your bar setup
+
+# yabai
+# source wm/yabai/bizarre.sh from yabairc
+
+# rofi
+# copy one wm/rofi/bizarre-*.rasi file into ~/.config/rofi/themes/
+
+# wofi
+# import one wm/wofi/bizarre-*.css file from style.css
 \`\`\`
 
 ## Current Coverage
@@ -5648,6 +5900,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | Browser and web | Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites |
 | Design and devtools | Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub README assets |
 | Docs and content | MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js |
+| OS and window managers | Hyprland, Sway, i3, Waybar, Polybar, SketchyBar, yabai, rofi, wofi |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants
@@ -5675,10 +5928,10 @@ function portsDoc() {
     ['Browser and web', 'Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites'],
     ['Design and devtools', 'Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub README assets'],
     ['Docs and content', 'MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js'],
+    ['OS and window managers', 'Hyprland, Sway, i3, Waybar, Polybar, SketchyBar, yabai, rofi, wofi'],
     ['Desktop and tools', 'AeroSpace, ForkLift, Jujutsu'],
   ];
   const backlog = [
-    ['OS and window managers', 'Hyprland, Sway, i3, Waybar, Polybar, SketchyBar, yabai, rofi, wofi'],
   ];
   return `# Bizarre Theme Ports
 
@@ -5700,7 +5953,7 @@ ${shipped.map(([family, targets]) => `| ${family} | ${targets} |`).join('\n')}
 
 | Family | Candidate ports |
 |---|---|
-${backlog.map(([family, targets]) => `| ${family} | ${targets} |`).join('\n')}
+${backlog.length ? backlog.map(([family, targets]) => `| ${family} | ${targets} |`).join('\n') : '| None | All currently planned backlog ports have shipped. |'}
 
 ## Port Rules
 
@@ -5731,6 +5984,7 @@ function generateAll() {
   generateDesktopApps();
   generateBrowserWeb();
   generateDesignDevtoolsDocs();
+  generateWindowManagers();
   generateShowcase();
   generateDocs();
 }

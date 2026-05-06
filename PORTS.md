@@ -20,13 +20,14 @@ Sources:
 | Browser and web | Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites |
 | Design and devtools | Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub README assets |
 | Docs and content | MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js |
+| OS and window managers | Hyprland, Sway, i3, Waybar, Polybar, SketchyBar, yabai, rofi, wofi |
 | Desktop and tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Planned Backlog
 
 | Family | Candidate ports |
 |---|---|
-| OS and window managers | Hyprland, Sway, i3, Waybar, Polybar, SketchyBar, yabai, rofi, wofi |
+| None | All currently planned backlog ports have shipped. |
 
 ## Port Rules
 

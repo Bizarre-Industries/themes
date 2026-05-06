@@ -1,0 +1,32 @@
+/* Bizarre Bone for Rofi */
+* {
+  background: #F5F2EA;
+  background-alt: #EDE9DD;
+  foreground: #2B2B2B;
+  muted: #4A4A4A;
+  accent: #5F8A0F;
+  urgent: #B8276F;
+  border-color: #DDD8CB;
+}
+window {
+  background-color: @background;
+  text-color: @foreground;
+  border: 1px;
+  border-color: @border-color;
+  padding: 16px;
+}
+mainbox {
+  background-color: @background;
+}
+inputbar,
+listview {
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+element {
+  text-color: @muted;
+}
+element selected {
+  background-color: @accent;
+  text-color: #F9F8F2;
+}
