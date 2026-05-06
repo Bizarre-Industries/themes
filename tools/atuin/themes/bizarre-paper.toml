@@ -1,0 +1,13 @@
+[theme]
+name = "bizarre-paper"
+
+[colors]
+AlertInfo = "#1F4FB0"
+AlertWarn = "#9F4A0E"
+AlertError = "#B8276F"
+Annotation = "#7A7568"
+Base = "#1F1F1F"
+Guidance = "#1F4FB0"
+Important = "#5F8A0F"
+Title = "#5F8A0F"
+Muted = "#A8A395"

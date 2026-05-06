@@ -1363,6 +1363,106 @@ ${keys.join('\n')}
 </plist>`;
 }
 
+function plistString(key, value, indent = '\t') {
+  return `${indent}<key>${xmlEscape(key)}</key><string>${xmlEscape(value)}</string>`;
+}
+
+function textMateRule(name, scope, foreground, fontStyle) {
+  return `\t\t<dict>
+${plistString('name', name, '\t\t\t')}
+\t\t\t<key>scope</key><string>${xmlEscape(scope)}</string>
+\t\t\t<key>settings</key>
+\t\t\t<dict>
+${plistString('foreground', foreground, '\t\t\t\t')}${fontStyle ? `\n${plistString('fontStyle', fontStyle, '\t\t\t\t')}` : ''}
+\t\t\t</dict>
+\t\t</dict>`;
+}
+
+function textMateTheme(v) {
+  const s = v.syntax;
+  const rules = [
+    textMateRule('Comment', 'comment, punctuation.definition.comment', s.comment, 'italic'),
+    textMateRule('Documentation', 'comment.block.documentation', s.docComment, 'italic'),
+    textMateRule('String', 'string, punctuation.definition.string', s.string),
+    textMateRule('Template', 'string.template, constant.other.placeholder', s.tmpl),
+    textMateRule('Escape', 'constant.character.escape', s.esc, 'bold'),
+    textMateRule('Regex', 'string.regexp', s.rgx, 'italic'),
+    textMateRule('Number', 'constant.numeric', s.num),
+    textMateRule('Boolean', 'constant.language.boolean, constant.language.null', s.bool, 'bold'),
+    textMateRule('Constant', 'constant, variable.other.constant', s.constant, 'bold'),
+    textMateRule('Keyword', 'keyword, storage.type, storage.modifier', s.kwCtrl),
+    textMateRule('Operator', 'keyword.operator, punctuation.separator', s.op),
+    textMateRule('Punctuation', 'punctuation, meta.brace', s.punct),
+    textMateRule('Function', 'entity.name.function, support.function, meta.function-call', s.fn),
+    textMateRule('Method', 'entity.name.function.member, support.function.method', s.method),
+    textMateRule('Type', 'entity.name.type, entity.name.class, support.type', s.type),
+    textMateRule('Property', 'variable.other.property, support.variable.property', s.prop),
+    textMateRule('Parameter', 'variable.parameter', s.param, 'italic'),
+    textMateRule('Namespace', 'entity.name.namespace, support.module', s.ns),
+    textMateRule('Decorator', 'meta.decorator, entity.name.function.decorator', s.decorator, 'italic'),
+    textMateRule('Preprocessor', 'meta.preprocessor, keyword.control.directive', s.pre),
+    textMateRule('Tag', 'entity.name.tag', s.tag),
+    textMateRule('Attribute', 'entity.other.attribute-name', s.attr),
+    textMateRule('Invalid', 'invalid, invalid.illegal', s.error, 'bold'),
+    textMateRule('Markup heading', 'markup.heading', s.fn, 'bold'),
+    textMateRule('Markup link', 'markup.underline.link', s.info, 'underline'),
+    textMateRule('Diff inserted', 'markup.inserted', s.ok),
+    textMateRule('Diff deleted', 'markup.deleted', s.error),
+    textMateRule('Diff changed', 'markup.changed', s.warn),
+  ].join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+${plistString('name', v.label)}
+${plistString('author', 'Bizarre Industries')}
+\t<key>settings</key>
+\t<array>
+\t\t<dict>
+\t\t\t<key>settings</key>
+\t\t\t<dict>
+${plistString('background', v.bg, '\t\t\t\t')}
+${plistString('foreground', v.fg, '\t\t\t\t')}
+${plistString('caret', v.cursor, '\t\t\t\t')}
+${plistString('selection', v.sel, '\t\t\t\t')}
+${plistString('lineHighlight', v.line, '\t\t\t\t')}
+\t\t\t</dict>
+\t\t</dict>
+${rules}
+\t</array>
+</dict>
+</plist>`;
+}
+
+function ansi256(hex) {
+  const [r, g, b] = rgb(hex);
+  const levels = [0, 95, 135, 175, 215, 255];
+  let best = { code: 16, dist: Infinity };
+  for (let ri = 0; ri < levels.length; ri += 1) {
+    for (let gi = 0; gi < levels.length; gi += 1) {
+      for (let bi = 0; bi < levels.length; bi += 1) {
+        const rr = levels[ri], gg = levels[gi], bb = levels[bi];
+        const dist = (r - rr) ** 2 + (g - gg) ** 2 + (b - bb) ** 2;
+        if (dist < best.dist) best = { code: 16 + 36 * ri + 6 * gi + bi, dist };
+      }
+    }
+  }
+  for (let i = 0; i < 24; i += 1) {
+    const gray = 8 + i * 10;
+    const dist = (r - gray) ** 2 + (g - gray) ** 2 + (b - gray) ** 2;
+    if (dist < best.dist) best = { code: 232 + i, dist };
+  }
+  return best.code;
+}
+
+function ansiStyle(hex, bold = false) {
+  return `${bold ? '1;' : ''}38;5;${ansi256(hex)}`;
+}
+
+function yamlString(value) {
+  return JSON.stringify(value);
+}
+
 function windowsTerminal() {
   return JSON.stringify({
     schemes: variants.map((v) => ({
@@ -1907,12 +2007,616 @@ function forklift(v) {
   }, null, 2);
 }
 
+function btopTheme(v) {
+  const s = v.syntax;
+  const qh = (hex) => `"${hex}"`;
+  return `# ${v.label} - btop
+# Bizarre Industries - CATCH THE STARS.
+theme[main_bg]=${qh(v.bg)}
+theme[main_fg]=${qh(v.fg)}
+theme[title]=${qh(v.accent)}
+theme[hi_fg]=${qh(v.accent)}
+theme[selected_bg]=${qh(v.sel)}
+theme[selected_fg]=${qh(fgFor(v.sel))}
+theme[inactive_fg]=${qh(v.fgGhost)}
+theme[proc_misc]=${qh(s.info)}
+theme[cpu_box]=${qh(v.border)}
+theme[mem_box]=${qh(v.border)}
+theme[net_box]=${qh(v.border)}
+theme[proc_box]=${qh(v.accent)}
+theme[div_line]=${qh(v.bg3)}
+theme[temp_start]=${qh(s.info)}
+theme[temp_mid]=${qh(s.warn)}
+theme[temp_end]=${qh(s.error)}
+theme[cpu_start]=${qh(v.accent)}
+theme[cpu_mid]=${qh(s.info)}
+theme[cpu_end]=${qh(s.warn)}
+theme[free_start]=${qh(s.ok)}
+theme[free_mid]=${qh(v.accentSoft)}
+theme[free_end]=${qh(v.accent)}
+theme[cached_start]=${qh(s.hint)}
+theme[cached_mid]=${qh(s.kwMod)}
+theme[cached_end]=${qh(s.constant)}
+theme[available_start]=${qh(s.info)}
+theme[available_mid]=${qh(s.type)}
+theme[available_end]=${qh(s.rgx)}
+theme[used_start]=${qh(s.warn)}
+theme[used_mid]=${qh(s.param)}
+theme[used_end]=${qh(s.error)}
+theme[download_start]=${qh(s.info)}
+theme[download_mid]=${qh(s.rgx)}
+theme[download_end]=${qh(v.accent)}
+theme[upload_start]=${qh(s.hint)}
+theme[upload_mid]=${qh(s.warn)}
+theme[upload_end]=${qh(s.error)}
+theme[proc_pause_bg]=${qh(v.bg3)}
+theme[proc_follow_bg]=${qh(v.sel)}
+theme[proc_banner_bg]=${qh(v.accent)}
+theme[proc_banner_fg]=${qh(fgFor(v.accent))}`;
+}
+
+function deltaConfig() {
+  return `# Bizarre Industries - delta themes
+# Add to ~/.gitconfig:
+#   [include]
+#       path = /path/to/themes/tools/delta/bizarre.gitconfig
+#   [delta]
+#       features = bizarre-void
+
+${variants.map((v) => {
+  const s = v.syntax;
+  return `[delta "${titleSlug(v.id)}"]
+    dark = ${v.mode === 'dark' ? 'true' : 'false'}
+    line-numbers = true
+    navigate = true
+    hyperlinks = true
+    commit-decoration-style = box ul ${v.accent}
+    file-style = bold ${v.accent}
+    file-decoration-style = ul ${v.border}
+    hunk-header-style = file line-number syntax bold
+    hunk-header-decoration-style = ${v.border}
+    minus-style = syntax ${v.bg2}
+    minus-emph-style = bold syntax ${s.error}
+    plus-style = syntax ${v.bg2}
+    plus-emph-style = bold syntax ${s.ok}
+    zero-style = syntax
+    line-numbers-left-style = ${v.fgGhost}
+    line-numbers-right-style = ${v.fgGhost}
+    line-numbers-minus-style = ${s.error}
+    line-numbers-plus-style = ${s.ok}`;
+}).join('\n\n')}`;
+}
+
+function dircolors(v) {
+  const s = v.syntax;
+  const entry = (name, hex, bold = false) => `${name} ${ansiStyle(hex, bold)}`;
+  return `# Bizarre Industries - dircolors
+# Use: eval "$(dircolors tools/dircolors/bizarre.dircolors)"
+TERM xterm-256color
+TERM screen-256color
+TERM tmux-256color
+TERM alacritty
+TERM kitty
+TERM wezterm
+RESET 0
+${entry('DIR', s.info, true)}
+${entry('LINK', s.rgx, true)}
+${entry('MULTIHARDLINK', s.hint)}
+${entry('FIFO', s.warn)}
+${entry('SOCK', s.hint)}
+${entry('DOOR', s.hint)}
+${entry('BLK', s.type, true)}
+${entry('CHR', s.type, true)}
+${entry('ORPHAN', s.error, true)}
+${entry('MISSING', s.error, true)}
+${entry('SETUID', s.error, true)}
+${entry('SETGID', s.warn, true)}
+${entry('CAPABILITY', v.accent, true)}
+${entry('STICKY_OTHER_WRITABLE', s.warn)}
+${entry('OTHER_WRITABLE', s.warn)}
+${entry('STICKY', v.accent)}
+${entry('EXEC', v.accent, true)}
+${entry('*.md', v.accent, true)}
+${entry('*.txt', v.fg)}
+${entry('*.json', s.esc)}
+${entry('*.toml', s.warn)}
+${entry('*.yaml', s.warn)}
+${entry('*.yml', s.warn)}
+${entry('*.js', s.esc)}
+${entry('*.ts', s.info)}
+${entry('*.tsx', s.info)}
+${entry('*.jsx', s.info)}
+${entry('*.py', s.info)}
+${entry('*.rs', s.rgx)}
+${entry('*.go', s.type)}
+${entry('*.lua', s.info)}
+${entry('*.sh', s.method)}
+${entry('*.zsh', s.method)}
+${entry('*.fish', s.method)}
+${entry('*.vim', s.ok)}
+${entry('*.png', s.hint)}
+${entry('*.jpg', s.hint)}
+${entry('*.jpeg', s.hint)}
+${entry('*.svg', s.self)}
+${entry('*.zip', s.warn)}
+${entry('*.tar', s.warn)}
+${entry('*.gz', s.warn)}`;
+}
+
+function ezaColors(v) {
+  const s = v.syntax;
+  const pair = (key, hex, bold = false) => `${key}=${ansiStyle(hex, bold)}`;
+  return [
+    pair('di', s.info, true), pair('ex', v.accent, true), pair('fi', v.fg),
+    pair('ln', s.rgx, true), pair('or', s.error, true), pair('pi', s.warn),
+    pair('so', s.hint), pair('bd', s.type, true), pair('cd', s.type, true),
+    pair('ga', s.ok), pair('gm', s.warn), pair('gd', s.error), pair('gv', s.info),
+    pair('gc', s.error, true), pair('Gm', v.accent, true), pair('Gc', s.ok), pair('Gd', s.warn),
+    pair('da', v.fgFaint), pair('hd', v.accent, true), pair('lp', s.rgx),
+    pair('im', s.hint), pair('vi', s.self), pair('mu', s.rgx), pair('lo', s.rgx),
+    pair('cr', s.warn), pair('do', s.info), pair('co', s.warn), pair('tm', v.fgGhost),
+    pair('cm', v.fgGhost), pair('bu', s.warn), pair('sc', s.ok),
+    pair('*.md', v.accent, true), pair('*.json', s.esc), pair('*.toml', s.warn),
+    pair('*.yaml', s.warn), pair('*.yml', s.warn), pair('*.ts', s.info),
+    pair('*.tsx', s.info), pair('*.js', s.esc), pair('*.jsx', s.esc),
+    pair('*.py', s.info), pair('*.rs', s.rgx), pair('*.go', s.type),
+  ].join(':');
+}
+
+function ezaShell(v) {
+  return `# Bizarre Industries - eza colors
+# Source from bash/zsh:
+#   source tools/eza/bizarre.sh
+export EZA_COLORS='${ezaColors(v)}'`;
+}
+
+function fzfShell(v) {
+  const s = v.syntax;
+  return `# Bizarre Industries - fzf colors
+# Source from bash/zsh:
+#   source tools/fzf/bizarre.sh
+export FZF_DEFAULT_OPTS="\${FZF_DEFAULT_OPTS:-} \\
+  --color=fg:${v.fg},bg:${v.bg},preview-fg:${v.fg},preview-bg:${v.bg2} \\
+  --color=hl:${v.accent},fg+:${v.fg},bg+:${v.bg3},hl+:${v.accentSoft} \\
+  --color=info:${s.info},prompt:${v.accent},pointer:${v.accent},marker:${s.ok} \\
+  --color=spinner:${s.warn},header:${v.fgFaint},border:${v.border},gutter:${v.bg}"`;
+}
+
+function lazygitConfig(v) {
+  const s = v.syntax;
+  const seq = (items) => `[${items.map(yamlString).join(', ')}]`;
+  return `# Bizarre Industries - lazygit theme
+# Merge gui.theme into ~/.config/lazygit/config.yml.
+gui:
+  theme:
+    activeBorderColor: ${seq([v.accent, 'bold'])}
+    inactiveBorderColor: ${seq([v.border])}
+    searchingActiveBorderColor: ${seq([s.info, 'bold'])}
+    optionsTextColor: ${seq([s.info])}
+    selectedLineBgColor: ${seq([v.bg3])}
+    inactiveViewSelectedLineBgColor: ${seq([v.bg2])}
+    cherryPickedCommitFgColor: ${seq([s.info])}
+    cherryPickedCommitBgColor: ${seq([v.bg2])}
+    markedBaseCommitFgColor: ${seq([v.accent])}
+    markedBaseCommitBgColor: ${seq([v.bg2])}
+    unstagedChangesColor: ${seq([s.warn])}
+    defaultFgColor: ${seq([v.fg])}`;
+}
+
+function yaziFlavor(v) {
+  const s = v.syntax;
+  const style = (fg, bg, extra = '') => `{ fg = "${fg}"${bg ? `, bg = "${bg}"` : ''}${extra ? `, ${extra}` : ''} }`;
+  return `# ${v.label} - Yazi flavor
+[app]
+overall = { bg = "${v.bg}" }
+
+[mgr]
+cwd = ${style(v.accent, null, 'bold = true')}
+hovered = ${style(v.fg, v.bg3)}
+preview_hovered = ${style(v.fg, v.bg3)}
+find_keyword = ${style(v.accent, v.bg2, 'bold = true')}
+find_position = ${style(s.info, 'reset', 'bold = true')}
+marker_copied = ${style(s.ok, s.ok)}
+marker_cut = ${style(s.error, s.error)}
+marker_marked = ${style(s.warn, s.warn)}
+marker_selected = ${style(v.accent, v.accent)}
+count_copied = ${style(fgFor(s.ok), s.ok, 'bold = true')}
+count_cut = ${style(fgFor(s.error), s.error, 'bold = true')}
+count_selected = ${style(fgFor(v.accent), v.accent, 'bold = true')}
+border_symbol = "│"
+border_style = ${style(v.border, null)}
+
+[tabs]
+active = ${style(fgFor(v.accent), v.accent, 'bold = true')}
+inactive = ${style(v.fgDim, v.bg2)}
+
+[mode]
+normal_main = ${style(fgFor(v.accent), v.accent, 'bold = true')}
+normal_alt = ${style(v.accent, v.bg2)}
+select_main = ${style(fgFor(s.info), s.info, 'bold = true')}
+select_alt = ${style(s.info, v.bg2)}
+unset_main = ${style(fgFor(s.warn), s.warn, 'bold = true')}
+unset_alt = ${style(s.warn, v.bg2)}
+
+[status]
+perm_sep = ${style(v.border, null)}
+perm_type = ${style(s.info, null)}
+perm_read = ${style(s.warn, null)}
+perm_write = ${style(s.error, null)}
+perm_exec = ${style(s.ok, null)}
+progress_label = ${style(v.fg, null, 'bold = true')}
+progress_normal = ${style(s.ok, v.bg3)}
+progress_error = ${style(fgFor(s.error), s.error, 'bold = true')}
+
+[pick]
+border = ${style(v.border, null)}
+active = ${style(v.accent, null, 'bold = true')}
+inactive = {}
+
+[input]
+border = ${style(v.border, null)}
+title = {}
+value = {}
+selected = ${style(v.accent, null, 'bold = true')}
+
+[cmp]
+border = ${style(v.border, null)}
+
+[tasks]
+border = ${style(v.border, null)}
+title = ${style(v.accent, null, 'bold = true')}
+hovered = ${style(v.fg, v.bg3)}
+
+[which]
+mask = ${style(v.bg4, null)}
+cand = ${style(v.accent, null)}
+rest = ${style(v.fgFaint, null)}
+desc = ${style(s.info, null)}
+separator = " > "
+separator_style = ${style(v.border, null)}
+
+[help]
+on = ${style(v.accent, null, 'bold = true')}
+run = ${style(s.info, null)}
+hovered = ${style(v.fg, v.bg3, 'bold = true')}
+footer = ${style(fgFor(v.accent), v.accent, 'bold = true')}
+
+[spot]
+border = ${style(v.border, null)}
+title = ${style(v.accent, null, 'bold = true')}
+tbl_col = ${style(s.info, null)}
+tbl_cell = ${style(v.fg, v.bg3)}
+
+[notify]
+title_info = ${style(s.ok, null)}
+title_warn = ${style(s.warn, null)}
+title_error = ${style(s.error, null)}
+
+[filetype]
+rules = [
+  { mime = "image/*", fg = "${s.hint}" },
+  { mime = "{audio,video}/*", fg = "${s.self}" },
+  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "${s.warn}" },
+  { mime = "application/{pdf,doc,rtf}", fg = "${s.info}" },
+  { mime = "vfs/{absent,stale}", fg = "${v.fgGhost}" },
+  { url = "*", fg = "${v.fg}" },
+  { url = "*/", fg = "${s.info}" },
+]`;
+}
+
+function atuinTheme(v) {
+  const s = v.syntax;
+  return `[theme]
+name = "${titleSlug(v.id)}"
+
+[colors]
+AlertInfo = "${s.info}"
+AlertWarn = "${s.warn}"
+AlertError = "${s.error}"
+Annotation = "${v.fgFaint}"
+Base = "${v.fg}"
+Guidance = "${s.info}"
+Important = "${v.accent}"
+Title = "${v.accent}"
+Muted = "${v.fgGhost}"`;
+}
+
+function bottomTheme(v) {
+  const s = v.syntax;
+  return `# ${v.label} - bottom
+# Merge into ~/.config/bottom/bottom.toml.
+[styles]
+
+[styles.cpu]
+all_entry_color = "${v.accent}"
+avg_entry_color = "${s.info}"
+cpu_core_colors = ["${v.accent}", "${s.info}", "${s.rgx}", "${s.warn}", "${s.hint}", "${s.ok}"]
+
+[styles.memory]
+ram_color = "${v.accent}"
+cache_color = "${s.info}"
+swap_color = "${s.warn}"
+arc_color = "${s.rgx}"
+gpu_colors = ["${s.info}", "${s.hint}", "${s.warn}"]
+
+[styles.network]
+rx_color = "${s.info}"
+tx_color = "${v.accent}"
+rx_total_color = "${s.rgx}"
+tx_total_color = "${s.ok}"
+
+[styles.battery]
+high_battery_color = "${s.ok}"
+medium_battery_color = "${s.warn}"
+low_battery_color = "${s.error}"
+
+[styles.tables]
+headers = { color = "${v.accent}", bg_color = "${v.bg2}", bold = true }
+
+[styles.graphs]
+graph_color = "${v.accent}"
+legend_text = { color = "${v.fgDim}", bg_color = "${v.bg}" }
+
+[styles.widgets]
+border_color = "${v.border}"
+selected_border_color = "${v.accent}"
+widget_title = { color = "${v.accent}", bg_color = "${v.bg}" }
+text = { color = "${v.fg}", bg_color = "${v.bg}" }
+selected_text = { color = "${fgFor(v.sel)}", bg_color = "${v.sel}", bold = true }
+disabled_text = { color = "${v.fgGhost}" }
+thread_text = { color = "${s.info}" }`;
+}
+
+function k9sSkin(v) {
+  const s = v.syntax;
+  return `# ${v.label} - K9s skin
+k9s:
+  body:
+    fgColor: ${yamlString(v.fg)}
+    bgColor: ${yamlString(v.bg)}
+    logoColor: ${yamlString(v.accent)}
+  info:
+    fgColor: ${yamlString(v.fg)}
+    sectionColor: ${yamlString(v.accent)}
+  frame:
+    border:
+      fgColor: ${yamlString(v.border)}
+      focusColor: ${yamlString(v.accent)}
+    menu:
+      fgColor: ${yamlString(v.fgDim)}
+      keyColor: ${yamlString(v.accent)}
+      numKeyColor: ${yamlString(s.info)}
+    crumbs:
+      fgColor: ${yamlString(fgFor(v.accent))}
+      bgColor: ${yamlString(v.accent)}
+      activeColor: ${yamlString(v.accentSoft)}
+    status:
+      newColor: ${yamlString(s.ok)}
+      modifyColor: ${yamlString(s.warn)}
+      addColor: ${yamlString(s.ok)}
+      errorColor: ${yamlString(s.error)}
+      highlightColor: ${yamlString(v.accent)}
+      killColor: ${yamlString(s.error)}
+      completedColor: ${yamlString(v.fgFaint)}
+    title:
+      fgColor: ${yamlString(v.accent)}
+      bgColor: ${yamlString(v.bg)}
+      highlightColor: ${yamlString(v.accentSoft)}
+      counterColor: ${yamlString(s.info)}
+      filterColor: ${yamlString(s.warn)}
+  views:
+    table:
+      fgColor: ${yamlString(v.fg)}
+      bgColor: ${yamlString(v.bg)}
+      cursorColor: ${yamlString(v.sel)}
+      header:
+        fgColor: ${yamlString(v.accent)}
+        bgColor: ${yamlString(v.bg2)}
+        sorterColor: ${yamlString(s.warn)}
+    yaml:
+      keyColor: ${yamlString(s.info)}
+      colonColor: ${yamlString(v.fgFaint)}
+      valueColor: ${yamlString(v.fg)}
+    logs:
+      fgColor: ${yamlString(v.fg)}
+      bgColor: ${yamlString(v.bg)}`;
+}
+
+function rangerScheme(v) {
+  const dark = v.mode === 'dark';
+  return `# ${v.label} - ranger
+from ranger.gui.colorscheme import ColorScheme
+from ranger.gui.color import (
+    black, blue, cyan, default, green, magenta, red, white, yellow,
+    bold, normal, reverse,
+)
+
+
+class Scheme(ColorScheme):
+    progress_bar_color = ${dark ? 'green' : 'blue'}
+
+    def use(self, context):
+        fg = ${dark ? 'white' : 'black'}
+        bg = default
+        attr = normal
+
+        if context.reset:
+            return default, default, normal
+        if context.in_browser:
+            if context.selected:
+                attr = reverse
+            if context.empty or context.error:
+                fg = red
+            if context.border:
+                fg = green
+            if context.media:
+                fg = magenta
+            if context.container:
+                fg = yellow
+            if context.directory:
+                fg = blue
+                attr |= bold
+            elif context.executable and not any((context.media, context.container, context.fifo, context.socket)):
+                fg = green
+                attr |= bold
+            if context.link:
+                fg = cyan
+            if context.bad:
+                fg = red
+            if context.tag_marker:
+                fg = green
+                attr |= bold
+        elif context.in_titlebar:
+            attr = bold
+            if context.hostname:
+                fg = green
+            elif context.directory:
+                fg = blue
+            elif context.link:
+                fg = cyan
+        elif context.in_statusbar:
+            if context.permissions:
+                fg = yellow
+            if context.marked:
+                fg = green
+                attr |= bold
+            if context.message:
+                fg = white
+            if context.loaded:
+                fg = green
+            if context.error:
+                fg = red
+                attr |= bold
+            if context.warning:
+                fg = yellow
+        elif context.text:
+            if context.highlight:
+                attr = reverse
+            if context.error:
+                fg = red
+
+        return fg, bg, attr`;
+}
+
+function vividTheme(v) {
+  const s = v.syntax;
+  return `colors:
+  background_color: '${noHash(v.bg)}'
+  foreground: '${noHash(v.fg)}'
+  white: '${noHash(v.fg)}'
+  red: '${noHash(s.error)}'
+  green: '${noHash(v.accent)}'
+  yellow: '${noHash(s.warn)}'
+  blue: '${noHash(s.info)}'
+  pink: '${noHash(s.hint)}'
+  cyan: '${noHash(s.rgx)}'
+  black: '${noHash(v.bg)}'
+  gray: '${noHash(v.fgFaint)}'
+  darkgray: '${noHash(v.fgGhost)}'
+  darkergray: '${noHash(v.bg3)}'
+core:
+  normal_text: {}
+  regular_file: {}
+  reset_to_normal: {}
+  directory:
+    foreground: blue
+    font-style: bold
+  symlink:
+    foreground: cyan
+  fifo:
+    foreground: yellow
+  socket:
+    foreground: pink
+  block_device:
+    foreground: cyan
+    background: darkergray
+  character_device:
+    foreground: pink
+    background: darkergray
+  broken_symlink:
+    foreground: black
+    background: red
+  missing_symlink_target:
+    foreground: black
+    background: red
+  executable_file:
+    foreground: green
+    font-style: bold
+text:
+  configuration:
+    foreground: yellow
+  markup:
+    foreground: green
+    font-style: bold
+  programming:
+    source:
+      foreground: cyan
+  tooling:
+    foreground: blue
+  media:
+    foreground: pink
+  office:
+    foreground: blue
+  archives:
+    foreground: yellow
+    font-style: underline
+  executable:
+    foreground: green
+    font-style: bold
+  unimportant:
+    foreground: darkgray`;
+}
+
+function toolsReadme() {
+  return `# Bizarre Industries - companion tools
+
+\`BZR / TOOLS / V0.2\`
+
+Beyond editors and terminals, Bizarre dresses the rest of the bench.
+
+| Family | Paths | What it themes |
+|---|---|---|
+| Window and desktop | \`tools/aerospace/\`, \`tools/forklift/\` | Focus borders, file lists, preview panes, git decorations |
+| Git workflow | \`tools/jujutsu/\`, \`tools/delta/\`, \`tools/lazygit/\` | Logs, diffs, status panes, selected rows |
+| CLI search and listing | \`tools/fzf/\`, \`tools/dircolors/\`, \`tools/eza/\`, \`tools/vivid/\` | Pickers, file types, icons, LS_COLORS output |
+| TUI monitors and clusters | \`tools/btop/\`, \`tools/bottom/\`, \`tools/k9s/\` | Borders, graphs, tables, status colors |
+| File managers and history | \`tools/yazi/\`, \`tools/ranger/\`, \`tools/atuin/\` | CWD, selection, previews, titles, alerts |
+| Syntax preview | \`tools/bat/\` | TextMate syntax highlighting for bat and compatible consumers |
+
+Install examples live in [README.md](../README.md). Merge snippets into existing app configs instead of replacing user files wholesale.
+
+CATCH THE STARS.`;
+}
+
+function generateCliTui() {
+  const v = variants[0];
+  for (const variant of variants) {
+    out(`tools/bat/themes/${titleSlug(variant.id)}.tmTheme`, textMateTheme(variant));
+    out(`tools/btop/${titleSlug(variant.id)}.theme`, btopTheme(variant));
+    out(`tools/atuin/themes/${titleSlug(variant.id)}.toml`, atuinTheme(variant));
+    out(`tools/bottom/${titleSlug(variant.id)}.toml`, bottomTheme(variant));
+    out(`tools/k9s/skins/${titleSlug(variant.id)}.yaml`, k9sSkin(variant));
+    out(`tools/vivid/themes/${titleSlug(variant.id)}.yml`, vividTheme(variant));
+    out(`tools/ranger/colorschemes/${titleSlug(variant.id).replaceAll('-', '_')}.py`, rangerScheme(variant));
+    out(`tools/yazi/flavors/${titleSlug(variant.id)}.yazi/flavor.toml`, yaziFlavor(variant));
+    out(`tools/yazi/flavors/${titleSlug(variant.id)}.yazi/tmtheme.xml`, textMateTheme(variant));
+    out(`tools/yazi/flavors/${titleSlug(variant.id)}.yazi/README.md`, `# ${variant.label} for Yazi\n\nGenerated Bizarre Industries flavor. Copy this directory into \`~/.config/yazi/flavors/\` and reference \`${titleSlug(variant.id)}\` from \`theme.toml\`.\n`);
+  }
+  out('tools/delta/bizarre.gitconfig', deltaConfig());
+  out('tools/dircolors/bizarre.dircolors', dircolors(v));
+  out('tools/eza/bizarre.sh', ezaShell(v));
+  out('tools/fzf/bizarre.sh', fzfShell(v));
+  out('tools/lazygit/config.yml', lazygitConfig(v));
+  out('tools/README.md', toolsReadme());
+}
+
 function generateTools() {
   const v = variants[0];
   out('prompt/starship.toml', starship(v));
   out('tools/aerospace/aerospace.toml', aerospace(v));
   out('tools/jujutsu/config.toml', jujutsu(v));
   out('tools/forklift/Bizarre.json', forklift(v));
+  generateCliTui();
   generateShells(v);
 }
 
@@ -2294,6 +2998,7 @@ body {
 .config-grid.editor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .config-grid.shell-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .config-grid.tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.config-grid.cli-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .config-card { border: 1px solid var(--hairline); border-radius: 6px; overflow: hidden; min-height: 218px; background: var(--bg); color: var(--fgc); display: flex; flex-direction: column; }
 .config-card.light { border-color: var(--hairline-light); }
 .config-title { padding: 14px 14px 10px; border-bottom: 1px solid var(--hairline); font-family: var(--label); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; min-width: 0; }
@@ -2349,7 +3054,7 @@ body {
   .hero-grid, .pair, .lime-pair, .ansi-dual { grid-template-columns: 1fr; }
   .legend-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .variant-grid { grid-template-columns: 1fr; }
-  .config-grid, .config-grid.vscode-grid, .config-grid.editor-grid, .config-grid.shell-grid, .config-grid.tool-grid { grid-template-columns: 1fr; }
+  .config-grid, .config-grid.vscode-grid, .config-grid.editor-grid, .config-grid.shell-grid, .config-grid.tool-grid, .config-grid.cli-grid { grid-template-columns: 1fr; }
   .section-head { grid-template-columns: 1fr; }
 }`;
 }
@@ -2527,6 +3232,21 @@ const TOOL_TARGETS = [
   { shot: 'tool-jujutsu', name: 'Jujutsu', file: 'tools/jujutsu/config.toml', variant: 'workshop', key: 'change id', value: P.brand.signalLime },
   { shot: 'tool-starship', name: 'Starship', file: 'prompt/starship.toml', variant: 'bone', key: 'prompt block', value: P.brand.limeInk },
 ];
+const CLI_TARGETS = [
+  { name: 'bat', file: 'tools/bat/themes/bizarre-void.tmTheme', variant: 'void', key: 'syntax', value: 'TextMate' },
+  { name: 'btop', file: 'tools/btop/bizarre-void.theme', variant: 'void-hicontrast', key: 'graphs', value: 'theme[]' },
+  { name: 'delta', file: 'tools/delta/bizarre.gitconfig', variant: 'workshop', key: 'diff', value: 'feature' },
+  { name: 'dircolors', file: 'tools/dircolors/bizarre.dircolors', variant: 'paper', key: 'LS_COLORS', value: 'ansi256' },
+  { name: 'fzf', file: 'tools/fzf/bizarre.sh', variant: 'bone', key: 'picker', value: '24-bit' },
+  { name: 'lazygit', file: 'tools/lazygit/config.yml', variant: 'void', key: 'panes', value: 'yaml' },
+  { name: 'yazi', file: 'tools/yazi/flavors/bizarre-void.yazi/flavor.toml', variant: 'void-hicontrast', key: 'flavor', value: 'toml' },
+  { name: 'eza', file: 'tools/eza/bizarre.sh', variant: 'workshop', key: 'files', value: 'EZA_COLORS' },
+  { name: 'atuin', file: 'tools/atuin/themes/bizarre-void.toml', variant: 'paper', key: 'history', value: 'Meanings' },
+  { name: 'bottom', file: 'tools/bottom/bizarre-void.toml', variant: 'bone', key: 'monitor', value: 'styles' },
+  { name: 'k9s', file: 'tools/k9s/skins/bizarre-void.yaml', variant: 'void', key: 'cluster', value: 'skin' },
+  { name: 'ranger', file: 'tools/ranger/colorschemes/bizarre_void.py', variant: 'void-hicontrast', key: 'files', value: 'python' },
+  { name: 'vivid', file: 'tools/vivid/themes/bizarre-void.yml', variant: 'workshop', key: 'ls', value: 'yaml' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = ${JSON.stringify(shellWordmark, null, 2)};
 
@@ -2628,6 +3348,21 @@ function ToolConfigCard({ target }) {
         <div><span className="key">status</span>: {v.syntax.ok} / {v.syntax.warn} / {v.syntax.error}</div>
       </div>
       <div className="tool-strip">{[v.bg, v.bg2, v.bg3, v.fg, v.accent].map((hex) => <span key={hex} style={{ background: hex }}></span>)}</div>
+    </div>
+  );
+}
+
+function CliConfigCard({ target }) {
+  const v = variantById(target.variant);
+  return (
+    <div className={'config-card cli-card ' + (v.mode === 'light' ? 'light' : '')} style={cardStyle(v)}>
+      <div className="config-title"><strong>{target.name}</strong><code>{target.file}</code></div>
+      <div className="tool-body">
+        <div><span className="key">{target.key}</span>: <span className="value">{target.value}</span></div>
+        <div><span className="key">accent</span>: <span className="value">{v.accent}</span></div>
+        <div><span className="key">surface</span>: {v.bg}</div>
+      </div>
+      <div className="tool-strip">{[v.bg, v.bg2, v.border, v.syntax.info, v.accent].map((hex) => <span key={hex} style={{ background: hex }}></span>)}</div>
     </div>
   );
 }
@@ -2771,6 +3506,13 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         <div className="section-head"><span className="section-num">§ 09 / TOOLS</span><h2 className="section-title">Desktop and workflow tools.</h2><span className="section-sub">aerospace · forklift · jujutsu · starship</span></div>
         <div className="config-grid tool-grid">
           {TOOL_TARGETS.map((target) => <ToolConfigCard key={target.shot} target={target} />)}
+        </div>
+      </section>
+
+      <section className="section" data-shot="cli-tui">
+        <div className="section-head"><span className="section-num">§ 10 / CLI + TUI</span><h2 className="section-title">Planned CLI ports now ship.</h2><span className="section-sub">bat · btop · delta · dircolors · fzf · lazygit · yazi · eza · atuin · bottom · k9s · ranger · vivid</span></div>
+        <div className="config-grid cli-grid">
+          {CLI_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
         </div>
       </section>
 
@@ -2979,6 +3721,8 @@ Every shipped target still gets a generated preview card in \`showcase/assets/ge
 
 ![Bizarre desktop and workflow tools](showcase/assets/generated/tools.png)
 
+![Bizarre CLI and TUI tool ports](showcase/assets/generated/cli-tui.png)
+
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
 ## Install Examples
@@ -3062,6 +3806,60 @@ cp tools/aerospace/aerospace.toml ~/.config/aerospace/aerospace.toml
 # Jujutsu
 mkdir -p ~/.config/jj
 cp tools/jujutsu/config.toml ~/.config/jj/config.toml
+
+# bat
+mkdir -p "$(bat --config-dir)/themes"
+cp tools/bat/themes/*.tmTheme "$(bat --config-dir)/themes/"
+bat cache --build
+
+# btop
+mkdir -p ~/.config/btop/themes
+cp tools/btop/*.theme ~/.config/btop/themes/
+# then set color_theme = "bizarre-void" in ~/.config/btop/btop.conf
+
+# delta
+# add tools/delta/bizarre.gitconfig to your ~/.gitconfig [include] path
+# then set [delta] features = bizarre-void
+
+# dircolors
+eval "$(dircolors tools/dircolors/bizarre.dircolors)"
+
+# fzf
+source tools/fzf/bizarre.sh
+
+# lazygit
+# merge tools/lazygit/config.yml into ~/.config/lazygit/config.yml
+
+# Yazi
+mkdir -p ~/.config/yazi/flavors
+cp -R tools/yazi/flavors/*.yazi ~/.config/yazi/flavors/
+# then set [flavor] dark = "bizarre-void" in ~/.config/yazi/theme.toml
+
+# eza
+source tools/eza/bizarre.sh
+
+# Atuin
+mkdir -p ~/.config/atuin/themes
+cp tools/atuin/themes/*.toml ~/.config/atuin/themes/
+# then set [theme] name = "bizarre-void" in ~/.config/atuin/config.toml
+
+# bottom
+# merge one tools/bottom/bizarre-*.toml into ~/.config/bottom/bottom.toml
+
+# K9s
+mkdir -p ~/.config/k9s/skins
+cp tools/k9s/skins/*.yaml ~/.config/k9s/skins/
+# then set skin: bizarre-void in ~/.config/k9s/config.yaml
+
+# ranger
+mkdir -p ~/.config/ranger/colorschemes
+cp tools/ranger/colorschemes/*.py ~/.config/ranger/colorschemes/
+# then set colorscheme bizarre_void in ~/.config/ranger/rc.conf
+
+# vivid
+mkdir -p ~/.config/vivid/themes
+cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
+# then export LS_COLORS="$(vivid generate bizarre-void)"
 \`\`\`
 
 ## Current Coverage
@@ -3071,6 +3869,7 @@ cp tools/jujutsu/config.toml ~/.config/jj/config.toml
 | Editors | VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16 |
 | Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij |
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
+| CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants
@@ -3093,12 +3892,12 @@ function portsDoc() {
     ['Editors', 'VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16'],
     ['Terminals', 'Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij'],
     ['Shells and prompts', 'Bash, Zsh, Fish, PowerShell, Starship'],
+    ['CLI/TUI', 'bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid'],
     ['Desktop and tools', 'AeroSpace, ForkLift, Jujutsu'],
   ];
   const backlog = [
     ['Editors', 'Emacs, Helix, Lapce, Kate, Notepad++, Nova, Cursor, Visual Studio, Xcode, Android Studio'],
     ['Terminals', 'Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box'],
-    ['Shells and CLI/TUI', 'bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid'],
     ['Desktop apps', 'Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser'],
     ['Browser and web', 'Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites'],
     ['Design and devtools', 'Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub readme assets'],

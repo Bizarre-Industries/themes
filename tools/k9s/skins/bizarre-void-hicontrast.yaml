@@ -1,0 +1,51 @@
+# Bizarre Void Hi-Contrast - K9s skin
+k9s:
+  body:
+    fgColor: "#F9F8F2"
+    bgColor: "#000000"
+    logoColor: "#C6FF24"
+  info:
+    fgColor: "#F9F8F2"
+    sectionColor: "#C6FF24"
+  frame:
+    border:
+      fgColor: "#545454"
+      focusColor: "#C6FF24"
+    menu:
+      fgColor: "#B8B8B8"
+      keyColor: "#C6FF24"
+      numKeyColor: "#7BB3FF"
+    crumbs:
+      fgColor: "#0E0E0E"
+      bgColor: "#C6FF24"
+      activeColor: "#E8FF8A"
+    status:
+      newColor: "#5BD06B"
+      modifyColor: "#FFB85C"
+      addColor: "#5BD06B"
+      errorColor: "#FF6F77"
+      highlightColor: "#C6FF24"
+      killColor: "#FF6F77"
+      completedColor: "#7A7A7A"
+    title:
+      fgColor: "#C6FF24"
+      bgColor: "#000000"
+      highlightColor: "#E8FF8A"
+      counterColor: "#7BB3FF"
+      filterColor: "#FFB85C"
+  views:
+    table:
+      fgColor: "#F9F8F2"
+      bgColor: "#000000"
+      cursorColor: "#3A4D0E"
+      header:
+        fgColor: "#C6FF24"
+        bgColor: "#0E0E0E"
+        sorterColor: "#FFB85C"
+    yaml:
+      keyColor: "#7BB3FF"
+      colonColor: "#7A7A7A"
+      valueColor: "#F9F8F2"
+    logs:
+      fgColor: "#F9F8F2"
+      bgColor: "#000000"

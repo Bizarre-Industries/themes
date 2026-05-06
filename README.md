@@ -42,6 +42,8 @@ Every shipped target still gets a generated preview card in `showcase/assets/gen
 
 ![Bizarre desktop and workflow tools](showcase/assets/generated/tools.png)
 
+![Bizarre CLI and TUI tool ports](showcase/assets/generated/cli-tui.png)
+
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
 ## Install Examples
@@ -125,6 +127,60 @@ cp tools/aerospace/aerospace.toml ~/.config/aerospace/aerospace.toml
 # Jujutsu
 mkdir -p ~/.config/jj
 cp tools/jujutsu/config.toml ~/.config/jj/config.toml
+
+# bat
+mkdir -p "$(bat --config-dir)/themes"
+cp tools/bat/themes/*.tmTheme "$(bat --config-dir)/themes/"
+bat cache --build
+
+# btop
+mkdir -p ~/.config/btop/themes
+cp tools/btop/*.theme ~/.config/btop/themes/
+# then set color_theme = "bizarre-void" in ~/.config/btop/btop.conf
+
+# delta
+# add tools/delta/bizarre.gitconfig to your ~/.gitconfig [include] path
+# then set [delta] features = bizarre-void
+
+# dircolors
+eval "$(dircolors tools/dircolors/bizarre.dircolors)"
+
+# fzf
+source tools/fzf/bizarre.sh
+
+# lazygit
+# merge tools/lazygit/config.yml into ~/.config/lazygit/config.yml
+
+# Yazi
+mkdir -p ~/.config/yazi/flavors
+cp -R tools/yazi/flavors/*.yazi ~/.config/yazi/flavors/
+# then set [flavor] dark = "bizarre-void" in ~/.config/yazi/theme.toml
+
+# eza
+source tools/eza/bizarre.sh
+
+# Atuin
+mkdir -p ~/.config/atuin/themes
+cp tools/atuin/themes/*.toml ~/.config/atuin/themes/
+# then set [theme] name = "bizarre-void" in ~/.config/atuin/config.toml
+
+# bottom
+# merge one tools/bottom/bizarre-*.toml into ~/.config/bottom/bottom.toml
+
+# K9s
+mkdir -p ~/.config/k9s/skins
+cp tools/k9s/skins/*.yaml ~/.config/k9s/skins/
+# then set skin: bizarre-void in ~/.config/k9s/config.yaml
+
+# ranger
+mkdir -p ~/.config/ranger/colorschemes
+cp tools/ranger/colorschemes/*.py ~/.config/ranger/colorschemes/
+# then set colorscheme bizarre_void in ~/.config/ranger/rc.conf
+
+# vivid
+mkdir -p ~/.config/vivid/themes
+cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
+# then export LS_COLORS="$(vivid generate bizarre-void)"
 ```
 
 ## Current Coverage
@@ -134,6 +190,7 @@ cp tools/jujutsu/config.toml ~/.config/jj/config.toml
 | Editors | VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16 |
 | Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij |
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
+| CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants

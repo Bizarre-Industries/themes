@@ -1,0 +1,51 @@
+# Bizarre Bone - K9s skin
+k9s:
+  body:
+    fgColor: "#2B2B2B"
+    bgColor: "#F5F2EA"
+    logoColor: "#5F8A0F"
+  info:
+    fgColor: "#2B2B2B"
+    sectionColor: "#5F8A0F"
+  frame:
+    border:
+      fgColor: "#DDD8CB"
+      focusColor: "#5F8A0F"
+    menu:
+      fgColor: "#4A4A4A"
+      keyColor: "#5F8A0F"
+      numKeyColor: "#1F4FB0"
+    crumbs:
+      fgColor: "#F9F8F2"
+      bgColor: "#5F8A0F"
+      activeColor: "#9FCC1F"
+    status:
+      newColor: "#3F7A1F"
+      modifyColor: "#9F4A0E"
+      addColor: "#3F7A1F"
+      errorColor: "#B8276F"
+      highlightColor: "#5F8A0F"
+      killColor: "#B8276F"
+      completedColor: "#857F70"
+    title:
+      fgColor: "#5F8A0F"
+      bgColor: "#F5F2EA"
+      highlightColor: "#9FCC1F"
+      counterColor: "#1F4FB0"
+      filterColor: "#9F4A0E"
+  views:
+    table:
+      fgColor: "#2B2B2B"
+      bgColor: "#F5F2EA"
+      cursorColor: "#D4E89F"
+      header:
+        fgColor: "#5F8A0F"
+        bgColor: "#EDE9DD"
+        sorterColor: "#9F4A0E"
+    yaml:
+      keyColor: "#1F4FB0"
+      colonColor: "#857F70"
+      valueColor: "#2B2B2B"
+    logs:
+      fgColor: "#2B2B2B"
+      bgColor: "#F5F2EA"

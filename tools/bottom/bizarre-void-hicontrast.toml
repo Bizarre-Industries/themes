@@ -1,0 +1,42 @@
+# Bizarre Void Hi-Contrast - bottom
+# Merge into ~/.config/bottom/bottom.toml.
+[styles]
+
+[styles.cpu]
+all_entry_color = "#C6FF24"
+avg_entry_color = "#7BB3FF"
+cpu_core_colors = ["#C6FF24", "#7BB3FF", "#FF9E3D", "#FFB85C", "#D88AE0", "#5BD06B"]
+
+[styles.memory]
+ram_color = "#C6FF24"
+cache_color = "#7BB3FF"
+swap_color = "#FFB85C"
+arc_color = "#FF9E3D"
+gpu_colors = ["#7BB3FF", "#D88AE0", "#FFB85C"]
+
+[styles.network]
+rx_color = "#7BB3FF"
+tx_color = "#C6FF24"
+rx_total_color = "#FF9E3D"
+tx_total_color = "#5BD06B"
+
+[styles.battery]
+high_battery_color = "#5BD06B"
+medium_battery_color = "#FFB85C"
+low_battery_color = "#FF6F77"
+
+[styles.tables]
+headers = { color = "#C6FF24", bg_color = "#0E0E0E", bold = true }
+
+[styles.graphs]
+graph_color = "#C6FF24"
+legend_text = { color = "#B8B8B8", bg_color = "#000000" }
+
+[styles.widgets]
+border_color = "#545454"
+selected_border_color = "#C6FF24"
+widget_title = { color = "#C6FF24", bg_color = "#000000" }
+text = { color = "#F9F8F2", bg_color = "#000000" }
+selected_text = { color = "#F9F8F2", bg_color = "#3A4D0E", bold = true }
+disabled_text = { color = "#545454" }
+thread_text = { color = "#7BB3FF" }

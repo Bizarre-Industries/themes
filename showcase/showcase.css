@@ -107,6 +107,7 @@ body {
 .config-grid.editor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .config-grid.shell-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .config-grid.tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.config-grid.cli-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .config-card { border: 1px solid var(--hairline); border-radius: 6px; overflow: hidden; min-height: 218px; background: var(--bg); color: var(--fgc); display: flex; flex-direction: column; }
 .config-card.light { border-color: var(--hairline-light); }
 .config-title { padding: 14px 14px 10px; border-bottom: 1px solid var(--hairline); font-family: var(--label); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; min-width: 0; }
@@ -162,6 +163,6 @@ body {
   .hero-grid, .pair, .lime-pair, .ansi-dual { grid-template-columns: 1fr; }
   .legend-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .variant-grid { grid-template-columns: 1fr; }
-  .config-grid, .config-grid.vscode-grid, .config-grid.editor-grid, .config-grid.shell-grid, .config-grid.tool-grid { grid-template-columns: 1fr; }
+  .config-grid, .config-grid.vscode-grid, .config-grid.editor-grid, .config-grid.shell-grid, .config-grid.tool-grid, .config-grid.cli-grid { grid-template-columns: 1fr; }
   .section-head { grid-template-columns: 1fr; }
 }

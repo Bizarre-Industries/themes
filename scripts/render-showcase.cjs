@@ -33,6 +33,7 @@ async function screenshot(locator, file) {
     ['[data-shot="editor-themes"]', 'editor-themes.png'],
     ['[data-shot="shells"]', 'shells.png'],
     ['[data-shot="tools"]', 'tools.png'],
+    ['[data-shot="cli-tui"]', 'cli-tui.png'],
     ['[data-shot="shell-banner"]', 'shell-banner.png'],
     ['[data-config-shot="terminal-alacritty"]', 'terminal-colors-alacritty.png'],
     ['[data-config-shot="terminal-kitty"]', 'terminal-colors-kitty.png'],

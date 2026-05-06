@@ -1,0 +1,106 @@
+# Bizarre Industries - delta themes
+# Add to ~/.gitconfig:
+#   [include]
+#       path = /path/to/themes/tools/delta/bizarre.gitconfig
+#   [delta]
+#       features = bizarre-void
+
+[delta "bizarre-void"]
+    dark = true
+    line-numbers = true
+    navigate = true
+    hyperlinks = true
+    commit-decoration-style = box ul #C6FF24
+    file-style = bold #C6FF24
+    file-decoration-style = ul #3D3D3D
+    hunk-header-style = file line-number syntax bold
+    hunk-header-decoration-style = #3D3D3D
+    minus-style = syntax #1A1A1A
+    minus-emph-style = bold syntax #FF6F77
+    plus-style = syntax #1A1A1A
+    plus-emph-style = bold syntax #5BD06B
+    zero-style = syntax
+    line-numbers-left-style = #545454
+    line-numbers-right-style = #545454
+    line-numbers-minus-style = #FF6F77
+    line-numbers-plus-style = #5BD06B
+
+[delta "bizarre-void-hicontrast"]
+    dark = true
+    line-numbers = true
+    navigate = true
+    hyperlinks = true
+    commit-decoration-style = box ul #C6FF24
+    file-style = bold #C6FF24
+    file-decoration-style = ul #545454
+    hunk-header-style = file line-number syntax bold
+    hunk-header-decoration-style = #545454
+    minus-style = syntax #0E0E0E
+    minus-emph-style = bold syntax #FF6F77
+    plus-style = syntax #0E0E0E
+    plus-emph-style = bold syntax #5BD06B
+    zero-style = syntax
+    line-numbers-left-style = #545454
+    line-numbers-right-style = #545454
+    line-numbers-minus-style = #FF6F77
+    line-numbers-plus-style = #5BD06B
+
+[delta "bizarre-workshop"]
+    dark = true
+    line-numbers = true
+    navigate = true
+    hyperlinks = true
+    commit-decoration-style = box ul #C6FF24
+    file-style = bold #C6FF24
+    file-decoration-style = ul #3D3A33
+    hunk-header-style = file line-number syntax bold
+    hunk-header-decoration-style = #3D3A33
+    minus-style = syntax #23211C
+    minus-emph-style = bold syntax #FF6F77
+    plus-style = syntax #23211C
+    plus-emph-style = bold syntax #5BD06B
+    zero-style = syntax
+    line-numbers-left-style = #545040
+    line-numbers-right-style = #545040
+    line-numbers-minus-style = #FF6F77
+    line-numbers-plus-style = #5BD06B
+
+[delta "bizarre-paper"]
+    dark = false
+    line-numbers = true
+    navigate = true
+    hyperlinks = true
+    commit-decoration-style = box ul #5F8A0F
+    file-style = bold #5F8A0F
+    file-decoration-style = ul #D8D4C7
+    hunk-header-style = file line-number syntax bold
+    hunk-header-decoration-style = #D8D4C7
+    minus-style = syntax #F2F0EA
+    minus-emph-style = bold syntax #B8276F
+    plus-style = syntax #F2F0EA
+    plus-emph-style = bold syntax #3F7A1F
+    zero-style = syntax
+    line-numbers-left-style = #A8A395
+    line-numbers-right-style = #A8A395
+    line-numbers-minus-style = #B8276F
+    line-numbers-plus-style = #3F7A1F
+
+[delta "bizarre-bone"]
+    dark = false
+    line-numbers = true
+    navigate = true
+    hyperlinks = true
+    commit-decoration-style = box ul #5F8A0F
+    file-style = bold #5F8A0F
+    file-decoration-style = ul #DDD8CB
+    hunk-header-style = file line-number syntax bold
+    hunk-header-decoration-style = #DDD8CB
+    minus-style = syntax #EDE9DD
+    minus-emph-style = bold syntax #B8276F
+    plus-style = syntax #EDE9DD
+    plus-emph-style = bold syntax #3F7A1F
+    zero-style = syntax
+    line-numbers-left-style = #B0AA9A
+    line-numbers-right-style = #B0AA9A
+    line-numbers-minus-style = #B8276F
+    line-numbers-plus-style = #3F7A1F

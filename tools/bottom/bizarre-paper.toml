@@ -1,0 +1,42 @@
+# Bizarre Paper - bottom
+# Merge into ~/.config/bottom/bottom.toml.
+[styles]
+
+[styles.cpu]
+all_entry_color = "#5F8A0F"
+avg_entry_color = "#1F4FB0"
+cpu_core_colors = ["#5F8A0F", "#1F4FB0", "#A85C1B", "#9F4A0E", "#7E2A9A", "#3F7A1F"]
+
+[styles.memory]
+ram_color = "#5F8A0F"
+cache_color = "#1F4FB0"
+swap_color = "#9F4A0E"
+arc_color = "#A85C1B"
+gpu_colors = ["#1F4FB0", "#7E2A9A", "#9F4A0E"]
+
+[styles.network]
+rx_color = "#1F4FB0"
+tx_color = "#5F8A0F"
+rx_total_color = "#A85C1B"
+tx_total_color = "#3F7A1F"
+
+[styles.battery]
+high_battery_color = "#3F7A1F"
+medium_battery_color = "#9F4A0E"
+low_battery_color = "#B8276F"
+
+[styles.tables]
+headers = { color = "#5F8A0F", bg_color = "#F2F0EA", bold = true }
+
+[styles.graphs]
+graph_color = "#5F8A0F"
+legend_text = { color = "#3D3D3D", bg_color = "#F9F8F2" }
+
+[styles.widgets]
+border_color = "#D8D4C7"
+selected_border_color = "#5F8A0F"
+widget_title = { color = "#5F8A0F", bg_color = "#F9F8F2" }
+text = { color = "#1F1F1F", bg_color = "#F9F8F2" }
+selected_text = { color = "#0E0E0E", bg_color = "#DCEFA8", bold = true }
+disabled_text = { color = "#A8A395" }
+thread_text = { color = "#1F4FB0" }

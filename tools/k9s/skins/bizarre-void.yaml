@@ -1,0 +1,51 @@
+# Bizarre Void - K9s skin
+k9s:
+  body:
+    fgColor: "#E4E4E4"
+    bgColor: "#0E0E0E"
+    logoColor: "#C6FF24"
+  info:
+    fgColor: "#E4E4E4"
+    sectionColor: "#C6FF24"
+  frame:
+    border:
+      fgColor: "#3D3D3D"
+      focusColor: "#C6FF24"
+    menu:
+      fgColor: "#9C9C9C"
+      keyColor: "#C6FF24"
+      numKeyColor: "#7BB3FF"
+    crumbs:
+      fgColor: "#0E0E0E"
+      bgColor: "#C6FF24"
+      activeColor: "#E8FF8A"
+    status:
+      newColor: "#5BD06B"
+      modifyColor: "#FFB85C"
+      addColor: "#5BD06B"
+      errorColor: "#FF6F77"
+      highlightColor: "#C6FF24"
+      killColor: "#FF6F77"
+      completedColor: "#7A7A7A"
+    title:
+      fgColor: "#C6FF24"
+      bgColor: "#0E0E0E"
+      highlightColor: "#E8FF8A"
+      counterColor: "#7BB3FF"
+      filterColor: "#FFB85C"
+  views:
+    table:
+      fgColor: "#E4E4E4"
+      bgColor: "#0E0E0E"
+      cursorColor: "#2B3A0E"
+      header:
+        fgColor: "#C6FF24"
+        bgColor: "#1A1A1A"
+        sorterColor: "#FFB85C"
+    yaml:
+      keyColor: "#7BB3FF"
+      colonColor: "#7A7A7A"
+      valueColor: "#E4E4E4"
+    logs:
+      fgColor: "#E4E4E4"
+      bgColor: "#0E0E0E"

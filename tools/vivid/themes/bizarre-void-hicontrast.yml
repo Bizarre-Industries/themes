@@ -1,0 +1,65 @@
+colors:
+  background_color: '000000'
+  foreground: 'F9F8F2'
+  white: 'F9F8F2'
+  red: 'FF6F77'
+  green: 'C6FF24'
+  yellow: 'FFB85C'
+  blue: '7BB3FF'
+  pink: 'D88AE0'
+  cyan: 'FF9E3D'
+  black: '000000'
+  gray: '7A7A7A'
+  darkgray: '545454'
+  darkergray: '1F1F1F'
+core:
+  normal_text: {}
+  regular_file: {}
+  reset_to_normal: {}
+  directory:
+    foreground: blue
+    font-style: bold
+  symlink:
+    foreground: cyan
+  fifo:
+    foreground: yellow
+  socket:
+    foreground: pink
+  block_device:
+    foreground: cyan
+    background: darkergray
+  character_device:
+    foreground: pink
+    background: darkergray
+  broken_symlink:
+    foreground: black
+    background: red
+  missing_symlink_target:
+    foreground: black
+    background: red
+  executable_file:
+    foreground: green
+    font-style: bold
+text:
+  configuration:
+    foreground: yellow
+  markup:
+    foreground: green
+    font-style: bold
+  programming:
+    source:
+      foreground: cyan
+  tooling:
+    foreground: blue
+  media:
+    foreground: pink
+  office:
+    foreground: blue
+  archives:
+    foreground: yellow
+    font-style: underline
+  executable:
+    foreground: green
+    font-style: bold
+  unimportant:
+    foreground: darkgray
