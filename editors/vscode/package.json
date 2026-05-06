@@ -1,18 +1,42 @@
 {
   "name": "bizarre-themes",
   "displayName": "Bizarre Industries",
-  "description": "CATCH THE STARS. — Code themes for the people already doing the work.",
-  "version": "0.1.0",
+  "description": "CATCH THE STARS. Editor themes for people already doing the work.",
+  "version": "0.2.0",
   "publisher": "bizarre-industries",
-  "engines": { "vscode": "^1.70.0" },
-  "categories": ["Themes"],
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
   "contributes": {
     "themes": [
-      { "label": "Bizarre Void",              "uiTheme": "vs-dark",      "path": "./themes/bizarre-void-color-theme.json" },
-      { "label": "Bizarre Void Hi-Contrast",  "uiTheme": "hc-black",     "path": "./themes/bizarre-void-hicontrast-color-theme.json" },
-      { "label": "Bizarre Workshop",          "uiTheme": "vs-dark",      "path": "./themes/bizarre-workshop-color-theme.json" },
-      { "label": "Bizarre Paper",             "uiTheme": "vs",           "path": "./themes/bizarre-paper-color-theme.json" },
-      { "label": "Bizarre Bone",              "uiTheme": "vs",           "path": "./themes/bizarre-bone-color-theme.json" }
+      {
+        "label": "Bizarre Void",
+        "uiTheme": "vs-dark",
+        "path": "./themes/bizarre-void-color-theme.json"
+      },
+      {
+        "label": "Bizarre Void Hi-Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/bizarre-void-hicontrast-color-theme.json"
+      },
+      {
+        "label": "Bizarre Workshop",
+        "uiTheme": "vs-dark",
+        "path": "./themes/bizarre-workshop-color-theme.json"
+      },
+      {
+        "label": "Bizarre Paper",
+        "uiTheme": "vs",
+        "path": "./themes/bizarre-paper-color-theme.json"
+      },
+      {
+        "label": "Bizarre Bone",
+        "uiTheme": "vs",
+        "path": "./themes/bizarre-bone-color-theme.json"
+      }
     ]
   }
 }

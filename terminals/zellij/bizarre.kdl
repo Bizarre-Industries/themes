@@ -1,43 +1,69 @@
-# Bizarre Industries — Zellij theme
-# CATCH THE STARS.
-#
-# Install: copy to ~/.config/zellij/themes/bizarre.kdl
-# Activate: theme "bizarre"  (in ~/.config/zellij/config.kdl)
-
+// Bizarre Industries - Zellij themes
+// CATCH THE STARS.
 themes {
-    bizarre {
-        fg        "#E4E4E4"
-        bg        "#0E0E0E"
-        black     "#0E0E0E"
-        red       "#F0525B"
-        green     "#3FB950"
-        yellow    "#E8A33D"
-        blue      "#5B9FFF"
-        magenta   "#D88AE0"
-        cyan      "#7AD9D9"
-        white     "#E4E4E4"
-        orange    "#FFB85C"
+    "bizarre-void" {
+        fg "#E4E4E4"
+        bg "#0E0E0E"
+        black "#1A1A1A"
+        red "#F0525B"
+        green "#3FB950"
+        yellow "#E8A33D"
+        blue "#5B9FFF"
+        magenta "#D88AE0"
+        cyan "#7AD9D9"
+        white "#E4E4E4"
+        orange "#FFB85C"
     }
-    bizarre-paper {
-        fg        "#1A1A1A"
-        bg        "#F2F0EA"
-        black     "#1A1A1A"
-        red       "#C13D45"
-        green     "#3F7A1F"
-        yellow    "#9F4A0E"
-        blue      "#1F4FB0"
-        magenta   "#7E2A9A"
-        cyan      "#0F6E6E"
-        white     "#1A1A1A"
-        orange    "#B05E10"
+    "bizarre-void-hicontrast" {
+        fg "#F9F8F2"
+        bg "#000000"
+        black "#000000"
+        red "#F0525B"
+        green "#3FB950"
+        yellow "#E8A33D"
+        blue "#5B9FFF"
+        magenta "#D88AE0"
+        cyan "#7AD9D9"
+        white "#E4E4E4"
+        orange "#FFB85C"
+    }
+    "bizarre-workshop" {
+        fg "#E4E2DA"
+        bg "#1A1815"
+        black "#1A1815"
+        red "#F0525B"
+        green "#3FB950"
+        yellow "#E8A33D"
+        blue "#5B9FFF"
+        magenta "#D88AE0"
+        cyan "#7AD9D9"
+        white "#E4E4E4"
+        orange "#FFB85C"
+    }
+    "bizarre-paper" {
+        fg "#1F1F1F"
+        bg "#F9F8F2"
+        black "#1A1A1A"
+        red "#C13039"
+        green "#3F7A1F"
+        yellow "#9F4A0E"
+        blue "#1F4FB0"
+        magenta "#7E2A9A"
+        cyan "#0F6E6E"
+        white "#545454"
+        orange "#C28225"
+    }
+    "bizarre-bone" {
+        fg "#2B2B2B"
+        bg "#F5F2EA"
+        black "#2B2B2B"
+        red "#C13039"
+        green "#3F7A1F"
+        yellow "#9F4A0E"
+        blue "#1F4FB0"
+        magenta "#7E2A9A"
+        cyan "#0F6E6E"
+        white "#545454"
+        orange "#C28225"
     }
 }
-
-// Recommended UI:
-//   pane_frames false
-//   simplified_ui true
-//   default_layout "compact"
-//
-// The lime hero color (#C6FF24) is reserved for the active-tab indicator
-// via Zellij's `green` slot above. Set in config.kdl:
-//   theme "bizarre"

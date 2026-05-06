@@ -1,3 +1,2 @@
-" bizarre-workshop — Bizarre Industries
-" CATCH THE STARS.
+" bizarre-workshop - Bizarre Industries
 lua require('bizarre').load('bizarre-workshop')

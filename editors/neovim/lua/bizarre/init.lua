@@ -20,7 +20,7 @@ function M.load(name)
   if vim.g.colors_name then vim.cmd('hi clear') end
   if vim.fn.exists('syntax_on') then vim.cmd('syntax reset') end
   vim.o.termguicolors = true
-  vim.o.background = p.type
+  vim.o.background = p.mode
   vim.g.colors_name = name
   require('bizarre.highlights').apply(p)
   require('bizarre.terminal').apply(p)

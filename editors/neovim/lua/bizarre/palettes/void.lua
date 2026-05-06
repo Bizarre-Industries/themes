@@ -1,13 +1,13 @@
 -- Palette: bizarre-void
 return {
-  type = '#5B9FFF',
-  bg = '#0E0E0E', bg2 = '#1A1A1A', bg3 = '#2B2B2B', border = '#3D3D3D',
-  fg = '#E4E4E4', fg2 = '#B8B8B8', fg3 = '#7A7A7A', fg4 = '#545454',
+  mode = 'dark',
+  bg = '#0E0E0E', bg2 = '#1A1A1A', bg3 = '#2B2B2B', bg4 = '#3D3D3D', border = '#3D3D3D',
+  fg = '#E4E4E4', fg2 = '#9C9C9C', fg3 = '#7A7A7A', fg4 = '#545454',
   accent = '#C6FF24', accent2 = '#E8FF8A',
-  keyword = '#E8FF8A', string = '#B8B8B8', number = '#E8A33D',
-  func = '#C6FF24', type = '#5B9FFF', constant = '#D88AE0',
-  regex = '#7AD9D9', comment = '#7A7A7A',
-  danger = '#F0525B', warn = '#E8A33D', success = '#3FB950', info = '#5B9FFF',
-  selBg = '#2B2B2B', lineHL = '#1A1A1A',
-  term = { [0] = '#1F1F1F', [1] = '#C13039', [2] = '#5E7A00', [3] = '#A06C1A', [4] = '#2C5FA0', [5] = '#8C4A95', [6] = '#3F8C8C', [7] = '#545454', [8] = '#7A7A7A', [9] = '#E04050', [10] = '#5E7A00', [11] = '#C28225', [12] = '#3D78C7', [13] = '#A55EAF', [14] = '#4FA3A3', [15] = '#0E0E0E' },
+  keyword = '#FF8FCF', string = '#E8A33D', number = '#7BB3FF',
+  func = '#C6FF24', type = '#7AD9D9', constant = '#9DD0FF',
+  regex = '#FF9E3D', comment = '#6F6F6F',
+  danger = '#FF6F77', warn = '#FFB85C', success = '#5BD06B', info = '#7BB3FF',
+  selBg = '#2B3A0E', lineHL = '#1A1A1A',
+  term = { [0] = '#1A1A1A', [1] = '#F0525B', [2] = '#3FB950', [3] = '#E8A33D', [4] = '#5B9FFF', [5] = '#D88AE0', [6] = '#7AD9D9', [7] = '#E4E4E4', [8] = '#3D3D3D', [9] = '#FF6F77', [10] = '#C6FF24', [11] = '#FFB85C', [12] = '#7BB3FF', [13] = '#E8A8EE', [14] = '#9DEAEA', [15] = '#FFFFFF' },
 }

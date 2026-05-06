@@ -1,52 +1,35 @@
-# Bizarre Void Hi-Contrast — Alacritty
-# CATCH THE STARS.
-#
-# Drop in ~/.config/alacritty/themes/bizarre-void-hicontrast.toml then in alacritty.toml:
-#   [general]
-#   import = ["~/.config/alacritty/themes/bizarre-void-hicontrast.toml"]
-
+# Bizarre Void Hi-Contrast - Alacritty
 [colors.primary]
 background = "#000000"
 foreground = "#F9F8F2"
-dim_foreground = "#E4E4E4"
-bright_foreground = "#FFFFFF"
 
 [colors.cursor]
-text  = "#000000"
-cursor = "#C6FF24"
-
-[colors.vi_mode_cursor]
-text  = "#000000"
+text = "#0E0E0E"
 cursor = "#C6FF24"
 
 [colors.selection]
-text       = "#FFFFFF"
-background = "#1F1F1F"
+text = "#F9F8F2"
+background = "#3A4D0E"
 
 [colors.normal]
-black   = "#000000"
-red     = "#F0525B"
-green   = "#9BC73C"
-yellow  = "#E8A33D"
-blue    = "#5B9FFF"
+black = "#000000"
+red = "#F0525B"
+green = "#3FB950"
+yellow = "#E8A33D"
+blue = "#5B9FFF"
 magenta = "#D88AE0"
-cyan    = "#7AD9D9"
-white   = "#E4E4E4"
+cyan = "#7AD9D9"
+white = "#E4E4E4"
 
 [colors.bright]
-black   = "#545454"
-red     = "#FF6B73"
-green   = "#C6FF24"
-yellow  = "#FFC25A"
-blue    = "#7FB7FF"
+black = "#3D3D3D"
+red = "#FF6F77"
+green = "#C6FF24"
+yellow = "#FFB85C"
+blue = "#7BB3FF"
 magenta = "#E8A8EE"
-cyan    = "#9DE5E5"
-white   = "#FFFFFF"
+cyan = "#9DEAEA"
+white = "#FFFFFF"
 
-[[colors.indexed_colors]]
-index = 16
-color = "#E8A33D"
-
-[[colors.indexed_colors]]
-index = 17
-color = "#F0525B"
+[font]
+normal = { family = "Monaspace Neon" }

@@ -1,32 +1,35 @@
-# Bizarre — Bizarre · Void (Midnight) — Alacritty
+# Bizarre Void - Alacritty
 [colors.primary]
 background = "#0E0E0E"
 foreground = "#E4E4E4"
 
 [colors.cursor]
-text   = "#0E0E0E"
+text = "#0E0E0E"
 cursor = "#C6FF24"
 
 [colors.selection]
-text       = "#0E0E0E"
-background = "#C6FF24"
+text = "#F9F8F2"
+background = "#2B3A0E"
 
 [colors.normal]
-black   = "#0E0E0E"
-red     = "#F0525B"
-green   = "#3FB950"
-yellow  = "#E8A33D"
-blue    = "#5B9FFF"
+black = "#1A1A1A"
+red = "#F0525B"
+green = "#3FB950"
+yellow = "#E8A33D"
+blue = "#5B9FFF"
 magenta = "#D88AE0"
-cyan    = "#7AD9D9"
-white   = "#E4E4E4"
+cyan = "#7AD9D9"
+white = "#E4E4E4"
 
 [colors.bright]
-black   = "#3D3D3D"
-red     = "#FF6F77"
-green   = "#5BD06B"
-yellow  = "#FFB85C"
-blue    = "#7BB3FF"
+black = "#3D3D3D"
+red = "#FF6F77"
+green = "#C6FF24"
+yellow = "#FFB85C"
+blue = "#7BB3FF"
 magenta = "#E8A8EE"
-cyan    = "#9DEAEA"
-white   = "#FFFFFF"
+cyan = "#9DEAEA"
+white = "#FFFFFF"
+
+[font]
+normal = { family = "Monaspace Neon" }

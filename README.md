@@ -1,51 +1,27 @@
-# BIZARRE INDUSTRIES — Editor & Terminal Themes
+# BIZARRE INDUSTRIES - Editor, Terminal, Shell, And Tool Themes
 
-`BZR / DOTFILES / V0.1 / APR 2026`
+`BZR / THEMES / V0.2 / MAY 2026`
 
-A complete theming bundle for code editors, terminal emulators, and shells — all derived from the [Bizarre Industries design system](https://bizarre.industries) and **CATCH THE STARS.**
+A generated theming bundle for editors, terminals, shells, prompts, window managers, and desktop tools. One palette, five variants, GitHub Monaspace typography, and one rule: CATCH THE STARS.
 
-## What's in here
+![Bizarre theme showcase hero](showcase/assets/generated/hero.png)
 
-```
-.
-├── PALETTE.md            ← the single source of truth
-├── showcase/             ← interactive HTML preview (open showcase/index.html)
-│
-├── editors/
-│   ├── vscode/           ← VS Code extension (5 variants)
-│   ├── sublime/          ← .sublime-color-scheme + .sublime-theme
-│   ├── jetbrains/        ← IntelliJ / PyCharm / WebStorm (.icls)
-│   ├── zed/              ← Zed (.json)
-│   ├── neovim/           ← pure Lua colorscheme + plugin
-│   ├── neovim-base16/    ← base16 / tinted-theming compatible
-│   └── vim/              ← classic Vim (.vim)
-│
-├── terminals/
-│   ├── kitty/            ← .conf
-│   ├── wezterm/          ← .lua
-│   ├── alacritty/        ← .toml
-│   ├── iterm2/           ← .itermcolors (5 variants)
-│   ├── ghostty/          ← .conf
-│   ├── windows-terminal/ ← schema fragment for settings.json
-│   └── tmux/             ← .tmux.conf statusline
-│
-├── shells/
-│   ├── banner/           ← BIZARRE INDUSTRIES launch banner
-│   │   ├── bizarre.zsh
-│   │   ├── bizarre.bash
-│   │   ├── bizarre.fish
-│   │   └── bizarre.ps1
-│   └── manifesto.txt     ← rotating quote pool
-│
-└── prompt/
-    └── starship.toml     ← powerline-style ✦ prompt
-```
+## Showcase
 
-## Install (cherry-pick what you use)
+Open [showcase/index.html](showcase/index.html) locally for the interactive preview. The README images below are rendered from that same showcase.
+
+![Bizarre generated variants](showcase/assets/generated/variants.png)
+
+![Bizarre syntax roles](showcase/assets/generated/syntax.png)
+
+## Install Examples
 
 ```bash
-# Banner — first shell of the day shows BIZARRE INDUSTRIES + slogan
-echo 'source ~/dotfiles/bizarre/shells/banner/bizarre.zsh' >> ~/.zshrc
+# Generate every config from palette.js
+npm run generate
+
+# Verify generated files are current
+npm test
 
 # Starship prompt
 cp prompt/starship.toml ~/.config/starship.toml
@@ -57,41 +33,53 @@ cp terminals/kitty/bizarre-void.conf ~/.config/kitty/themes/
 mkdir -p ~/.config/alacritty/themes
 cp terminals/alacritty/*.toml ~/.config/alacritty/themes/
 
-# Neovim (Lua plugin)
+# Ghostty
+cp terminals/ghostty/bizarre-void ~/.config/ghostty/themes/
+
+# Neovim
 ln -s "$PWD/editors/neovim" ~/.config/nvim/pack/bizarre/start/bizarre.nvim
 # then in init.lua: vim.cmd.colorscheme('bizarre-void')
 
 # tmux
 echo 'source-file ~/dotfiles/bizarre/terminals/tmux/bizarre.tmux.conf' >> ~/.tmux.conf
 
-# VS Code (local install, no marketplace)
+# VS Code
 ln -s "$PWD/editors/vscode" ~/.vscode/extensions/bizarre-industries.bizarre-themes
 
 # iTerm2
 open terminals/iterm2/bizarre-void.itermcolors
 
-# Windows Terminal — paste the schemas[] entries from terminals/windows-terminal/schemas.json
+# Zellij
+mkdir -p ~/.config/zellij/themes
+cp terminals/zellij/bizarre.kdl ~/.config/zellij/themes/
+
+# Windows Terminal
+# paste terminals/windows-terminal/schemes.json schemes into settings.json
 ```
+
+## Current Coverage
+
+| Family | Targets |
+|---|---|
+| Editors | VS Code, Zed, JetBrains, Sublime Text, Vim, Neovim, Neovim Base16 |
+| Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij |
+| Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
+| Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants
 
-Five flavors. All ship for every editor and terminal:
-
 | Variant | Mood |
 |---|---|
-| **Bizarre Void** | the default — pure void, lime accent |
-| **Bizarre Void Hi-Contrast** | pure black, max lime — projector / OLED |
-| **Bizarre Workshop** | warmer dark, less pure void — long sessions |
-| **Bizarre Paper** | the default light — warm off-white, acid-lime-ink |
-| **Bizarre Bone** | softer light, warmer neutrals |
+| Bizarre Void | pure void · lime accent · the default |
+| Bizarre Void Hi-Contrast | pure black · max lime · OLED / projector |
+| Bizarre Workshop | warm dark · lower contrast · long sessions |
+| Bizarre Paper | warm off-white · lime ink · the default light |
+| Bizarre Bone | softer light · warmer neutrals |
 
-## The brand
+## Source Of Truth
 
-> Three non-negotiables:
-> 1. The mark appears in **Signal Lime** and **Void Gray**, or monochrome. Never other colors.
-> 2. The slogan is **CATCH THE STARS** — never stacked with the mark, always standing alone.
-> 3. The voice is **second-person, promotion-focused, never anti-establishment**.
+- Palette: [palette.js](palette.js)
+- Palette spec: [PALETTE.md](PALETTE.md)
+- Port roadmap: [PORTS.md](PORTS.md)
 
-Lime is reserved for **function names** in code (the structural hero) and **diagnostics** (errors, cursor, breakpoints) in editors. Strings are gray. Comments are italic ash. Numbers are warn-amber. Types are info-blue. Constants are magenta. The brand 60-30-10 holds: most of the screen is void or paper, the rest is ash, and a sparse 10% is lime where it earns it.
-
-CATCH THE STARS.
+Signal Lime is reserved for functions, cursors, focus rings, and active command surfaces. Light variants use Lime Ink where raw Signal Lime would fail as text.

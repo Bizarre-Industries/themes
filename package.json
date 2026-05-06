@@ -1,0 +1,20 @@
+{
+  "name": "bizarre-themes",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Bizarre Industries editor, terminal, shell, and tool themes.",
+  "scripts": {
+    "generate": "node scripts/generate.cjs",
+    "check:generated": "node scripts/check-generated.cjs",
+    "render:showcase": "node scripts/render-showcase.cjs",
+    "validate": "node scripts/validate.cjs",
+    "test": "npm run check:generated && npm run validate"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "playwright": "^1.52.0"
+  }
+}

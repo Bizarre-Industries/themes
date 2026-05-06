@@ -1,22 +1,25 @@
 {
-  "name": "Bizarre · Void (Midnight)",
+  "name": "Bizarre Void",
   "author": "Bizarre Industries",
   "variables": {
-    "lime": "#C6FF24",
-    "glow": "#E8FF8A",
-    "ink": "#5F8A0F"
-  },
-  "globals": {
     "background": "#0E0E0E",
     "foreground": "#E4E4E4",
     "caret": "#C6FF24",
-    "line_highlight": "#1F1F1F",
-    "selection": "#C6FF2433",
-    "gutter": "#0E0E0E",
-    "gutter_foreground": "#9C9C9C",
     "accent": "#C6FF24",
-    "misspelling": "#FF6F77",
-    "find_highlight": "#C6FF24"
+    "selection": "#2B3A0E",
+    "line": "#1A1A1A",
+    "border": "#3D3D3D"
+  },
+  "globals": {
+    "background": "var(background)",
+    "foreground": "var(foreground)",
+    "caret": "var(caret)",
+    "selection": "var(selection)",
+    "line_highlight": "var(line)",
+    "gutter": "var(background)",
+    "gutter_foreground": "#545454",
+    "invisibles": "#2B2B2B",
+    "accent": "var(accent)"
   },
   "rules": [
     {
@@ -26,7 +29,7 @@
       "font_style": "italic"
     },
     {
-      "name": "Doc comment",
+      "name": "Doc Comment",
       "scope": "comment.block.documentation",
       "foreground": "#9AB585",
       "font_style": "italic"
@@ -48,35 +51,28 @@
       "font_style": "bold"
     },
     {
-      "name": "Regex",
-      "scope": "string.regexp",
-      "foreground": "#FF9E3D",
-      "font_style": "italic"
-    },
-    {
       "name": "Number",
       "scope": "constant.numeric",
       "foreground": "#7BB3FF"
     },
     {
-      "name": "Bool",
-      "scope": "constant.language",
+      "name": "Boolean",
+      "scope": "constant.language.boolean, constant.language.null",
       "foreground": "#5B9FFF",
       "font_style": "bold"
     },
     {
       "name": "Constant",
-      "scope": "variable.other.constant, entity.name.constant",
-      "foreground": "#9DD0FF",
-      "font_style": "bold"
+      "scope": "constant, variable.other.constant",
+      "foreground": "#9DD0FF"
     },
     {
-      "name": "Keyword control",
+      "name": "Keyword Control",
       "scope": "keyword.control",
       "foreground": "#FF8FCF"
     },
     {
-      "name": "Keyword decl",
+      "name": "Keyword Declaration",
       "scope": "storage.type, keyword.declaration",
       "foreground": "#D88AE0"
     },
@@ -92,34 +88,29 @@
       "foreground": "#9DEAEA"
     },
     {
-      "name": "Punctuation",
-      "scope": "punctuation",
-      "foreground": "#7A7A7A"
-    },
-    {
-      "name": "Type",
-      "scope": "entity.name.type, entity.name.class, support.type, support.class",
-      "foreground": "#7AD9D9"
-    },
-    {
-      "name": "Primitive",
-      "scope": "storage.type.primitive, support.type.primitive",
-      "foreground": "#7AD9D9",
-      "font_style": "italic"
-    },
-    {
       "name": "Function",
       "scope": "entity.name.function, support.function",
       "foreground": "#C6FF24"
     },
     {
       "name": "Method",
-      "scope": "meta.function-call entity.name.function, variable.function",
+      "scope": "entity.name.function.member",
       "foreground": "#A8E658"
     },
     {
+      "name": "Type",
+      "scope": "entity.name.type, support.type",
+      "foreground": "#7AD9D9"
+    },
+    {
+      "name": "Primitive Type",
+      "scope": "support.type.primitive",
+      "foreground": "#7AD9D9",
+      "font_style": "italic"
+    },
+    {
       "name": "Property",
-      "scope": "variable.other.property, variable.other.object.property",
+      "scope": "variable.other.property",
       "foreground": "#C6E58B"
     },
     {
@@ -129,57 +120,25 @@
       "font_style": "italic"
     },
     {
-      "name": "Self/this",
-      "scope": "variable.language.this, variable.language.self",
-      "foreground": "#FF8FCF",
-      "font_style": "italic"
-    },
-    {
       "name": "Namespace",
-      "scope": "entity.name.namespace, support.module",
+      "scope": "entity.name.namespace",
       "foreground": "#9DEAEA"
     },
     {
-      "name": "Decorator",
-      "scope": "meta.decorator, punctuation.decorator",
-      "foreground": "#FF8FCF",
-      "font_style": "italic"
-    },
-    {
-      "name": "Preprocessor",
-      "scope": "meta.preprocessor, keyword.other.preprocessor",
-      "foreground": "#B989E5"
-    },
-    {
       "name": "Tag",
-      "scope": "entity.name.tag, meta.tag",
+      "scope": "entity.name.tag",
       "foreground": "#FF8FCF"
     },
     {
-      "name": "Attr",
+      "name": "Attribute",
       "scope": "entity.other.attribute-name",
       "foreground": "#C6FF24"
     },
     {
-      "name": "Markup heading",
-      "scope": "markup.heading",
-      "foreground": "#C6FF24",
+      "name": "Invalid",
+      "scope": "invalid",
+      "foreground": "#FF6F77",
       "font_style": "bold"
-    },
-    {
-      "name": "Inserted",
-      "scope": "markup.inserted",
-      "foreground": "#5BD06B"
-    },
-    {
-      "name": "Deleted",
-      "scope": "markup.deleted",
-      "foreground": "#FF6F77"
-    },
-    {
-      "name": "Changed",
-      "scope": "markup.changed",
-      "foreground": "#FFB85C"
     }
   ]
 }

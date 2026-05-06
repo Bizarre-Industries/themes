@@ -1,13 +1,13 @@
 -- Palette: bizarre-paper
 return {
-  type = '#2C5FA0',
-  bg = '#F9F8F2', bg2 = '#F5F2EA', bg3 = '#E4E4E4', border = '#D8D4C8',
-  fg = '#1F1F1F', fg2 = '#545454', fg3 = '#7A7A7A', fg4 = '#B8B8B8',
-  accent = '#5E7A00', accent2 = '#9BC73C',
-  keyword = '#5E7A00', string = '#545454', number = '#A06C1A',
-  func = '#5E7A00', type = '#2C5FA0', constant = '#8C4A95',
-  regex = '#3F8C8C', comment = '#7A7A7A',
-  danger = '#C13039', warn = '#A06C1A', success = '#2A8439', info = '#2C5FA0',
-  selBg = '#E4E4E4', lineHL = '#F5F2EA',
-  term = { [0] = '#1F1F1F', [1] = '#C13039', [2] = '#5E7A00', [3] = '#A06C1A', [4] = '#2C5FA0', [5] = '#8C4A95', [6] = '#3F8C8C', [7] = '#545454', [8] = '#7A7A7A', [9] = '#E04050', [10] = '#5E7A00', [11] = '#C28225', [12] = '#3D78C7', [13] = '#A55EAF', [14] = '#4FA3A3', [15] = '#0E0E0E' },
+  mode = 'light',
+  bg = '#F9F8F2', bg2 = '#F2F0EA', bg3 = '#E6E3DA', bg4 = '#D8D4C7', border = '#D8D4C7',
+  fg = '#1F1F1F', fg2 = '#3D3D3D', fg3 = '#7A7568', fg4 = '#A8A395',
+  accent = '#5F8A0F', accent2 = '#9FCC1F',
+  keyword = '#B8276F', string = '#9F4A0E', number = '#1F4FB0',
+  func = '#5F8A0F', type = '#0F6E6E', constant = '#2F5DC2',
+  regex = '#A85C1B', comment = '#9A9482',
+  danger = '#B8276F', warn = '#9F4A0E', success = '#3F7A1F', info = '#1F4FB0',
+  selBg = '#DCEFA8', lineHL = '#F2F0EA',
+  term = { [0] = '#1A1A1A', [1] = '#C13039', [2] = '#3F7A1F', [3] = '#9F4A0E', [4] = '#1F4FB0', [5] = '#7E2A9A', [6] = '#0F6E6E', [7] = '#545454', [8] = '#7A7568', [9] = '#E04050', [10] = '#5F8A0F', [11] = '#C28225', [12] = '#3D78C7', [13] = '#A55EAF', [14] = '#4FA3A3', [15] = '#0E0E0E' },
 }

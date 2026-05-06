@@ -1,16 +1,11 @@
-# Bizarre Industries — Starship prompt
+# Bizarre Industries - Starship prompt
 # CATCH THE STARS.
-#
-# Powerline-style:
-#   [bzr][~/path][branch?][status?] ✦
-#
-# Install:  cp prompt/starship.toml ~/.config/starship.toml
 
 format = """
 [](#C6FF24)\
 [ bzr ](bg:#C6FF24 fg:#0E0E0E bold)\
 [](fg:#C6FF24 bg:#1A1A1A)\
-[ $directory](bg:#1A1A1A fg:#5B9FFF)\
+[ $directory](bg:#1A1A1A fg:#7BB3FF)\
 [](fg:#1A1A1A bg:#2B2B2B)\
 $git_branch\
 $git_status\
@@ -25,27 +20,27 @@ $golang\
 $lua\
 $time\
 $line_break\
-[✦](fg:#E8FF8A bold) \
+[✦ ](fg:#E8FF8A bold)
 """
 
 add_newline = true
 palette = "bizarre"
 
 [palettes.bizarre]
-lime    = "#C6FF24"
-glow    = "#E8FF8A"
-gray    = "#7A7A7A"
-ash     = "#545454"
-fg      = "#E4E4E4"
-void    = "#0E0E0E"
-void2   = "#1A1A1A"
-void3   = "#2B2B2B"
-void4   = "#3D3D3D"
-blue    = "#5B9FFF"
-amber   = "#E8A33D"
-red     = "#F0525B"
-green   = "#3FB950"
-cyan    = "#7AD9D9"
+lime = "#C6FF24"
+glow = "#E8FF8A"
+gray = "#7A7A7A"
+ash = "#545454"
+fg = "#E4E4E4"
+void = "#0E0E0E"
+void2 = "#1A1A1A"
+void3 = "#2B2B2B"
+void4 = "#3D3D3D"
+blue = "#7BB3FF"
+amber = "#FFB85C"
+red = "#FF6F77"
+green = "#5BD06B"
+cyan = "#FF9E3D"
 magenta = "#D88AE0"
 
 [fill]
@@ -53,19 +48,19 @@ symbol = " "
 style = "bg:none"
 
 [directory]
-style = "bg:#1A1A1A fg:#5B9FFF bold"
+style = "bg:#1A1A1A fg:#7BB3FF bold"
 format = "[$path]($style)[$read_only]($read_only_style) "
 truncation_length = 4
 truncation_symbol = "…/"
 read_only = " "
-read_only_style = "bg:#1A1A1A fg:#F0525B"
+read_only_style = "bg:#1A1A1A fg:#FF6F77"
 
 [directory.substitutions]
-"~"        = "~"
+"~" = "~"
 "Documents" = "docs"
 "Downloads" = "dl"
-"Music"     = "♪"
-"Pictures"  = "pix"
+"Music" = "♪"
+"Pictures" = "pix"
 
 [git_branch]
 symbol = " "
@@ -73,33 +68,33 @@ style = "bg:#2B2B2B fg:#C6FF24"
 format = "[ $symbol$branch(:$remote_branch) ]($style)"
 
 [git_status]
-style = "bg:#2B2B2B fg:#E8A33D"
+style = "bg:#2B2B2B fg:#FFB85C"
 format = '([$all_status$ahead_behind ]($style))'
-conflicted = "[≢$count](bg:#2B2B2B fg:#F0525B) "
+conflicted = "[≢$count](bg:#2B2B2B fg:#FF6F77) "
 ahead = "↑${count} "
 behind = "↓${count} "
 diverged = "↑${ahead_count}↓${behind_count} "
 up_to_date = ""
 untracked = "[?$count](bg:#2B2B2B fg:#7A7A7A) "
 stashed = "[*$count](bg:#2B2B2B fg:#D88AE0) "
-modified = "[~$count](bg:#2B2B2B fg:#E8A33D) "
-staged = "[+$count](bg:#2B2B2B fg:#3FB950) "
-renamed = "[»$count](bg:#2B2B2B fg:#5B9FFF) "
-deleted = "[✗$count](bg:#2B2B2B fg:#F0525B) "
+modified = "[~$count](bg:#2B2B2B fg:#FFB85C) "
+staged = "[+$count](bg:#2B2B2B fg:#5BD06B) "
+renamed = "[»$count](bg:#2B2B2B fg:#7BB3FF) "
+deleted = "[✗$count](bg:#2B2B2B fg:#FF6F77) "
 
 [cmd_duration]
 min_time = 2_000
-style = "fg:#E8A33D"
+style = "fg:#FFB85C"
 format = "[ ⏱ $duration]($style) "
 
 [status]
-style = "fg:#F0525B bold"
+style = "fg:#FF6F77 bold"
 symbol = "✗ "
 success_symbol = ""
-not_executable_symbol = "🚫"
+not_executable_symbol = "!"
 not_found_symbol = "?"
-sigint_symbol = "⚡"
-signal_symbol = "⚡"
+sigint_symbol = "!"
+signal_symbol = "!"
 disabled = false
 format = "[$symbol$status]($style) "
 
@@ -113,30 +108,29 @@ time_format = "%R"
 success_symbol = ""
 error_symbol = ""
 
-# ── language / runtime modules ──
 [python]
 symbol = "py "
-style = "fg:#5B9FFF"
+style = "fg:#7BB3FF"
 format = '[$symbol($version )(\($virtualenv\) )]($style)'
 
 [nodejs]
 symbol = "node "
-style = "fg:#3FB950"
+style = "fg:#5BD06B"
 format = '[$symbol($version )]($style)'
 
 [rust]
 symbol = "rs "
-style = "fg:#E8A33D"
+style = "fg:#FFB85C"
 format = '[$symbol($version )]($style)'
 
 [golang]
 symbol = "go "
-style = "fg:#7AD9D9"
+style = "fg:#FF9E3D"
 format = '[$symbol($version )]($style)'
 
 [lua]
 symbol = "lua "
-style = "fg:#5B9FFF"
+style = "fg:#7BB3FF"
 format = '[$symbol($version )]($style)'
 
 [hostname]
@@ -147,5 +141,5 @@ format = "[@$hostname ]($style)"
 [username]
 show_always = false
 style_user = "fg:#E4E4E4"
-style_root = "fg:#F0525B bold"
+style_root = "fg:#FF6F77 bold"
 format = "[$user]($style)"
