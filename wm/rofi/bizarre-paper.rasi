@@ -1,0 +1,32 @@
+/* Bizarre Paper for Rofi */
+* {
+  background: #F9F8F2;
+  background-alt: #F2F0EA;
+  foreground: #1F1F1F;
+  muted: #3D3D3D;
+  accent: #5F8A0F;
+  urgent: #B8276F;
+  border-color: #D8D4C7;
+}
+window {
+  background-color: @background;
+  text-color: @foreground;
+  border: 1px;
+  border-color: @border-color;
+  padding: 16px;
+}
+mainbox {
+  background-color: @background;
+}
+inputbar,
+listview {
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+element {
+  text-color: @muted;
+}
+element selected {
+  background-color: @accent;
+  text-color: #F9F8F2;
+}

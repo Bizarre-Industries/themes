@@ -39,6 +39,7 @@ async function screenshot(locator, file) {
     ['[data-shot="desktop-apps"]', 'desktop-apps.png'],
     ['[data-shot="browser-web"]', 'browser-web.png'],
     ['[data-shot="design-devtools-docs"]', 'design-devtools-docs.png'],
+    ['[data-shot="window-managers"]', 'window-managers.png'],
     ['[data-shot="shell-banner"]', 'shell-banner.png'],
     ['[data-config-shot="terminal-alacritty"]', 'terminal-colors-alacritty.png'],
     ['[data-config-shot="terminal-kitty"]', 'terminal-colors-kitty.png'],

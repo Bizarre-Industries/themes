@@ -1,0 +1,32 @@
+/* Bizarre Void Hi-Contrast for Rofi */
+* {
+  background: #000000;
+  background-alt: #0E0E0E;
+  foreground: #F9F8F2;
+  muted: #B8B8B8;
+  accent: #C6FF24;
+  urgent: #FF6F77;
+  border-color: #545454;
+}
+window {
+  background-color: @background;
+  text-color: @foreground;
+  border: 1px;
+  border-color: @border-color;
+  padding: 16px;
+}
+mainbox {
+  background-color: @background;
+}
+inputbar,
+listview {
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+element {
+  text-color: @muted;
+}
+element selected {
+  background-color: @accent;
+  text-color: #0E0E0E;
+}

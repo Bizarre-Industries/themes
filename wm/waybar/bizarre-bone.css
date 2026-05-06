@@ -1,0 +1,52 @@
+/* Bizarre Bone for Waybar */
+:root {
+  --bizarre-bg: #F5F2EA;
+  --bizarre-bg-2: #EDE9DD;
+  --bizarre-bg-3: #DDD8CB;
+  --bizarre-fg: #2B2B2B;
+  --bizarre-dim: #4A4A4A;
+  --bizarre-border: #DDD8CB;
+  --bizarre-accent: #5F8A0F;
+  --bizarre-selection: #D4E89F;
+  --bizarre-error: #B8276F;
+  --bizarre-warn: #9F4A0E;
+  --bizarre-ok: #3F7A1F;
+  --bizarre-info: #1F4FB0;
+  --bizarre-string: #9F4A0E;
+  --bizarre-function: #5F8A0F;
+  --bizarre-keyword: #B8276F;
+}
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Monaspace Neon", monospace;
+}
+window,
+#waybar,
+#window,
+#workspaces,
+#tray,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#custom-bizarre {
+  background: var(--bizarre-bg);
+  color: var(--bizarre-fg);
+}
+#workspaces button,
+#custom-bizarre {
+  color: var(--bizarre-dim);
+  padding: 0 10px;
+}
+#workspaces button.focused,
+#workspaces button.active {
+  background: var(--bizarre-accent);
+  color: #F9F8F2;
+}
+.warning {
+  color: var(--bizarre-warn);
+}
+.critical {
+  color: var(--bizarre-error);
+}

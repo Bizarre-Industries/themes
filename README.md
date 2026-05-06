@@ -54,6 +54,8 @@ Every shipped target still gets a generated preview card in `showcase/assets/gen
 
 ![Bizarre design devtool and docs ports](showcase/assets/generated/design-devtools-docs.png)
 
+![Bizarre OS and window manager ports](showcase/assets/generated/window-managers.png)
+
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
 ## Install Examples
@@ -341,6 +343,33 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 
 # LaTeX, Typst, Beamer, reveal.js
 # merge files from docs-sites/latex, docs-sites/typst, docs-sites/beamer, and docs-sites/reveal.js
+
+# Hyprland
+# source one wm/hyprland/bizarre-*.conf file from hyprland.conf
+
+# Sway
+# include one wm/sway/bizarre-*.conf file from config
+
+# i3
+# include one wm/i3/bizarre-*.conf file from config
+
+# Waybar
+# import one wm/waybar/bizarre-*.css file from style.css
+
+# Polybar
+# include one wm/polybar/bizarre-*.ini file from config.ini
+
+# SketchyBar
+# source wm/sketchybar/bizarre.sh from your bar setup
+
+# yabai
+# source wm/yabai/bizarre.sh from yabairc
+
+# rofi
+# copy one wm/rofi/bizarre-*.rasi file into ~/.config/rofi/themes/
+
+# wofi
+# import one wm/wofi/bizarre-*.css file from style.css
 ```
 
 ## Current Coverage
@@ -355,6 +384,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | Browser and web | Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites |
 | Design and devtools | Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub README assets |
 | Docs and content | MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js |
+| OS and window managers | Hyprland, Sway, i3, Waybar, Polybar, SketchyBar, yabai, rofi, wofi |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants

@@ -117,6 +117,7 @@ for (const file of [
   ...files('terminals/tilix', (file) => file.endsWith('.dconf')).map(rel),
   ...files('terminals/xfce-terminal', (file) => file.endsWith('.theme')).map(rel),
   ...files('apps/spotify', (file) => file.endsWith('.ini')).map(rel),
+  ...files('wm/polybar', (file) => file.endsWith('.ini')).map(rel),
 ]) {
   try {
     INI.parse(fs.readFileSync(path.join(root, file), 'utf8'));
@@ -137,6 +138,8 @@ for (const file of [
   ...files('docs-sites/mkdocs', (file) => file.endsWith('.css')).map(rel),
   ...files('docs-sites/reveal.js', (file) => file.endsWith('.css')).map(rel),
   ...files('docs-sites/sphinx', (file) => file.endsWith('.css')).map(rel),
+  ...files('wm/waybar', (file) => file.endsWith('.css')).map(rel),
+  ...files('wm/wofi', (file) => file.endsWith('.css')).map(rel),
   ...files('web/arc', (file) => file.endsWith('.css')).map(rel),
   ...files('web/documentation-sites', (file) => file.endsWith('.css')).map(rel),
   ...files('web/userstyles', (file) => file.endsWith('.css')).map(rel),
@@ -201,6 +204,8 @@ run('zsh', ['-n', 'shells/banner/bizarre.zsh'], 'zsh banner');
 run('bash', ['-n', 'terminals/gnome-terminal/bizarre.sh'], 'bash gnome terminal');
 run('bash', ['-n', 'tools/fzf/bizarre.sh'], 'bash fzf');
 run('bash', ['-n', 'tools/eza/bizarre.sh'], 'bash eza');
+run('bash', ['-n', 'wm/sketchybar/bizarre.sh'], 'bash sketchybar');
+run('bash', ['-n', 'wm/yabai/bizarre.sh'], 'bash yabai');
 run('fish', ['-n', 'shells/banner/bizarre.fish'], 'fish banner', true);
 run('pwsh', ['-NoProfile', '-Command', "$null = [scriptblock]::Create((Get-Content -Raw 'shells/banner/bizarre.ps1'))"], 'powershell banner', true);
 
@@ -266,6 +271,27 @@ for (const file of files('devtools/dbeaver', (file) => file.endsWith('.epf')).ma
   const bad = text.split('\n').filter((line) => line.trim() && !line.startsWith('#') && !/^\/instance\/[^=]+=[A-Za-z0-9#_.:/ -]+$/u.test(line.trim()));
   if (bad.length) fail(`dbeaver ${file}`, `invalid lines: ${bad.join(', ')}`);
   else console.log(`dbeaver ${file}`);
+}
+
+for (const file of files('wm/rofi', (file) => file.endsWith('.rasi')).map(rel)) {
+  const text = fs.readFileSync(path.join(root, file), 'utf8');
+  const balanced = (text.match(/\{/gu) || []).length === (text.match(/\}/gu) || []).length;
+  const hasThemeBlocks = /\*\s*\{/u.test(text) && /window\s*\{/u.test(text) && /element selected\s*\{/u.test(text);
+  const hasColors = /#[0-9A-Fa-f]{6}/u.test(text);
+  if (!balanced || !hasThemeBlocks || !hasColors) fail(`rasi ${file}`, 'invalid RASI theme structure');
+  else console.log(`rasi ${file}`);
+}
+
+for (const file of [
+  ...files('wm/hyprland', (file) => file.endsWith('.conf')).map(rel),
+  ...files('wm/i3', (file) => file.endsWith('.conf')).map(rel),
+  ...files('wm/sway', (file) => file.endsWith('.conf')).map(rel),
+]) {
+  const text = fs.readFileSync(path.join(root, file), 'utf8');
+  const balanced = (text.match(/\{/gu) || []).length === (text.match(/\}/gu) || []).length;
+  const hasColor = /(?:#[0-9A-Fa-f]{6}|rgba\([0-9A-Fa-f]{8}\)|rgb\([0-9A-Fa-f]{6}\))/u.test(text);
+  if (!balanced || !hasColor || /TODO|FIXME/u.test(text)) fail(`wm config ${file}`, 'invalid window manager config structure');
+  else console.log(`wm config ${file}`);
 }
 
 for (const file of files('docs-sites', (file) => file.endsWith('.sty') || file.endsWith('.typ')).map(rel)) {
