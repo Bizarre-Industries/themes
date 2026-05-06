@@ -3262,6 +3262,243 @@ function generateCliTui() {
   out('tools/README.md', toolsReadme());
 }
 
+function cssVars(v, selector = ':root') {
+  const s = v.syntax;
+  const vars = {
+    '--bizarre-bg': v.bg,
+    '--bizarre-bg-2': v.bg2,
+    '--bizarre-bg-3': v.bg3,
+    '--bizarre-fg': v.fg,
+    '--bizarre-dim': v.fgDim,
+    '--bizarre-border': v.border,
+    '--bizarre-accent': v.accent,
+    '--bizarre-selection': v.sel,
+    '--bizarre-error': s.error,
+    '--bizarre-warn': s.warn,
+    '--bizarre-ok': s.ok,
+    '--bizarre-info': s.info,
+    '--bizarre-string': s.string,
+    '--bizarre-function': s.fn,
+    '--bizarre-keyword': s.kwCtrl,
+  };
+  return `${selector} {\n${Object.entries(vars).map(([key, value]) => `  ${key}: ${value};`).join('\n')}\n}`;
+}
+
+function raycastTheme(v) {
+  return JSON.stringify({
+    name: v.label,
+    appearance: v.mode,
+    colors: {
+      background: v.bg,
+      backgroundSecondary: v.bg2,
+      text: v.fg,
+      textSecondary: v.fgDim,
+      border: v.border,
+      selection: v.sel,
+      accent: v.accent,
+      red: v.syntax.error,
+      orange: v.syntax.warn,
+      yellow: v.ansi.yellow,
+      green: v.syntax.ok,
+      blue: v.syntax.info,
+      purple: v.syntax.hint,
+    },
+  }, null, 2);
+}
+
+function alfredTheme(v) {
+  return JSON.stringify({
+    name: v.label,
+    credit: 'Bizarre Industries',
+    result: { text: v.fg, subtext: v.fgDim, background: v.bg },
+    selected: { text: fgFor(v.accent), subtext: fgFor(v.accent), background: v.accent },
+    window: { background: v.bg, border: v.border },
+    search: { text: v.fg, background: v.bg2 },
+    scrollbar: { color: v.accent },
+  }, null, 2);
+}
+
+function obsidianCss(v) {
+  return `/* ${v.label} for Obsidian */
+${cssVars(v, 'body.theme-dark, body.theme-light')}
+body {
+  --background-primary: var(--bizarre-bg);
+  --background-secondary: var(--bizarre-bg-2);
+  --background-modifier-border: var(--bizarre-border);
+  --text-normal: var(--bizarre-fg);
+  --text-muted: var(--bizarre-dim);
+  --text-accent: var(--bizarre-accent);
+  --interactive-accent: var(--bizarre-accent);
+  --text-selection: var(--bizarre-selection);
+  --code-normal: var(--bizarre-fg);
+  --code-comment: ${v.syntax.comment};
+  --code-string: var(--bizarre-string);
+  --code-function: var(--bizarre-function);
+  --code-keyword: var(--bizarre-keyword);
+}`;
+}
+
+function logseqCss(v) {
+  return `/* ${v.label} for Logseq */
+${cssVars(v)}
+html[data-theme=dark],
+html[data-theme=light] {
+  --ls-primary-background-color: var(--bizarre-bg);
+  --ls-secondary-background-color: var(--bizarre-bg-2);
+  --ls-tertiary-background-color: var(--bizarre-bg-3);
+  --ls-primary-text-color: var(--bizarre-fg);
+  --ls-secondary-text-color: var(--bizarre-dim);
+  --ls-border-color: var(--bizarre-border);
+  --ls-link-text-color: var(--bizarre-info);
+  --ls-link-text-hover-color: var(--bizarre-accent);
+  --ls-selection-background-color: var(--bizarre-selection);
+  --ls-block-bullet-color: var(--bizarre-accent);
+}`;
+}
+
+function slackThemeLine(v) {
+  const colors = [v.bg2, v.bg, v.bg3, v.fg, v.accent, fgFor(v.accent), v.syntax.warn, v.syntax.error, v.accent, v.fg, v.bg3, v.fgDim];
+  return `${v.label}: ${colors.join(',')}`;
+}
+
+function betterDiscordCss(v) {
+  return `/**
+ * @name ${v.label}
+ * @description Bizarre Industries adapter theme for BetterDiscord.
+ * @version 0.2.0
+ * @author Bizarre Industries
+ */
+${cssVars(v, ':root')}
+.theme-dark,
+.theme-light {
+  --background-primary: var(--bizarre-bg);
+  --background-secondary: var(--bizarre-bg-2);
+  --background-tertiary: var(--bizarre-bg-3);
+  --text-normal: var(--bizarre-fg);
+  --text-muted: var(--bizarre-dim);
+  --background-modifier-selected: var(--bizarre-selection);
+  --interactive-active: var(--bizarre-accent);
+  --brand-experiment: var(--bizarre-accent);
+  --status-danger: var(--bizarre-error);
+  --status-warning: var(--bizarre-warn);
+  --status-positive: var(--bizarre-ok);
+}`;
+}
+
+function telegramTheme(v) {
+  const pairs = {
+    windowBg: v.bg,
+    windowFg: v.fg,
+    windowSubTextFg: v.fgDim,
+    windowBgOver: v.bg2,
+    windowBgRipple: v.bg3,
+    windowFgOver: v.fg,
+    windowBoldFg: v.accent,
+    windowBoldFgOver: v.accent,
+    windowBgActive: v.accent,
+    windowFgActive: fgFor(v.accent),
+    historyTextInFg: v.fg,
+    historyTextOutFg: v.fg,
+    historyOutIconFg: v.accent,
+    historyLinkInFg: v.syntax.info,
+    historyLinkOutFg: v.syntax.info,
+    msgInBg: v.bg2,
+    msgOutBg: v.sel,
+    msgSelectOverlay: v.sel,
+    activeButtonBg: v.accent,
+    activeButtonFg: fgFor(v.accent),
+  };
+  return Object.entries(pairs).map(([key, value]) => `${key}: ${value};`).join('\n');
+}
+
+function spicetifyColors() {
+  const section = (v) => `[${titleSlug(v.id)}]
+text               = ${noHash(v.fg)}
+subtext            = ${noHash(v.fgDim)}
+main               = ${noHash(v.bg)}
+sidebar            = ${noHash(v.bg2)}
+player             = ${noHash(v.bg2)}
+card               = ${noHash(v.bg3)}
+shadow             = ${noHash(v.bg)}
+selected-row       = ${noHash(v.sel)}
+button             = ${noHash(v.accent)}
+button-active      = ${noHash(v.accentSoft)}
+button-disabled    = ${noHash(v.fgGhost)}
+tab-active         = ${noHash(v.bg3)}
+notification       = ${noHash(v.syntax.info)}
+notification-error = ${noHash(v.syntax.error)}
+misc               = ${noHash(v.border)}`;
+  return variants.map(section).join('\n\n');
+}
+
+function spicetifyCss() {
+  return `/* Bizarre Industries Spicetify adapter */
+.Root__main-view,
+.Root__now-playing-bar {
+  font-family: "${palette.fonts.mono_family}", monospace;
+}
+.main-trackList-rowSectionIndex,
+.main-trackList-rowMarker {
+  color: var(--spice-button);
+}
+.main-playButton-PlayButton,
+.main-topBar-button {
+  box-shadow: 0 0 0 1px var(--spice-button);
+}`;
+}
+
+function qutebrowserConfig(v) {
+  const a = v.ansi;
+  return `# ${v.label} for qutebrowser
+config.set('colors.webpage.darkmode.enabled', ${v.mode === 'dark' ? 'True' : 'False'})
+c.colors.completion.fg = '${v.fg}'
+c.colors.completion.odd.bg = '${v.bg}'
+c.colors.completion.even.bg = '${v.bg2}'
+c.colors.completion.category.fg = '${v.accent}'
+c.colors.completion.category.bg = '${v.bg2}'
+c.colors.completion.item.selected.fg = '${fgFor(v.accent)}'
+c.colors.completion.item.selected.bg = '${v.accent}'
+c.colors.statusbar.normal.fg = '${v.fg}'
+c.colors.statusbar.normal.bg = '${v.bg2}'
+c.colors.statusbar.insert.fg = '${fgFor(v.accent)}'
+c.colors.statusbar.insert.bg = '${v.accent}'
+c.colors.tabs.bar.bg = '${v.bg2}'
+c.colors.tabs.odd.fg = '${v.fgDim}'
+c.colors.tabs.odd.bg = '${v.bg2}'
+c.colors.tabs.even.fg = '${v.fgDim}'
+c.colors.tabs.even.bg = '${v.bg2}'
+c.colors.tabs.selected.odd.fg = '${v.fg}'
+c.colors.tabs.selected.odd.bg = '${v.bg}'
+c.colors.tabs.selected.even.fg = '${v.fg}'
+c.colors.tabs.selected.even.bg = '${v.bg}'
+c.colors.messages.error.fg = '${v.syntax.error}'
+c.colors.messages.warning.fg = '${v.syntax.warn}'
+c.colors.messages.info.fg = '${v.syntax.info}'
+c.colors.hints.fg = '${fgFor(v.accent)}'
+c.colors.hints.bg = '${v.accent}'
+c.colors.downloads.start.fg = '${a.blue}'
+c.colors.downloads.stop.fg = '${a.green}'`;
+}
+
+function generateDesktopApps() {
+  for (const v of variants) {
+    out(`apps/raycast/${titleSlug(v.id)}.json`, raycastTheme(v));
+    out(`apps/alfred/${titleSlug(v.id)}.alfredappearance`, alfredTheme(v));
+    out(`apps/obsidian/${titleSlug(v.id)}.css`, obsidianCss(v));
+    out(`apps/logseq/${titleSlug(v.id)}.css`, logseqCss(v));
+    out(`apps/discord/betterdiscord/${titleSlug(v.id)}.theme.css`, betterDiscordCss(v));
+    out(`apps/telegram/${titleSlug(v.id)}.tdesktop-theme`, telegramTheme(v));
+    out(`apps/qutebrowser/${titleSlug(v.id)}.py`, qutebrowserConfig(v));
+  }
+  out('apps/slack/bizarre-sidebar-themes.txt', variants.map(slackThemeLine).join('\n'));
+  out('apps/spotify/spicetify/color.ini', spicetifyColors());
+  out('apps/spotify/spicetify/user.css', spicetifyCss());
+  out('apps/README.md', `# Bizarre Desktop App Adapters
+
+These generated files cover desktop apps from \`PORTS.md\`. Discord uses BetterDiscord adapter CSS. Spotify uses Spicetify adapter files. Slack uses sidebar theme strings. Copy or merge files into app config locations; do not replace unrelated user settings wholesale.
+`);
+}
+
 function generateTools() {
   const v = variants[0];
   out('prompt/starship.toml', starship(v));
@@ -3922,6 +4159,17 @@ const CLI_TARGETS = [
   { name: 'ranger', file: 'tools/ranger/colorschemes/bizarre_void.py', variant: 'void-hicontrast', key: 'files', value: 'python' },
   { name: 'vivid', file: 'tools/vivid/themes/bizarre-void.yml', variant: 'workshop', key: 'ls', value: 'yaml' },
 ];
+const APP_TARGETS = [
+  { name: 'Raycast', file: 'apps/raycast/bizarre-void.json', variant: 'void', key: 'format', value: 'json' },
+  { name: 'Alfred', file: 'apps/alfred/bizarre-void.alfredappearance', variant: 'void-hicontrast', key: 'format', value: 'appearance' },
+  { name: 'Obsidian', file: 'apps/obsidian/bizarre-workshop.css', variant: 'workshop', key: 'format', value: 'css' },
+  { name: 'Logseq', file: 'apps/logseq/bizarre-paper.css', variant: 'paper', key: 'format', value: 'css' },
+  { name: 'Slack', file: 'apps/slack/bizarre-sidebar-themes.txt', variant: 'bone', key: 'format', value: 'sidebar' },
+  { name: 'Discord', file: 'apps/discord/betterdiscord/bizarre-void.theme.css', variant: 'void', key: 'adapter', value: 'BetterDiscord' },
+  { name: 'Telegram', file: 'apps/telegram/bizarre-void.tdesktop-theme', variant: 'void-hicontrast', key: 'format', value: 'tdesktop' },
+  { name: 'Spotify', file: 'apps/spotify/spicetify/color.ini', variant: 'workshop', key: 'adapter', value: 'Spicetify' },
+  { name: 'qutebrowser', file: 'apps/qutebrowser/bizarre-void.py', variant: 'paper', key: 'format', value: 'python' },
+];
 const MINI_WORDMARK = ['BIZARRE', 'INDUSTRIES'];
 const WORDMARK = ${JSON.stringify(shellWordmark, null, 2)};
 
@@ -4205,6 +4453,13 @@ window.BzrShowcase = function Showcase({ tweaksProp }) {
         </div>
       </section>
 
+      <section className="section" data-shot="desktop-apps">
+        <div className="section-head"><span className="section-num">§ 11 / APPS</span><h2 className="section-title">Desktop app adapters.</h2><span className="section-sub">raycast · alfred · obsidian · logseq · slack · discord · telegram · spotify · qutebrowser</span></div>
+        <div className="config-grid cli-grid">
+          {APP_TARGETS.map((target) => <CliConfigCard key={target.name} target={target} />)}
+        </div>
+      </section>
+
       {shown.map((v, idx) => (
         <section key={v.id} className={\`section \${v.mode === 'light' ? 'light-section' : ''}\`}>
           <div className="section-head"><span className="section-num">§ {String(idx + 10).padStart(2, '0')} / {v.mode.toUpperCase()}</span><h2 className="section-title">{v.label}</h2><span className="section-sub">{v.sub}</span></div>
@@ -4416,6 +4671,8 @@ Every shipped target still gets a generated preview card in \`showcase/assets/ge
 
 ![Bizarre CLI and TUI tool ports](showcase/assets/generated/cli-tui.png)
 
+![Bizarre desktop app adapters](showcase/assets/generated/desktop-apps.png)
+
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
 ## Install Examples
@@ -4619,6 +4876,33 @@ cp tools/ranger/colorschemes/*.py ~/.config/ranger/colorschemes/
 mkdir -p ~/.config/vivid/themes
 cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 # then export LS_COLORS="$(vivid generate bizarre-void)"
+
+# Raycast
+# import apps/raycast/*.json through Raycast theme preferences
+
+# Alfred
+# import apps/alfred/*.alfredappearance through Alfred appearance preferences
+
+# Obsidian
+# copy apps/obsidian/*.css into your vault .obsidian/themes directory
+
+# Logseq
+# copy one apps/logseq/bizarre-*.css into custom.css or merge its variables
+
+# Slack
+# paste one line from apps/slack/bizarre-sidebar-themes.txt into Slack sidebar theme settings
+
+# Discord
+# BetterDiscord adapter: copy apps/discord/betterdiscord/*.theme.css into the BetterDiscord themes folder
+
+# Telegram
+# import apps/telegram/*.tdesktop-theme through Telegram Desktop theme settings
+
+# Spotify
+# Spicetify adapter: copy apps/spotify/spicetify/color.ini and user.css into a Spicetify theme directory
+
+# qutebrowser
+# source one apps/qutebrowser/bizarre-*.py from qutebrowser config.py
 \`\`\`
 
 ## Current Coverage
@@ -4629,6 +4913,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij, Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box |
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
+| Desktop apps | Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants
@@ -4652,10 +4937,10 @@ function portsDoc() {
     ['Terminals', 'Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij, Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box'],
     ['Shells and prompts', 'Bash, Zsh, Fish, PowerShell, Starship'],
     ['CLI/TUI', 'bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid'],
+    ['Desktop apps', 'Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser'],
     ['Desktop and tools', 'AeroSpace, ForkLift, Jujutsu'],
   ];
   const backlog = [
-    ['Desktop apps', 'Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser'],
     ['Browser and web', 'Firefox, Chrome, Arc, Vivaldi, userstyles, startpages, documentation sites'],
     ['Design and devtools', 'Figma, Sketch, Insomnia, Postman, HTTPie, TablePlus, DBeaver, GitHub readme assets'],
     ['Docs and content', 'MkDocs, Docusaurus, Sphinx, LaTeX, Typst, Beamer, reveal.js'],
@@ -4709,6 +4994,7 @@ function generateAll() {
   generateEditorBacklog();
   generateTerminals();
   generateTools();
+  generateDesktopApps();
   generateShowcase();
   generateDocs();
 }

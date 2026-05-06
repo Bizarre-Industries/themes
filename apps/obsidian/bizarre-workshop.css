@@ -1,0 +1,33 @@
+/* Bizarre Workshop for Obsidian */
+body.theme-dark, body.theme-light {
+  --bizarre-bg: #1A1815;
+  --bizarre-bg-2: #23211C;
+  --bizarre-bg-3: #2D2A23;
+  --bizarre-fg: #E4E2DA;
+  --bizarre-dim: #9C9A91;
+  --bizarre-border: #3D3A33;
+  --bizarre-accent: #C6FF24;
+  --bizarre-selection: #3A3618;
+  --bizarre-error: #FF6F77;
+  --bizarre-warn: #FFB85C;
+  --bizarre-ok: #5BD06B;
+  --bizarre-info: #7BB3FF;
+  --bizarre-string: #E8A33D;
+  --bizarre-function: #C6FF24;
+  --bizarre-keyword: #FF8FCF;
+}
+body {
+  --background-primary: var(--bizarre-bg);
+  --background-secondary: var(--bizarre-bg-2);
+  --background-modifier-border: var(--bizarre-border);
+  --text-normal: var(--bizarre-fg);
+  --text-muted: var(--bizarre-dim);
+  --text-accent: var(--bizarre-accent);
+  --interactive-accent: var(--bizarre-accent);
+  --text-selection: var(--bizarre-selection);
+  --code-normal: var(--bizarre-fg);
+  --code-comment: #6F6F6F;
+  --code-string: var(--bizarre-string);
+  --code-function: var(--bizarre-function);
+  --code-keyword: var(--bizarre-keyword);
+}

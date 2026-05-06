@@ -1,0 +1,31 @@
+/* Bizarre Paper for Logseq */
+:root {
+  --bizarre-bg: #F9F8F2;
+  --bizarre-bg-2: #F2F0EA;
+  --bizarre-bg-3: #E6E3DA;
+  --bizarre-fg: #1F1F1F;
+  --bizarre-dim: #3D3D3D;
+  --bizarre-border: #D8D4C7;
+  --bizarre-accent: #5F8A0F;
+  --bizarre-selection: #DCEFA8;
+  --bizarre-error: #B8276F;
+  --bizarre-warn: #9F4A0E;
+  --bizarre-ok: #3F7A1F;
+  --bizarre-info: #1F4FB0;
+  --bizarre-string: #9F4A0E;
+  --bizarre-function: #5F8A0F;
+  --bizarre-keyword: #B8276F;
+}
+html[data-theme=dark],
+html[data-theme=light] {
+  --ls-primary-background-color: var(--bizarre-bg);
+  --ls-secondary-background-color: var(--bizarre-bg-2);
+  --ls-tertiary-background-color: var(--bizarre-bg-3);
+  --ls-primary-text-color: var(--bizarre-fg);
+  --ls-secondary-text-color: var(--bizarre-dim);
+  --ls-border-color: var(--bizarre-border);
+  --ls-link-text-color: var(--bizarre-info);
+  --ls-link-text-hover-color: var(--bizarre-accent);
+  --ls-selection-background-color: var(--bizarre-selection);
+  --ls-block-bullet-color: var(--bizarre-accent);
+}

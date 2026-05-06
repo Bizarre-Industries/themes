@@ -1,0 +1,25 @@
+{
+  "name": "Bizarre Bone",
+  "credit": "Bizarre Industries",
+  "result": {
+    "text": "#2B2B2B",
+    "subtext": "#4A4A4A",
+    "background": "#F5F2EA"
+  },
+  "selected": {
+    "text": "#F9F8F2",
+    "subtext": "#F9F8F2",
+    "background": "#5F8A0F"
+  },
+  "window": {
+    "background": "#F5F2EA",
+    "border": "#DDD8CB"
+  },
+  "search": {
+    "text": "#2B2B2B",
+    "background": "#EDE9DD"
+  },
+  "scrollbar": {
+    "color": "#5F8A0F"
+  }
+}

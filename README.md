@@ -48,6 +48,8 @@ Every shipped target still gets a generated preview card in `showcase/assets/gen
 
 ![Bizarre CLI and TUI tool ports](showcase/assets/generated/cli-tui.png)
 
+![Bizarre desktop app adapters](showcase/assets/generated/desktop-apps.png)
+
 ![Bizarre shell banner](showcase/assets/generated/shell-banner.png)
 
 ## Install Examples
@@ -251,6 +253,33 @@ cp tools/ranger/colorschemes/*.py ~/.config/ranger/colorschemes/
 mkdir -p ~/.config/vivid/themes
 cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 # then export LS_COLORS="$(vivid generate bizarre-void)"
+
+# Raycast
+# import apps/raycast/*.json through Raycast theme preferences
+
+# Alfred
+# import apps/alfred/*.alfredappearance through Alfred appearance preferences
+
+# Obsidian
+# copy apps/obsidian/*.css into your vault .obsidian/themes directory
+
+# Logseq
+# copy one apps/logseq/bizarre-*.css into custom.css or merge its variables
+
+# Slack
+# paste one line from apps/slack/bizarre-sidebar-themes.txt into Slack sidebar theme settings
+
+# Discord
+# BetterDiscord adapter: copy apps/discord/betterdiscord/*.theme.css into the BetterDiscord themes folder
+
+# Telegram
+# import apps/telegram/*.tdesktop-theme through Telegram Desktop theme settings
+
+# Spotify
+# Spicetify adapter: copy apps/spotify/spicetify/color.ini and user.css into a Spicetify theme directory
+
+# qutebrowser
+# source one apps/qutebrowser/bizarre-*.py from qutebrowser config.py
 ```
 
 ## Current Coverage
@@ -261,6 +290,7 @@ cp tools/vivid/themes/*.yml ~/.config/vivid/themes/
 | Terminals | Alacritty, Kitty, WezTerm, iTerm2, Ghostty, Windows Terminal, tmux, Zellij, Foot, Konsole, Rio, Hyper, Terminator, Tilix, XFCE Terminal, GNOME Terminal, Black Box |
 | Shells and prompt | Bash, Zsh, Fish, PowerShell, Starship |
 | CLI/TUI | bat, btop, delta, dircolors, fzf, lazygit, yazi, eza, atuin, bottom, k9s, ranger, vivid |
+| Desktop apps | Raycast, Alfred, Obsidian, Logseq, Slack, Discord, Telegram, Spotify, qutebrowser |
 | Tools | AeroSpace, ForkLift, Jujutsu |
 
 ## Variants

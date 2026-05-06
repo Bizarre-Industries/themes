@@ -5,6 +5,7 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const TOML = require('@iarna/toml');
 const INI = require('ini');
+const postcss = require('postcss');
 const YAML = require('yaml');
 const palette = require('../palette.js');
 
@@ -54,6 +55,8 @@ for (const file of [
   ...files('editors/nova', (file) => file.endsWith('.json')).map(rel),
   ...files('editors/sublime', (file) => file.endsWith('.sublime-color-scheme')).map(rel),
   'editors/zed/themes/bizarre.json',
+  ...files('apps/alfred', (file) => file.endsWith('.alfredappearance')).map(rel),
+  ...files('apps/raycast', (file) => file.endsWith('.json')).map(rel),
   ...files('terminals/black-box', (file) => file.endsWith('.json')).map(rel),
   'terminals/windows-terminal/schemes.json',
   'tools/forklift/Bizarre.json',
@@ -106,12 +109,27 @@ for (const file of [
   ...files('terminals/terminator', (file) => file.endsWith('.config')).map(rel),
   ...files('terminals/tilix', (file) => file.endsWith('.dconf')).map(rel),
   ...files('terminals/xfce-terminal', (file) => file.endsWith('.theme')).map(rel),
+  ...files('apps/spotify', (file) => file.endsWith('.ini')).map(rel),
 ]) {
   try {
     INI.parse(fs.readFileSync(path.join(root, file), 'utf8'));
     console.log(`ini ${file}`);
   } catch (error) {
     fail(`ini ${file}`, error);
+  }
+}
+
+for (const file of [
+  ...files('apps/discord', (file) => file.endsWith('.css')).map(rel),
+  ...files('apps/logseq', (file) => file.endsWith('.css')).map(rel),
+  ...files('apps/obsidian', (file) => file.endsWith('.css')).map(rel),
+  ...files('apps/spotify', (file) => file.endsWith('.css')).map(rel),
+]) {
+  try {
+    postcss.parse(fs.readFileSync(path.join(root, file), 'utf8'), { from: file });
+    console.log(`css ${file}`);
+  } catch (error) {
+    fail(`css ${file}`, error);
   }
 }
 
@@ -169,6 +187,24 @@ for (const file of files('tools/dircolors', (file) => file.endsWith('.dircolors'
 
 for (const file of files('tools/ranger', (file) => file.endsWith('.py')).map(rel)) {
   run('python3', ['-m', 'py_compile', file], `python ${file}`);
+}
+
+for (const file of files('apps/qutebrowser', (file) => file.endsWith('.py')).map(rel)) {
+  run('python3', ['-m', 'py_compile', file], `python ${file}`);
+}
+
+for (const file of files('apps/telegram', (file) => file.endsWith('.tdesktop-theme')).map(rel)) {
+  const text = fs.readFileSync(path.join(root, file), 'utf8');
+  const bad = text.split('\n').filter((line) => line.trim() && !/^[A-Za-z0-9]+:\s+#[0-9A-Fa-f]{6};$/u.test(line.trim()));
+  if (bad.length) fail(`telegram ${file}`, `invalid lines: ${bad.join(', ')}`);
+  else console.log(`telegram ${file}`);
+}
+
+for (const file of files('apps/slack', (file) => file.endsWith('.txt')).map(rel)) {
+  const text = fs.readFileSync(path.join(root, file), 'utf8');
+  const bad = text.split('\n').filter((line) => line.trim() && !/^Bizarre .+:\s+(?:#[0-9A-Fa-f]{6},){11}#[0-9A-Fa-f]{6}$/u.test(line.trim()));
+  if (bad.length) fail(`slack ${file}`, `invalid lines: ${bad.join(', ')}`);
+  else console.log(`slack ${file}`);
 }
 
 for (const file of files('terminals/hyper', (file) => file.endsWith('.js')).map(rel)) {

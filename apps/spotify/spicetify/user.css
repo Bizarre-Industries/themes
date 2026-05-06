@@ -1,0 +1,13 @@
+/* Bizarre Industries Spicetify adapter */
+.Root__main-view,
+.Root__now-playing-bar {
+  font-family: "Monaspace Neon", monospace;
+}
+.main-trackList-rowSectionIndex,
+.main-trackList-rowMarker {
+  color: var(--spice-button);
+}
+.main-playButton-PlayButton,
+.main-topBar-button {
+  box-shadow: 0 0 0 1px var(--spice-button);
+}

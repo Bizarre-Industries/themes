@@ -1,0 +1,31 @@
+/* Bizarre Void for Logseq */
+:root {
+  --bizarre-bg: #0E0E0E;
+  --bizarre-bg-2: #1A1A1A;
+  --bizarre-bg-3: #2B2B2B;
+  --bizarre-fg: #E4E4E4;
+  --bizarre-dim: #9C9C9C;
+  --bizarre-border: #3D3D3D;
+  --bizarre-accent: #C6FF24;
+  --bizarre-selection: #2B3A0E;
+  --bizarre-error: #FF6F77;
+  --bizarre-warn: #FFB85C;
+  --bizarre-ok: #5BD06B;
+  --bizarre-info: #7BB3FF;
+  --bizarre-string: #E8A33D;
+  --bizarre-function: #C6FF24;
+  --bizarre-keyword: #FF8FCF;
+}
+html[data-theme=dark],
+html[data-theme=light] {
+  --ls-primary-background-color: var(--bizarre-bg);
+  --ls-secondary-background-color: var(--bizarre-bg-2);
+  --ls-tertiary-background-color: var(--bizarre-bg-3);
+  --ls-primary-text-color: var(--bizarre-fg);
+  --ls-secondary-text-color: var(--bizarre-dim);
+  --ls-border-color: var(--bizarre-border);
+  --ls-link-text-color: var(--bizarre-info);
+  --ls-link-text-hover-color: var(--bizarre-accent);
+  --ls-selection-background-color: var(--bizarre-selection);
+  --ls-block-bullet-color: var(--bizarre-accent);
+}

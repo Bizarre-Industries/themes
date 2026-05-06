@@ -1,0 +1,19 @@
+{
+  "name": "Bizarre Workshop",
+  "appearance": "dark",
+  "colors": {
+    "background": "#1A1815",
+    "backgroundSecondary": "#23211C",
+    "text": "#E4E2DA",
+    "textSecondary": "#9C9A91",
+    "border": "#3D3A33",
+    "selection": "#3A3618",
+    "accent": "#C6FF24",
+    "red": "#FF6F77",
+    "orange": "#FFB85C",
+    "yellow": "#E8A33D",
+    "green": "#5BD06B",
+    "blue": "#7BB3FF",
+    "purple": "#D88AE0"
+  }
+}

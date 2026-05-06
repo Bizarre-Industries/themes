@@ -1,0 +1,25 @@
+{
+  "name": "Bizarre Void",
+  "credit": "Bizarre Industries",
+  "result": {
+    "text": "#E4E4E4",
+    "subtext": "#9C9C9C",
+    "background": "#0E0E0E"
+  },
+  "selected": {
+    "text": "#0E0E0E",
+    "subtext": "#0E0E0E",
+    "background": "#C6FF24"
+  },
+  "window": {
+    "background": "#0E0E0E",
+    "border": "#3D3D3D"
+  },
+  "search": {
+    "text": "#E4E4E4",
+    "background": "#1A1A1A"
+  },
+  "scrollbar": {
+    "color": "#C6FF24"
+  }
+}

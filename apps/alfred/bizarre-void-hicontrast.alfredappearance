@@ -1,0 +1,25 @@
+{
+  "name": "Bizarre Void Hi-Contrast",
+  "credit": "Bizarre Industries",
+  "result": {
+    "text": "#F9F8F2",
+    "subtext": "#B8B8B8",
+    "background": "#000000"
+  },
+  "selected": {
+    "text": "#0E0E0E",
+    "subtext": "#0E0E0E",
+    "background": "#C6FF24"
+  },
+  "window": {
+    "background": "#000000",
+    "border": "#545454"
+  },
+  "search": {
+    "text": "#F9F8F2",
+    "background": "#0E0E0E"
+  },
+  "scrollbar": {
+    "color": "#C6FF24"
+  }
+}
