@@ -1,33 +1,12 @@
 # Bizarre Industries Open Design System Implementation Plan
 
-**Status:** Canonical active plan. Tasks 1 through 8 are implemented and verified for the repo-owned downstream themes adapter. Official Bizarre Industries brand convergence remains deferred to the canonical `design-system` repository and explicit product decisions recorded in the handoff.
+**Last reconciled:** `2026-07-17T00:42:00+04:00`.
 
-**Resume source:** Read [`docs/agent-handoff.md`](../../agent-handoff.md) before executing this plan. Its current-state ledger overrides historical progress reports. The detailed checkboxes below remain the implementation recipe, not a reliable record of current completion.
-
-## Reconciled Status (2026-07-16T23:31:54+04:00)
-
-| Area | State | Evidence |
-|---|---|---|
-| Tasks 1-6 | COMPLETE | Repository contracts pass 129/129. Open Design contracts pass 92/92. Generated repository outputs are current. |
-| Task 7, package generation and visual QA | COMPLETE | The package owns 515 files, indexes 474 repository evidence files, includes `system/kit.html`, excludes transient brainstorm state and the volatile handoff, and passes package, showcase, and visual checks. |
-| Task 8, Open Design migration | COMPLETE | The former catalog entry is preserved in a timestamped backup. Supported local installation produced one repo symlink, activation created project `ds-bizarre-industries`, metadata remained byte-identical, and a fresh MCP bridge passed protocol `2025-11-25` with 18 tools. |
-| Release | IN PROGRESS | The user authorized final verification, signed-off commits, a reviewed pull request, merge, and cleanup to one `main` worktree. Release results belong in the authoritative handoff and final task report. |
-
-**First unfinished implementation task:** NONE inside this plan. All authorized Open Design adapter implementation and migration work is complete. Remaining product decisions are explicitly deferred, not silently assumed.
-
-## Current Safety Gate
-
-Resolved: all `.superpowers/brainstorm/` runtime and identity UI is excluded by contract, temporary Git fixture commits disable signing locally, and `docs/agent-handoff.md` is excluded to prevent circular package freshness drift. The approved identity remains in the canonical specifications, not transient brainstorm HTML.
-
-Resolved: generated `metadata.json` contains `ds-bizarre-industries`; the identifier was absent before activation and was created intentionally by Open Design. The active catalog path is the expected repo symlink, and metadata stayed byte-identical through activation.
-
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (- [ ]) syntax for tracking.
-
-**Goal:** Generate, verify, and safely install one repo-owned downstream Bizarre Industries themes adapter for Open Design v1 whose default binding is Void, whose previews expose all five CSS modes, and whose evidence layer preserves the complete current repository context.
+**Goal:** Generate, verify, and safely install one repo-owned downstream Bizarre Industries themes adapter for Open Design v1 whose default binding is Void, whose previews expose all five CSS modes, and whose steady-state evidence layer preserves every required tracked repository source. The migration checkpoint still includes nonignored untracked files; Task 9 closes that documented security gap.
 
 **Architecture:** `palette.js` remains canonical for the `themes` repository. It is not the company-wide identity authority. Focused CommonJS modules build a pure token model, enumerate and hash repository evidence, render the Open Design package, and publish files atomically behind a stable directory. Open Design receives a published agent-managed local symlink after the existing extracted system is preserved. The official logo, typography, and identity contract remain governed by the sibling `design-system` repository until a reviewed downstream integration exists.
 
-**Tech Stack:** Node.js 22, CommonJS, node:test, PostCSS, existing WCAG helpers, Playwright only for the repository's existing deterministic browser checks, Open Design 0.14.1 v1 package schema, and the installed Open Design stdio MCP bridge.
+**Technology and subsystem:** Node.js 22, CommonJS, `node:test`, PostCSS, existing WCAG helpers, Playwright only for deterministic browser checks, Open Design 0.14.1 v1 package schema, and the installed Open Design stdio MCP bridge.
 
 ## Global Constraints
 
@@ -39,7 +18,7 @@ Resolved: generated `metadata.json` contains `ds-bizarre-industries`; the identi
 - Open Design 0.14.1 has no native internal-mode picker; never describe the four non-default selectors as picker modes.
 - tokens.css declares only the 56 Open Design TOKEN_SCHEMA names; Bizarre-only roles live in assets/bizarre-tokens.css so Open Design's declared-assets allowlist can serve and pull them.
 - Preserve the full README byte-for-byte in source evidence and promote its product rules into DESIGN.md.
-- Include every current non-ignored repository file or an explicit, tested exclusion.
+- The migration checkpoint includes every current non-ignored repository file or an explicit, tested exclusion. Task 9 must narrow future evidence to tracked files before another package publication.
 - Exclude .git, node_modules except selected fonts/licenses, the package output itself, caches, ignored private files, AGENTS.md, the volatile `docs/agent-handoff.md`, `.superpowers/brainstorm/`, removed Xcode files, and removed native captures.
 - Preserve the current static GitHub catalog and future-website boundary.
 - metadata.json must set status published, artifactMode agent-managed, and the deterministic collision-checked projectId ds-bizarre-industries.
@@ -47,6 +26,53 @@ Resolved: generated `metadata.json` contains `ds-bizarre-industries`; the identi
 - Never modify /Applications/Open Design.app.
 - Preserve the backed-up former user:bizarre-industries directory and the separate brand-github-29e67b project. Never reuse that old project for the repo-linked package.
 - Release may use a signed-off branch, pull request, review, merge, and cleanup because the user explicitly authorized that workflow on 2026-07-16. Never force-push or discard user work.
+
+## Scope
+
+- Tasks 1 through 8: token model, evidence snapshot, safe package writer, Open Design renderers, components and previews, orchestration, deterministic package verification, and reversible local installation.
+- Task 9: tracked-only evidence hardening after the current handoff-only release transaction.
+- The signed-off PR #11 release transaction and cleanup to one clean local `main` worktree.
+
+## Non-goals
+
+- Official logo, typography, hardware, embedded, motion, graphics, media, or full product-component implementation.
+- Xcode restoration, showcase interactivity, Open Design project renaming, or signed-application repair.
+- Arbitrary untracked-file publication after Task 9.
+- Production-code changes during the current handoff-only pass.
+
+## Source specifications
+
+1. [`docs/agent-handoff.md`](../../agent-handoff.md) for live state, verification, and authorization boundaries.
+2. [`docs/superpowers/specs/2026-07-12-open-design-system-design.md`](../specs/2026-07-12-open-design-system-design.md) for the package contract and tracked-only target.
+3. [`docs/superpowers/specs/2026-07-12-bizarre-industries-design-language.md`](../specs/2026-07-12-bizarre-industries-design-language.md) for the broader design-language target.
+4. `palette.js`, Open Design implementation modules, and `test/*.test.cjs` for current executable behavior.
+5. PR #11 checks and local verification for release evidence.
+
+## Current status summary
+
+| Area | State | Evidence |
+|---|---|---|
+| Tasks 1-6 | COMPLETE | Repository contracts pass 130/130. Open Design contracts pass 92/92. Generated repository outputs are current. |
+| Task 7, package generation and visual QA | COMPLETE | The package owns 515 files, indexes 474 repository evidence files, includes `system/kit.html`, excludes transient brainstorm state and the volatile handoff, and passes package, showcase, and visual checks. |
+| Task 8, Open Design migration | COMPLETE | The former catalog entry is preserved in a timestamped backup. Supported local installation produced one repo symlink, activation created project `ds-bizarre-industries`, metadata remained byte-identical, and a fresh MCP bridge passed protocol `2025-11-25` with 18 tools. |
+| Task 9, tracked-only evidence hardening | NOT STARTED | Independent review proved `listRepositoryEvidence()` includes arbitrary nonignored untracked files. Current committed evidence passed Gitleaks, but future generation could copy a developer-local secret-like file. |
+| Release | IN PROGRESS | PR #11 is open, DCO and both Verify jobs passed before the documentation correction, and PR #10 is superseded. Recheck, merge, and cleanup results belong in the handoff and final report. |
+
+**First unfinished implementation task:** Task 9, change the Git `spawnSync` call inside `listRepositoryEvidence()` in `scripts/lib/open-design/evidence.cjs` from tracked-plus-untracked enumeration to tracked-only enumeration, with exclusion regressions in `test/open-design-evidence.test.cjs`. The current handoff-only pass must document rather than implement it.
+
+**Status:** Canonical active plan. Tasks 1 through 8 are implemented and verified. Task 9 is not started. Official Bizarre Industries brand convergence remains deferred.
+
+**Resume source:** Read [`docs/agent-handoff.md`](../../agent-handoff.md) before executing this plan. Its current-state ledger overrides historical progress reports. The detailed checkboxes below remain the implementation recipe.
+
+## Current Safety Gate
+
+Resolved: all `.superpowers/brainstorm/` runtime and identity UI is excluded by contract, temporary Git fixture commits disable signing locally, and `docs/agent-handoff.md` is excluded to prevent circular package freshness drift. The approved identity remains in canonical specifications, not transient brainstorm HTML.
+
+Resolved: generated `metadata.json` contains `ds-bizarre-industries`; the identifier was absent before activation and was created intentionally by Open Design. The active catalog path is the expected repo symlink, and metadata stayed byte-identical through activation.
+
+Open: the migration checkpoint intentionally accepted nonignored untracked inputs because most implementation work was not yet committed. After release that premise no longer holds. `git ls-files --cached --others --exclude-standard` can include `.env`, `credentials.json`, or another arbitrary local file when it is not ignored. The current release commit was scanned with Gitleaks and contains no finding; Task 9 must harden future evidence generation before another package publication.
+
+> **For agentic workers:** Use the available execution and review skills task-by-task. The checkboxes below are historical execution evidence for Tasks 1 through 8 and exact future steps for Task 9.
 
 ---
 
@@ -83,6 +109,21 @@ Resolved: generated `metadata.json` contains `ds-bizarre-industries`; the identi
 ### Generated package
 
 - design/open-design/bizarre-industries/**
+
+## Reconciled task field matrix
+
+This matrix supplies the current required fields for every completed historical task. The detailed sections below preserve the test-first execution recipe and exact interfaces. Task 9 has its own full future-work contract at the end.
+
+| Task | Objective and status | Dependencies and preconditions | Files, symbols, consumed and produced interfaces | Current evidence and verification | Remaining steps, expected result, acceptance | Documentation, recovery, risks |
+|---|---|---|---|---|---|---|
+| 1 | Define the canonical Open Design model. `COMPLETE`. | Stable `palette.js` exports and showcase structural values. Runs before all render tasks. | `scripts/lib/open-design/model.cjs::buildOpenDesignModel()`, `OD_SCHEMA_TOKENS`; consumes palette roles, produces five modes with exactly 56 schema tokens. | `node --test test/open-design-model.test.cjs test/contrast.test.cjs`; included in 92/92 focused PASS. | None. Accepted because Void is default, all modes preserve accent semantics, and contrast helpers pass. | Open Design spec updated. Recover with a reviewed model revert and regeneration. Risk: token drift fans out to every renderer. |
+| 2 | Enumerate, validate, hash, and copy migration evidence. `COMPLETE` for migration contract. | Git repository, valid generated ownership manifest, package root, Task 1 model not required. | `evidence.cjs::listRepositoryEvidence()`, `readEvidenceEntry()`, `copyEvidenceEntry()`; consumes Git-visible paths, produces sorted `EvidenceEntry[]` and indexes. | `node --test test/open-design-evidence.test.cjs`; package has 474 evidence files; focused suite PASS. | Original migration acceptance met. Steady-state untracked risk is isolated to Task 9, not hidden here. | Spec and handoff record gap. Recover by preserving current branch and inspecting exact missing path. Risks: arbitrary untracked input, races, symlinks, byte limits. |
+| 3 | Publish owned package bytes without clobbering user work. `COMPLETE`. | Task 2 entries and complete expected-output map. | `package-writer.cjs::createPackageWriter()`, `publishGeneration()`; consumes expected buffers and prior manifest, produces atomic files and manifest-last ownership. | `node --test test/open-design-writer.test.cjs`; focused suite PASS. | None. Accepted because collisions, symlinks, modified obsolete files, and incomplete publication fail closed. | Generation/ownership docs current. Recover by inspecting drift, never deleting unowned files. Risks: host I/O failure and concurrent mutation. |
+| 4 | Render normative tokens, manifests, metadata, and docs. `COMPLETE`. | Tasks 1-3. | `render-tokens.cjs`, `render-docs.cjs`; consumes model and evidence, produces CSS, JSON, `DESIGN.md`, `USAGE.md`, reports. | Renderer and package tests in 92/92 focused PASS; `npm run check:open-design` PASS. | None. Accepted because schema names, metadata, provenance, and local asset paths match contracts. | Generated docs current. Recover by changing source renderer then regenerating. Risks: undeclared token references and identity overclaim. |
+| 5 | Render source-derived components, system kit, and nine previews. `COMPLETE`. | Tasks 1 and 4 plus local showcase assets. | `render-components.cjs::renderComponentsHtml()`, `renderPreviewPages()`, `renderSystemKit()`; produces fixture, manifest, previews, kit. | Component/render tests PASS; `npm run check:showcase` passes 45 screenshots and 14 inputs. | None. Accepted because pages parse, navigate locally, remain responsive, and use safe foregrounds. | Preview and showcase docs current. Recover through renderer sources. Risks: stale evidence references, overflow, accessibility regression. |
+| 6 | Orchestrate fonts, evidence, model, rendering, drift checks, and check mode. `COMPLETE`. | Tasks 1-5 and declared font dependencies. | `generate-open-design.cjs::buildOpenDesignPackage()`, `generateOpenDesignPackage()`; consumes repository snapshot, produces complete output map and read-only check result. | Orchestration/package tests PASS; `npm test` and `npm run check:open-design` PASS. | None. Accepted because implementation and evidence drift fail before publication and check mode is read-only. | README and design README current. Recover by preserving failing snapshot and diagnosing exact drift. Risks: mixed-time sources and missing font dependencies. |
+| 7 | Generate and visually verify the complete package. `COMPLETE`. | Tasks 1-6, browser assets, portable validators. | `design/open-design/bizarre-industries/**`; consumes complete repository state, produces 515 owned entries plus manifest. | 130/130 repository PASS, 92/92 focused PASS, 45/14 showcase PASS, portable validation PASS. | None for release snapshot. Accepted because package, evidence, screenshots, links, and whitespace checks pass. | Handoff and plan hold exact evidence. Recover by regenerating from sources. Risks: generated/manual divergence and current provisional identity assets. |
+| 8 | Preserve old Open Design state and install the repo package reversibly. `COMPLETE`. | Verified Task 7 package and explicit action-time user confirmation. | Supported local install endpoint, catalog symlink, backup, projects `brand-github-29e67b` and `ds-bizarre-industries`; consumes package path, produces one active linked system. | Backup hash/count, metadata identity, visual check, and fresh MCP protocol `2025-11-25` with 18 tools recorded below. | None. Accepted because one symlink resolves to package, backup remains real and unchanged, and projects remain separate. | Handoff records external state. Recovery requires separate confirmation and backup restoration. Risks: external app packaging defect and stale preloaded MCP transport. |
 
 ---
 
@@ -923,11 +964,11 @@ Resolve the live daemon port with the packaged Open Design helper status command
 ~~~~json
 {
   "source": "local",
-  "path": "/Users/binghzal/Developer/themes/design/open-design/bizarre-industries"
+  "path": "design/open-design/bizarre-industries"
 }
 ~~~~
 
-to `/api/design-systems/install` when the daemon runs.
+Resolve the repository-relative `path` to an absolute path at invocation time, then POST it to `/api/design-systems/install` when the daemon runs. Do not commit the resolved developer-local path.
 
 The supported endpoint completed successfully and created the expected junction-style symlink. Open Design 0.14.1 initially exited before binding because `better-sqlite3` and `blake3-wasm` were packaged under `app/node_modules/.ignored/`; a temporary process loader repaired dependency resolution without modifying the signed app bundle or global MCP configuration. This remains an external packaging defect, not a repository failure.
 
@@ -979,3 +1020,64 @@ Result: repository, Open Design, generated-output, showcase, portable-validation
 - [x] **Step 9: Final checkpoint without committing**
 
 The pre-release checkpoint recorded package path, catalog state, backup path, MCP evidence, strict-validator environment gap, and Git state before the user authorized the release workflow. The authoritative handoff supersedes this historical no-commit checkpoint.
+
+---
+
+### Task 9: Harden Evidence to Tracked Repository Inputs
+
+**Task status:** NOT STARTED.
+
+**Objective:** Prevent future Open Design generation from copying arbitrary developer-local untracked files into `source/snippets/repo/` while preserving deterministic evidence for every committed repository source.
+
+**Dependencies and ordering:** Begin only after the current release transaction is complete and a fresh branch is created from updated `main`. This task supersedes the migration-only untracked-input rule in Task 2. It does not depend on official logo, typography, Xcode, showcase, or project-name decisions.
+
+**Files and symbols:**
+
+- Modify `scripts/lib/open-design/evidence.cjs`, function `listRepositoryEvidence()` and its Git `spawnSync` call.
+- Modify `test/open-design-evidence.test.cjs`, the temporary-repository enumeration contract beginning with `enumerates complete Git evidence`.
+- Regenerate `design/open-design/bizarre-industries/**` only after the source and test changes pass.
+- Update the `Complete Repository Ingestion` heading in `docs/superpowers/specs/2026-07-12-open-design-system-design.md` and the security blocker in `docs/agent-handoff.md`.
+
+**Interfaces consumed:** Git index state through `git ls-files --cached`; `generated-files.json`; the existing protected-path, symlink, byte-limit, classification, and hashing contracts.
+
+**Interfaces produced:** A sorted `EvidenceEntry[]` containing tracked regular files only, minus the existing explicit exclusions. Arbitrary untracked files produce no entry and no copied package file.
+
+**Preconditions:**
+
+- `main` contains the current release and is clean.
+- Every required generator, test, documentation, font, license, and adapter source is tracked.
+- No external Open Design catalog mutation is required.
+
+**Current evidence:**
+
+- `scripts/lib/open-design/evidence.cjs` invokes `git ls-files --cached --others --exclude-standard`.
+- `test/open-design-evidence.test.cjs` asserts that `untracked.md` is included.
+- `git check-ignore --no-index .env credentials.json secrets.txt` matches none of those generic names.
+- The current committed release passed `gitleaks git --redact --no-banner --log-opts="origin/main..HEAD"` with zero findings. The risk concerns future local inputs, not a secret already present in the release.
+
+**Remaining test-first implementation steps:**
+
+- [ ] Add a failing regression that creates tracked `README.md`, untracked `untracked.md`, `.env`, `credentials.json`, and `secrets.txt`, then asserts only tracked, nonexcluded files appear.
+- [ ] Run `node --test test/open-design-evidence.test.cjs` and confirm the new assertions fail because the current enumerator includes untracked files.
+- [ ] Remove `--others` and `--exclude-standard` from the Git `spawnSync` call in `listRepositoryEvidence()`; retain NUL separation, raw sorting, regular-file checks, and all existing exclusions.
+- [ ] Rerun `node --test test/open-design-evidence.test.cjs` and require all evidence contracts to pass.
+- [ ] Run `npm test`, `npm run check:showcase`, and `git diff --check`.
+- [ ] Regenerate the package with `npm run generate:open-design`, review the evidence-count delta, and rerun `npm test` plus `npm run check:showcase`.
+- [ ] Update the specification, plan evidence, and handoff only with the observed tracked-only counts and real command results.
+- [ ] Review the complete diff and use a separate signed-off pull request only when explicitly authorized.
+
+**Expected observable result:** A nonignored untracked file never appears in `source/scanned-files.json`, `source/snippets/INDEX.json`, `package-files.json`, or `source/snippets/repo/`; all tracked canonical sources remain byte-identical evidence.
+
+**Acceptance criteria:**
+
+1. The focused test demonstrates RED on the current implementation and PASS after the minimum enumeration change.
+2. `.env`, `credentials.json`, `secrets.txt`, and arbitrary `untracked.md` fixtures are absent from every generated evidence index and package path.
+3. `npm test`, `npm run check:showcase`, `npm run check:open-design`, and `git diff --check` pass.
+4. Generated package ownership remains valid, sorted, symlink-free, and collision-safe.
+5. Governing documentation no longer instructs agents to package arbitrary untracked files.
+
+**Documentation impact:** Update only the Open Design ingestion specification, this task status/evidence, and the canonical handoff security blocker. Do not claim official-brand convergence.
+
+**Rollback and recovery:** If a tracked-only generation attempt fails, preserve the branch and inspect the exact missing evidence path. Do not restore arbitrary untracked enumeration. Add a reviewed, path-specific tracked source or explicit allowlist only when repository evidence proves it is required.
+
+**Risks and edge cases:** Intent-to-add entries, submodules, tracked deletions, case-fold collisions, symlinks, package recursion, and generated ownership must retain their current fail-closed behavior. A generic denylist alone is insufficient because secret filenames are unbounded.

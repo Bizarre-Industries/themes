@@ -945,8 +945,8 @@
       "sourcePath": "docs/superpowers/plans/2026-07-12-design-system-foundation.md",
       "packagePath": "source/snippets/repo/docs/superpowers/plans/2026-07-12-design-system-foundation.md",
       "kind": "text/markdown",
-      "bytes": 39357,
-      "sha256": "ac2d86a66cb48e60b07b7195b9a2a1c1503aa6c413c1c4748219d361a6168d01",
+      "bytes": 38364,
+      "sha256": "620b25c7896e552c9da87bbcc1cc96005c0910be2db2462c6533674f0d7e0a7d",
       "classification": "documentation",
       "generated": false,
       "path": "source/snippets/repo/docs/superpowers/plans/2026-07-12-design-system-foundation.md"
@@ -955,8 +955,8 @@
       "sourcePath": "docs/superpowers/plans/2026-07-12-open-design-system.md",
       "packagePath": "source/snippets/repo/docs/superpowers/plans/2026-07-12-open-design-system.md",
       "kind": "text/markdown",
-      "bytes": 48870,
-      "sha256": "04a8d2c169d1e6cddaceed4cee71b0c19917537d7e9f42697837ad9e035faaca",
+      "bytes": 62128,
+      "sha256": "82fb24c34f542cb67b5e3af65067adea0393327eea582738b401c613e78def27",
       "classification": "documentation",
       "generated": false,
       "path": "source/snippets/repo/docs/superpowers/plans/2026-07-12-open-design-system.md"
@@ -965,8 +965,8 @@
       "sourcePath": "docs/superpowers/specs/2026-07-12-bizarre-industries-design-language.md",
       "packagePath": "source/snippets/repo/docs/superpowers/specs/2026-07-12-bizarre-industries-design-language.md",
       "kind": "text/markdown",
-      "bytes": 20571,
-      "sha256": "b21549ac55850bf3adede678873fc7663088107a88be668534749694aac5a383",
+      "bytes": 20578,
+      "sha256": "c189ecf22d5e5dc8add8840e421997813d945eceea6c27a79fef0bdaedc6c173",
       "classification": "documentation",
       "generated": false,
       "path": "source/snippets/repo/docs/superpowers/specs/2026-07-12-bizarre-industries-design-language.md"
@@ -975,8 +975,8 @@
       "sourcePath": "docs/superpowers/specs/2026-07-12-open-design-system-design.md",
       "packagePath": "source/snippets/repo/docs/superpowers/specs/2026-07-12-open-design-system-design.md",
       "kind": "text/markdown",
-      "bytes": 46782,
-      "sha256": "1a956d47fca3e6794aeed09a9e02b00f23b8814daacaa2b3329749aeae2dc851",
+      "bytes": 47705,
+      "sha256": "5dd1424b5bd2e79522388bbf15ff085fccb3e010fc292b1ab4dfaa5736bd5d75",
       "classification": "documentation",
       "generated": false,
       "path": "source/snippets/repo/docs/superpowers/specs/2026-07-12-open-design-system-design.md"

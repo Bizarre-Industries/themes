@@ -21,7 +21,7 @@ The existing `themes` repository remains a downstream third-party theme and adap
 - The company-level identity is **Bizarre Industries**.
 - **Signal Lime** is the only brand accent.
 - Functional status colors may communicate success, information, warning, error, or critical state, but they are never alternate product accents.
-- **CATCH THE STARS.** is the permanent company tagline, including its period.
+- **CATCH THE STARS** is the permanent company tagline, without trailing punctuation.
 - The current identity may be refined but must not be replaced or made unrecognizable.
 - Preserve the existing star motif, industrial/editorial character, Signal Lime, company name, and recognizable mark proportions.
 - Products share one master identity. They may differ through composition, typography, imagery, density, motion, and platform behavior, not through independent accent colors or sub-brand visual systems.

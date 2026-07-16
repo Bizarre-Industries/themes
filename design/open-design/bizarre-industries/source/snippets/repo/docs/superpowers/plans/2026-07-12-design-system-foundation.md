@@ -6,14 +6,14 @@
 
 **Goal:** Create the canonical `Bizarre-Industries/design-system` repository with a tested source-evidence boundary, repository governance, a minimal standards-shaped token seed, deterministic package generation, and release-ready verification without changing the downstream `themes` repository.
 
-**Architecture:** Create a new sibling repository at `/Users/binghzal/Developer/design-system`. Canonical source files live under `brand/`, `foundations/`, and `tokens/source/`; small dependency-free Node.js modules validate and build deterministic outputs into `packages/tokens/`. Published evidence is selected by a tracked allowlist, never by enumerating arbitrary untracked working-tree files.
+**Architecture:** Create a new sibling repository at `../design-system`. Canonical source files live under `brand/`, `foundations/`, and `tokens/source/`; small dependency-free Node.js modules validate and build deterministic outputs into `packages/tokens/`. Published evidence is selected by a tracked allowlist, never by enumerating arbitrary untracked working-tree files.
 
 **Tech Stack:** Git, Node.js 22, npm workspaces, ECMAScript modules, `node:test`, JSON Schema 2020-12, Design Tokens Community Group 2025.10 format, GitHub Actions.
 
 ## Global Constraints
 
 - Signal Lime `#C6FF24` is the only brand accent.
-- `CATCH THE STARS.` is the permanent company tagline, including its period.
+- `CATCH THE STARS` is the permanent company tagline, without trailing punctuation.
 - The current identity may be refined but must not be replaced or made unrecognizable.
 - `design-system` is canonical; `themes` is a downstream consumer and remains unchanged in this milestone.
 - Source authority flows from approved brand decisions to canonical tokens, generated packages, and conformance tests.
@@ -22,8 +22,8 @@
 - Published evidence is committed or explicitly allowlisted; untracked workspace files are never packaged.
 - Generated output must be deterministic and published atomically.
 - Void, Paper, and Void Hi-Contrast are required modes. Workshop and Bone remain canonical optional expressions.
-- No production package may depend on `/Users/binghzal/Developer/themes` or another developer-local absolute path.
-- This milestone must not modify, stage, commit, or regenerate files in `/Users/binghzal/Developer/themes` other than this plan document.
+- No production package may depend on the current `themes` repository through a developer-local filesystem path.
+- This sibling-repository milestone must not modify, stage, commit, or regenerate files in the current `themes` repository other than this plan document.
 
 ## Milestone Boundary
 
@@ -32,7 +32,7 @@ This plan establishes the repository and a minimal token seed. It does not refin
 ## Planned File Structure
 
 ```text
-/Users/binghzal/Developer/design-system/
+../design-system/
 ├── .github/
 │   └── workflows/
 │       └── verify.yml
@@ -89,19 +89,19 @@ This plan establishes the repository and a minimal token seed. It does not refin
 ### Task 1: Bootstrap the canonical repository and governance boundary
 
 **Files:**
-- Create: `/Users/binghzal/Developer/design-system/package.json`
-- Create: `/Users/binghzal/Developer/design-system/.gitignore`
-- Create: `/Users/binghzal/Developer/design-system/.editorconfig`
-- Create: `/Users/binghzal/Developer/design-system/README.md`
-- Create: `/Users/binghzal/Developer/design-system/LICENSE`
-- Create: `/Users/binghzal/Developer/design-system/CODEOWNERS`
-- Create: `/Users/binghzal/Developer/design-system/SECURITY.md`
-- Create: `/Users/binghzal/Developer/design-system/governance/CONTRIBUTING.md`
-- Create: `/Users/binghzal/Developer/design-system/governance/RELEASES.md`
-- Test: `/Users/binghzal/Developer/design-system/test/repository-contract.test.mjs`
+- Create: `../design-system/package.json`
+- Create: `../design-system/.gitignore`
+- Create: `../design-system/.editorconfig`
+- Create: `../design-system/README.md`
+- Create: `../design-system/LICENSE`
+- Create: `../design-system/CODEOWNERS`
+- Create: `../design-system/SECURITY.md`
+- Create: `../design-system/governance/CONTRIBUTING.md`
+- Create: `../design-system/governance/RELEASES.md`
+- Test: `../design-system/test/repository-contract.test.mjs`
 
 **Interfaces:**
-- Consumes: approved design specification at `/Users/binghzal/Developer/themes/docs/superpowers/specs/2026-07-12-bizarre-industries-design-language.md`.
+- Consumes: approved design specification at `./docs/superpowers/specs/2026-07-12-bizarre-industries-design-language.md`.
 - Produces: npm scripts `test`, `build`, `check:generated`, and `verify`; workspace `packages/*`; repository policy that `themes` is downstream.
 
 - [ ] **Step 1: Create the repository and failing repository-contract test**
@@ -109,8 +109,8 @@ This plan establishes the repository and a minimal token seed. It does not refin
 Run:
 
 ```bash
-mkdir -p /Users/binghzal/Developer/design-system/test
-cd /Users/binghzal/Developer/design-system
+mkdir -p ../design-system/test
+cd ../design-system
 git init -b main
 ```
 
@@ -147,7 +147,7 @@ test('repository ignores local runtime state', async () => {
 Run:
 
 ```bash
-cd /Users/binghzal/Developer/design-system
+cd ../design-system
 node --test test/repository-contract.test.mjs
 ```
 
@@ -212,7 +212,7 @@ Create `README.md`:
 
 Canonical Bizarre Industries design language for software, hardware, graphics, and media.
 
-Signal Lime is the only brand accent. CATCH THE STARS. is the permanent tagline.
+Signal Lime is the only brand accent. CATCH THE STARS is the permanent tagline.
 
 This repository publishes the official identity, tokens, assets, framework overlays, and conformance contracts. The `Bizarre-Industries/themes` repository is a downstream third-party theme consumer and must pin a released package from this repository.
 
@@ -224,7 +224,7 @@ This repository publishes the official identity, tokens, assets, framework overl
 - `npm run verify` runs the complete local gate.
 ```
 
-Copy the MIT license text from `/Users/binghzal/Developer/themes/LICENSE` into `LICENSE`, preserving the existing Bizarre Industries copyright line.
+After entering `../design-system`, copy the MIT license text from the sibling themes repository at `../themes/LICENSE` into `LICENSE`, preserving the existing Bizarre Industries copyright line.
 
 Create `CODEOWNERS`:
 
@@ -281,11 +281,11 @@ git commit -m "chore: bootstrap canonical design system repository"
 ### Task 2: Define the tracked identity contract
 
 **Files:**
-- Create: `/Users/binghzal/Developer/design-system/schemas/identity.schema.json`
-- Create: `/Users/binghzal/Developer/design-system/brand/identity.json`
-- Create: `/Users/binghzal/Developer/design-system/brand/README.md`
-- Create: `/Users/binghzal/Developer/design-system/foundations/README.md`
-- Test: `/Users/binghzal/Developer/design-system/test/identity.test.mjs`
+- Create: `../design-system/schemas/identity.schema.json`
+- Create: `../design-system/brand/identity.json`
+- Create: `../design-system/brand/README.md`
+- Create: `../design-system/foundations/README.md`
+- Test: `../design-system/test/identity.test.mjs`
 
 **Interfaces:**
 - Consumes: permanent brand decisions from the approved specification.
@@ -306,7 +306,7 @@ test('identity preserves permanent Bizarre Industries decisions', async () => {
   const identity = await readJson('brand/identity.json');
   assert.equal(identity.schemaVersion, 1);
   assert.equal(identity.companyName, 'Bizarre Industries');
-  assert.equal(identity.tagline, 'CATCH THE STARS.');
+  assert.equal(identity.tagline, 'CATCH THE STARS');
   assert.deepEqual(identity.accent, { name: 'Signal Lime', value: '#C6FF24' });
   assert.equal(identity.expressions.core, 'Precision Signal');
   assert.equal(identity.expressions.editorial, 'Editorial Monument');
@@ -341,7 +341,7 @@ Create `schemas/identity.schema.json`:
   "properties": {
     "schemaVersion": { "const": 1 },
     "companyName": { "const": "Bizarre Industries" },
-    "tagline": { "const": "CATCH THE STARS." },
+    "tagline": { "const": "CATCH THE STARS" },
     "accent": {
       "type": "object",
       "additionalProperties": false,
@@ -374,7 +374,7 @@ Create `brand/identity.json`:
 {
   "schemaVersion": 1,
   "companyName": "Bizarre Industries",
-  "tagline": "CATCH THE STARS.",
+  "tagline": "CATCH THE STARS",
   "accent": {
     "name": "Signal Lime",
     "value": "#C6FF24"
@@ -422,10 +422,10 @@ git commit -m "feat: define permanent identity contract"
 ### Task 3: Enforce an allowlisted evidence boundary
 
 **Files:**
-- Create: `/Users/binghzal/Developer/design-system/schemas/evidence-allowlist.schema.json`
-- Create: `/Users/binghzal/Developer/design-system/governance/evidence-allowlist.json`
-- Create: `/Users/binghzal/Developer/design-system/scripts/lib/evidence.mjs`
-- Test: `/Users/binghzal/Developer/design-system/test/evidence.test.mjs`
+- Create: `../design-system/schemas/evidence-allowlist.schema.json`
+- Create: `../design-system/governance/evidence-allowlist.json`
+- Create: `../design-system/scripts/lib/evidence.mjs`
+- Test: `../design-system/test/evidence.test.mjs`
 
 **Interfaces:**
 - Consumes: repository root URL and tracked allowlist paths.
@@ -562,10 +562,10 @@ git commit -m "feat: enforce allowlisted package evidence"
 ### Task 4: Seed standards-shaped brand and mode tokens
 
 **Files:**
-- Create: `/Users/binghzal/Developer/design-system/tokens/source/brand.tokens.json`
-- Create: `/Users/binghzal/Developer/design-system/tokens/source/modes.tokens.json`
-- Create: `/Users/binghzal/Developer/design-system/scripts/lib/token-model.mjs`
-- Test: `/Users/binghzal/Developer/design-system/test/token-model.test.mjs`
+- Create: `../design-system/tokens/source/brand.tokens.json`
+- Create: `../design-system/tokens/source/modes.tokens.json`
+- Create: `../design-system/scripts/lib/token-model.mjs`
+- Test: `../design-system/test/token-model.test.mjs`
 
 **Interfaces:**
 - Consumes: DTCG-shaped JSON token documents and identity contract.
@@ -655,13 +655,13 @@ git commit -m "feat: seed canonical brand and mode tokens"
 ### Task 5: Build deterministic token package bytes
 
 **Files:**
-- Create: `/Users/binghzal/Developer/design-system/scripts/lib/canonical-json.mjs`
-- Create: `/Users/binghzal/Developer/design-system/scripts/build-tokens.mjs`
-- Create: `/Users/binghzal/Developer/design-system/scripts/check-generated.mjs`
-- Create: `/Users/binghzal/Developer/design-system/packages/tokens/package.json`
-- Create: `/Users/binghzal/Developer/design-system/packages/tokens/README.md`
-- Test: `/Users/binghzal/Developer/design-system/test/canonical-json.test.mjs`
-- Test: `/Users/binghzal/Developer/design-system/test/build-tokens.test.mjs`
+- Create: `../design-system/scripts/lib/canonical-json.mjs`
+- Create: `../design-system/scripts/build-tokens.mjs`
+- Create: `../design-system/scripts/check-generated.mjs`
+- Create: `../design-system/packages/tokens/package.json`
+- Create: `../design-system/packages/tokens/README.md`
+- Test: `../design-system/test/canonical-json.test.mjs`
+- Test: `../design-system/test/build-tokens.test.mjs`
 
 **Interfaces:**
 - Consumes: `loadTokenModel`, `flattenTokens`, `collectEvidence`.
@@ -775,9 +775,9 @@ git commit -m "feat: build deterministic token package bytes"
 ### Task 6: Publish generated output atomically
 
 **Files:**
-- Create: `/Users/binghzal/Developer/design-system/scripts/lib/package-writer.mjs`
-- Test: `/Users/binghzal/Developer/design-system/test/package-writer.test.mjs`
-- Modify: `/Users/binghzal/Developer/design-system/scripts/build-tokens.mjs`
+- Create: `../design-system/scripts/lib/package-writer.mjs`
+- Test: `../design-system/test/package-writer.test.mjs`
+- Modify: `../design-system/scripts/build-tokens.mjs`
 
 **Interfaces:**
 - Consumes: `writePackage(packageUrl, expectedFiles): Promise<void>` where `expectedFiles` is `Map<string,Buffer>`.
@@ -860,10 +860,10 @@ git commit -m "feat: publish token package atomically"
 ### Task 7: Add package, provenance, and CI contracts
 
 **Files:**
-- Create: `/Users/binghzal/Developer/design-system/governance/package-contract.json`
-- Create: `/Users/binghzal/Developer/design-system/test/package-contract.test.mjs`
-- Create: `/Users/binghzal/Developer/design-system/.github/workflows/verify.yml`
-- Modify: `/Users/binghzal/Developer/design-system/governance/evidence-allowlist.json`
+- Create: `../design-system/governance/package-contract.json`
+- Create: `../design-system/test/package-contract.test.mjs`
+- Create: `../design-system/.github/workflows/verify.yml`
+- Modify: `../design-system/governance/evidence-allowlist.json`
 
 **Interfaces:**
 - Consumes: generated token manifest, npm package metadata, GitHub checkout.
@@ -981,9 +981,9 @@ git commit -m "ci: verify canonical package and provenance contracts"
 ### Task 8: Audit the completed milestone and publish the next-plan inputs
 
 **Files:**
-- Create: `/Users/binghzal/Developer/design-system/docs/foundation-audit.md`
-- Create: `/Users/binghzal/Developer/design-system/docs/next-milestones.md`
-- Test: `/Users/binghzal/Developer/design-system/test/documentation-contract.test.mjs`
+- Create: `../design-system/docs/foundation-audit.md`
+- Create: `../design-system/docs/next-milestones.md`
+- Test: `../design-system/test/documentation-contract.test.mjs`
 
 **Interfaces:**
 - Consumes: completed repository, package manifest, approved master specification.
@@ -1068,7 +1068,7 @@ git commit -m "docs: record design system foundation milestone"
 Before declaring this plan complete, independently verify:
 
 ```bash
-cd /Users/binghzal/Developer/design-system
+cd ../design-system
 npm ci
 npm run verify
 npm pack --dry-run --workspace @bizarre/tokens
@@ -1082,4 +1082,4 @@ Required outcome:
 - package dry run contains no local runtime state or unrelated workspace evidence;
 - Git working tree is clean;
 - repository history contains one focused commit per task;
-- `/Users/binghzal/Developer/themes` has not been changed by plan execution.
+- the current themes repository has not been changed by sibling-plan execution, except for this plan document.

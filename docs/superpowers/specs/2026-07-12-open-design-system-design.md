@@ -240,7 +240,7 @@ If normative files and evidence ever disagree, generation fails. Open Design mus
 
 The discovery snapshot contained 454 visible repository files before this specification was added, including 383 generator-owned outputs, 24 README files, 27 Markdown documents, and 45 current browser showcase PNGs. These are observational counts, not hard-coded limits; regeneration recalculates them from the working tree and includes this specification.
 
-The package must include:
+The package must include every tracked repository source needed to reconstruct the themes adapter:
 
 - the full root `README.md` verbatim at `source/snippets/repo/README.md`;
 - every other repository README verbatim at its original relative path below `source/snippets/repo/`;
@@ -279,7 +279,9 @@ The following are excluded because they are not current repository design contex
 - `.superpowers/brainstorm/`, which is transient tool UI and runtime state and may contain session credentials, ports, and process identifiers;
 - removed Xcode files;
 - removed stale native captures;
-- secrets, local credentials, ignored private files, and user-agent instruction files.
+- ignored private files and user-agent instruction files.
+
+The migration checkpoint implementation invokes `git ls-files --cached --others --exclude-standard`, so a nonignored untracked file is currently eligible for evidence. That behavior was necessary while most implementation sources were untracked, but it is not an acceptable steady-state security boundary: secret filenames are unbounded and `.env`, `credentials.json`, or another local export may not be ignored. The current release commit passed a Gitleaks commit scan with zero findings. Task 9 in the canonical plan must change future enumeration to tracked files only and add explicit untracked-secret regressions before another package publication. Until then, do not claim that arbitrary nonignored untracked files are safely excluded.
 
 ## README Treatment
 
@@ -519,9 +521,11 @@ Installation normally uses Open Design's supported local design-system endpoint 
 ```json
 {
   "source": "local",
-  "path": "/Users/binghzal/Developer/themes/design/open-design/bizarre-industries"
+  "path": "design/open-design/bizarre-industries"
 }
 ```
+
+Resolve the repository-relative `path` to an absolute path at invocation time. Never commit the resolved developer-local path.
 
 Open Design validates that `DESIGN.md` exists and creates a junction-style symlink inside its user design-system directory. It does not copy or normalize the valid package. The repo-owned `metadata.json` makes the catalog entry published and `agent-managed` immediately; no PATCH/publish call is allowed because that call would write through the symlink.
 
@@ -569,7 +573,7 @@ Repository tests must prove:
 - every normal syntax role and required foreground clears the existing WCAG thresholds;
 - all ANSI mappings match the canonical dark/light maps;
 - full root README evidence is byte-identical to the repository source;
-- every present non-ignored repository file is either included or covered by an explicit exclusion rule;
+- every tracked repository file is either included or covered by an explicit exclusion rule, after the tracked-only Task 9 hardening is complete;
 - every evidence and asset hash matches its source;
 - no deleted Xcode or stale native-capture path appears;
 - all 45 current showcase images are included and match their hashes;
