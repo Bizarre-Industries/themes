@@ -21,7 +21,7 @@
 			<key>scope</key><string>comment, punctuation.definition.comment</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key><string>#6F6F6F</string>
+				<key>foreground</key><string>#828282</string>
 				<key>fontStyle</key><string>italic</string>
 			</dict>
 		</dict>
@@ -115,7 +115,7 @@
 			<key>scope</key><string>punctuation, meta.brace</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key><string>#7A7A7A</string>
+				<key>foreground</key><string>#828282</string>
 			</dict>
 		</dict>
 		<dict>

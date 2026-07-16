@@ -1,0 +1,9 @@
+[theme]
+inherit = "basic"
+stylesheets = ["bizarre.css"]
+pygments_style = { default = "default", dark = "monokai" }
+
+[options]
+accent = "#C6FF24"
+background = "#0E0E0E"
+foreground = "#E4E4E4"

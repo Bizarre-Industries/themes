@@ -1,0 +1,13 @@
+/* Bizarre Industries - typography compatibility layer. Generated from palette.js. */
+:root {
+  --bzr-font-display: 'Monaspace Xenon', 'Monaspace Neon', 'Menlo', monospace;
+  --bzr-font-stencil: 'Monaspace Xenon', 'Monaspace Neon', 'Menlo', monospace;
+  --bzr-font-body: 'Monaspace Argon', 'Monaspace Neon', ui-monospace, monospace;
+  --bzr-font-mono: 'Monaspace Neon', 'Menlo', 'SFMono-Regular', monospace;
+}
+
+body { font-family: var(--bzr-font-body); }
+h1, h2, h3, .ff-display { font-family: var(--bzr-font-display); }
+.ff-stencil { font-family: var(--bzr-font-stencil); }
+.ff-body { font-family: var(--bzr-font-body); }
+.ff-mono, code, pre { font-family: var(--bzr-font-mono); }

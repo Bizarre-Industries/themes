@@ -1,0 +1,4271 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "sourcePath": ".gitattributes",
+      "packagePath": "source/snippets/repo/.gitattributes",
+      "kind": "application/octet-stream",
+      "bytes": 235,
+      "sha256": "f94c47c344528450ed8aeea61203ff935b9751df3ea11bd40571baf16546cd57",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": ".github/workflows/verify.yml",
+      "packagePath": "source/snippets/repo/.github/workflows/verify.yml",
+      "kind": "application/yaml",
+      "bytes": 745,
+      "sha256": "6a60e7cb0d7ac0951ae298e4bd008b99c36255d205ebe021e45d9be03f793be9",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": ".gitignore",
+      "packagePath": "source/snippets/repo/.gitignore",
+      "kind": "application/octet-stream",
+      "bytes": 427,
+      "sha256": "c380959c40c25657364dc3c9b1af2336e93280b32708af89d824004f77b79365",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "LICENSE",
+      "packagePath": "source/snippets/repo/LICENSE",
+      "kind": "text/plain",
+      "bytes": 1075,
+      "sha256": "a85558a23a3030ef254032be8c8012c78278018b52bc0ae3e20ee6c6ff0ac899",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "PALETTE.md",
+      "packagePath": "source/snippets/repo/PALETTE.md",
+      "kind": "text/markdown",
+      "bytes": 3428,
+      "sha256": "6e3db15bf07c2d506e770ec9e6e21989550d0569db1766dd6d027340260621e6",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "PORTS.md",
+      "packagePath": "source/snippets/repo/PORTS.md",
+      "kind": "text/markdown",
+      "bytes": 2010,
+      "sha256": "f4d6a1bf12459661152459898ee2abbe83d80269de045cd13b64add27d58cf0e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "README.md",
+      "packagePath": "source/snippets/repo/README.md",
+      "kind": "text/markdown",
+      "bytes": 15247,
+      "sha256": "659dc75ff4ae1c44394bbddb81bbaba5d83bf73cb0916786eaa365476336ab1e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/README.md",
+      "packagePath": "source/snippets/repo/apps/README.md",
+      "kind": "text/markdown",
+      "bytes": 473,
+      "sha256": "25303eba3461ffeced395abd5c66049f8dfbb42c00ae6995ccb7513e4992f2dc",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/alfred/bizarre-bone.alfredappearance",
+      "packagePath": "source/snippets/repo/apps/alfred/bizarre-bone.alfredappearance",
+      "kind": "application/octet-stream",
+      "bytes": 444,
+      "sha256": "c0f9b0c015cf7ce604f1650f0857457874b329670cafe91fbf30b68538377188",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/alfred/bizarre-paper.alfredappearance",
+      "packagePath": "source/snippets/repo/apps/alfred/bizarre-paper.alfredappearance",
+      "kind": "application/octet-stream",
+      "bytes": 445,
+      "sha256": "4eb5caa0942197bcad11371f3107720064fa2fa2b1771d03129a2377bfd81568",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/alfred/bizarre-void-hicontrast.alfredappearance",
+      "packagePath": "source/snippets/repo/apps/alfred/bizarre-void-hicontrast.alfredappearance",
+      "kind": "application/octet-stream",
+      "bytes": 456,
+      "sha256": "4de83f30937805e12fc119d7959290c37c8e4857cfcd3900b399bf71b0734032",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/alfred/bizarre-void.alfredappearance",
+      "packagePath": "source/snippets/repo/apps/alfred/bizarre-void.alfredappearance",
+      "kind": "application/octet-stream",
+      "bytes": 444,
+      "sha256": "2fafbf25a7412878cb86b1397f7e6d3a07288442249d0406293a449efda6006e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/alfred/bizarre-workshop.alfredappearance",
+      "packagePath": "source/snippets/repo/apps/alfred/bizarre-workshop.alfredappearance",
+      "kind": "application/octet-stream",
+      "bytes": 448,
+      "sha256": "6cd911629fb2616e6ea78f3356ae91afd4842d0884c650774db97370ddec62df",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/discord/betterdiscord/bizarre-bone.theme.css",
+      "packagePath": "source/snippets/repo/apps/discord/betterdiscord/bizarre-bone.theme.css",
+      "kind": "text/css",
+      "bytes": 1124,
+      "sha256": "f3d34715d268cc9ff4a3f01b68ee4eb1809c384df7315e73f071c44c02dc5a6a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/discord/betterdiscord/bizarre-paper.theme.css",
+      "packagePath": "source/snippets/repo/apps/discord/betterdiscord/bizarre-paper.theme.css",
+      "kind": "text/css",
+      "bytes": 1125,
+      "sha256": "4c13678256437fe1f552d7fc4839300529fcc90405085dbb44163a3dda89894c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/discord/betterdiscord/bizarre-void-hicontrast.theme.css",
+      "packagePath": "source/snippets/repo/apps/discord/betterdiscord/bizarre-void-hicontrast.theme.css",
+      "kind": "text/css",
+      "bytes": 1136,
+      "sha256": "9283df3de1ad23cca523d0766497658323ef9229757a7684a3ae621bd7d95f77",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/discord/betterdiscord/bizarre-void.theme.css",
+      "packagePath": "source/snippets/repo/apps/discord/betterdiscord/bizarre-void.theme.css",
+      "kind": "text/css",
+      "bytes": 1124,
+      "sha256": "1c384562d0e8068a6e0225c79c709d28d7185261cd52d2fd8990de4a3b6e7788",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/discord/betterdiscord/bizarre-workshop.theme.css",
+      "packagePath": "source/snippets/repo/apps/discord/betterdiscord/bizarre-workshop.theme.css",
+      "kind": "text/css",
+      "bytes": 1128,
+      "sha256": "a9810ac7009ae2281abf2f7b9fb3223dac15b1b822f800428bf88b115aa3da9c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/logseq/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/apps/logseq/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 1057,
+      "sha256": "c3e99c98aae81fd064fcd2adc47a5eb96df95992202755880cf6bfee6b2ecfd5",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/logseq/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/apps/logseq/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 1058,
+      "sha256": "c93d4b8c4396f9d918d417bd9f3124317dedd33a7d52e35b1cdda0723e96135d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/logseq/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/apps/logseq/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 1069,
+      "sha256": "66688af7bfac7ab38eeaeaf4e6e4f8d5c968b0bf5e2ddf638d2718085578dae2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/logseq/bizarre-void.css",
+      "packagePath": "source/snippets/repo/apps/logseq/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 1057,
+      "sha256": "43e0d4c2aeed152a791ce1addc2e2a4808696a3ab1a118cdbf25645fc1551e3d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/logseq/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/apps/logseq/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 1061,
+      "sha256": "4568860f7ff348b7a9c7162658eb15b5011e0fc16a765d5c150b934f6d707498",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/obsidian/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/apps/obsidian/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 1074,
+      "sha256": "9244bb5379de6230be4acb62124a424f41f73896d425db879dd426e9c77ca97b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/obsidian/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/apps/obsidian/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 1075,
+      "sha256": "4150feb97aff5156b50976fcb838d566b3b021dc3ff38ba4c28895080199c40b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/obsidian/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/apps/obsidian/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 1086,
+      "sha256": "7e4873c6dd6f56c8de493c10db0a0b4ca6e74cbd9af632a890e7b90df5f3e25c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/obsidian/bizarre-void.css",
+      "packagePath": "source/snippets/repo/apps/obsidian/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 1074,
+      "sha256": "25b5083405c12bd10bdb9c05300f455c65f25417abe0ad83b89fac1f812073c0",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/obsidian/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/apps/obsidian/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 1078,
+      "sha256": "ec7a07f3f82bf8e71a59ddcb514a8edc84bbbb87c94dc32894104c1d27d8e518",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/qutebrowser/bizarre-bone.py",
+      "packagePath": "source/snippets/repo/apps/qutebrowser/bizarre-bone.py",
+      "kind": "text/x-python",
+      "bytes": 1142,
+      "sha256": "a4212162dd9eb88568aee20443503e6f4f992bfbe41bff6bdb38ca2816d8ebf1",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/qutebrowser/bizarre-paper.py",
+      "packagePath": "source/snippets/repo/apps/qutebrowser/bizarre-paper.py",
+      "kind": "text/x-python",
+      "bytes": 1143,
+      "sha256": "23d262518320b70c0ac1356acb32150afa261f17914c793851414b3df1499257",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/qutebrowser/bizarre-void-hicontrast.py",
+      "packagePath": "source/snippets/repo/apps/qutebrowser/bizarre-void-hicontrast.py",
+      "kind": "text/x-python",
+      "bytes": 1153,
+      "sha256": "255e538e1ed8a6fa7f90bb62cf5fdc45a197ae72ff150d8440900c44f7b43e3f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/qutebrowser/bizarre-void.py",
+      "packagePath": "source/snippets/repo/apps/qutebrowser/bizarre-void.py",
+      "kind": "text/x-python",
+      "bytes": 1141,
+      "sha256": "8c175c4474d70c76f0458961da123c265d7b9aa561cf760b677d0411000dcd60",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/qutebrowser/bizarre-workshop.py",
+      "packagePath": "source/snippets/repo/apps/qutebrowser/bizarre-workshop.py",
+      "kind": "text/x-python",
+      "bytes": 1145,
+      "sha256": "9f80fb81d1df7a897f4f5d39d7d53707b1b95440e68b61201f7eb70f6bc20e49",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/raycast/bizarre-bone.json",
+      "packagePath": "source/snippets/repo/apps/raycast/bizarre-bone.json",
+      "kind": "application/json",
+      "bytes": 416,
+      "sha256": "3e72328a52ff9784aa09417e2ae953576484ae21781db642503db737452bc034",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/raycast/bizarre-paper.json",
+      "packagePath": "source/snippets/repo/apps/raycast/bizarre-paper.json",
+      "kind": "application/json",
+      "bytes": 417,
+      "sha256": "04f79a2dfac3fc1877009e39a5f24e6cbc5991bf6e53b4d1c9e7ef7a35cb7045",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/raycast/bizarre-void-hicontrast.json",
+      "packagePath": "source/snippets/repo/apps/raycast/bizarre-void-hicontrast.json",
+      "kind": "application/json",
+      "bytes": 427,
+      "sha256": "74d4f0fb7821b14270d9cf9af96d3f9fdb2238a1bfb5cdaab5b80732484a90fd",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/raycast/bizarre-void.json",
+      "packagePath": "source/snippets/repo/apps/raycast/bizarre-void.json",
+      "kind": "application/json",
+      "bytes": 415,
+      "sha256": "402e77a5759fada93b844c188125bf8e90b34156d92869e9fd638836c8d0813e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/raycast/bizarre-workshop.json",
+      "packagePath": "source/snippets/repo/apps/raycast/bizarre-workshop.json",
+      "kind": "application/json",
+      "bytes": 419,
+      "sha256": "e85d44087be69c16bd5c6294f1a2d0a580b274c1186bb02b5cca63879e313a41",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/slack/bizarre-sidebar-themes.txt",
+      "packagePath": "source/snippets/repo/apps/slack/bizarre-sidebar-themes.txt",
+      "kind": "text/plain",
+      "bytes": 412,
+      "sha256": "c1ce4d42422b84291b2fca43a01e88d83c6d5e8347eb859c8927c5fa64913808",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/spotify/spicetify/color.ini",
+      "packagePath": "source/snippets/repo/apps/spotify/spicetify/color.ini",
+      "kind": "text/plain",
+      "bytes": 2195,
+      "sha256": "23d0c3b2acdc3554dfc73aa45f608e5f971c6ea030a681387b2f91b680023440",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/spotify/spicetify/user.css",
+      "packagePath": "source/snippets/repo/apps/spotify/spicetify/user.css",
+      "kind": "text/css",
+      "bytes": 321,
+      "sha256": "176719dba4ff90508d0b397488c4421d9e87df99edc7a4495e02948492f19a01",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/telegram/bizarre-bone.tdesktop-theme",
+      "packagePath": "source/snippets/repo/apps/telegram/bizarre-bone.tdesktop-theme",
+      "kind": "application/octet-stream",
+      "bytes": 482,
+      "sha256": "0dc89a77fd1b9a9909bcc4b1f75daace8672d10049b80b885b3535c5a5ddb483",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/telegram/bizarre-paper.tdesktop-theme",
+      "packagePath": "source/snippets/repo/apps/telegram/bizarre-paper.tdesktop-theme",
+      "kind": "application/octet-stream",
+      "bytes": 482,
+      "sha256": "ba3ac52bc60c20c10bd3f343cf0af3adf906b3068e9da9d76d6aee3034061657",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/telegram/bizarre-void-hicontrast.tdesktop-theme",
+      "packagePath": "source/snippets/repo/apps/telegram/bizarre-void-hicontrast.tdesktop-theme",
+      "kind": "application/octet-stream",
+      "bytes": 482,
+      "sha256": "2f374bac124c6583f42b2c774c15d4afd0cd4a16cb172a15cf0b082f0640ab29",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/telegram/bizarre-void.tdesktop-theme",
+      "packagePath": "source/snippets/repo/apps/telegram/bizarre-void.tdesktop-theme",
+      "kind": "application/octet-stream",
+      "bytes": 482,
+      "sha256": "04d70ea8234295388764fc6762d0039d5f3044b44a06f2ccacf84c0a9c578583",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "apps/telegram/bizarre-workshop.tdesktop-theme",
+      "packagePath": "source/snippets/repo/apps/telegram/bizarre-workshop.tdesktop-theme",
+      "kind": "application/octet-stream",
+      "bytes": 482,
+      "sha256": "333a94f17862cc358bd85ab515878f2be47ec4862d100263992f13dc33b82b9e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "design/README.md",
+      "packagePath": "source/snippets/repo/design/README.md",
+      "kind": "text/markdown",
+      "bytes": 898,
+      "sha256": "b7c1acd91aa0ca46a36ad50b1d65df16d1c7f9bc43af98f2c417a7bc151f629c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "design/figma/bizarre.tokens.json",
+      "packagePath": "source/snippets/repo/design/figma/bizarre.tokens.json",
+      "kind": "application/json",
+      "bytes": 27029,
+      "sha256": "244d940180f473835135e2dd7d4d47cc53b75a25d5e37d78db050ac27de6772f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "design/sketch/bizarre.sketchpalette",
+      "packagePath": "source/snippets/repo/design/sketch/bizarre.sketchpalette",
+      "kind": "application/octet-stream",
+      "bytes": 5861,
+      "sha256": "a5fca54b0cee9781ca28dd5cc50a9c8d10629000cbbeb7073f78039b31839f2e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/README.md",
+      "packagePath": "source/snippets/repo/devtools/README.md",
+      "kind": "text/markdown",
+      "bytes": 271,
+      "sha256": "df071d8a5dc099bd956244953383beb11cce709f511b72e6977b6a9699b34ae6",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/dbeaver/bizarre-bone.epf",
+      "packagePath": "source/snippets/repo/devtools/dbeaver/bizarre-bone.epf",
+      "kind": "application/octet-stream",
+      "bytes": 735,
+      "sha256": "0fbfbee555d088a4eb33bdf5b5937f2202f14baa55d43e7fcd2f7dcdfb5c0704",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/dbeaver/bizarre-paper.epf",
+      "packagePath": "source/snippets/repo/devtools/dbeaver/bizarre-paper.epf",
+      "kind": "application/octet-stream",
+      "bytes": 737,
+      "sha256": "b0fa6826b66e64173af200f842c77bf16a8b1afcf477be5cddf687a344e66cbc",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/dbeaver/bizarre-void-hicontrast.epf",
+      "packagePath": "source/snippets/repo/devtools/dbeaver/bizarre-void-hicontrast.epf",
+      "kind": "application/octet-stream",
+      "bytes": 758,
+      "sha256": "009817fc73cd6ba376a77c302a070164eaf68c7c18de608b2c341e55c5754214",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/dbeaver/bizarre-void.epf",
+      "packagePath": "source/snippets/repo/devtools/dbeaver/bizarre-void.epf",
+      "kind": "application/octet-stream",
+      "bytes": 735,
+      "sha256": "5d6b197893d57162e062e6f59e441e33d314b7dc06761e6c3acf690697394dad",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/dbeaver/bizarre-workshop.epf",
+      "packagePath": "source/snippets/repo/devtools/dbeaver/bizarre-workshop.epf",
+      "kind": "application/octet-stream",
+      "bytes": 743,
+      "sha256": "123819ba6729c933904ee196c1b6bbdc8517460e11017b7ec8075d92dfacbc51",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/github-readme-assets/bizarre-badge.svg",
+      "packagePath": "assets/brand/bizarre-badge.svg",
+      "kind": "image/svg+xml",
+      "bytes": 1241,
+      "sha256": "00e30ce2997cff014e38a3ecf82e1ba36d40e6e37bfce5678c286720adf14203",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/github-readme-assets/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/devtools/github-readme-assets/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 802,
+      "sha256": "5245f4943cddd9c2911ae7b7c78a208b8915ae09eff6d64a9861824bde2ab560",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/github-readme-assets/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/devtools/github-readme-assets/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 803,
+      "sha256": "d47a27be7c0fa918ef728a534fb094743b045098d13d6a44052a6ce480661818",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/github-readme-assets/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/devtools/github-readme-assets/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 814,
+      "sha256": "8087aa9e3d49ab758a54b0fb6a97b3297212bb07366f8a5e650487444db457f5",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/github-readme-assets/bizarre-void.css",
+      "packagePath": "source/snippets/repo/devtools/github-readme-assets/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 802,
+      "sha256": "c2938f17a17949e5338bc61fbc0b3786909c2ab7ff7e254cb2572948fa1cc7ff",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/github-readme-assets/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/devtools/github-readme-assets/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 806,
+      "sha256": "90ea0188ddc2e851435174db21669bed8c1f45c46d18f3a6ac9585ff106c287b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/httpie/bizarre.py",
+      "packagePath": "source/snippets/repo/devtools/httpie/bizarre.py",
+      "kind": "text/x-python",
+      "bytes": 943,
+      "sha256": "54c35d9888ef00c304f8d49beef65695accbdbf0179a282083ea0bf984e9b0ef",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/insomnia/bizarre.js",
+      "packagePath": "source/snippets/repo/devtools/insomnia/bizarre.js",
+      "kind": "text/javascript",
+      "bytes": 5485,
+      "sha256": "70b2845084fdb595f6fbfb0f4c575fcc79e00d619dbc02369730f86674d20134",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/postman/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/devtools/postman/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 1004,
+      "sha256": "aae83f4dd5c148e3332850554aa89563e03fc13e2f7591b47a1b15059fc625aa",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/postman/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/devtools/postman/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 1005,
+      "sha256": "647cd7ed96dbbd5b7bad706119fcb7acfd86e5bb7a00d7e1a21249a5b5d95f6c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/postman/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/devtools/postman/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 1016,
+      "sha256": "6e236d50b0643e37dfaedc49207ca515e9c08ee8c21e8dac42192517f87b8d8d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/postman/bizarre-void.css",
+      "packagePath": "source/snippets/repo/devtools/postman/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 1004,
+      "sha256": "4946a30bc987013497610f7b629f717d4c2d7e386fc5993a55f3f00477d0d021",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/postman/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/devtools/postman/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 1008,
+      "sha256": "7335bcd7c03a67b6897967356868c8e8dcdd46a4d4c1e532226ceb15bab85ec9",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/tableplus/bizarre-bone.json",
+      "packagePath": "source/snippets/repo/devtools/tableplus/bizarre-bone.json",
+      "kind": "application/json",
+      "bytes": 1257,
+      "sha256": "4720566f56b887f203a5855e7529c6d0cf7a5fdc1d61683ee6a01c41ecf8adea",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/tableplus/bizarre-paper.json",
+      "packagePath": "source/snippets/repo/devtools/tableplus/bizarre-paper.json",
+      "kind": "application/json",
+      "bytes": 1258,
+      "sha256": "7da864fa8fd93c015919eeb3a4a26c66403ae8c2630d93a040d1b4d76ba75468",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/tableplus/bizarre-void-hicontrast.json",
+      "packagePath": "source/snippets/repo/devtools/tableplus/bizarre-void-hicontrast.json",
+      "kind": "application/json",
+      "bytes": 1268,
+      "sha256": "60dbd56515bbeb6947fba1800ebd54eb77fecf2870374cfcb9b1009d09ca4bc3",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/tableplus/bizarre-void.json",
+      "packagePath": "source/snippets/repo/devtools/tableplus/bizarre-void.json",
+      "kind": "application/json",
+      "bytes": 1256,
+      "sha256": "3fe020e8c3cbd8e081d661c556c6dfb0eed546ab5daf9c0692c0df17950d2d4f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "devtools/tableplus/bizarre-workshop.json",
+      "packagePath": "source/snippets/repo/devtools/tableplus/bizarre-workshop.json",
+      "kind": "application/json",
+      "bytes": 1260,
+      "sha256": "f63b3315be5a9ae2924a8b56ae22a286ba88e54379c23c0b9cfb3bcb7ed3fb8a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/README.md",
+      "packagePath": "source/snippets/repo/docs-sites/README.md",
+      "kind": "text/markdown",
+      "bytes": 240,
+      "sha256": "df34b04d5ba390d014c108db96b135676d0c433fe6e935f0a12bda264b75f98d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/beamer/beamerthemebizarre.sty",
+      "packagePath": "source/snippets/repo/docs-sites/beamer/beamerthemebizarre.sty",
+      "kind": "application/octet-stream",
+      "bytes": 523,
+      "sha256": "d39c6b323aee0dfbf963256374fdcfff0bf8427817547a22a1e4eb08f4d97c54",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/docusaurus/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/docs-sites/docusaurus/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 1016,
+      "sha256": "d6f34510d467afd7673b7376848afecca1e9af0cff7b0cd7aeaf25c867aedfc1",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/docusaurus/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/docs-sites/docusaurus/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 1017,
+      "sha256": "3dd4dc4c643253cbe4e30f369ca6820b0c0b5d63c59fcab1fbd1dafcd7dae5e3",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/docusaurus/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/docs-sites/docusaurus/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 1027,
+      "sha256": "02075822e18b058df9398ca22e2c34c4e683b204cc5ca8887e674beb280af23f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/docusaurus/bizarre-void.css",
+      "packagePath": "source/snippets/repo/docs-sites/docusaurus/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 1015,
+      "sha256": "41ee1f0cce3e0d7cf9040572794db3efd55a56b79d0389fcb6670b7deebc0d21",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/docusaurus/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/docs-sites/docusaurus/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 1019,
+      "sha256": "336f8ac9ac33c33f9f4b91e5ab34d3697c98f30b5cda78c39f727cf209c0f0fe",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/latex/bizarre.sty",
+      "packagePath": "source/snippets/repo/docs-sites/latex/bizarre.sty",
+      "kind": "application/octet-stream",
+      "bytes": 399,
+      "sha256": "7d5ff468edf4b0dd9241e7f8138e94a1a62a8e4aa815142cc77c4bf4be35132a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/mkdocs/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/docs-sites/mkdocs/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 1012,
+      "sha256": "1436cf8937a26173883107851c58649acfc15faa445e1f57d2a6a08787accdcf",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/mkdocs/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/docs-sites/mkdocs/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 1013,
+      "sha256": "6c4491dcb7a15ac870990315b957d383544c65164640a676afcd88fc283b3672",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/mkdocs/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/docs-sites/mkdocs/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 1023,
+      "sha256": "1e6128ade778c413c079a69e0cf9e7a9bcb1b08ef1f29accb8c3fbcca835e908",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/mkdocs/bizarre-void.css",
+      "packagePath": "source/snippets/repo/docs-sites/mkdocs/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 1011,
+      "sha256": "308941ab44320e2d9fcd3187413db1366dd7b8e006c22285569643755972dd5f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/mkdocs/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/docs-sites/mkdocs/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 1015,
+      "sha256": "addd2374622344c7e2767a6237816ccc29b01eff621d4b7b254bedeb23c1b311",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/reveal.js/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/docs-sites/reveal.js/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 1015,
+      "sha256": "a222f4beb0cf7701ccd5ff6d6964b0e43e49df21e95713444680ab6968b8b713",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/reveal.js/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/docs-sites/reveal.js/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 1016,
+      "sha256": "3c44213ac9e65b5c43d4d44e98fc292daf51584f1c425505ec8b99e0a04133d6",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/reveal.js/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/docs-sites/reveal.js/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 1026,
+      "sha256": "872979c84894b7523e42d21ffd9c9a35864b1002fad09ff4a6d7b0d61711ff32",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/reveal.js/bizarre-void.css",
+      "packagePath": "source/snippets/repo/docs-sites/reveal.js/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 1014,
+      "sha256": "6f361a301f8e3236e271ee347ad282adeda61a3664a80c3df9669175634ab165",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/reveal.js/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/docs-sites/reveal.js/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 1018,
+      "sha256": "7d078bb4eab94be3b0b82732a84312fe5413224d62b6b25df12af1b52dd654c4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/sphinx/bizarre/static/bizarre.css",
+      "packagePath": "source/snippets/repo/docs-sites/sphinx/bizarre/static/bizarre.css",
+      "kind": "text/css",
+      "bytes": 1011,
+      "sha256": "823a73b352938c784143891558b123dcf2640715382a4ef7e0444ea99bb4bcfb",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/sphinx/bizarre/theme.toml",
+      "packagePath": "source/snippets/repo/docs-sites/sphinx/bizarre/theme.toml",
+      "kind": "application/toml",
+      "bytes": 191,
+      "sha256": "632c3c1fb4f0b66e2b873332f1685298edc16922aa2563881ae16033c7a482de",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs-sites/typst/bizarre.typ",
+      "packagePath": "source/snippets/repo/docs-sites/typst/bizarre.typ",
+      "kind": "application/octet-stream",
+      "bytes": 402,
+      "sha256": "4d605675f53bae990b8566efa4ef6c6bf75556aeade80eb9d28eccd4000ed6c9",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "docs/superpowers/plans/2026-07-11-repository-remediation.md",
+      "packagePath": "source/snippets/repo/docs/superpowers/plans/2026-07-11-repository-remediation.md",
+      "kind": "text/markdown",
+      "bytes": 13526,
+      "sha256": "f61e9f87bd1656f05c573faac24a006509531b9d4886113186e9287483d8f54d",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "docs/superpowers/plans/2026-07-12-design-system-foundation.md",
+      "packagePath": "source/snippets/repo/docs/superpowers/plans/2026-07-12-design-system-foundation.md",
+      "kind": "text/markdown",
+      "bytes": 38364,
+      "sha256": "620b25c7896e552c9da87bbcc1cc96005c0910be2db2462c6533674f0d7e0a7d",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "docs/superpowers/plans/2026-07-12-open-design-system.md",
+      "packagePath": "source/snippets/repo/docs/superpowers/plans/2026-07-12-open-design-system.md",
+      "kind": "text/markdown",
+      "bytes": 62128,
+      "sha256": "82fb24c34f542cb67b5e3af65067adea0393327eea582738b401c613e78def27",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "docs/superpowers/specs/2026-07-12-bizarre-industries-design-language.md",
+      "packagePath": "source/snippets/repo/docs/superpowers/specs/2026-07-12-bizarre-industries-design-language.md",
+      "kind": "text/markdown",
+      "bytes": 20578,
+      "sha256": "c189ecf22d5e5dc8add8840e421997813d945eceea6c27a79fef0bdaedc6c173",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "docs/superpowers/specs/2026-07-12-open-design-system-design.md",
+      "packagePath": "source/snippets/repo/docs/superpowers/specs/2026-07-12-open-design-system-design.md",
+      "kind": "text/markdown",
+      "bytes": 47705,
+      "sha256": "5dd1424b5bd2e79522388bbf15ff085fccb3e010fc292b1ab4dfaa5736bd5d75",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "editors/android-studio/README.md",
+      "packagePath": "source/snippets/repo/editors/android-studio/README.md",
+      "kind": "text/markdown",
+      "bytes": 207,
+      "sha256": "1794c7c14726b835457d71ca8dacf56f1a94d36ceb63cba9f165a52c949559a8",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/cursor/README.md",
+      "packagePath": "source/snippets/repo/editors/cursor/README.md",
+      "kind": "text/markdown",
+      "bytes": 195,
+      "sha256": "7748f0dbc7b302fa3b4751da836799d25955e518d311ea9857dbc1795cff452c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/emacs/bizarre-bone-theme.el",
+      "packagePath": "source/snippets/repo/editors/emacs/bizarre-bone-theme.el",
+      "kind": "application/octet-stream",
+      "bytes": 2486,
+      "sha256": "ae52acb2ba3529ef6130c4db8a35946c1f62c7f664a92ab25cfd450f14cf118d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/emacs/bizarre-paper-theme.el",
+      "packagePath": "source/snippets/repo/editors/emacs/bizarre-paper-theme.el",
+      "kind": "application/octet-stream",
+      "bytes": 2494,
+      "sha256": "85165f77278f76d3f3ce12ce139e4c13c1073f69add06be7dc3e4105a44d9157",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/emacs/bizarre-void-hicontrast-theme.el",
+      "packagePath": "source/snippets/repo/editors/emacs/bizarre-void-hicontrast-theme.el",
+      "kind": "application/octet-stream",
+      "bytes": 2576,
+      "sha256": "4f4f4f7bd9182ac82fcb46961f57c5db5bd30a5f9845ab0ca3a7ced0f54c5ea7",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/emacs/bizarre-void-theme.el",
+      "packagePath": "source/snippets/repo/editors/emacs/bizarre-void-theme.el",
+      "kind": "application/octet-stream",
+      "bytes": 2486,
+      "sha256": "73182e6b47962638668f773492ee1db9ef1ba9d8861ccc7e928a5f84893796f8",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/emacs/bizarre-workshop-theme.el",
+      "packagePath": "source/snippets/repo/editors/emacs/bizarre-workshop-theme.el",
+      "kind": "application/octet-stream",
+      "bytes": 2518,
+      "sha256": "2cfc37cdb8f498c485b85c32b9c2ff0d416d2bde1b3af782b16a3bd71f2c8f58",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/helix/bizarre-bone.toml",
+      "packagePath": "source/snippets/repo/editors/helix/bizarre-bone.toml",
+      "kind": "application/toml",
+      "bytes": 3048,
+      "sha256": "80592aec6757c5ede580dce01fcf2c111e207a23e820caf593a53e957a45a6b5",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/helix/bizarre-paper.toml",
+      "packagePath": "source/snippets/repo/editors/helix/bizarre-paper.toml",
+      "kind": "application/toml",
+      "bytes": 3049,
+      "sha256": "240274be7d863daa9837aa4a17500c5c5b6045b8294d4397ba10751b88b52781",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/helix/bizarre-void-hicontrast.toml",
+      "packagePath": "source/snippets/repo/editors/helix/bizarre-void-hicontrast.toml",
+      "kind": "application/toml",
+      "bytes": 3060,
+      "sha256": "14c47b471361ac7be1d9efb6d53ce9618515bd716d3d82d31eb943ed23c7b6d5",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/helix/bizarre-void.toml",
+      "packagePath": "source/snippets/repo/editors/helix/bizarre-void.toml",
+      "kind": "application/toml",
+      "bytes": 3048,
+      "sha256": "26145e459832061a572bf42b1c52d782af568c43589887cf5062c5b7c5f13343",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/helix/bizarre-workshop.toml",
+      "packagePath": "source/snippets/repo/editors/helix/bizarre-workshop.toml",
+      "kind": "application/toml",
+      "bytes": 3052,
+      "sha256": "2bd4b350513cd404ffe6e0895506ea3a911e7515da2efc6e6b95f43b3cf5d9a3",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/jetbrains/README.md",
+      "packagePath": "source/snippets/repo/editors/jetbrains/README.md",
+      "kind": "text/markdown",
+      "bytes": 661,
+      "sha256": "8acc8a6baca4694b391068aa33bf95758dbf303691a59524fdcc18302fd0a5d4",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "editors/jetbrains/bizarre-bone.icls",
+      "packagePath": "source/snippets/repo/editors/jetbrains/bizarre-bone.icls",
+      "kind": "application/octet-stream",
+      "bytes": 18900,
+      "sha256": "366e77b608bcf88dc76110ba56726922065a0bb987b61cb1db42873cb5caeb0e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/jetbrains/bizarre-paper.icls",
+      "packagePath": "source/snippets/repo/editors/jetbrains/bizarre-paper.icls",
+      "kind": "application/octet-stream",
+      "bytes": 18902,
+      "sha256": "b5158b017b5389e458b1f30d1b359996fc291d0c8a002f113d41155b0932a902",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/jetbrains/bizarre-void-hicontrast.icls",
+      "packagePath": "source/snippets/repo/editors/jetbrains/bizarre-void-hicontrast.icls",
+      "kind": "application/octet-stream",
+      "bytes": 18924,
+      "sha256": "0b2e04320312f476c094ed7ddd9f1f1bdf8c69fe4051e3eb17ec9e8ce9656be9",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/jetbrains/bizarre-void.icls",
+      "packagePath": "source/snippets/repo/editors/jetbrains/bizarre-void.icls",
+      "kind": "application/octet-stream",
+      "bytes": 18900,
+      "sha256": "61cfa1b41db9f0b258d8b5d63339c4bc96cccbb241717d1b7af9b6bbee98625d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/jetbrains/bizarre-workshop.icls",
+      "packagePath": "source/snippets/repo/editors/jetbrains/bizarre-workshop.icls",
+      "kind": "application/octet-stream",
+      "bytes": 18908,
+      "sha256": "a892cd98deb34ffb6ba91e3b2738f57c0853726cfb64d76940c92e77b239199b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/kate/bizarre-bone.theme",
+      "packagePath": "source/snippets/repo/editors/kate/bizarre-bone.theme",
+      "kind": "application/octet-stream",
+      "bytes": 2513,
+      "sha256": "001830166b00d3de18368528bcb081c1f647dcea119944f92f3f6154de208ee9",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/kate/bizarre-paper.theme",
+      "packagePath": "source/snippets/repo/editors/kate/bizarre-paper.theme",
+      "kind": "application/octet-stream",
+      "bytes": 2514,
+      "sha256": "37a1907445a073483fe7685fb2decddf41659b72650d5c5105fb495302cdb9ab",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/kate/bizarre-void-hicontrast.theme",
+      "packagePath": "source/snippets/repo/editors/kate/bizarre-void-hicontrast.theme",
+      "kind": "application/octet-stream",
+      "bytes": 2525,
+      "sha256": "1bde43a3b87d04f33a65222bdc6001dc272a607f8742268e8563410c4fde1e11",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/kate/bizarre-void.theme",
+      "packagePath": "source/snippets/repo/editors/kate/bizarre-void.theme",
+      "kind": "application/octet-stream",
+      "bytes": 2513,
+      "sha256": "97f259201d422d24754aad5e19ab4263dbd5d3d8bf246c6f56e8796837b72e18",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/kate/bizarre-workshop.theme",
+      "packagePath": "source/snippets/repo/editors/kate/bizarre-workshop.theme",
+      "kind": "application/octet-stream",
+      "bytes": 2517,
+      "sha256": "9954bd71bd0575ff88219dc18e46871795344e21579ecbe1d85af7f8ae01d271",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/lapce/bizarre-bone.toml",
+      "packagePath": "source/snippets/repo/editors/lapce/bizarre-bone.toml",
+      "kind": "application/toml",
+      "bytes": 734,
+      "sha256": "9ceba85296785bc8a5d44f15939f6c65b5d0d4de66a95b2fb2e7c09f503dcac1",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/lapce/bizarre-paper.toml",
+      "packagePath": "source/snippets/repo/editors/lapce/bizarre-paper.toml",
+      "kind": "application/toml",
+      "bytes": 735,
+      "sha256": "370d57ad91734631527ce43cff63f943b5f76395498f5d3199b9be7912aa8cb7",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/lapce/bizarre-void-hicontrast.toml",
+      "packagePath": "source/snippets/repo/editors/lapce/bizarre-void-hicontrast.toml",
+      "kind": "application/toml",
+      "bytes": 745,
+      "sha256": "7e0f2d0f677440186dbced03072a53c62885e5af0ec9aa35544802e6a0c16a84",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/lapce/bizarre-void.toml",
+      "packagePath": "source/snippets/repo/editors/lapce/bizarre-void.toml",
+      "kind": "application/toml",
+      "bytes": 733,
+      "sha256": "cef8dd8210d12550dc2a0a6f8b6627a21fe2ef18ea270b8847b7a83cf6157f9c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/lapce/bizarre-workshop.toml",
+      "packagePath": "source/snippets/repo/editors/lapce/bizarre-workshop.toml",
+      "kind": "application/toml",
+      "bytes": 737,
+      "sha256": "dfd53621cb73e8f53b2898a72539d7450e40ee752f91e157e394d3df46660b01",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim-base16/README.md",
+      "packagePath": "source/snippets/repo/editors/neovim-base16/README.md",
+      "kind": "text/markdown",
+      "bytes": 886,
+      "sha256": "25dfcc7acb9b9f4b5acdf6d6439e44af4c1d0f12bd2de764147fa4a1b9ca1e26",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim-base16/bizarre-bone.yaml",
+      "packagePath": "source/snippets/repo/editors/neovim-base16/bizarre-bone.yaml",
+      "kind": "application/yaml",
+      "bytes": 324,
+      "sha256": "4b3574f9dc643034b723e00f2c75a39193b90ebe215cd15792224dfded779e09",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim-base16/bizarre-paper.yaml",
+      "packagePath": "source/snippets/repo/editors/neovim-base16/bizarre-paper.yaml",
+      "kind": "application/yaml",
+      "bytes": 325,
+      "sha256": "02a2d2dff5c043866c44a022b4c1343a205327731f4a8adac7886b7d78965981",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim-base16/bizarre-void-hicontrast.yaml",
+      "packagePath": "source/snippets/repo/editors/neovim-base16/bizarre-void-hicontrast.yaml",
+      "kind": "application/yaml",
+      "bytes": 336,
+      "sha256": "2dd92ebc320772f18d763b83ad2cf2178907e336ad4e09c4d1307b1d3257962d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim-base16/bizarre-void.yaml",
+      "packagePath": "source/snippets/repo/editors/neovim-base16/bizarre-void.yaml",
+      "kind": "application/yaml",
+      "bytes": 324,
+      "sha256": "0c7dd97b62474d37d38b212240e7b37df2bb0254efa764cc67c7610e2e1510c4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim-base16/bizarre-workshop.yaml",
+      "packagePath": "source/snippets/repo/editors/neovim-base16/bizarre-workshop.yaml",
+      "kind": "application/yaml",
+      "bytes": 328,
+      "sha256": "8e74b1c911dc4b01e54535a22453ecfc32f39c9e7fe1356042fc07f69c6d24e7",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/README.md",
+      "packagePath": "source/snippets/repo/editors/neovim/README.md",
+      "kind": "text/markdown",
+      "bytes": 698,
+      "sha256": "9f7b646868afd67c82b260edda4ec43606e22cd3380d6bbec7489d6c9a3709f2",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "editors/neovim/colors/bizarre-bone.vim",
+      "packagePath": "source/snippets/repo/editors/neovim/colors/bizarre-bone.vim",
+      "kind": "application/octet-stream",
+      "bytes": 80,
+      "sha256": "568b3f178eae5ad67b86fce39e0bb7015a145f4589fde473523649f1ea6e7809",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/colors/bizarre-paper.vim",
+      "packagePath": "source/snippets/repo/editors/neovim/colors/bizarre-paper.vim",
+      "kind": "application/octet-stream",
+      "bytes": 82,
+      "sha256": "39805d14ec50788ae7b1e503b1735ebd473ee73e50792375025e74825dabc928",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/colors/bizarre-void-hicontrast.vim",
+      "packagePath": "source/snippets/repo/editors/neovim/colors/bizarre-void-hicontrast.vim",
+      "kind": "application/octet-stream",
+      "bytes": 102,
+      "sha256": "057136086cd81be37c7e453779b214b66afc6543094523ebc54971756543f84b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/colors/bizarre-void.vim",
+      "packagePath": "source/snippets/repo/editors/neovim/colors/bizarre-void.vim",
+      "kind": "application/octet-stream",
+      "bytes": 80,
+      "sha256": "003cbd74fffc90aea6a32a31e1a6b35ba2db7934f272891558b7a9bc8ccf429d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/colors/bizarre-workshop.vim",
+      "packagePath": "source/snippets/repo/editors/neovim/colors/bizarre-workshop.vim",
+      "kind": "application/octet-stream",
+      "bytes": 88,
+      "sha256": "34ea7a4abc894899b2f48bbc72f4c18c2fffd17681d6b5dff32ae20addce027d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/lua/bizarre/highlights.lua",
+      "packagePath": "source/snippets/repo/editors/neovim/lua/bizarre/highlights.lua",
+      "kind": "text/x-lua",
+      "bytes": 11483,
+      "sha256": "e835f190def42fbcaa30b8e28bf024ba26e4cf80c9a34ecf371071ced80aa2d4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/lua/bizarre/init.lua",
+      "packagePath": "source/snippets/repo/editors/neovim/lua/bizarre/init.lua",
+      "kind": "text/x-lua",
+      "bytes": 930,
+      "sha256": "87a23ef618084854ed18014f70e7ec6186e622d9f6cc8cb3379c0e4db01535dd",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/lua/bizarre/palettes/bone.lua",
+      "packagePath": "source/snippets/repo/editors/neovim/lua/bizarre/palettes/bone.lua",
+      "kind": "text/x-lua",
+      "bytes": 856,
+      "sha256": "1c9a08fbda9149aaaad3f047fc013b6d136abc8f1031e3fe6c77dcd705a0ff9b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/lua/bizarre/palettes/paper.lua",
+      "packagePath": "source/snippets/repo/editors/neovim/lua/bizarre/palettes/paper.lua",
+      "kind": "text/x-lua",
+      "bytes": 857,
+      "sha256": "8dcd89a401125e085068dd7479d7ec569d8805f2dbb7ad511978e318d74cec52",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/lua/bizarre/palettes/void-hicontrast.lua",
+      "packagePath": "source/snippets/repo/editors/neovim/lua/bizarre/palettes/void-hicontrast.lua",
+      "kind": "text/x-lua",
+      "bytes": 866,
+      "sha256": "942447ebcabab40481f0f9e84513264bd3c14026e6fddf3cef13e9cdae251b9d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/lua/bizarre/palettes/void.lua",
+      "packagePath": "source/snippets/repo/editors/neovim/lua/bizarre/palettes/void.lua",
+      "kind": "text/x-lua",
+      "bytes": 855,
+      "sha256": "12213942c90b0207af7a17f159395168b526052f1bac6298941e818469f40922",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/lua/bizarre/palettes/workshop.lua",
+      "packagePath": "source/snippets/repo/editors/neovim/lua/bizarre/palettes/workshop.lua",
+      "kind": "text/x-lua",
+      "bytes": 859,
+      "sha256": "3f8182d9480152c2592547eb3be96db66dea0810a6c3b2a794eae81c3acacf1b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/neovim/lua/bizarre/terminal.lua",
+      "packagePath": "source/snippets/repo/editors/neovim/lua/bizarre/terminal.lua",
+      "kind": "text/x-lua",
+      "bytes": 164,
+      "sha256": "184931655d6f8a280c4177eabdcae1e313c56c14ebb1d16774518471ddb61245",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/notepad-plus-plus/bizarre-bone.xml",
+      "packagePath": "source/snippets/repo/editors/notepad-plus-plus/bizarre-bone.xml",
+      "kind": "application/xml",
+      "bytes": 2218,
+      "sha256": "79592c2a7dd1dc091b552d5c1b24ecd9dedd852544d777691ab1f2a98246b3ae",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/notepad-plus-plus/bizarre-paper.xml",
+      "packagePath": "source/snippets/repo/editors/notepad-plus-plus/bizarre-paper.xml",
+      "kind": "application/xml",
+      "bytes": 2219,
+      "sha256": "13afb6bcead8f33aa09b5de48a12f77cc07a75c79bd9e0c87eb72ee1f705ca0b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/notepad-plus-plus/bizarre-void-hicontrast.xml",
+      "packagePath": "source/snippets/repo/editors/notepad-plus-plus/bizarre-void-hicontrast.xml",
+      "kind": "application/xml",
+      "bytes": 2230,
+      "sha256": "8525d278b7472203337a3dcac96d79e6547c8c19a1f6095d2ce76ec73b49508b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/notepad-plus-plus/bizarre-void.xml",
+      "packagePath": "source/snippets/repo/editors/notepad-plus-plus/bizarre-void.xml",
+      "kind": "application/xml",
+      "bytes": 2218,
+      "sha256": "830f6e5b7422e598038fe6ea0d3c2a1bbd57a57ef50699e7ca23e0b731dc52d7",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/notepad-plus-plus/bizarre-workshop.xml",
+      "packagePath": "source/snippets/repo/editors/notepad-plus-plus/bizarre-workshop.xml",
+      "kind": "application/xml",
+      "bytes": 2222,
+      "sha256": "74e9d8661fabde703539cfb0702c4b58885e3f4ed212268b1c8fbfe61cd52fee",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/nova/bizarre-bone.json",
+      "packagePath": "source/snippets/repo/editors/nova/bizarre-bone.json",
+      "kind": "application/json",
+      "bytes": 823,
+      "sha256": "6574a82ff0962d1d1f1b5a208ce88a65bb4bf6299f6cab2d70d3214f99f32662",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/nova/bizarre-paper.json",
+      "packagePath": "source/snippets/repo/editors/nova/bizarre-paper.json",
+      "kind": "application/json",
+      "bytes": 824,
+      "sha256": "64e24c13e8b642dda5dc5cc2c0be8a12c13d85bda8db635b6957cda17d4f5512",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/nova/bizarre-void-hicontrast.json",
+      "packagePath": "source/snippets/repo/editors/nova/bizarre-void-hicontrast.json",
+      "kind": "application/json",
+      "bytes": 834,
+      "sha256": "2197df6b6d7c628160fadaaff2fbaee7767454c58de6a7037e565954ecf874a8",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/nova/bizarre-void.json",
+      "packagePath": "source/snippets/repo/editors/nova/bizarre-void.json",
+      "kind": "application/json",
+      "bytes": 822,
+      "sha256": "ab1b16f290bd7cbb3ea9cf67ebf5252b104434f33986ea0c176bf5be3c1b4db8",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/nova/bizarre-workshop.json",
+      "packagePath": "source/snippets/repo/editors/nova/bizarre-workshop.json",
+      "kind": "application/json",
+      "bytes": 826,
+      "sha256": "1eb7fb944db9ffe1345f5d5b094285f4a32f5e98022fd130775c3ca37c703d9f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/sublime/README.md",
+      "packagePath": "source/snippets/repo/editors/sublime/README.md",
+      "kind": "text/markdown",
+      "bytes": 487,
+      "sha256": "751e9d269a1ae9bc539bdcc4de405a933254dbd77024abe758835d7985197ab7",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "editors/sublime/bizarre-bone.sublime-color-scheme",
+      "packagePath": "source/snippets/repo/editors/sublime/bizarre-bone.sublime-color-scheme",
+      "kind": "application/octet-stream",
+      "bytes": 4591,
+      "sha256": "84c3d708d7f5c9d804a0d4b66e2900a1b3c21194f7299ada4980e81ca5272dd2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/sublime/bizarre-paper.sublime-color-scheme",
+      "packagePath": "source/snippets/repo/editors/sublime/bizarre-paper.sublime-color-scheme",
+      "kind": "application/octet-stream",
+      "bytes": 4592,
+      "sha256": "31360e5a0b9a3957d3b732e4c08d56d30d8f02d0b255283d507d7db31669c95a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/sublime/bizarre-void-hicontrast.sublime-color-scheme",
+      "packagePath": "source/snippets/repo/editors/sublime/bizarre-void-hicontrast.sublime-color-scheme",
+      "kind": "application/octet-stream",
+      "bytes": 4603,
+      "sha256": "7c81c839f87ad45db662f89171e66426eab9d21ef765716e9d6b302976fd0f97",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/sublime/bizarre-void.sublime-color-scheme",
+      "packagePath": "source/snippets/repo/editors/sublime/bizarre-void.sublime-color-scheme",
+      "kind": "application/octet-stream",
+      "bytes": 4591,
+      "sha256": "468000452fa27893e3244ab0026a4564af0808731c860ecafd8b03b8109178b8",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/sublime/bizarre-workshop.sublime-color-scheme",
+      "packagePath": "source/snippets/repo/editors/sublime/bizarre-workshop.sublime-color-scheme",
+      "kind": "application/octet-stream",
+      "bytes": 4595,
+      "sha256": "e2d1d1147fa1d14b76e2e3e6d096f17227445609204bf78cdfd27217bafee628",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vim/README.md",
+      "packagePath": "source/snippets/repo/editors/vim/README.md",
+      "kind": "text/markdown",
+      "bytes": 296,
+      "sha256": "4976a223546190ad01b130ad63ead91ba4a43c8fde06d11d22313e7dfb4cb94c",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "editors/vim/colors/bizarre-bone.vim",
+      "packagePath": "source/snippets/repo/editors/vim/colors/bizarre-bone.vim",
+      "kind": "application/octet-stream",
+      "bytes": 3822,
+      "sha256": "a6a5365f2fa2b58122b1835f3d60b20943cb79f3b16b71520a073e3add621adc",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vim/colors/bizarre-paper.vim",
+      "packagePath": "source/snippets/repo/editors/vim/colors/bizarre-paper.vim",
+      "kind": "application/octet-stream",
+      "bytes": 3824,
+      "sha256": "8a6c9c4c23bc1741a9d19a303a089b54ccc24fe688a62f850e6ccfb36adc5a9d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vim/colors/bizarre-void-hicontrast.vim",
+      "packagePath": "source/snippets/repo/editors/vim/colors/bizarre-void-hicontrast.vim",
+      "kind": "application/octet-stream",
+      "bytes": 3844,
+      "sha256": "fc445ddcb8cdbcd720aaaa20d8794eec9482216976e095c379f20708a8e7bfc1",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vim/colors/bizarre-void.vim",
+      "packagePath": "source/snippets/repo/editors/vim/colors/bizarre-void.vim",
+      "kind": "application/octet-stream",
+      "bytes": 3821,
+      "sha256": "90598ae3915cdd09f06460bcdfff905994ad7d0041e679577296ca924c027aaf",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vim/colors/bizarre-workshop.vim",
+      "packagePath": "source/snippets/repo/editors/vim/colors/bizarre-workshop.vim",
+      "kind": "application/octet-stream",
+      "bytes": 3829,
+      "sha256": "23e0550415f29c7eede9c8d47207d6ddaf1dde7770ece0d3266b5aa0c63c2ef5",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/visual-studio/bizarre-bone.vstheme",
+      "packagePath": "source/snippets/repo/editors/visual-studio/bizarre-bone.vstheme",
+      "kind": "application/octet-stream",
+      "bytes": 2771,
+      "sha256": "17cd176753cdbf121a264bed1b9f9e867077b28610112e5c3836f8d2a97b303e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/visual-studio/bizarre-paper.vstheme",
+      "packagePath": "source/snippets/repo/editors/visual-studio/bizarre-paper.vstheme",
+      "kind": "application/octet-stream",
+      "bytes": 2772,
+      "sha256": "70b3f0e7797a224a287e3f943570373f5695d117b7375129839a6d098094f962",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/visual-studio/bizarre-void-hicontrast.vstheme",
+      "packagePath": "source/snippets/repo/editors/visual-studio/bizarre-void-hicontrast.vstheme",
+      "kind": "application/octet-stream",
+      "bytes": 2783,
+      "sha256": "376039b605bb1a48802e8fc8b6f23c1633ca159be851bfa1d84cc4d543b0c415",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/visual-studio/bizarre-void.vstheme",
+      "packagePath": "source/snippets/repo/editors/visual-studio/bizarre-void.vstheme",
+      "kind": "application/octet-stream",
+      "bytes": 2771,
+      "sha256": "a46c6009b64e727182ab157e4199b9873bd62db238d8c8b07805617508bfb425",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/visual-studio/bizarre-workshop.vstheme",
+      "packagePath": "source/snippets/repo/editors/visual-studio/bizarre-workshop.vstheme",
+      "kind": "application/octet-stream",
+      "bytes": 2775,
+      "sha256": "cedb2ddb26ea635f87028a5de9903816f2df911cfe0e5dd560472fa04b2de5c2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vscode/README.md",
+      "packagePath": "source/snippets/repo/editors/vscode/README.md",
+      "kind": "text/markdown",
+      "bytes": 821,
+      "sha256": "ad766fc45a16975692bee9a6f5d779261feb0a6a943e0456ecfd783f97f9b3f3",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "editors/vscode/package.json",
+      "packagePath": "source/snippets/repo/editors/vscode/package.json",
+      "kind": "application/json",
+      "bytes": 1069,
+      "sha256": "668db18dd7b46daf81dcc6b2508faac8737a91b3e3f2d516d659b229be498f56",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vscode/themes/bizarre-bone-color-theme.json",
+      "packagePath": "source/snippets/repo/editors/vscode/themes/bizarre-bone-color-theme.json",
+      "kind": "application/json",
+      "bytes": 15094,
+      "sha256": "9b2c331680f345029628466818b8baa1c84bf8b53d41c30beb509ab40616d0a0",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vscode/themes/bizarre-color-theme.json",
+      "packagePath": "source/snippets/repo/editors/vscode/themes/bizarre-color-theme.json",
+      "kind": "application/json",
+      "bytes": 15093,
+      "sha256": "dfff80dfe8932a3dc455a453e20d21f4e4dfe070215881d8705c8402a7344d22",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vscode/themes/bizarre-paper-color-theme.json",
+      "packagePath": "source/snippets/repo/editors/vscode/themes/bizarre-paper-color-theme.json",
+      "kind": "application/json",
+      "bytes": 15095,
+      "sha256": "2e8c554234eedf76d45bfe80f8f30db7efebc50e93f0f5f7163ae7852c51ccaf",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vscode/themes/bizarre-void-color-theme.json",
+      "packagePath": "source/snippets/repo/editors/vscode/themes/bizarre-void-color-theme.json",
+      "kind": "application/json",
+      "bytes": 15093,
+      "sha256": "dfff80dfe8932a3dc455a453e20d21f4e4dfe070215881d8705c8402a7344d22",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vscode/themes/bizarre-void-hicontrast-color-theme.json",
+      "packagePath": "source/snippets/repo/editors/vscode/themes/bizarre-void-hicontrast-color-theme.json",
+      "kind": "application/json",
+      "bytes": 15129,
+      "sha256": "e74b914c1971a83d8e0d9092dce7f51b38276dc1e48dad6a240fa80746a392e0",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/vscode/themes/bizarre-workshop-color-theme.json",
+      "packagePath": "source/snippets/repo/editors/vscode/themes/bizarre-workshop-color-theme.json",
+      "kind": "application/json",
+      "bytes": 15097,
+      "sha256": "694449342e88ee0d510adaf2e1152555da55217813e060430f2e6f799f7fbbfb",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "editors/zed/README.md",
+      "packagePath": "source/snippets/repo/editors/zed/README.md",
+      "kind": "text/markdown",
+      "bytes": 245,
+      "sha256": "3c3c89609e01a73af9d80f5cef0b9140dbf1946363f37f724a38a1276cacc4f0",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "editors/zed/themes/bizarre.json",
+      "packagePath": "source/snippets/repo/editors/zed/themes/bizarre.json",
+      "kind": "application/json",
+      "bytes": 32369,
+      "sha256": "fefd4927f18206cfcaa687d66012c7f28ca9d0515edafb922acdd18a014390d7",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "generated-files.json",
+      "packagePath": "source/snippets/repo/generated-files.json",
+      "kind": "application/json",
+      "bytes": 57817,
+      "sha256": "e0762cdc0cd5b0d9e8e0078fb0d49bdc82c16d37344c1ced552d3cfe2927b7a7",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "package-lock.json",
+      "packagePath": "source/snippets/repo/package-lock.json",
+      "kind": "application/json",
+      "bytes": 9205,
+      "sha256": "90bfd4d9b3ba537facddf16f49342fff9be962a97fda8f6d61cdb85713d12305",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "package.json",
+      "packagePath": "source/snippets/repo/package.json",
+      "kind": "application/json",
+      "bytes": 1436,
+      "sha256": "b1ee89157c7554a1ad54a90d474e8c1db1cec1566ff9d6090bf290dcf2fb7e92",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "palette.js",
+      "packagePath": "source/snippets/repo/palette.js",
+      "kind": "text/javascript",
+      "bytes": 8852,
+      "sha256": "5580706f6803b15c32ef6b1007df4c88f80a3d2229952b8863acae2452f25aaa",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "prompt/README.md",
+      "packagePath": "source/snippets/repo/prompt/README.md",
+      "kind": "text/markdown",
+      "bytes": 841,
+      "sha256": "91bd602d0e453ff926754018d6710c652f075bacb5747b275f365e22f1870ca1",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "prompt/starship.toml",
+      "packagePath": "source/snippets/repo/prompt/starship.toml",
+      "kind": "application/toml",
+      "bytes": 3022,
+      "sha256": "fcbca039d1e5fbb51991fd943dfab950aefef5e4b93f16e99f550470d4454230",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "scripts/check-generated.cjs",
+      "packagePath": "source/snippets/repo/scripts/check-generated.cjs",
+      "kind": "text/javascript",
+      "bytes": 655,
+      "sha256": "d81bb6225cd44a5e5177690823f6460c30f5490bdfca8fd5b5b8a28356c86f51",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/generate-open-design.cjs",
+      "packagePath": "source/snippets/repo/scripts/generate-open-design.cjs",
+      "kind": "text/javascript",
+      "bytes": 22052,
+      "sha256": "edba2a29838e527af6643db5c1ffad8d50c62ddfd6be729cff02e826252c143e",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/generate.cjs",
+      "packagePath": "source/snippets/repo/scripts/generate.cjs",
+      "kind": "text/javascript",
+      "bytes": 243136,
+      "sha256": "ff6874fcb3210837739bbd0d595525d77d9479e4aa27418ef1616e4a4a89ab89",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/lib/generated-files.cjs",
+      "packagePath": "source/snippets/repo/scripts/lib/generated-files.cjs",
+      "kind": "text/javascript",
+      "bytes": 8006,
+      "sha256": "13650b80e8c26050e59863f57ce2b1510814238eddeddb7efc6ed9857620ca64",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/lib/open-design/evidence.cjs",
+      "packagePath": "source/snippets/repo/scripts/lib/open-design/evidence.cjs",
+      "kind": "text/javascript",
+      "bytes": 25609,
+      "sha256": "06f82aad4a476c08c8b7dfb01c46d7dcd236ae956cb7488917c5b858bd72f718",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/lib/open-design/fonts.cjs",
+      "packagePath": "source/snippets/repo/scripts/lib/open-design/fonts.cjs",
+      "kind": "text/javascript",
+      "bytes": 6058,
+      "sha256": "1d211fb538c9d9be43efea2eb6b0af67483965a994402a93127684fc89152235",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/lib/open-design/model.cjs",
+      "packagePath": "source/snippets/repo/scripts/lib/open-design/model.cjs",
+      "kind": "text/javascript",
+      "bytes": 7871,
+      "sha256": "c81ea2072bee9d0c6d3e3dd20b7a4b43394c6a4e645f66cdc8fd606604de7ff6",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/lib/open-design/package-writer.cjs",
+      "packagePath": "source/snippets/repo/scripts/lib/open-design/package-writer.cjs",
+      "kind": "text/javascript",
+      "bytes": 28009,
+      "sha256": "f1376f0058d9cf5a5a6b84ace80d15e4d5a31de2992530bdfb3190d466342695",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/lib/open-design/render-components.cjs",
+      "packagePath": "source/snippets/repo/scripts/lib/open-design/render-components.cjs",
+      "kind": "text/javascript",
+      "bytes": 50920,
+      "sha256": "6231eec37f1989fa89f791de23bbf5e79d8ee59ff18e0f350864c2650c4b01a2",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/lib/open-design/render-docs.cjs",
+      "packagePath": "source/snippets/repo/scripts/lib/open-design/render-docs.cjs",
+      "kind": "text/javascript",
+      "bytes": 16920,
+      "sha256": "96a99a34253f0d338e2130de4d9a7c3a2dde9a0e54edb9f9efbd79cc7c4685c8",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/lib/open-design/render-tokens.cjs",
+      "packagePath": "source/snippets/repo/scripts/lib/open-design/render-tokens.cjs",
+      "kind": "text/javascript",
+      "bytes": 11899,
+      "sha256": "5b512252d86c16c53bb4e002c24e9bcfdccaf6de26440ef7044f55aee565fa1c",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/render-local-captures.cjs",
+      "packagePath": "source/snippets/repo/scripts/render-local-captures.cjs",
+      "kind": "text/javascript",
+      "bytes": 19557,
+      "sha256": "6068ee31f46fb6829c94d8709b2492d59fce8995e720031e182487faba126b61",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/render-showcase.cjs",
+      "packagePath": "source/snippets/repo/scripts/render-showcase.cjs",
+      "kind": "text/javascript",
+      "bytes": 12688,
+      "sha256": "99735ab61cd1192beb972b86fc7c06081c93263754df793a409ee8733f3887ce",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "scripts/validate.cjs",
+      "packagePath": "source/snippets/repo/scripts/validate.cjs",
+      "kind": "text/javascript",
+      "bytes": 16135,
+      "sha256": "59a49d84aaae30b9e08188cb746c3f103389dff14a87551b1429478a02ab5d1f",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "shells/banner/README.md",
+      "packagePath": "source/snippets/repo/shells/banner/README.md",
+      "kind": "text/markdown",
+      "bytes": 3646,
+      "sha256": "a148f3720aeb7357ff1e196d51d8160164d5118040a44b0c6fef4eee0bc813e8",
+      "classification": "documentation",
+      "generated": false
+    },
+    {
+      "sourcePath": "shells/banner/bizarre.bash",
+      "packagePath": "source/snippets/repo/shells/banner/bizarre.bash",
+      "kind": "text/x-shellscript",
+      "bytes": 4067,
+      "sha256": "e2cf29213e4ab7dd0b325b00c91df5beef43307199663358aa891ed926c91984",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "shells/banner/bizarre.fish",
+      "packagePath": "source/snippets/repo/shells/banner/bizarre.fish",
+      "kind": "text/x-shellscript",
+      "bytes": 4063,
+      "sha256": "50c81877eccaf651a1a293a3748ed7ec1543fc807ab6e65d345710615b824670",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "shells/banner/bizarre.ps1",
+      "packagePath": "source/snippets/repo/shells/banner/bizarre.ps1",
+      "kind": "text/x-powershell",
+      "bytes": 4076,
+      "sha256": "3664665b62beaccbe9f85fc90fb0acdb3cfafb1548fec1182a8edc97cd4e3c84",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "shells/banner/bizarre.zsh",
+      "packagePath": "source/snippets/repo/shells/banner/bizarre.zsh",
+      "kind": "text/x-shellscript",
+      "bytes": 3981,
+      "sha256": "eddebbf5a50a76670c891b7b16881c765c0225a1097cb51c6c5a28a6e35ca7f8",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "shells/manifesto.txt",
+      "packagePath": "source/snippets/repo/shells/manifesto.txt",
+      "kind": "text/plain",
+      "bytes": 749,
+      "sha256": "7fbb84e17027a23558ecdc6da79acbebf56c94ba2655fe38d541464a73578c8c",
+      "classification": "adapter",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/browser-web.png",
+      "packagePath": "assets/showcase/browser-web.png",
+      "kind": "image/png",
+      "bytes": 94728,
+      "sha256": "073c5ba4a83b7fc7d824fea0736646abbd17a5d1dc24c5ddadc36aafafeccc74",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/cli-tui.png",
+      "packagePath": "assets/showcase/cli-tui.png",
+      "kind": "image/png",
+      "bytes": 131999,
+      "sha256": "b882b438714968eaa95314515cd45d5fdda7432cd3bf1fa0987e739473d81531",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/design-devtools-docs.png",
+      "packagePath": "assets/showcase/design-devtools-docs.png",
+      "kind": "image/png",
+      "bytes": 143643,
+      "sha256": "8f2671765caa9f06a9cc53f011d76f05c013aa412712aa6ea37b688000deecbf",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/desktop-apps.png",
+      "packagePath": "assets/showcase/desktop-apps.png",
+      "kind": "image/png",
+      "bytes": 108485,
+      "sha256": "892a4f2c0123928ce7a0cdf41f50e0abe9e1df51f23cd87bd4622161a05a22ac",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/editor-backlog.png",
+      "packagePath": "assets/showcase/editor-backlog.png",
+      "kind": "image/png",
+      "bytes": 175476,
+      "sha256": "52245cc168d84b5e9da7996fb45af15963d12627889b699116809801b1e3fec5",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/editor-base16.png",
+      "packagePath": "assets/showcase/editor-base16.png",
+      "kind": "image/png",
+      "bytes": 14849,
+      "sha256": "f4a73f397cd2575ecf532b67b9c5dc69c0a36434f9e57ec055cde73cb63141fd",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/editor-jetbrains.png",
+      "packagePath": "assets/showcase/editor-jetbrains.png",
+      "kind": "image/png",
+      "bytes": 16889,
+      "sha256": "b93567060ffb7ea1823ee14b1a3906535a0b52952173540a34f68401e0c82d1f",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/editor-neovim.png",
+      "packagePath": "assets/showcase/editor-neovim.png",
+      "kind": "image/png",
+      "bytes": 15331,
+      "sha256": "467b1469691c7160bcc6bb601222a58f0f27eab3f0b8d2376b3afa9d3f681b99",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/editor-sublime.png",
+      "packagePath": "assets/showcase/editor-sublime.png",
+      "kind": "image/png",
+      "bytes": 17108,
+      "sha256": "bae2a31cb3a11d37e74827456ad1c633b8f0d216f66b69891f80637827ef5ffa",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/editor-themes.png",
+      "packagePath": "assets/showcase/editor-themes.png",
+      "kind": "image/png",
+      "bytes": 121160,
+      "sha256": "5b93da698da4ed7024ea2dd1d4eccd40f4251296c9c4e5ff74386b47d0f43c08",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/editor-vim.png",
+      "packagePath": "assets/showcase/editor-vim.png",
+      "kind": "image/png",
+      "bytes": 14531,
+      "sha256": "28bea9e376a10187c4ba790097e372be6c823b9c648ffe48007864ca1c62082d",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/editor-zed.png",
+      "packagePath": "assets/showcase/editor-zed.png",
+      "kind": "image/png",
+      "bytes": 13843,
+      "sha256": "55fda9d5e00e31070383197cf7e30badaf56bc3c10621b057ca93d4cb4f38a44",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/hero.png",
+      "packagePath": "assets/showcase/hero.png",
+      "kind": "image/png",
+      "bytes": 99495,
+      "sha256": "e60de320d5d9b2bf31a694850086d1fe6e1559c2b8eded3eda8d229d95ddd6aa",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/manifest.json",
+      "packagePath": "source/snippets/repo/showcase/assets/generated/manifest.json",
+      "kind": "application/json",
+      "bytes": 10458,
+      "sha256": "29443d1a524dff7e9ffe3a25b1b2964712c8a37be0fff3bfd8d94a253ee17178",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/palette-ansi.png",
+      "packagePath": "assets/showcase/palette-ansi.png",
+      "kind": "image/png",
+      "bytes": 119590,
+      "sha256": "51776b1e7307a94e50785447ef3994bb1c61c375e9c81edd30c339cf5dceb9f0",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/prompt-starship.png",
+      "packagePath": "assets/showcase/prompt-starship.png",
+      "kind": "image/png",
+      "bytes": 10032,
+      "sha256": "c444c1afe7b13f326b3d33382b4b030add336bcc8fa934a5f431cd4106814de2",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/shell-banner.png",
+      "packagePath": "assets/showcase/shell-banner.png",
+      "kind": "image/png",
+      "bytes": 45168,
+      "sha256": "15cc4d90236c7360dc352a8e87d65b413928b736f8ac55e5be93f6d48e06d2a5",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/shell-bash.png",
+      "packagePath": "assets/showcase/shell-bash.png",
+      "kind": "image/png",
+      "bytes": 10255,
+      "sha256": "a366c1a7efc3c40d1698c1f3fa5e1dd4207571deb60befc3f9fc46723339858c",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/shell-fish.png",
+      "packagePath": "assets/showcase/shell-fish.png",
+      "kind": "image/png",
+      "bytes": 10183,
+      "sha256": "379fdaed837f81dc6990ca21bebdd2d229b32a4cb6788e7c514500efa22277a4",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/shell-powershell.png",
+      "packagePath": "assets/showcase/shell-powershell.png",
+      "kind": "image/png",
+      "bytes": 11095,
+      "sha256": "48f3c246f42c2e8898c9e80fdc0d69f4b0afe7cc1c83bc84fdb0545795e32b36",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/shell-zsh.png",
+      "packagePath": "assets/showcase/shell-zsh.png",
+      "kind": "image/png",
+      "bytes": 10025,
+      "sha256": "8dbc42d0430a1a424fa1af31302d2b82d34a10572b3aa7be7348b4ffb1432683",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/shells.png",
+      "packagePath": "assets/showcase/shells.png",
+      "kind": "image/png",
+      "bytes": 54208,
+      "sha256": "5386299c990916261be4495c51e7100a92e81cb97ea8014d5d968e695ef53154",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/syntax.png",
+      "packagePath": "assets/showcase/syntax.png",
+      "kind": "image/png",
+      "bytes": 195997,
+      "sha256": "622a8cd444f1a9fc37b79a448e098700cf251f71f8b60a09aa578720a91a109d",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-backlog.png",
+      "packagePath": "assets/showcase/terminal-backlog.png",
+      "kind": "image/png",
+      "bytes": 137181,
+      "sha256": "e62ff8a404e3273f92240989885d02670f411122fd500927fff4c698e188eac1",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-colors-alacritty.png",
+      "packagePath": "assets/showcase/terminal-colors-alacritty.png",
+      "kind": "image/png",
+      "bytes": 13196,
+      "sha256": "01661c3d7c9e7a2b0192aa6a641f6c1d44caf8c5b23e25c383cfda88e85e8203",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-colors-ghostty.png",
+      "packagePath": "assets/showcase/terminal-colors-ghostty.png",
+      "kind": "image/png",
+      "bytes": 12733,
+      "sha256": "5d5bb4e53c93a238fd3d589990ff20a5a292e8284f45e854ee95ae05081f029d",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-colors-iterm2.png",
+      "packagePath": "assets/showcase/terminal-colors-iterm2.png",
+      "kind": "image/png",
+      "bytes": 13402,
+      "sha256": "65bf7afbcecb6fc2a9fb49b9c55d53e31eac463550777664ffb93928d5e560e9",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-colors-kitty.png",
+      "packagePath": "assets/showcase/terminal-colors-kitty.png",
+      "kind": "image/png",
+      "bytes": 13206,
+      "sha256": "d8094827f999efe0aab599540b463af65004c951819f9273f1173769cafc61e3",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-colors-wezterm.png",
+      "packagePath": "assets/showcase/terminal-colors-wezterm.png",
+      "kind": "image/png",
+      "bytes": 11320,
+      "sha256": "58cfe3122799000b72488b7269d85b9ba5ed29a4c695116b324ddcb2f8ef39cc",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-colors-windows-terminal.png",
+      "packagePath": "assets/showcase/terminal-colors-windows-terminal.png",
+      "kind": "image/png",
+      "bytes": 12900,
+      "sha256": "cf6a2c928ff9d5373720ca4d35d398f1c96e10ffb2b8d8e6299c7fa84b748c6e",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-colors.png",
+      "packagePath": "assets/showcase/terminal-colors.png",
+      "kind": "image/png",
+      "bytes": 106745,
+      "sha256": "7d2f56bea26915c75bff4518a1ffae187d82da529a64ac2a677d28786d759543",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-tmux.png",
+      "packagePath": "assets/showcase/terminal-tmux.png",
+      "kind": "image/png",
+      "bytes": 10933,
+      "sha256": "356bc22a3ad70eb7d30ac0d0b9ecd9901fde832e8ed7354eac0cf6e5ee293f4e",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/terminal-zellij.png",
+      "packagePath": "assets/showcase/terminal-zellij.png",
+      "kind": "image/png",
+      "bytes": 10623,
+      "sha256": "393e2702818b8ac03915a801fd1a9a156dea4f3b41dcec33b7479d087308cb03",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/tool-aerospace.png",
+      "packagePath": "assets/showcase/tool-aerospace.png",
+      "kind": "image/png",
+      "bytes": 14453,
+      "sha256": "db5bc507d3e61c3654cbf8e084f457d03a1655a38e352a7175b3ab1a3d2d5c53",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/tool-forklift.png",
+      "packagePath": "assets/showcase/tool-forklift.png",
+      "kind": "image/png",
+      "bytes": 13963,
+      "sha256": "7cb9fc15e77ab1b7cfdb29b7489badb313d185b82c0d55a83bdd00df8a92dcc4",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/tool-jujutsu.png",
+      "packagePath": "assets/showcase/tool-jujutsu.png",
+      "kind": "image/png",
+      "bytes": 14382,
+      "sha256": "b31f6fc9bd8f04118c8351c77dd20384ad0cfa15968d9b771afb5eda7ece0b40",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/tool-starship.png",
+      "packagePath": "assets/showcase/tool-starship.png",
+      "kind": "image/png",
+      "bytes": 13909,
+      "sha256": "99956774728eee59a03e26f16dd67f9fcac3247e8184911811039dff8fce2f51",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/tools.png",
+      "packagePath": "assets/showcase/tools.png",
+      "kind": "image/png",
+      "bytes": 49783,
+      "sha256": "5c387bc9a17db7d0dbda1d423307932d9d03c6596518eb53f8d2615ef6ba970e",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/variants.png",
+      "packagePath": "assets/showcase/variants.png",
+      "kind": "image/png",
+      "bytes": 55522,
+      "sha256": "5bc25db8281ceb64197c2921dc1df208ad2d48307f401946367f9a90a08eaa96",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/vscode-bone.png",
+      "packagePath": "assets/showcase/vscode-bone.png",
+      "kind": "image/png",
+      "bytes": 16892,
+      "sha256": "09bd4dc54d600cc0697c8ddb812645297db86f9ce504365ec82bb337b3b166ba",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/vscode-paper.png",
+      "packagePath": "assets/showcase/vscode-paper.png",
+      "kind": "image/png",
+      "bytes": 17902,
+      "sha256": "63aa5e3aaa3b3a4af149a0c14c4a29de53b7977475a7bd560fabd59941fcbacd",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/vscode-themes.png",
+      "packagePath": "assets/showcase/vscode-themes.png",
+      "kind": "image/png",
+      "bytes": 107886,
+      "sha256": "0e713e4a9958f52ca405c598e4c450f154b88be6544032e5e89acbf2428e609b",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/vscode-void-hicontrast.png",
+      "packagePath": "assets/showcase/vscode-void-hicontrast.png",
+      "kind": "image/png",
+      "bytes": 18029,
+      "sha256": "d136880b118d549fb1c9ca90c99ebc1e1270aa9a728001c722b444b150b1a259",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/vscode-void.png",
+      "packagePath": "assets/showcase/vscode-void.png",
+      "kind": "image/png",
+      "bytes": 15691,
+      "sha256": "1628c7860f3dd55516c8693a64db55d7c5c240dd9c0d71f4a8b6b8871de0b5db",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/vscode-workshop.png",
+      "packagePath": "assets/showcase/vscode-workshop.png",
+      "kind": "image/png",
+      "bytes": 18203,
+      "sha256": "4e45948382df8848526ffd593e9e6fa32c02235085d77946b074059cea9d97ad",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/assets/generated/window-managers.png",
+      "packagePath": "assets/showcase/window-managers.png",
+      "kind": "image/png",
+      "bytes": 106543,
+      "sha256": "9e31fcc9c3831718e60427d5aee64e6efbe1f502df49192a86a686b16267e72e",
+      "classification": "image",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/colors_and_type.css",
+      "packagePath": "source/snippets/repo/showcase/colors_and_type.css",
+      "kind": "text/css",
+      "bytes": 682,
+      "sha256": "619828ebf7f4e1bf745cfd1d33d2980b1eb9423d33e6839fd41f96e097a288dc",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "showcase/index.html",
+      "packagePath": "source/snippets/repo/showcase/index.html",
+      "kind": "text/html",
+      "bytes": 11467,
+      "sha256": "afc8f805f55ca05852095cc297301aab06e0b756f3cc0dafdeee5899cd3bb8c4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "showcase/samples.js",
+      "packagePath": "source/snippets/repo/showcase/samples.js",
+      "kind": "text/javascript",
+      "bytes": 14489,
+      "sha256": "ffbf9d854f6e073faff7745034377ae04ca2e21d323670334aa9fb0847e6666c",
+      "classification": "canonical",
+      "generated": false
+    },
+    {
+      "sourcePath": "showcase/showcase-main.jsx",
+      "packagePath": "source/snippets/repo/showcase/showcase-main.jsx",
+      "kind": "text/javascript",
+      "bytes": 37670,
+      "sha256": "c0c22c571a261b365c751cc309260c749c12ec208794ebb5717a33d3c98a55bf",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "showcase/showcase-panes.jsx",
+      "packagePath": "source/snippets/repo/showcase/showcase-panes.jsx",
+      "kind": "text/javascript",
+      "bytes": 1655,
+      "sha256": "b8493bf1b697574b458608090959f1338cd64c42fbb0b8e849df9866389d5b50",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "showcase/showcase-terminal.jsx",
+      "packagePath": "source/snippets/repo/showcase/showcase-terminal.jsx",
+      "kind": "text/javascript",
+      "bytes": 6627,
+      "sha256": "f4d71e187e1a9bfa5efb1138a13746d1a4ad05e32d9a7c75ec145a9b31fd4033",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "showcase/showcase.css",
+      "packagePath": "source/snippets/repo/showcase/showcase.css",
+      "kind": "text/css",
+      "bytes": 14538,
+      "sha256": "7890f967aee29626bcc342249c032ea66f175bfb5971a2f1746668360fb356a2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "showcase/showcase.js",
+      "packagePath": "source/snippets/repo/showcase/showcase.js",
+      "kind": "text/javascript",
+      "bytes": 59286,
+      "sha256": "c6e68d71beccb29b82e5995cdb326815a17bf6c55dd9a08bfe91875e1b04e199",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "showcase/syntax.css",
+      "packagePath": "source/snippets/repo/showcase/syntax.css",
+      "kind": "text/css",
+      "bytes": 5191,
+      "sha256": "87f0c4cde6e943694f7a2a379b9f26ff6eecef63523a5f938fe62d958eb0bbb2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "showcase/tokens.css",
+      "packagePath": "source/snippets/repo/showcase/tokens.css",
+      "kind": "text/css",
+      "bytes": 755,
+      "sha256": "834fec7037b582f1ca0b05d785cc537a1bc8b3bc6b28853520bafeb391941ce4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/alacritty/bizarre-bone.toml",
+      "packagePath": "source/snippets/repo/terminals/alacritty/bizarre-bone.toml",
+      "kind": "application/toml",
+      "bytes": 570,
+      "sha256": "b1639042e71959e77636bccffce7e4b94355408a7fa5ad36f642d19a12e0334a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/alacritty/bizarre-paper.toml",
+      "packagePath": "source/snippets/repo/terminals/alacritty/bizarre-paper.toml",
+      "kind": "application/toml",
+      "bytes": 571,
+      "sha256": "fd2d49655bf33805b66b77ba97c7c5b98980d6b9cc1f11f7677c8c11b52acc8a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/alacritty/bizarre-void-hicontrast.toml",
+      "packagePath": "source/snippets/repo/terminals/alacritty/bizarre-void-hicontrast.toml",
+      "kind": "application/toml",
+      "bytes": 582,
+      "sha256": "87033ea94178f1ee6c3adeaf187fd1541de776c3bcf271929b2d3605ab61d514",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/alacritty/bizarre-void.toml",
+      "packagePath": "source/snippets/repo/terminals/alacritty/bizarre-void.toml",
+      "kind": "application/toml",
+      "bytes": 570,
+      "sha256": "adb3de057d7d352566d33b3500ca008013482354beebbe64d1208fc26f2996b6",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/alacritty/bizarre-workshop.toml",
+      "packagePath": "source/snippets/repo/terminals/alacritty/bizarre-workshop.toml",
+      "kind": "application/toml",
+      "bytes": 574,
+      "sha256": "0e8883715fa990c03a9803e08dd6f26678698796e9554ae9b52995f220b7a116",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/alacritty/bizarre.toml",
+      "packagePath": "source/snippets/repo/terminals/alacritty/bizarre.toml",
+      "kind": "application/toml",
+      "bytes": 565,
+      "sha256": "39c8c3971885ffce5d5d33298f4cae93a9d8669fc4588ebc4e080a059aaca032",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/black-box/bizarre-bone.json",
+      "packagePath": "source/snippets/repo/terminals/black-box/bizarre-bone.json",
+      "kind": "application/json",
+      "bytes": 577,
+      "sha256": "ce44ee6e2d2b3fe1320b1326444a011a0b2ffa4ba764c05380cd7bf4b232bdf4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/black-box/bizarre-paper.json",
+      "packagePath": "source/snippets/repo/terminals/black-box/bizarre-paper.json",
+      "kind": "application/json",
+      "bytes": 578,
+      "sha256": "7cd1634d400071f823f2187d560fdfbab3ab4f0d4aa9837a328c9f831b7359c2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/black-box/bizarre-void-hicontrast.json",
+      "packagePath": "source/snippets/repo/terminals/black-box/bizarre-void-hicontrast.json",
+      "kind": "application/json",
+      "bytes": 589,
+      "sha256": "ff1e1f0479c2428486a8249da5c04703a6ad8191c74984b213ff154aad265624",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/black-box/bizarre-void.json",
+      "packagePath": "source/snippets/repo/terminals/black-box/bizarre-void.json",
+      "kind": "application/json",
+      "bytes": 577,
+      "sha256": "89b3582b35f92eccb1f5086500f3b1b41cc85d7abe4ad48b9985264156fd2118",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/black-box/bizarre-workshop.json",
+      "packagePath": "source/snippets/repo/terminals/black-box/bizarre-workshop.json",
+      "kind": "application/json",
+      "bytes": 581,
+      "sha256": "60ef825b1e720d92a14473e369b9d9dddb8b3f92217f1d42ceb444e4d11821bf",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/foot/bizarre-bone.ini",
+      "packagePath": "source/snippets/repo/terminals/foot/bizarre-bone.ini",
+      "kind": "text/plain",
+      "bytes": 414,
+      "sha256": "7a51c121a566314e97141ff2f566bc455e69a40761964d0d7d373d78380f35ba",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/foot/bizarre-paper.ini",
+      "packagePath": "source/snippets/repo/terminals/foot/bizarre-paper.ini",
+      "kind": "text/plain",
+      "bytes": 415,
+      "sha256": "a97288f519e582bdc7c52c3f6578fca45937e1536436f65aaf16c625a599f634",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/foot/bizarre-void-hicontrast.ini",
+      "packagePath": "source/snippets/repo/terminals/foot/bizarre-void-hicontrast.ini",
+      "kind": "text/plain",
+      "bytes": 426,
+      "sha256": "3d6c5c0876cee15162c850c11e6eaba861fc6efecd8dc5a89585b118e096d43c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/foot/bizarre-void.ini",
+      "packagePath": "source/snippets/repo/terminals/foot/bizarre-void.ini",
+      "kind": "text/plain",
+      "bytes": 414,
+      "sha256": "71860260675735b09ab49311faecf0de57c8620b2da879691ce0aa861f9cf033",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/foot/bizarre-workshop.ini",
+      "packagePath": "source/snippets/repo/terminals/foot/bizarre-workshop.ini",
+      "kind": "text/plain",
+      "bytes": 418,
+      "sha256": "4ec4f129dfa57d44d178cff557e2b0dbdbe093083d049e4d5e47c5e48595b373",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/ghostty/bizarre-bone",
+      "packagePath": "source/snippets/repo/terminals/ghostty/bizarre-bone",
+      "kind": "application/octet-stream",
+      "bytes": 502,
+      "sha256": "24c36eb9accbcb0c8320bb6f9cd310dd059743632eb5eff4349e30b026b97277",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/ghostty/bizarre-paper",
+      "packagePath": "source/snippets/repo/terminals/ghostty/bizarre-paper",
+      "kind": "application/octet-stream",
+      "bytes": 503,
+      "sha256": "c92cc7a50e22416ac7757ca83ab0ce1034174f092099c50a557ed53ce54400d7",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/ghostty/bizarre-void",
+      "packagePath": "source/snippets/repo/terminals/ghostty/bizarre-void",
+      "kind": "application/octet-stream",
+      "bytes": 502,
+      "sha256": "357490862cf9e3a0b49361aeb3ec2eb61e0d0ba93c59e28c7726f452221020a5",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/ghostty/bizarre-void-hicontrast",
+      "packagePath": "source/snippets/repo/terminals/ghostty/bizarre-void-hicontrast",
+      "kind": "application/octet-stream",
+      "bytes": 514,
+      "sha256": "8b549b506fef31217709ac677731b052a5995c6310440d89829f4457cc9c10ec",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/ghostty/bizarre-workshop",
+      "packagePath": "source/snippets/repo/terminals/ghostty/bizarre-workshop",
+      "kind": "application/octet-stream",
+      "bytes": 506,
+      "sha256": "5d0421fd2986cfff0619d154fa961a28a688ecab68b42d5d5ddd81d49c53a91f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/gnome-terminal/bizarre.sh",
+      "packagePath": "source/snippets/repo/terminals/gnome-terminal/bizarre.sh",
+      "kind": "text/x-shellscript",
+      "bytes": 2780,
+      "sha256": "af26a5e8d2e27a8c1b7453ae9a1566d8fcc20a96b4ba437e59b934f65fee3c69",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/hyper/bizarre-bone.js",
+      "packagePath": "source/snippets/repo/terminals/hyper/bizarre-bone.js",
+      "kind": "text/javascript",
+      "bytes": 685,
+      "sha256": "e8d5a55d770caee903ef704f5deb5fbf3dbb6d8f8155ab720ee7e16f92dee902",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/hyper/bizarre-paper.js",
+      "packagePath": "source/snippets/repo/terminals/hyper/bizarre-paper.js",
+      "kind": "text/javascript",
+      "bytes": 685,
+      "sha256": "6899d42a5cd3e4a4740d4adb1f1da50fd1a343abdde4cad42efa94ca5b26724b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/hyper/bizarre-void-hicontrast.js",
+      "packagePath": "source/snippets/repo/terminals/hyper/bizarre-void-hicontrast.js",
+      "kind": "text/javascript",
+      "bytes": 685,
+      "sha256": "c785dab149d9d5c522aafab8af443ebdecb59061589e07e600842135212698d4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/hyper/bizarre-void.js",
+      "packagePath": "source/snippets/repo/terminals/hyper/bizarre-void.js",
+      "kind": "text/javascript",
+      "bytes": 685,
+      "sha256": "41e22cdd00731e321bf9146a35b2bd760e27a0a38aef903a44567edb18b5c2b1",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/hyper/bizarre-workshop.js",
+      "packagePath": "source/snippets/repo/terminals/hyper/bizarre-workshop.js",
+      "kind": "text/javascript",
+      "bytes": 685,
+      "sha256": "cbe74dc68e3a83495d50565a5a959e61e5b2d9788218785e112ee2b207b29d0b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/iterm2/bizarre-bone.itermcolors",
+      "packagePath": "source/snippets/repo/terminals/iterm2/bizarre-bone.itermcolors",
+      "kind": "application/octet-stream",
+      "bytes": 7029,
+      "sha256": "b450becf424b5d44ecd14786497bf73cd043a3002d21f086b8ae8e701e2de0e0",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/iterm2/bizarre-paper.itermcolors",
+      "packagePath": "source/snippets/repo/terminals/iterm2/bizarre-paper.itermcolors",
+      "kind": "application/octet-stream",
+      "bytes": 7029,
+      "sha256": "69023e83fe51b4641e6c4b2bc3a1620284c0c76ddd028198c483962b95129da3",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/iterm2/bizarre-void-hicontrast.itermcolors",
+      "packagePath": "source/snippets/repo/terminals/iterm2/bizarre-void-hicontrast.itermcolors",
+      "kind": "application/octet-stream",
+      "bytes": 7029,
+      "sha256": "ac4cde8e818f1375b5bd68d4e3c76dc10fda8d4dcc201a0b3eaeb888c9311203",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/iterm2/bizarre-void.itermcolors",
+      "packagePath": "source/snippets/repo/terminals/iterm2/bizarre-void.itermcolors",
+      "kind": "application/octet-stream",
+      "bytes": 7029,
+      "sha256": "e831272072afc3c509feaf235c23cba788d0718f4c53a61eabd25ba000532b01",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/iterm2/bizarre-workshop.itermcolors",
+      "packagePath": "source/snippets/repo/terminals/iterm2/bizarre-workshop.itermcolors",
+      "kind": "application/octet-stream",
+      "bytes": 7029,
+      "sha256": "6e45b5cac39116c176bce8aa60f11f083d10d5cf80cb9a02918d1dbfdef4d345",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/kitty/bizarre-bone.conf",
+      "packagePath": "source/snippets/repo/terminals/kitty/bizarre-bone.conf",
+      "kind": "text/plain",
+      "bytes": 602,
+      "sha256": "9b3bee376003c666b9d69888113c9210e2c5754c81823cf7aa64a0ce3b717c3e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/kitty/bizarre-paper.conf",
+      "packagePath": "source/snippets/repo/terminals/kitty/bizarre-paper.conf",
+      "kind": "text/plain",
+      "bytes": 603,
+      "sha256": "94aad7b7ec68ffd7a76dfe290b790d243e8ade4c2590ccb1e1098aa99225b918",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/kitty/bizarre-void-hicontrast.conf",
+      "packagePath": "source/snippets/repo/terminals/kitty/bizarre-void-hicontrast.conf",
+      "kind": "text/plain",
+      "bytes": 614,
+      "sha256": "5dcf8a58161a11ca16644dcc09c7e213edabc52b883a2ee39323381fe44118de",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/kitty/bizarre-void.conf",
+      "packagePath": "source/snippets/repo/terminals/kitty/bizarre-void.conf",
+      "kind": "text/plain",
+      "bytes": 602,
+      "sha256": "0951ce8f182e39bbe604c0f106fd831839a7e06e8bf4cc0e33c35b4213de16ab",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/kitty/bizarre-workshop.conf",
+      "packagePath": "source/snippets/repo/terminals/kitty/bizarre-workshop.conf",
+      "kind": "text/plain",
+      "bytes": 606,
+      "sha256": "49977672a4db180f5045c4d5f8ddacd89df105be27b42194075e64a58448218a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/kitty/bizarre.conf",
+      "packagePath": "source/snippets/repo/terminals/kitty/bizarre.conf",
+      "kind": "text/plain",
+      "bytes": 597,
+      "sha256": "41c4baf8f40ebec921950faf668c87983a89e63a9a6ce2f4bbb2c9c78567bcef",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/konsole/bizarre-bone.colorscheme",
+      "packagePath": "source/snippets/repo/terminals/konsole/bizarre-bone.colorscheme",
+      "kind": "application/octet-stream",
+      "bytes": 940,
+      "sha256": "345bace6cb649f77e26a6edc78e79393cf7e72c110c25ea5e12f3eb9ad51535f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/konsole/bizarre-paper.colorscheme",
+      "packagePath": "source/snippets/repo/terminals/konsole/bizarre-paper.colorscheme",
+      "kind": "application/octet-stream",
+      "bytes": 941,
+      "sha256": "e308bb2f6ccf0c6639ff986551efc29e5e5350a22b514d4db03491cacbd3c3ce",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/konsole/bizarre-void-hicontrast.colorscheme",
+      "packagePath": "source/snippets/repo/terminals/konsole/bizarre-void-hicontrast.colorscheme",
+      "kind": "application/octet-stream",
+      "bytes": 963,
+      "sha256": "f5e8d51d659bef9ef0480dcbc4082170f934d03b3516e46b5e9a1e106fc7f6c7",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/konsole/bizarre-void.colorscheme",
+      "packagePath": "source/snippets/repo/terminals/konsole/bizarre-void.colorscheme",
+      "kind": "application/octet-stream",
+      "bytes": 957,
+      "sha256": "a76b24cd87d1c8abcad1f092bb7d9f49f25ec0f04523eff9884d76615fc97e64",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/konsole/bizarre-workshop.colorscheme",
+      "packagePath": "source/snippets/repo/terminals/konsole/bizarre-workshop.colorscheme",
+      "kind": "application/octet-stream",
+      "bytes": 961,
+      "sha256": "3428adfd1a0568e8fd0d4919961ac8fe11de613c038df02d7f770c3d2eb69a0a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/rio/bizarre-bone.toml",
+      "packagePath": "source/snippets/repo/terminals/rio/bizarre-bone.toml",
+      "kind": "application/toml",
+      "bytes": 542,
+      "sha256": "9e3d72f9ea108b0b305bb009ec243f686faf873d87ba49cc519de2c80b652c68",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/rio/bizarre-paper.toml",
+      "packagePath": "source/snippets/repo/terminals/rio/bizarre-paper.toml",
+      "kind": "application/toml",
+      "bytes": 543,
+      "sha256": "8e572ab463799e06a126227329aca2c2ce70456ce827843e4267de52ad6914f9",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/rio/bizarre-void-hicontrast.toml",
+      "packagePath": "source/snippets/repo/terminals/rio/bizarre-void-hicontrast.toml",
+      "kind": "application/toml",
+      "bytes": 554,
+      "sha256": "d8f391a2f6083e4a6ec996205133c71381a98860d526c2667f3e39ddf90ce93b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/rio/bizarre-void.toml",
+      "packagePath": "source/snippets/repo/terminals/rio/bizarre-void.toml",
+      "kind": "application/toml",
+      "bytes": 542,
+      "sha256": "051d9b237efe5a9dc426422b7a74f2106003f11154e3d6e7a3cc079b60d0d624",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/rio/bizarre-workshop.toml",
+      "packagePath": "source/snippets/repo/terminals/rio/bizarre-workshop.toml",
+      "kind": "application/toml",
+      "bytes": 546,
+      "sha256": "daa5effcb87d726152df9b97f507b3da223913e9b6fb3f3121c2a993b8f498c8",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/terminator/bizarre-bone.config",
+      "packagePath": "source/snippets/repo/terminals/terminator/bizarre-bone.config",
+      "kind": "application/octet-stream",
+      "bytes": 365,
+      "sha256": "9245054842b7292421a2321e4f09fcfc02200596b0442675d06effbb4de29096",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/terminator/bizarre-paper.config",
+      "packagePath": "source/snippets/repo/terminals/terminator/bizarre-paper.config",
+      "kind": "application/octet-stream",
+      "bytes": 366,
+      "sha256": "b16bb09ad62452ad975c6c1c55d2c9aa045d5d9571843b24b871f7409b289f52",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/terminator/bizarre-void-hicontrast.config",
+      "packagePath": "source/snippets/repo/terminals/terminator/bizarre-void-hicontrast.config",
+      "kind": "application/octet-stream",
+      "bytes": 376,
+      "sha256": "dbc8ceb1c2232613f57d5f0ae65d414c605e4890a636dd7f65d7b17649992615",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/terminator/bizarre-void.config",
+      "packagePath": "source/snippets/repo/terminals/terminator/bizarre-void.config",
+      "kind": "application/octet-stream",
+      "bytes": 365,
+      "sha256": "324ff711178e393243063609a8cbdbeed07dd94498fe641778561fac2267f69c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/terminator/bizarre-workshop.config",
+      "packagePath": "source/snippets/repo/terminals/terminator/bizarre-workshop.config",
+      "kind": "application/octet-stream",
+      "bytes": 369,
+      "sha256": "cd4045fb14a8ed89698d743033ba034524985ead5c9264edd53befa26e88debd",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/tilix/bizarre-bone.dconf",
+      "packagePath": "source/snippets/repo/terminals/tilix/bizarre-bone.dconf",
+      "kind": "application/octet-stream",
+      "bytes": 470,
+      "sha256": "914518c2098591182b5dbd0a4b3e9be537eb0c44df8c3e574ebbfeaa1372d515",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/tilix/bizarre-paper.dconf",
+      "packagePath": "source/snippets/repo/terminals/tilix/bizarre-paper.dconf",
+      "kind": "application/octet-stream",
+      "bytes": 471,
+      "sha256": "5fc9c5b689bd6a6b2aceb3e979cb2e25c057ce1c5484ea1c31e155ae5e74c4cf",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/tilix/bizarre-void-hicontrast.dconf",
+      "packagePath": "source/snippets/repo/terminals/tilix/bizarre-void-hicontrast.dconf",
+      "kind": "application/octet-stream",
+      "bytes": 482,
+      "sha256": "048cdef229d30fb8d0e776eea5a7518ba502d9aaf74c4946c743ef1013920dde",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/tilix/bizarre-void.dconf",
+      "packagePath": "source/snippets/repo/terminals/tilix/bizarre-void.dconf",
+      "kind": "application/octet-stream",
+      "bytes": 470,
+      "sha256": "8e60c41f2d10430535f2ac8ccda09ca94182f3329c60d8cbcf731b34f9e2d3d2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/tilix/bizarre-workshop.dconf",
+      "packagePath": "source/snippets/repo/terminals/tilix/bizarre-workshop.dconf",
+      "kind": "application/octet-stream",
+      "bytes": 474,
+      "sha256": "6dd7313ad5a94cc513aa7b47bf44b26c86fd6a9be6927c7f39db7d6a45f49b6a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/tmux/bizarre.tmux.conf",
+      "packagePath": "source/snippets/repo/terminals/tmux/bizarre.tmux.conf",
+      "kind": "text/plain",
+      "bytes": 4910,
+      "sha256": "ebf497dc1cebacb9cb73d5c243741b368ed6215116b9a4df2d157dc3b51011bd",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/wezterm/bizarre.lua",
+      "packagePath": "source/snippets/repo/terminals/wezterm/bizarre.lua",
+      "kind": "text/x-lua",
+      "bytes": 2563,
+      "sha256": "14fd8636e91f2f3c50d3fc461757d889e788de38a953925df48b94d746bfa2c3",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/windows-terminal/schemes.json",
+      "packagePath": "source/snippets/repo/terminals/windows-terminal/schemes.json",
+      "kind": "application/json",
+      "bytes": 3219,
+      "sha256": "012bb3e22b2e1d1cc034acba4930443f4c7dc812797d0013b66efe4a50bd20fd",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/xfce-terminal/bizarre-bone.theme",
+      "packagePath": "source/snippets/repo/terminals/xfce-terminal/bizarre-bone.theme",
+      "kind": "application/octet-stream",
+      "bytes": 290,
+      "sha256": "ff550283fa824b1d8e8d0c102724c7586c96e218b7d94d4f3562a93a2af272e9",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/xfce-terminal/bizarre-paper.theme",
+      "packagePath": "source/snippets/repo/terminals/xfce-terminal/bizarre-paper.theme",
+      "kind": "application/octet-stream",
+      "bytes": 291,
+      "sha256": "b496dfcd39870968733a2ec3d18b598044101d145b069f7d16acc83bb2c3d794",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/xfce-terminal/bizarre-void-hicontrast.theme",
+      "packagePath": "source/snippets/repo/terminals/xfce-terminal/bizarre-void-hicontrast.theme",
+      "kind": "application/octet-stream",
+      "bytes": 302,
+      "sha256": "15c916b417da6658af681d0ba3d01c6c61ee0532b837b0bc65f37a5abc145b9c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/xfce-terminal/bizarre-void.theme",
+      "packagePath": "source/snippets/repo/terminals/xfce-terminal/bizarre-void.theme",
+      "kind": "application/octet-stream",
+      "bytes": 290,
+      "sha256": "2d36545faab98af170c7a2e211062612921297313447d1a1f896b2dc7f90b43d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/xfce-terminal/bizarre-workshop.theme",
+      "packagePath": "source/snippets/repo/terminals/xfce-terminal/bizarre-workshop.theme",
+      "kind": "application/octet-stream",
+      "bytes": 294,
+      "sha256": "9848de3e771a1d50eb1414d2938a10dc3b21fd39d5948502b9bde1553ccf2557",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "terminals/zellij/bizarre.kdl",
+      "packagePath": "source/snippets/repo/terminals/zellij/bizarre.kdl",
+      "kind": "text/x-kdl",
+      "bytes": 1510,
+      "sha256": "7627ff179b2599e49dd321e49c06a29a8fe3db3e7e9bbe284d4f3a9d3de04e4f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "test/contrast.test.cjs",
+      "packagePath": "source/snippets/repo/test/contrast.test.cjs",
+      "kind": "text/javascript",
+      "bytes": 11562,
+      "sha256": "2aac5af80aae22cbee967ed21f7bdbb8652a8417600839696df6967cbfdb3285",
+      "classification": "test",
+      "generated": false
+    },
+    {
+      "sourcePath": "test/generated-files.test.cjs",
+      "packagePath": "source/snippets/repo/test/generated-files.test.cjs",
+      "kind": "text/javascript",
+      "bytes": 6753,
+      "sha256": "1898464629a5ee0b402c04c574e179452f96cab139457bb9f14699c732d37a11",
+      "classification": "test",
+      "generated": false
+    },
+    {
+      "sourcePath": "test/open-design-evidence.test.cjs",
+      "packagePath": "source/snippets/repo/test/open-design-evidence.test.cjs",
+      "kind": "text/javascript",
+      "bytes": 21071,
+      "sha256": "b4d0ec5d31c4c2d7d2758db42ba78f63be0f1eaed610205ff7ecae4ab00d0743",
+      "classification": "test",
+      "generated": false
+    },
+    {
+      "sourcePath": "test/open-design-model.test.cjs",
+      "packagePath": "source/snippets/repo/test/open-design-model.test.cjs",
+      "kind": "text/javascript",
+      "bytes": 5423,
+      "sha256": "89c559777c6fccdb0b6769d5242a5edb25cec073e2034eca4d0a55ef50afec3d",
+      "classification": "test",
+      "generated": false
+    },
+    {
+      "sourcePath": "test/open-design-package.test.cjs",
+      "packagePath": "source/snippets/repo/test/open-design-package.test.cjs",
+      "kind": "text/javascript",
+      "bytes": 38267,
+      "sha256": "0e4df5213ae9cad1de284465eaea70a980b0e3b126b13e8c0214bcf886ba5844",
+      "classification": "test",
+      "generated": false
+    },
+    {
+      "sourcePath": "test/open-design-renderers.test.cjs",
+      "packagePath": "source/snippets/repo/test/open-design-renderers.test.cjs",
+      "kind": "text/javascript",
+      "bytes": 46624,
+      "sha256": "de219cc601edd79a444917450eec3ecb9b8b3fc0f6d59e382f3470a5dc436f55",
+      "classification": "test",
+      "generated": false
+    },
+    {
+      "sourcePath": "test/open-design-writer.test.cjs",
+      "packagePath": "source/snippets/repo/test/open-design-writer.test.cjs",
+      "kind": "text/javascript",
+      "bytes": 38292,
+      "sha256": "3c32f2b5c64885fc5825ba7df9e4873d76d2ea6be798fb293528ee3b48b5e323",
+      "classification": "test",
+      "generated": false
+    },
+    {
+      "sourcePath": "test/repository-contracts.test.cjs",
+      "packagePath": "source/snippets/repo/test/repository-contracts.test.cjs",
+      "kind": "text/javascript",
+      "bytes": 14493,
+      "sha256": "70d8b00046714b20ac0439b3c211db6b034f92378f91e8aa94ab96983644f223",
+      "classification": "test",
+      "generated": false
+    },
+    {
+      "sourcePath": "tools/README.md",
+      "packagePath": "source/snippets/repo/tools/README.md",
+      "kind": "text/markdown",
+      "bytes": 1050,
+      "sha256": "81a56dc9e5601c78f1f25201086f24f5210ceae8e5eb28019d9107ef9488684c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/aerospace/aerospace.toml",
+      "packagePath": "source/snippets/repo/tools/aerospace/aerospace.toml",
+      "kind": "application/toml",
+      "bytes": 2956,
+      "sha256": "11bd2cf2276744d803ecef3a04549a5f57debfd0954b0f445d443d7ee895f05c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/atuin/themes/bizarre-bone.toml",
+      "packagePath": "source/snippets/repo/tools/atuin/themes/bizarre-bone.toml",
+      "kind": "application/toml",
+      "bytes": 226,
+      "sha256": "d9e1f93418224e837e1badddcb55df8f94876a0d6c1b8699729ab71bfb1009b1",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/atuin/themes/bizarre-paper.toml",
+      "packagePath": "source/snippets/repo/tools/atuin/themes/bizarre-paper.toml",
+      "kind": "application/toml",
+      "bytes": 227,
+      "sha256": "2a3af57f1a8f86aa3f012dddfb85ce6f614a31a1db2a40cf00e5d06e9dd5c504",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/atuin/themes/bizarre-void-hicontrast.toml",
+      "packagePath": "source/snippets/repo/tools/atuin/themes/bizarre-void-hicontrast.toml",
+      "kind": "application/toml",
+      "bytes": 237,
+      "sha256": "18d419f7927aecfca6a8c94f9810976d062cd74a8ecabc27263adcde4c0ca716",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/atuin/themes/bizarre-void.toml",
+      "packagePath": "source/snippets/repo/tools/atuin/themes/bizarre-void.toml",
+      "kind": "application/toml",
+      "bytes": 226,
+      "sha256": "8c4a6406e2943ce4a0d68605795ccc40c9f10c20ce5f59845ba09dd5d534c20a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/atuin/themes/bizarre-workshop.toml",
+      "packagePath": "source/snippets/repo/tools/atuin/themes/bizarre-workshop.toml",
+      "kind": "application/toml",
+      "bytes": 230,
+      "sha256": "0ee3c7facb6645dc44347dcfcb28d5e407057c90342e5decf5636c61dea8fbbb",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bat/themes/bizarre-bone.tmTheme",
+      "packagePath": "source/snippets/repo/tools/bat/themes/bizarre-bone.tmTheme",
+      "kind": "application/octet-stream",
+      "bytes": 7486,
+      "sha256": "6edb9468bbccb5db46d756c6a12765a31d64d1a256dadea0a590fceb6405bb8d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bat/themes/bizarre-paper.tmTheme",
+      "packagePath": "source/snippets/repo/tools/bat/themes/bizarre-paper.tmTheme",
+      "kind": "application/octet-stream",
+      "bytes": 7487,
+      "sha256": "06b22eb01dfc79b9517629ad088eb54313547c0eea607663c13ae3f420d01627",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bat/themes/bizarre-void-hicontrast.tmTheme",
+      "packagePath": "source/snippets/repo/tools/bat/themes/bizarre-void-hicontrast.tmTheme",
+      "kind": "application/octet-stream",
+      "bytes": 7498,
+      "sha256": "fad14288aee734ccbe8d545445751f5e7896e4dbe8d6025451f7f46581ba0a57",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bat/themes/bizarre-void.tmTheme",
+      "packagePath": "source/snippets/repo/tools/bat/themes/bizarre-void.tmTheme",
+      "kind": "application/octet-stream",
+      "bytes": 7486,
+      "sha256": "e89cc2e078508347715ed643531faab14b4caaa6bcad2d23214df4e1920d93f2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bat/themes/bizarre-workshop.tmTheme",
+      "packagePath": "source/snippets/repo/tools/bat/themes/bizarre-workshop.tmTheme",
+      "kind": "application/octet-stream",
+      "bytes": 7490,
+      "sha256": "008126761b7329f833f82f08f197a47fb89ddfbef4362f6421b1aa769a97104a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bottom/bizarre-bone.toml",
+      "packagePath": "source/snippets/repo/tools/bottom/bizarre-bone.toml",
+      "kind": "application/toml",
+      "bytes": 1129,
+      "sha256": "0d717ceaf187c76914f7f6768ad4f243b8f22e96a55230ff20a9477b194586eb",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bottom/bizarre-paper.toml",
+      "packagePath": "source/snippets/repo/tools/bottom/bizarre-paper.toml",
+      "kind": "application/toml",
+      "bytes": 1130,
+      "sha256": "e2cd85a00abaefe8551b9be8129be8f0fd3f8c94383fdcc3376b022a84cdc933",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bottom/bizarre-void-hicontrast.toml",
+      "packagePath": "source/snippets/repo/tools/bottom/bizarre-void-hicontrast.toml",
+      "kind": "application/toml",
+      "bytes": 1141,
+      "sha256": "eb730003cc9ea2876132a091d8ba6f84b513179f62d6dc4b9eea69341a49eae6",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bottom/bizarre-void.toml",
+      "packagePath": "source/snippets/repo/tools/bottom/bizarre-void.toml",
+      "kind": "application/toml",
+      "bytes": 1129,
+      "sha256": "94041eea4c02843dfc7ed96a8a6829c1bcef1221131f2c283f44face9d5aee38",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/bottom/bizarre-workshop.toml",
+      "packagePath": "source/snippets/repo/tools/bottom/bizarre-workshop.toml",
+      "kind": "application/toml",
+      "bytes": 1133,
+      "sha256": "020d2a0bda044600acb52c84d4ad8af03de130527c4e5c0319934b90ac47f2d8",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/btop/bizarre-bone.theme",
+      "packagePath": "source/snippets/repo/tools/btop/bizarre-bone.theme",
+      "kind": "application/octet-stream",
+      "bytes": 1202,
+      "sha256": "c18b285c499d02c23d30316e3fb1f065c3e2ab76f697711875e3701a8464c17d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/btop/bizarre-paper.theme",
+      "packagePath": "source/snippets/repo/tools/btop/bizarre-paper.theme",
+      "kind": "application/octet-stream",
+      "bytes": 1203,
+      "sha256": "40fb869d7eceb6c98bc34056cbb872304a9ff3aa872a3450706c86fa76759744",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/btop/bizarre-void-hicontrast.theme",
+      "packagePath": "source/snippets/repo/tools/btop/bizarre-void-hicontrast.theme",
+      "kind": "application/octet-stream",
+      "bytes": 1214,
+      "sha256": "0d765ca3c27f326d9936d5bfbce4cc931655a58e207a1a0d54eee17f28d6d23b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/btop/bizarre-void.theme",
+      "packagePath": "source/snippets/repo/tools/btop/bizarre-void.theme",
+      "kind": "application/octet-stream",
+      "bytes": 1202,
+      "sha256": "34fe4ce6795f20025ce88fd237d58e5f7d3e5c3c66acfca8fc65f3fa829cf93b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/btop/bizarre-workshop.theme",
+      "packagePath": "source/snippets/repo/tools/btop/bizarre-workshop.theme",
+      "kind": "application/octet-stream",
+      "bytes": 1206,
+      "sha256": "98d8074f11068fe30b44214503241db7ba8705f45c9da8e95a2b90cef0989fbe",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/delta/bizarre.gitconfig",
+      "packagePath": "source/snippets/repo/tools/delta/bizarre.gitconfig",
+      "kind": "application/octet-stream",
+      "bytes": 3416,
+      "sha256": "750033d61b70351bf3dca086000479012a8600a9a8be5a2a546ceee2fea3b108",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/dircolors/bizarre.dircolors",
+      "packagePath": "source/snippets/repo/tools/dircolors/bizarre.dircolors",
+      "kind": "application/octet-stream",
+      "bytes": 882,
+      "sha256": "767759067c2b97a44253a230e10256c1103c2f34b96df4bb032a26eb5f4c584e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/eza/bizarre.sh",
+      "packagePath": "source/snippets/repo/tools/eza/bizarre.sh",
+      "kind": "text/x-shellscript",
+      "bytes": 676,
+      "sha256": "d72fe4f8de405060707c6aa550a9e7ccb353b2af2187902ad004f2ead990d22c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/forklift/Bizarre.json",
+      "packagePath": "source/snippets/repo/tools/forklift/Bizarre.json",
+      "kind": "application/json",
+      "bytes": 3931,
+      "sha256": "58042246f45586e25cdd55db60e5ad2b00af105aae85283dd5a39f720b6b07a1",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/fzf/bizarre.sh",
+      "packagePath": "source/snippets/repo/tools/fzf/bizarre.sh",
+      "kind": "text/x-shellscript",
+      "bytes": 413,
+      "sha256": "62dcd6942f88baed00c77f0e0c05b607409cdcd4acea261b2b61a184fec74677",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/jujutsu/config.toml",
+      "packagePath": "source/snippets/repo/tools/jujutsu/config.toml",
+      "kind": "application/toml",
+      "bytes": 2852,
+      "sha256": "6ed575ecaca749cfee3cbc62652a5493d7d0ed9c3573e016fb2873566e0f1793",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/k9s/skins/bizarre-bone.yaml",
+      "packagePath": "source/snippets/repo/tools/k9s/skins/bizarre-bone.yaml",
+      "kind": "application/yaml",
+      "bytes": 1138,
+      "sha256": "e3a5fe649ccdfdea2333fcdb1800fa5344dbd4cb531601d8b3044561b262bba3",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/k9s/skins/bizarre-paper.yaml",
+      "packagePath": "source/snippets/repo/tools/k9s/skins/bizarre-paper.yaml",
+      "kind": "application/yaml",
+      "bytes": 1139,
+      "sha256": "6654f8b2d7f6f8b3cc9aeb419ea60b096f3e9d9f3958e431c1e1d1a524319fa9",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/k9s/skins/bizarre-void-hicontrast.yaml",
+      "packagePath": "source/snippets/repo/tools/k9s/skins/bizarre-void-hicontrast.yaml",
+      "kind": "application/yaml",
+      "bytes": 1150,
+      "sha256": "a0f3453bc4a02339f572175abfd5780f6852f61d7dd8cd638f460ea63e6aa302",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/k9s/skins/bizarre-void.yaml",
+      "packagePath": "source/snippets/repo/tools/k9s/skins/bizarre-void.yaml",
+      "kind": "application/yaml",
+      "bytes": 1138,
+      "sha256": "9f1e6660da1da35bcd5cb21973faaf817c4de5a857d552a7527d023a1d32f15b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/k9s/skins/bizarre-workshop.yaml",
+      "packagePath": "source/snippets/repo/tools/k9s/skins/bizarre-workshop.yaml",
+      "kind": "application/yaml",
+      "bytes": 1142,
+      "sha256": "a962eddbddaef890a1412a19c91bcd551852f17459c6cffd79dd5fa7eb7e348f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/lazygit/config.yml",
+      "packagePath": "source/snippets/repo/tools/lazygit/config.yml",
+      "kind": "application/yaml",
+      "bytes": 594,
+      "sha256": "abd9b5b4ff1b52b3defeee46690554640a61919562e5eccf2a1aac867abaea12",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/ranger/colorschemes/bizarre_bone.py",
+      "packagePath": "source/snippets/repo/tools/ranger/colorschemes/bizarre_bone.py",
+      "kind": "text/x-python",
+      "bytes": 2085,
+      "sha256": "400ffab11c4ebe0daec94fb0ff4a7931b6f5e9f0520ffbcb300f89e3bbec9f79",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/ranger/colorschemes/bizarre_paper.py",
+      "packagePath": "source/snippets/repo/tools/ranger/colorschemes/bizarre_paper.py",
+      "kind": "text/x-python",
+      "bytes": 2086,
+      "sha256": "69146f4faaf81870cf4f95c35a92fae75def7768d6b5ac2c9407771fbfedbb3f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/ranger/colorschemes/bizarre_void.py",
+      "packagePath": "source/snippets/repo/tools/ranger/colorschemes/bizarre_void.py",
+      "kind": "text/x-python",
+      "bytes": 2086,
+      "sha256": "2985768743ab24c42d2c670cc2ac4d990936191dd602b4c478d9d0b5076668ab",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/ranger/colorschemes/bizarre_void_hicontrast.py",
+      "packagePath": "source/snippets/repo/tools/ranger/colorschemes/bizarre_void_hicontrast.py",
+      "kind": "text/x-python",
+      "bytes": 2098,
+      "sha256": "1e97c41acde23891ca4451aa0c00925dda92d4b878d8b85f2835ba37190739bd",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/ranger/colorschemes/bizarre_workshop.py",
+      "packagePath": "source/snippets/repo/tools/ranger/colorschemes/bizarre_workshop.py",
+      "kind": "text/x-python",
+      "bytes": 2090,
+      "sha256": "f2fe811db1803dfd90ede0535770eaae8dca8bded4a84513927352208a1da13a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/vivid/themes/bizarre-bone.yml",
+      "packagePath": "source/snippets/repo/tools/vivid/themes/bizarre-bone.yml",
+      "kind": "application/yaml",
+      "bytes": 1197,
+      "sha256": "db06a8138f867890d5024fca3013e413fe1d6b3905ccf3fcb90ca6f46b946d9c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/vivid/themes/bizarre-paper.yml",
+      "packagePath": "source/snippets/repo/tools/vivid/themes/bizarre-paper.yml",
+      "kind": "application/yaml",
+      "bytes": 1197,
+      "sha256": "f89a5364fa8b7f25584f40d4c64e17578b6f02f3d8e2bb3f6627e1909beff5b8",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/vivid/themes/bizarre-void-hicontrast.yml",
+      "packagePath": "source/snippets/repo/tools/vivid/themes/bizarre-void-hicontrast.yml",
+      "kind": "application/yaml",
+      "bytes": 1197,
+      "sha256": "b2c56e99b1efabdcf272bfed38448775d2651a1d090e6b5a3a9779071532ad0e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/vivid/themes/bizarre-void.yml",
+      "packagePath": "source/snippets/repo/tools/vivid/themes/bizarre-void.yml",
+      "kind": "application/yaml",
+      "bytes": 1197,
+      "sha256": "f0d2505fd9f1f93f5aa1c9a3d6b157b69cefb8c0cb1b15497ff0444aec61b878",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/vivid/themes/bizarre-workshop.yml",
+      "packagePath": "source/snippets/repo/tools/vivid/themes/bizarre-workshop.yml",
+      "kind": "application/yaml",
+      "bytes": 1197,
+      "sha256": "d3412f06121e32f9ee03e12940a1454f2008c22a5a18da63dad6d593e56ec4ad",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-bone.yazi/README.md",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-bone.yazi/README.md",
+      "kind": "text/markdown",
+      "bytes": 161,
+      "sha256": "485514506209b72e8f4c33cba1146a36d78009c3f795672a8e79cd7f631a9823",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-bone.yazi/flavor.toml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-bone.yazi/flavor.toml",
+      "kind": "application/toml",
+      "bytes": 2931,
+      "sha256": "5aafeb5d4e2be30ee3fa2994575c4c56547f41519270cb193c4c89f0469aa108",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-bone.yazi/tmtheme.xml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-bone.yazi/tmtheme.xml",
+      "kind": "application/xml",
+      "bytes": 7486,
+      "sha256": "6edb9468bbccb5db46d756c6a12765a31d64d1a256dadea0a590fceb6405bb8d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-paper.yazi/README.md",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-paper.yazi/README.md",
+      "kind": "text/markdown",
+      "bytes": 163,
+      "sha256": "c31b2daed184e620119c50ef5981ce2264e38b1cd0cf13f9f74a201f1e02676d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-paper.yazi/flavor.toml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-paper.yazi/flavor.toml",
+      "kind": "application/toml",
+      "bytes": 2932,
+      "sha256": "84c6efcc82e2b75bc23b197ff695d8b0bf6b039ea52c534a512bf74c5ffb83ec",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-paper.yazi/tmtheme.xml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-paper.yazi/tmtheme.xml",
+      "kind": "application/xml",
+      "bytes": 7487,
+      "sha256": "06b22eb01dfc79b9517629ad088eb54313547c0eea607663c13ae3f420d01627",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-void-hicontrast.yazi/README.md",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-void-hicontrast.yazi/README.md",
+      "kind": "text/markdown",
+      "bytes": 184,
+      "sha256": "1240b0331846153a21e4e9bd635faccc2536165a554c765da41e2ea90bad7ad4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-void-hicontrast.yazi/flavor.toml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-void-hicontrast.yazi/flavor.toml",
+      "kind": "application/toml",
+      "bytes": 2943,
+      "sha256": "ab4e7df3472a62e33c789f2e3645f79bb28ecb0606b00b7f89865e6fadf2cd16",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-void-hicontrast.yazi/tmtheme.xml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-void-hicontrast.yazi/tmtheme.xml",
+      "kind": "application/xml",
+      "bytes": 7498,
+      "sha256": "fad14288aee734ccbe8d545445751f5e7896e4dbe8d6025451f7f46581ba0a57",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-void.yazi/README.md",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-void.yazi/README.md",
+      "kind": "text/markdown",
+      "bytes": 161,
+      "sha256": "0db22cb4def25428b5d54ecb886cd2d5d9214f667403d26ff21345f2d0fcc9be",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-void.yazi/flavor.toml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-void.yazi/flavor.toml",
+      "kind": "application/toml",
+      "bytes": 2931,
+      "sha256": "f15bf6c1f8473e7133934e94fc174df52e4794a5202ba4ccc4aaa40b6749f1ba",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-void.yazi/tmtheme.xml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-void.yazi/tmtheme.xml",
+      "kind": "application/xml",
+      "bytes": 7486,
+      "sha256": "e89cc2e078508347715ed643531faab14b4caaa6bcad2d23214df4e1920d93f2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-workshop.yazi/README.md",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-workshop.yazi/README.md",
+      "kind": "text/markdown",
+      "bytes": 169,
+      "sha256": "e774cb6d486fb9506f4b65ef197be80d8f8eb244ee84895f9593d36777363cd0",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-workshop.yazi/flavor.toml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-workshop.yazi/flavor.toml",
+      "kind": "application/toml",
+      "bytes": 2935,
+      "sha256": "8b30555fc87c33daddb61faaebea110ac0133af711290dbc60e16d58e7d7d127",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "tools/yazi/flavors/bizarre-workshop.yazi/tmtheme.xml",
+      "packagePath": "source/snippets/repo/tools/yazi/flavors/bizarre-workshop.yazi/tmtheme.xml",
+      "kind": "application/xml",
+      "bytes": 7490,
+      "sha256": "008126761b7329f833f82f08f197a47fb89ddfbef4362f6421b1aa769a97104a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/README.md",
+      "packagePath": "source/snippets/repo/web/README.md",
+      "kind": "text/markdown",
+      "bytes": 497,
+      "sha256": "c1feb37b34c13df2cf62c4456f34e8e25ae8a899359cb17f992890784640f819",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/arc/boosts/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/web/arc/boosts/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 969,
+      "sha256": "af60bb5466e9c74a62fc1ab5c2e9a134db6df31bb01805c00ea1dab9d25c72cb",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/arc/boosts/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/web/arc/boosts/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 970,
+      "sha256": "36f15200f2a10ffd1ee07401bf9c043a4573b3ee911778e892e33807204f867b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/arc/boosts/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/web/arc/boosts/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 981,
+      "sha256": "f97b5e191c76049ed0341045bb3d1ab88c498bab6517062b36588908cedecb1b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/arc/boosts/bizarre-void.css",
+      "packagePath": "source/snippets/repo/web/arc/boosts/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 969,
+      "sha256": "dd68cb484491e7ff0cdf20fa02afe67024089168114c4b0085cc8adef391fee5",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/arc/boosts/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/web/arc/boosts/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 973,
+      "sha256": "52e6557b7438578561bd717d935e8c091e712df26e4957ec0810b58a3f49475d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/chrome/bizarre-bone/manifest.json",
+      "packagePath": "source/snippets/repo/web/chrome/bizarre-bone/manifest.json",
+      "kind": "application/json",
+      "bytes": 2182,
+      "sha256": "d57c68c1a1fd1311fd65d9457f31b01c56d29bb312ecfd1c9d80ad1eaa0609ae",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/chrome/bizarre-paper/manifest.json",
+      "packagePath": "source/snippets/repo/web/chrome/bizarre-paper/manifest.json",
+      "kind": "application/json",
+      "bytes": 2183,
+      "sha256": "ea7579ce5a7e3ac40f2fd1bfd1c1db63044f56c68d7b2b68a6dd0d705a87a725",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/chrome/bizarre-void-hicontrast/manifest.json",
+      "packagePath": "source/snippets/repo/web/chrome/bizarre-void-hicontrast/manifest.json",
+      "kind": "application/json",
+      "bytes": 2179,
+      "sha256": "fb2e174846d70c4ad99e54c25a572118f10463c50ebacff4a6cc5c2dee946b71",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/chrome/bizarre-void/manifest.json",
+      "packagePath": "source/snippets/repo/web/chrome/bizarre-void/manifest.json",
+      "kind": "application/json",
+      "bytes": 2176,
+      "sha256": "c95a6e5e78771659083485b6ae25abbbef77e40a1d5446c0847b0c10ba8ff195",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/chrome/bizarre-workshop/manifest.json",
+      "packagePath": "source/snippets/repo/web/chrome/bizarre-workshop/manifest.json",
+      "kind": "application/json",
+      "bytes": 2180,
+      "sha256": "908bb8de1aead09ba429c71ace769d7c6220cac4aae61b8a6978f5dff375f941",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/documentation-sites/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/web/documentation-sites/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 1074,
+      "sha256": "c01dc1276c759c1b50fec82d9be0690a9b5dba6634c58f985785616ef90e5d4f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/documentation-sites/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/web/documentation-sites/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 1075,
+      "sha256": "2927dfdd0c5547ba17f01b363a11a1a5758344eeb61e8d05fa936874b6143eb0",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/documentation-sites/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/web/documentation-sites/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 1085,
+      "sha256": "1204cff47311b50b4bede4648f6ef023c37142c68049da8c894daff65a3e2aec",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/documentation-sites/bizarre-void.css",
+      "packagePath": "source/snippets/repo/web/documentation-sites/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 1073,
+      "sha256": "8e85f4600d454f27bf54fde6f98abbc4d98bc8c8d967623ea16eca44988a1134",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/documentation-sites/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/web/documentation-sites/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 1077,
+      "sha256": "a241e95dde407ed4c554cf32a00fcfd7bd21b08836815a62f554a778af8b9cd0",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/firefox/bizarre-bone/manifest.json",
+      "packagePath": "source/snippets/repo/web/firefox/bizarre-bone/manifest.json",
+      "kind": "application/json",
+      "bytes": 1126,
+      "sha256": "b0759c892504893426b9bc556cc2f7add9892420742644f1ba25d7c4028fb11c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/firefox/bizarre-paper/manifest.json",
+      "packagePath": "source/snippets/repo/web/firefox/bizarre-paper/manifest.json",
+      "kind": "application/json",
+      "bytes": 1127,
+      "sha256": "7c9e79e83dedc6d5e307624b52932063e48a0ef5067a6a41a0ce35edc9138a63",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/firefox/bizarre-void-hicontrast/manifest.json",
+      "packagePath": "source/snippets/repo/web/firefox/bizarre-void-hicontrast/manifest.json",
+      "kind": "application/json",
+      "bytes": 1136,
+      "sha256": "85444d9c33762f58dc71a13d7f2db0b20cb039552331daeb5332388f352d605a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/firefox/bizarre-void/manifest.json",
+      "packagePath": "source/snippets/repo/web/firefox/bizarre-void/manifest.json",
+      "kind": "application/json",
+      "bytes": 1124,
+      "sha256": "bff473453b6d99dbd2d5e674011d8a141d4cf7249127ba806b7b3d8100fd8e06",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/firefox/bizarre-workshop/manifest.json",
+      "packagePath": "source/snippets/repo/web/firefox/bizarre-workshop/manifest.json",
+      "kind": "application/json",
+      "bytes": 1128,
+      "sha256": "95ba0e436ac5c7e76a82f1ef9d38c3a2de8162a32a4d8371f8d7dc3b4e710694",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/startpages/bizarre-bone.html",
+      "packagePath": "source/snippets/repo/web/startpages/bizarre-bone.html",
+      "kind": "text/html",
+      "bytes": 2327,
+      "sha256": "58a4d4299b8cb65566249b5fe707cc5a43988c332d44f0b36f1941566731146a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/startpages/bizarre-paper.html",
+      "packagePath": "source/snippets/repo/web/startpages/bizarre-paper.html",
+      "kind": "text/html",
+      "bytes": 2328,
+      "sha256": "bb4aba8a5034e05dd22f5ed76cbba5c839c07a18e1fa35b5e1baafae3044beb2",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/startpages/bizarre-void-hicontrast.html",
+      "packagePath": "source/snippets/repo/web/startpages/bizarre-void-hicontrast.html",
+      "kind": "text/html",
+      "bytes": 2339,
+      "sha256": "b7d9fc12f62821534c5b21eda0a7ea5e829f9d52786b5ddc2f7b10d6e57db976",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/startpages/bizarre-void.html",
+      "packagePath": "source/snippets/repo/web/startpages/bizarre-void.html",
+      "kind": "text/html",
+      "bytes": 2327,
+      "sha256": "7f9c75aa2c69d2561ced3c41ed6b1071b0fe763de9db52cd114e94a197c27d3e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/startpages/bizarre-workshop.html",
+      "packagePath": "source/snippets/repo/web/startpages/bizarre-workshop.html",
+      "kind": "text/html",
+      "bytes": 2331,
+      "sha256": "d19e34ee210611b471fc624149dbe0959c388145d15ed9bc91085d87de63528d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/userstyles/bizarre-bone.user.css",
+      "packagePath": "source/snippets/repo/web/userstyles/bizarre-bone.user.css",
+      "kind": "text/css",
+      "bytes": 1042,
+      "sha256": "7c61ce823ece8171f728fda4d701a852f2e0523408a76653ae376df225748115",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/userstyles/bizarre-paper.user.css",
+      "packagePath": "source/snippets/repo/web/userstyles/bizarre-paper.user.css",
+      "kind": "text/css",
+      "bytes": 1043,
+      "sha256": "11248e5d8710bee72638f3a6da5a7bb3797bc12ecee434bc1c4f2d31357cb966",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/userstyles/bizarre-void-hicontrast.user.css",
+      "packagePath": "source/snippets/repo/web/userstyles/bizarre-void-hicontrast.user.css",
+      "kind": "text/css",
+      "bytes": 1054,
+      "sha256": "2c2233d8a11c8adea4853882c37855f2df3d4c4cfd74a1cbad764b1522eb21de",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/userstyles/bizarre-void.user.css",
+      "packagePath": "source/snippets/repo/web/userstyles/bizarre-void.user.css",
+      "kind": "text/css",
+      "bytes": 1042,
+      "sha256": "eeb967a41031e03b1264e4f825f097d0ebbf1e5d9e8dbb7cf4194d98369673ac",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/userstyles/bizarre-workshop.user.css",
+      "packagePath": "source/snippets/repo/web/userstyles/bizarre-workshop.user.css",
+      "kind": "text/css",
+      "bytes": 1046,
+      "sha256": "19e9d9748e00e4addf172b2b44e64e53975c6c2320dfa083fbe981a8091f0123",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/vivaldi/bizarre-bone/theme.json",
+      "packagePath": "source/snippets/repo/web/vivaldi/bizarre-bone/theme.json",
+      "kind": "application/json",
+      "bytes": 405,
+      "sha256": "ce68838bf92895f570ddfba3fc4f8caeec56f9331daf17d37090863de3805240",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/vivaldi/bizarre-paper/theme.json",
+      "packagePath": "source/snippets/repo/web/vivaldi/bizarre-paper/theme.json",
+      "kind": "application/json",
+      "bytes": 406,
+      "sha256": "18fccf6e3479b72f9b46de9b4da8d9ee0d0b34313a8ba720f6ff55897f98afc5",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/vivaldi/bizarre-void-hicontrast/theme.json",
+      "packagePath": "source/snippets/repo/web/vivaldi/bizarre-void-hicontrast/theme.json",
+      "kind": "application/json",
+      "bytes": 417,
+      "sha256": "b13b08c7ab71bb613ca403f1a8caccd4fb7d459c28c99a41b72ad02c913bde74",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/vivaldi/bizarre-void/theme.json",
+      "packagePath": "source/snippets/repo/web/vivaldi/bizarre-void/theme.json",
+      "kind": "application/json",
+      "bytes": 405,
+      "sha256": "6ea81d43904889bfe8870a52546884a1cf967274632c3a31080b263ceefb664e",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "web/vivaldi/bizarre-workshop/theme.json",
+      "packagePath": "source/snippets/repo/web/vivaldi/bizarre-workshop/theme.json",
+      "kind": "application/json",
+      "bytes": 409,
+      "sha256": "2c8a167f05376f906e6f9ac276c3f12cd717e767cfd6bb8088273cd5897016c7",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/README.md",
+      "packagePath": "source/snippets/repo/wm/README.md",
+      "kind": "text/markdown",
+      "bytes": 279,
+      "sha256": "035540d677e547d11e67e90b6b7dfdc40b38d58c11644d1c476a7286adea3d19",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/hyprland/bizarre-bone.conf",
+      "packagePath": "source/snippets/repo/wm/hyprland/bizarre-bone.conf",
+      "kind": "text/plain",
+      "bytes": 540,
+      "sha256": "13ceb4433111032dc6f5efd06b0846d46ee9ebc16f23fe79bf458feb158fb99d",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/hyprland/bizarre-paper.conf",
+      "packagePath": "source/snippets/repo/wm/hyprland/bizarre-paper.conf",
+      "kind": "text/plain",
+      "bytes": 541,
+      "sha256": "b839b783b3b6b239afa9f23d5a545d2ef11384f901467e558586eda848837b4c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/hyprland/bizarre-void-hicontrast.conf",
+      "packagePath": "source/snippets/repo/wm/hyprland/bizarre-void-hicontrast.conf",
+      "kind": "text/plain",
+      "bytes": 552,
+      "sha256": "cde17f806d2192c33ed43932084fca6ec3aeb2a10b89a773bd8b53cf91fd605c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/hyprland/bizarre-void.conf",
+      "packagePath": "source/snippets/repo/wm/hyprland/bizarre-void.conf",
+      "kind": "text/plain",
+      "bytes": 540,
+      "sha256": "aa25692036d0a3b041c4ec05db7e4b0d7db1de60c34cbab3101076cae96fd0b6",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/hyprland/bizarre-workshop.conf",
+      "packagePath": "source/snippets/repo/wm/hyprland/bizarre-workshop.conf",
+      "kind": "text/plain",
+      "bytes": 544,
+      "sha256": "658047c4a189e1ba334aacff08bfbdba9f421415e269c2d7948208b89f199744",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/i3/bizarre-bone.conf",
+      "packagePath": "source/snippets/repo/wm/i3/bizarre-bone.conf",
+      "kind": "text/plain",
+      "bytes": 1012,
+      "sha256": "b35658cb3ab7ffeafd74b87e57331a6ccf46997d150aa8abc6a86f60b53f5e0a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/i3/bizarre-paper.conf",
+      "packagePath": "source/snippets/repo/wm/i3/bizarre-paper.conf",
+      "kind": "text/plain",
+      "bytes": 1013,
+      "sha256": "87146a00346e76638bdf5e2bc72ce7cdd3aaf363c10367d8a1b170f77cf55bd4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/i3/bizarre-void-hicontrast.conf",
+      "packagePath": "source/snippets/repo/wm/i3/bizarre-void-hicontrast.conf",
+      "kind": "text/plain",
+      "bytes": 1024,
+      "sha256": "8269d9ecc1fdc7e33ea1edb8250bc8df877fc88f49222c3d820111a38be81185",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/i3/bizarre-void.conf",
+      "packagePath": "source/snippets/repo/wm/i3/bizarre-void.conf",
+      "kind": "text/plain",
+      "bytes": 1012,
+      "sha256": "240155af8a04853acbb5517e58d69465e0a734abc53c4e051bda676104b3d075",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/i3/bizarre-workshop.conf",
+      "packagePath": "source/snippets/repo/wm/i3/bizarre-workshop.conf",
+      "kind": "text/plain",
+      "bytes": 1016,
+      "sha256": "f58195a33de1e1cf59c72c941244ee6e32d5ab9057c504dd65b887329dbe006a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/polybar/bizarre-bone.ini",
+      "packagePath": "source/snippets/repo/wm/polybar/bizarre-bone.ini",
+      "kind": "text/plain",
+      "bytes": 434,
+      "sha256": "fdce41430e2c332f73da4c4138f2a44684eabf93fe56bf7ecf1f50eefdde1b54",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/polybar/bizarre-paper.ini",
+      "packagePath": "source/snippets/repo/wm/polybar/bizarre-paper.ini",
+      "kind": "text/plain",
+      "bytes": 434,
+      "sha256": "ce71a4092641ccdd69b51c29d0c9b3baa3a43aeced68b935abe78fd5deafe773",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/polybar/bizarre-void-hicontrast.ini",
+      "packagePath": "source/snippets/repo/wm/polybar/bizarre-void-hicontrast.ini",
+      "kind": "text/plain",
+      "bytes": 434,
+      "sha256": "ade4a5d4ba89b31188a769408d89cc30b34924c7286ac4acfe039d13f7a1f381",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/polybar/bizarre-void.ini",
+      "packagePath": "source/snippets/repo/wm/polybar/bizarre-void.ini",
+      "kind": "text/plain",
+      "bytes": 434,
+      "sha256": "844b51e2ac0b055b087c049becb198c7118131e430cd4e7b7d10dbbc30523bce",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/polybar/bizarre-workshop.ini",
+      "packagePath": "source/snippets/repo/wm/polybar/bizarre-workshop.ini",
+      "kind": "text/plain",
+      "bytes": 434,
+      "sha256": "7747f5f6bcd1d3a8022db5edb7ac6c7df92b8a6dec5ae4cf4cd401ad532d94a7",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/rofi/bizarre-bone.rasi",
+      "packagePath": "source/snippets/repo/wm/rofi/bizarre-bone.rasi",
+      "kind": "application/octet-stream",
+      "bytes": 561,
+      "sha256": "2059bb2642cde434e07079bb7c5a9cf7fe972891bf8fd18b6ce2be06662d083a",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/rofi/bizarre-paper.rasi",
+      "packagePath": "source/snippets/repo/wm/rofi/bizarre-paper.rasi",
+      "kind": "application/octet-stream",
+      "bytes": 562,
+      "sha256": "ae590dcd0f244ca1362017f320cd0a0b3ceaa70ce045d4a0b2ce2b4af59d0df5",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/rofi/bizarre-void-hicontrast.rasi",
+      "packagePath": "source/snippets/repo/wm/rofi/bizarre-void-hicontrast.rasi",
+      "kind": "application/octet-stream",
+      "bytes": 573,
+      "sha256": "e01785d1f9e3b440e92661aef13e3d683ce04fa5f765f1eddcb8b62489a0c65c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/rofi/bizarre-void.rasi",
+      "packagePath": "source/snippets/repo/wm/rofi/bizarre-void.rasi",
+      "kind": "application/octet-stream",
+      "bytes": 561,
+      "sha256": "88d8b0ac6785d5d4e66dd1d47d9c3eb25bd096452c421af9c310f58f49e9e489",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/rofi/bizarre-workshop.rasi",
+      "packagePath": "source/snippets/repo/wm/rofi/bizarre-workshop.rasi",
+      "kind": "application/octet-stream",
+      "bytes": 565,
+      "sha256": "dd7854fde7c9d4c60e55bd777ac3194c06d3b6bc7b476da562ff4ee03061bae4",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/sketchybar/bizarre.sh",
+      "packagePath": "source/snippets/repo/wm/sketchybar/bizarre.sh",
+      "kind": "text/x-shellscript",
+      "bytes": 499,
+      "sha256": "3f39b409be148ad4f7f51db34d863cbf183a2cc938a3c1d5040d18d21825a7de",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/sway/bizarre-bone.conf",
+      "packagePath": "source/snippets/repo/wm/sway/bizarre-bone.conf",
+      "kind": "text/plain",
+      "bytes": 1014,
+      "sha256": "94e717fa24071486db66f40d31b08b8a9ed22c3199df3b03a7bac00c0792162f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/sway/bizarre-paper.conf",
+      "packagePath": "source/snippets/repo/wm/sway/bizarre-paper.conf",
+      "kind": "text/plain",
+      "bytes": 1015,
+      "sha256": "de38993670b9c833e492e5b50a10a54f62cf65e7c6d44b7f233344564d4b390c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/sway/bizarre-void-hicontrast.conf",
+      "packagePath": "source/snippets/repo/wm/sway/bizarre-void-hicontrast.conf",
+      "kind": "text/plain",
+      "bytes": 1026,
+      "sha256": "c7d6611444668f2a7093113d65c8469065d8c1431b76946ac24c2e3436ee98a0",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/sway/bizarre-void.conf",
+      "packagePath": "source/snippets/repo/wm/sway/bizarre-void.conf",
+      "kind": "text/plain",
+      "bytes": 1014,
+      "sha256": "1910861ef59611f123942085dd60db10e7a3cbcd3ca6c15c6571f60d8dd7543b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/sway/bizarre-workshop.conf",
+      "packagePath": "source/snippets/repo/wm/sway/bizarre-workshop.conf",
+      "kind": "text/plain",
+      "bytes": 1018,
+      "sha256": "ff4efacb095963f74e8bfd38e8805ae8c0a19fccb7ce379cd61faa8a37322cfb",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/waybar/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/wm/waybar/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 1034,
+      "sha256": "61ef4653ba147b9f1e0a1ee98c28753f783b58521be0ce77acc824fecfbe4aee",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/waybar/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/wm/waybar/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 1035,
+      "sha256": "a37da9c1df470225e332d8f0bbd1fdd0651d22e5ab8325129a0d41cda6a7545f",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/waybar/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/wm/waybar/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 1046,
+      "sha256": "4b67f212de2f44fb771ace9a332d34f0f5527751a5e7026ddf300c8dc28a029b",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/waybar/bizarre-void.css",
+      "packagePath": "source/snippets/repo/wm/waybar/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 1034,
+      "sha256": "287a055ed2b334c3a9b826e168bc54d2d5d9dafaeef9874c3ea402f05a950056",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/waybar/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/wm/waybar/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 1038,
+      "sha256": "c6fa85d02397f782fb14affdeab0de06ae47f7d8da0405cb0ca52be1ecef075c",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/wofi/bizarre-bone.css",
+      "packagePath": "source/snippets/repo/wm/wofi/bizarre-bone.css",
+      "kind": "text/css",
+      "bytes": 1032,
+      "sha256": "464ac82a99ca728c38d573faeba4fc3b8b03dfd589a443e035b331215341bc50",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/wofi/bizarre-paper.css",
+      "packagePath": "source/snippets/repo/wm/wofi/bizarre-paper.css",
+      "kind": "text/css",
+      "bytes": 1033,
+      "sha256": "693d3e1bf4e6feab74f08e8e633d3c6942069ba659f8861d8a0c506d5248fb68",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/wofi/bizarre-void-hicontrast.css",
+      "packagePath": "source/snippets/repo/wm/wofi/bizarre-void-hicontrast.css",
+      "kind": "text/css",
+      "bytes": 1044,
+      "sha256": "cfda7934840f5cc83b8b7fbbe1ae768087f395ab90215f4341b36b92673052ce",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/wofi/bizarre-void.css",
+      "packagePath": "source/snippets/repo/wm/wofi/bizarre-void.css",
+      "kind": "text/css",
+      "bytes": 1032,
+      "sha256": "9c3851e46a42583c953ca6b26d5ec35de04bc9d760b4cc4fd5ac4770ab3955f9",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/wofi/bizarre-workshop.css",
+      "packagePath": "source/snippets/repo/wm/wofi/bizarre-workshop.css",
+      "kind": "text/css",
+      "bytes": 1036,
+      "sha256": "4540702120cddc724dfb300dbbfabd3c387452d814bd3cb14bbc1f01f06ee3f1",
+      "classification": "generated",
+      "generated": true
+    },
+    {
+      "sourcePath": "wm/yabai/bizarre.sh",
+      "packagePath": "source/snippets/repo/wm/yabai/bizarre.sh",
+      "kind": "text/x-shellscript",
+      "bytes": 268,
+      "sha256": "dbde4590abba5012a6ea956a47b49e209a499f425f001c5407843177b7938272",
+      "classification": "generated",
+      "generated": true
+    }
+  ]
+}

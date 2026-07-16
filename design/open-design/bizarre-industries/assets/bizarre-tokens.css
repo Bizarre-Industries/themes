@@ -1,0 +1,381 @@
+/* Bizarre-only primitives and source roles. Load after tokens.css. */
+@font-face {
+  font-family: 'Monaspace Argon';
+  src: url('../fonts/monaspace-argon-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Argon';
+  src: url('../fonts/monaspace-argon-latin-600-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Argon';
+  src: url('../fonts/monaspace-argon-latin-700-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Krypton';
+  src: url('../fonts/monaspace-krypton-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Krypton';
+  src: url('../fonts/monaspace-krypton-latin-600-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Krypton';
+  src: url('../fonts/monaspace-krypton-latin-700-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Neon';
+  src: url('../fonts/monaspace-neon-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Neon';
+  src: url('../fonts/monaspace-neon-latin-600-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Neon';
+  src: url('../fonts/monaspace-neon-latin-700-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Xenon';
+  src: url('../fonts/monaspace-xenon-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Xenon';
+  src: url('../fonts/monaspace-xenon-latin-600-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monaspace Xenon';
+  src: url('../fonts/monaspace-xenon-latin-700-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --bzr-signal-lime: #C6FF24;
+  --bzr-lime-glow: #E8FF8A;
+  --bzr-lime-ink: #5F8A0F;
+  --bzr-lime-text: #4A7409;
+  --bzr-acid-lime: #A8FF00;
+  --bzr-void-gray: #545454;
+  --bzr-bg: #0E0E0E;
+  --bzr-bg-2: #1A1A1A;
+  --bzr-bg-3: #2B2B2B;
+  --bzr-bg-4: #3D3D3D;
+  --bzr-fg: #E4E4E4;
+  --bzr-fg-dim: #9C9C9C;
+  --bzr-fg-faint: #7A7A7A;
+  --bzr-fg-ghost: #545454;
+  --bzr-selection: #2B3A0E;
+  --bzr-line: #1A1A1A;
+  --bzr-border: #3D3D3D;
+  --bzr-accent: #C6FF24;
+  --bzr-accent-text: #C6FF24;
+  --bzr-accent-soft: #E8FF8A;
+  --bzr-info: #7BB3FF;
+  --bzr-hint: #D88AE0;
+  --bzr-font-label: 'Monaspace Krypton', 'Monaspace Neon', monospace;
+  --bzr-font-hand: 'Monaspace Radon', 'Monaspace Neon', monospace;
+  --bzr-syntax-plain: #E4E4E4;
+  --bzr-syntax-punct: #828282;
+  --bzr-syntax-op: #9DEAEA;
+  --bzr-syntax-kw-ctrl: #FF8FCF;
+  --bzr-syntax-kw-decl: #D88AE0;
+  --bzr-syntax-kw-mod: #B989E5;
+  --bzr-syntax-string: #E8A33D;
+  --bzr-syntax-tmpl: #FFC36B;
+  --bzr-syntax-esc: #FFE08A;
+  --bzr-syntax-rgx: #FF9E3D;
+  --bzr-syntax-num: #7BB3FF;
+  --bzr-syntax-bool: #5B9FFF;
+  --bzr-syntax-constant: #9DD0FF;
+  --bzr-syntax-type: #7AD9D9;
+  --bzr-syntax-tprim: #7AD9D9;
+  --bzr-syntax-fn: #C6FF24;
+  --bzr-syntax-method: #A8E658;
+  --bzr-syntax-prop: #C6E58B;
+  --bzr-syntax-param: #FFB07A;
+  --bzr-syntax-variable: #E4E4E4;
+  --bzr-syntax-self: #FF8FCF;
+  --bzr-syntax-builtin: #E8A33D;
+  --bzr-syntax-ns: #9DEAEA;
+  --bzr-syntax-decorator: #FF8FCF;
+  --bzr-syntax-pre: #B989E5;
+  --bzr-syntax-comment: #828282;
+  --bzr-syntax-doc-comment: #9AB585;
+  --bzr-syntax-tag: #FF8FCF;
+  --bzr-syntax-attr: #C6FF24;
+  --bzr-syntax-error: #FF6F77;
+  --bzr-syntax-warn: #FFB85C;
+  --bzr-syntax-ok: #5BD06B;
+  --bzr-syntax-info: #7BB3FF;
+  --bzr-syntax-hint: #D88AE0;
+  --bzr-status-error: #FF6F77;
+  --bzr-status-warn: #FFB85C;
+  --bzr-status-ok: #5BD06B;
+  --bzr-status-info: #7BB3FF;
+  --bzr-status-hint: #D88AE0;
+  --bzr-ansi-black: #1A1A1A;
+  --bzr-ansi-red: #F0525B;
+  --bzr-ansi-green: #3FB950;
+  --bzr-ansi-yellow: #E8A33D;
+  --bzr-ansi-blue: #5B9FFF;
+  --bzr-ansi-magenta: #D88AE0;
+  --bzr-ansi-cyan: #7AD9D9;
+  --bzr-ansi-white: #E4E4E4;
+  --bzr-ansi-bright-black: #3D3D3D;
+  --bzr-ansi-bright-red: #FF6F77;
+  --bzr-ansi-bright-green: #C6FF24;
+  --bzr-ansi-bright-yellow: #FFB85C;
+  --bzr-ansi-bright-blue: #7BB3FF;
+  --bzr-ansi-bright-magenta: #E8A8EE;
+  --bzr-ansi-bright-cyan: #9DEAEA;
+  --bzr-ansi-bright-white: #FFFFFF;
+  --bzr-cursor: #C6FF24;
+  --bzr-cursor-blink: 1.1s steps(1);
+}
+
+[data-bizarre-theme="paper"],
+[data-bizarre-theme="bone"] {
+  --bzr-info: #1F4FB0;
+  --bzr-hint: #7E2A9A;
+  --bzr-syntax-plain: #1A1A1A;
+  --bzr-syntax-punct: #726D61;
+  --bzr-syntax-op: #0F6E6E;
+  --bzr-syntax-kw-ctrl: #B8276F;
+  --bzr-syntax-kw-decl: #7E2A9A;
+  --bzr-syntax-kw-mod: #603F94;
+  --bzr-syntax-string: #9F4A0E;
+  --bzr-syntax-tmpl: #AD5418;
+  --bzr-syntax-esc: #7A6308;
+  --bzr-syntax-rgx: #A55A1B;
+  --bzr-syntax-num: #1F4FB0;
+  --bzr-syntax-bool: #1B4099;
+  --bzr-syntax-constant: #2F5DC2;
+  --bzr-syntax-type: #0F6E6E;
+  --bzr-syntax-tprim: #0F6E6E;
+  --bzr-syntax-fn: #4A7409;
+  --bzr-syntax-method: #4A7409;
+  --bzr-syntax-prop: #597629;
+  --bzr-syntax-param: #A0480E;
+  --bzr-syntax-variable: #1A1A1A;
+  --bzr-syntax-self: #B8276F;
+  --bzr-syntax-builtin: #9F4A0E;
+  --bzr-syntax-ns: #0F6E6E;
+  --bzr-syntax-decorator: #B8276F;
+  --bzr-syntax-pre: #603F94;
+  --bzr-syntax-comment: #726D60;
+  --bzr-syntax-doc-comment: #597629;
+  --bzr-syntax-tag: #B8276F;
+  --bzr-syntax-attr: #4A7409;
+  --bzr-syntax-error: #AC2468;
+  --bzr-syntax-warn: #97460D;
+  --bzr-syntax-ok: #36691B;
+  --bzr-syntax-info: #1F4FB0;
+  --bzr-syntax-hint: #7E2A9A;
+  --bzr-status-error: #AC2468;
+  --bzr-status-warn: #97460D;
+  --bzr-status-ok: #36691B;
+  --bzr-status-info: #1F4FB0;
+  --bzr-status-hint: #7E2A9A;
+  --bzr-ansi-red: #C13039;
+  --bzr-ansi-green: #3F7A1F;
+  --bzr-ansi-yellow: #9F4A0E;
+  --bzr-ansi-blue: #1F4FB0;
+  --bzr-ansi-magenta: #7E2A9A;
+  --bzr-ansi-cyan: #0F6E6E;
+  --bzr-ansi-white: #545454;
+  --bzr-ansi-bright-black: #726D61;
+  --bzr-ansi-bright-red: #C63947;
+  --bzr-ansi-bright-green: #4A7409;
+  --bzr-ansi-bright-yellow: #94631C;
+  --bzr-ansi-bright-blue: #386EB6;
+  --bzr-ansi-bright-magenta: #95559F;
+  --bzr-ansi-bright-cyan: #397777;
+  --bzr-ansi-bright-white: #0E0E0E;
+}
+
+[data-bizarre-theme="void"] {
+
+}
+
+[data-bizarre-theme="void-hicontrast"] {
+  --bzr-bg: #000000;
+  --bzr-bg-2: #0E0E0E;
+  --bzr-bg-3: #1F1F1F;
+  --bzr-fg: #F9F8F2;
+  --bzr-fg-dim: #B8B8B8;
+  --bzr-selection: #3A4D0E;
+  --bzr-line: #0E0E0E;
+  --bzr-border: #545454;
+  --bzr-ansi-black: #000000;
+}
+
+[data-bizarre-theme="workshop"] {
+  --bzr-bg: #1A1815;
+  --bzr-bg-2: #23211C;
+  --bzr-bg-3: #2D2A23;
+  --bzr-bg-4: #3D3A33;
+  --bzr-fg: #E4E2DA;
+  --bzr-fg-dim: #9C9A91;
+  --bzr-fg-faint: #7A7568;
+  --bzr-fg-ghost: #545040;
+  --bzr-selection: #3A3618;
+  --bzr-line: #23211C;
+  --bzr-border: #3D3A33;
+  --bzr-ansi-black: #1A1815;
+}
+
+[data-bizarre-theme="paper"] {
+  --bzr-bg: #F9F8F2;
+  --bzr-bg-2: #F2F0EA;
+  --bzr-bg-3: #E6E3DA;
+  --bzr-bg-4: #D8D4C7;
+  --bzr-fg: #1F1F1F;
+  --bzr-fg-dim: #3D3D3D;
+  --bzr-fg-faint: #7A7568;
+  --bzr-fg-ghost: #A8A395;
+  --bzr-selection: #DCEFA8;
+  --bzr-line: #F2F0EA;
+  --bzr-border: #D8D4C7;
+  --bzr-accent: #5F8A0F;
+  --bzr-accent-text: #4A7409;
+  --bzr-accent-soft: #9FCC1F;
+  --bzr-cursor: #5F8A0F;
+}
+
+[data-bizarre-theme="bone"] {
+  --bzr-bg: #F5F2EA;
+  --bzr-bg-2: #EDE9DD;
+  --bzr-bg-3: #DDD8CB;
+  --bzr-bg-4: #C8C2B2;
+  --bzr-fg: #2B2B2B;
+  --bzr-fg-dim: #4A4A4A;
+  --bzr-fg-faint: #857F70;
+  --bzr-fg-ghost: #B0AA9A;
+  --bzr-selection: #D4E89F;
+  --bzr-line: #EDE9DD;
+  --bzr-border: #DDD8CB;
+  --bzr-accent: #5F8A0F;
+  --bzr-accent-text: #4A7409;
+  --bzr-accent-soft: #9FCC1F;
+  --bzr-ansi-black: #2B2B2B;
+  --bzr-cursor: #5F8A0F;
+}
+
+/* Stable source-role utility classes for fixtures and previews. */
+.bzr-syntax-plain { color: var(--bzr-syntax-plain); }
+.bzr-syntax-punct { color: var(--bzr-syntax-punct); }
+.bzr-syntax-op { color: var(--bzr-syntax-op); }
+.bzr-syntax-kw-ctrl { color: var(--bzr-syntax-kw-ctrl); }
+.bzr-syntax-kw-decl { color: var(--bzr-syntax-kw-decl); }
+.bzr-syntax-kw-mod { color: var(--bzr-syntax-kw-mod); }
+.bzr-syntax-string { color: var(--bzr-syntax-string); }
+.bzr-syntax-tmpl { color: var(--bzr-syntax-tmpl); }
+.bzr-syntax-esc { color: var(--bzr-syntax-esc); }
+.bzr-syntax-rgx { color: var(--bzr-syntax-rgx); }
+.bzr-syntax-num { color: var(--bzr-syntax-num); }
+.bzr-syntax-bool { color: var(--bzr-syntax-bool); }
+.bzr-syntax-constant { color: var(--bzr-syntax-constant); }
+.bzr-syntax-type { color: var(--bzr-syntax-type); }
+.bzr-syntax-tprim { color: var(--bzr-syntax-tprim); }
+.bzr-syntax-fn { color: var(--bzr-syntax-fn); }
+.bzr-syntax-method { color: var(--bzr-syntax-method); }
+.bzr-syntax-prop { color: var(--bzr-syntax-prop); }
+.bzr-syntax-param { color: var(--bzr-syntax-param); }
+.bzr-syntax-variable { color: var(--bzr-syntax-variable); }
+.bzr-syntax-self { color: var(--bzr-syntax-self); }
+.bzr-syntax-builtin { color: var(--bzr-syntax-builtin); }
+.bzr-syntax-ns { color: var(--bzr-syntax-ns); }
+.bzr-syntax-decorator { color: var(--bzr-syntax-decorator); }
+.bzr-syntax-pre { color: var(--bzr-syntax-pre); }
+.bzr-syntax-comment { color: var(--bzr-syntax-comment); }
+.bzr-syntax-doc-comment { color: var(--bzr-syntax-doc-comment); }
+.bzr-syntax-tag { color: var(--bzr-syntax-tag); }
+.bzr-syntax-attr { color: var(--bzr-syntax-attr); }
+.bzr-syntax-error { color: var(--bzr-syntax-error); }
+.bzr-syntax-warn { color: var(--bzr-syntax-warn); }
+.bzr-syntax-ok { color: var(--bzr-syntax-ok); }
+.bzr-syntax-info { color: var(--bzr-syntax-info); }
+.bzr-syntax-hint { color: var(--bzr-syntax-hint); }
+.bzr-status-error { color: var(--bzr-status-error); }
+.bzr-status-warn { color: var(--bzr-status-warn); }
+.bzr-status-ok { color: var(--bzr-status-ok); }
+.bzr-status-info { color: var(--bzr-status-info); }
+.bzr-status-hint { color: var(--bzr-status-hint); }
+.bzr-ansi-fg-black { color: var(--bzr-ansi-black); }
+.bzr-ansi-bg-black { background-color: var(--bzr-ansi-black); }
+.bzr-ansi-fg-red { color: var(--bzr-ansi-red); }
+.bzr-ansi-bg-red { background-color: var(--bzr-ansi-red); }
+.bzr-ansi-fg-green { color: var(--bzr-ansi-green); }
+.bzr-ansi-bg-green { background-color: var(--bzr-ansi-green); }
+.bzr-ansi-fg-yellow { color: var(--bzr-ansi-yellow); }
+.bzr-ansi-bg-yellow { background-color: var(--bzr-ansi-yellow); }
+.bzr-ansi-fg-blue { color: var(--bzr-ansi-blue); }
+.bzr-ansi-bg-blue { background-color: var(--bzr-ansi-blue); }
+.bzr-ansi-fg-magenta { color: var(--bzr-ansi-magenta); }
+.bzr-ansi-bg-magenta { background-color: var(--bzr-ansi-magenta); }
+.bzr-ansi-fg-cyan { color: var(--bzr-ansi-cyan); }
+.bzr-ansi-bg-cyan { background-color: var(--bzr-ansi-cyan); }
+.bzr-ansi-fg-white { color: var(--bzr-ansi-white); }
+.bzr-ansi-bg-white { background-color: var(--bzr-ansi-white); }
+.bzr-ansi-fg-bright-black { color: var(--bzr-ansi-bright-black); }
+.bzr-ansi-bg-bright-black { background-color: var(--bzr-ansi-bright-black); }
+.bzr-ansi-fg-bright-red { color: var(--bzr-ansi-bright-red); }
+.bzr-ansi-bg-bright-red { background-color: var(--bzr-ansi-bright-red); }
+.bzr-ansi-fg-bright-green { color: var(--bzr-ansi-bright-green); }
+.bzr-ansi-bg-bright-green { background-color: var(--bzr-ansi-bright-green); }
+.bzr-ansi-fg-bright-yellow { color: var(--bzr-ansi-bright-yellow); }
+.bzr-ansi-bg-bright-yellow { background-color: var(--bzr-ansi-bright-yellow); }
+.bzr-ansi-fg-bright-blue { color: var(--bzr-ansi-bright-blue); }
+.bzr-ansi-bg-bright-blue { background-color: var(--bzr-ansi-bright-blue); }
+.bzr-ansi-fg-bright-magenta { color: var(--bzr-ansi-bright-magenta); }
+.bzr-ansi-bg-bright-magenta { background-color: var(--bzr-ansi-bright-magenta); }
+.bzr-ansi-fg-bright-cyan { color: var(--bzr-ansi-bright-cyan); }
+.bzr-ansi-bg-bright-cyan { background-color: var(--bzr-ansi-bright-cyan); }
+.bzr-ansi-fg-bright-white { color: var(--bzr-ansi-bright-white); }
+.bzr-ansi-bg-bright-white { background-color: var(--bzr-ansi-bright-white); }

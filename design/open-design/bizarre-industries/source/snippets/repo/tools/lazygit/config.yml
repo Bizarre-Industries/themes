@@ -1,0 +1,16 @@
+# Bizarre Industries - lazygit theme
+# Merge gui.theme into ~/.config/lazygit/config.yml.
+gui:
+  theme:
+    activeBorderColor: ["#C6FF24", "bold"]
+    inactiveBorderColor: ["#3D3D3D"]
+    searchingActiveBorderColor: ["#7BB3FF", "bold"]
+    optionsTextColor: ["#7BB3FF"]
+    selectedLineBgColor: ["#2B2B2B"]
+    inactiveViewSelectedLineBgColor: ["#1A1A1A"]
+    cherryPickedCommitFgColor: ["#7BB3FF"]
+    cherryPickedCommitBgColor: ["#1A1A1A"]
+    markedBaseCommitFgColor: ["#C6FF24"]
+    markedBaseCommitBgColor: ["#1A1A1A"]
+    unstagedChangesColor: ["#FFB85C"]
+    defaultFgColor: ["#E4E4E4"]

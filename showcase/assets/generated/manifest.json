@@ -1,0 +1,289 @@
+{
+  "version": 3,
+  "inputFingerprint": "2d9aa7ec779faf739eba74975ae0d253050c65bfa8b260d2248bded759e5fc30",
+  "inputs": [
+    {
+      "file": "package-lock.json",
+      "sha256": "90bfd4d9b3ba537facddf16f49342fff9be962a97fda8f6d61cdb85713d12305"
+    },
+    {
+      "file": "package.json",
+      "sha256": "b1ee89157c7554a1ad54a90d474e8c1db1cec1566ff9d6090bf290dcf2fb7e92"
+    },
+    {
+      "file": "palette.js",
+      "sha256": "5580706f6803b15c32ef6b1007df4c88f80a3d2229952b8863acae2452f25aaa"
+    },
+    {
+      "file": "scripts/render-showcase.cjs",
+      "sha256": "99735ab61cd1192beb972b86fc7c06081c93263754df793a409ee8733f3887ce"
+    },
+    {
+      "file": "showcase/colors_and_type.css",
+      "sha256": "619828ebf7f4e1bf745cfd1d33d2980b1eb9423d33e6839fd41f96e097a288dc"
+    },
+    {
+      "file": "showcase/index.html",
+      "sha256": "afc8f805f55ca05852095cc297301aab06e0b756f3cc0dafdeee5899cd3bb8c4"
+    },
+    {
+      "file": "showcase/samples.js",
+      "sha256": "ffbf9d854f6e073faff7745034377ae04ca2e21d323670334aa9fb0847e6666c"
+    },
+    {
+      "file": "showcase/showcase-main.jsx",
+      "sha256": "c0c22c571a261b365c751cc309260c749c12ec208794ebb5717a33d3c98a55bf"
+    },
+    {
+      "file": "showcase/showcase-panes.jsx",
+      "sha256": "b8493bf1b697574b458608090959f1338cd64c42fbb0b8e849df9866389d5b50"
+    },
+    {
+      "file": "showcase/showcase-terminal.jsx",
+      "sha256": "f4d71e187e1a9bfa5efb1138a13746d1a4ad05e32d9a7c75ec145a9b31fd4033"
+    },
+    {
+      "file": "showcase/showcase.css",
+      "sha256": "7890f967aee29626bcc342249c032ea66f175bfb5971a2f1746668360fb356a2"
+    },
+    {
+      "file": "showcase/showcase.js",
+      "sha256": "c6e68d71beccb29b82e5995cdb326815a17bf6c55dd9a08bfe91875e1b04e199"
+    },
+    {
+      "file": "showcase/syntax.css",
+      "sha256": "87f0c4cde6e943694f7a2a379b9f26ff6eecef63523a5f938fe62d958eb0bbb2"
+    },
+    {
+      "file": "showcase/tokens.css",
+      "sha256": "834fec7037b582f1ca0b05d785cc537a1bc8b3bc6b28853520bafeb391941ce4"
+    }
+  ],
+  "screenshots": [
+    {
+      "selector": "[data-shot=\"hero\"]",
+      "file": "hero.png",
+      "sha256": "e60de320d5d9b2bf31a694850086d1fe6e1559c2b8eded3eda8d229d95ddd6aa"
+    },
+    {
+      "selector": "[data-shot=\"palette-ansi\"]",
+      "file": "palette-ansi.png",
+      "sha256": "51776b1e7307a94e50785447ef3994bb1c61c375e9c81edd30c339cf5dceb9f0"
+    },
+    {
+      "selector": "[data-shot=\"variants\"]",
+      "file": "variants.png",
+      "sha256": "5bc25db8281ceb64197c2921dc1df208ad2d48307f401946367f9a90a08eaa96"
+    },
+    {
+      "selector": "[data-shot=\"syntax\"]",
+      "file": "syntax.png",
+      "sha256": "622a8cd444f1a9fc37b79a448e098700cf251f71f8b60a09aa578720a91a109d"
+    },
+    {
+      "selector": "[data-shot=\"terminal-colors\"]",
+      "file": "terminal-colors.png",
+      "sha256": "7d2f56bea26915c75bff4518a1ffae187d82da529a64ac2a677d28786d759543"
+    },
+    {
+      "selector": "[data-shot=\"terminal-backlog\"]",
+      "file": "terminal-backlog.png",
+      "sha256": "e62ff8a404e3273f92240989885d02670f411122fd500927fff4c698e188eac1"
+    },
+    {
+      "selector": "[data-shot=\"vscode-themes\"]",
+      "file": "vscode-themes.png",
+      "sha256": "0e713e4a9958f52ca405c598e4c450f154b88be6544032e5e89acbf2428e609b"
+    },
+    {
+      "selector": "[data-shot=\"editor-themes\"]",
+      "file": "editor-themes.png",
+      "sha256": "5b93da698da4ed7024ea2dd1d4eccd40f4251296c9c4e5ff74386b47d0f43c08"
+    },
+    {
+      "selector": "[data-shot=\"editor-backlog\"]",
+      "file": "editor-backlog.png",
+      "sha256": "52245cc168d84b5e9da7996fb45af15963d12627889b699116809801b1e3fec5"
+    },
+    {
+      "selector": "[data-shot=\"shells\"]",
+      "file": "shells.png",
+      "sha256": "5386299c990916261be4495c51e7100a92e81cb97ea8014d5d968e695ef53154"
+    },
+    {
+      "selector": "[data-shot=\"tools\"]",
+      "file": "tools.png",
+      "sha256": "5c387bc9a17db7d0dbda1d423307932d9d03c6596518eb53f8d2615ef6ba970e"
+    },
+    {
+      "selector": "[data-shot=\"cli-tui\"]",
+      "file": "cli-tui.png",
+      "sha256": "b882b438714968eaa95314515cd45d5fdda7432cd3bf1fa0987e739473d81531"
+    },
+    {
+      "selector": "[data-shot=\"desktop-apps\"]",
+      "file": "desktop-apps.png",
+      "sha256": "892a4f2c0123928ce7a0cdf41f50e0abe9e1df51f23cd87bd4622161a05a22ac"
+    },
+    {
+      "selector": "[data-shot=\"browser-web\"]",
+      "file": "browser-web.png",
+      "sha256": "073c5ba4a83b7fc7d824fea0736646abbd17a5d1dc24c5ddadc36aafafeccc74"
+    },
+    {
+      "selector": "[data-shot=\"design-devtools-docs\"]",
+      "file": "design-devtools-docs.png",
+      "sha256": "8f2671765caa9f06a9cc53f011d76f05c013aa412712aa6ea37b688000deecbf"
+    },
+    {
+      "selector": "[data-shot=\"window-managers\"]",
+      "file": "window-managers.png",
+      "sha256": "9e31fcc9c3831718e60427d5aee64e6efbe1f502df49192a86a686b16267e72e"
+    },
+    {
+      "selector": "[data-shot=\"shell-banner\"]",
+      "file": "shell-banner.png",
+      "sha256": "15cc4d90236c7360dc352a8e87d65b413928b736f8ac55e5be93f6d48e06d2a5"
+    },
+    {
+      "selector": "[data-config-shot=\"terminal-alacritty\"]",
+      "file": "terminal-colors-alacritty.png",
+      "sha256": "01661c3d7c9e7a2b0192aa6a641f6c1d44caf8c5b23e25c383cfda88e85e8203"
+    },
+    {
+      "selector": "[data-config-shot=\"terminal-kitty\"]",
+      "file": "terminal-colors-kitty.png",
+      "sha256": "d8094827f999efe0aab599540b463af65004c951819f9273f1173769cafc61e3"
+    },
+    {
+      "selector": "[data-config-shot=\"terminal-ghostty\"]",
+      "file": "terminal-colors-ghostty.png",
+      "sha256": "5d5bb4e53c93a238fd3d589990ff20a5a292e8284f45e854ee95ae05081f029d"
+    },
+    {
+      "selector": "[data-config-shot=\"terminal-iterm2\"]",
+      "file": "terminal-colors-iterm2.png",
+      "sha256": "65bf7afbcecb6fc2a9fb49b9c55d53e31eac463550777664ffb93928d5e560e9"
+    },
+    {
+      "selector": "[data-config-shot=\"terminal-wezterm\"]",
+      "file": "terminal-colors-wezterm.png",
+      "sha256": "58cfe3122799000b72488b7269d85b9ba5ed29a4c695116b324ddcb2f8ef39cc"
+    },
+    {
+      "selector": "[data-config-shot=\"terminal-windows-terminal\"]",
+      "file": "terminal-colors-windows-terminal.png",
+      "sha256": "cf6a2c928ff9d5373720ca4d35d398f1c96e10ffb2b8d8e6299c7fa84b748c6e"
+    },
+    {
+      "selector": "[data-config-shot=\"terminal-tmux\"]",
+      "file": "terminal-tmux.png",
+      "sha256": "356bc22a3ad70eb7d30ac0d0b9ecd9901fde832e8ed7354eac0cf6e5ee293f4e"
+    },
+    {
+      "selector": "[data-config-shot=\"terminal-zellij\"]",
+      "file": "terminal-zellij.png",
+      "sha256": "393e2702818b8ac03915a801fd1a9a156dea4f3b41dcec33b7479d087308cb03"
+    },
+    {
+      "selector": "[data-config-shot=\"vscode-void\"]",
+      "file": "vscode-void.png",
+      "sha256": "1628c7860f3dd55516c8693a64db55d7c5c240dd9c0d71f4a8b6b8871de0b5db"
+    },
+    {
+      "selector": "[data-config-shot=\"vscode-void-hicontrast\"]",
+      "file": "vscode-void-hicontrast.png",
+      "sha256": "d136880b118d549fb1c9ca90c99ebc1e1270aa9a728001c722b444b150b1a259"
+    },
+    {
+      "selector": "[data-config-shot=\"vscode-workshop\"]",
+      "file": "vscode-workshop.png",
+      "sha256": "4e45948382df8848526ffd593e9e6fa32c02235085d77946b074059cea9d97ad"
+    },
+    {
+      "selector": "[data-config-shot=\"vscode-paper\"]",
+      "file": "vscode-paper.png",
+      "sha256": "63aa5e3aaa3b3a4af149a0c14c4a29de53b7977475a7bd560fabd59941fcbacd"
+    },
+    {
+      "selector": "[data-config-shot=\"vscode-bone\"]",
+      "file": "vscode-bone.png",
+      "sha256": "09bd4dc54d600cc0697c8ddb812645297db86f9ce504365ec82bb337b3b166ba"
+    },
+    {
+      "selector": "[data-config-shot=\"editor-zed\"]",
+      "file": "editor-zed.png",
+      "sha256": "55fda9d5e00e31070383197cf7e30badaf56bc3c10621b057ca93d4cb4f38a44"
+    },
+    {
+      "selector": "[data-config-shot=\"editor-jetbrains\"]",
+      "file": "editor-jetbrains.png",
+      "sha256": "b93567060ffb7ea1823ee14b1a3906535a0b52952173540a34f68401e0c82d1f"
+    },
+    {
+      "selector": "[data-config-shot=\"editor-sublime\"]",
+      "file": "editor-sublime.png",
+      "sha256": "bae2a31cb3a11d37e74827456ad1c633b8f0d216f66b69891f80637827ef5ffa"
+    },
+    {
+      "selector": "[data-config-shot=\"editor-vim\"]",
+      "file": "editor-vim.png",
+      "sha256": "28bea9e376a10187c4ba790097e372be6c823b9c648ffe48007864ca1c62082d"
+    },
+    {
+      "selector": "[data-config-shot=\"editor-neovim\"]",
+      "file": "editor-neovim.png",
+      "sha256": "467b1469691c7160bcc6bb601222a58f0f27eab3f0b8d2376b3afa9d3f681b99"
+    },
+    {
+      "selector": "[data-config-shot=\"editor-base16\"]",
+      "file": "editor-base16.png",
+      "sha256": "f4a73f397cd2575ecf532b67b9c5dc69c0a36434f9e57ec055cde73cb63141fd"
+    },
+    {
+      "selector": "[data-config-shot=\"shell-bash\"]",
+      "file": "shell-bash.png",
+      "sha256": "a366c1a7efc3c40d1698c1f3fa5e1dd4207571deb60befc3f9fc46723339858c"
+    },
+    {
+      "selector": "[data-config-shot=\"shell-zsh\"]",
+      "file": "shell-zsh.png",
+      "sha256": "8dbc42d0430a1a424fa1af31302d2b82d34a10572b3aa7be7348b4ffb1432683"
+    },
+    {
+      "selector": "[data-config-shot=\"shell-fish\"]",
+      "file": "shell-fish.png",
+      "sha256": "379fdaed837f81dc6990ca21bebdd2d229b32a4cb6788e7c514500efa22277a4"
+    },
+    {
+      "selector": "[data-config-shot=\"shell-powershell\"]",
+      "file": "shell-powershell.png",
+      "sha256": "48f3c246f42c2e8898c9e80fdc0d69f4b0afe7cc1c83bc84fdb0545795e32b36"
+    },
+    {
+      "selector": "[data-config-shot=\"prompt-starship\"]",
+      "file": "prompt-starship.png",
+      "sha256": "c444c1afe7b13f326b3d33382b4b030add336bcc8fa934a5f431cd4106814de2"
+    },
+    {
+      "selector": "[data-config-shot=\"tool-aerospace\"]",
+      "file": "tool-aerospace.png",
+      "sha256": "db5bc507d3e61c3654cbf8e084f457d03a1655a38e352a7175b3ab1a3d2d5c53"
+    },
+    {
+      "selector": "[data-config-shot=\"tool-forklift\"]",
+      "file": "tool-forklift.png",
+      "sha256": "7cb9fc15e77ab1b7cfdb29b7489badb313d185b82c0d55a83bdd00df8a92dcc4"
+    },
+    {
+      "selector": "[data-config-shot=\"tool-jujutsu\"]",
+      "file": "tool-jujutsu.png",
+      "sha256": "b31f6fc9bd8f04118c8351c77dd20384ad0cfa15968d9b771afb5eda7ece0b40"
+    },
+    {
+      "selector": "[data-config-shot=\"tool-starship\"]",
+      "file": "tool-starship.png",
+      "sha256": "99956774728eee59a03e26f16dd67f9fcac3247e8184911811039dff8fce2f51"
+    }
+  ]
+}

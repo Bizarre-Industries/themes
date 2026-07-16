@@ -1,0 +1,19 @@
+{
+  "name": "Bizarre Void Hi-Contrast",
+  "appearance": "dark",
+  "colors": {
+    "background": "#000000",
+    "backgroundSecondary": "#0E0E0E",
+    "text": "#F9F8F2",
+    "textSecondary": "#B8B8B8",
+    "border": "#545454",
+    "selection": "#3A4D0E",
+    "accent": "#C6FF24",
+    "red": "#FF6F77",
+    "orange": "#FFB85C",
+    "yellow": "#E8A33D",
+    "green": "#5BD06B",
+    "blue": "#7BB3FF",
+    "purple": "#D88AE0"
+  }
+}

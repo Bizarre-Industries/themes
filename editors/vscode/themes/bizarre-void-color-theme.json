@@ -8,6 +8,7 @@
     "editor.lineHighlightBackground": "#1A1A1A",
     "editor.lineHighlightBorder": "#00000000",
     "editor.selectionBackground": "#2B3A0E",
+    "editor.selectionForeground": "#F9F8F2",
     "editor.selectionHighlightBackground": "#2B3A0E99",
     "editor.inactiveSelectionBackground": "#1A1A1A",
     "editor.findMatchBackground": "#C6FF2433",
@@ -20,7 +21,7 @@
     "editorIndentGuide.background1": "#2B2B2B",
     "editorIndentGuide.activeBackground1": "#545454",
     "editorRuler.foreground": "#2B2B2B",
-    "editorLineNumber.foreground": "#545454",
+    "editorLineNumber.foreground": "#9C9C9C",
     "editorLineNumber.activeForeground": "#C6FF24",
     "editorBracketMatch.background": "#00000000",
     "editorBracketMatch.border": "#C6FF24",
@@ -38,13 +39,13 @@
     "tab.activeBackground": "#0E0E0E",
     "tab.activeForeground": "#E4E4E4",
     "tab.inactiveBackground": "#1A1A1A",
-    "tab.inactiveForeground": "#7A7A7A",
+    "tab.inactiveForeground": "#9C9C9C",
     "tab.activeBorderTop": "#C6FF24",
     "tab.border": "#3D3D3D",
     "tab.hoverBackground": "#2B2B2B",
     "activityBar.background": "#1A1A1A",
     "activityBar.foreground": "#9C9C9C",
-    "activityBar.inactiveForeground": "#545454",
+    "activityBar.inactiveForeground": "#7A7A7A",
     "activityBar.border": "#3D3D3D",
     "activityBar.activeBorder": "#C6FF24",
     "activityBarBadge.background": "#C6FF24",
@@ -54,7 +55,7 @@
     "sideBar.border": "#3D3D3D",
     "sideBarTitle.foreground": "#9C9C9C",
     "sideBarSectionHeader.background": "#1A1A1A",
-    "sideBarSectionHeader.foreground": "#7A7A7A",
+    "sideBarSectionHeader.foreground": "#9C9C9C",
     "sideBarSectionHeader.border": "#3D3D3D",
     "list.activeSelectionBackground": "#2B2B2B",
     "list.activeSelectionForeground": "#E4E4E4",
@@ -75,13 +76,13 @@
     "titleBar.activeBackground": "#1A1A1A",
     "titleBar.activeForeground": "#9C9C9C",
     "titleBar.inactiveBackground": "#1A1A1A",
-    "titleBar.inactiveForeground": "#545454",
+    "titleBar.inactiveForeground": "#9C9C9C",
     "titleBar.border": "#3D3D3D",
     "panel.background": "#0E0E0E",
     "panel.border": "#3D3D3D",
     "panelTitle.activeBorder": "#C6FF24",
     "panelTitle.activeForeground": "#E4E4E4",
-    "panelTitle.inactiveForeground": "#7A7A7A",
+    "panelTitle.inactiveForeground": "#9C9C9C",
     "terminal.background": "#0E0E0E",
     "terminal.foreground": "#E4E4E4",
     "terminalCursor.background": "#0E0E0E",
@@ -106,7 +107,7 @@
     "input.background": "#1A1A1A",
     "input.foreground": "#E4E4E4",
     "input.border": "#3D3D3D",
-    "input.placeholderForeground": "#545454",
+    "input.placeholderForeground": "#9C9C9C",
     "inputOption.activeBorder": "#C6FF24",
     "inputValidation.errorBackground": "#FF6F7733",
     "inputValidation.errorBorder": "#FF6F77",
@@ -139,11 +140,11 @@
     "gitDecoration.modifiedResourceForeground": "#FFB85C",
     "gitDecoration.deletedResourceForeground": "#FF6F77",
     "gitDecoration.untrackedResourceForeground": "#5BD06B",
-    "gitDecoration.ignoredResourceForeground": "#545454",
+    "gitDecoration.ignoredResourceForeground": "#9C9C9C",
     "gitDecoration.conflictingResourceForeground": "#FF6F77",
     "gitDecoration.addedResourceForeground": "#5BD06B",
     "breadcrumb.background": "#0E0E0E",
-    "breadcrumb.foreground": "#7A7A7A",
+    "breadcrumb.foreground": "#9C9C9C",
     "breadcrumb.focusForeground": "#E4E4E4",
     "breadcrumb.activeSelectionForeground": "#C6FF24",
     "menu.background": "#1A1A1A",
@@ -154,10 +155,10 @@
     "pickerGroup.foreground": "#C6FF24",
     "pickerGroup.border": "#3D3D3D",
     "textLink.foreground": "#C6FF24",
-    "textLink.activeForeground": "#E8FF8A",
+    "textLink.activeForeground": "#C6FF24",
     "focusBorder": "#C6FF24",
     "foreground": "#E4E4E4",
-    "descriptionForeground": "#7A7A7A",
+    "descriptionForeground": "#9C9C9C",
     "errorForeground": "#FF6F77",
     "icon.foreground": "#9C9C9C",
     "minimap.findMatchHighlight": "#C6FF24",
@@ -176,7 +177,7 @@
         "string.comment"
       ],
       "settings": {
-        "foreground": "#6F6F6F",
+        "foreground": "#828282",
         "fontStyle": "italic"
       }
     },
@@ -282,7 +283,7 @@
         "meta.brace"
       ],
       "settings": {
-        "foreground": "#7A7A7A"
+        "foreground": "#828282"
       }
     },
     {
@@ -571,7 +572,7 @@
       "italic": true
     },
     "comment": {
-      "foreground": "#6F6F6F",
+      "foreground": "#828282",
       "italic": true
     }
   },

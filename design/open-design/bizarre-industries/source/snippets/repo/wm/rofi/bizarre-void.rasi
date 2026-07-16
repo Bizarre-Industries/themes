@@ -1,0 +1,32 @@
+/* Bizarre Void for Rofi */
+* {
+  background: #0E0E0E;
+  background-alt: #1A1A1A;
+  foreground: #E4E4E4;
+  muted: #9C9C9C;
+  accent: #C6FF24;
+  urgent: #FF6F77;
+  border-color: #3D3D3D;
+}
+window {
+  background-color: @background;
+  text-color: @foreground;
+  border: 1px;
+  border-color: @border-color;
+  padding: 16px;
+}
+mainbox {
+  background-color: @background;
+}
+inputbar,
+listview {
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+element {
+  text-color: @muted;
+}
+element selected {
+  background-color: @accent;
+  text-color: #0E0E0E;
+}
