@@ -1,0 +1,1537 @@
+{
+  "version": 2,
+  "files": [
+    {
+      "file": "PALETTE.md",
+      "sha256": "6e3db15bf07c2d506e770ec9e6e21989550d0569db1766dd6d027340260621e6"
+    },
+    {
+      "file": "PORTS.md",
+      "sha256": "f4d6a1bf12459661152459898ee2abbe83d80269de045cd13b64add27d58cf0e"
+    },
+    {
+      "file": "README.md",
+      "sha256": "659dc75ff4ae1c44394bbddb81bbaba5d83bf73cb0916786eaa365476336ab1e"
+    },
+    {
+      "file": "apps/README.md",
+      "sha256": "25303eba3461ffeced395abd5c66049f8dfbb42c00ae6995ccb7513e4992f2dc"
+    },
+    {
+      "file": "apps/alfred/bizarre-bone.alfredappearance",
+      "sha256": "c0f9b0c015cf7ce604f1650f0857457874b329670cafe91fbf30b68538377188"
+    },
+    {
+      "file": "apps/alfred/bizarre-paper.alfredappearance",
+      "sha256": "4eb5caa0942197bcad11371f3107720064fa2fa2b1771d03129a2377bfd81568"
+    },
+    {
+      "file": "apps/alfred/bizarre-void-hicontrast.alfredappearance",
+      "sha256": "4de83f30937805e12fc119d7959290c37c8e4857cfcd3900b399bf71b0734032"
+    },
+    {
+      "file": "apps/alfred/bizarre-void.alfredappearance",
+      "sha256": "2fafbf25a7412878cb86b1397f7e6d3a07288442249d0406293a449efda6006e"
+    },
+    {
+      "file": "apps/alfred/bizarre-workshop.alfredappearance",
+      "sha256": "6cd911629fb2616e6ea78f3356ae91afd4842d0884c650774db97370ddec62df"
+    },
+    {
+      "file": "apps/discord/betterdiscord/bizarre-bone.theme.css",
+      "sha256": "f3d34715d268cc9ff4a3f01b68ee4eb1809c384df7315e73f071c44c02dc5a6a"
+    },
+    {
+      "file": "apps/discord/betterdiscord/bizarre-paper.theme.css",
+      "sha256": "4c13678256437fe1f552d7fc4839300529fcc90405085dbb44163a3dda89894c"
+    },
+    {
+      "file": "apps/discord/betterdiscord/bizarre-void-hicontrast.theme.css",
+      "sha256": "9283df3de1ad23cca523d0766497658323ef9229757a7684a3ae621bd7d95f77"
+    },
+    {
+      "file": "apps/discord/betterdiscord/bizarre-void.theme.css",
+      "sha256": "1c384562d0e8068a6e0225c79c709d28d7185261cd52d2fd8990de4a3b6e7788"
+    },
+    {
+      "file": "apps/discord/betterdiscord/bizarre-workshop.theme.css",
+      "sha256": "a9810ac7009ae2281abf2f7b9fb3223dac15b1b822f800428bf88b115aa3da9c"
+    },
+    {
+      "file": "apps/logseq/bizarre-bone.css",
+      "sha256": "c3e99c98aae81fd064fcd2adc47a5eb96df95992202755880cf6bfee6b2ecfd5"
+    },
+    {
+      "file": "apps/logseq/bizarre-paper.css",
+      "sha256": "c93d4b8c4396f9d918d417bd9f3124317dedd33a7d52e35b1cdda0723e96135d"
+    },
+    {
+      "file": "apps/logseq/bizarre-void-hicontrast.css",
+      "sha256": "66688af7bfac7ab38eeaeaf4e6e4f8d5c968b0bf5e2ddf638d2718085578dae2"
+    },
+    {
+      "file": "apps/logseq/bizarre-void.css",
+      "sha256": "43e0d4c2aeed152a791ce1addc2e2a4808696a3ab1a118cdbf25645fc1551e3d"
+    },
+    {
+      "file": "apps/logseq/bizarre-workshop.css",
+      "sha256": "4568860f7ff348b7a9c7162658eb15b5011e0fc16a765d5c150b934f6d707498"
+    },
+    {
+      "file": "apps/obsidian/bizarre-bone.css",
+      "sha256": "9244bb5379de6230be4acb62124a424f41f73896d425db879dd426e9c77ca97b"
+    },
+    {
+      "file": "apps/obsidian/bizarre-paper.css",
+      "sha256": "4150feb97aff5156b50976fcb838d566b3b021dc3ff38ba4c28895080199c40b"
+    },
+    {
+      "file": "apps/obsidian/bizarre-void-hicontrast.css",
+      "sha256": "7e4873c6dd6f56c8de493c10db0a0b4ca6e74cbd9af632a890e7b90df5f3e25c"
+    },
+    {
+      "file": "apps/obsidian/bizarre-void.css",
+      "sha256": "25b5083405c12bd10bdb9c05300f455c65f25417abe0ad83b89fac1f812073c0"
+    },
+    {
+      "file": "apps/obsidian/bizarre-workshop.css",
+      "sha256": "ec7a07f3f82bf8e71a59ddcb514a8edc84bbbb87c94dc32894104c1d27d8e518"
+    },
+    {
+      "file": "apps/qutebrowser/bizarre-bone.py",
+      "sha256": "a4212162dd9eb88568aee20443503e6f4f992bfbe41bff6bdb38ca2816d8ebf1"
+    },
+    {
+      "file": "apps/qutebrowser/bizarre-paper.py",
+      "sha256": "23d262518320b70c0ac1356acb32150afa261f17914c793851414b3df1499257"
+    },
+    {
+      "file": "apps/qutebrowser/bizarre-void-hicontrast.py",
+      "sha256": "255e538e1ed8a6fa7f90bb62cf5fdc45a197ae72ff150d8440900c44f7b43e3f"
+    },
+    {
+      "file": "apps/qutebrowser/bizarre-void.py",
+      "sha256": "8c175c4474d70c76f0458961da123c265d7b9aa561cf760b677d0411000dcd60"
+    },
+    {
+      "file": "apps/qutebrowser/bizarre-workshop.py",
+      "sha256": "9f80fb81d1df7a897f4f5d39d7d53707b1b95440e68b61201f7eb70f6bc20e49"
+    },
+    {
+      "file": "apps/raycast/bizarre-bone.json",
+      "sha256": "3e72328a52ff9784aa09417e2ae953576484ae21781db642503db737452bc034"
+    },
+    {
+      "file": "apps/raycast/bizarre-paper.json",
+      "sha256": "04f79a2dfac3fc1877009e39a5f24e6cbc5991bf6e53b4d1c9e7ef7a35cb7045"
+    },
+    {
+      "file": "apps/raycast/bizarre-void-hicontrast.json",
+      "sha256": "74d4f0fb7821b14270d9cf9af96d3f9fdb2238a1bfb5cdaab5b80732484a90fd"
+    },
+    {
+      "file": "apps/raycast/bizarre-void.json",
+      "sha256": "402e77a5759fada93b844c188125bf8e90b34156d92869e9fd638836c8d0813e"
+    },
+    {
+      "file": "apps/raycast/bizarre-workshop.json",
+      "sha256": "e85d44087be69c16bd5c6294f1a2d0a580b274c1186bb02b5cca63879e313a41"
+    },
+    {
+      "file": "apps/slack/bizarre-sidebar-themes.txt",
+      "sha256": "c1ce4d42422b84291b2fca43a01e88d83c6d5e8347eb859c8927c5fa64913808"
+    },
+    {
+      "file": "apps/spotify/spicetify/color.ini",
+      "sha256": "23d0c3b2acdc3554dfc73aa45f608e5f971c6ea030a681387b2f91b680023440"
+    },
+    {
+      "file": "apps/spotify/spicetify/user.css",
+      "sha256": "176719dba4ff90508d0b397488c4421d9e87df99edc7a4495e02948492f19a01"
+    },
+    {
+      "file": "apps/telegram/bizarre-bone.tdesktop-theme",
+      "sha256": "0dc89a77fd1b9a9909bcc4b1f75daace8672d10049b80b885b3535c5a5ddb483"
+    },
+    {
+      "file": "apps/telegram/bizarre-paper.tdesktop-theme",
+      "sha256": "ba3ac52bc60c20c10bd3f343cf0af3adf906b3068e9da9d76d6aee3034061657"
+    },
+    {
+      "file": "apps/telegram/bizarre-void-hicontrast.tdesktop-theme",
+      "sha256": "2f374bac124c6583f42b2c774c15d4afd0cd4a16cb172a15cf0b082f0640ab29"
+    },
+    {
+      "file": "apps/telegram/bizarre-void.tdesktop-theme",
+      "sha256": "04d70ea8234295388764fc6762d0039d5f3044b44a06f2ccacf84c0a9c578583"
+    },
+    {
+      "file": "apps/telegram/bizarre-workshop.tdesktop-theme",
+      "sha256": "333a94f17862cc358bd85ab515878f2be47ec4862d100263992f13dc33b82b9e"
+    },
+    {
+      "file": "design/README.md",
+      "sha256": "b7c1acd91aa0ca46a36ad50b1d65df16d1c7f9bc43af98f2c417a7bc151f629c"
+    },
+    {
+      "file": "design/figma/bizarre.tokens.json",
+      "sha256": "244d940180f473835135e2dd7d4d47cc53b75a25d5e37d78db050ac27de6772f"
+    },
+    {
+      "file": "design/sketch/bizarre.sketchpalette",
+      "sha256": "a5fca54b0cee9781ca28dd5cc50a9c8d10629000cbbeb7073f78039b31839f2e"
+    },
+    {
+      "file": "devtools/README.md",
+      "sha256": "df071d8a5dc099bd956244953383beb11cce709f511b72e6977b6a9699b34ae6"
+    },
+    {
+      "file": "devtools/dbeaver/bizarre-bone.epf",
+      "sha256": "0fbfbee555d088a4eb33bdf5b5937f2202f14baa55d43e7fcd2f7dcdfb5c0704"
+    },
+    {
+      "file": "devtools/dbeaver/bizarre-paper.epf",
+      "sha256": "b0fa6826b66e64173af200f842c77bf16a8b1afcf477be5cddf687a344e66cbc"
+    },
+    {
+      "file": "devtools/dbeaver/bizarre-void-hicontrast.epf",
+      "sha256": "009817fc73cd6ba376a77c302a070164eaf68c7c18de608b2c341e55c5754214"
+    },
+    {
+      "file": "devtools/dbeaver/bizarre-void.epf",
+      "sha256": "5d6b197893d57162e062e6f59e441e33d314b7dc06761e6c3acf690697394dad"
+    },
+    {
+      "file": "devtools/dbeaver/bizarre-workshop.epf",
+      "sha256": "123819ba6729c933904ee196c1b6bbdc8517460e11017b7ec8075d92dfacbc51"
+    },
+    {
+      "file": "devtools/github-readme-assets/bizarre-badge.svg",
+      "sha256": "00e30ce2997cff014e38a3ecf82e1ba36d40e6e37bfce5678c286720adf14203"
+    },
+    {
+      "file": "devtools/github-readme-assets/bizarre-bone.css",
+      "sha256": "5245f4943cddd9c2911ae7b7c78a208b8915ae09eff6d64a9861824bde2ab560"
+    },
+    {
+      "file": "devtools/github-readme-assets/bizarre-paper.css",
+      "sha256": "d47a27be7c0fa918ef728a534fb094743b045098d13d6a44052a6ce480661818"
+    },
+    {
+      "file": "devtools/github-readme-assets/bizarre-void-hicontrast.css",
+      "sha256": "8087aa9e3d49ab758a54b0fb6a97b3297212bb07366f8a5e650487444db457f5"
+    },
+    {
+      "file": "devtools/github-readme-assets/bizarre-void.css",
+      "sha256": "c2938f17a17949e5338bc61fbc0b3786909c2ab7ff7e254cb2572948fa1cc7ff"
+    },
+    {
+      "file": "devtools/github-readme-assets/bizarre-workshop.css",
+      "sha256": "90ea0188ddc2e851435174db21669bed8c1f45c46d18f3a6ac9585ff106c287b"
+    },
+    {
+      "file": "devtools/httpie/bizarre.py",
+      "sha256": "54c35d9888ef00c304f8d49beef65695accbdbf0179a282083ea0bf984e9b0ef"
+    },
+    {
+      "file": "devtools/insomnia/bizarre.js",
+      "sha256": "70b2845084fdb595f6fbfb0f4c575fcc79e00d619dbc02369730f86674d20134"
+    },
+    {
+      "file": "devtools/postman/bizarre-bone.css",
+      "sha256": "aae83f4dd5c148e3332850554aa89563e03fc13e2f7591b47a1b15059fc625aa"
+    },
+    {
+      "file": "devtools/postman/bizarre-paper.css",
+      "sha256": "647cd7ed96dbbd5b7bad706119fcb7acfd86e5bb7a00d7e1a21249a5b5d95f6c"
+    },
+    {
+      "file": "devtools/postman/bizarre-void-hicontrast.css",
+      "sha256": "6e236d50b0643e37dfaedc49207ca515e9c08ee8c21e8dac42192517f87b8d8d"
+    },
+    {
+      "file": "devtools/postman/bizarre-void.css",
+      "sha256": "4946a30bc987013497610f7b629f717d4c2d7e386fc5993a55f3f00477d0d021"
+    },
+    {
+      "file": "devtools/postman/bizarre-workshop.css",
+      "sha256": "7335bcd7c03a67b6897967356868c8e8dcdd46a4d4c1e532226ceb15bab85ec9"
+    },
+    {
+      "file": "devtools/tableplus/bizarre-bone.json",
+      "sha256": "4720566f56b887f203a5855e7529c6d0cf7a5fdc1d61683ee6a01c41ecf8adea"
+    },
+    {
+      "file": "devtools/tableplus/bizarre-paper.json",
+      "sha256": "7da864fa8fd93c015919eeb3a4a26c66403ae8c2630d93a040d1b4d76ba75468"
+    },
+    {
+      "file": "devtools/tableplus/bizarre-void-hicontrast.json",
+      "sha256": "60dbd56515bbeb6947fba1800ebd54eb77fecf2870374cfcb9b1009d09ca4bc3"
+    },
+    {
+      "file": "devtools/tableplus/bizarre-void.json",
+      "sha256": "3fe020e8c3cbd8e081d661c556c6dfb0eed546ab5daf9c0692c0df17950d2d4f"
+    },
+    {
+      "file": "devtools/tableplus/bizarre-workshop.json",
+      "sha256": "f63b3315be5a9ae2924a8b56ae22a286ba88e54379c23c0b9cfb3bcb7ed3fb8a"
+    },
+    {
+      "file": "docs-sites/README.md",
+      "sha256": "df34b04d5ba390d014c108db96b135676d0c433fe6e935f0a12bda264b75f98d"
+    },
+    {
+      "file": "docs-sites/beamer/beamerthemebizarre.sty",
+      "sha256": "d39c6b323aee0dfbf963256374fdcfff0bf8427817547a22a1e4eb08f4d97c54"
+    },
+    {
+      "file": "docs-sites/docusaurus/bizarre-bone.css",
+      "sha256": "d6f34510d467afd7673b7376848afecca1e9af0cff7b0cd7aeaf25c867aedfc1"
+    },
+    {
+      "file": "docs-sites/docusaurus/bizarre-paper.css",
+      "sha256": "3dd4dc4c643253cbe4e30f369ca6820b0c0b5d63c59fcab1fbd1dafcd7dae5e3"
+    },
+    {
+      "file": "docs-sites/docusaurus/bizarre-void-hicontrast.css",
+      "sha256": "02075822e18b058df9398ca22e2c34c4e683b204cc5ca8887e674beb280af23f"
+    },
+    {
+      "file": "docs-sites/docusaurus/bizarre-void.css",
+      "sha256": "41ee1f0cce3e0d7cf9040572794db3efd55a56b79d0389fcb6670b7deebc0d21"
+    },
+    {
+      "file": "docs-sites/docusaurus/bizarre-workshop.css",
+      "sha256": "336f8ac9ac33c33f9f4b91e5ab34d3697c98f30b5cda78c39f727cf209c0f0fe"
+    },
+    {
+      "file": "docs-sites/latex/bizarre.sty",
+      "sha256": "7d5ff468edf4b0dd9241e7f8138e94a1a62a8e4aa815142cc77c4bf4be35132a"
+    },
+    {
+      "file": "docs-sites/mkdocs/bizarre-bone.css",
+      "sha256": "1436cf8937a26173883107851c58649acfc15faa445e1f57d2a6a08787accdcf"
+    },
+    {
+      "file": "docs-sites/mkdocs/bizarre-paper.css",
+      "sha256": "6c4491dcb7a15ac870990315b957d383544c65164640a676afcd88fc283b3672"
+    },
+    {
+      "file": "docs-sites/mkdocs/bizarre-void-hicontrast.css",
+      "sha256": "1e6128ade778c413c079a69e0cf9e7a9bcb1b08ef1f29accb8c3fbcca835e908"
+    },
+    {
+      "file": "docs-sites/mkdocs/bizarre-void.css",
+      "sha256": "308941ab44320e2d9fcd3187413db1366dd7b8e006c22285569643755972dd5f"
+    },
+    {
+      "file": "docs-sites/mkdocs/bizarre-workshop.css",
+      "sha256": "addd2374622344c7e2767a6237816ccc29b01eff621d4b7b254bedeb23c1b311"
+    },
+    {
+      "file": "docs-sites/reveal.js/bizarre-bone.css",
+      "sha256": "a222f4beb0cf7701ccd5ff6d6964b0e43e49df21e95713444680ab6968b8b713"
+    },
+    {
+      "file": "docs-sites/reveal.js/bizarre-paper.css",
+      "sha256": "3c44213ac9e65b5c43d4d44e98fc292daf51584f1c425505ec8b99e0a04133d6"
+    },
+    {
+      "file": "docs-sites/reveal.js/bizarre-void-hicontrast.css",
+      "sha256": "872979c84894b7523e42d21ffd9c9a35864b1002fad09ff4a6d7b0d61711ff32"
+    },
+    {
+      "file": "docs-sites/reveal.js/bizarre-void.css",
+      "sha256": "6f361a301f8e3236e271ee347ad282adeda61a3664a80c3df9669175634ab165"
+    },
+    {
+      "file": "docs-sites/reveal.js/bizarre-workshop.css",
+      "sha256": "7d078bb4eab94be3b0b82732a84312fe5413224d62b6b25df12af1b52dd654c4"
+    },
+    {
+      "file": "docs-sites/sphinx/bizarre/static/bizarre.css",
+      "sha256": "823a73b352938c784143891558b123dcf2640715382a4ef7e0444ea99bb4bcfb"
+    },
+    {
+      "file": "docs-sites/sphinx/bizarre/theme.toml",
+      "sha256": "632c3c1fb4f0b66e2b873332f1685298edc16922aa2563881ae16033c7a482de"
+    },
+    {
+      "file": "docs-sites/typst/bizarre.typ",
+      "sha256": "4d605675f53bae990b8566efa4ef6c6bf75556aeade80eb9d28eccd4000ed6c9"
+    },
+    {
+      "file": "editors/android-studio/README.md",
+      "sha256": "1794c7c14726b835457d71ca8dacf56f1a94d36ceb63cba9f165a52c949559a8"
+    },
+    {
+      "file": "editors/cursor/README.md",
+      "sha256": "7748f0dbc7b302fa3b4751da836799d25955e518d311ea9857dbc1795cff452c"
+    },
+    {
+      "file": "editors/emacs/bizarre-bone-theme.el",
+      "sha256": "ae52acb2ba3529ef6130c4db8a35946c1f62c7f664a92ab25cfd450f14cf118d"
+    },
+    {
+      "file": "editors/emacs/bizarre-paper-theme.el",
+      "sha256": "85165f77278f76d3f3ce12ce139e4c13c1073f69add06be7dc3e4105a44d9157"
+    },
+    {
+      "file": "editors/emacs/bizarre-void-hicontrast-theme.el",
+      "sha256": "4f4f4f7bd9182ac82fcb46961f57c5db5bd30a5f9845ab0ca3a7ced0f54c5ea7"
+    },
+    {
+      "file": "editors/emacs/bizarre-void-theme.el",
+      "sha256": "73182e6b47962638668f773492ee1db9ef1ba9d8861ccc7e928a5f84893796f8"
+    },
+    {
+      "file": "editors/emacs/bizarre-workshop-theme.el",
+      "sha256": "2cfc37cdb8f498c485b85c32b9c2ff0d416d2bde1b3af782b16a3bd71f2c8f58"
+    },
+    {
+      "file": "editors/helix/bizarre-bone.toml",
+      "sha256": "80592aec6757c5ede580dce01fcf2c111e207a23e820caf593a53e957a45a6b5"
+    },
+    {
+      "file": "editors/helix/bizarre-paper.toml",
+      "sha256": "240274be7d863daa9837aa4a17500c5c5b6045b8294d4397ba10751b88b52781"
+    },
+    {
+      "file": "editors/helix/bizarre-void-hicontrast.toml",
+      "sha256": "14c47b471361ac7be1d9efb6d53ce9618515bd716d3d82d31eb943ed23c7b6d5"
+    },
+    {
+      "file": "editors/helix/bizarre-void.toml",
+      "sha256": "26145e459832061a572bf42b1c52d782af568c43589887cf5062c5b7c5f13343"
+    },
+    {
+      "file": "editors/helix/bizarre-workshop.toml",
+      "sha256": "2bd4b350513cd404ffe6e0895506ea3a911e7515da2efc6e6b95f43b3cf5d9a3"
+    },
+    {
+      "file": "editors/jetbrains/bizarre-bone.icls",
+      "sha256": "366e77b608bcf88dc76110ba56726922065a0bb987b61cb1db42873cb5caeb0e"
+    },
+    {
+      "file": "editors/jetbrains/bizarre-paper.icls",
+      "sha256": "b5158b017b5389e458b1f30d1b359996fc291d0c8a002f113d41155b0932a902"
+    },
+    {
+      "file": "editors/jetbrains/bizarre-void-hicontrast.icls",
+      "sha256": "0b2e04320312f476c094ed7ddd9f1f1bdf8c69fe4051e3eb17ec9e8ce9656be9"
+    },
+    {
+      "file": "editors/jetbrains/bizarre-void.icls",
+      "sha256": "61cfa1b41db9f0b258d8b5d63339c4bc96cccbb241717d1b7af9b6bbee98625d"
+    },
+    {
+      "file": "editors/jetbrains/bizarre-workshop.icls",
+      "sha256": "a892cd98deb34ffb6ba91e3b2738f57c0853726cfb64d76940c92e77b239199b"
+    },
+    {
+      "file": "editors/kate/bizarre-bone.theme",
+      "sha256": "001830166b00d3de18368528bcb081c1f647dcea119944f92f3f6154de208ee9"
+    },
+    {
+      "file": "editors/kate/bizarre-paper.theme",
+      "sha256": "37a1907445a073483fe7685fb2decddf41659b72650d5c5105fb495302cdb9ab"
+    },
+    {
+      "file": "editors/kate/bizarre-void-hicontrast.theme",
+      "sha256": "1bde43a3b87d04f33a65222bdc6001dc272a607f8742268e8563410c4fde1e11"
+    },
+    {
+      "file": "editors/kate/bizarre-void.theme",
+      "sha256": "97f259201d422d24754aad5e19ab4263dbd5d3d8bf246c6f56e8796837b72e18"
+    },
+    {
+      "file": "editors/kate/bizarre-workshop.theme",
+      "sha256": "9954bd71bd0575ff88219dc18e46871795344e21579ecbe1d85af7f8ae01d271"
+    },
+    {
+      "file": "editors/lapce/bizarre-bone.toml",
+      "sha256": "9ceba85296785bc8a5d44f15939f6c65b5d0d4de66a95b2fb2e7c09f503dcac1"
+    },
+    {
+      "file": "editors/lapce/bizarre-paper.toml",
+      "sha256": "370d57ad91734631527ce43cff63f943b5f76395498f5d3199b9be7912aa8cb7"
+    },
+    {
+      "file": "editors/lapce/bizarre-void-hicontrast.toml",
+      "sha256": "7e0f2d0f677440186dbced03072a53c62885e5af0ec9aa35544802e6a0c16a84"
+    },
+    {
+      "file": "editors/lapce/bizarre-void.toml",
+      "sha256": "cef8dd8210d12550dc2a0a6f8b6627a21fe2ef18ea270b8847b7a83cf6157f9c"
+    },
+    {
+      "file": "editors/lapce/bizarre-workshop.toml",
+      "sha256": "dfd53621cb73e8f53b2898a72539d7450e40ee752f91e157e394d3df46660b01"
+    },
+    {
+      "file": "editors/neovim-base16/README.md",
+      "sha256": "25dfcc7acb9b9f4b5acdf6d6439e44af4c1d0f12bd2de764147fa4a1b9ca1e26"
+    },
+    {
+      "file": "editors/neovim-base16/bizarre-bone.yaml",
+      "sha256": "4b3574f9dc643034b723e00f2c75a39193b90ebe215cd15792224dfded779e09"
+    },
+    {
+      "file": "editors/neovim-base16/bizarre-paper.yaml",
+      "sha256": "02a2d2dff5c043866c44a022b4c1343a205327731f4a8adac7886b7d78965981"
+    },
+    {
+      "file": "editors/neovim-base16/bizarre-void-hicontrast.yaml",
+      "sha256": "2dd92ebc320772f18d763b83ad2cf2178907e336ad4e09c4d1307b1d3257962d"
+    },
+    {
+      "file": "editors/neovim-base16/bizarre-void.yaml",
+      "sha256": "0c7dd97b62474d37d38b212240e7b37df2bb0254efa764cc67c7610e2e1510c4"
+    },
+    {
+      "file": "editors/neovim-base16/bizarre-workshop.yaml",
+      "sha256": "8e74b1c911dc4b01e54535a22453ecfc32f39c9e7fe1356042fc07f69c6d24e7"
+    },
+    {
+      "file": "editors/neovim/colors/bizarre-bone.vim",
+      "sha256": "568b3f178eae5ad67b86fce39e0bb7015a145f4589fde473523649f1ea6e7809"
+    },
+    {
+      "file": "editors/neovim/colors/bizarre-paper.vim",
+      "sha256": "39805d14ec50788ae7b1e503b1735ebd473ee73e50792375025e74825dabc928"
+    },
+    {
+      "file": "editors/neovim/colors/bizarre-void-hicontrast.vim",
+      "sha256": "057136086cd81be37c7e453779b214b66afc6543094523ebc54971756543f84b"
+    },
+    {
+      "file": "editors/neovim/colors/bizarre-void.vim",
+      "sha256": "003cbd74fffc90aea6a32a31e1a6b35ba2db7934f272891558b7a9bc8ccf429d"
+    },
+    {
+      "file": "editors/neovim/colors/bizarre-workshop.vim",
+      "sha256": "34ea7a4abc894899b2f48bbc72f4c18c2fffd17681d6b5dff32ae20addce027d"
+    },
+    {
+      "file": "editors/neovim/lua/bizarre/highlights.lua",
+      "sha256": "e835f190def42fbcaa30b8e28bf024ba26e4cf80c9a34ecf371071ced80aa2d4"
+    },
+    {
+      "file": "editors/neovim/lua/bizarre/init.lua",
+      "sha256": "87a23ef618084854ed18014f70e7ec6186e622d9f6cc8cb3379c0e4db01535dd"
+    },
+    {
+      "file": "editors/neovim/lua/bizarre/palettes/bone.lua",
+      "sha256": "1c9a08fbda9149aaaad3f047fc013b6d136abc8f1031e3fe6c77dcd705a0ff9b"
+    },
+    {
+      "file": "editors/neovim/lua/bizarre/palettes/paper.lua",
+      "sha256": "8dcd89a401125e085068dd7479d7ec569d8805f2dbb7ad511978e318d74cec52"
+    },
+    {
+      "file": "editors/neovim/lua/bizarre/palettes/void-hicontrast.lua",
+      "sha256": "942447ebcabab40481f0f9e84513264bd3c14026e6fddf3cef13e9cdae251b9d"
+    },
+    {
+      "file": "editors/neovim/lua/bizarre/palettes/void.lua",
+      "sha256": "12213942c90b0207af7a17f159395168b526052f1bac6298941e818469f40922"
+    },
+    {
+      "file": "editors/neovim/lua/bizarre/palettes/workshop.lua",
+      "sha256": "3f8182d9480152c2592547eb3be96db66dea0810a6c3b2a794eae81c3acacf1b"
+    },
+    {
+      "file": "editors/neovim/lua/bizarre/terminal.lua",
+      "sha256": "184931655d6f8a280c4177eabdcae1e313c56c14ebb1d16774518471ddb61245"
+    },
+    {
+      "file": "editors/notepad-plus-plus/bizarre-bone.xml",
+      "sha256": "79592c2a7dd1dc091b552d5c1b24ecd9dedd852544d777691ab1f2a98246b3ae"
+    },
+    {
+      "file": "editors/notepad-plus-plus/bizarre-paper.xml",
+      "sha256": "13afb6bcead8f33aa09b5de48a12f77cc07a75c79bd9e0c87eb72ee1f705ca0b"
+    },
+    {
+      "file": "editors/notepad-plus-plus/bizarre-void-hicontrast.xml",
+      "sha256": "8525d278b7472203337a3dcac96d79e6547c8c19a1f6095d2ce76ec73b49508b"
+    },
+    {
+      "file": "editors/notepad-plus-plus/bizarre-void.xml",
+      "sha256": "830f6e5b7422e598038fe6ea0d3c2a1bbd57a57ef50699e7ca23e0b731dc52d7"
+    },
+    {
+      "file": "editors/notepad-plus-plus/bizarre-workshop.xml",
+      "sha256": "74e9d8661fabde703539cfb0702c4b58885e3f4ed212268b1c8fbfe61cd52fee"
+    },
+    {
+      "file": "editors/nova/bizarre-bone.json",
+      "sha256": "6574a82ff0962d1d1f1b5a208ce88a65bb4bf6299f6cab2d70d3214f99f32662"
+    },
+    {
+      "file": "editors/nova/bizarre-paper.json",
+      "sha256": "64e24c13e8b642dda5dc5cc2c0be8a12c13d85bda8db635b6957cda17d4f5512"
+    },
+    {
+      "file": "editors/nova/bizarre-void-hicontrast.json",
+      "sha256": "2197df6b6d7c628160fadaaff2fbaee7767454c58de6a7037e565954ecf874a8"
+    },
+    {
+      "file": "editors/nova/bizarre-void.json",
+      "sha256": "ab1b16f290bd7cbb3ea9cf67ebf5252b104434f33986ea0c176bf5be3c1b4db8"
+    },
+    {
+      "file": "editors/nova/bizarre-workshop.json",
+      "sha256": "1eb7fb944db9ffe1345f5d5b094285f4a32f5e98022fd130775c3ca37c703d9f"
+    },
+    {
+      "file": "editors/sublime/bizarre-bone.sublime-color-scheme",
+      "sha256": "84c3d708d7f5c9d804a0d4b66e2900a1b3c21194f7299ada4980e81ca5272dd2"
+    },
+    {
+      "file": "editors/sublime/bizarre-paper.sublime-color-scheme",
+      "sha256": "31360e5a0b9a3957d3b732e4c08d56d30d8f02d0b255283d507d7db31669c95a"
+    },
+    {
+      "file": "editors/sublime/bizarre-void-hicontrast.sublime-color-scheme",
+      "sha256": "7c81c839f87ad45db662f89171e66426eab9d21ef765716e9d6b302976fd0f97"
+    },
+    {
+      "file": "editors/sublime/bizarre-void.sublime-color-scheme",
+      "sha256": "468000452fa27893e3244ab0026a4564af0808731c860ecafd8b03b8109178b8"
+    },
+    {
+      "file": "editors/sublime/bizarre-workshop.sublime-color-scheme",
+      "sha256": "e2d1d1147fa1d14b76e2e3e6d096f17227445609204bf78cdfd27217bafee628"
+    },
+    {
+      "file": "editors/vim/colors/bizarre-bone.vim",
+      "sha256": "a6a5365f2fa2b58122b1835f3d60b20943cb79f3b16b71520a073e3add621adc"
+    },
+    {
+      "file": "editors/vim/colors/bizarre-paper.vim",
+      "sha256": "8a6c9c4c23bc1741a9d19a303a089b54ccc24fe688a62f850e6ccfb36adc5a9d"
+    },
+    {
+      "file": "editors/vim/colors/bizarre-void-hicontrast.vim",
+      "sha256": "fc445ddcb8cdbcd720aaaa20d8794eec9482216976e095c379f20708a8e7bfc1"
+    },
+    {
+      "file": "editors/vim/colors/bizarre-void.vim",
+      "sha256": "90598ae3915cdd09f06460bcdfff905994ad7d0041e679577296ca924c027aaf"
+    },
+    {
+      "file": "editors/vim/colors/bizarre-workshop.vim",
+      "sha256": "23e0550415f29c7eede9c8d47207d6ddaf1dde7770ece0d3266b5aa0c63c2ef5"
+    },
+    {
+      "file": "editors/visual-studio/bizarre-bone.vstheme",
+      "sha256": "17cd176753cdbf121a264bed1b9f9e867077b28610112e5c3836f8d2a97b303e"
+    },
+    {
+      "file": "editors/visual-studio/bizarre-paper.vstheme",
+      "sha256": "70b3f0e7797a224a287e3f943570373f5695d117b7375129839a6d098094f962"
+    },
+    {
+      "file": "editors/visual-studio/bizarre-void-hicontrast.vstheme",
+      "sha256": "376039b605bb1a48802e8fc8b6f23c1633ca159be851bfa1d84cc4d543b0c415"
+    },
+    {
+      "file": "editors/visual-studio/bizarre-void.vstheme",
+      "sha256": "a46c6009b64e727182ab157e4199b9873bd62db238d8c8b07805617508bfb425"
+    },
+    {
+      "file": "editors/visual-studio/bizarre-workshop.vstheme",
+      "sha256": "cedb2ddb26ea635f87028a5de9903816f2df911cfe0e5dd560472fa04b2de5c2"
+    },
+    {
+      "file": "editors/vscode/package.json",
+      "sha256": "668db18dd7b46daf81dcc6b2508faac8737a91b3e3f2d516d659b229be498f56"
+    },
+    {
+      "file": "editors/vscode/themes/bizarre-bone-color-theme.json",
+      "sha256": "9b2c331680f345029628466818b8baa1c84bf8b53d41c30beb509ab40616d0a0"
+    },
+    {
+      "file": "editors/vscode/themes/bizarre-color-theme.json",
+      "sha256": "dfff80dfe8932a3dc455a453e20d21f4e4dfe070215881d8705c8402a7344d22"
+    },
+    {
+      "file": "editors/vscode/themes/bizarre-paper-color-theme.json",
+      "sha256": "2e8c554234eedf76d45bfe80f8f30db7efebc50e93f0f5f7163ae7852c51ccaf"
+    },
+    {
+      "file": "editors/vscode/themes/bizarre-void-color-theme.json",
+      "sha256": "dfff80dfe8932a3dc455a453e20d21f4e4dfe070215881d8705c8402a7344d22"
+    },
+    {
+      "file": "editors/vscode/themes/bizarre-void-hicontrast-color-theme.json",
+      "sha256": "e74b914c1971a83d8e0d9092dce7f51b38276dc1e48dad6a240fa80746a392e0"
+    },
+    {
+      "file": "editors/vscode/themes/bizarre-workshop-color-theme.json",
+      "sha256": "694449342e88ee0d510adaf2e1152555da55217813e060430f2e6f799f7fbbfb"
+    },
+    {
+      "file": "editors/zed/themes/bizarre.json",
+      "sha256": "fefd4927f18206cfcaa687d66012c7f28ca9d0515edafb922acdd18a014390d7"
+    },
+    {
+      "file": "prompt/starship.toml",
+      "sha256": "fcbca039d1e5fbb51991fd943dfab950aefef5e4b93f16e99f550470d4454230"
+    },
+    {
+      "file": "shells/banner/bizarre.bash",
+      "sha256": "e2cf29213e4ab7dd0b325b00c91df5beef43307199663358aa891ed926c91984"
+    },
+    {
+      "file": "shells/banner/bizarre.fish",
+      "sha256": "50c81877eccaf651a1a293a3748ed7ec1543fc807ab6e65d345710615b824670"
+    },
+    {
+      "file": "shells/banner/bizarre.ps1",
+      "sha256": "3664665b62beaccbe9f85fc90fb0acdb3cfafb1548fec1182a8edc97cd4e3c84"
+    },
+    {
+      "file": "shells/banner/bizarre.zsh",
+      "sha256": "eddebbf5a50a76670c891b7b16881c765c0225a1097cb51c6c5a28a6e35ca7f8"
+    },
+    {
+      "file": "showcase/colors_and_type.css",
+      "sha256": "619828ebf7f4e1bf745cfd1d33d2980b1eb9423d33e6839fd41f96e097a288dc"
+    },
+    {
+      "file": "showcase/index.html",
+      "sha256": "afc8f805f55ca05852095cc297301aab06e0b756f3cc0dafdeee5899cd3bb8c4"
+    },
+    {
+      "file": "showcase/showcase-main.jsx",
+      "sha256": "c0c22c571a261b365c751cc309260c749c12ec208794ebb5717a33d3c98a55bf"
+    },
+    {
+      "file": "showcase/showcase-panes.jsx",
+      "sha256": "b8493bf1b697574b458608090959f1338cd64c42fbb0b8e849df9866389d5b50"
+    },
+    {
+      "file": "showcase/showcase-terminal.jsx",
+      "sha256": "f4d71e187e1a9bfa5efb1138a13746d1a4ad05e32d9a7c75ec145a9b31fd4033"
+    },
+    {
+      "file": "showcase/showcase.css",
+      "sha256": "7890f967aee29626bcc342249c032ea66f175bfb5971a2f1746668360fb356a2"
+    },
+    {
+      "file": "showcase/showcase.js",
+      "sha256": "c6e68d71beccb29b82e5995cdb326815a17bf6c55dd9a08bfe91875e1b04e199"
+    },
+    {
+      "file": "showcase/syntax.css",
+      "sha256": "87f0c4cde6e943694f7a2a379b9f26ff6eecef63523a5f938fe62d958eb0bbb2"
+    },
+    {
+      "file": "showcase/tokens.css",
+      "sha256": "834fec7037b582f1ca0b05d785cc537a1bc8b3bc6b28853520bafeb391941ce4"
+    },
+    {
+      "file": "terminals/alacritty/bizarre-bone.toml",
+      "sha256": "b1639042e71959e77636bccffce7e4b94355408a7fa5ad36f642d19a12e0334a"
+    },
+    {
+      "file": "terminals/alacritty/bizarre-paper.toml",
+      "sha256": "fd2d49655bf33805b66b77ba97c7c5b98980d6b9cc1f11f7677c8c11b52acc8a"
+    },
+    {
+      "file": "terminals/alacritty/bizarre-void-hicontrast.toml",
+      "sha256": "87033ea94178f1ee6c3adeaf187fd1541de776c3bcf271929b2d3605ab61d514"
+    },
+    {
+      "file": "terminals/alacritty/bizarre-void.toml",
+      "sha256": "adb3de057d7d352566d33b3500ca008013482354beebbe64d1208fc26f2996b6"
+    },
+    {
+      "file": "terminals/alacritty/bizarre-workshop.toml",
+      "sha256": "0e8883715fa990c03a9803e08dd6f26678698796e9554ae9b52995f220b7a116"
+    },
+    {
+      "file": "terminals/alacritty/bizarre.toml",
+      "sha256": "39c8c3971885ffce5d5d33298f4cae93a9d8669fc4588ebc4e080a059aaca032"
+    },
+    {
+      "file": "terminals/black-box/bizarre-bone.json",
+      "sha256": "ce44ee6e2d2b3fe1320b1326444a011a0b2ffa4ba764c05380cd7bf4b232bdf4"
+    },
+    {
+      "file": "terminals/black-box/bizarre-paper.json",
+      "sha256": "7cd1634d400071f823f2187d560fdfbab3ab4f0d4aa9837a328c9f831b7359c2"
+    },
+    {
+      "file": "terminals/black-box/bizarre-void-hicontrast.json",
+      "sha256": "ff1e1f0479c2428486a8249da5c04703a6ad8191c74984b213ff154aad265624"
+    },
+    {
+      "file": "terminals/black-box/bizarre-void.json",
+      "sha256": "89b3582b35f92eccb1f5086500f3b1b41cc85d7abe4ad48b9985264156fd2118"
+    },
+    {
+      "file": "terminals/black-box/bizarre-workshop.json",
+      "sha256": "60ef825b1e720d92a14473e369b9d9dddb8b3f92217f1d42ceb444e4d11821bf"
+    },
+    {
+      "file": "terminals/foot/bizarre-bone.ini",
+      "sha256": "7a51c121a566314e97141ff2f566bc455e69a40761964d0d7d373d78380f35ba"
+    },
+    {
+      "file": "terminals/foot/bizarre-paper.ini",
+      "sha256": "a97288f519e582bdc7c52c3f6578fca45937e1536436f65aaf16c625a599f634"
+    },
+    {
+      "file": "terminals/foot/bizarre-void-hicontrast.ini",
+      "sha256": "3d6c5c0876cee15162c850c11e6eaba861fc6efecd8dc5a89585b118e096d43c"
+    },
+    {
+      "file": "terminals/foot/bizarre-void.ini",
+      "sha256": "71860260675735b09ab49311faecf0de57c8620b2da879691ce0aa861f9cf033"
+    },
+    {
+      "file": "terminals/foot/bizarre-workshop.ini",
+      "sha256": "4ec4f129dfa57d44d178cff557e2b0dbdbe093083d049e4d5e47c5e48595b373"
+    },
+    {
+      "file": "terminals/ghostty/bizarre-bone",
+      "sha256": "24c36eb9accbcb0c8320bb6f9cd310dd059743632eb5eff4349e30b026b97277"
+    },
+    {
+      "file": "terminals/ghostty/bizarre-paper",
+      "sha256": "c92cc7a50e22416ac7757ca83ab0ce1034174f092099c50a557ed53ce54400d7"
+    },
+    {
+      "file": "terminals/ghostty/bizarre-void",
+      "sha256": "357490862cf9e3a0b49361aeb3ec2eb61e0d0ba93c59e28c7726f452221020a5"
+    },
+    {
+      "file": "terminals/ghostty/bizarre-void-hicontrast",
+      "sha256": "8b549b506fef31217709ac677731b052a5995c6310440d89829f4457cc9c10ec"
+    },
+    {
+      "file": "terminals/ghostty/bizarre-workshop",
+      "sha256": "5d0421fd2986cfff0619d154fa961a28a688ecab68b42d5d5ddd81d49c53a91f"
+    },
+    {
+      "file": "terminals/gnome-terminal/bizarre.sh",
+      "sha256": "af26a5e8d2e27a8c1b7453ae9a1566d8fcc20a96b4ba437e59b934f65fee3c69"
+    },
+    {
+      "file": "terminals/hyper/bizarre-bone.js",
+      "sha256": "e8d5a55d770caee903ef704f5deb5fbf3dbb6d8f8155ab720ee7e16f92dee902"
+    },
+    {
+      "file": "terminals/hyper/bizarre-paper.js",
+      "sha256": "6899d42a5cd3e4a4740d4adb1f1da50fd1a343abdde4cad42efa94ca5b26724b"
+    },
+    {
+      "file": "terminals/hyper/bizarre-void-hicontrast.js",
+      "sha256": "c785dab149d9d5c522aafab8af443ebdecb59061589e07e600842135212698d4"
+    },
+    {
+      "file": "terminals/hyper/bizarre-void.js",
+      "sha256": "41e22cdd00731e321bf9146a35b2bd760e27a0a38aef903a44567edb18b5c2b1"
+    },
+    {
+      "file": "terminals/hyper/bizarre-workshop.js",
+      "sha256": "cbe74dc68e3a83495d50565a5a959e61e5b2d9788218785e112ee2b207b29d0b"
+    },
+    {
+      "file": "terminals/iterm2/bizarre-bone.itermcolors",
+      "sha256": "b450becf424b5d44ecd14786497bf73cd043a3002d21f086b8ae8e701e2de0e0"
+    },
+    {
+      "file": "terminals/iterm2/bizarre-paper.itermcolors",
+      "sha256": "69023e83fe51b4641e6c4b2bc3a1620284c0c76ddd028198c483962b95129da3"
+    },
+    {
+      "file": "terminals/iterm2/bizarre-void-hicontrast.itermcolors",
+      "sha256": "ac4cde8e818f1375b5bd68d4e3c76dc10fda8d4dcc201a0b3eaeb888c9311203"
+    },
+    {
+      "file": "terminals/iterm2/bizarre-void.itermcolors",
+      "sha256": "e831272072afc3c509feaf235c23cba788d0718f4c53a61eabd25ba000532b01"
+    },
+    {
+      "file": "terminals/iterm2/bizarre-workshop.itermcolors",
+      "sha256": "6e45b5cac39116c176bce8aa60f11f083d10d5cf80cb9a02918d1dbfdef4d345"
+    },
+    {
+      "file": "terminals/kitty/bizarre-bone.conf",
+      "sha256": "9b3bee376003c666b9d69888113c9210e2c5754c81823cf7aa64a0ce3b717c3e"
+    },
+    {
+      "file": "terminals/kitty/bizarre-paper.conf",
+      "sha256": "94aad7b7ec68ffd7a76dfe290b790d243e8ade4c2590ccb1e1098aa99225b918"
+    },
+    {
+      "file": "terminals/kitty/bizarre-void-hicontrast.conf",
+      "sha256": "5dcf8a58161a11ca16644dcc09c7e213edabc52b883a2ee39323381fe44118de"
+    },
+    {
+      "file": "terminals/kitty/bizarre-void.conf",
+      "sha256": "0951ce8f182e39bbe604c0f106fd831839a7e06e8bf4cc0e33c35b4213de16ab"
+    },
+    {
+      "file": "terminals/kitty/bizarre-workshop.conf",
+      "sha256": "49977672a4db180f5045c4d5f8ddacd89df105be27b42194075e64a58448218a"
+    },
+    {
+      "file": "terminals/kitty/bizarre.conf",
+      "sha256": "41c4baf8f40ebec921950faf668c87983a89e63a9a6ce2f4bbb2c9c78567bcef"
+    },
+    {
+      "file": "terminals/konsole/bizarre-bone.colorscheme",
+      "sha256": "345bace6cb649f77e26a6edc78e79393cf7e72c110c25ea5e12f3eb9ad51535f"
+    },
+    {
+      "file": "terminals/konsole/bizarre-paper.colorscheme",
+      "sha256": "e308bb2f6ccf0c6639ff986551efc29e5e5350a22b514d4db03491cacbd3c3ce"
+    },
+    {
+      "file": "terminals/konsole/bizarre-void-hicontrast.colorscheme",
+      "sha256": "f5e8d51d659bef9ef0480dcbc4082170f934d03b3516e46b5e9a1e106fc7f6c7"
+    },
+    {
+      "file": "terminals/konsole/bizarre-void.colorscheme",
+      "sha256": "a76b24cd87d1c8abcad1f092bb7d9f49f25ec0f04523eff9884d76615fc97e64"
+    },
+    {
+      "file": "terminals/konsole/bizarre-workshop.colorscheme",
+      "sha256": "3428adfd1a0568e8fd0d4919961ac8fe11de613c038df02d7f770c3d2eb69a0a"
+    },
+    {
+      "file": "terminals/rio/bizarre-bone.toml",
+      "sha256": "9e3d72f9ea108b0b305bb009ec243f686faf873d87ba49cc519de2c80b652c68"
+    },
+    {
+      "file": "terminals/rio/bizarre-paper.toml",
+      "sha256": "8e572ab463799e06a126227329aca2c2ce70456ce827843e4267de52ad6914f9"
+    },
+    {
+      "file": "terminals/rio/bizarre-void-hicontrast.toml",
+      "sha256": "d8f391a2f6083e4a6ec996205133c71381a98860d526c2667f3e39ddf90ce93b"
+    },
+    {
+      "file": "terminals/rio/bizarre-void.toml",
+      "sha256": "051d9b237efe5a9dc426422b7a74f2106003f11154e3d6e7a3cc079b60d0d624"
+    },
+    {
+      "file": "terminals/rio/bizarre-workshop.toml",
+      "sha256": "daa5effcb87d726152df9b97f507b3da223913e9b6fb3f3121c2a993b8f498c8"
+    },
+    {
+      "file": "terminals/terminator/bizarre-bone.config",
+      "sha256": "9245054842b7292421a2321e4f09fcfc02200596b0442675d06effbb4de29096"
+    },
+    {
+      "file": "terminals/terminator/bizarre-paper.config",
+      "sha256": "b16bb09ad62452ad975c6c1c55d2c9aa045d5d9571843b24b871f7409b289f52"
+    },
+    {
+      "file": "terminals/terminator/bizarre-void-hicontrast.config",
+      "sha256": "dbc8ceb1c2232613f57d5f0ae65d414c605e4890a636dd7f65d7b17649992615"
+    },
+    {
+      "file": "terminals/terminator/bizarre-void.config",
+      "sha256": "324ff711178e393243063609a8cbdbeed07dd94498fe641778561fac2267f69c"
+    },
+    {
+      "file": "terminals/terminator/bizarre-workshop.config",
+      "sha256": "cd4045fb14a8ed89698d743033ba034524985ead5c9264edd53befa26e88debd"
+    },
+    {
+      "file": "terminals/tilix/bizarre-bone.dconf",
+      "sha256": "914518c2098591182b5dbd0a4b3e9be537eb0c44df8c3e574ebbfeaa1372d515"
+    },
+    {
+      "file": "terminals/tilix/bizarre-paper.dconf",
+      "sha256": "5fc9c5b689bd6a6b2aceb3e979cb2e25c057ce1c5484ea1c31e155ae5e74c4cf"
+    },
+    {
+      "file": "terminals/tilix/bizarre-void-hicontrast.dconf",
+      "sha256": "048cdef229d30fb8d0e776eea5a7518ba502d9aaf74c4946c743ef1013920dde"
+    },
+    {
+      "file": "terminals/tilix/bizarre-void.dconf",
+      "sha256": "8e60c41f2d10430535f2ac8ccda09ca94182f3329c60d8cbcf731b34f9e2d3d2"
+    },
+    {
+      "file": "terminals/tilix/bizarre-workshop.dconf",
+      "sha256": "6dd7313ad5a94cc513aa7b47bf44b26c86fd6a9be6927c7f39db7d6a45f49b6a"
+    },
+    {
+      "file": "terminals/tmux/bizarre.tmux.conf",
+      "sha256": "ebf497dc1cebacb9cb73d5c243741b368ed6215116b9a4df2d157dc3b51011bd"
+    },
+    {
+      "file": "terminals/wezterm/bizarre.lua",
+      "sha256": "14fd8636e91f2f3c50d3fc461757d889e788de38a953925df48b94d746bfa2c3"
+    },
+    {
+      "file": "terminals/windows-terminal/schemes.json",
+      "sha256": "012bb3e22b2e1d1cc034acba4930443f4c7dc812797d0013b66efe4a50bd20fd"
+    },
+    {
+      "file": "terminals/xfce-terminal/bizarre-bone.theme",
+      "sha256": "ff550283fa824b1d8e8d0c102724c7586c96e218b7d94d4f3562a93a2af272e9"
+    },
+    {
+      "file": "terminals/xfce-terminal/bizarre-paper.theme",
+      "sha256": "b496dfcd39870968733a2ec3d18b598044101d145b069f7d16acc83bb2c3d794"
+    },
+    {
+      "file": "terminals/xfce-terminal/bizarre-void-hicontrast.theme",
+      "sha256": "15c916b417da6658af681d0ba3d01c6c61ee0532b837b0bc65f37a5abc145b9c"
+    },
+    {
+      "file": "terminals/xfce-terminal/bizarre-void.theme",
+      "sha256": "2d36545faab98af170c7a2e211062612921297313447d1a1f896b2dc7f90b43d"
+    },
+    {
+      "file": "terminals/xfce-terminal/bizarre-workshop.theme",
+      "sha256": "9848de3e771a1d50eb1414d2938a10dc3b21fd39d5948502b9bde1553ccf2557"
+    },
+    {
+      "file": "terminals/zellij/bizarre.kdl",
+      "sha256": "7627ff179b2599e49dd321e49c06a29a8fe3db3e7e9bbe284d4f3a9d3de04e4f"
+    },
+    {
+      "file": "tools/README.md",
+      "sha256": "81a56dc9e5601c78f1f25201086f24f5210ceae8e5eb28019d9107ef9488684c"
+    },
+    {
+      "file": "tools/aerospace/aerospace.toml",
+      "sha256": "11bd2cf2276744d803ecef3a04549a5f57debfd0954b0f445d443d7ee895f05c"
+    },
+    {
+      "file": "tools/atuin/themes/bizarre-bone.toml",
+      "sha256": "d9e1f93418224e837e1badddcb55df8f94876a0d6c1b8699729ab71bfb1009b1"
+    },
+    {
+      "file": "tools/atuin/themes/bizarre-paper.toml",
+      "sha256": "2a3af57f1a8f86aa3f012dddfb85ce6f614a31a1db2a40cf00e5d06e9dd5c504"
+    },
+    {
+      "file": "tools/atuin/themes/bizarre-void-hicontrast.toml",
+      "sha256": "18d419f7927aecfca6a8c94f9810976d062cd74a8ecabc27263adcde4c0ca716"
+    },
+    {
+      "file": "tools/atuin/themes/bizarre-void.toml",
+      "sha256": "8c4a6406e2943ce4a0d68605795ccc40c9f10c20ce5f59845ba09dd5d534c20a"
+    },
+    {
+      "file": "tools/atuin/themes/bizarre-workshop.toml",
+      "sha256": "0ee3c7facb6645dc44347dcfcb28d5e407057c90342e5decf5636c61dea8fbbb"
+    },
+    {
+      "file": "tools/bat/themes/bizarre-bone.tmTheme",
+      "sha256": "6edb9468bbccb5db46d756c6a12765a31d64d1a256dadea0a590fceb6405bb8d"
+    },
+    {
+      "file": "tools/bat/themes/bizarre-paper.tmTheme",
+      "sha256": "06b22eb01dfc79b9517629ad088eb54313547c0eea607663c13ae3f420d01627"
+    },
+    {
+      "file": "tools/bat/themes/bizarre-void-hicontrast.tmTheme",
+      "sha256": "fad14288aee734ccbe8d545445751f5e7896e4dbe8d6025451f7f46581ba0a57"
+    },
+    {
+      "file": "tools/bat/themes/bizarre-void.tmTheme",
+      "sha256": "e89cc2e078508347715ed643531faab14b4caaa6bcad2d23214df4e1920d93f2"
+    },
+    {
+      "file": "tools/bat/themes/bizarre-workshop.tmTheme",
+      "sha256": "008126761b7329f833f82f08f197a47fb89ddfbef4362f6421b1aa769a97104a"
+    },
+    {
+      "file": "tools/bottom/bizarre-bone.toml",
+      "sha256": "0d717ceaf187c76914f7f6768ad4f243b8f22e96a55230ff20a9477b194586eb"
+    },
+    {
+      "file": "tools/bottom/bizarre-paper.toml",
+      "sha256": "e2cd85a00abaefe8551b9be8129be8f0fd3f8c94383fdcc3376b022a84cdc933"
+    },
+    {
+      "file": "tools/bottom/bizarre-void-hicontrast.toml",
+      "sha256": "eb730003cc9ea2876132a091d8ba6f84b513179f62d6dc4b9eea69341a49eae6"
+    },
+    {
+      "file": "tools/bottom/bizarre-void.toml",
+      "sha256": "94041eea4c02843dfc7ed96a8a6829c1bcef1221131f2c283f44face9d5aee38"
+    },
+    {
+      "file": "tools/bottom/bizarre-workshop.toml",
+      "sha256": "020d2a0bda044600acb52c84d4ad8af03de130527c4e5c0319934b90ac47f2d8"
+    },
+    {
+      "file": "tools/btop/bizarre-bone.theme",
+      "sha256": "c18b285c499d02c23d30316e3fb1f065c3e2ab76f697711875e3701a8464c17d"
+    },
+    {
+      "file": "tools/btop/bizarre-paper.theme",
+      "sha256": "40fb869d7eceb6c98bc34056cbb872304a9ff3aa872a3450706c86fa76759744"
+    },
+    {
+      "file": "tools/btop/bizarre-void-hicontrast.theme",
+      "sha256": "0d765ca3c27f326d9936d5bfbce4cc931655a58e207a1a0d54eee17f28d6d23b"
+    },
+    {
+      "file": "tools/btop/bizarre-void.theme",
+      "sha256": "34fe4ce6795f20025ce88fd237d58e5f7d3e5c3c66acfca8fc65f3fa829cf93b"
+    },
+    {
+      "file": "tools/btop/bizarre-workshop.theme",
+      "sha256": "98d8074f11068fe30b44214503241db7ba8705f45c9da8e95a2b90cef0989fbe"
+    },
+    {
+      "file": "tools/delta/bizarre.gitconfig",
+      "sha256": "750033d61b70351bf3dca086000479012a8600a9a8be5a2a546ceee2fea3b108"
+    },
+    {
+      "file": "tools/dircolors/bizarre.dircolors",
+      "sha256": "767759067c2b97a44253a230e10256c1103c2f34b96df4bb032a26eb5f4c584e"
+    },
+    {
+      "file": "tools/eza/bizarre.sh",
+      "sha256": "d72fe4f8de405060707c6aa550a9e7ccb353b2af2187902ad004f2ead990d22c"
+    },
+    {
+      "file": "tools/forklift/Bizarre.json",
+      "sha256": "58042246f45586e25cdd55db60e5ad2b00af105aae85283dd5a39f720b6b07a1"
+    },
+    {
+      "file": "tools/fzf/bizarre.sh",
+      "sha256": "62dcd6942f88baed00c77f0e0c05b607409cdcd4acea261b2b61a184fec74677"
+    },
+    {
+      "file": "tools/jujutsu/config.toml",
+      "sha256": "6ed575ecaca749cfee3cbc62652a5493d7d0ed9c3573e016fb2873566e0f1793"
+    },
+    {
+      "file": "tools/k9s/skins/bizarre-bone.yaml",
+      "sha256": "e3a5fe649ccdfdea2333fcdb1800fa5344dbd4cb531601d8b3044561b262bba3"
+    },
+    {
+      "file": "tools/k9s/skins/bizarre-paper.yaml",
+      "sha256": "6654f8b2d7f6f8b3cc9aeb419ea60b096f3e9d9f3958e431c1e1d1a524319fa9"
+    },
+    {
+      "file": "tools/k9s/skins/bizarre-void-hicontrast.yaml",
+      "sha256": "a0f3453bc4a02339f572175abfd5780f6852f61d7dd8cd638f460ea63e6aa302"
+    },
+    {
+      "file": "tools/k9s/skins/bizarre-void.yaml",
+      "sha256": "9f1e6660da1da35bcd5cb21973faaf817c4de5a857d552a7527d023a1d32f15b"
+    },
+    {
+      "file": "tools/k9s/skins/bizarre-workshop.yaml",
+      "sha256": "a962eddbddaef890a1412a19c91bcd551852f17459c6cffd79dd5fa7eb7e348f"
+    },
+    {
+      "file": "tools/lazygit/config.yml",
+      "sha256": "abd9b5b4ff1b52b3defeee46690554640a61919562e5eccf2a1aac867abaea12"
+    },
+    {
+      "file": "tools/ranger/colorschemes/bizarre_bone.py",
+      "sha256": "400ffab11c4ebe0daec94fb0ff4a7931b6f5e9f0520ffbcb300f89e3bbec9f79"
+    },
+    {
+      "file": "tools/ranger/colorschemes/bizarre_paper.py",
+      "sha256": "69146f4faaf81870cf4f95c35a92fae75def7768d6b5ac2c9407771fbfedbb3f"
+    },
+    {
+      "file": "tools/ranger/colorschemes/bizarre_void.py",
+      "sha256": "2985768743ab24c42d2c670cc2ac4d990936191dd602b4c478d9d0b5076668ab"
+    },
+    {
+      "file": "tools/ranger/colorschemes/bizarre_void_hicontrast.py",
+      "sha256": "1e97c41acde23891ca4451aa0c00925dda92d4b878d8b85f2835ba37190739bd"
+    },
+    {
+      "file": "tools/ranger/colorschemes/bizarre_workshop.py",
+      "sha256": "f2fe811db1803dfd90ede0535770eaae8dca8bded4a84513927352208a1da13a"
+    },
+    {
+      "file": "tools/vivid/themes/bizarre-bone.yml",
+      "sha256": "db06a8138f867890d5024fca3013e413fe1d6b3905ccf3fcb90ca6f46b946d9c"
+    },
+    {
+      "file": "tools/vivid/themes/bizarre-paper.yml",
+      "sha256": "f89a5364fa8b7f25584f40d4c64e17578b6f02f3d8e2bb3f6627e1909beff5b8"
+    },
+    {
+      "file": "tools/vivid/themes/bizarre-void-hicontrast.yml",
+      "sha256": "b2c56e99b1efabdcf272bfed38448775d2651a1d090e6b5a3a9779071532ad0e"
+    },
+    {
+      "file": "tools/vivid/themes/bizarre-void.yml",
+      "sha256": "f0d2505fd9f1f93f5aa1c9a3d6b157b69cefb8c0cb1b15497ff0444aec61b878"
+    },
+    {
+      "file": "tools/vivid/themes/bizarre-workshop.yml",
+      "sha256": "d3412f06121e32f9ee03e12940a1454f2008c22a5a18da63dad6d593e56ec4ad"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-bone.yazi/README.md",
+      "sha256": "485514506209b72e8f4c33cba1146a36d78009c3f795672a8e79cd7f631a9823"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-bone.yazi/flavor.toml",
+      "sha256": "5aafeb5d4e2be30ee3fa2994575c4c56547f41519270cb193c4c89f0469aa108"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-bone.yazi/tmtheme.xml",
+      "sha256": "6edb9468bbccb5db46d756c6a12765a31d64d1a256dadea0a590fceb6405bb8d"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-paper.yazi/README.md",
+      "sha256": "c31b2daed184e620119c50ef5981ce2264e38b1cd0cf13f9f74a201f1e02676d"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-paper.yazi/flavor.toml",
+      "sha256": "84c6efcc82e2b75bc23b197ff695d8b0bf6b039ea52c534a512bf74c5ffb83ec"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-paper.yazi/tmtheme.xml",
+      "sha256": "06b22eb01dfc79b9517629ad088eb54313547c0eea607663c13ae3f420d01627"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-void-hicontrast.yazi/README.md",
+      "sha256": "1240b0331846153a21e4e9bd635faccc2536165a554c765da41e2ea90bad7ad4"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-void-hicontrast.yazi/flavor.toml",
+      "sha256": "ab4e7df3472a62e33c789f2e3645f79bb28ecb0606b00b7f89865e6fadf2cd16"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-void-hicontrast.yazi/tmtheme.xml",
+      "sha256": "fad14288aee734ccbe8d545445751f5e7896e4dbe8d6025451f7f46581ba0a57"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-void.yazi/README.md",
+      "sha256": "0db22cb4def25428b5d54ecb886cd2d5d9214f667403d26ff21345f2d0fcc9be"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-void.yazi/flavor.toml",
+      "sha256": "f15bf6c1f8473e7133934e94fc174df52e4794a5202ba4ccc4aaa40b6749f1ba"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-void.yazi/tmtheme.xml",
+      "sha256": "e89cc2e078508347715ed643531faab14b4caaa6bcad2d23214df4e1920d93f2"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-workshop.yazi/README.md",
+      "sha256": "e774cb6d486fb9506f4b65ef197be80d8f8eb244ee84895f9593d36777363cd0"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-workshop.yazi/flavor.toml",
+      "sha256": "8b30555fc87c33daddb61faaebea110ac0133af711290dbc60e16d58e7d7d127"
+    },
+    {
+      "file": "tools/yazi/flavors/bizarre-workshop.yazi/tmtheme.xml",
+      "sha256": "008126761b7329f833f82f08f197a47fb89ddfbef4362f6421b1aa769a97104a"
+    },
+    {
+      "file": "web/README.md",
+      "sha256": "c1feb37b34c13df2cf62c4456f34e8e25ae8a899359cb17f992890784640f819"
+    },
+    {
+      "file": "web/arc/boosts/bizarre-bone.css",
+      "sha256": "af60bb5466e9c74a62fc1ab5c2e9a134db6df31bb01805c00ea1dab9d25c72cb"
+    },
+    {
+      "file": "web/arc/boosts/bizarre-paper.css",
+      "sha256": "36f15200f2a10ffd1ee07401bf9c043a4573b3ee911778e892e33807204f867b"
+    },
+    {
+      "file": "web/arc/boosts/bizarre-void-hicontrast.css",
+      "sha256": "f97b5e191c76049ed0341045bb3d1ab88c498bab6517062b36588908cedecb1b"
+    },
+    {
+      "file": "web/arc/boosts/bizarre-void.css",
+      "sha256": "dd68cb484491e7ff0cdf20fa02afe67024089168114c4b0085cc8adef391fee5"
+    },
+    {
+      "file": "web/arc/boosts/bizarre-workshop.css",
+      "sha256": "52e6557b7438578561bd717d935e8c091e712df26e4957ec0810b58a3f49475d"
+    },
+    {
+      "file": "web/chrome/bizarre-bone/manifest.json",
+      "sha256": "d57c68c1a1fd1311fd65d9457f31b01c56d29bb312ecfd1c9d80ad1eaa0609ae"
+    },
+    {
+      "file": "web/chrome/bizarre-paper/manifest.json",
+      "sha256": "ea7579ce5a7e3ac40f2fd1bfd1c1db63044f56c68d7b2b68a6dd0d705a87a725"
+    },
+    {
+      "file": "web/chrome/bizarre-void-hicontrast/manifest.json",
+      "sha256": "fb2e174846d70c4ad99e54c25a572118f10463c50ebacff4a6cc5c2dee946b71"
+    },
+    {
+      "file": "web/chrome/bizarre-void/manifest.json",
+      "sha256": "c95a6e5e78771659083485b6ae25abbbef77e40a1d5446c0847b0c10ba8ff195"
+    },
+    {
+      "file": "web/chrome/bizarre-workshop/manifest.json",
+      "sha256": "908bb8de1aead09ba429c71ace769d7c6220cac4aae61b8a6978f5dff375f941"
+    },
+    {
+      "file": "web/documentation-sites/bizarre-bone.css",
+      "sha256": "c01dc1276c759c1b50fec82d9be0690a9b5dba6634c58f985785616ef90e5d4f"
+    },
+    {
+      "file": "web/documentation-sites/bizarre-paper.css",
+      "sha256": "2927dfdd0c5547ba17f01b363a11a1a5758344eeb61e8d05fa936874b6143eb0"
+    },
+    {
+      "file": "web/documentation-sites/bizarre-void-hicontrast.css",
+      "sha256": "1204cff47311b50b4bede4648f6ef023c37142c68049da8c894daff65a3e2aec"
+    },
+    {
+      "file": "web/documentation-sites/bizarre-void.css",
+      "sha256": "8e85f4600d454f27bf54fde6f98abbc4d98bc8c8d967623ea16eca44988a1134"
+    },
+    {
+      "file": "web/documentation-sites/bizarre-workshop.css",
+      "sha256": "a241e95dde407ed4c554cf32a00fcfd7bd21b08836815a62f554a778af8b9cd0"
+    },
+    {
+      "file": "web/firefox/bizarre-bone/manifest.json",
+      "sha256": "b0759c892504893426b9bc556cc2f7add9892420742644f1ba25d7c4028fb11c"
+    },
+    {
+      "file": "web/firefox/bizarre-paper/manifest.json",
+      "sha256": "7c9e79e83dedc6d5e307624b52932063e48a0ef5067a6a41a0ce35edc9138a63"
+    },
+    {
+      "file": "web/firefox/bizarre-void-hicontrast/manifest.json",
+      "sha256": "85444d9c33762f58dc71a13d7f2db0b20cb039552331daeb5332388f352d605a"
+    },
+    {
+      "file": "web/firefox/bizarre-void/manifest.json",
+      "sha256": "bff473453b6d99dbd2d5e674011d8a141d4cf7249127ba806b7b3d8100fd8e06"
+    },
+    {
+      "file": "web/firefox/bizarre-workshop/manifest.json",
+      "sha256": "95ba0e436ac5c7e76a82f1ef9d38c3a2de8162a32a4d8371f8d7dc3b4e710694"
+    },
+    {
+      "file": "web/startpages/bizarre-bone.html",
+      "sha256": "58a4d4299b8cb65566249b5fe707cc5a43988c332d44f0b36f1941566731146a"
+    },
+    {
+      "file": "web/startpages/bizarre-paper.html",
+      "sha256": "bb4aba8a5034e05dd22f5ed76cbba5c839c07a18e1fa35b5e1baafae3044beb2"
+    },
+    {
+      "file": "web/startpages/bizarre-void-hicontrast.html",
+      "sha256": "b7d9fc12f62821534c5b21eda0a7ea5e829f9d52786b5ddc2f7b10d6e57db976"
+    },
+    {
+      "file": "web/startpages/bizarre-void.html",
+      "sha256": "7f9c75aa2c69d2561ced3c41ed6b1071b0fe763de9db52cd114e94a197c27d3e"
+    },
+    {
+      "file": "web/startpages/bizarre-workshop.html",
+      "sha256": "d19e34ee210611b471fc624149dbe0959c388145d15ed9bc91085d87de63528d"
+    },
+    {
+      "file": "web/userstyles/bizarre-bone.user.css",
+      "sha256": "7c61ce823ece8171f728fda4d701a852f2e0523408a76653ae376df225748115"
+    },
+    {
+      "file": "web/userstyles/bizarre-paper.user.css",
+      "sha256": "11248e5d8710bee72638f3a6da5a7bb3797bc12ecee434bc1c4f2d31357cb966"
+    },
+    {
+      "file": "web/userstyles/bizarre-void-hicontrast.user.css",
+      "sha256": "2c2233d8a11c8adea4853882c37855f2df3d4c4cfd74a1cbad764b1522eb21de"
+    },
+    {
+      "file": "web/userstyles/bizarre-void.user.css",
+      "sha256": "eeb967a41031e03b1264e4f825f097d0ebbf1e5d9e8dbb7cf4194d98369673ac"
+    },
+    {
+      "file": "web/userstyles/bizarre-workshop.user.css",
+      "sha256": "19e9d9748e00e4addf172b2b44e64e53975c6c2320dfa083fbe981a8091f0123"
+    },
+    {
+      "file": "web/vivaldi/bizarre-bone/theme.json",
+      "sha256": "ce68838bf92895f570ddfba3fc4f8caeec56f9331daf17d37090863de3805240"
+    },
+    {
+      "file": "web/vivaldi/bizarre-paper/theme.json",
+      "sha256": "18fccf6e3479b72f9b46de9b4da8d9ee0d0b34313a8ba720f6ff55897f98afc5"
+    },
+    {
+      "file": "web/vivaldi/bizarre-void-hicontrast/theme.json",
+      "sha256": "b13b08c7ab71bb613ca403f1a8caccd4fb7d459c28c99a41b72ad02c913bde74"
+    },
+    {
+      "file": "web/vivaldi/bizarre-void/theme.json",
+      "sha256": "6ea81d43904889bfe8870a52546884a1cf967274632c3a31080b263ceefb664e"
+    },
+    {
+      "file": "web/vivaldi/bizarre-workshop/theme.json",
+      "sha256": "2c8a167f05376f906e6f9ac276c3f12cd717e767cfd6bb8088273cd5897016c7"
+    },
+    {
+      "file": "wm/README.md",
+      "sha256": "035540d677e547d11e67e90b6b7dfdc40b38d58c11644d1c476a7286adea3d19"
+    },
+    {
+      "file": "wm/hyprland/bizarre-bone.conf",
+      "sha256": "13ceb4433111032dc6f5efd06b0846d46ee9ebc16f23fe79bf458feb158fb99d"
+    },
+    {
+      "file": "wm/hyprland/bizarre-paper.conf",
+      "sha256": "b839b783b3b6b239afa9f23d5a545d2ef11384f901467e558586eda848837b4c"
+    },
+    {
+      "file": "wm/hyprland/bizarre-void-hicontrast.conf",
+      "sha256": "cde17f806d2192c33ed43932084fca6ec3aeb2a10b89a773bd8b53cf91fd605c"
+    },
+    {
+      "file": "wm/hyprland/bizarre-void.conf",
+      "sha256": "aa25692036d0a3b041c4ec05db7e4b0d7db1de60c34cbab3101076cae96fd0b6"
+    },
+    {
+      "file": "wm/hyprland/bizarre-workshop.conf",
+      "sha256": "658047c4a189e1ba334aacff08bfbdba9f421415e269c2d7948208b89f199744"
+    },
+    {
+      "file": "wm/i3/bizarre-bone.conf",
+      "sha256": "b35658cb3ab7ffeafd74b87e57331a6ccf46997d150aa8abc6a86f60b53f5e0a"
+    },
+    {
+      "file": "wm/i3/bizarre-paper.conf",
+      "sha256": "87146a00346e76638bdf5e2bc72ce7cdd3aaf363c10367d8a1b170f77cf55bd4"
+    },
+    {
+      "file": "wm/i3/bizarre-void-hicontrast.conf",
+      "sha256": "8269d9ecc1fdc7e33ea1edb8250bc8df877fc88f49222c3d820111a38be81185"
+    },
+    {
+      "file": "wm/i3/bizarre-void.conf",
+      "sha256": "240155af8a04853acbb5517e58d69465e0a734abc53c4e051bda676104b3d075"
+    },
+    {
+      "file": "wm/i3/bizarre-workshop.conf",
+      "sha256": "f58195a33de1e1cf59c72c941244ee6e32d5ab9057c504dd65b887329dbe006a"
+    },
+    {
+      "file": "wm/polybar/bizarre-bone.ini",
+      "sha256": "fdce41430e2c332f73da4c4138f2a44684eabf93fe56bf7ecf1f50eefdde1b54"
+    },
+    {
+      "file": "wm/polybar/bizarre-paper.ini",
+      "sha256": "ce71a4092641ccdd69b51c29d0c9b3baa3a43aeced68b935abe78fd5deafe773"
+    },
+    {
+      "file": "wm/polybar/bizarre-void-hicontrast.ini",
+      "sha256": "ade4a5d4ba89b31188a769408d89cc30b34924c7286ac4acfe039d13f7a1f381"
+    },
+    {
+      "file": "wm/polybar/bizarre-void.ini",
+      "sha256": "844b51e2ac0b055b087c049becb198c7118131e430cd4e7b7d10dbbc30523bce"
+    },
+    {
+      "file": "wm/polybar/bizarre-workshop.ini",
+      "sha256": "7747f5f6bcd1d3a8022db5edb7ac6c7df92b8a6dec5ae4cf4cd401ad532d94a7"
+    },
+    {
+      "file": "wm/rofi/bizarre-bone.rasi",
+      "sha256": "2059bb2642cde434e07079bb7c5a9cf7fe972891bf8fd18b6ce2be06662d083a"
+    },
+    {
+      "file": "wm/rofi/bizarre-paper.rasi",
+      "sha256": "ae590dcd0f244ca1362017f320cd0a0b3ceaa70ce045d4a0b2ce2b4af59d0df5"
+    },
+    {
+      "file": "wm/rofi/bizarre-void-hicontrast.rasi",
+      "sha256": "e01785d1f9e3b440e92661aef13e3d683ce04fa5f765f1eddcb8b62489a0c65c"
+    },
+    {
+      "file": "wm/rofi/bizarre-void.rasi",
+      "sha256": "88d8b0ac6785d5d4e66dd1d47d9c3eb25bd096452c421af9c310f58f49e9e489"
+    },
+    {
+      "file": "wm/rofi/bizarre-workshop.rasi",
+      "sha256": "dd7854fde7c9d4c60e55bd777ac3194c06d3b6bc7b476da562ff4ee03061bae4"
+    },
+    {
+      "file": "wm/sketchybar/bizarre.sh",
+      "sha256": "3f39b409be148ad4f7f51db34d863cbf183a2cc938a3c1d5040d18d21825a7de"
+    },
+    {
+      "file": "wm/sway/bizarre-bone.conf",
+      "sha256": "94e717fa24071486db66f40d31b08b8a9ed22c3199df3b03a7bac00c0792162f"
+    },
+    {
+      "file": "wm/sway/bizarre-paper.conf",
+      "sha256": "de38993670b9c833e492e5b50a10a54f62cf65e7c6d44b7f233344564d4b390c"
+    },
+    {
+      "file": "wm/sway/bizarre-void-hicontrast.conf",
+      "sha256": "c7d6611444668f2a7093113d65c8469065d8c1431b76946ac24c2e3436ee98a0"
+    },
+    {
+      "file": "wm/sway/bizarre-void.conf",
+      "sha256": "1910861ef59611f123942085dd60db10e7a3cbcd3ca6c15c6571f60d8dd7543b"
+    },
+    {
+      "file": "wm/sway/bizarre-workshop.conf",
+      "sha256": "ff4efacb095963f74e8bfd38e8805ae8c0a19fccb7ce379cd61faa8a37322cfb"
+    },
+    {
+      "file": "wm/waybar/bizarre-bone.css",
+      "sha256": "61ef4653ba147b9f1e0a1ee98c28753f783b58521be0ce77acc824fecfbe4aee"
+    },
+    {
+      "file": "wm/waybar/bizarre-paper.css",
+      "sha256": "a37da9c1df470225e332d8f0bbd1fdd0651d22e5ab8325129a0d41cda6a7545f"
+    },
+    {
+      "file": "wm/waybar/bizarre-void-hicontrast.css",
+      "sha256": "4b67f212de2f44fb771ace9a332d34f0f5527751a5e7026ddf300c8dc28a029b"
+    },
+    {
+      "file": "wm/waybar/bizarre-void.css",
+      "sha256": "287a055ed2b334c3a9b826e168bc54d2d5d9dafaeef9874c3ea402f05a950056"
+    },
+    {
+      "file": "wm/waybar/bizarre-workshop.css",
+      "sha256": "c6fa85d02397f782fb14affdeab0de06ae47f7d8da0405cb0ca52be1ecef075c"
+    },
+    {
+      "file": "wm/wofi/bizarre-bone.css",
+      "sha256": "464ac82a99ca728c38d573faeba4fc3b8b03dfd589a443e035b331215341bc50"
+    },
+    {
+      "file": "wm/wofi/bizarre-paper.css",
+      "sha256": "693d3e1bf4e6feab74f08e8e633d3c6942069ba659f8861d8a0c506d5248fb68"
+    },
+    {
+      "file": "wm/wofi/bizarre-void-hicontrast.css",
+      "sha256": "cfda7934840f5cc83b8b7fbbe1ae768087f395ab90215f4341b36b92673052ce"
+    },
+    {
+      "file": "wm/wofi/bizarre-void.css",
+      "sha256": "9c3851e46a42583c953ca6b26d5ec35de04bc9d760b4cc4fd5ac4770ab3955f9"
+    },
+    {
+      "file": "wm/wofi/bizarre-workshop.css",
+      "sha256": "4540702120cddc724dfb300dbbfabd3c387452d814bd3cb14bbc1f01f06ee3f1"
+    },
+    {
+      "file": "wm/yabai/bizarre.sh",
+      "sha256": "dbde4590abba5012a6ea956a47b49e209a499f425f001c5407843177b7938272"
+    }
+  ]
+}

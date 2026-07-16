@@ -1,0 +1,19 @@
+{
+  "name": "Bizarre Void",
+  "appearance": "dark",
+  "colors": {
+    "background": "#0E0E0E",
+    "backgroundSecondary": "#1A1A1A",
+    "text": "#E4E4E4",
+    "textSecondary": "#9C9C9C",
+    "border": "#3D3D3D",
+    "selection": "#2B3A0E",
+    "accent": "#C6FF24",
+    "red": "#FF6F77",
+    "orange": "#FFB85C",
+    "yellow": "#E8A33D",
+    "green": "#5BD06B",
+    "blue": "#7BB3FF",
+    "purple": "#D88AE0"
+  }
+}

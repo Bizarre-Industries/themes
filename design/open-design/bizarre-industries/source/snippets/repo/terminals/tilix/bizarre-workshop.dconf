@@ -1,0 +1,12 @@
+[/]
+background-color='#1A1815'
+foreground-color='#E4E2DA'
+cursor-colors-set=true
+cursor-background-color='#C6FF24'
+cursor-foreground-color='#0E0E0E'
+highlight-colors-set=true
+highlight-background-color='#3A3618'
+highlight-foreground-color='#F9F8F2'
+palette=["#1A1815","#F0525B","#3FB950","#E8A33D","#5B9FFF","#D88AE0","#7AD9D9","#E4E4E4","#3D3D3D","#FF6F77","#C6FF24","#FFB85C","#7BB3FF","#E8A8EE","#9DEAEA","#FFFFFF"]
+use-theme-colors=false
+visible-name='Bizarre Workshop'

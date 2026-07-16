@@ -1,0 +1,218 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Bizarre Industries — Colors</title><meta name="description" content="Bizarre Industries Colors Open Design preview." /><link rel="stylesheet" href="../tokens.css" /><link rel="stylesheet" href="../assets/bizarre-tokens.css" /><style>
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px) 0 0 / 64px 64px,
+    var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+}
+button, input { font: inherit; }
+button { color: inherit; }
+img { display: block; max-width: 100%; }
+code, pre, kbd { font-family: var(--font-mono); }
+.preview-root { min-height: 100vh; }
+.container { width: 100%; max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-gutter-desktop); }
+.topbar { border-bottom: 1px solid var(--border-soft); background: var(--surface); }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 64px; padding-block: var(--space-3); }
+.preview-nav { display: flex; gap: var(--space-3); font-family: 'Monaspace Krypton', 'Monaspace Neon', monospace; font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; }
+.preview-nav a { color: var(--fg-2); text-underline-offset: 4px; }
+.preview-nav a:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.preview-title { margin: 0; color: var(--fg); font-family: var(--font-display); font-size: var(--text-lg); line-height: var(--leading-tight); }
+.mode-switcher { min-width: 0; margin: 0; padding: 0; border: 0; }
+.mode-switcher legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.mode-options { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.mode-option { min-height: 32px; padding: var(--space-1) var(--space-2); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg); color: var(--fg); font-family: 'Monaspace Krypton', 'Monaspace Neon', monospace; font-size: var(--text-xs); cursor: pointer; }
+.mode-option:hover { background: var(--surface-warm); }
+.mode-option:active { background: var(--border-soft); }
+.mode-option:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.mode-option[aria-pressed="true"] { background: var(--accent-active); color: var(--accent-on); border-color: var(--accent-active); }
+.hero-section, .section { padding-block: var(--section-y-desktop); }
+.section + .section { border-top: 1px solid var(--border-soft); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr); gap: var(--space-12); align-items: end; }
+.identity-badge { width: min(100%, 480px); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.eyebrow, .pill, .section-num, .section-sub, .slogan-strip, .pane-chrome, .pane-meta, .code-footer, .badge, .field label, .state-label { font-family: 'Monaspace Krypton', 'Monaspace Neon', monospace; letter-spacing: 0.12em; text-transform: uppercase; }
+.eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin: 0 0 var(--space-8); color: var(--fg-2); font-size: var(--text-sm); }
+.pill { display: inline-flex; padding: var(--space-1) var(--space-2); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--fg-2); font-size: var(--text-xs); }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); line-height: var(--leading-tight); }
+.hero-title { max-width: 13ch; font-size: clamp(var(--text-3xl), 7vw, var(--text-4xl)); letter-spacing: var(--tracking-display); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+p { margin: 0; }
+.lede { max-width: 62ch; color: var(--fg-2); font-size: var(--text-lg); }
+.body-muted { color: var(--fg-2); }
+.body-sm { font-size: var(--text-sm); }
+.slogan-strip { display: flex; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-12); padding-block: var(--space-4); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); color: var(--fg-2); font-size: var(--text-sm); }
+.section-heading { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-6); align-items: end; margin-bottom: var(--space-8); padding-bottom: var(--space-4); border-bottom: 1px solid var(--border); }
+.section-num, .section-sub { font-size: var(--text-xs); }
+.section-num { color: var(--fg); }
+.section-sub { color: var(--fg-2); text-align: right; }
+.component-grid, .preview-grid, .state-grid, .palette-grid, .pane-grid, .coverage-grid, .type-grid, .spacing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
+.state-grid, .coverage-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.palette-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card, .panel { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--elev-flat); }
+.card-body { padding: var(--space-6); }
+.config-card { overflow: hidden; }
+.config-title { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-soft); font-family: 'Monaspace Krypton', 'Monaspace Neon', monospace; font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; }
+.config-title strong { display: block; margin-bottom: var(--space-1); font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: 0; text-transform: none; }
+.config-path { color: var(--fg-2); overflow-wrap: anywhere; }
+.swatch { min-height: 112px; display: flex; flex-direction: column; justify-content: end; padding: var(--space-3); border: 1px solid var(--border-soft); border-radius: var(--radius-md); }
+.swatch-bg { background: var(--bg); }
+.swatch-surface { background: var(--surface); }
+.swatch-accent { background: var(--accent-active); color: var(--accent-on); }
+.swatch-danger { background: var(--danger); color: var(--bg); }
+.ansi-grid { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--space-1); }
+.ansi-cell { min-width: 0; }
+.ansi-chip { display: block; height: 44px; border: 1px solid var(--border-soft); border-radius: var(--radius-md); }
+.ansi-cell code { display: block; margin-top: var(--space-1); color: var(--fg-2); font-size: var(--text-xs); overflow: hidden; text-overflow: ellipsis; }
+.syntax-specimen { padding: var(--space-6); overflow-x: auto; font-size: var(--text-base); line-height: 1.65; }
+.syntax-surface { background: var(--bg); }
+.pane-grid { grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); }
+.pane { min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); }
+.pane-chrome { display: flex; align-items: center; gap: var(--space-3); min-height: 42px; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-soft); font-size: var(--text-xs); }
+.dots { display: flex; gap: var(--space-1); }
+.dot { width: 10px; height: 10px; border: 1px solid var(--border); border-radius: 50%; background: var(--surface-warm); }
+.tab-row { display: flex; gap: var(--space-1); min-width: 0; }
+.tab { padding: var(--space-1) var(--space-2); border: 1px solid transparent; border-radius: var(--radius-sm); background: transparent; color: var(--fg-2); cursor: pointer; }
+.tab:hover { color: var(--fg); }
+.tab:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.tab[aria-selected="true"] { border-color: var(--border); background: var(--bg); color: var(--fg); }
+.tab:disabled { cursor: not-allowed; opacity: 0.5; }
+.pane-meta { margin-left: auto; color: var(--fg-2); font-size: var(--text-xs); white-space: nowrap; }
+.code-pane, .terminal-pane { min-height: 286px; padding: var(--space-5); overflow: auto; font-family: var(--font-mono); font-size: var(--text-sm); line-height: 1.65; }
+.code-line { display: grid; grid-template-columns: 32px 1fr; gap: var(--space-3); }
+.gutter { color: var(--fg-2); text-align: right; user-select: none; }
+.terminal-row { white-space: pre-wrap; overflow-wrap: anywhere; }
+.prompt-segment { display: inline-block; margin: var(--space-1) 0; padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); background: var(--accent-active); color: var(--accent-on); font-weight: 700; }
+.code-footer { display: flex; flex-wrap: wrap; gap: var(--space-4); padding: var(--space-2) var(--space-3); border-top: 1px solid var(--border-soft); color: var(--fg-2); font-size: var(--text-xs); }
+.badge { display: inline-flex; align-items: center; padding: var(--space-1) var(--space-2); border: 1px solid currentColor; border-radius: var(--radius-sm); font-size: var(--text-xs); }
+.status-ok { color: var(--success); }
+.status-error { color: var(--danger); }
+.install-snippet { margin: 0; padding: var(--space-4); overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--bg); color: var(--fg); }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.button { min-height: 38px; padding: var(--space-2) var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--fg); cursor: pointer; }
+.button:hover { background: var(--surface-warm); border-color: var(--accent-hover); }
+.button:active { background: var(--border-soft); }
+.button:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.button:disabled { cursor: not-allowed; opacity: 0.5; }
+.button[aria-pressed="true"] { background: var(--accent-active); color: var(--accent-on); border-color: var(--accent-active); }
+.button.is-hover { background: var(--surface-warm); border-color: var(--accent-hover); }
+.button.is-active { background: var(--border-soft); }
+.button.is-focus-visible { box-shadow: var(--focus-ring); }
+.button.is-error { border-color: var(--danger); color: var(--danger); }
+.link { color: var(--fg); text-decoration-color: var(--accent-active); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.link:hover { text-decoration-thickness: 2px; }
+.link:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.field { display: grid; gap: var(--space-2); }
+.field label { color: var(--fg); font-size: var(--text-xs); }
+.field input { width: 100%; min-height: 40px; padding: var(--space-2) var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--bg); color: var(--fg); }
+.field input:hover { border-color: var(--accent-hover); }
+.field input:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.field input:disabled { opacity: 0.5; }
+.field input[aria-invalid="true"] { border-color: var(--danger); }
+.field-error { color: var(--danger); font-size: var(--text-sm); }
+.state-label { display: block; margin-bottom: var(--space-2); color: var(--fg-2); font-size: var(--text-xs); }
+.kbd { display: inline-flex; min-width: 28px; min-height: 26px; align-items: center; justify-content: center; padding: var(--space-1) var(--space-2); border: 1px solid var(--border); border-bottom-width: 2px; border-radius: var(--radius-sm); background: var(--surface); }
+.light-stage { padding: var(--space-5); border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg); color: var(--fg); }
+.variant-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-3); }
+.variant-card { min-width: 0; padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg); color: var(--fg); }
+.variant-strip { display: grid; grid-template-columns: repeat(4, 1fr); height: 36px; margin-top: var(--space-4); border: 1px solid var(--border-soft); border-radius: var(--radius-md); overflow: hidden; }
+.variant-strip span:nth-child(1) { background: var(--bg); }
+.variant-strip span:nth-child(2) { background: var(--surface); }
+.variant-strip span:nth-child(3) { background: var(--border); }
+.variant-strip span:nth-child(4) { background: var(--accent-active); }
+.source-figure { margin: var(--space-6) 0 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); }
+.source-figure img { width: 100%; }
+.source-figure figcaption { padding: var(--space-3); border-top: 1px solid var(--border-soft); color: var(--fg-2); font-size: var(--text-sm); }
+.type-sample { padding: var(--space-5); border-top: 1px solid var(--border-soft); }
+.type-sample:first-child { border-top: 0; }
+.type-display { font-family: 'Monaspace Xenon', 'Monaspace Neon', monospace; font-size: var(--text-2xl); font-weight: 700; }
+.type-label { font-family: 'Monaspace Krypton', 'Monaspace Neon', monospace; letter-spacing: 0.12em; text-transform: uppercase; }
+.type-code { font-family: 'Monaspace Neon', monospace; }
+.type-prose { font-family: 'Monaspace Argon', 'Monaspace Neon', monospace; }
+.spacing-sample { min-height: 96px; display: flex; align-items: end; gap: var(--space-2); padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); }
+.spacing-bar { width: 32px; border: 1px solid var(--border); background: var(--surface-warm); }
+.spacing-4 { height: var(--space-1); }
+.spacing-8 { height: var(--space-2); }
+.spacing-16 { height: var(--space-4); }
+.spacing-24 { height: var(--space-6); }
+.spacing-32 { height: var(--space-8); }
+.radius-two { border-radius: var(--radius-sm); }
+.radius-four { border-radius: var(--radius-md); }
+.radius-six { border-radius: var(--radius-lg); }
+.coverage-card { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); padding: var(--space-4); }
+.coverage-count { font-family: var(--font-display); font-size: var(--text-2xl); }
+.app-shell { display: grid; grid-template-columns: 220px minmax(0, 1fr); min-height: 500px; overflow: hidden; }
+.app-sidebar { padding: var(--space-5); border-right: 1px solid var(--border-soft); }
+.app-sidebar ul { margin: var(--space-4) 0 0; padding: 0; list-style: none; }
+.app-sidebar li { padding-block: var(--space-2); border-bottom: 1px solid var(--border-soft); }
+.app-main { padding: var(--space-6); }
+.footer { display: flex; align-items: center; gap: var(--space-4); padding-block: var(--space-12); color: var(--fg-2); font-family: 'Monaspace Krypton', 'Monaspace Neon', monospace; font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; }
+.footer-line { flex: 1; height: 1px; background: var(--border-soft); }
+@media (max-width: 900px) {
+  .container { padding-inline: var(--container-gutter-phone); }
+  .topbar-inner { align-items: flex-start; flex-direction: column; }
+  .hero-section, .section { padding-block: var(--section-y-phone); }
+  .hero-grid, .component-grid, .preview-grid, .state-grid, .palette-grid, .pane-grid, .coverage-grid, .type-grid, .spacing-grid, .variant-grid, .app-shell { grid-template-columns: minmax(0, 1fr); }
+  .section-heading { grid-template-columns: minmax(0, 1fr); }
+  .section-sub { text-align: left; }
+  .ansi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .app-sidebar { border-right: 0; border-bottom: 1px solid var(--border-soft); }
+}
+</style></head><body><div class="preview-root" data-preview-root data-bizarre-theme="void"><header class="topbar"><div class="container topbar-inner"><nav class="preview-nav" aria-label="Preview navigation"><a href="./overview.html">Overview</a><a href="../DESIGN.md">DESIGN.md</a></nav><h1 class="preview-title">Colors</h1><fieldset class="mode-switcher">
+  <legend>Artifact mode</legend><div class="mode-options">
+  <button type="button" class="mode-option" data-theme-option="void" aria-pressed="true">Bizarre Void</button>
+  <button type="button" class="mode-option" data-theme-option="void-hicontrast" aria-pressed="false">Bizarre Void Hi-Contrast</button>
+  <button type="button" class="mode-option" data-theme-option="workshop" aria-pressed="false">Bizarre Workshop</button>
+  <button type="button" class="mode-option" data-theme-option="paper" aria-pressed="false">Bizarre Paper</button>
+  <button type="button" class="mode-option" data-theme-option="bone" aria-pressed="false">Bizarre Bone</button>
+  </div></fieldset></div></header><main class="container"><section class="section" data-source-evidence="palette.js brand, status, and variants"><div class="section-heading"><span class="section-num">§ 01 / COLORS</span><h2>Two limes. One brand.</h2><span class="section-sub">surfaces · foregrounds · borders · status</span></div><div class="palette-grid"><article class="swatch swatch-bg"><strong>Void</strong><code>--bg</code></article><article class="swatch swatch-surface"><strong>Raised surface</strong><code>--surface</code></article><article class="swatch swatch-accent"><strong>Signal Lime / Lime Ink</strong><code>--accent-active</code></article><article class="swatch swatch-danger"><strong>Error</strong><code>--danger</code></article></div><div class="card card-body"><div class="ansi-grid"><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-black" aria-hidden="true"></span><code>black</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-red" aria-hidden="true"></span><code>red</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-green" aria-hidden="true"></span><code>green</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-yellow" aria-hidden="true"></span><code>yellow</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-blue" aria-hidden="true"></span><code>blue</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-magenta" aria-hidden="true"></span><code>magenta</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-cyan" aria-hidden="true"></span><code>cyan</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-white" aria-hidden="true"></span><code>white</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-bright-black" aria-hidden="true"></span><code>bright-black</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-bright-red" aria-hidden="true"></span><code>bright-red</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-bright-green" aria-hidden="true"></span><code>bright-green</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-bright-yellow" aria-hidden="true"></span><code>bright-yellow</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-bright-blue" aria-hidden="true"></span><code>bright-blue</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-bright-magenta" aria-hidden="true"></span><code>bright-magenta</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-bright-cyan" aria-hidden="true"></span><code>bright-cyan</code></div><div class="ansi-cell"><span class="ansi-chip bzr-ansi-bg-bright-white" aria-hidden="true"></span><code>bright-white</code></div></div></div><figure class="source-figure"><img src="../assets/showcase/palette-ansi.png" alt="Bizarre palette and ANSI evidence" /><figcaption>Real repository capture: showcase/assets/generated/palette-ansi.png</figcaption></figure></section></main><footer class="container footer"><span>BZR / THEMES / V0.2</span><span class="footer-line"></span><span>✦ CATCH THE STARS.</span></footer></div><script>
+(() => {
+  const root = document.querySelector('[data-preview-root]');
+  const options = [...document.querySelectorAll('[data-theme-option]')];
+  for (const option of options) {
+    option.addEventListener('click', () => {
+      root.setAttribute('data-bizarre-theme', option.getAttribute('data-theme-option'));
+      for (const candidate of options) {
+        candidate.setAttribute('aria-pressed', candidate === option ? 'true' : 'false');
+      }
+    });
+  }
+
+  const activateTab = (tab) => {
+    const tablist = tab.closest('[role=tablist]');
+    const tabs = [...tablist.querySelectorAll('[role=tab]')];
+    for (const candidate of tabs) {
+      const selected = candidate === tab;
+      candidate.setAttribute('aria-selected', selected ? 'true' : 'false');
+      candidate.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(candidate.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !selected;
+    }
+    tab.focus();
+  };
+
+  for (const tablist of document.querySelectorAll('[role=tablist]')) {
+    const tabs = [...tablist.querySelectorAll('[role=tab]')];
+    for (const tab of tabs) {
+      tab.addEventListener('click', () => activateTab(tab));
+      tab.addEventListener('keydown', (event) => {
+        const index = tabs.indexOf(tab);
+        let nextIndex;
+        if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+        else if (event.key === 'Home') nextIndex = 0;
+        else if (event.key === 'End') nextIndex = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        activateTab(tabs[nextIndex]);
+      });
+    }
+  }
+})();
+</script></body></html>
