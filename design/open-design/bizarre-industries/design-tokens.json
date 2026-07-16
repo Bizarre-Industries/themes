@@ -1,0 +1,1615 @@
+{
+  "schemaVersion": 1,
+  "format": "od-design-tokens/v1",
+  "contract": "TOKEN_SCHEMA",
+  "source": {
+    "tokensCss": "tokens.css",
+    "tokenContractReport": "source/token-contract.report.json"
+  },
+  "summary": {
+    "totalTokens": 56,
+    "declaredTokens": 56,
+    "sourceBackedTokens": 56,
+    "sourceBackedA1": 26,
+    "requiredA1": 26,
+    "fallbackTokens": 0,
+    "aliasTokens": 0,
+    "score": 100,
+    "grade": "excellent",
+    "recommendRebuild": false
+  },
+  "tokens": [
+    {
+      "name": "--bg",
+      "value": "#0E0E0E",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--bg"
+    },
+    {
+      "name": "--surface",
+      "value": "#1A1A1A",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--surface"
+    },
+    {
+      "name": "--surface-warm",
+      "value": "#2B2B2B",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--surface-warm"
+    },
+    {
+      "name": "--fg",
+      "value": "#E4E4E4",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--fg"
+    },
+    {
+      "name": "--fg-2",
+      "value": "#9C9C9C",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--fg-2"
+    },
+    {
+      "name": "--muted",
+      "value": "#7A7A7A",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--muted"
+    },
+    {
+      "name": "--meta",
+      "value": "#545454",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--meta"
+    },
+    {
+      "name": "--border",
+      "value": "#3D3D3D",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--border"
+    },
+    {
+      "name": "--border-soft",
+      "value": "#1A1A1A",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--border-soft"
+    },
+    {
+      "name": "--accent",
+      "value": "#C6FF24",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--accent"
+    },
+    {
+      "name": "--accent-on",
+      "value": "#0E0E0E",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Contrast foreground selected from canonical colors by explicit WCAG mapping.",
+      "sources": [
+        "explicit/WCAG contrast mapping"
+      ],
+      "sourceName": "--accent-on"
+    },
+    {
+      "name": "--accent-hover",
+      "value": "#C6FF24",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--accent-hover"
+    },
+    {
+      "name": "--accent-active",
+      "value": "#C6FF24",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--accent-active"
+    },
+    {
+      "name": "--success",
+      "value": "#5BD06B",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--success"
+    },
+    {
+      "name": "--warn",
+      "value": "#FFB85C",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--warn"
+    },
+    {
+      "name": "--danger",
+      "value": "#FF6F77",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--danger"
+    },
+    {
+      "name": "--font-display",
+      "value": "'Monaspace Xenon', 'Monaspace Neon', 'Menlo', monospace",
+      "type": "fontFamily",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--font-display"
+    },
+    {
+      "name": "--font-body",
+      "value": "'Monaspace Argon', 'Monaspace Neon', ui-monospace, monospace",
+      "type": "fontFamily",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--font-body"
+    },
+    {
+      "name": "--font-mono",
+      "value": "'Monaspace Neon', 'Menlo', 'SFMono-Regular', monospace",
+      "type": "fontFamily",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Canonical Bizarre Void value from palette.js.",
+      "sources": [
+        "palette.js"
+      ],
+      "sourceName": "--font-mono"
+    },
+    {
+      "name": "--text-xs",
+      "value": "10px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --text-xs.",
+      "sources": [
+        "showcase/showcase.css:.lime-meta"
+      ],
+      "sourceName": "--text-xs"
+    },
+    {
+      "name": "--text-sm",
+      "value": "11px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --text-sm.",
+      "sources": [
+        "showcase/showcase.css:.eyebrow"
+      ],
+      "sourceName": "--text-sm"
+    },
+    {
+      "name": "--text-base",
+      "value": "13px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --text-base.",
+      "sources": [
+        "showcase/showcase.css:.code"
+      ],
+      "sourceName": "--text-base"
+    },
+    {
+      "name": "--text-lg",
+      "value": "17px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --text-lg.",
+      "sources": [
+        "showcase/showcase.css:.lede"
+      ],
+      "sourceName": "--text-lg"
+    },
+    {
+      "name": "--text-xl",
+      "value": "18px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --text-xl.",
+      "sources": [
+        "showcase/showcase.css:.variant-name"
+      ],
+      "sourceName": "--text-xl"
+    },
+    {
+      "name": "--text-2xl",
+      "value": "30px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --text-2xl.",
+      "sources": [
+        "showcase/showcase.css:.section-title"
+      ],
+      "sourceName": "--text-2xl"
+    },
+    {
+      "name": "--text-3xl",
+      "value": "48px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --text-3xl.",
+      "sources": [
+        "showcase/showcase.css:.h1 minimum"
+      ],
+      "sourceName": "--text-3xl"
+    },
+    {
+      "name": "--text-4xl",
+      "value": "96px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --text-4xl.",
+      "sources": [
+        "showcase/showcase.css:.h1 maximum"
+      ],
+      "sourceName": "--text-4xl"
+    },
+    {
+      "name": "--leading-body",
+      "value": "1.6",
+      "type": "number",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --leading-body.",
+      "sources": [
+        "showcase/showcase.css:.lede"
+      ],
+      "sourceName": "--leading-body"
+    },
+    {
+      "name": "--leading-tight",
+      "value": "0.94",
+      "type": "number",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --leading-tight.",
+      "sources": [
+        "showcase/showcase.css:.h1"
+      ],
+      "sourceName": "--leading-tight"
+    },
+    {
+      "name": "--tracking-display",
+      "value": "0",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --tracking-display.",
+      "sources": [
+        "showcase/showcase.css:.h1"
+      ],
+      "sourceName": "--tracking-display"
+    },
+    {
+      "name": "--space-1",
+      "value": "4px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --space-1.",
+      "sources": [
+        "showcase/showcase.css:.mini-ansi gap"
+      ],
+      "sourceName": "--space-1"
+    },
+    {
+      "name": "--space-2",
+      "value": "8px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --space-2.",
+      "sources": [
+        "showcase/showcase.css:.ansi-cell padding"
+      ],
+      "sourceName": "--space-2"
+    },
+    {
+      "name": "--space-3",
+      "value": "12px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --space-3.",
+      "sources": [
+        "showcase/showcase.css:.eyebrow gap"
+      ],
+      "sourceName": "--space-3"
+    },
+    {
+      "name": "--space-4",
+      "value": "16px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --space-4.",
+      "sources": [
+        "showcase/showcase.css:.slogan-strip padding"
+      ],
+      "sourceName": "--space-4"
+    },
+    {
+      "name": "--space-5",
+      "value": "18px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --space-5.",
+      "sources": [
+        "showcase/showcase.css:.hero-meta gap"
+      ],
+      "sourceName": "--space-5"
+    },
+    {
+      "name": "--space-6",
+      "value": "24px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --space-6.",
+      "sources": [
+        "showcase/showcase.css:.section-head gap"
+      ],
+      "sourceName": "--space-6"
+    },
+    {
+      "name": "--space-8",
+      "value": "32px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --space-8.",
+      "sources": [
+        "showcase/showcase.css:.section-head margin"
+      ],
+      "sourceName": "--space-8"
+    },
+    {
+      "name": "--space-12",
+      "value": "56px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --space-12.",
+      "sources": [
+        "showcase/showcase.css:.hero-grid gap"
+      ],
+      "sourceName": "--space-12"
+    },
+    {
+      "name": "--section-y-desktop",
+      "value": "88px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --section-y-desktop.",
+      "sources": [
+        "showcase/showcase.css:.section"
+      ],
+      "sourceName": "--section-y-desktop"
+    },
+    {
+      "name": "--section-y-tablet",
+      "value": "88px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --section-y-tablet.",
+      "sources": [
+        "showcase/showcase.css:.section"
+      ],
+      "sourceName": "--section-y-tablet"
+    },
+    {
+      "name": "--section-y-phone",
+      "value": "88px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --section-y-phone.",
+      "sources": [
+        "showcase/showcase.css:.section"
+      ],
+      "sourceName": "--section-y-phone"
+    },
+    {
+      "name": "--radius-sm",
+      "value": "2px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --radius-sm.",
+      "sources": [
+        "showcase/showcase.css:.pill"
+      ],
+      "sourceName": "--radius-sm"
+    },
+    {
+      "name": "--radius-md",
+      "value": "4px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --radius-md.",
+      "sources": [
+        "showcase/showcase.css:.lime-swatch"
+      ],
+      "sourceName": "--radius-md"
+    },
+    {
+      "name": "--radius-lg",
+      "value": "6px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --radius-lg.",
+      "sources": [
+        "showcase/showcase.css:.variant-card"
+      ],
+      "sourceName": "--radius-lg"
+    },
+    {
+      "name": "--radius-pill",
+      "value": "2px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --radius-pill.",
+      "sources": [
+        "showcase/showcase.css:.pill"
+      ],
+      "sourceName": "--radius-pill"
+    },
+    {
+      "name": "--elev-flat",
+      "value": "none",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --elev-flat.",
+      "sources": [
+        "derived/showcase"
+      ],
+      "sourceName": "--elev-flat"
+    },
+    {
+      "name": "--elev-ring",
+      "value": "0 0 0 1px var(--border)",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --elev-ring.",
+      "sources": [
+        "showcase/showcase.css:hairline borders"
+      ],
+      "sourceName": "--elev-ring"
+    },
+    {
+      "name": "--elev-raised",
+      "value": "none",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --elev-raised.",
+      "sources": [
+        "derived/showcase"
+      ],
+      "sourceName": "--elev-raised"
+    },
+    {
+      "name": "--focus-ring",
+      "value": "0 0 0 2px var(--accent)",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --focus-ring.",
+      "sources": [
+        "derived/accessibility"
+      ],
+      "sourceName": "--focus-ring"
+    },
+    {
+      "name": "--motion-fast",
+      "value": "0ms",
+      "type": "duration",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --motion-fast.",
+      "sources": [
+        "explicit neutral:no general motion contract"
+      ],
+      "sourceName": "--motion-fast"
+    },
+    {
+      "name": "--motion-base",
+      "value": "0ms",
+      "type": "duration",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --motion-base.",
+      "sources": [
+        "explicit neutral:no general motion contract"
+      ],
+      "sourceName": "--motion-base"
+    },
+    {
+      "name": "--ease-standard",
+      "value": "linear",
+      "type": "cubicBezier",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --ease-standard.",
+      "sources": [
+        "explicit neutral:no general motion contract"
+      ],
+      "sourceName": "--ease-standard"
+    },
+    {
+      "name": "--container-max",
+      "value": "100%",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --container-max.",
+      "sources": [
+        "showcase/showcase.css full-width sections"
+      ],
+      "sourceName": "--container-max"
+    },
+    {
+      "name": "--container-gutter-desktop",
+      "value": "64px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --container-gutter-desktop.",
+      "sources": [
+        "showcase/showcase.css:.section"
+      ],
+      "sourceName": "--container-gutter-desktop"
+    },
+    {
+      "name": "--container-gutter-tablet",
+      "value": "20px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --container-gutter-tablet.",
+      "sources": [
+        "showcase/showcase.css media rule"
+      ],
+      "sourceName": "--container-gutter-tablet"
+    },
+    {
+      "name": "--container-gutter-phone",
+      "value": "20px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Source-backed structural value; palette.js does not define --container-gutter-phone.",
+      "sources": [
+        "showcase/showcase.css media rule"
+      ],
+      "sourceName": "--container-gutter-phone"
+    }
+  ],
+  "defaultMode": "void",
+  "modes": {
+    "void": {
+      "label": "Bizarre Void",
+      "description": "pure void · lime accent · the default",
+      "theme": "dark",
+      "openDesign": {
+        "--bg": "#0E0E0E",
+        "--surface": "#1A1A1A",
+        "--surface-warm": "#2B2B2B",
+        "--fg": "#E4E4E4",
+        "--fg-2": "#9C9C9C",
+        "--muted": "#7A7A7A",
+        "--meta": "#545454",
+        "--border": "#3D3D3D",
+        "--border-soft": "#1A1A1A",
+        "--accent": "#C6FF24",
+        "--accent-on": "#0E0E0E",
+        "--accent-hover": "#C6FF24",
+        "--accent-active": "#C6FF24",
+        "--success": "#5BD06B",
+        "--warn": "#FFB85C",
+        "--danger": "#FF6F77",
+        "--font-display": "'Monaspace Xenon', 'Monaspace Neon', 'Menlo', monospace",
+        "--font-body": "'Monaspace Argon', 'Monaspace Neon', ui-monospace, monospace",
+        "--font-mono": "'Monaspace Neon', 'Menlo', 'SFMono-Regular', monospace",
+        "--text-xs": "10px",
+        "--text-sm": "11px",
+        "--text-base": "13px",
+        "--text-lg": "17px",
+        "--text-xl": "18px",
+        "--text-2xl": "30px",
+        "--text-3xl": "48px",
+        "--text-4xl": "96px",
+        "--leading-body": "1.6",
+        "--leading-tight": "0.94",
+        "--tracking-display": "0",
+        "--space-1": "4px",
+        "--space-2": "8px",
+        "--space-3": "12px",
+        "--space-4": "16px",
+        "--space-5": "18px",
+        "--space-6": "24px",
+        "--space-8": "32px",
+        "--space-12": "56px",
+        "--section-y-desktop": "88px",
+        "--section-y-tablet": "88px",
+        "--section-y-phone": "88px",
+        "--radius-sm": "2px",
+        "--radius-md": "4px",
+        "--radius-lg": "6px",
+        "--radius-pill": "2px",
+        "--elev-flat": "none",
+        "--elev-ring": "0 0 0 1px var(--border)",
+        "--elev-raised": "none",
+        "--focus-ring": "0 0 0 2px var(--accent)",
+        "--motion-fast": "0ms",
+        "--motion-base": "0ms",
+        "--ease-standard": "linear",
+        "--container-max": "100%",
+        "--container-gutter-desktop": "64px",
+        "--container-gutter-tablet": "20px",
+        "--container-gutter-phone": "20px"
+      },
+      "bizarre": {
+        "--bzr-signal-lime": "#C6FF24",
+        "--bzr-lime-glow": "#E8FF8A",
+        "--bzr-lime-ink": "#5F8A0F",
+        "--bzr-lime-text": "#4A7409",
+        "--bzr-acid-lime": "#A8FF00",
+        "--bzr-void-gray": "#545454",
+        "--bzr-bg": "#0E0E0E",
+        "--bzr-bg-2": "#1A1A1A",
+        "--bzr-bg-3": "#2B2B2B",
+        "--bzr-bg-4": "#3D3D3D",
+        "--bzr-fg": "#E4E4E4",
+        "--bzr-fg-dim": "#9C9C9C",
+        "--bzr-fg-faint": "#7A7A7A",
+        "--bzr-fg-ghost": "#545454",
+        "--bzr-selection": "#2B3A0E",
+        "--bzr-line": "#1A1A1A",
+        "--bzr-border": "#3D3D3D",
+        "--bzr-accent": "#C6FF24",
+        "--bzr-accent-text": "#C6FF24",
+        "--bzr-accent-soft": "#E8FF8A",
+        "--bzr-info": "#7BB3FF",
+        "--bzr-hint": "#D88AE0",
+        "--bzr-font-label": "'Monaspace Krypton', 'Monaspace Neon', monospace",
+        "--bzr-font-hand": "'Monaspace Radon', 'Monaspace Neon', monospace",
+        "--bzr-syntax-plain": "#E4E4E4",
+        "--bzr-syntax-punct": "#828282",
+        "--bzr-syntax-op": "#9DEAEA",
+        "--bzr-syntax-kw-ctrl": "#FF8FCF",
+        "--bzr-syntax-kw-decl": "#D88AE0",
+        "--bzr-syntax-kw-mod": "#B989E5",
+        "--bzr-syntax-string": "#E8A33D",
+        "--bzr-syntax-tmpl": "#FFC36B",
+        "--bzr-syntax-esc": "#FFE08A",
+        "--bzr-syntax-rgx": "#FF9E3D",
+        "--bzr-syntax-num": "#7BB3FF",
+        "--bzr-syntax-bool": "#5B9FFF",
+        "--bzr-syntax-constant": "#9DD0FF",
+        "--bzr-syntax-type": "#7AD9D9",
+        "--bzr-syntax-tprim": "#7AD9D9",
+        "--bzr-syntax-fn": "#C6FF24",
+        "--bzr-syntax-method": "#A8E658",
+        "--bzr-syntax-prop": "#C6E58B",
+        "--bzr-syntax-param": "#FFB07A",
+        "--bzr-syntax-variable": "#E4E4E4",
+        "--bzr-syntax-self": "#FF8FCF",
+        "--bzr-syntax-builtin": "#E8A33D",
+        "--bzr-syntax-ns": "#9DEAEA",
+        "--bzr-syntax-decorator": "#FF8FCF",
+        "--bzr-syntax-pre": "#B989E5",
+        "--bzr-syntax-comment": "#828282",
+        "--bzr-syntax-doc-comment": "#9AB585",
+        "--bzr-syntax-tag": "#FF8FCF",
+        "--bzr-syntax-attr": "#C6FF24",
+        "--bzr-syntax-error": "#FF6F77",
+        "--bzr-syntax-warn": "#FFB85C",
+        "--bzr-syntax-ok": "#5BD06B",
+        "--bzr-syntax-info": "#7BB3FF",
+        "--bzr-syntax-hint": "#D88AE0",
+        "--bzr-status-error": "#FF6F77",
+        "--bzr-status-warn": "#FFB85C",
+        "--bzr-status-ok": "#5BD06B",
+        "--bzr-status-info": "#7BB3FF",
+        "--bzr-status-hint": "#D88AE0",
+        "--bzr-ansi-black": "#1A1A1A",
+        "--bzr-ansi-red": "#F0525B",
+        "--bzr-ansi-green": "#3FB950",
+        "--bzr-ansi-yellow": "#E8A33D",
+        "--bzr-ansi-blue": "#5B9FFF",
+        "--bzr-ansi-magenta": "#D88AE0",
+        "--bzr-ansi-cyan": "#7AD9D9",
+        "--bzr-ansi-white": "#E4E4E4",
+        "--bzr-ansi-bright-black": "#3D3D3D",
+        "--bzr-ansi-bright-red": "#FF6F77",
+        "--bzr-ansi-bright-green": "#C6FF24",
+        "--bzr-ansi-bright-yellow": "#FFB85C",
+        "--bzr-ansi-bright-blue": "#7BB3FF",
+        "--bzr-ansi-bright-magenta": "#E8A8EE",
+        "--bzr-ansi-bright-cyan": "#9DEAEA",
+        "--bzr-ansi-bright-white": "#FFFFFF",
+        "--bzr-cursor": "#C6FF24",
+        "--bzr-cursor-blink": "1.1s steps(1)"
+      }
+    },
+    "void-hicontrast": {
+      "label": "Bizarre Void Hi-Contrast",
+      "description": "pure black · max lime · OLED / projector",
+      "theme": "dark",
+      "openDesign": {
+        "--bg": "#000000",
+        "--surface": "#0E0E0E",
+        "--surface-warm": "#1F1F1F",
+        "--fg": "#F9F8F2",
+        "--fg-2": "#B8B8B8",
+        "--muted": "#7A7A7A",
+        "--meta": "#545454",
+        "--border": "#545454",
+        "--border-soft": "#0E0E0E",
+        "--accent": "#C6FF24",
+        "--accent-on": "#0E0E0E",
+        "--accent-hover": "#C6FF24",
+        "--accent-active": "#C6FF24",
+        "--success": "#5BD06B",
+        "--warn": "#FFB85C",
+        "--danger": "#FF6F77",
+        "--font-display": "'Monaspace Xenon', 'Monaspace Neon', 'Menlo', monospace",
+        "--font-body": "'Monaspace Argon', 'Monaspace Neon', ui-monospace, monospace",
+        "--font-mono": "'Monaspace Neon', 'Menlo', 'SFMono-Regular', monospace",
+        "--text-xs": "10px",
+        "--text-sm": "11px",
+        "--text-base": "13px",
+        "--text-lg": "17px",
+        "--text-xl": "18px",
+        "--text-2xl": "30px",
+        "--text-3xl": "48px",
+        "--text-4xl": "96px",
+        "--leading-body": "1.6",
+        "--leading-tight": "0.94",
+        "--tracking-display": "0",
+        "--space-1": "4px",
+        "--space-2": "8px",
+        "--space-3": "12px",
+        "--space-4": "16px",
+        "--space-5": "18px",
+        "--space-6": "24px",
+        "--space-8": "32px",
+        "--space-12": "56px",
+        "--section-y-desktop": "88px",
+        "--section-y-tablet": "88px",
+        "--section-y-phone": "88px",
+        "--radius-sm": "2px",
+        "--radius-md": "4px",
+        "--radius-lg": "6px",
+        "--radius-pill": "2px",
+        "--elev-flat": "none",
+        "--elev-ring": "0 0 0 1px var(--border)",
+        "--elev-raised": "none",
+        "--focus-ring": "0 0 0 2px var(--accent)",
+        "--motion-fast": "0ms",
+        "--motion-base": "0ms",
+        "--ease-standard": "linear",
+        "--container-max": "100%",
+        "--container-gutter-desktop": "64px",
+        "--container-gutter-tablet": "20px",
+        "--container-gutter-phone": "20px"
+      },
+      "bizarre": {
+        "--bzr-signal-lime": "#C6FF24",
+        "--bzr-lime-glow": "#E8FF8A",
+        "--bzr-lime-ink": "#5F8A0F",
+        "--bzr-lime-text": "#4A7409",
+        "--bzr-acid-lime": "#A8FF00",
+        "--bzr-void-gray": "#545454",
+        "--bzr-bg": "#000000",
+        "--bzr-bg-2": "#0E0E0E",
+        "--bzr-bg-3": "#1F1F1F",
+        "--bzr-bg-4": "#3D3D3D",
+        "--bzr-fg": "#F9F8F2",
+        "--bzr-fg-dim": "#B8B8B8",
+        "--bzr-fg-faint": "#7A7A7A",
+        "--bzr-fg-ghost": "#545454",
+        "--bzr-selection": "#3A4D0E",
+        "--bzr-line": "#0E0E0E",
+        "--bzr-border": "#545454",
+        "--bzr-accent": "#C6FF24",
+        "--bzr-accent-text": "#C6FF24",
+        "--bzr-accent-soft": "#E8FF8A",
+        "--bzr-info": "#7BB3FF",
+        "--bzr-hint": "#D88AE0",
+        "--bzr-font-label": "'Monaspace Krypton', 'Monaspace Neon', monospace",
+        "--bzr-font-hand": "'Monaspace Radon', 'Monaspace Neon', monospace",
+        "--bzr-syntax-plain": "#E4E4E4",
+        "--bzr-syntax-punct": "#828282",
+        "--bzr-syntax-op": "#9DEAEA",
+        "--bzr-syntax-kw-ctrl": "#FF8FCF",
+        "--bzr-syntax-kw-decl": "#D88AE0",
+        "--bzr-syntax-kw-mod": "#B989E5",
+        "--bzr-syntax-string": "#E8A33D",
+        "--bzr-syntax-tmpl": "#FFC36B",
+        "--bzr-syntax-esc": "#FFE08A",
+        "--bzr-syntax-rgx": "#FF9E3D",
+        "--bzr-syntax-num": "#7BB3FF",
+        "--bzr-syntax-bool": "#5B9FFF",
+        "--bzr-syntax-constant": "#9DD0FF",
+        "--bzr-syntax-type": "#7AD9D9",
+        "--bzr-syntax-tprim": "#7AD9D9",
+        "--bzr-syntax-fn": "#C6FF24",
+        "--bzr-syntax-method": "#A8E658",
+        "--bzr-syntax-prop": "#C6E58B",
+        "--bzr-syntax-param": "#FFB07A",
+        "--bzr-syntax-variable": "#E4E4E4",
+        "--bzr-syntax-self": "#FF8FCF",
+        "--bzr-syntax-builtin": "#E8A33D",
+        "--bzr-syntax-ns": "#9DEAEA",
+        "--bzr-syntax-decorator": "#FF8FCF",
+        "--bzr-syntax-pre": "#B989E5",
+        "--bzr-syntax-comment": "#828282",
+        "--bzr-syntax-doc-comment": "#9AB585",
+        "--bzr-syntax-tag": "#FF8FCF",
+        "--bzr-syntax-attr": "#C6FF24",
+        "--bzr-syntax-error": "#FF6F77",
+        "--bzr-syntax-warn": "#FFB85C",
+        "--bzr-syntax-ok": "#5BD06B",
+        "--bzr-syntax-info": "#7BB3FF",
+        "--bzr-syntax-hint": "#D88AE0",
+        "--bzr-status-error": "#FF6F77",
+        "--bzr-status-warn": "#FFB85C",
+        "--bzr-status-ok": "#5BD06B",
+        "--bzr-status-info": "#7BB3FF",
+        "--bzr-status-hint": "#D88AE0",
+        "--bzr-ansi-black": "#000000",
+        "--bzr-ansi-red": "#F0525B",
+        "--bzr-ansi-green": "#3FB950",
+        "--bzr-ansi-yellow": "#E8A33D",
+        "--bzr-ansi-blue": "#5B9FFF",
+        "--bzr-ansi-magenta": "#D88AE0",
+        "--bzr-ansi-cyan": "#7AD9D9",
+        "--bzr-ansi-white": "#E4E4E4",
+        "--bzr-ansi-bright-black": "#3D3D3D",
+        "--bzr-ansi-bright-red": "#FF6F77",
+        "--bzr-ansi-bright-green": "#C6FF24",
+        "--bzr-ansi-bright-yellow": "#FFB85C",
+        "--bzr-ansi-bright-blue": "#7BB3FF",
+        "--bzr-ansi-bright-magenta": "#E8A8EE",
+        "--bzr-ansi-bright-cyan": "#9DEAEA",
+        "--bzr-ansi-bright-white": "#FFFFFF",
+        "--bzr-cursor": "#C6FF24",
+        "--bzr-cursor-blink": "1.1s steps(1)"
+      }
+    },
+    "workshop": {
+      "label": "Bizarre Workshop",
+      "description": "warm dark · lower contrast · long sessions",
+      "theme": "dark",
+      "openDesign": {
+        "--bg": "#1A1815",
+        "--surface": "#23211C",
+        "--surface-warm": "#2D2A23",
+        "--fg": "#E4E2DA",
+        "--fg-2": "#9C9A91",
+        "--muted": "#7A7568",
+        "--meta": "#545040",
+        "--border": "#3D3A33",
+        "--border-soft": "#23211C",
+        "--accent": "#C6FF24",
+        "--accent-on": "#0E0E0E",
+        "--accent-hover": "#C6FF24",
+        "--accent-active": "#C6FF24",
+        "--success": "#5BD06B",
+        "--warn": "#FFB85C",
+        "--danger": "#FF6F77",
+        "--font-display": "'Monaspace Xenon', 'Monaspace Neon', 'Menlo', monospace",
+        "--font-body": "'Monaspace Argon', 'Monaspace Neon', ui-monospace, monospace",
+        "--font-mono": "'Monaspace Neon', 'Menlo', 'SFMono-Regular', monospace",
+        "--text-xs": "10px",
+        "--text-sm": "11px",
+        "--text-base": "13px",
+        "--text-lg": "17px",
+        "--text-xl": "18px",
+        "--text-2xl": "30px",
+        "--text-3xl": "48px",
+        "--text-4xl": "96px",
+        "--leading-body": "1.6",
+        "--leading-tight": "0.94",
+        "--tracking-display": "0",
+        "--space-1": "4px",
+        "--space-2": "8px",
+        "--space-3": "12px",
+        "--space-4": "16px",
+        "--space-5": "18px",
+        "--space-6": "24px",
+        "--space-8": "32px",
+        "--space-12": "56px",
+        "--section-y-desktop": "88px",
+        "--section-y-tablet": "88px",
+        "--section-y-phone": "88px",
+        "--radius-sm": "2px",
+        "--radius-md": "4px",
+        "--radius-lg": "6px",
+        "--radius-pill": "2px",
+        "--elev-flat": "none",
+        "--elev-ring": "0 0 0 1px var(--border)",
+        "--elev-raised": "none",
+        "--focus-ring": "0 0 0 2px var(--accent)",
+        "--motion-fast": "0ms",
+        "--motion-base": "0ms",
+        "--ease-standard": "linear",
+        "--container-max": "100%",
+        "--container-gutter-desktop": "64px",
+        "--container-gutter-tablet": "20px",
+        "--container-gutter-phone": "20px"
+      },
+      "bizarre": {
+        "--bzr-signal-lime": "#C6FF24",
+        "--bzr-lime-glow": "#E8FF8A",
+        "--bzr-lime-ink": "#5F8A0F",
+        "--bzr-lime-text": "#4A7409",
+        "--bzr-acid-lime": "#A8FF00",
+        "--bzr-void-gray": "#545454",
+        "--bzr-bg": "#1A1815",
+        "--bzr-bg-2": "#23211C",
+        "--bzr-bg-3": "#2D2A23",
+        "--bzr-bg-4": "#3D3A33",
+        "--bzr-fg": "#E4E2DA",
+        "--bzr-fg-dim": "#9C9A91",
+        "--bzr-fg-faint": "#7A7568",
+        "--bzr-fg-ghost": "#545040",
+        "--bzr-selection": "#3A3618",
+        "--bzr-line": "#23211C",
+        "--bzr-border": "#3D3A33",
+        "--bzr-accent": "#C6FF24",
+        "--bzr-accent-text": "#C6FF24",
+        "--bzr-accent-soft": "#E8FF8A",
+        "--bzr-info": "#7BB3FF",
+        "--bzr-hint": "#D88AE0",
+        "--bzr-font-label": "'Monaspace Krypton', 'Monaspace Neon', monospace",
+        "--bzr-font-hand": "'Monaspace Radon', 'Monaspace Neon', monospace",
+        "--bzr-syntax-plain": "#E4E4E4",
+        "--bzr-syntax-punct": "#828282",
+        "--bzr-syntax-op": "#9DEAEA",
+        "--bzr-syntax-kw-ctrl": "#FF8FCF",
+        "--bzr-syntax-kw-decl": "#D88AE0",
+        "--bzr-syntax-kw-mod": "#B989E5",
+        "--bzr-syntax-string": "#E8A33D",
+        "--bzr-syntax-tmpl": "#FFC36B",
+        "--bzr-syntax-esc": "#FFE08A",
+        "--bzr-syntax-rgx": "#FF9E3D",
+        "--bzr-syntax-num": "#7BB3FF",
+        "--bzr-syntax-bool": "#5B9FFF",
+        "--bzr-syntax-constant": "#9DD0FF",
+        "--bzr-syntax-type": "#7AD9D9",
+        "--bzr-syntax-tprim": "#7AD9D9",
+        "--bzr-syntax-fn": "#C6FF24",
+        "--bzr-syntax-method": "#A8E658",
+        "--bzr-syntax-prop": "#C6E58B",
+        "--bzr-syntax-param": "#FFB07A",
+        "--bzr-syntax-variable": "#E4E4E4",
+        "--bzr-syntax-self": "#FF8FCF",
+        "--bzr-syntax-builtin": "#E8A33D",
+        "--bzr-syntax-ns": "#9DEAEA",
+        "--bzr-syntax-decorator": "#FF8FCF",
+        "--bzr-syntax-pre": "#B989E5",
+        "--bzr-syntax-comment": "#828282",
+        "--bzr-syntax-doc-comment": "#9AB585",
+        "--bzr-syntax-tag": "#FF8FCF",
+        "--bzr-syntax-attr": "#C6FF24",
+        "--bzr-syntax-error": "#FF6F77",
+        "--bzr-syntax-warn": "#FFB85C",
+        "--bzr-syntax-ok": "#5BD06B",
+        "--bzr-syntax-info": "#7BB3FF",
+        "--bzr-syntax-hint": "#D88AE0",
+        "--bzr-status-error": "#FF6F77",
+        "--bzr-status-warn": "#FFB85C",
+        "--bzr-status-ok": "#5BD06B",
+        "--bzr-status-info": "#7BB3FF",
+        "--bzr-status-hint": "#D88AE0",
+        "--bzr-ansi-black": "#1A1815",
+        "--bzr-ansi-red": "#F0525B",
+        "--bzr-ansi-green": "#3FB950",
+        "--bzr-ansi-yellow": "#E8A33D",
+        "--bzr-ansi-blue": "#5B9FFF",
+        "--bzr-ansi-magenta": "#D88AE0",
+        "--bzr-ansi-cyan": "#7AD9D9",
+        "--bzr-ansi-white": "#E4E4E4",
+        "--bzr-ansi-bright-black": "#3D3D3D",
+        "--bzr-ansi-bright-red": "#FF6F77",
+        "--bzr-ansi-bright-green": "#C6FF24",
+        "--bzr-ansi-bright-yellow": "#FFB85C",
+        "--bzr-ansi-bright-blue": "#7BB3FF",
+        "--bzr-ansi-bright-magenta": "#E8A8EE",
+        "--bzr-ansi-bright-cyan": "#9DEAEA",
+        "--bzr-ansi-bright-white": "#FFFFFF",
+        "--bzr-cursor": "#C6FF24",
+        "--bzr-cursor-blink": "1.1s steps(1)"
+      }
+    },
+    "paper": {
+      "label": "Bizarre Paper",
+      "description": "warm off-white · lime ink · the default light",
+      "theme": "light",
+      "openDesign": {
+        "--bg": "#F9F8F2",
+        "--surface": "#F2F0EA",
+        "--surface-warm": "#E6E3DA",
+        "--fg": "#1F1F1F",
+        "--fg-2": "#3D3D3D",
+        "--muted": "#7A7568",
+        "--meta": "#A8A395",
+        "--border": "#D8D4C7",
+        "--border-soft": "#F2F0EA",
+        "--accent": "#5F8A0F",
+        "--accent-on": "#0E0E0E",
+        "--accent-hover": "#5F8A0F",
+        "--accent-active": "#5F8A0F",
+        "--success": "#36691B",
+        "--warn": "#97460D",
+        "--danger": "#AC2468",
+        "--font-display": "'Monaspace Xenon', 'Monaspace Neon', 'Menlo', monospace",
+        "--font-body": "'Monaspace Argon', 'Monaspace Neon', ui-monospace, monospace",
+        "--font-mono": "'Monaspace Neon', 'Menlo', 'SFMono-Regular', monospace",
+        "--text-xs": "10px",
+        "--text-sm": "11px",
+        "--text-base": "13px",
+        "--text-lg": "17px",
+        "--text-xl": "18px",
+        "--text-2xl": "30px",
+        "--text-3xl": "48px",
+        "--text-4xl": "96px",
+        "--leading-body": "1.6",
+        "--leading-tight": "0.94",
+        "--tracking-display": "0",
+        "--space-1": "4px",
+        "--space-2": "8px",
+        "--space-3": "12px",
+        "--space-4": "16px",
+        "--space-5": "18px",
+        "--space-6": "24px",
+        "--space-8": "32px",
+        "--space-12": "56px",
+        "--section-y-desktop": "88px",
+        "--section-y-tablet": "88px",
+        "--section-y-phone": "88px",
+        "--radius-sm": "2px",
+        "--radius-md": "4px",
+        "--radius-lg": "6px",
+        "--radius-pill": "2px",
+        "--elev-flat": "none",
+        "--elev-ring": "0 0 0 1px var(--border)",
+        "--elev-raised": "none",
+        "--focus-ring": "0 0 0 2px var(--accent)",
+        "--motion-fast": "0ms",
+        "--motion-base": "0ms",
+        "--ease-standard": "linear",
+        "--container-max": "100%",
+        "--container-gutter-desktop": "64px",
+        "--container-gutter-tablet": "20px",
+        "--container-gutter-phone": "20px"
+      },
+      "bizarre": {
+        "--bzr-signal-lime": "#C6FF24",
+        "--bzr-lime-glow": "#E8FF8A",
+        "--bzr-lime-ink": "#5F8A0F",
+        "--bzr-lime-text": "#4A7409",
+        "--bzr-acid-lime": "#A8FF00",
+        "--bzr-void-gray": "#545454",
+        "--bzr-bg": "#F9F8F2",
+        "--bzr-bg-2": "#F2F0EA",
+        "--bzr-bg-3": "#E6E3DA",
+        "--bzr-bg-4": "#D8D4C7",
+        "--bzr-fg": "#1F1F1F",
+        "--bzr-fg-dim": "#3D3D3D",
+        "--bzr-fg-faint": "#7A7568",
+        "--bzr-fg-ghost": "#A8A395",
+        "--bzr-selection": "#DCEFA8",
+        "--bzr-line": "#F2F0EA",
+        "--bzr-border": "#D8D4C7",
+        "--bzr-accent": "#5F8A0F",
+        "--bzr-accent-text": "#4A7409",
+        "--bzr-accent-soft": "#9FCC1F",
+        "--bzr-info": "#1F4FB0",
+        "--bzr-hint": "#7E2A9A",
+        "--bzr-font-label": "'Monaspace Krypton', 'Monaspace Neon', monospace",
+        "--bzr-font-hand": "'Monaspace Radon', 'Monaspace Neon', monospace",
+        "--bzr-syntax-plain": "#1A1A1A",
+        "--bzr-syntax-punct": "#726D61",
+        "--bzr-syntax-op": "#0F6E6E",
+        "--bzr-syntax-kw-ctrl": "#B8276F",
+        "--bzr-syntax-kw-decl": "#7E2A9A",
+        "--bzr-syntax-kw-mod": "#603F94",
+        "--bzr-syntax-string": "#9F4A0E",
+        "--bzr-syntax-tmpl": "#AD5418",
+        "--bzr-syntax-esc": "#7A6308",
+        "--bzr-syntax-rgx": "#A55A1B",
+        "--bzr-syntax-num": "#1F4FB0",
+        "--bzr-syntax-bool": "#1B4099",
+        "--bzr-syntax-constant": "#2F5DC2",
+        "--bzr-syntax-type": "#0F6E6E",
+        "--bzr-syntax-tprim": "#0F6E6E",
+        "--bzr-syntax-fn": "#4A7409",
+        "--bzr-syntax-method": "#4A7409",
+        "--bzr-syntax-prop": "#597629",
+        "--bzr-syntax-param": "#A0480E",
+        "--bzr-syntax-variable": "#1A1A1A",
+        "--bzr-syntax-self": "#B8276F",
+        "--bzr-syntax-builtin": "#9F4A0E",
+        "--bzr-syntax-ns": "#0F6E6E",
+        "--bzr-syntax-decorator": "#B8276F",
+        "--bzr-syntax-pre": "#603F94",
+        "--bzr-syntax-comment": "#726D60",
+        "--bzr-syntax-doc-comment": "#597629",
+        "--bzr-syntax-tag": "#B8276F",
+        "--bzr-syntax-attr": "#4A7409",
+        "--bzr-syntax-error": "#AC2468",
+        "--bzr-syntax-warn": "#97460D",
+        "--bzr-syntax-ok": "#36691B",
+        "--bzr-syntax-info": "#1F4FB0",
+        "--bzr-syntax-hint": "#7E2A9A",
+        "--bzr-status-error": "#AC2468",
+        "--bzr-status-warn": "#97460D",
+        "--bzr-status-ok": "#36691B",
+        "--bzr-status-info": "#1F4FB0",
+        "--bzr-status-hint": "#7E2A9A",
+        "--bzr-ansi-black": "#1A1A1A",
+        "--bzr-ansi-red": "#C13039",
+        "--bzr-ansi-green": "#3F7A1F",
+        "--bzr-ansi-yellow": "#9F4A0E",
+        "--bzr-ansi-blue": "#1F4FB0",
+        "--bzr-ansi-magenta": "#7E2A9A",
+        "--bzr-ansi-cyan": "#0F6E6E",
+        "--bzr-ansi-white": "#545454",
+        "--bzr-ansi-bright-black": "#726D61",
+        "--bzr-ansi-bright-red": "#C63947",
+        "--bzr-ansi-bright-green": "#4A7409",
+        "--bzr-ansi-bright-yellow": "#94631C",
+        "--bzr-ansi-bright-blue": "#386EB6",
+        "--bzr-ansi-bright-magenta": "#95559F",
+        "--bzr-ansi-bright-cyan": "#397777",
+        "--bzr-ansi-bright-white": "#0E0E0E",
+        "--bzr-cursor": "#5F8A0F",
+        "--bzr-cursor-blink": "1.1s steps(1)"
+      }
+    },
+    "bone": {
+      "label": "Bizarre Bone",
+      "description": "softer light · warmer neutrals",
+      "theme": "light",
+      "openDesign": {
+        "--bg": "#F5F2EA",
+        "--surface": "#EDE9DD",
+        "--surface-warm": "#DDD8CB",
+        "--fg": "#2B2B2B",
+        "--fg-2": "#4A4A4A",
+        "--muted": "#857F70",
+        "--meta": "#B0AA9A",
+        "--border": "#DDD8CB",
+        "--border-soft": "#EDE9DD",
+        "--accent": "#5F8A0F",
+        "--accent-on": "#0E0E0E",
+        "--accent-hover": "#5F8A0F",
+        "--accent-active": "#5F8A0F",
+        "--success": "#36691B",
+        "--warn": "#97460D",
+        "--danger": "#AC2468",
+        "--font-display": "'Monaspace Xenon', 'Monaspace Neon', 'Menlo', monospace",
+        "--font-body": "'Monaspace Argon', 'Monaspace Neon', ui-monospace, monospace",
+        "--font-mono": "'Monaspace Neon', 'Menlo', 'SFMono-Regular', monospace",
+        "--text-xs": "10px",
+        "--text-sm": "11px",
+        "--text-base": "13px",
+        "--text-lg": "17px",
+        "--text-xl": "18px",
+        "--text-2xl": "30px",
+        "--text-3xl": "48px",
+        "--text-4xl": "96px",
+        "--leading-body": "1.6",
+        "--leading-tight": "0.94",
+        "--tracking-display": "0",
+        "--space-1": "4px",
+        "--space-2": "8px",
+        "--space-3": "12px",
+        "--space-4": "16px",
+        "--space-5": "18px",
+        "--space-6": "24px",
+        "--space-8": "32px",
+        "--space-12": "56px",
+        "--section-y-desktop": "88px",
+        "--section-y-tablet": "88px",
+        "--section-y-phone": "88px",
+        "--radius-sm": "2px",
+        "--radius-md": "4px",
+        "--radius-lg": "6px",
+        "--radius-pill": "2px",
+        "--elev-flat": "none",
+        "--elev-ring": "0 0 0 1px var(--border)",
+        "--elev-raised": "none",
+        "--focus-ring": "0 0 0 2px var(--accent)",
+        "--motion-fast": "0ms",
+        "--motion-base": "0ms",
+        "--ease-standard": "linear",
+        "--container-max": "100%",
+        "--container-gutter-desktop": "64px",
+        "--container-gutter-tablet": "20px",
+        "--container-gutter-phone": "20px"
+      },
+      "bizarre": {
+        "--bzr-signal-lime": "#C6FF24",
+        "--bzr-lime-glow": "#E8FF8A",
+        "--bzr-lime-ink": "#5F8A0F",
+        "--bzr-lime-text": "#4A7409",
+        "--bzr-acid-lime": "#A8FF00",
+        "--bzr-void-gray": "#545454",
+        "--bzr-bg": "#F5F2EA",
+        "--bzr-bg-2": "#EDE9DD",
+        "--bzr-bg-3": "#DDD8CB",
+        "--bzr-bg-4": "#C8C2B2",
+        "--bzr-fg": "#2B2B2B",
+        "--bzr-fg-dim": "#4A4A4A",
+        "--bzr-fg-faint": "#857F70",
+        "--bzr-fg-ghost": "#B0AA9A",
+        "--bzr-selection": "#D4E89F",
+        "--bzr-line": "#EDE9DD",
+        "--bzr-border": "#DDD8CB",
+        "--bzr-accent": "#5F8A0F",
+        "--bzr-accent-text": "#4A7409",
+        "--bzr-accent-soft": "#9FCC1F",
+        "--bzr-info": "#1F4FB0",
+        "--bzr-hint": "#7E2A9A",
+        "--bzr-font-label": "'Monaspace Krypton', 'Monaspace Neon', monospace",
+        "--bzr-font-hand": "'Monaspace Radon', 'Monaspace Neon', monospace",
+        "--bzr-syntax-plain": "#1A1A1A",
+        "--bzr-syntax-punct": "#726D61",
+        "--bzr-syntax-op": "#0F6E6E",
+        "--bzr-syntax-kw-ctrl": "#B8276F",
+        "--bzr-syntax-kw-decl": "#7E2A9A",
+        "--bzr-syntax-kw-mod": "#603F94",
+        "--bzr-syntax-string": "#9F4A0E",
+        "--bzr-syntax-tmpl": "#AD5418",
+        "--bzr-syntax-esc": "#7A6308",
+        "--bzr-syntax-rgx": "#A55A1B",
+        "--bzr-syntax-num": "#1F4FB0",
+        "--bzr-syntax-bool": "#1B4099",
+        "--bzr-syntax-constant": "#2F5DC2",
+        "--bzr-syntax-type": "#0F6E6E",
+        "--bzr-syntax-tprim": "#0F6E6E",
+        "--bzr-syntax-fn": "#4A7409",
+        "--bzr-syntax-method": "#4A7409",
+        "--bzr-syntax-prop": "#597629",
+        "--bzr-syntax-param": "#A0480E",
+        "--bzr-syntax-variable": "#1A1A1A",
+        "--bzr-syntax-self": "#B8276F",
+        "--bzr-syntax-builtin": "#9F4A0E",
+        "--bzr-syntax-ns": "#0F6E6E",
+        "--bzr-syntax-decorator": "#B8276F",
+        "--bzr-syntax-pre": "#603F94",
+        "--bzr-syntax-comment": "#726D60",
+        "--bzr-syntax-doc-comment": "#597629",
+        "--bzr-syntax-tag": "#B8276F",
+        "--bzr-syntax-attr": "#4A7409",
+        "--bzr-syntax-error": "#AC2468",
+        "--bzr-syntax-warn": "#97460D",
+        "--bzr-syntax-ok": "#36691B",
+        "--bzr-syntax-info": "#1F4FB0",
+        "--bzr-syntax-hint": "#7E2A9A",
+        "--bzr-status-error": "#AC2468",
+        "--bzr-status-warn": "#97460D",
+        "--bzr-status-ok": "#36691B",
+        "--bzr-status-info": "#1F4FB0",
+        "--bzr-status-hint": "#7E2A9A",
+        "--bzr-ansi-black": "#2B2B2B",
+        "--bzr-ansi-red": "#C13039",
+        "--bzr-ansi-green": "#3F7A1F",
+        "--bzr-ansi-yellow": "#9F4A0E",
+        "--bzr-ansi-blue": "#1F4FB0",
+        "--bzr-ansi-magenta": "#7E2A9A",
+        "--bzr-ansi-cyan": "#0F6E6E",
+        "--bzr-ansi-white": "#545454",
+        "--bzr-ansi-bright-black": "#726D61",
+        "--bzr-ansi-bright-red": "#C63947",
+        "--bzr-ansi-bright-green": "#4A7409",
+        "--bzr-ansi-bright-yellow": "#94631C",
+        "--bzr-ansi-bright-blue": "#386EB6",
+        "--bzr-ansi-bright-magenta": "#95559F",
+        "--bzr-ansi-bright-cyan": "#397777",
+        "--bzr-ansi-bright-white": "#0E0E0E",
+        "--bzr-cursor": "#5F8A0F",
+        "--bzr-cursor-blink": "1.1s steps(1)"
+      }
+    }
+  },
+  "derived": {
+    "--text-xs": {
+      "value": "10px",
+      "source": "showcase/showcase.css:.lime-meta",
+      "provenance": "derived/showcase"
+    },
+    "--text-sm": {
+      "value": "11px",
+      "source": "showcase/showcase.css:.eyebrow",
+      "provenance": "derived/showcase"
+    },
+    "--text-base": {
+      "value": "13px",
+      "source": "showcase/showcase.css:.code",
+      "provenance": "derived/showcase"
+    },
+    "--text-lg": {
+      "value": "17px",
+      "source": "showcase/showcase.css:.lede",
+      "provenance": "derived/showcase"
+    },
+    "--text-xl": {
+      "value": "18px",
+      "source": "showcase/showcase.css:.variant-name",
+      "provenance": "derived/showcase"
+    },
+    "--text-2xl": {
+      "value": "30px",
+      "source": "showcase/showcase.css:.section-title",
+      "provenance": "derived/showcase"
+    },
+    "--text-3xl": {
+      "value": "48px",
+      "source": "showcase/showcase.css:.h1 minimum",
+      "provenance": "derived/showcase"
+    },
+    "--text-4xl": {
+      "value": "96px",
+      "source": "showcase/showcase.css:.h1 maximum",
+      "provenance": "derived/showcase"
+    },
+    "--leading-body": {
+      "value": "1.6",
+      "source": "showcase/showcase.css:.lede",
+      "provenance": "derived/showcase"
+    },
+    "--leading-tight": {
+      "value": "0.94",
+      "source": "showcase/showcase.css:.h1",
+      "provenance": "derived/showcase"
+    },
+    "--tracking-display": {
+      "value": "0",
+      "source": "showcase/showcase.css:.h1",
+      "provenance": "derived/showcase"
+    },
+    "--space-1": {
+      "value": "4px",
+      "source": "showcase/showcase.css:.mini-ansi gap",
+      "provenance": "derived/showcase"
+    },
+    "--space-2": {
+      "value": "8px",
+      "source": "showcase/showcase.css:.ansi-cell padding",
+      "provenance": "derived/showcase"
+    },
+    "--space-3": {
+      "value": "12px",
+      "source": "showcase/showcase.css:.eyebrow gap",
+      "provenance": "derived/showcase"
+    },
+    "--space-4": {
+      "value": "16px",
+      "source": "showcase/showcase.css:.slogan-strip padding",
+      "provenance": "derived/showcase"
+    },
+    "--space-5": {
+      "value": "18px",
+      "source": "showcase/showcase.css:.hero-meta gap",
+      "provenance": "derived/showcase"
+    },
+    "--space-6": {
+      "value": "24px",
+      "source": "showcase/showcase.css:.section-head gap",
+      "provenance": "derived/showcase"
+    },
+    "--space-8": {
+      "value": "32px",
+      "source": "showcase/showcase.css:.section-head margin",
+      "provenance": "derived/showcase"
+    },
+    "--space-12": {
+      "value": "56px",
+      "source": "showcase/showcase.css:.hero-grid gap",
+      "provenance": "derived/showcase"
+    },
+    "--section-y-desktop": {
+      "value": "88px",
+      "source": "showcase/showcase.css:.section",
+      "provenance": "derived/showcase"
+    },
+    "--section-y-tablet": {
+      "value": "88px",
+      "source": "showcase/showcase.css:.section",
+      "provenance": "derived/showcase"
+    },
+    "--section-y-phone": {
+      "value": "88px",
+      "source": "showcase/showcase.css:.section",
+      "provenance": "derived/showcase"
+    },
+    "--radius-sm": {
+      "value": "2px",
+      "source": "showcase/showcase.css:.pill",
+      "provenance": "derived/showcase"
+    },
+    "--radius-md": {
+      "value": "4px",
+      "source": "showcase/showcase.css:.lime-swatch",
+      "provenance": "derived/showcase"
+    },
+    "--radius-lg": {
+      "value": "6px",
+      "source": "showcase/showcase.css:.variant-card",
+      "provenance": "derived/showcase"
+    },
+    "--radius-pill": {
+      "value": "2px",
+      "source": "showcase/showcase.css:.pill",
+      "provenance": "derived/showcase"
+    },
+    "--elev-flat": {
+      "value": "none",
+      "source": "derived/showcase",
+      "provenance": "derived/showcase"
+    },
+    "--elev-ring": {
+      "value": "0 0 0 1px var(--border)",
+      "source": "showcase/showcase.css:hairline borders",
+      "provenance": "derived/showcase"
+    },
+    "--elev-raised": {
+      "value": "none",
+      "source": "derived/showcase",
+      "provenance": "derived/showcase"
+    },
+    "--focus-ring": {
+      "value": "0 0 0 2px var(--accent)",
+      "source": "derived/accessibility",
+      "provenance": "derived/accessibility"
+    },
+    "--motion-fast": {
+      "value": "0ms",
+      "source": "explicit neutral:no general motion contract",
+      "provenance": "explicit/neutral"
+    },
+    "--motion-base": {
+      "value": "0ms",
+      "source": "explicit neutral:no general motion contract",
+      "provenance": "explicit/neutral"
+    },
+    "--ease-standard": {
+      "value": "linear",
+      "source": "explicit neutral:no general motion contract",
+      "provenance": "explicit/neutral"
+    },
+    "--container-max": {
+      "value": "100%",
+      "source": "showcase/showcase.css full-width sections",
+      "provenance": "derived/showcase"
+    },
+    "--container-gutter-desktop": {
+      "value": "64px",
+      "source": "showcase/showcase.css:.section",
+      "provenance": "derived/showcase"
+    },
+    "--container-gutter-tablet": {
+      "value": "20px",
+      "source": "showcase/showcase.css media rule",
+      "provenance": "derived/showcase"
+    },
+    "--container-gutter-phone": {
+      "value": "20px",
+      "source": "showcase/showcase.css media rule",
+      "provenance": "derived/showcase"
+    }
+  }
+}

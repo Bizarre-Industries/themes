@@ -1,0 +1,150 @@
+{
+  "manifest_version": 3,
+  "name": "Bizarre Workshop for Chrome",
+  "version": "0.2.0",
+  "theme": {
+    "colors": {
+      "frame": [
+        35,
+        33,
+        28
+      ],
+      "frame_inactive": [
+        26,
+        24,
+        21
+      ],
+      "toolbar": [
+        26,
+        24,
+        21
+      ],
+      "toolbar_text": [
+        228,
+        226,
+        218
+      ],
+      "tab_text": [
+        228,
+        226,
+        218
+      ],
+      "tab_background_text": [
+        156,
+        154,
+        145
+      ],
+      "bookmark_text": [
+        156,
+        154,
+        145
+      ],
+      "icons": [
+        156,
+        154,
+        145
+      ],
+      "icons_attention": [
+        198,
+        255,
+        36
+      ],
+      "toolbar_field": [
+        35,
+        33,
+        28
+      ],
+      "toolbar_field_text": [
+        228,
+        226,
+        218
+      ],
+      "toolbar_field_border": [
+        61,
+        58,
+        51
+      ],
+      "button_background_active": [
+        58,
+        54,
+        24
+      ],
+      "button_background_hover": [
+        45,
+        42,
+        35
+      ],
+      "popup": [
+        35,
+        33,
+        28
+      ],
+      "popup_text": [
+        228,
+        226,
+        218
+      ],
+      "popup_border": [
+        61,
+        58,
+        51
+      ],
+      "popup_highlight": [
+        198,
+        255,
+        36
+      ],
+      "popup_highlight_text": [
+        14,
+        14,
+        14
+      ],
+      "ntp_background": [
+        26,
+        24,
+        21
+      ],
+      "ntp_card_background": [
+        35,
+        33,
+        28
+      ],
+      "ntp_text": [
+        228,
+        226,
+        218
+      ],
+      "sidebar": [
+        35,
+        33,
+        28
+      ],
+      "sidebar_text": [
+        228,
+        226,
+        218
+      ],
+      "sidebar_highlight": [
+        198,
+        255,
+        36
+      ],
+      "sidebar_highlight_text": [
+        14,
+        14,
+        14
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.25,
+        0.65,
+        0.55
+      ]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom",
+      "ntp_background_repeat": "no-repeat"
+    }
+  }
+}
