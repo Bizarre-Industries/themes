@@ -1,4 +1,3 @@
 # Preserve exact third-party and repository-evidence bytes without false whitespace errors.
 design/open-design/bizarre-industries/assets/licenses/** -whitespace
 design/open-design/bizarre-industries/source/snippets/repo/** -whitespace
-graphify-out/graph.json merge=graphify
