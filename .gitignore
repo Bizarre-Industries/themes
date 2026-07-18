@@ -39,3 +39,7 @@ node_modules/
 AGENTS.md
 .superpowers/brainstorm/
 !design/open-design/bizarre-industries/**
+
+# Graphify local cache and usage accounting
+graphify-out/cache/
+graphify-out/cost.json
